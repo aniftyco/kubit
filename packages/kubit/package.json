@@ -1,0 +1,28 @@
+{
+  "name": "kubit",
+  "version": "0.1.1",
+  "main": "dist/index.js",
+  "bin": {
+    "kubit": "./dist/bin.js"
+  },
+  "scripts": {
+    "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "react.d.ts",
+    "react.js"
+  ],
+  "dependencies": {
+    "@remix-run/v1-route-convention": "^0.1.2",
+    "bullmq": "^2.4.0",
+    "ioredis": "^5.3.2",
+    "jiti": "^1.19.1",
+    "nodemailer": "^6.9.4",
+    "remix-utils": "^6.6.0",
+    "superjson": "^1.12.4",
+    "yargs": "^17.7.2"
+  }
+}
