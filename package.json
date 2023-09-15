@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {},
+  "author": {
+    "name": "NiftyCo, LLC",
+    "email": "support@aniftyco.com",
+    "url": "https://aniftyco.com"
+  },
+  "contributors": [
+    {
+      "name": "Josh Manders",
+      "url": "https://twitter.com/joshmanders"
+    }
+  ],
+  "workspaces": [
+    "packages/create-kubit",
+    "packages/kubit",
+    "templates/default"
+  ],
+  "prettier": "@aniftyco/prettier",
+  "devDependencies": {
+    "@aniftyco/prettier": "^0.1.0",
+    "@aniftyco/tsconfig": "^0.1.0",
+    "lerna": "^7.1.4",
+    "prettier": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^5.1.6"
+  }
+}

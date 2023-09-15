@@ -1,0 +1,15 @@
+{
+  "name": "create-kubit",
+  "version": "0.1.0",
+  "bin": {
+    "create-kubit": "./dist/index.js"
+  },
+  "scripts": {
+    "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ]
+}
