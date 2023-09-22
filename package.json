@@ -13,9 +13,8 @@
     }
   ],
   "workspaces": [
-    "packages/create-kubit",
-    "packages/kubit",
-    "templates/slim"
+    "packages/*",
+    "templates/*"
   ],
   "prettier": "@aniftyco/prettier",
   "devDependencies": {
@@ -24,6 +23,7 @@
     "lerna": "^7.3.0",
     "prettier": "^3.0.3",
     "rimraf": "^3.0.2",
+    "turbo": "^1.10.14",
     "typescript": "^5.2.2"
   }
 }
