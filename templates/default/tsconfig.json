@@ -1,6 +1,0 @@
-{
-  "extends": "@aniftyco/tsconfig",
-  "compilerOptions": {},
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
-}

@@ -1,0 +1,20 @@
+{
+  "name": "slim",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx kubit serve --watch",
+    "build": "npx kubit build --production",
+    "test": "npx kubit test"
+  },
+  "prettier": "@aniftyco/prettier",
+  "dependencies": {
+    "kubit": "*"
+  },
+  "devDependencies": {
+    "@aniftyco/prettier": "^0.1.0",
+    "@aniftyco/tsconfig": "^1.0.1",
+    "prettier": "^3.0.3",
+    "typescript": "~5.2"
+  }
+}
