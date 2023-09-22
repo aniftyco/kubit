@@ -15,15 +15,15 @@
   "workspaces": [
     "packages/create-kubit",
     "packages/kubit",
-    "templates/default"
+    "templates/slim"
   ],
   "prettier": "@aniftyco/prettier",
   "devDependencies": {
     "@aniftyco/prettier": "^0.1.0",
-    "@aniftyco/tsconfig": "^0.1.0",
-    "lerna": "^7.1.4",
-    "prettier": "^3.0.0",
+    "@aniftyco/tsconfig": "^1.0.1",
+    "lerna": "^7.3.0",
+    "prettier": "^3.0.3",
     "rimraf": "^3.0.2",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   }
 }

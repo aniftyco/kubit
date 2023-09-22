@@ -11,18 +11,22 @@
     "prepublishOnly": "npm run build"
   },
   "files": [
-    "dist",
-    "react.d.ts",
-    "react.js"
+    "dist"
   ],
   "dependencies": {
-    "@remix-run/v1-route-convention": "^0.1.2",
-    "bullmq": "^2.4.0",
-    "ioredis": "^5.3.2",
-    "jiti": "^1.19.1",
-    "nodemailer": "^6.9.4",
-    "remix-utils": "^6.6.0",
-    "superjson": "^1.12.4",
-    "yargs": "^17.7.2"
+    "@adonisjs/core": "^5.9.0",
+    "proxy-addr": "^2.0.7",
+    "reflect-metadata": "^0.1.13",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@adonisjs/assembler": "^5.9.5",
+    "@japa/preset-adonis": "^1.2.0",
+    "@japa/runner": "^2.5.1",
+    "@types/proxy-addr": "^2.0.0",
+    "@types/source-map-support": "^0.5.7",
+    "pino-pretty": "^10.2.0",
+    "youch": "^3.3.1",
+    "youch-terminal": "^2.2.2"
   }
 }
