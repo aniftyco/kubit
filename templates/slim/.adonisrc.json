@@ -1,15 +1,15 @@
 {
   "typescript": true,
-  "commands": ["./commands", "@adonisjs/core/build/commands/index.js"],
-  "exceptionHandlerNamespace": "App/Exceptions/Handler",
+  "commands": ["./commands", "kubit/commands"],
+  "exceptionHandlerNamespace": "@app/Exceptions/Handler",
   "aliases": {
-    "App": "app",
-    "Config": "config",
-    "Database": "database",
-    "Contracts": "contracts"
+    "@app": "app",
+    "@config": "config",
+    "@database": "database",
+    "@contracts": "contracts"
   },
   "preloads": ["./start/routes", "./start/kernel"],
-  "providers": ["./providers/AppProvider", "@adonisjs/core"],
+  "providers": ["./providers/AppProvider", "kubit"],
   "metaFiles": [
     {
       "pattern": "public/**",
@@ -25,5 +25,5 @@
       }
     ]
   },
-  "testProviders": ["@japa/preset-adonis/TestsProvider"]
+  "testProviders": ["kubit/TestProvider"]
 }

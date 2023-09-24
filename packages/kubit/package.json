@@ -5,13 +5,25 @@
   "bin": {
     "kubit": "./dist/bin.js"
   },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./TestProvider": {
+      "require": "./dist/tests.js",
+      "types": "./dist/test.d.ts"
+    },
+    "./*": "./*"
+  },
   "scripts": {
     "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
     "build": "rimraf dist && tsc -p tsconfig.json",
     "prepublishOnly": "npm run build"
   },
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "dependencies": {
     "@adonisjs/core": "^5.9.0",
