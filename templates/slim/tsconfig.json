@@ -7,11 +7,11 @@
     "rootDir": "./",
     "sourceMap": true,
     "paths": {
-      "App/*": ["./app/*"],
-      "Config/*": ["./config/*"],
-      "Contracts/*": ["./contracts/*"],
-      "Database/*": ["./database/*"]
+      "@app/*": ["./app/*"],
+      "@config/*": ["./config/*"],
+      "@contracts/*": ["./contracts/*"],
+      "@database/*": ["./database/*"]
     },
-    "types": ["@adonisjs/core", "@japa/preset-adonis/build/adonis-typings"]
+    "types": ["kubit/types"]
   }
 }

@@ -1,4 +1,4 @@
-import { test } from '@japa/runner';
+import { test } from 'kubit';
 
 test('display welcome page', async ({ client }) => {
   const response = await client.get('/');

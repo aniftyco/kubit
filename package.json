@@ -1,6 +1,8 @@
 {
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "start": "turbo start"
+  },
   "author": {
     "name": "NiftyCo, LLC",
     "email": "support@aniftyco.com",

@@ -5,7 +5,8 @@
  * file.
  */
 
-import { driveConfig } from '@adonisjs/core/build/config';
+import { driveConfig } from 'kubit';
+
 import Application from '@ioc:Adonis/Core/Application';
 import Env from '@ioc:Adonis/Core/Env';
 

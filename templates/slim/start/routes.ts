@@ -18,7 +18,7 @@
 |
 */
 
-import Route from '@ioc:Adonis/Core/Route';
+import Route from '@ioc:Kubit/Route';
 
 Route.get('/', async () => {
   return 'Hello world from a slim app';

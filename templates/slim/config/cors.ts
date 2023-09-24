@@ -5,7 +5,7 @@
  * file.
  */
 
-import type { CorsConfig } from '@ioc:Adonis/Core/Cors';
+import type { CorsConfig } from '@ioc:Kubit/Middleware/Cors';
 
 const corsConfig: CorsConfig = {
   /*

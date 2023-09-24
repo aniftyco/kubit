@@ -5,7 +5,8 @@
  * file.
  */
 
-import { hashConfig } from '@adonisjs/core/build/config';
+import { hashConfig } from 'kubit';
+
 import Env from '@ioc:Adonis/Core/Env';
 
 /*
