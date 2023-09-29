@@ -2,6 +2,7 @@
   "name": "@kubit/sentry",
   "version": "0.0.0",
   "main": "./dist/index.js",
+  "license": "MIT",
   "scripts": {
     "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
     "build": "rimraf dist && tsc -p tsconfig.json && npm run copy-instructions",
