@@ -7,7 +7,7 @@
 ### Install
 
 ```sh
-npm i @kubit/sentry
+npm i @kubit/sentry @sentry/node @sentry/profiling-node
 ```
 
 ### Configure
