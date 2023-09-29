@@ -1,6 +1,7 @@
 {
   "name": "create-kubit",
   "version": "0.1.0",
+  "private": true,
   "bin": {
     "create-kubit": "./dist/index.js"
   },
