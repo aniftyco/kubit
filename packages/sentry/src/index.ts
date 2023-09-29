@@ -4,7 +4,7 @@ import { ProfilingIntegration } from '@sentry/profiling-node';
 
 interface SentryConfig extends Omit<Sentry.NodeOptions, 'enabled'> {}
 
-export const defineConfig = (config: SentryConfig): SentryConfig => config;
+export const sentryConfig = (config: SentryConfig): SentryConfig => config;
 
 export default class SentryProvider {
   public static needsApplication = true;

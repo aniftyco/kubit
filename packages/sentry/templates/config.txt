@@ -1,5 +1,5 @@
 import Env from '@ioc:Adonis/Core/Env';
-import { defineConfig } from '@kubit/sentry';
+import { sentryConfig } from '@kubit/sentry';
 
 /*
 |--------------------------------------------------------------------------
@@ -7,7 +7,7 @@ import { defineConfig } from '@kubit/sentry';
 |--------------------------------------------------------------------------
 |
 */
-export default defineConfig({
+export default sentryConfig({
   dsn: Env.get('SENTRY_DSN'),
   environment: Env.get('NODE_ENV'),
 });
