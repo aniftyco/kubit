@@ -17,7 +17,7 @@
   "adonisjs": {
     "instructions": "./dist/instructions.js",
     "instructionsMd": "./dist/instructions.md",
-    "types": "@kubit/sentry",
+    "types": "@kubit/sentry/adonis-typings",
     "providers": [
       "@kubit/sentry"
     ]
