@@ -4,7 +4,8 @@
     "lib": ["ESNEXT", "DOM"],
     "pretty": true,
     "declaration": true,
-    "strict": false
+    "strict": false,
+    "incremental": false
   },
   "exclude": ["node_modules"]
 }
