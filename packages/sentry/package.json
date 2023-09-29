@@ -4,7 +4,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
-    "build": "rimraf dist && tsc -p tsconfig.json",
+    "build": "rimraf dist && tsc -p tsconfig.json && npm run copy-instructions",
+    "copy-instructions": "cp src/instructions.md dist/instructions.md",
     "prepublishOnly": "npm run build"
   },
   "files": [
