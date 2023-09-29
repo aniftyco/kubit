@@ -25,7 +25,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "@sentry/node": "^7.72.0",
+    "@sentry/profiling-node": "^1.2.1"
+  },
+  "devDependencies": {
     "@sentry/node": "^7.72.0",
     "@sentry/profiling-node": "^1.2.1"
   }
