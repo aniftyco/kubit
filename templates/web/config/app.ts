@@ -5,14 +5,16 @@
  * file.
  */
 
-import proxyAddr from 'proxy-addr'
-import Env from '@ioc:Adonis/Core/Env'
-import Application from '@ioc:Adonis/Core/Application'
-import type { ServerConfig } from '@ioc:Adonis/Core/Server'
-import type { LoggerConfig } from '@ioc:Adonis/Core/Logger'
-import type { ProfilerConfig } from '@ioc:Adonis/Core/Profiler'
-import type { ValidatorConfig } from '@ioc:Adonis/Core/Validator'
-import type { AssetsManagerConfig } from '@ioc:Adonis/Core/AssetsManager'
+import proxyAddr from 'proxy-addr';
+
+import Application from '@ioc:Adonis/Core/Application';
+import Env from '@ioc:Adonis/Core/Env';
+
+import type { ServerConfig } from '@ioc:Adonis/Core/Server';
+import type { LoggerConfig } from '@ioc:Adonis/Core/Logger';
+import type { ProfilerConfig } from '@ioc:Adonis/Core/Profiler';
+import type { ValidatorConfig } from '@ioc:Adonis/Core/Validator';
+import type { AssetsManagerConfig } from '@ioc:Adonis/Core/AssetsManager';
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +29,7 @@ import type { AssetsManagerConfig } from '@ioc:Adonis/Core/AssetsManager'
 | be decrypted.
 |
 */
-export const appKey: string = Env.get('APP_KEY')
+export const appKey: string = Env.get('APP_KEY');
 
 /*
 |--------------------------------------------------------------------------
@@ -111,7 +113,7 @@ export const http: ServerConfig = {
     secure: false,
     sameSite: false,
   },
-}
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -165,7 +167,7 @@ export const logger: LoggerConfig = {
   |
   */
   prettyPrint: Env.get('NODE_ENV') === 'development',
-}
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -204,7 +206,7 @@ export const profiler: ProfilerConfig = {
   |
   */
   whitelist: [],
-}
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -215,8 +217,7 @@ export const profiler: ProfilerConfig = {
 | to the default config https://git.io/JT0WE
 |
 */
-export const validator: ValidatorConfig = {
-}
+export const validator: ValidatorConfig = {};
 
 /*
 |--------------------------------------------------------------------------
@@ -274,4 +275,4 @@ export const assets: AssetsManagerConfig = {
   style: {
     attributes: {},
   },
-}
+};
