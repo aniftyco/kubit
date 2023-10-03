@@ -1,0 +1,30 @@
+{
+  "name": "@kubit/queue",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
+    "build": "rimraf dist && tsc -p tsconfig.json && npm run copy-instructions",
+    "copy-instructions": "cp src/instructions.md dist/instructions.md",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "adonis-typings",
+    "templates"
+  ],
+  "adonisjs": {
+    "instructions": "./dist/instructions.js",
+    "instructionsMd": "./dist/instructions.md",
+    "types": "@kubit/queue/adonis-typings",
+    "providers": [
+      "@kubit/queue"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {},
+  "devDependencies": {}
+}
