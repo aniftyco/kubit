@@ -1,0 +1,38 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ace serve --watch",
+    "build": "node ace build --production",
+    "test": "node ace test"
+  },
+  "devDependencies": {
+    "@adonisjs/assembler": "^5.9.5",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@japa/preset-adonis": "^1.2.0",
+    "@japa/runner": "^2.5.1",
+    "@symfony/webpack-encore": "^4.4.0",
+    "@types/proxy-addr": "^2.0.1",
+    "@types/source-map-support": "^0.5.8",
+    "adonis-preset-ts": "^2.1.0",
+    "pino-pretty": "^10.2.2",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "youch": "^3.3.2",
+    "youch-terminal": "^2.2.3"
+  },
+  "dependencies": {
+    "@adonisjs/core": "^5.9.0",
+    "@adonisjs/repl": "^3.1.11",
+    "@adonisjs/session": "^6.4.0",
+    "@adonisjs/shield": "^7.1.1",
+    "@adonisjs/view": "^6.2.0",
+    "@kubit/sentry": "*",
+    "proxy-addr": "^2.0.7",
+    "reflect-metadata": "^0.1.13",
+    "source-map-support": "^0.5.21"
+  }
+}
