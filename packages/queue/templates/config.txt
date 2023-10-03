@@ -1,0 +1,12 @@
+import Env from '@ioc:Adonis/Core/Env';
+import { queueConfig } from '@kubit/queue';
+
+/*
+|--------------------------------------------------------------------------
+| Queue configuration
+|--------------------------------------------------------------------------
+|
+*/
+export default queueConfig({
+  
+});
