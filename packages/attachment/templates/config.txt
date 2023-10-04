@@ -1,0 +1,12 @@
+import Env from '@ioc:Adonis/Core/Env';
+import { attachmentConfig } from '@kubit/attachment';
+
+/*
+|--------------------------------------------------------------------------
+| Attachment configuration
+|--------------------------------------------------------------------------
+|
+*/
+export default attachmentConfig({
+  
+});
