@@ -9,6 +9,12 @@
     "copy-instructions": "cp src/instructions.md dist/instructions.md",
     "prepublishOnly": "npm run build"
   },
+  "exports": {
+    ".": "./dist/index.js",
+    "./commands": "./dist/commands/index.js",
+    "./commands/listener": "./dist/commands/listener.js",
+    "./*": "./*"
+  },
   "files": [
     "dist",
     "adonis-typings",
@@ -20,11 +26,15 @@
     "types": "@kubit/queue/adonis-typings",
     "providers": [
       "@kubit/queue"
+    ],
+    "commands": [
+      "@kubit/queue/commands"
     ]
   },
   "publishConfig": {
     "access": "public"
   },
-  "peerDependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "bullmq": "^4.12.0"
+  }
 }

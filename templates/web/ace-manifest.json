@@ -95,6 +95,26 @@
       "args": [],
       "aliases": [],
       "flags": []
+    },
+    "queue:listen": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": true
+      },
+      "commandPath": "@kubit/queue/commands/listener",
+      "commandName": "queue:listen",
+      "description": "Listen to one or multiple queues",
+      "args": [],
+      "aliases": [],
+      "flags": [
+        {
+          "name": "queue",
+          "propertyName": "queue",
+          "type": "array",
+          "alias": "q",
+          "description": "The queue(s) to listen on"
+        }
+      ]
     }
   },
   "aliases": {}
