@@ -18,8 +18,12 @@
 |
 */
 
+import Test from '@app/Models/Test';
 import Route from '@ioc:Adonis/Core/Route';
 
 Route.get('/', async ({ view }) => {
+  const test = await Test.create({});
+
+  test.updatedAt;
   return view.render('welcome');
 });
