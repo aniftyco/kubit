@@ -10,6 +10,12 @@
 npm i @kubit/support
 ```
 
+### Configure
+
+```sh
+node ace configure @kubit/support
+```
+
 ### Utilities
 
 | Name                              | Description                                                                         |
