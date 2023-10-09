@@ -4,27 +4,27 @@
     "./commands",
     "@adonisjs/core/build/commands/index.js",
     "@adonisjs/repl/build/commands",
-    "@kubit/queue/commands"
+    "@kubit/queue/commands",
+    "@adonisjs/lucid/build/commands"
   ],
-  "exceptionHandlerNamespace": "App/Exceptions/Handler",
+  "exceptionHandlerNamespace": "@app/Exceptions/Handler",
   "aliases": {
-    "App": "app",
-    "Config": "config",
-    "Database": "database",
-    "Contracts": "contracts"
+    "@app": "app",
+    "@config": "config",
+    "@database": "database",
+    "@contracts": "contracts"
   },
-  "preloads": [
-    "./start/routes",
-    "./start/kernel"
-  ],
+  "preloads": ["./start/routes", "./start/kernel"],
   "providers": [
     "./providers/AppProvider",
     "@adonisjs/core",
     "@adonisjs/session",
     "@adonisjs/view",
     "@adonisjs/shield",
+    "@adonisjs/lucid",
     "@kubit/sentry",
-    "@kubit/queue"
+    "@kubit/queue",
+    "@kubit/support"
   ],
   "metaFiles": [
     {
@@ -36,21 +36,15 @@
       "reloadServer": false
     }
   ],
-  "aceProviders": [
-    "@adonisjs/repl"
-  ],
+  "aceProviders": ["@adonisjs/repl"],
   "tests": {
     "suites": [
       {
         "name": "functional",
-        "files": [
-          "tests/functional/**/*.spec(.ts|.js)"
-        ],
+        "files": ["tests/functional/**/*.spec(.ts|.js)"],
         "timeout": 60000
       }
     ]
   },
-  "testProviders": [
-    "@japa/preset-adonis/TestsProvider"
-  ]
+  "testProviders": ["@japa/preset-adonis/TestsProvider"]
 }
