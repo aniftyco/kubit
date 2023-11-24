@@ -7,14 +7,12 @@
 
 import proxyAddr from 'proxy-addr';
 
-import Application from '@ioc:Adonis/Core/Application';
 import Env from '@ioc:Adonis/Core/Env';
 
 import type { ServerConfig } from '@ioc:Adonis/Core/Server';
 import type { LoggerConfig } from '@ioc:Adonis/Core/Logger';
 import type { ProfilerConfig } from '@ioc:Adonis/Core/Profiler';
 import type { ValidatorConfig } from '@ioc:Adonis/Core/Validator';
-import type { AssetsManagerConfig } from '@ioc:Adonis/Core/AssetsManager';
 
 /*
 |--------------------------------------------------------------------------
@@ -218,61 +216,3 @@ export const profiler: ProfilerConfig = {
 |
 */
 export const validator: ValidatorConfig = {};
-
-/*
-|--------------------------------------------------------------------------
-| Assets
-|--------------------------------------------------------------------------
-|
-| Configure the asset manager you are using to compile the frontend assets
-|
-*/
-export const assets: AssetsManagerConfig = {
-  /*
-  |--------------------------------------------------------------------------
-  | Driver
-  |--------------------------------------------------------------------------
-  |
-  | Currently we only support webpack encore and may introduce more drivers
-  | in the future
-  |
-  */
-  driver: Env.get('ASSETS_DRIVER'),
-
-  /*
-  |--------------------------------------------------------------------------
-  | Public path
-  |--------------------------------------------------------------------------
-  |
-  | Directory to search for the "manifest.json" and the "entrypoints.json"
-  | files
-  |
-  */
-  publicPath: Application.publicPath('assets'),
-
-  /*
-  |--------------------------------------------------------------------------
-  | Script tag
-  |--------------------------------------------------------------------------
-  |
-  | Define attributes for the entryPointScripts tags
-  |
-  */
-  script: {
-    attributes: {
-      defer: true,
-    },
-  },
-
-  /*
-  |--------------------------------------------------------------------------
-  | Style tag
-  |--------------------------------------------------------------------------
-  |
-  | Define attributes for the entryPointStyles tags
-  |
-  */
-  style: {
-    attributes: {},
-  },
-};
