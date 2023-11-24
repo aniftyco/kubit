@@ -14,16 +14,12 @@
 | and then import them inside `start/routes.ts` as follows
 |
 | import './routes/cart'
-| import './routes/customer''
+| import './routes/customer'
 |
 */
 
-import Test from '@app/Models/Test';
 import Route from '@ioc:Adonis/Core/Route';
 
-Route.get('/', async ({ view }) => {
-  const test = await Test.create({});
-
-  test.updatedAt;
-  return view.render('welcome');
+Route.get('/', async () => {
+  return 'Hello world from a slim app';
 });
