@@ -1,10 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "types": ["@adonisjs/core", "@adonisjs/lucid", "@types/node"],
     "rootDir": "src",
     "outDir": "dist"
   },
   "include": ["**/*.ts"],
-  "exclude": ["dist"]
+  "exclude": ["dist", "tests"]
 }
