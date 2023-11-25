@@ -6,6 +6,5 @@
     "declaration": true,
     "strict": false,
     "incremental": false
-  },
-  "exclude": ["node_modules"]
+  }
 }
