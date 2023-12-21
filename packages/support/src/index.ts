@@ -14,4 +14,12 @@ export default class SupportProvider {
       };
     });
   }
+
+  public async boot() {
+    const HttpContext = this.app.container.resolveBinding('Adonis/Core/HttpContext');
+
+    globalThis.view = (path: string, state?: any) => {
+      return HttpContext.get()!.view.render(path, state);
+    };
+  }
 }

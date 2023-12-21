@@ -7,3 +7,7 @@ declare module '@ioc:Kubit/Support' {
 
   export const UsesUuids: UuidMixin;
 }
+
+declare global {
+  function view(path: string, state?: any): Promise<string>;
+}
