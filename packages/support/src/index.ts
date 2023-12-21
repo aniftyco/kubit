@@ -21,5 +21,10 @@ export default class SupportProvider {
     globalThis.view = (path: string, state?: any) => {
       return HttpContext.get()!.view.render(path, state);
     };
+
+    globalThis.back = () => {
+      return HttpContext.get()!.response.redirect().back();
+    };
+
   }
 }
