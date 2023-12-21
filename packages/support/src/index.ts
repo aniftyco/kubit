@@ -26,5 +26,8 @@ export default class SupportProvider {
       return HttpContext.get()!.response.redirect().back();
     };
 
+    globalThis.route = (name: string, params?: any, options?: any) => {
+      return HttpContext.get()!.route.makeUrl(name, params, options);
+    };
   }
 }

@@ -11,4 +11,5 @@ declare module '@ioc:Kubit/Support' {
 declare global {
   function view(path: string, state?: any): Promise<string>;
   function back(): void;
+  function route(name: string, params?: any, options?: any): string;
 }
