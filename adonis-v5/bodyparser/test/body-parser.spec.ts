@@ -11,24 +11,25 @@
 /// <reference path="../adonis-typings/index.ts" />
 
 import 'reflect-metadata'
-import { join } from 'path'
-import { tmpdir } from 'os'
-import fetch from 'node-fetch'
-import supertest from 'supertest'
-import { test } from '@japa/runner'
+
+import { outputFile, pathExists, readFile, remove } from 'fs-extra'
 import { createServer } from 'http'
-import { lodash } from '@poppinss/utils'
-import { pathExists, remove, readFile, outputFile } from 'fs-extra'
-import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
-import { Request as BaseRequest } from '@adonisjs/http-server/build/src/Request'
+import fetch from 'node-fetch'
+import { tmpdir } from 'os'
+import { join } from 'path'
+import supertest from 'supertest'
 
-import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
+import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
+import { test } from '@japa/runner'
+import { Request as BaseRequest } from '@kubit/http-server/build/src/Request'
+import { lodash } from '@poppinss/utils'
 
-import { Multipart } from '../src/Multipart'
 import extendRequest from '../src/Bindings/Request'
 import { BodyParserMiddleware } from '../src/BodyParser'
-import { packageFilePath, packageFileSize, setupApp, fs } from '../test-helpers'
+import { Multipart } from '../src/Multipart'
+import { fs, packageFilePath, packageFileSize, setupApp } from '../test-helpers'
 
 const Request = BaseRequest as unknown as RequestConstructorContract
 let app: ApplicationContract

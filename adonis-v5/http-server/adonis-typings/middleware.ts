@@ -8,8 +8,8 @@
  */
 
 declare module '@ioc:Adonis/Core/Middleware' {
-  import { IocContract } from '@adonisjs/fold'
   import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+  import { IocContract } from '@kubit/fold'
 
   export type DefaultExport<T> = Promise<{ default: T }>
 

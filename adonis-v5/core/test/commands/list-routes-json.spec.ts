@@ -8,13 +8,14 @@
  */
 
 import 'reflect-metadata'
+
 import { test } from '@japa/runner'
-import { Ioc } from '@adonisjs/fold'
-import { Kernel } from '@adonisjs/ace'
+import { Kernel } from '@kubit/ace'
+import { Application } from '@kubit/application'
+import { Ioc } from '@kubit/fold'
+import { Router } from '@kubit/http-server/build/src/Router'
+import { PreCompiler } from '@kubit/http-server/build/src/Server/PreCompiler/index'
 import { testingRenderer } from '@poppinss/cliui'
-import { Application } from '@adonisjs/application'
-import { Router } from '@adonisjs/http-server/build/src/Router'
-import { PreCompiler } from '@adonisjs/http-server/build/src/Server/PreCompiler/index'
 
 import ListRoutes from '../../commands/ListRoutes'
 

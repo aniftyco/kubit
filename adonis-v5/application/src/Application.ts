@@ -9,25 +9,25 @@
 
 /// <reference path="../adonis-typings/application.ts" />
 
+import { join } from 'path'
+import { parse as semverParse, satisfies as semverSatisfies } from 'semver'
+
 import {
+  AppEnvironments,
+  ApplicationContract,
+  ApplicationStates,
+  AssetsDriver,
+  PreloadNode,
   RcFile,
   SemverNode,
-  PreloadNode,
-  AppEnvironments,
-  ApplicationStates,
-  ApplicationContract,
-  AssetsDriver,
 } from '@ioc:Adonis/Core/Application'
-
-import { join } from 'path'
-import { Logger } from '@adonisjs/logger'
-import { Config } from '@adonisjs/config'
-import { Profiler } from '@adonisjs/profiler'
+import { Config } from '@kubit/config'
+import { Env, envLoader, EnvParser } from '@kubit/env'
+import { Ioc, Registrar } from '@kubit/fold'
+import { Logger } from '@kubit/logger'
+import { Profiler } from '@kubit/profiler'
 import { Exception } from '@poppinss/utils'
-import { Ioc, Registrar } from '@adonisjs/fold'
-import { Env, envLoader, EnvParser } from '@adonisjs/env'
 import * as helpers from '@poppinss/utils/build/helpers'
-import { parse as semverParse, satisfies as semverSatisfies } from 'semver'
 
 import { parse } from './rcParser'
 

@@ -7,10 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
+import { FakeLogger } from '@kubit/logger'
 import { Filesystem } from '@poppinss/dev-utils'
-import { FakeLogger } from '@adonisjs/logger'
+
 import { Profiler } from '../src/Profiler'
 
 const logger = new FakeLogger({ enabled: true, level: 'trace', name: 'adonis' })

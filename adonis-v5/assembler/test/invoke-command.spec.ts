@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
-import { Kernel } from '@adonisjs/ace'
+
+import { test } from '@japa/runner'
+import { Kernel } from '@kubit/ace'
+import { Application } from '@kubit/application'
 import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/application'
 
 import Invoke from '../commands/Invoke'
 

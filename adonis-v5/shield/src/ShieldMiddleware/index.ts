@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { inject } from '@adonisjs/core/build/standalone'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { inject } from '@kubit/core/build/standalone'
 
 import * as shield from '../../standalone'
+
 import type { ApplicationContract } from '@ioc:Adonis/Core/Application'
 
 /**

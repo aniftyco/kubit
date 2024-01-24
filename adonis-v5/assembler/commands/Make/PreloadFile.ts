@@ -7,11 +7,13 @@
  * file that was distributed with this source code.
  */
 
+import { extname, join } from 'path'
 import slash from 'slash'
-import { join, extname } from 'path'
-import { args, flags } from '@adonisjs/core/build/standalone'
+
+import { args, flags } from '@kubit/core/build/standalone'
 
 import { BaseGenerator } from './Base'
+
 import type { AppEnvironments } from '@ioc:Adonis/Core/Application'
 
 const ALLOWED_ENVIRONMENTS: AppEnvironments[] = ['console', 'web', 'repl', 'test']

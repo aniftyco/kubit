@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
 import { pathExists } from 'fs-extra'
-import { BaseCommand } from '@adonisjs/core/build/standalone'
+import { join } from 'path'
+
+import { BaseCommand } from '@kubit/core/build/standalone'
 
 /**
  * Base class to generate framework entities

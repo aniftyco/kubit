@@ -8,10 +8,11 @@
  */
 
 import { join } from 'path'
-import type tsStatic from 'typescript'
-import { rcParser } from '@adonisjs/application'
-import { iocTransformer } from '@adonisjs/ioc-transformer'
 
+import { rcParser } from '@kubit/application'
+import { iocTransformer } from '@kubit/ioc-transformer'
+
+import type tsStatic from 'typescript'
 /**
  * Transformer to transform AdonisJS IoC container import
  * statements

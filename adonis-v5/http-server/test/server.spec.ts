@@ -9,18 +9,20 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { test } from '@japa/runner'
 import 'reflect-metadata'
-import supertest from 'supertest'
+
 import { createServer } from 'http'
-import { inject } from '@adonisjs/fold'
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import supertest from 'supertest'
+
 import { ProfilerAction, ProfilerRow } from '@ioc:Adonis/Core/Profiler'
+import { test } from '@japa/runner'
+import { inject } from '@kubit/fold'
 
-import { Server } from '../src/Server'
 import { HttpContext } from '../src/HttpContext'
-import { serverConfig, fs, setupApp, encryption } from '../test-helpers'
+import { Server } from '../src/Server'
+import { encryption, fs, serverConfig, setupApp } from '../test-helpers'
 
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 test.group('Server | Response handling', (group) => {
   group.each.teardown(async () => {
     await fs.cleanup()

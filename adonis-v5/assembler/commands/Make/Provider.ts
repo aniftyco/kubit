@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
+import { extname, join } from 'path'
 import slash from 'slash'
-import { join, extname } from 'path'
-import { args, flags } from '@adonisjs/core/build/standalone'
+
+import { args, flags } from '@kubit/core/build/standalone'
 
 import { BaseGenerator } from './Base'
 

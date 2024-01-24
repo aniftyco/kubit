@@ -8,16 +8,18 @@
  */
 
 import 'reflect-metadata'
+
 import stripAnsi from 'strip-ansi'
-import { test } from '@japa/runner'
-import { Ioc } from '@adonisjs/fold'
-import { Kernel } from '@adonisjs/ace'
-import { testingRenderer } from '@poppinss/cliui'
-import { Application } from '@adonisjs/application'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
-import { Router } from '@adonisjs/http-server/build/src/Router'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { PreCompiler } from '@adonisjs/http-server/build/src/Server/PreCompiler/index'
+import { RouterContract } from '@ioc:Adonis/Core/Route'
+import { test } from '@japa/runner'
+import { Kernel } from '@kubit/ace'
+import { Application } from '@kubit/application'
+import { Ioc } from '@kubit/fold'
+import { Router } from '@kubit/http-server/build/src/Router'
+import { PreCompiler } from '@kubit/http-server/build/src/Server/PreCompiler/index'
+import { testingRenderer } from '@poppinss/cliui'
 
 import ListRoutes from '../../commands/ListRoutes'
 

@@ -7,20 +7,20 @@
  * file that was distributed with this source code.
  */
 
+import getPort from 'get-port'
 import { extname } from 'path'
 import picomatch from 'picomatch'
-import { logger as uiLogger } from '@poppinss/cliui'
-import { getWatcherHelpers } from '@adonisjs/require-ts'
 
-import { Ts } from '../Ts'
-import { RcFile } from '../RcFile'
-import { Manifest } from '../Manifest'
-import { TestProcess } from './process'
-import { JapaFlags } from '../Contracts'
+import { getWatcherHelpers } from '@kubit/require-ts'
+import { logger as uiLogger } from '@poppinss/cliui'
 
 import { ENV_FILES, TESTS_ENTRY_FILE } from '../../config/paths'
+import { JapaFlags } from '../Contracts'
 import { EnvParser } from '../EnvParser'
-import getPort from 'get-port'
+import { Manifest } from '../Manifest'
+import { RcFile } from '../RcFile'
+import { Ts } from '../Ts'
+import { TestProcess } from './process'
 
 /**
  * Exposes the API to watch project for compilition changes and

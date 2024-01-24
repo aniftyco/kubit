@@ -8,7 +8,8 @@
  */
 
 import { processTopLevelAwait } from 'node-repl-await'
-import { Compiler as TsCompiler } from '@adonisjs/require-ts/build/src/Compiler'
+
+import { Compiler as TsCompiler } from '@kubit/require-ts/build/src/Compiler'
 
 import { ImportsParser } from '../ImportsParser'
 

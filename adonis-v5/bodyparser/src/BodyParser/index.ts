@@ -10,19 +10,20 @@
 /// <reference path="../../adonis-typings/bodyparser.ts" />
 
 import { tmpdir } from 'os'
+import { isAbsolute, join } from 'path'
+
+import { inject } from '@kubit/application'
 import coBody from '@poppinss/co-body'
-import { join, isAbsolute } from 'path'
 import { Exception } from '@poppinss/utils'
-import { inject } from '@adonisjs/application'
 import { cuid } from '@poppinss/utils/build/helpers'
+
+import { Multipart } from '../Multipart'
+import { streamFile } from '../Multipart/streamFile'
 
 import type { ConfigContract } from '@ioc:Adonis/Core/Config'
 import type { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
 import type { BodyParserConfig } from '@ioc:Adonis/Core/BodyParser'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-
-import { Multipart } from '../Multipart'
-import { streamFile } from '../Multipart/streamFile'
 
 /**
  * BodyParser middleware parses the incoming request body and set it as

@@ -8,7 +8,7 @@
  */
 
 declare module '@ioc:Adonis/Core/Ace' {
-  import { Kernel } from '@adonisjs/ace'
+  import { Kernel } from '@kubit/ace'
 
   const Ace: Kernel
   export default Ace

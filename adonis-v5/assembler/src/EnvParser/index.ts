@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { EnvParser as Parser, envLoader } from '@adonisjs/env'
+import { envLoader, EnvParser as Parser } from '@kubit/env'
 
 /**
  * Parses the env file inside the project root.

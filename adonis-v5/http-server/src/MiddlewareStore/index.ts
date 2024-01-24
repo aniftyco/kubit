@@ -9,14 +9,13 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { IocContract, IocResolverContract } from '@adonisjs/fold'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-
 import {
   MiddlewareHandler,
   MiddlewareStoreContract,
   ResolvedMiddlewareHandler,
 } from '@ioc:Adonis/Core/Middleware'
+import { IocContract, IocResolverContract } from '@kubit/fold'
 
 /**
  * Middleware store register and keep all the application middleware at one

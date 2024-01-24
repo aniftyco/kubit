@@ -10,12 +10,12 @@
 /// <reference path="./index.ts" />
 
 declare module '@ioc:Adonis/Core/Application' {
-  import { IocContract } from '@adonisjs/fold'
+  import { ConfigContract } from '@ioc:Adonis/Core/Config'
   import { EnvContract } from '@ioc:Adonis/Core/Env'
   import * as Helpers from '@ioc:Adonis/Core/Helpers'
-  import { ConfigContract } from '@ioc:Adonis/Core/Config'
   import { LoggerContract } from '@ioc:Adonis/Core/Logger'
   import { ProfilerContract } from '@ioc:Adonis/Core/Profiler'
+  import { IocContract } from '@kubit/fold'
 
   /**
    * The interface that is meant to be extended in
@@ -399,5 +399,5 @@ declare module '@ioc:Adonis/Core/Application' {
   /**
    * Export Ioc Container static types
    */
-  export * from '@adonisjs/fold/build/src/Contracts'
+  export * from '@kubit/fold/build/src/Contracts'
 }

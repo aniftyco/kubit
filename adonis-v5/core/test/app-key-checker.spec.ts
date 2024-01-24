@@ -8,7 +8,7 @@
  */
 
 import { test } from '@japa/runner'
-import { Application } from '@adonisjs/application'
+import { Application } from '@kubit/application'
 
 import { HealthCheck } from '../src/HealthCheck'
 import appKeyHealthChecker from '../src/HealthCheck/Checkers/AppKey'

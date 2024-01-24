@@ -9,9 +9,9 @@
 
 /// <reference path="../adonis-typings/redis.ts" />
 
-import { test } from '@japa/runner'
 import { RedisManagerContract } from '@ioc:Adonis/Addons/Redis'
-import { Application, Emitter } from '@adonisjs/core/build/standalone'
+import { test } from '@japa/runner'
+import { Application, Emitter } from '@kubit/core/build/standalone'
 
 import { RedisManager } from '../src/RedisManager'
 

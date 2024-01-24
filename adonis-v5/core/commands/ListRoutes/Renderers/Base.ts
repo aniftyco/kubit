@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { BaseCommand } from '@adonisjs/core/build/standalone'
-import ListRoutes from '..'
+import { BaseCommand } from '@kubit/core/build/standalone'
+
+import ListRoutes from '../'
 
 /**
  * Methods registered by "Route.any" method

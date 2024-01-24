@@ -5,7 +5,7 @@
  * file.
  */
 
-import { InferConnectionsFromConfig } from '@adonisjs/redis/build/config'
+import { InferConnectionsFromConfig } from '@kubit/redis/build/config'
 import redisConfig from '../config/redis'
 
 declare module '@ioc:Adonis/Addons/Redis' {

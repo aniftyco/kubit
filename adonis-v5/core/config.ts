@@ -7,5 +7,5 @@
  * file that was distributed with this source code.
  */
 
-export { InferListFromConfig, hashConfig } from '@adonisjs/hash/build/config'
-export { InferDisksFromConfig, driveConfig } from '@adonisjs/drive/build/config'
+export { InferListFromConfig, hashConfig } from '@kubit/hash/build/config'
+export { InferDisksFromConfig, driveConfig } from '@kubit/drive/build/config'

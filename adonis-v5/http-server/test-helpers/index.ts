@@ -9,12 +9,13 @@
 
 import { join } from 'path'
 import proxyaddr from 'proxy-addr'
-import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/application'
-import { ServerConfig } from '@ioc:Adonis/Core/Server'
+
 import { RequestConfig } from '@ioc:Adonis/Core/Request'
 import { ResponseConfig } from '@ioc:Adonis/Core/Response'
-import { Encryption } from '@adonisjs/encryption/build/standalone'
+import { ServerConfig } from '@ioc:Adonis/Core/Server'
+import { Application } from '@kubit/application'
+import { Encryption } from '@kubit/encryption/build/standalone'
+import { Filesystem } from '@poppinss/dev-utils'
 
 export const appSecret = 'averylongrandom32charslongsecret'
 export const fs = new Filesystem(join(__dirname, './app'))

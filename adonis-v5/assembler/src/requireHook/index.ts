@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { register } from '@adonisjs/require-ts'
+import { register } from '@kubit/require-ts'
 
 /**
  * Exports the function to be used for registering require hook

@@ -7,10 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
+import { Application } from '@kubit/core/build/standalone'
 import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/core/build/standalone'
+
 import { Repl } from '../src/Repl'
 
 const fs = new Filesystem(join(__dirname, './app'))

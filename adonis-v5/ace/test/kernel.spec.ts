@@ -7,17 +7,19 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import 'reflect-metadata'
+
 import { join } from 'path'
 
-import { Kernel } from '../src/Kernel'
+import { test } from '@japa/runner'
+import { Application } from '@kubit/application'
+
+import { BaseCommand } from '../src/BaseCommand'
 import { args } from '../src/Decorators/args'
 import { flags } from '../src/Decorators/flags'
-import { BaseCommand } from '../src/BaseCommand'
-import { Application } from '@adonisjs/application'
+import { Kernel } from '../src/Kernel'
 import { ManifestLoader } from '../src/Manifest/Loader'
-import { setupApp, fs, info } from '../test-helpers'
+import { fs, info, setupApp } from '../test-helpers'
 
 test.group('Kernel | register', () => {
   test('raise error when required argument comes after optional argument', ({ assert }) => {

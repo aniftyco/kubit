@@ -7,14 +7,15 @@
  * file that was distributed with this source code.
  */
 
-import slash from 'slash'
-import picomatch from 'picomatch'
-import { join, relative } from 'path'
 import { readJSONSync } from 'fs-extra'
-import { Application } from '@adonisjs/application'
+import { join, relative } from 'path'
+import picomatch from 'picomatch'
+import slash from 'slash'
+
+import { Application } from '@kubit/application'
 import { resolveFrom } from '@poppinss/utils/build/helpers'
 
-import { RCFILE_NAME, ACE_FILE_NAME } from '../../config/paths'
+import { ACE_FILE_NAME, RCFILE_NAME } from '../../config/paths'
 
 /**
  * Exposes the API to pull meta files from the `.adonisrc.json` file and

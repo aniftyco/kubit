@@ -8,12 +8,11 @@
  */
 
 import { test } from '@japa/runner'
-import { Router } from '../src/Router'
-import { Ioc } from '@adonisjs/fold'
+import { Ioc } from '@kubit/fold'
 
 import { MiddlewareStore } from '../src/MiddlewareStore'
+import { Router } from '../src/Router'
 import { PreCompiler } from '../src/Server/PreCompiler'
-
 import { encryption } from '../test-helpers'
 
 test.group('Route precompiler', () => {

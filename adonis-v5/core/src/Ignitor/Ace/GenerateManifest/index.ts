@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
+import { ManifestGenerator } from '@kubit/ace'
 import { logger } from '@poppinss/cliui'
-import { ManifestGenerator } from '@adonisjs/ace'
 
 import { AppKernel } from '../../Kernel'
 import { AceRuntimeException } from '../Exceptions'

@@ -7,10 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
 import globParent from 'glob-parent'
+import { join } from 'path'
+
+import { args, flags } from '@kubit/core/build/standalone'
 import { string } from '@poppinss/utils/build/helpers'
-import { args, flags } from '@adonisjs/core/build/standalone'
+
 import { BaseGenerator } from './Base'
 
 /**

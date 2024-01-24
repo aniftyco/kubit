@@ -8,7 +8,8 @@
  */
 
 import { test } from '@japa/runner'
-import { Ioc } from '@adonisjs/fold'
+import { Ioc } from '@kubit/fold'
+
 import { MiddlewareStore } from '../src/MiddlewareStore'
 
 test.group('Middleware', () => {

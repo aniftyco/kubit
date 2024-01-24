@@ -8,8 +8,10 @@
  */
 
 import { join } from 'path'
+
+import { Application } from '@kubit/application'
 import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/application'
+
 import { Kernel } from '../src/Kernel'
 
 export const fs = new Filesystem(join(__dirname, 'app'))

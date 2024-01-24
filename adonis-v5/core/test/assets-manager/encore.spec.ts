@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
-import { Application } from '@adonisjs/application'
-import { EncoreDriver } from '../../src/AssetsManager/Drivers/Encore'
 
+import { test } from '@japa/runner'
+import { Application } from '@kubit/application'
+
+import { EncoreDriver } from '../../src/AssetsManager/Drivers/Encore'
 import { fs } from '../../test-helpers'
 
 test.group('Encore Driver', (group) => {

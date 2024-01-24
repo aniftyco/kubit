@@ -11,7 +11,7 @@
 
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { ErrorHandler, ResolvedErrorHandler } from '@ioc:Adonis/Core/Server'
-import { IocContract, IocResolverContract, IocResolverLookupNode } from '@adonisjs/fold'
+import { IocContract, IocResolverContract, IocResolverLookupNode } from '@kubit/fold'
 
 import { useReturnValue } from '../../helpers'
 

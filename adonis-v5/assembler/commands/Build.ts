@@ -8,7 +8,9 @@
  */
 
 import hasYarn from 'has-yarn'
-import { BaseCommand, flags } from '@adonisjs/core/build/standalone'
+
+import { BaseCommand, flags } from '@kubit/core/build/standalone'
+
 import { TSCONFIG_FILE_NAME } from '../config/paths'
 
 /**

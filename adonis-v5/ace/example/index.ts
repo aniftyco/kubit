@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { Application } from '@adonisjs/application'
+import { Application } from '@kubit/application'
 
-import { Kernel } from '../src/Kernel'
+import { BaseCommand } from '../src/BaseCommand'
 import { args } from '../src/Decorators/args'
 import { flags } from '../src/Decorators/flags'
-import { BaseCommand } from '../src/BaseCommand'
+import { Kernel } from '../src/Kernel'
 import { handleError } from '../src/utils/handleError'
 
 class Greet extends BaseCommand {

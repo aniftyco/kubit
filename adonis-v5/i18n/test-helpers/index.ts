@@ -8,9 +8,10 @@
  */
 
 import { join } from 'path'
-import { Filesystem } from '@poppinss/dev-utils'
+
 import { I18nConfig } from '@ioc:Adonis/Addons/I18n'
-import { Application } from '@adonisjs/core/build/standalone'
+import { Application } from '@kubit/core/build/standalone'
+import { Filesystem } from '@poppinss/dev-utils'
 
 export const fs = new Filesystem(join(__dirname, 'app'))
 

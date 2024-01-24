@@ -8,11 +8,11 @@
  */
 
 import { test } from '@japa/runner'
-import { FakeLogger } from '@adonisjs/logger'
+import { FakeLogger } from '@kubit/logger'
 import { Exception } from '@poppinss/utils'
 
-import { fs, setupApp } from '../test-helpers'
 import { HttpExceptionHandler } from '../src/HttpExceptionHandler'
+import { fs, setupApp } from '../test-helpers'
 
 test.group('HttpExceptionHandler', (group) => {
   group.each.teardown(async () => {

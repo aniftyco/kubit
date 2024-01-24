@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { BaseCommand, flags } from '@adonisjs/ace'
-import type { RouteNode } from '@ioc:Adonis/Core/Route'
+import { BaseCommand, flags } from '@kubit/ace'
 
-import { RoutesTableRenderer } from './Renderers/TableRenderer'
 import { RoutesPrettyRenderer } from './Renderers/PrettyRenderer'
+import { RoutesTableRenderer } from './Renderers/TableRenderer'
+
+import type { RouteNode } from '@ioc:Adonis/Core/Route'
 
 /**
  * Shape of a route serialized by the ListRoute JSON serializer

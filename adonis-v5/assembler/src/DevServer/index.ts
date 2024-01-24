@@ -8,17 +8,17 @@
  */
 
 import getPort from 'get-port'
-import { getWatcherHelpers } from '@adonisjs/require-ts'
-import { logger as uiLogger, sticker } from '@poppinss/cliui'
 
-import { Ts } from '../Ts'
-import { RcFile } from '../RcFile'
-import { Manifest } from '../Manifest'
-import { EnvParser } from '../EnvParser'
-import { HttpServer } from '../HttpServer'
+import { getWatcherHelpers } from '@kubit/require-ts'
+import { logger as uiLogger, sticker } from '@poppinss/cliui'
 
 import { ENV_FILES, SERVER_ENTRY_FILE } from '../../config/paths'
 import { AssetsBundler, DevServerResponse } from '../AssetsBundler'
+import { EnvParser } from '../EnvParser'
+import { HttpServer } from '../HttpServer'
+import { Manifest } from '../Manifest'
+import { RcFile } from '../RcFile'
+import { Ts } from '../Ts'
 
 /**
  * Exposes the API to watch project for compilition changes.

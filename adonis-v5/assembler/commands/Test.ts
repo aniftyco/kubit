@@ -7,7 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { BaseCommand, flags, args } from '@adonisjs/core/build/standalone'
+import { args, BaseCommand, flags } from '@kubit/core/build/standalone'
+
 import { JapaFlags } from '../src/Contracts'
 
 /**

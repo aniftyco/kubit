@@ -7,19 +7,20 @@
  * file that was distributed with this source code.
  */
 
-import slash from 'slash'
 import copyfiles from 'cpy'
-import tsStatic from 'typescript'
+import { outputJSON, remove } from 'fs-extra'
 import { join, relative } from 'path'
-import { remove, outputJSON } from 'fs-extra'
-import { iocTransformer } from '@adonisjs/ioc-transformer'
-import { logger as uiLogger, instructions } from '@poppinss/cliui'
+import slash from 'slash'
+import tsStatic from 'typescript'
 
-import { Ts } from '../Ts'
-import { RcFile } from '../RcFile'
-import { Manifest } from '../Manifest'
+import { iocTransformer } from '@kubit/ioc-transformer'
+import { instructions, logger as uiLogger } from '@poppinss/cliui'
+
 import { RCFILE_NAME } from '../../config/paths'
 import { AssetsBundler } from '../AssetsBundler'
+import { Manifest } from '../Manifest'
+import { RcFile } from '../RcFile'
+import { Ts } from '../Ts'
 
 /**
  * Exposes the API to build the AdonisJs project for development or

@@ -7,7 +7,8 @@
  * file that was distributed with this source code.
  */
 
-export { Ioc, Registrar, inject } from '@adonisjs/fold'
+export { Ioc, Registrar, inject } from '@kubit/fold'
 export { Application } from './src/Application'
 import * as rcParser from './src/rcParser'
+
 export { rcParser }

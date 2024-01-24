@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { BaseCommand } from '@adonisjs/ace'
+import { BaseCommand } from '@kubit/ace'
 
 /**
  * A command to display a list of routes

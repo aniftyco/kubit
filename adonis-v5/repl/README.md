@@ -47,17 +47,18 @@ AdonisJS REPL is a standalone and framework agnostic package to create custom No
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
-	- [Typescript support](#typescript-support)
-	- [History file](#history-file)
+  - [Typescript support](#typescript-support)
+  - [History file](#history-file)
 - [Accurate Stack Trace](#accurate-stack-trace)
 - [The `.ls` command](#the-ls-command)
 - [Adding custom properties](#adding-custom-properties)
-	- [Global methods](#global-methods)
+  - [Global methods](#global-methods)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -77,7 +78,7 @@ yarn add @adonisjs/repl
 Import the `Repl` class from the standalone module.
 
 ```ts
-import { Repl } from '@adonisjs/repl/build/standalone'
+import { Repl } from '@kubit/repl/build/standalone'
 const repl = new Repl()
 
 repl.start()
@@ -88,8 +89,8 @@ repl.start()
 You will have to make use of [@adonisjs/require-ts](https://npm.im/@adonisjs/require-ts) in order for the REPL to compile and run the typescript code. For example:
 
 ```ts
-import { loadCompiler } from '@adonisjs/require-ts'
-import { Repl } from '@adonisjs/repl/build/standalone'
+import { loadCompiler } from '@kubit/require-ts'
+import { Repl } from '@kubit/repl/build/standalone'
 
 const compilerOptions = {
   target: 'es2019',
@@ -125,7 +126,7 @@ You need to just pass the path to the history file and rest is taken care for yo
 ```ts
 import { join } from 'path'
 import { homedir } from 'os'
-import { Repl } from '@adonisjs/repl/build/standalone'
+import { Repl } from '@kubit/repl/build/standalone'
 
 const repl = new Repl(compiler, join(homedir(), '.adonis_repl_history'))
 
@@ -164,7 +165,7 @@ server.context.foo = 'bar'
 Similarly, you can add properties to the AdonisJS repl `context` by referencing the underlying `server` property.
 
 ```ts
-import { Repl } from '@adonisjs/repl/build/standalone'
+import { Repl } from '@kubit/repl/build/standalone'
 
 const repl = new Repl().start()
 repl.server.context.foo = 'bar'
@@ -175,7 +176,7 @@ repl.server.context.foo = 'bar'
 In addition to adding properties to the `context` directly. You can also define custom methods with a description and its usage text. For example:
 
 ```ts
-import { Repl } from '@adonisjs/repl/build/standalone'
+import { Repl } from '@kubit/repl/build/standalone'
 const repl = new Repl()
 
 repl.addMethod(
@@ -201,16 +202,12 @@ Checkout the following example
 ![](./assets/context-behavior.png)
 
 [gh-workflow-image]: https://img.shields.io/github/workflow/status/adonisjs/repl/test?style=for-the-badge
-[gh-workflow-url]: https://github.com/adonisjs/repl/actions/workflows/test.yml "Github action"
-
+[gh-workflow-url]: https://github.com/adonisjs/repl/actions/workflows/test.yml 'Github action'
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
 [typescript-url]: "typescript"
-
 [npm-image]: https://img.shields.io/npm/v/@adonisjs/repl.svg?style=for-the-badge&logo=npm
 [npm-url]: https://npmjs.org/package/@adonisjs/repl 'npm'
-
 [license-image]: https://img.shields.io/npm/l/@adonisjs/repl?color=blueviolet&style=for-the-badge
 [license-url]: LICENSE.md 'license'
-
 [synk-image]: https://img.shields.io/snyk/vulnerabilities/github/adonisjs/repl?label=Synk%20Vulnerabilities&style=for-the-badge
-[synk-url]: https://snyk.io/test/github/adonisjs/repl?targetFile=package.json "synk"
+[synk-url]: https://snyk.io/test/github/adonisjs/repl?targetFile=package.json 'synk'

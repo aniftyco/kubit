@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { Application } from '@adonisjs/application'
 import { AppEnvironments } from '@ioc:Adonis/Core/Application'
+import { Application } from '@kubit/application'
 
 import { registerTsHook } from '../../utils'
 import { SignalsListener } from '../SignalsListener'

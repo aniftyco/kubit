@@ -10,7 +10,8 @@
 /// <reference path="../adonis-typings/index.ts" />
 
 import { test } from '@japa/runner'
-import { Application } from '@adonisjs/application'
+import { Application } from '@kubit/application'
+
 import { HealthCheck } from '../src/HealthCheck'
 
 test.group('HealthCheck', () => {

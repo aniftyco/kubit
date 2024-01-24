@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { BaseCommand, flags } from '@adonisjs/core/build/standalone'
+import { BaseCommand, flags } from '@kubit/core/build/standalone'
 
 /**
  * Compile typescript project to Javascript and start

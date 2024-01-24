@@ -8,7 +8,8 @@
  */
 
 import { join } from 'path'
-import { args, flags } from '@adonisjs/core/build/standalone'
+
+import { args, flags } from '@kubit/core/build/standalone'
 import { string } from '@poppinss/utils/build/helpers'
 
 import { BaseGenerator } from './Base'

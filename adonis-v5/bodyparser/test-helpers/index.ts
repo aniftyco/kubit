@@ -9,12 +9,13 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import slash from 'slash'
 import { EOL } from 'os'
 import { join } from 'path'
-import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/application'
+import slash from 'slash'
+
 import { BodyParserConfig } from '@ioc:Adonis/Core/BodyParser'
+import { Application } from '@kubit/application'
+import { Filesystem } from '@poppinss/dev-utils'
 
 const contents = JSON.stringify(require('../package.json'), null, 2).split('\n').join(EOL)
 

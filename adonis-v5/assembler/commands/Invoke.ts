@@ -8,8 +8,9 @@
  */
 
 import { join } from 'path'
-import { tasks, files, logger, utils } from '@adonisjs/sink'
-import { BaseCommand, args } from '@adonisjs/core/build/standalone'
+
+import { args, BaseCommand } from '@kubit/core/build/standalone'
+import { files, logger, tasks, utils } from '@kubit/sink'
 
 import { Manifest } from '../src/Manifest'
 

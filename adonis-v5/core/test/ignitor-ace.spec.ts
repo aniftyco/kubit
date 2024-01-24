@@ -9,13 +9,14 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { test } from '@japa/runner'
 import { join } from 'path'
 import stripAnsi from 'strip-ansi'
-import { stdout, stderr } from 'test-console'
+import { stderr, stdout } from 'test-console'
+
+import { test } from '@japa/runner'
 
 import { Ignitor } from '../src/Ignitor'
-import { setupApplicationFiles, fs } from '../test-helpers'
+import { fs, setupApplicationFiles } from '../test-helpers'
 
 let processExit = process.exit
 
@@ -108,7 +109,7 @@ test.group('Ignitor | Ace | Generate Manifest', (group) => {
     await fs.add(
       'FooCommand.ts',
       `
-			import { BaseCommand } from '@adonisjs/ace'
+			import { BaseCommand } from '@kubit/ace'
 			global[Symbol.for('ioc.use')]('Adonis/Core/Env').__esModule.get('')
 
 			export default class FooCommand extends BaseCommand {

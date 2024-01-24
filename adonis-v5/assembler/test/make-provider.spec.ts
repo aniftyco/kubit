@@ -7,15 +7,16 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
-import { join } from 'path'
 import { readJSONSync } from 'fs-extra'
-import { Kernel } from '@adonisjs/ace'
-import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/application'
+import { join } from 'path'
 
-import { toNewlineArray } from '../test-helpers'
+import { test } from '@japa/runner'
+import { Kernel } from '@kubit/ace'
+import { Application } from '@kubit/application'
+import { Filesystem } from '@poppinss/dev-utils'
+
 import MakeProvider from '../commands/Make/Provider'
+import { toNewlineArray } from '../test-helpers'
 
 const fs = new Filesystem(join(__dirname, '__app'))
 const templates = new Filesystem(join(__dirname, '..', 'templates'))

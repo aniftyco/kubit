@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { BaseCommand } from '@adonisjs/ace'
+import { BaseCommand } from '@kubit/ace'
 import { string } from '@poppinss/utils/build/helpers'
 
 /**

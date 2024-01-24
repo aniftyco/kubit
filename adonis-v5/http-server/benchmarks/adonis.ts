@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import proxyaddr from 'proxy-addr'
 import { createServer } from 'http'
-import { Encryption } from '@adonisjs/encryption/build/standalone'
-import { Application } from '@adonisjs/application'
+import proxyaddr from 'proxy-addr'
+
+import { Application } from '@kubit/application'
+import { Encryption } from '@kubit/encryption/build/standalone'
 
 import { Server } from '../standalone'
 

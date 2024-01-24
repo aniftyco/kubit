@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-import { Kernel } from '@adonisjs/ace'
-import { sticker, logger } from '@poppinss/cliui'
+import { Kernel } from '@kubit/ace'
+import { SerializedCommand } from '@kubit/ace/build/src/Contracts'
+import { logger, sticker } from '@poppinss/cliui'
 import { resolveFrom } from '@poppinss/utils/build/helpers'
-import { SerializedCommand } from '@adonisjs/ace/build/src/Contracts'
 
-import { AppKernel } from '../../Kernel'
 import { loadAceCommands } from '../../../utils'
+import { AppKernel } from '../../Kernel'
 import { GenerateManifest } from '../GenerateManifest'
 
 /**

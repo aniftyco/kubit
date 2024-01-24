@@ -9,17 +9,18 @@
 
 /// <reference path="../../../adonis-typings/index.ts" />
 
-import haye from 'haye'
 import { Middleware } from 'co-compose'
-import { RouteNode } from '@ioc:Adonis/Core/Route'
-import { Exception } from '@poppinss/utils'
-import { interpolate } from '@poppinss/utils/build/helpers'
-import { IocContract, IocResolverContract } from '@adonisjs/fold'
+import haye from 'haye'
+
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { MiddlewareStoreContract, ResolvedMiddlewareHandler } from '@ioc:Adonis/Core/Middleware'
+import { RouteNode } from '@ioc:Adonis/Core/Route'
+import { IocContract, IocResolverContract } from '@kubit/fold'
+import { Exception } from '@poppinss/utils'
+import { interpolate } from '@poppinss/utils/build/helpers'
 
-import { useReturnValue } from '../../helpers'
 import { E_MISSING_NAMED_MIDDLEWARE } from '../../../exceptions.json'
+import { useReturnValue } from '../../helpers'
 
 /**
  * Precompiler is used to pre compiler the route handler and middleware. We

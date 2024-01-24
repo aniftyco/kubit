@@ -7,16 +7,15 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
-
 import { FileValidationOptions } from '@ioc:Adonis/Core/BodyParser'
-import { File } from '@adonisjs/bodyparser/build/src/Multipart/File'
+import { test } from '@japa/runner'
+import { File } from '@kubit/bodyparser/build/src/Multipart/File'
 
-import { rules } from '../../src/Rules'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
 import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
 import { file } from '../../src/Validations/primitives/file'
+import { validate } from '../fixtures/rules/index'
 
 function compile(options: Partial<FileValidationOptions>) {
   return file.compile('literal', 'file', rules['file'](options).options, {})

@@ -7,12 +7,13 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
-import { Application } from '@adonisjs/application'
 
-import { fs } from '../../test-helpers'
+import { test } from '@japa/runner'
+import { Application } from '@kubit/application'
+
 import { ViteDriver } from '../../src/AssetsManager/Drivers/Vite'
+import { fs } from '../../test-helpers'
 
 test.group('Encore Driver', (group) => {
   group.each.setup(async () => {

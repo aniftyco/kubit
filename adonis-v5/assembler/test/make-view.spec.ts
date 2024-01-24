@@ -7,12 +7,13 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
-import { join } from 'path'
 import { readJSONSync } from 'fs-extra'
-import { Kernel } from '@adonisjs/ace'
+import { join } from 'path'
+
+import { test } from '@japa/runner'
+import { Kernel } from '@kubit/ace'
+import { Application } from '@kubit/application'
 import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/application'
 
 import MakeView from '../commands/Make/View'
 

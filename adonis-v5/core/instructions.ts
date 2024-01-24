@@ -8,9 +8,10 @@
  */
 
 import { join } from 'path'
-import * as sinkStatic from '@adonisjs/sink'
-import { string } from '@poppinss/utils/build/helpers'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import * as sinkStatic from '@kubit/sink'
+import { string } from '@poppinss/utils/build/helpers'
 
 const ENV_VALIDATIONS_TEMPLATE_STUB = join(__dirname, './templates', 'env.txt')
 const STATIC_TEMPLATE_STUB = join(__dirname, './templates', 'config', 'static.txt')

@@ -8,7 +8,8 @@
  */
 
 import { join } from 'path'
-import { ManifestGenerator } from '@adonisjs/ace'
+
+import { ManifestGenerator } from '@kubit/ace'
 import { fsReadAll } from '@poppinss/utils/build/helpers'
 
 /**

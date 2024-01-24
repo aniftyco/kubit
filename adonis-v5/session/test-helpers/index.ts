@@ -8,12 +8,13 @@
  */
 
 import { join } from 'path'
-import { Filesystem } from '@poppinss/dev-utils'
-import { SessionConfig } from '@ioc:Adonis/Addons/Session'
-import { Application } from '@adonisjs/core/build/standalone'
+
 import { RedisManagerContract } from '@ioc:Adonis/Addons/Redis'
+import { SessionConfig } from '@ioc:Adonis/Addons/Session'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { RedisManager } from '@adonisjs/redis/build/src/RedisManager/index.js'
+import { Application } from '@kubit/core/build/standalone'
+import { RedisManager } from '@kubit/redis/build/src/RedisManager/index.js'
+import { Filesystem } from '@poppinss/dev-utils'
 
 export const fs = new Filesystem(join(__dirname, 'app'))
 

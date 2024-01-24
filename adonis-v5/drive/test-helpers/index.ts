@@ -8,8 +8,9 @@
  */
 
 import { join } from 'path'
+
+import { Application } from '@kubit/application'
 import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/application'
 
 export const fs = new Filesystem(join(__dirname, '__app'))
 

@@ -7,12 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
-import { Logger } from '@adonisjs/logger'
-import { Profiler } from '@adonisjs/profiler'
+
+import { test } from '@japa/runner'
+import { Logger } from '@kubit/logger'
+import { Profiler } from '@kubit/profiler'
 import { Filesystem } from '@poppinss/dev-utils'
 import * as helpers from '@poppinss/utils/build/helpers'
+
 import { Application } from '../src/Application'
 
 const fs = new Filesystem(join(__dirname, 'app'))

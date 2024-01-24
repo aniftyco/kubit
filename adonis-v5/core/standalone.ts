@@ -7,11 +7,11 @@
  * file that was distributed with this source code.
  */
 
-export * from '@adonisjs/application'
-export * from '@adonisjs/drive/build/standalone'
-export { Hash } from '@adonisjs/hash/build/standalone'
-export { Emitter } from '@adonisjs/events/build/standalone'
-export { Encryption } from '@adonisjs/encryption/build/standalone'
+export * from '@kubit/application'
+export * from '@kubit/drive/build/standalone'
+export { Hash } from '@kubit/hash/build/standalone'
+export { Emitter } from '@kubit/events/build/standalone'
+export { Encryption } from '@kubit/encryption/build/standalone'
 
 export {
   Server,
@@ -20,7 +20,7 @@ export {
   Response,
   HttpContext,
   MiddlewareStore,
-} from '@adonisjs/http-server/build/standalone'
+} from '@kubit/http-server/build/standalone'
 
 export {
   args,
@@ -30,7 +30,7 @@ export {
   ManifestLoader,
   ManifestGenerator,
   listDirectoryFiles,
-} from '@adonisjs/ace'
+} from '@kubit/ace'
 
 export { Ignitor } from './src/Ignitor'
 export { Exception } from '@poppinss/utils'

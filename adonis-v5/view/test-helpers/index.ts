@@ -8,8 +8,9 @@
  */
 
 import { join } from 'path'
+
+import { Application } from '@kubit/core/build/standalone'
 import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/core/build/standalone'
 
 export const fs = new Filesystem(join(__dirname, 'app'))
 export const APP_KEY = Math.random().toFixed(36).substring(2, 38)

@@ -8,12 +8,12 @@
  */
 
 import { test } from '@japa/runner'
-import { Application } from '@adonisjs/application'
+import { Application } from '@kubit/application'
 
-import { Hash } from '../src/Hash'
-import { Fake } from '../src/Drivers/Fake'
 import { Argon } from '../src/Drivers/Argon'
 import { Bcrypt } from '../src/Drivers/Bcrypt'
+import { Fake } from '../src/Drivers/Fake'
+import { Hash } from '../src/Hash'
 
 const config = {
   default: 'bcrypt' as const,

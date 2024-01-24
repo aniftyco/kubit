@@ -9,8 +9,8 @@
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
-import { Application } from '@adonisjs/application'
 import { AppEnvironments } from '@ioc:Adonis/Core/Application'
+import { Application } from '@kubit/application'
 
 import { Ace } from './Ace'
 import { HttpServer } from './HttpServer'

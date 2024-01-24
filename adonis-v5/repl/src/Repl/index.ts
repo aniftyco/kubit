@@ -7,13 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { Script } from 'vm'
+import { Recoverable, REPLServer, start } from 'repl'
 import stringWidth from 'string-width'
-import { getBest } from '@poppinss/colors'
-import { start, REPLServer, Recoverable } from 'repl'
 import { inspect, promisify as utilPromisify } from 'util'
-import { ReplContract, Handler, ContextOptions } from '@ioc:Adonis/Addons/Repl'
-import { Compiler as TsCompiler } from '@adonisjs/require-ts/build/src/Compiler'
+import { Script } from 'vm'
+
+import { ContextOptions, Handler, ReplContract } from '@ioc:Adonis/Addons/Repl'
+import { Compiler as TsCompiler } from '@kubit/require-ts/build/src/Compiler'
+import { getBest } from '@poppinss/colors'
 
 import { Compiler } from '../Compiler'
 

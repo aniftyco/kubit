@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { BaseCommand, args, flags } from '@adonisjs/core/build/standalone'
-import { files, logger } from '@adonisjs/sink'
 import globParent from 'glob-parent'
 import { join } from 'path'
+
+import { args, BaseCommand, flags } from '@kubit/core/build/standalone'
+import { files, logger } from '@kubit/sink'
 
 /**
  * Create a new test suite

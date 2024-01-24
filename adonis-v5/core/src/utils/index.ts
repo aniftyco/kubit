@@ -7,13 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
 import { createServer } from 'http'
-import { Kernel, ManifestLoader } from '@adonisjs/ace'
-import { ServerContract } from '@ioc:Adonis/Core/Server'
-import { resolveFrom } from '@poppinss/utils/build/helpers'
-import { CustomServerCallback } from '@ioc:Adonis/Core/TestUtils'
+import { join } from 'path'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ServerContract } from '@ioc:Adonis/Core/Server'
+import { CustomServerCallback } from '@ioc:Adonis/Core/TestUtils'
+import { Kernel, ManifestLoader } from '@kubit/ace'
+import { resolveFrom } from '@poppinss/utils/build/helpers'
 
 /**
  * Registers the ts hook to compile typescript code within the memory

@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
 import { existsSync, mkdirSync } from 'fs'
-import * as sinkStatic from '@adonisjs/sink'
+import { join } from 'path'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import * as sinkStatic from '@kubit/sink'
 
 /**
  * Returns absolute path to the stub relative from the templates

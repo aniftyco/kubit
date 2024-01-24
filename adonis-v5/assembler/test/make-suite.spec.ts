@@ -7,12 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
-import { Kernel } from '@adonisjs/ace'
+
+import { test } from '@japa/runner'
+import { Kernel } from '@kubit/ace'
+import { Application } from '@kubit/application'
+import { files } from '@kubit/sink'
 import { Filesystem } from '@poppinss/dev-utils'
-import { Application } from '@adonisjs/application'
-import { files } from '@adonisjs/sink'
+
 import CreateSuite from '../commands/Make/Suite'
 
 const fs = new Filesystem(join(__dirname, '__app'))
