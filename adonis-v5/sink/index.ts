@@ -17,10 +17,9 @@ export {
   testingRenderer,
   tasks as tasksUi,
 } from '@poppinss/cliui'
-import { PromptContract } from '@poppinss/prompts'
-
 import './src/disableLogger'
-import * as pkg from './package.json'
+
+import { PromptContract } from '@poppinss/prompts'
 
 /**
  * Returns a new instance of prompt. Also we lazy load the prompts
@@ -34,7 +33,7 @@ function getPrompt(): PromptContract {
  * Sharing the sink version, since sink is mainly passed as a reference by
  * the cli
  */
-export const sinkVersion = pkg.version
+export const sinkVersion = '0.0.1'
 
 export { getPrompt }
 
