@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/shield",
+  "name": "@kubit/shield",
   "version": "7.1.1",
   "description": "A middleware for AdonisJS to keep web applications secure from common web attacks",
   "main": "build/providers/ShieldProvider.js",
@@ -14,9 +14,9 @@
   ],
   "typings": "./build/adonis-typings/index.d.ts",
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "test": "node -r @kubit/require-ts/build/register bin/test.ts",
     "prepublishOnly": "npm run build",
     "clean": "del-cli build",
     "copy:files": "copyfiles \"templates/**/*.txt\" build && npm run copy:instructions_md",
@@ -28,7 +28,7 @@
     "version": "npm run build",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/shield"
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/shield"
   },
   "keywords": [
     "adonisjs",
@@ -38,23 +38,23 @@
     "csp"
   ],
   "peerDependencies": {
-    "@adonisjs/core": "^5.7.0",
-    "@adonisjs/session": "^6.2.0",
-    "@adonisjs/view": "^6.1.0"
+    "@kubit/core": "^5.7.0",
+    "@kubit/session": "^6.2.0",
+    "@kubit/view": "^6.1.0"
   },
   "peerDependenciesMeta": {
-    "@adonisjs/view": {
+    "@kubit/view": {
       "optional": true
     }
   },
   "author": "virk",
   "license": "MIT",
   "devDependencies": {
-    "@adonisjs/core": "^5.9.0",
-    "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/require-ts": "^2.0.13",
-    "@adonisjs/session": "^6.4.0",
-    "@adonisjs/view": "^6.2.0",
+    "@kubit/core": "^5.9.0",
+    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/require-ts": "^2.0.13",
+    "@kubit/session": "^6.4.0",
+    "@kubit/view": "^6.2.0",
     "@japa/assert": "^1.4.1",
     "@japa/preset-adonis": "^1.2.0",
     "@japa/run-failed-tests": "^1.1.1",
@@ -102,7 +102,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {
@@ -112,9 +112,9 @@
   },
   "adonisjs": {
     "instructionsMd": "./build/instructions.md",
-    "types": "@adonisjs/shield",
+    "types": "@kubit/shield",
     "providers": [
-      "@adonisjs/shield"
+      "@kubit/shield"
     ],
     "templates": {
       "config": [

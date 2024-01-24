@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/view",
+  "name": "@kubit/view",
   "version": "6.2.0",
   "description": "View/template engine for AdonisJs",
   "main": "build/providers/ViewProvider.js",
@@ -11,9 +11,9 @@
   ],
   "typings": "./build/adonis-typings/index.d.ts",
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "test": "node -r @kubit/require-ts/build/register bin/test.ts",
     "lint": "eslint . --ext=.ts",
     "clean": "del-cli build",
     "compile": "npm run lint && npm run clean && tsc",
@@ -21,7 +21,7 @@
     "commit": "git-cz",
     "release": "np --message=\"chore(release): %s\"",
     "version": "npm run build",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/view",
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/view",
     "format": "prettier --write .",
     "prepublishOnly": "npm run build"
   },
@@ -41,11 +41,11 @@
   },
   "homepage": "https://github.com/aniftyco/kubit#readme",
   "devDependencies": {
-    "@adonisjs/core": "^5.8.6",
-    "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/repl": "^3.1.11",
-    "@adonisjs/require-ts": "^2.0.12",
-    "@adonisjs/sink": "^5.4.0",
+    "@kubit/core": "^5.8.6",
+    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/repl": "^3.1.11",
+    "@kubit/require-ts": "^2.0.12",
+    "@kubit/sink": "^5.4.0",
     "@japa/assert": "^1.3.5",
     "@japa/run-failed-tests": "^1.0.8",
     "@japa/runner": "^2.1.1",
@@ -69,7 +69,7 @@
     "typescript": "^4.8.2"
   },
   "peerDependencies": {
-    "@adonisjs/core": "^5.7.0"
+    "@kubit/core": "^5.7.0"
   },
   "nyc": {
     "exclude": [
@@ -81,7 +81,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {
@@ -99,10 +99,10 @@
     "edge.js": "^5.5.0"
   },
   "adonisjs": {
-    "types": "@adonisjs/view",
+    "types": "@kubit/view",
     "instructionsMd": "./build/instructions.md",
     "providers": [
-      "@adonisjs/view"
+      "@kubit/view"
     ],
     "env": {
       "CACHE_VIEWS": false

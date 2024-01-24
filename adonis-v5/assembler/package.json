@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/assembler",
+  "name": "@kubit/assembler",
   "version": "5.9.6",
   "description": "Core commands to compiler and build AdonisJs project",
   "main": "build/ace-manifest.json",
@@ -16,9 +16,9 @@
     "build/ace-manifest.json"
   ],
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "cross-env FORCE_COLOR=true node -r @adonisjs/require-ts/build/register ./bin/test.ts",
+    "test": "cross-env FORCE_COLOR=true node -r @kubit/require-ts/build/register ./bin/test.ts",
     "lint": "eslint . --ext=.ts",
     "clean": "del-cli build",
     "compile": "npm run lint && npm run clean && tsc",
@@ -26,7 +26,7 @@
     "commit": "git-cz",
     "release": "np --message=\"chore(release): %s\"",
     "version": "npm run build",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/assembler",
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/assembler",
     "format": "prettier --write .",
     "prepublishOnly": "npm run build"
   },
@@ -47,9 +47,9 @@
   },
   "homepage": "https://github.com/aniftyco/kubit#readme",
   "devDependencies": {
-    "@adonisjs/ace": "^11.3.1",
-    "@adonisjs/core": "^5.8.9",
-    "@adonisjs/mrm-preset": "^5.0.3",
+    "@kubit/ace": "^11.3.1",
+    "@kubit/core": "^5.8.9",
+    "@kubit/mrm-preset": "^5.0.3",
     "@japa/assert": "^1.3.6",
     "@japa/run-failed-tests": "^1.1.0",
     "@japa/runner": "^2.2.2",
@@ -82,7 +82,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {
@@ -95,11 +95,11 @@
     "anyBranch": false
   },
   "dependencies": {
-    "@adonisjs/application": "^5.2.5",
-    "@adonisjs/env": "^3.0.9",
-    "@adonisjs/ioc-transformer": "^2.3.4",
-    "@adonisjs/require-ts": "^2.0.13",
-    "@adonisjs/sink": "^5.4.2",
+    "@kubit/application": "^5.2.5",
+    "@kubit/env": "^3.0.9",
+    "@kubit/ioc-transformer": "^2.3.4",
+    "@kubit/require-ts": "^2.0.13",
+    "@kubit/sink": "^5.4.2",
     "@poppinss/chokidar-ts": "^3.3.5",
     "@poppinss/cliui": "^3.0.5",
     "@poppinss/utils": "^5.0.0",
@@ -114,7 +114,7 @@
     "slash": "^3.0.0"
   },
   "peerDependencies": {
-    "@adonisjs/core": "^5.1.0"
+    "@kubit/core": "^5.1.0"
   },
   "publishConfig": {
     "access": "public",

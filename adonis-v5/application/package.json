@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/application",
+  "name": "@kubit/application",
   "version": "5.3.0",
   "description": "AdonisJS application class to read app related data",
   "main": "build/index.js",
@@ -10,9 +10,9 @@
     "build/index.js"
   ],
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "test": "node -r @kubit/require-ts/build/register bin/test.ts",
     "clean": "del-cli build",
     "compile": "npm run lint && npm run clean && tsc",
     "build": "npm run compile",
@@ -22,7 +22,7 @@
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/application"
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/application"
   },
   "keywords": [
     "adonisjs",
@@ -31,8 +31,8 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "devDependencies": {
-    "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/require-ts": "^2.0.13",
+    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/require-ts": "^2.0.13",
     "@japa/assert": "^1.3.6",
     "@japa/run-failed-tests": "^1.1.0",
     "@japa/runner": "^2.2.2",
@@ -65,7 +65,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {
@@ -74,11 +74,11 @@
     }
   },
   "dependencies": {
-    "@adonisjs/config": "^3.0.9",
-    "@adonisjs/env": "^3.0.9",
-    "@adonisjs/fold": "^8.2.0",
-    "@adonisjs/logger": "^4.1.5",
-    "@adonisjs/profiler": "^6.0.9",
+    "@kubit/config": "^3.0.9",
+    "@kubit/env": "^3.0.9",
+    "@kubit/fold": "^8.2.0",
+    "@kubit/logger": "^4.1.5",
+    "@kubit/profiler": "^6.0.9",
     "@poppinss/utils": "^5.0.0",
     "semver": "^7.3.8"
   },

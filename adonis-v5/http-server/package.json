@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/http-server",
+  "name": "@kubit/http-server",
   "version": "5.12.0",
   "description": "AdonisJS HTTP server with support packed with Routing and Cookies",
   "main": "build/providers/HttpServerProvider.js",
@@ -12,7 +12,7 @@
     "build/standalone.js"
   ],
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
     "test": "node -r ts-node/register/transpile-only bin/test.ts",
     "clean": "del-cli build",
@@ -26,7 +26,7 @@
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/http-server",
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/http-server",
     "prepare": "husky install"
   },
   "keywords": [
@@ -36,10 +36,10 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "devDependencies": {
-    "@adonisjs/application": "^5.2.5",
-    "@adonisjs/encryption": "^4.0.8",
-    "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/require-ts": "^2.0.13",
+    "@kubit/application": "^5.2.5",
+    "@kubit/encryption": "^4.0.8",
+    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/require-ts": "^2.0.13",
     "@japa/assert": "^1.3.6",
     "@japa/run-failed-tests": "^1.1.0",
     "@japa/runner": "^2.2.2",
@@ -76,8 +76,8 @@
     "typescript": "^4.8.4"
   },
   "peerDependencies": {
-    "@adonisjs/application": "^5.0.0",
-    "@adonisjs/encryption": "^4.0.0"
+    "@kubit/application": "^5.0.0",
+    "@kubit/encryption": "^4.0.0"
   },
   "nyc": {
     "exclude": [

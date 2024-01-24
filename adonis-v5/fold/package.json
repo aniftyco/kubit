@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/fold",
+  "name": "@kubit/fold",
   "version": "8.2.0",
   "description": "Dependency manager and IoC container for your next NodeJs application",
   "main": "build/index.js",
@@ -9,9 +9,9 @@
     "build/index.js"
   ],
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "test": "node -r @kubit/require-ts/build/register bin/test.ts",
     "lint": "eslint . --ext=.ts",
     "clean": "del-cli build",
     "compile": "npm run lint && npm run clean && tsc",
@@ -19,7 +19,7 @@
     "commit": "git-cz",
     "release": "np --message=\"chore(release): %s\"",
     "version": "npm run build",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/fold",
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/fold",
     "format": "prettier --write .",
     "prepublishOnly": "npm run build"
   },
@@ -42,8 +42,8 @@
   },
   "homepage": "https://github.com/aniftyco/kubit#readme",
   "devDependencies": {
-    "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/require-ts": "^2.0.11",
+    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/require-ts": "^2.0.11",
     "@japa/assert": "^1.3.4",
     "@japa/run-failed-tests": "^1.0.3",
     "@japa/runner": "^2.0.7",
@@ -76,7 +76,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {

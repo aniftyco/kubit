@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/events",
+  "name": "@kubit/events",
   "version": "7.2.1",
   "description": "Event emitter with asynchronous events",
   "main": "build/providers/EventProvider.js",
@@ -11,9 +11,9 @@
     "build/standalone.js"
   ],
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "test": "node -r @kubit/require-ts/build/register bin/test.ts",
     "clean": "del-cli build",
     "compile": "npm run lint && npm run clean && tsc",
     "build": "npm run compile",
@@ -23,7 +23,7 @@
     "format": "prettier --write .",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext=.ts",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/events"
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/events"
   },
   "keywords": [
     "emitter",
@@ -32,9 +32,9 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "devDependencies": {
-    "@adonisjs/application": "^5.1.5",
-    "@adonisjs/mrm-preset": "^5.0.2",
-    "@adonisjs/require-ts": "^2.0.7",
+    "@kubit/application": "^5.1.5",
+    "@kubit/mrm-preset": "^5.0.2",
+    "@kubit/require-ts": "^2.0.7",
     "@japa/assert": "^1.2.3",
     "@japa/run-failed-tests": "^1.0.3",
     "@japa/runner": "^2.0.6",
@@ -76,7 +76,7 @@
     "emittery": "^0.10.0"
   },
   "peerDependencies": {
-    "@adonisjs/application": "^5.0.0"
+    "@kubit/application": "^5.0.0"
   },
   "directories": {
     "doc": "docs",

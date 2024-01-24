@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/core",
+  "name": "@kubit/core",
   "version": "5.9.0",
   "description": "Core of AdonisJS",
   "exports": {
@@ -37,9 +37,9 @@
     "build/standalone.d.ts"
   ],
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "test": "node -r @kubit/require-ts/build/register bin/test.ts",
     "clean": "del-cli build",
     "compile": "npm run lint && npm run clean && tsc && copyfiles templates/**/* templates/* build",
     "build": "npm run compile",
@@ -49,7 +49,7 @@
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/core"
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/core"
   },
   "types": "./build/adonis-typings/index.d.ts",
   "repository": {
@@ -68,13 +68,13 @@
   },
   "homepage": "https://github.com/aniftyco/kubit#readme",
   "devDependencies": {
-    "@adonisjs/assembler": "^5.9.5",
-    "@adonisjs/fold": "^8.2.0",
-    "@adonisjs/logger": "^4.1.5",
-    "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/repl": "^3.1.11",
-    "@adonisjs/require-ts": "^2.0.13",
-    "@adonisjs/sink": "^5.4.2",
+    "@kubit/assembler": "^5.9.5",
+    "@kubit/fold": "^8.2.0",
+    "@kubit/logger": "^4.1.5",
+    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/repl": "^3.1.11",
+    "@kubit/require-ts": "^2.0.13",
+    "@kubit/sink": "^5.4.2",
     "@japa/assert": "^1.3.6",
     "@japa/preset-adonis": "^1.2.0",
     "@japa/run-failed-tests": "^1.1.0",
@@ -116,7 +116,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {
@@ -125,15 +125,15 @@
     }
   },
   "dependencies": {
-    "@adonisjs/ace": "^11.3.1",
-    "@adonisjs/application": "^5.3.0",
-    "@adonisjs/bodyparser": "^8.1.7",
-    "@adonisjs/drive": "^2.3.0",
-    "@adonisjs/encryption": "^4.0.8",
-    "@adonisjs/events": "^7.2.1",
-    "@adonisjs/hash": "^7.2.2",
-    "@adonisjs/http-server": "^5.12.0",
-    "@adonisjs/validator": "^12.4.1",
+    "@kubit/ace": "^11.3.1",
+    "@kubit/application": "^5.3.0",
+    "@kubit/bodyparser": "^8.1.7",
+    "@kubit/drive": "^2.3.0",
+    "@kubit/encryption": "^4.0.8",
+    "@kubit/events": "^7.2.1",
+    "@kubit/hash": "^7.2.2",
+    "@kubit/http-server": "^5.12.0",
+    "@kubit/validator": "^12.4.1",
     "@poppinss/cliui": "^3.0.5",
     "@poppinss/manager": "^5.0.2",
     "@poppinss/utils": "^5.0.0",
@@ -189,11 +189,11 @@
       ]
     },
     "commands": [
-      "@adonisjs/core/build/commands/index.js"
+      "@kubit/core/build/commands/index.js"
     ],
-    "types": "@adonisjs/core",
+    "types": "@kubit/core",
     "providers": [
-      "@adonisjs/core"
+      "@kubit/core"
     ]
   },
   "publishConfig": {

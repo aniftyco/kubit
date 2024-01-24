@@ -9,11 +9,11 @@
     "test": "node ace test"
   },
   "dependencies": {
-    "@adonisjs/core": "^5.9.0",
-    "@adonisjs/repl": "^3.1.11",
-    "@adonisjs/session": "^6.4.0",
-    "@adonisjs/shield": "^7.1.1",
-    "@adonisjs/view": "^6.2.0",
+    "@kubit/core": "^5.9.0",
+    "@kubit/repl": "^3.1.11",
+    "@kubit/session": "^6.4.0",
+    "@kubit/shield": "^7.1.1",
+    "@kubit/view": "^6.2.0",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21"

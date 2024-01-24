@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/mrm-preset",
+  "name": "@kubit/mrm-preset",
   "version": "5.0.3",
   "description": "MRM preset used by adonisjs for all core packages",
   "main": "config.json",

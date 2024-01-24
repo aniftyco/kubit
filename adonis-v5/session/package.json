@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/session",
+  "name": "@kubit/session",
   "version": "6.4.0",
   "description": "Session provider for AdonisJS",
   "typings": "./build/adonis-typings/index.d.ts",
@@ -18,13 +18,13 @@
     "fs-extra": "^10.1.0"
   },
   "peerDependencies": {
-    "@adonisjs/core": "^5.8.0"
+    "@kubit/core": "^5.8.0"
   },
   "devDependencies": {
-    "@adonisjs/core": "^5.8.2",
-    "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/redis": "^7.3.0",
-    "@adonisjs/require-ts": "^2.0.11",
+    "@kubit/core": "^5.8.2",
+    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/redis": "^7.3.0",
+    "@kubit/require-ts": "^2.0.11",
     "@japa/assert": "^1.3.4",
     "@japa/preset-adonis": "^1.0.15",
     "@japa/run-failed-tests": "^1.0.7",
@@ -51,9 +51,9 @@
     "typescript": "^4.6.4"
   },
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node -r @adonisjs/require-ts/build/register ./bin/test.ts",
+    "test": "node -r @kubit/require-ts/build/register ./bin/test.ts",
     "clean": "del build",
     "compile": "npm run lint && npm run clean && tsc",
     "copyfiles": "copyfiles \"templates/**/*.txt\" \"instructions.md\" build",
@@ -64,7 +64,7 @@
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/session"
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/session"
   },
   "repository": {
     "type": "git",
@@ -90,7 +90,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {
@@ -112,9 +112,9 @@
     "env": {
       "SESSION_DRIVER": "cookie"
     },
-    "types": "@adonisjs/session",
+    "types": "@kubit/session",
     "providers": [
-      "@adonisjs/session"
+      "@kubit/session"
     ]
   },
   "np": {

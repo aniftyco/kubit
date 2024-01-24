@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/env",
+  "name": "@kubit/env",
   "version": "3.0.9",
   "description": "Environment variable manager for Node.js",
   "main": "build/index.js",
@@ -10,9 +10,9 @@
     "build/index.js"
   ],
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "test": "node -r @kubit/require-ts/build/register bin/test.ts",
     "clean": "del-cli build",
     "compile": "npm run lint && npm run clean && tsc",
     "build": "npm run compile",
@@ -22,7 +22,7 @@
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/env"
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/env"
   },
   "keywords": [
     "env",
@@ -31,8 +31,8 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "devDependencies": {
-    "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/require-ts": "^2.0.10",
+    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/require-ts": "^2.0.10",
     "@japa/assert": "^1.2.3",
     "@japa/run-failed-tests": "^1.0.3",
     "@japa/runner": "^2.0.6",
@@ -63,7 +63,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {

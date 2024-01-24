@@ -1,5 +1,5 @@
 {
-  "name": "@adonisjs/validator",
+  "name": "@kubit/validator",
   "version": "12.5.0",
   "description": "Validator for adonis framework",
   "main": "build/providers/ValidatorProvider.js",
@@ -9,9 +9,9 @@
     "build/src"
   ],
   "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "mrm": "mrm --preset=@kubit/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "test": "node -r @kubit/require-ts/build/register bin/test.ts",
     "clean": "del build",
     "compile": "npm run lint && npm run clean && tsc",
     "copy:files": "copyfiles \"templates/**/*.txt\" build",
@@ -23,8 +23,8 @@
     "benchmarks": "node build/benchmarks/index.js",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/validator",
-    "vscode:test": "node -r @adonisjs/require-ts/build/register bin/test.ts"
+    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/validator",
+    "vscode:test": "node -r @kubit/require-ts/build/register bin/test.ts"
   },
   "types": "./build/adonis-typings/index.d.ts",
   "author": "virk,adonisjs",
@@ -53,7 +53,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {
@@ -70,14 +70,14 @@
     "tag": "latest"
   },
   "devDependencies": {
-    "@adonisjs/application": "^5.3.0",
-    "@adonisjs/bodyparser": "^8.1.9",
-    "@adonisjs/drive": "^2.3.0",
-    "@adonisjs/encryption": "^4.0.8",
-    "@adonisjs/http-server": "^5.12.0",
-    "@adonisjs/i18n": "^1.6.0",
-    "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/require-ts": "^2.0.13",
+    "@kubit/application": "^5.3.0",
+    "@kubit/bodyparser": "^8.1.9",
+    "@kubit/drive": "^2.3.0",
+    "@kubit/encryption": "^4.0.8",
+    "@kubit/http-server": "^5.12.0",
+    "@kubit/i18n": "^1.6.0",
+    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/require-ts": "^2.0.13",
     "@japa/assert": "^1.4.1",
     "@japa/run-failed-tests": "^1.1.1",
     "@japa/runner": "^2.5.1",
@@ -116,9 +116,9 @@
     "validator": "^13.11.0"
   },
   "peerDependencies": {
-    "@adonisjs/application": "^5.0.0",
-    "@adonisjs/bodyparser": "^8.0.0",
-    "@adonisjs/http-server": "^5.0.0"
+    "@kubit/application": "^5.0.0",
+    "@kubit/bodyparser": "^8.0.0",
+    "@kubit/http-server": "^5.0.0"
   },
   "mrmConfig": {
     "core": true,
