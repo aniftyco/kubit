@@ -1,6 +1,6 @@
 {
   "name": "@kubit/validator",
-  "version": "12.5.0",
+  "version": "0.0.1",
   "description": "Validator for adonis framework",
   "main": "build/providers/ValidatorProvider.js",
   "files": [
@@ -70,14 +70,14 @@
     "tag": "latest"
   },
   "devDependencies": {
-    "@kubit/application": "^5.3.0",
-    "@kubit/bodyparser": "^8.1.9",
-    "@kubit/drive": "^2.3.0",
-    "@kubit/encryption": "^4.0.8",
-    "@kubit/http-server": "^5.12.0",
-    "@kubit/i18n": "^1.6.0",
-    "@kubit/mrm-preset": "^5.0.3",
-    "@kubit/require-ts": "^2.0.13",
+    "@kubit/application": "^0.0.1",
+    "@kubit/bodyparser": "^0.0.1",
+    "@kubit/drive": "^0.0.1",
+    "@kubit/encryption": "^0.0.1",
+    "@kubit/http-server": "^0.0.1",
+    "@kubit/i18n": "^0.0.1",
+    "@kubit/mrm-preset": "^0.0.1",
+    "@kubit/require-ts": "^0.0.1",
     "@japa/assert": "^1.4.1",
     "@japa/run-failed-tests": "^1.1.1",
     "@japa/runner": "^2.5.1",
@@ -116,9 +116,9 @@
     "validator": "^13.11.0"
   },
   "peerDependencies": {
-    "@kubit/application": "^5.0.0",
-    "@kubit/bodyparser": "^8.0.0",
-    "@kubit/http-server": "^5.0.0"
+    "@kubit/application": "^0.0.1",
+    "@kubit/bodyparser": "^0.0.1",
+    "@kubit/http-server": "^0.0.1"
   },
   "mrmConfig": {
     "core": true,

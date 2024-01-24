@@ -1,6 +1,6 @@
 {
   "name": "@kubit/shield",
-  "version": "7.1.1",
+  "version": "0.0.1",
   "description": "A middleware for AdonisJS to keep web applications secure from common web attacks",
   "main": "build/providers/ShieldProvider.js",
   "files": [
@@ -38,9 +38,9 @@
     "csp"
   ],
   "peerDependencies": {
-    "@kubit/core": "^5.7.0",
-    "@kubit/session": "^6.2.0",
-    "@kubit/view": "^6.1.0"
+    "@kubit/core": "^0.0.1",
+    "@kubit/session": "^0.0.1",
+    "@kubit/view": "^0.0.1"
   },
   "peerDependenciesMeta": {
     "@kubit/view": {
@@ -50,11 +50,11 @@
   "author": "virk",
   "license": "MIT",
   "devDependencies": {
-    "@kubit/core": "^5.9.0",
-    "@kubit/mrm-preset": "^5.0.3",
-    "@kubit/require-ts": "^2.0.13",
-    "@kubit/session": "^6.4.0",
-    "@kubit/view": "^6.2.0",
+    "@kubit/core": "^0.0.1",
+    "@kubit/mrm-preset": "^0.0.1",
+    "@kubit/require-ts": "^0.0.1",
+    "@kubit/session": "^0.0.1",
+    "@kubit/view": "^0.0.1",
     "@japa/assert": "^1.4.1",
     "@japa/preset-adonis": "^1.2.0",
     "@japa/run-failed-tests": "^1.1.1",

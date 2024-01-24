@@ -1,6 +1,6 @@
 {
   "name": "@kubit/require-ts",
-  "version": "2.0.13",
+  "version": "0.0.1",
   "description": "In memory typescript compiler",
   "scripts": {
     "mrm": "mrm --preset=@kubit/mrm-preset",
@@ -26,7 +26,7 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "devDependencies": {
-    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/mrm-preset": "^0.0.1",
     "@japa/assert": "^1.3.6",
     "@japa/run-failed-tests": "^1.1.0",
     "@japa/runner": "^2.2.1",

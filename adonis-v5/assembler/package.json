@@ -1,6 +1,6 @@
 {
   "name": "@kubit/assembler",
-  "version": "5.9.6",
+  "version": "0.0.1",
   "description": "Core commands to compiler and build AdonisJs project",
   "main": "build/ace-manifest.json",
   "engines": {
@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/adonisjs/assembler.git"
+    "url": "git+ssh://git@github.com/aniftyco/kubit.git"
   },
   "keywords": [
     "adonisjs",
@@ -47,9 +47,9 @@
   },
   "homepage": "https://github.com/aniftyco/kubit#readme",
   "devDependencies": {
-    "@kubit/ace": "^11.3.1",
-    "@kubit/core": "^5.8.9",
-    "@kubit/mrm-preset": "^5.0.3",
+    "@kubit/ace": "^0.0.1",
+    "@kubit/core": "^0.0.1",
+    "@kubit/mrm-preset": "^0.0.1",
     "@japa/assert": "^1.3.6",
     "@japa/run-failed-tests": "^1.1.0",
     "@japa/runner": "^2.2.2",
@@ -95,11 +95,11 @@
     "anyBranch": false
   },
   "dependencies": {
-    "@kubit/application": "^5.2.5",
-    "@kubit/env": "^3.0.9",
-    "@kubit/ioc-transformer": "^2.3.4",
-    "@kubit/require-ts": "^2.0.13",
-    "@kubit/sink": "^5.4.2",
+    "@kubit/application": "^0.0.1",
+    "@kubit/env": "^0.0.1",
+    "@kubit/ioc-transformer": "^0.0.1",
+    "@kubit/require-ts": "^0.0.1",
+    "@kubit/sink": "^0.0.1",
     "@poppinss/chokidar-ts": "^3.3.5",
     "@poppinss/cliui": "^3.0.5",
     "@poppinss/utils": "^5.0.0",
@@ -114,7 +114,7 @@
     "slash": "^3.0.0"
   },
   "peerDependencies": {
-    "@kubit/core": "^5.1.0"
+    "@kubit/core": "^0.0.1"
   },
   "publishConfig": {
     "access": "public",

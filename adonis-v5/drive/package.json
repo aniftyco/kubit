@@ -1,6 +1,6 @@
 {
   "name": "@kubit/drive",
-  "version": "2.3.0",
+  "version": "0.0.1",
   "description": "Drive is an abstraction on cloud storage service for AdonisJS applications",
   "main": "build/providers/DriveProvider.js",
   "files": [
@@ -35,11 +35,11 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "devDependencies": {
-    "@kubit/application": "^5.2.5",
-    "@kubit/encryption": "^4.0.8",
-    "@kubit/http-server": "^5.11.0",
-    "@kubit/mrm-preset": "^5.0.3",
-    "@kubit/require-ts": "^2.0.13",
+    "@kubit/application": "^0.0.1",
+    "@kubit/encryption": "^0.0.1",
+    "@kubit/http-server": "^0.0.1",
+    "@kubit/mrm-preset": "^0.0.1",
+    "@kubit/require-ts": "^0.0.1",
     "@japa/assert": "^1.3.6",
     "@japa/run-failed-tests": "^1.1.0",
     "@japa/runner": "^2.2.1",
@@ -79,8 +79,8 @@
     "memfs": "^3.4.7"
   },
   "peerDependencies": {
-    "@kubit/application": "^5.0.0",
-    "@kubit/http-server": "^5.0.0"
+    "@kubit/application": "^0.0.1",
+    "@kubit/http-server": "^0.0.1"
   },
   "directories": {
     "test": "test"

@@ -1,6 +1,6 @@
 {
   "name": "@kubit/sink",
-  "version": "5.4.3",
+  "version": "0.0.1",
   "description": "AdonisJS sink is a swiss knife for managing project files by applying minimal changes, inferring formatting from EditorConfig file and comes with specialized tasks for different file formats and file types.",
   "main": "index.js",
   "files": [
@@ -31,9 +31,9 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "devDependencies": {
-    "@kubit/application": "^5.3.0",
-    "@kubit/mrm-preset": "^5.0.3",
-    "@kubit/require-ts": "^2.0.13",
+    "@kubit/application": "^0.0.1",
+    "@kubit/mrm-preset": "^0.0.1",
+    "@kubit/require-ts": "^0.0.1",
     "@japa/assert": "^1.4.1",
     "@japa/run-failed-tests": "^1.1.1",
     "@japa/runner": "^2.5.1",
@@ -87,7 +87,7 @@
     "open": "^8.4.2"
   },
   "peerDependencies": {
-    "@kubit/application": "^5.0.0"
+    "@kubit/application": "^0.0.1"
   },
   "directories": {
     "test": "test"

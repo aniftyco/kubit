@@ -1,6 +1,6 @@
 {
   "name": "@kubit/events",
-  "version": "7.2.1",
+  "version": "0.0.1",
   "description": "Event emitter with asynchronous events",
   "main": "build/providers/EventProvider.js",
   "files": [
@@ -32,9 +32,9 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "devDependencies": {
-    "@kubit/application": "^5.1.5",
-    "@kubit/mrm-preset": "^5.0.2",
-    "@kubit/require-ts": "^2.0.7",
+    "@kubit/application": "^0.0.1",
+    "@kubit/mrm-preset": "^0.0.1",
+    "@kubit/require-ts": "^0.0.1",
     "@japa/assert": "^1.2.3",
     "@japa/run-failed-tests": "^1.0.3",
     "@japa/runner": "^2.0.6",
@@ -76,7 +76,7 @@
     "emittery": "^0.10.0"
   },
   "peerDependencies": {
-    "@kubit/application": "^5.0.0"
+    "@kubit/application": "^0.0.1"
   },
   "directories": {
     "doc": "docs",
