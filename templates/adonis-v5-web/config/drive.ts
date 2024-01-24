@@ -89,7 +89,7 @@ export default driveConfig({
     | drive separately when using it.
     |
     |**************************************************************************
-    | npm i @adonisjs/drive-s3
+    | npm i @kubit/drive-s3
     |**************************************************************************
     |
     */
@@ -115,7 +115,7 @@ export default driveConfig({
     | drive separately when using it.
     |
     |**************************************************************************
-    | npm i @adonisjs/drive-gcs
+    | npm i @kubit/drive-gcs
     |**************************************************************************
     |
     */

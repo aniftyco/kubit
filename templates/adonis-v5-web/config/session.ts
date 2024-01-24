@@ -31,7 +31,7 @@ export default sessionConfig({
   |
   | - cookie (Uses signed cookies to store session values)
   | - file (Uses filesystem to store session values)
-  | - redis (Uses redis. Make sure to install "@adonisjs/redis" as well)
+  | - redis (Uses redis. Make sure to install "@kubit/redis" as well)
   |
   | Note: Switching drivers will make existing sessions invalid.
   |
