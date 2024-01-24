@@ -27,13 +27,13 @@
     "types"
   ],
   "dependencies": {
-    "@kubit/core": "^5.9.0",
+    "@adonisjs/core": "^5.9.0",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21"
   },
   "devDependencies": {
-    "@kubit/assembler": "^5.9.5",
+    "@adonisjs/assembler": "^5.9.5",
     "@japa/preset-adonis": "^1.2.0",
     "@japa/runner": "^2.5.1",
     "@types/proxy-addr": "^2.0.0",
