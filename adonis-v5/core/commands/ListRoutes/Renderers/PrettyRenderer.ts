@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import ListRoutes, { SerializedRoute, type } from '../index'
+import ListRoutes from '../index'
 import { BaseRender } from './Base'
 
+import type { SerializedRoute } from '../index'
 /**
  * Renders the routes as a pretty list
  */
