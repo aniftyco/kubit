@@ -4,6 +4,7 @@ set -eo pipefail
 # unless you know what you're doing
 PKGS=(
     require-ts 
+    sink
     assembler
     config
     profiler
@@ -20,7 +21,6 @@ PKGS=(
     core
     logger
     ioc-transformer
-    sink
     redis
     view
     i18n
@@ -33,5 +33,5 @@ PKGS=(
 for package in "${PKGS[@]}"
 do
     echo "building ${package}";
-    npm -w "@kubit/${package}" run compile;
+    npm -w "@kubit/${package}" run build;
 done
