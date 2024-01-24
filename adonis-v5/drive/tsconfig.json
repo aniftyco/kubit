@@ -6,7 +6,7 @@
     "skipLibCheck": true
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "./build"],
+  "exclude": ["node_modules", "./build", "./test"],
   "files": [
     "../../node_modules/@kubit/application/build/adonis-typings/index.d.ts",
     "../../node_modules/@kubit/http-server/build/adonis-typings/index.d.ts"

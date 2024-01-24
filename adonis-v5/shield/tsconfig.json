@@ -8,7 +8,7 @@
     "emitDecoratorMetadata": true
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "./build"],
+  "exclude": ["node_modules", "./build", "./test"],
   "files": [
     "../../node_modules/@kubit/core/build/adonis-typings/index.d.ts",
     "../../node_modules/@kubit/session/build/adonis-typings/index.d.ts",
