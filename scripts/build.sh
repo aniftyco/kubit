@@ -11,32 +11,29 @@ PKGS=(
     profiler
     application
     sink
-    repl
-    core
-    assembler
     hash
     events
-    drive
-    validator
-    ace
+    encryption
     http-server
+    drive
+    ace
+    validator
+    core
+    bodyparser
+    assembler
+    repl
     ioc-transformer
     redis
     view
     i18n
-    encryption
     session
     shield
-    bodyparser
 )
-
-# Clean up old build stuff
-echo "Cleaning packages..."
-npx del adonis-v5/**/build
 
 # Build new stuff
 for package in "${PKGS[@]}"
 do
     echo "building ${package}";
+    npm -w "@kubit/${package}" run clean;
     npm -w "@kubit/${package}" run build;
 done
