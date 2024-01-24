@@ -9,11 +9,11 @@
     "test": "node ace test"
   },
   "dependencies": {
-    "@kubit/core": "^5.9.0",
-    "@kubit/repl": "^3.1.11",
-    "@kubit/session": "^6.4.0",
-    "@kubit/shield": "^7.1.1",
-    "@kubit/view": "^6.2.0",
+    "@kubit/core": "^0.0.1",
+    "@kubit/repl": "^0.0.1",
+    "@kubit/session": "^0.0.1",
+    "@kubit/shield": "^0.0.1",
+    "@kubit/view": "^0.0.1",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21"
