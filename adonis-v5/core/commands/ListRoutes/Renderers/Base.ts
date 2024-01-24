@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
+import { BaseCommand } from '@kubit/ace'
+
 import ListRoutes from '../'
-import { BaseCommand } from '../../../standalone'
 
 /**
  * Methods registered by "Route.any" method
