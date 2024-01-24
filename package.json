@@ -21,7 +21,6 @@
   ],
   "prettier": "@aniftyco/prettier",
   "devDependencies": {
-    "@adonisjs/sink": "^5.4.3",
     "@aniftyco/prettier": "^0.1.0",
     "@aniftyco/tsconfig": "^1.0.1",
     "@japa/expect": "^2.0.2",
