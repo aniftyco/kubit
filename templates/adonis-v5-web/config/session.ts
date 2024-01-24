@@ -5,9 +5,9 @@
  * file.
  */
 
-import { sessionConfig } from '@adonisjs/session/build/config';
 import Application from '@ioc:Adonis/Core/Application';
 import Env from '@ioc:Adonis/Core/Env';
+import { sessionConfig } from '@kubit/session/build/config';
 
 export default sessionConfig({
   /*

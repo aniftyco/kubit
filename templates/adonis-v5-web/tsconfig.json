@@ -10,15 +10,15 @@
       "App/*": ["./app/*"],
       "Config/*": ["./config/*"],
       "Contracts/*": ["./contracts/*"],
-      "Database/*": ["./database/*"]
+      "Database/*": ["./database/*"],
     },
     "types": [
-      "@adonisjs/core",
-      "@adonisjs/repl",
-      "@adonisjs/session",
-      "@adonisjs/view",
-      "@adonisjs/shield",
-      "@japa/preset-adonis/build/adonis-typings"
-    ]
-  }
+      "@kubit/core",
+      "@kubit/repl",
+      "@kubit/session",
+      "@kubit/view",
+      "@kubit/shield",
+      "@japa/preset-adonis/build/adonis-typings",
+    ],
+  },
 }

@@ -2,7 +2,7 @@
   "commands": {
     "dump:rcfile": {
       "settings": {},
-      "commandPath": "@adonisjs/core/build/commands/DumpRc",
+      "commandPath": "@kubit/core/build/commands/DumpRc",
       "commandName": "dump:rcfile",
       "description": "Dump contents of .adonisrc.json file along with defaults",
       "args": [],
@@ -14,7 +14,7 @@
         "loadApp": true,
         "stayAlive": true
       },
-      "commandPath": "@adonisjs/core/build/commands/ListRoutes/index",
+      "commandPath": "@kubit/core/build/commands/ListRoutes/index",
       "commandName": "list:routes",
       "description": "List application routes",
       "args": [],
@@ -76,7 +76,7 @@
     },
     "generate:key": {
       "settings": {},
-      "commandPath": "@adonisjs/core/build/commands/GenerateKey",
+      "commandPath": "@kubit/core/build/commands/GenerateKey",
       "commandName": "generate:key",
       "description": "Generate a new APP_KEY secret",
       "args": [],
@@ -89,7 +89,7 @@
         "environment": "repl",
         "stayAlive": true
       },
-      "commandPath": "@adonisjs/repl/build/commands/AdonisRepl",
+      "commandPath": "@kubit/repl/build/commands/AdonisRepl",
       "commandName": "repl",
       "description": "Start a new REPL session",
       "args": [],

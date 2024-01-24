@@ -1,5 +1,5 @@
-import { listDirectoryFiles } from '@adonisjs/core/build/standalone';
 import Application from '@ioc:Adonis/Core/Application';
+import { listDirectoryFiles } from '@kubit/core/build/standalone';
 
 /*
 |--------------------------------------------------------------------------
