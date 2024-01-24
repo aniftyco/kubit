@@ -2,11 +2,9 @@
   "name": "@kubit/sink",
   "version": "0.0.1",
   "description": "AdonisJS sink is a swiss knife for managing project files by applying minimal changes, inferring formatting from EditorConfig file and comes with specialized tasks for different file formats and file types.",
-  "main": "index.js",
+  "main": "build/index.js",
   "files": [
-    "src",
-    "index.d.ts",
-    "index.js"
+    "build"
   ],
   "scripts": {
     "mrm": "mrm --preset=@kubit/mrm-preset",
