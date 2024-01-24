@@ -1,8 +1,12 @@
 {
   "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
   "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./build",
     "skipLibCheck": true
   },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "./build"],
   "files": [
     "../../node_modules/@kubit/core/build/adonis-typings/index.d.ts",
     "../../node_modules/@japa/preset-adonis/build/adonis-typings/index.d.ts",

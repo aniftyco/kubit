@@ -1,7 +1,11 @@
 {
   "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
-  "files": ["../../node_modules/@kubit/logger/build/adonis-typings/logger.d.ts"],
   "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./build",
     "resolveJsonModule": true
-  }
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "./build"],
+  "files": ["../../node_modules/@kubit/logger/build/adonis-typings/logger.d.ts"]
 }

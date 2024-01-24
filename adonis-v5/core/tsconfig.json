@@ -1,9 +1,13 @@
 {
   "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
   "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./build",
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "types": ["@types/node", "@kubit/repl", "@japa/preset-adonis/build/adonis-typings/index"]
-  }
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "./build"]
 }

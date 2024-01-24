@@ -1,3 +1,10 @@
 {
-  "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig"
+  "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./build",
+    "resolveJsonModule": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "./build"]
 }

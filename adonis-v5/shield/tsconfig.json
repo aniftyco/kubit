@@ -1,14 +1,18 @@
 {
   "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./build",
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "./build"],
   "files": [
     "../../node_modules/@kubit/core/build/adonis-typings/index.d.ts",
     "../../node_modules/@kubit/session/build/adonis-typings/index.d.ts",
     "../../node_modules/@kubit/view/build/adonis-typings/index.d.ts",
     "../../node_modules/@japa/preset-adonis/build/adonis-typings/index.d.ts"
-  ],
-  "compilerOptions": {
-    "skipLibCheck": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
-  }
+  ]
 }

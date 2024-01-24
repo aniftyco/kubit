@@ -97,7 +97,7 @@ const classHandler = (options: { options: Fakes; namespace: string; value: any }
     construct(_: object, args: any[], newTarget?: any) {
       return Reflect.construct(getBindingValue(options), args, newTarget)
     },
-  })
+  }) as ProxyHandler<any>
 }
 
 /**

@@ -1,10 +1,14 @@
 {
   "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
   "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./build",
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "./build"],
   "files": [
     "../../node_modules/@kubit/encryption/build/adonis-typings/encryption.d.ts",
     "../../node_modules/@kubit/drive/build/adonis-typings/index.d.ts"

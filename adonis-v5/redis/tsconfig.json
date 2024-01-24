@@ -1,8 +1,12 @@
 {
   "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
   "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./build",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "types": ["@kubit/core", "@kubit/repl", "@types/node"]
-  }
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "./build"]
 }
