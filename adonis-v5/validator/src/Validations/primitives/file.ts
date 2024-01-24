@@ -7,7 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { FileValidationOptions, MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
+// TODO: Revert this
+// import { FileValidationOptions, MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
@@ -18,9 +19,9 @@ const RULE_NAME = 'file'
 /**
  * Ensure the value is a valid file instance
  */
-export const file: SyncValidation<Partial<FileValidationOptions>> = {
+export const file: SyncValidation<Partial<any>> = {
   compile: wrapCompile(RULE_NAME, [], ([options]) => {
-    const validationOptions: Partial<FileValidationOptions> = {}
+    const validationOptions: Partial<any> = {}
     if (options && options.size) {
       validationOptions.size = options.size
     }
@@ -34,7 +35,7 @@ export const file: SyncValidation<Partial<FileValidationOptions>> = {
     }
   }),
   validate(
-    fileToValidate: MultipartFileContract,
+    fileToValidate: any,
     compiledOptions,
     { errorReporter, pointer, arrayExpressionPointer }
   ) {
