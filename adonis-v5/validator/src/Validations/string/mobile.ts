@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import validator from 'validator'
+import * as validator from 'validator'
 import isMobilePhone from 'validator/lib/isMobilePhone'
+
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
