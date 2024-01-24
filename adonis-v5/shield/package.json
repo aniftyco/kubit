@@ -22,7 +22,7 @@
     "copy:files": "copyfiles \"templates/**/*.txt\" build && npm run copy:instructions_md",
     "copy:instructions_md": "copyfiles \"instructions.md\" build",
     "compile": "npm run clean && tsc && npm run copy:files",
-    "build": "npm run compile",
+    "build": "tsc",
     "commit": "git-cz",
     "release": "np --message=\"chore(release): %s\"",
     "version": "npm run build",
