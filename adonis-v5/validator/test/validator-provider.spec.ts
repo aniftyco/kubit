@@ -1,5 +1,5 @@
 /*
- * @adonisjs/events
+ * @kubit/events
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,13 +8,13 @@
  */
 
 import { test } from '@japa/runner'
-import { VanillaErrorReporter, ApiErrorReporter } from '../src/ErrorReporter'
 
+import { ApiErrorReporter, VanillaErrorReporter } from '../src/ErrorReporter'
 import { rules } from '../src/Rules'
 import { schema } from '../src/Schema'
-import { validator } from '../src/Validator'
-import { setupApp, fs } from '../test-helpers'
 import { ValidationException } from '../src/ValidationException'
+import { validator } from '../src/Validator'
+import { fs, setupApp } from '../test-helpers'
 
 test.group('Validation Provider', (group) => {
   group.each.teardown(async () => {

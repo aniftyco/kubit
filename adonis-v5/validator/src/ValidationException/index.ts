@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { Exception } from '@poppinss/utils'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { Exception } from '@poppinss/utils'
 
 /**
  * Validation exception raised by the error reporters. The handle method is called

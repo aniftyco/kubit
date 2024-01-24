@@ -1,5 +1,5 @@
 /*
- * @adonisjs/logger
+ * @kubit/logger
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,6 +10,7 @@
 /// <reference path="../adonis-typings/logger.ts" />
 
 import Pino from 'pino'
+
 import { LoggerConfig } from '@ioc:Adonis/Core/Logger'
 
 import { Logger } from './Logger'

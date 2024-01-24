@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import execa from 'execa'
+
 import { logger as uiLogger } from '@poppinss/cliui'
 
 import { JapaFlags } from '../Contracts'
@@ -63,7 +64,7 @@ export class TestProcess {
           FORCE_COLOR: 'true',
           ...this.env,
         },
-        nodeOptions: ['-r', '@adonisjs/assembler/build/register'].concat(this.nodeArgs),
+        nodeOptions: ['-r', '@kubit/assembler/build/register'].concat(this.nodeArgs),
       })
       return { hasErrors: false }
     } catch {

@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,38 +9,37 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import etag from 'etag'
-import vary from 'vary'
-import fresh from 'fresh'
-import mime from 'mime-types'
-import destroy from 'destroy'
-import { extname } from 'path'
-import onFinished from 'on-finished'
-import { Macroable } from 'macroable'
-import { createReadStream } from 'fs'
 import contentDisposition from 'content-disposition'
-import { ServerResponse, IncomingMessage } from 'http'
+import destroy from 'destroy'
+import etag from 'etag'
+import fresh from 'fresh'
+import { createReadStream } from 'fs'
+import { IncomingMessage, ServerResponse } from 'http'
+import { Macroable } from 'macroable'
+import mime from 'mime-types'
+import onFinished from 'on-finished'
+import { extname } from 'path'
+import vary from 'vary'
+
+import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import {
+  CastableHeader,
+  CookieOptions,
+  RedirectContract,
+  ResponseConfig,
+  ResponseContract,
+  ResponseStream,
+} from '@ioc:Adonis/Core/Response'
+import { RouterContract } from '@ioc:Adonis/Core/Route'
 import { Exception, safeStringify } from '@poppinss/utils'
 import { interpolate } from '@poppinss/utils/build/helpers'
 
-import {
-  CookieOptions,
-  CastableHeader,
-  ResponseConfig,
-  ResponseStream,
-  ResponseContract,
-  RedirectContract,
-} from '@ioc:Adonis/Core/Response'
-
-import { RouterContract } from '@ioc:Adonis/Core/Route'
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-
-import { statFn } from '../helpers'
-import { Redirect } from '../Redirect'
+import { E_CANNOT_SERIALIZE_RESPONSE_BODY } from '../../exceptions.json'
 import { CookieSerializer } from '../Cookie/Serializer'
 import { HttpException } from '../Exceptions/HttpException'
-import { E_CANNOT_SERIALIZE_RESPONSE_BODY } from '../../exceptions.json'
+import { statFn } from '../helpers'
+import { Redirect } from '../Redirect'
 
 class AbortException extends HttpException {
   /**

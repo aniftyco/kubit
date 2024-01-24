@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,10 +9,10 @@
 
 declare module '@ioc:Adonis/Core/Application' {
   import Ace from '@ioc:Adonis/Core/Ace'
-  import { TestUtilsContract } from '@ioc:Adonis/Core/TestUtils'
-  import { HealthCheckContract } from '@ioc:Adonis/Core/HealthCheck'
   import { AssetsManagerContract } from '@ioc:Adonis/Core/AssetsManager'
+  import { HealthCheckContract } from '@ioc:Adonis/Core/HealthCheck'
   import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler'
+  import { TestUtilsContract } from '@ioc:Adonis/Core/TestUtils'
 
   export interface ContainerBindings {
     'Adonis/Core/HealthCheck': HealthCheckContract

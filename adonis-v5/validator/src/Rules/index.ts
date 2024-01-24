@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { Rules, Rule } from '@ioc:Adonis/Core/Validator'
+import { Rule, Rules } from '@ioc:Adonis/Core/Validator'
+
 import * as validations from '../Validations'
 
 /**

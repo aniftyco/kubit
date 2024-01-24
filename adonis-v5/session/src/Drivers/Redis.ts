@@ -1,5 +1,5 @@
 /**
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,10 +9,10 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
+import { RedisConnectionContract, RedisManagerContract } from '@ioc:Adonis/Addons/Redis'
+import { SessionConfig, SessionDriverContract } from '@ioc:Adonis/Addons/Session'
 import { Exception } from '@poppinss/utils'
 import { MessageBuilder, string } from '@poppinss/utils/build/helpers'
-import { SessionDriverContract, SessionConfig } from '@ioc:Adonis/Addons/Session'
-import { RedisManagerContract, RedisConnectionContract } from '@ioc:Adonis/Addons/Redis'
 
 /**
  * File driver to read/write session to filesystem

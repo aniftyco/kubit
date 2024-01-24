@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,21 +8,22 @@
  */
 
 import { ParsedOptions } from 'getopts'
-import { Prompt, FakePrompt } from '@poppinss/prompts'
-import { string } from '@poppinss/utils/build/helpers'
-import { instantiate } from '@poppinss/cliui/build/api'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { defineStaticProperty, Exception } from '@poppinss/utils'
 
-import { Generator } from '../Generator'
+import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { instantiate } from '@poppinss/cliui/build/api'
+import { FakePrompt, Prompt } from '@poppinss/prompts'
+import { defineStaticProperty, Exception } from '@poppinss/utils'
+import { string } from '@poppinss/utils/build/helpers'
+
 import {
   CommandArg,
-  CommandFlag,
-  KernelContract,
-  CommandSettings,
   CommandContract,
+  CommandFlag,
+  CommandSettings,
   GeneratorContract,
+  KernelContract,
 } from '../Contracts'
+import { Generator } from '../Generator'
 
 /**
  * Abstract base class other classes must extend

@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import cookie from 'cookie'
+
 import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
 
 import { CookieClient } from '../Client'

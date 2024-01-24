@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,10 @@
  */
 
 import { join } from 'path'
+
 import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
+
 import { MarkdownRenderer } from '../src/Tasks/MarkdownRenderer'
 
 const fs = new Filesystem(join(__dirname, '__app'))
@@ -29,11 +31,11 @@ test.group('Render markdown', (group) => {
    */
   test('render markdown file by opening it in the browser', async () => {
     await fs.add('foo.md', '## Hello world')
-    await new MarkdownRenderer(join(fs.basePath, 'foo.md'), '@adonisjs/core').renderInBrowser()
+    await new MarkdownRenderer(join(fs.basePath, 'foo.md'), '@kubit/core').renderInBrowser()
   })
 
   test('render markdown file by rendering it inside terminal', async () => {
     await fs.add('foo.md', '## Hello world')
-    await new MarkdownRenderer(join(fs.basePath, 'foo.md'), '@adonisjs/core').renderInTerminal()
+    await new MarkdownRenderer(join(fs.basePath, 'foo.md'), '@kubit/core').renderInTerminal()
   })
 })

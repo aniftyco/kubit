@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
+
 import { listDirectoryFiles } from '../src/utils/listDirectoryFiles'
 
 const fs = new Filesystem(join(__dirname, './app'))

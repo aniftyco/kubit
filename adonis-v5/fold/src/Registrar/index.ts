@@ -1,5 +1,5 @@
 /*
- * @adonisjs/fold
+ * @kubit/fold
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,10 @@
  */
 
 import { dirname } from 'path'
+
 import { esmRequire, Exception } from '@poppinss/utils'
 import { resolveFrom } from '@poppinss/utils/build/helpers'
+
 import { Constructor } from '../Contracts'
 
 /**

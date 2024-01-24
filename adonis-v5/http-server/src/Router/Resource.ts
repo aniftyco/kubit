@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,17 +9,17 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { singular } from 'pluralize'
 import { Macroable } from 'macroable'
-import { string } from '@poppinss/utils/build/helpers'
+import { singular } from 'pluralize'
 
 import {
-  RouteParamMatcher,
   ResourceRouteNames,
   RouteMatchersNode,
-  RouteResourceContract,
   RouteMiddlewareHandler,
+  RouteParamMatcher,
+  RouteResourceContract,
 } from '@ioc:Adonis/Core/Route'
+import { string } from '@poppinss/utils/build/helpers'
 
 import { Route } from './Route'
 

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,6 +10,7 @@
 /// <reference path="../../adonis-typings/index.ts" />
 
 import { Macroable } from 'macroable'
+
 import { RouteMatchersContract } from '@ioc:Adonis/Core/Route'
 
 /**

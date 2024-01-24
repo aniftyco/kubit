@@ -1,5 +1,5 @@
 /*
- * @adonisjs/repl
+ * @kubit/repl
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

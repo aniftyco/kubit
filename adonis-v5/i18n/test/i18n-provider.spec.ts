@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,8 +10,8 @@
 import { test } from '@japa/runner'
 
 import { I18n } from '../src/I18n'
-import { fs, setup } from '../test-helpers'
 import { I18nManager } from '../src/I18nManager'
+import { fs, setup } from '../test-helpers'
 
 test.group('I18n Provider', (group) => {
   group.each.teardown(async () => {
@@ -104,7 +104,7 @@ test.group('I18n Provider', (group) => {
         translationsFormat: 'icu',
         loaders: {},
       },
-      ['@adonisjs/repl', '../../providers/I18nProvider'],
+      ['@kubit/repl', '../../providers/I18nProvider'],
       'repl'
     )
 

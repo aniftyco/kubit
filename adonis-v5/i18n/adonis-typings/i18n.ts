@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 declare module '@ioc:Adonis/Addons/I18n' {
   import { DateTime } from 'luxon'
+
   import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 
   /**

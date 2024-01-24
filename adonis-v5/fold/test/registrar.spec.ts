@@ -1,5 +1,5 @@
 /*
- * @adonisjs/fold
+ * @kubit/fold
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,12 +7,13 @@
  * file that was distributed with this source code.
  */
 
-import { Filesystem } from '@poppinss/dev-utils'
 import { join } from 'path'
 
 import { test } from '@japa/runner'
-import { Registrar } from '../src/Registrar'
+import { Filesystem } from '@poppinss/dev-utils'
+
 import { Ioc } from '../src/Ioc'
+import { Registrar } from '../src/Registrar'
 
 const fs = new Filesystem(join(__dirname, './app'))
 

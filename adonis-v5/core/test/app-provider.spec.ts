@@ -1,5 +1,5 @@
 /*
- * @adonisjs/events
+ * @kubit/events
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,9 +9,9 @@
 
 import { test } from '@japa/runner'
 
-import { fs, setupApp } from '../test-helpers'
 import { HealthCheck } from '../src/HealthCheck'
 import { HttpExceptionHandler } from '../src/HttpExceptionHandler'
+import { fs, setupApp } from '../test-helpers'
 
 test.group('App Provider', (group) => {
   group.each.teardown(async () => {

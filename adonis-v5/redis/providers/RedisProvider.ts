@@ -1,5 +1,5 @@
 /*
- * @adonisjs/redis
+ * @kubit/redis
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

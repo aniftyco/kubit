@@ -1,5 +1,5 @@
 /*
- * @adonisjs/require-ts
+ * @kubit/require-ts
  *
  * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
  *
@@ -7,14 +7,15 @@
  * file that was distributed with this source code.
  */
 
-import tsStatic from 'typescript'
-import { esmRequire } from '@poppinss/utils'
 import sourceMapSupport from 'source-map-support'
+import tsStatic from 'typescript'
 
-import { debug } from '../utils'
+import { esmRequire } from '@poppinss/utils'
+
 import { Cache, FakeCache } from '../Cache'
 import { Transformers } from '../Contracts'
 import { DiagnosticsReporter } from '../DiagnosticsReporter'
+import { debug } from '../utils'
 
 /**
  * Exposes the API compile source files using the tsc compiler. No

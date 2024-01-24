@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,12 +8,12 @@
  */
 
 declare module '@ioc:Adonis/Core/Application' {
-  import { RouterContract } from '@ioc:Adonis/Core/Route'
-  import { ServerContract } from '@ioc:Adonis/Core/Server'
   import { CookieClientContract } from '@ioc:Adonis/Core/CookieClient'
+  import { HttpContextConstructorContract } from '@ioc:Adonis/Core/HttpContext'
   import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
   import { ResponseConstructorContract } from '@ioc:Adonis/Core/Response'
-  import { HttpContextConstructorContract } from '@ioc:Adonis/Core/HttpContext'
+  import { RouterContract } from '@ioc:Adonis/Core/Route'
+  import { ServerContract } from '@ioc:Adonis/Core/Server'
 
   export interface ContainerBindings {
     'Adonis/Core/Route': RouterContract

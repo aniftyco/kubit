@@ -1,5 +1,5 @@
 /*
- * @adonisjs/profiler
+ * @kubit/profiler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,22 +10,22 @@
 /// <reference path="../../adonis-typings/profiler.ts" />
 
 import { Worker } from 'jest-worker'
-import { resolveFrom } from '@poppinss/utils/build/helpers'
+
 import { LoggerContract } from '@ioc:Adonis/Core/Logger'
-
-import { ProfilerRow } from '../Row'
-import { ProfilerAction } from '../Action'
-import { AbstractProfiler } from './AbstractProfiler'
-import { dummyRow, dummyAction } from '../DummyProfiler'
-import { InvalidProcessorException } from '../Exceptions/InvalidProcessorException'
-
 import {
+  ProfilerActionContract,
   ProfilerConfig,
   ProfilerContract,
   ProfilerProcessor,
   ProfilerRowContract,
-  ProfilerActionContract,
 } from '@ioc:Adonis/Core/Profiler'
+import { resolveFrom } from '@poppinss/utils/build/helpers'
+
+import { ProfilerAction } from '../Action'
+import { dummyAction, dummyRow } from '../DummyProfiler'
+import { InvalidProcessorException } from '../Exceptions/InvalidProcessorException'
+import { ProfilerRow } from '../Row'
+import { AbstractProfiler } from './AbstractProfiler'
 
 /**
  * Profiler exposes the public interface to create new profiling

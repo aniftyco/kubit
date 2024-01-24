@@ -1,5 +1,5 @@
 /*
- * @adonisjs/fold
+ * @kubit/fold
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { IocContract } from '../Contracts'
-import { isPrimtiveConstructor } from '../helpers'
 import { types } from '@poppinss/utils/build/helpers'
+
+import { IocContract } from '../Contracts'
 import { InvalidInjectionException } from '../Exceptions/InvalidInjectionException'
+import { isPrimtiveConstructor } from '../helpers'
 
 /**
  * Exposes the API to injecting dependencies to a class or a method

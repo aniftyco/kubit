@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,4 +8,5 @@
  */
 
 import { getApp } from './base'
+
 export default getApp().container.resolveBinding('Adonis/Core/BodyParser')

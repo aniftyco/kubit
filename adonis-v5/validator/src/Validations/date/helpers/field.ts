@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,10 +8,11 @@
  */
 
 import { DateTime } from 'luxon'
+
 import { ValidationRuntimeOptions } from '@ioc:Adonis/Core/Validator'
 
-import { toLuxon } from './toLuxon'
 import { getFieldValue } from '../../../Validator/helpers'
+import { toLuxon } from './toLuxon'
 
 /**
  * Return type of the compile function

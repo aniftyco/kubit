@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { resolve } from 'path'
 import { pathExistsSync } from 'fs-extra'
+import { resolve } from 'path'
 
 /**
  * Returns the package manager in use by checking for the lock files

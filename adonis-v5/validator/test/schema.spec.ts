@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { test } from '@japa/runner'
+
 import { rules } from '../src/Rules'
 import { schema } from '../src/Schema'
 

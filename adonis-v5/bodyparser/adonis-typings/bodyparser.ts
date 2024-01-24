@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 declare module '@ioc:Adonis/Core/BodyParser' {
   import { Readable } from 'stream'
+
   import { DisksList, WriteOptions } from '@ioc:Adonis/Core/Drive'
   import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 

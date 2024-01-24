@@ -1,5 +1,5 @@
 /*
- * @adonisjs/events
+ * @kubit/events
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,17 +10,18 @@
 /// <reference path="../../adonis-typings/events.ts" />
 
 import Emittery from 'emittery'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 import {
   AnyHandler,
-  EventsList,
-  TrapHandler,
-  EventHandler,
   DataForEvent,
-  ErrorHandler,
-  TrapAllHandler,
   EmitterContract,
   EmitterTransportContract,
+  ErrorHandler,
+  EventHandler,
+  EventsList,
+  TrapAllHandler,
+  TrapHandler,
 } from '@ioc:Adonis/Core/Event'
 
 import { FakeEmitter } from '../FakeEmitter'

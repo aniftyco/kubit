@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,9 @@
  */
 
 import { test } from '@japa/runner'
+
 import { BodyParserMiddleware } from '../src/BodyParser'
-import { setupApp, fs } from '../test-helpers'
+import { fs, setupApp } from '../test-helpers'
 
 test.group('BodyParser Provider', (group) => {
   group.each.teardown(async () => {

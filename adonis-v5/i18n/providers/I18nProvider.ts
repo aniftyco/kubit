@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { I18nManager } from '../src/I18nManager'
-import { viewBindings } from '../src/Bindings/View'
+import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+
 import { contextBindings } from '../src/Bindings/Context'
 import { validatorBindings } from '../src/Bindings/Validator'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { viewBindings } from '../src/Bindings/View'
+import { I18nManager } from '../src/I18nManager'
 
 export default class I18nProvider {
   constructor(protected application: ApplicationContract) {}

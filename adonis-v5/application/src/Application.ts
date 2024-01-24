@@ -1,5 +1,5 @@
 /*
- * @adonisjs/application
+ * @kubit/application
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -84,7 +84,7 @@ export class Application implements ApplicationContract {
   public readonly version: SemverNode | null
 
   /**
-   * `@adonisjs/core` version
+   * `@kubit/core` version
    */
   public readonly adonisVersion: SemverNode | null
 
@@ -264,11 +264,11 @@ export class Application implements ApplicationContract {
   }
 
   /**
-   * Loads the package.json file for the "@adonisjs/core" package. Swallows
+   * Loads the package.json file for the "@kubit/core" package. Swallows
    * the exception when file is missing
    */
   private loadCorePackageJson(): { version?: string } {
-    const pkgFile = this.resolveModule('@adonisjs/core/package.json', () => {
+    const pkgFile = this.resolveModule('@kubit/core/package.json', () => {
       return {}
     })
 

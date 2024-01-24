@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -55,7 +55,7 @@ export async function setup(config?: any) {
 
   const app = new Application(fs.basePath, 'web', {
     providers: [
-      '@adonisjs/core',
+      '@kubit/core',
       '../../providers/SessionProvider',
       '@japa/preset-adonis/TestsProvider',
     ],

@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,8 @@
 
 import { test } from '@japa/runner'
 import { base64 } from '@poppinss/utils/build/helpers'
-import { pack, unpack, canUnpack } from '../src/Cookie/Drivers/Signed'
 
+import { canUnpack, pack, unpack } from '../src/Cookie/Drivers/Signed'
 import { encryption } from '../test-helpers'
 
 test.group('SignedCookie | Pack', () => {

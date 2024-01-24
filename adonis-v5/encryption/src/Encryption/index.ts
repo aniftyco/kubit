@@ -1,5 +1,5 @@
 /*
- * @adonisjs/encryption
+ * @kubit/encryption
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,14 +9,15 @@
 
 /// <reference path="../../adonis-typings/encryption.ts" />
 
-import { Exception } from '@poppinss/utils'
-import { createHash, createCipheriv, createDecipheriv } from 'crypto'
+import { createCipheriv, createDecipheriv, createHash } from 'crypto'
+
 import { EncryptionContract, EncryptionOptions } from '@ioc:Adonis/Core/Encryption'
+import { Exception } from '@poppinss/utils'
 import { base64 as utilsBase64, MessageBuilder, string } from '@poppinss/utils/build/helpers'
 
+import { AppKeyException } from '../Exceptions/AppKeyException'
 import { Hmac } from '../Hmac'
 import { MessageVerifier } from '../MessageVerifier'
-import { AppKeyException } from '../Exceptions/AppKeyException'
 
 /**
  * The encryption class allows encrypting and decrypting values using `aes-256-cbc` or `aes-128-cbc`

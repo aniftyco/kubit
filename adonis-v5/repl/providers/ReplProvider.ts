@@ -1,5 +1,5 @@
 /*
- * @adonisjs/repl
+ * @kubit/repl
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
 import { homedir } from 'os'
+import { join } from 'path'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 
 export default class ReplProvider {

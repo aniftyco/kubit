@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,11 +8,12 @@
  */
 
 declare module '@ioc:Adonis/Core/Request' {
-  import { UrlWithStringQuery } from 'url'
+  import { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'http'
   import { MacroableConstructorContract } from 'macroable'
+  import { UrlWithStringQuery } from 'url'
+
   import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
   import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-  import { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'http'
 
   /**
    * Shape of the request class instance

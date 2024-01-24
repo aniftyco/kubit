@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,9 @@
  */
 
 import isUUID, { UUIDVersion } from 'validator/lib/isUUID'
+
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+
 import { wrapCompile } from '../../Validator/helpers'
 
 const DEFAULT_MESSAGE = 'uuid validation failed'

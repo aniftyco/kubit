@@ -1,5 +1,5 @@
 /*
- * @adonisjs/fold
+ * @kubit/fold
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,14 +7,16 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import 'reflect-metadata'
+
 import { join } from 'path'
 import { types } from 'util'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
 
-import { Ioc } from '../src/Ioc'
 import { inject } from '../src/decorators'
+import { Ioc } from '../src/Ioc'
 
 const fs = new Filesystem(join(__dirname, './app'))
 

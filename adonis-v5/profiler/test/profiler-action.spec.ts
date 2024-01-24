@@ -1,5 +1,5 @@
 /*
- * @adonisjs/profiler
+ * @kubit/profiler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { test } from '@japa/runner'
+
 import { ProfilerAction } from '../src/Action'
 
 test.group('Profiler action', () => {

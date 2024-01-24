@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,17 +8,17 @@
  */
 
 import { DateTime } from 'luxon'
-import { lodash } from '@poppinss/utils'
-
-import {
-  NodeType,
-  SchemaRef,
-  ParsedRule,
-  NodeSubType,
-  ErrorReporterConstructorContract,
-} from '@ioc:Adonis/Core/Validator'
 
 import { RequestContract } from '@ioc:Adonis/Core/Request'
+import {
+  ErrorReporterConstructorContract,
+  NodeSubType,
+  NodeType,
+  ParsedRule,
+  SchemaRef,
+} from '@ioc:Adonis/Core/Validator'
+import { lodash } from '@poppinss/utils'
+
 import * as ErrorReporters from '../ErrorReporter'
 
 /**

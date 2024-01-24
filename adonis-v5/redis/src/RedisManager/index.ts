@@ -1,5 +1,5 @@
 /*
- * @adonisjs/redis
+ * @kubit/redis
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,22 +9,21 @@
 
 /// <reference path="../../adonis-typings/redis.ts" />
 
-import { EmitterContract } from '@ioc:Adonis/Core/Event'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { Exception, ManagerConfigValidator } from '@poppinss/utils'
-
 import {
-  RedisConfig,
   HealthReportNode,
   RedisBaseManagerContract,
-  RedisConnectionContract,
   RedisClusterConnectionContract,
+  RedisConfig,
+  RedisConnectionContract,
 } from '@ioc:Adonis/Addons/Redis'
+import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { EmitterContract } from '@ioc:Adonis/Core/Event'
+import { Exception, ManagerConfigValidator } from '@poppinss/utils'
 
 import { ioMethods } from '../ioMethods'
 import { pubsubMethods } from '../pubsubMethods'
-import { RedisConnection } from '../RedisConnection'
 import { RedisClusterConnection } from '../RedisClusterConnection'
+import { RedisConnection } from '../RedisConnection'
 
 /**
  * Redis manager exposes the API to interact with a redis server.

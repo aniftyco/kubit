@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,9 +9,9 @@
 
 /// <reference path="../../adonis-typings/bodyparser.ts" />
 
-import { lodash } from '@poppinss/utils'
 import { FileValidationOptions } from '@ioc:Adonis/Core/BodyParser'
 import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
+import { lodash } from '@poppinss/utils'
 
 import { File } from '../Multipart/File'
 

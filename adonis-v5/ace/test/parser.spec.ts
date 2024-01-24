@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,9 +9,9 @@
 
 import { test } from '@japa/runner'
 
-import { Parser } from '../src/Parser'
-import { args } from '../src/Decorators/args'
 import { BaseCommand } from '../src/BaseCommand'
+import { args } from '../src/Decorators/args'
+import { Parser } from '../src/Parser'
 
 test.group('Parser | flags', () => {
   test('parse flags as boolean', ({ assert }) => {

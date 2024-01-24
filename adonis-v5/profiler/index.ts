@@ -1,5 +1,5 @@
 /*
- * @adonisjs/profiler
+ * @kubit/profiler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

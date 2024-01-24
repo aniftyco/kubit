@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,4 +8,5 @@
  */
 
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+
 export function noop(_: HttpContextContract) {}

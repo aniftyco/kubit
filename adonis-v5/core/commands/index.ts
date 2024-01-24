@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,7 @@
  */
 
 export default [
-  '@adonisjs/core/build/commands/DumpRc.js',
-  '@adonisjs/core/build/commands/ListRoutes/index',
-  '@adonisjs/core/build/commands/GenerateKey.js',
+  '@kubit/core/build/commands/DumpRc.js',
+  '@kubit/core/build/commands/ListRoutes/index',
+  '@kubit/core/build/commands/GenerateKey.js',
 ]

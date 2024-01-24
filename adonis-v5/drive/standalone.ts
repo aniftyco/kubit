@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { UrlNormalizationOptions } from '@ioc:Adonis/Core/Validator'
+import { test } from '@japa/runner'
 
-import { rules } from '../../src/Rules'
-import { MessagesBag } from '../../src/MessagesBag'
 import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
 import { normalizeUrl } from '../../src/Validations/string/normalizeUrl'
 
 function compile(options?: UrlNormalizationOptions) {

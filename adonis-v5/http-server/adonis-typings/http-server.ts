@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,13 +8,14 @@
  */
 
 declare module '@ioc:Adonis/Core/Server' {
+  import { IncomingMessage, Server as HttpServer, ServerResponse } from 'http'
   import { Server as HttpsServer } from 'https'
-  import { RouterContract } from '@ioc:Adonis/Core/Route'
-  import { RequestConfig } from '@ioc:Adonis/Core/Request'
-  import { ResponseConfig } from '@ioc:Adonis/Core/Response'
+
   import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
   import { MiddlewareStoreContract } from '@ioc:Adonis/Core/Middleware'
-  import { IncomingMessage, ServerResponse, Server as HttpServer } from 'http'
+  import { RequestConfig } from '@ioc:Adonis/Core/Request'
+  import { ResponseConfig } from '@ioc:Adonis/Core/Response'
+  import { RouterContract } from '@ioc:Adonis/Core/Route'
 
   /**
    * Before hooks are executed before finding the route or finding

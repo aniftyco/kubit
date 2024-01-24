@@ -1,5 +1,5 @@
 /*
- * @adonisjs/fold
+ * @kubit/fold
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { test } from '@japa/runner'
+
 import { Ioc } from '../src/Ioc'
 
 test.group('Ioc Resolver', () => {

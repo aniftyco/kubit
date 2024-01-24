@@ -1,20 +1,20 @@
 /*
-* @adonisjs/mrm-preset
-*
-* (c) Harminder Virk <virk@adonisjs.com>
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
+ * @kubit/mrm-preset
+ *
+ * (c) Harminder Virk <virk@adonisjs.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-const { template, deleteFiles } = require('mrm-core')
-const { join } = require('path')
-const debug = require('debug')('adonis:mrm-github')
+const { template, deleteFiles } = require('mrm-core');
+const { join } = require('path');
+const debug = require('debug')('adonis:mrm-github');
 
 class CoreTemplates {
-  constructor () {
-    this.issues = '.github/ISSUE_TEMPLATE/bug_report.md'
-    this.features = '.github/ISSUE_TEMPLATE/feature_request.md'
+  constructor() {
+    this.issues = '.github/ISSUE_TEMPLATE/bug_report.md';
+    this.features = '.github/ISSUE_TEMPLATE/feature_request.md';
   }
 
   /**
@@ -24,11 +24,15 @@ class CoreTemplates {
    *
    * @return {void}
    */
-  up () {
-    debug('using templates: %o', [this.issues, this.features])
+  up() {
+    debug('using templates: %o', [this.issues, this.features]);
 
-    template(this.issues, join(__dirname, 'templates', 'bugs.md')).apply().save()
-    template(this.features, join(__dirname, 'templates', 'features.md')).apply().save()
+    template(this.issues, join(__dirname, 'templates', 'bugs.md'))
+      .apply()
+      .save();
+    template(this.features, join(__dirname, 'templates', 'features.md'))
+      .apply()
+      .save();
   }
 
   /**
@@ -38,11 +42,11 @@ class CoreTemplates {
    *
    * @return {void}
    */
-  down () {
-    debug('removing templates: %o', [this.issues, this.features])
+  down() {
+    debug('removing templates: %o', [this.issues, this.features]);
 
-    deleteFiles([this.issues, this.features])
+    deleteFiles([this.issues, this.features]);
   }
 }
 
-module.exports = new CoreTemplates()
+module.exports = new CoreTemplates();

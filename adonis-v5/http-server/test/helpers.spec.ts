@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,8 @@
  */
 
 import { test } from '@japa/runner'
-import { normalizeMakeUrlOptions, normalizeMakeSignedUrlOptions } from '../src/helpers'
+
+import { normalizeMakeSignedUrlOptions, normalizeMakeUrlOptions } from '../src/helpers'
 
 test.group('Helpers | normalizeMakeUrlOptions', () => {
   test('use top level object as params', ({ assert }) => {

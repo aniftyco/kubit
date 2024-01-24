@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,8 @@
  */
 
 import { Exception } from '@poppinss/utils'
-import { CommandConstructorContract, CommandArg } from '../Contracts'
+
+import { CommandArg, CommandConstructorContract } from '../Contracts'
 
 /**
  * Validates the command static properties to ensure that all the

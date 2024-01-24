@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,12 +9,12 @@
 
 import { test } from '@japa/runner'
 
+import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
 import { rules } from '../../src/Rules'
 import { schema } from '../../src/Schema'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
-import { ApiErrorReporter } from '../../src/ErrorReporter'
 import { equalTo } from '../../src/Validations/string/equalTo'
+import { validate } from '../fixtures/rules/index'
 
 function compile(equalToValue: any) {
   // Regex Example for tax id validation from Brazil

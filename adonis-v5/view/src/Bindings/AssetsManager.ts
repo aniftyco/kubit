@@ -1,5 +1,5 @@
 /*
- * @adonisjs/view
+ * @kubit/view
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,9 @@
  */
 
 import { EdgeError } from 'edge-error'
-import { ViewContract } from '@ioc:Adonis/Core/View'
+
 import { AssetsManagerContract } from '@ioc:Adonis/Core/AssetsManager'
+import { ViewContract } from '@ioc:Adonis/Core/View'
 
 /**
  * Registers the asset manager tags and globals with the template engine

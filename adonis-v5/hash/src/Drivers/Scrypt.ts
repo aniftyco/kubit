@@ -1,5 +1,5 @@
 /*
- * @adonisjs/hash
+ * @kubit/hash
  *
  * (c) AdonisJS
  *
@@ -7,12 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import phc from '@phc/format'
 import { scrypt, timingSafeEqual } from 'crypto'
-import type { BinaryLike, ScryptOptions } from 'crypto'
-import type { ScryptConfig, ScryptContract } from '@ioc:Adonis/Core/Hash'
+
+import phc from '@phc/format'
 
 import { kMaxUint24, randomBytesAsync } from '../utils'
+
+import type { BinaryLike, ScryptOptions } from 'crypto'
+import type { ScryptConfig, ScryptContract } from '@ioc:Adonis/Core/Hash'
 
 const defaultConfig = Object.freeze({
   cost: 16384,

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { test } from '@japa/runner'
+
 import { IcuFormatter } from '../src/Formatters/Message/Icu'
 
 test.group('ICU message formatter', () => {

@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,8 @@
 
 import { test } from '@japa/runner'
 
+import { canUnpack, pack, unpack } from '../src/Cookie/Drivers/Encrypted'
 import { encryption } from '../test-helpers'
-import { pack, unpack, canUnpack } from '../src/Cookie/Drivers/Encrypted'
 
 test.group('EncryptedCookie | Pack', () => {
   test('pack cookie as encrypted cookie', ({ assert }) => {

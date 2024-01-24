@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,24 +7,24 @@
  * file that was distributed with this source code.
  */
 
-import { getLiteralType, getObjectType, getArrayType } from '../utils'
-
 import {
-  Rule,
-  Schema,
+  ArrayType,
+  BooleanType,
   DateType,
+  EnumSetType,
   EnumType,
   FileType,
-  SchemaRef,
-  ArrayType,
-  StringType,
-  ObjectType,
   NumberType,
-  EnumSetType,
-  BooleanType,
-  TypedSchema,
+  ObjectType,
   ParsedSchemaTree,
+  Rule,
+  Schema,
+  SchemaRef,
+  StringType,
+  TypedSchema,
 } from '@ioc:Adonis/Core/Validator'
+
+import { getArrayType, getLiteralType, getObjectType } from '../utils'
 
 /**
  * String schema type

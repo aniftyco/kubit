@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { CommandFlag, FlagTypes, CommandConstructorContract } from '../Contracts'
+import { CommandConstructorContract, CommandFlag, FlagTypes } from '../Contracts'
 
 /**
  * Pushes flag to the list of command flags with predefined

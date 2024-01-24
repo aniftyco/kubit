@@ -1,5 +1,5 @@
 /*
- * @adonisjs/view
+ * @kubit/view
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
-import { join } from 'path'
 import { Edge } from 'edge.js'
+import { join } from 'path'
 
-import { setup, fs, APP_KEY } from '../test-helpers'
+import { test } from '@japa/runner'
+
+import { APP_KEY, fs, setup } from '../test-helpers'
 
 test.group('View Provider', (group) => {
   group.each.teardown(async () => {

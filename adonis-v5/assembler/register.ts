@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,4 +8,5 @@
  */
 
 import register from './src/requireHook'
+
 register(process.env.ADONIS_ACE_CWD || process.cwd())

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/profiler
+ * @kubit/profiler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/profiler.ts" />
 
-import { ProfilerActionContract, AbstractProfilerContract } from '@ioc:Adonis/Core/Profiler'
+import { AbstractProfilerContract, ProfilerActionContract } from '@ioc:Adonis/Core/Profiler'
 
 /**
  * Abstract class to be extended to add support for timing functions.

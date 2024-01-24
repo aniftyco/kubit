@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,8 @@
 
 import { outputFile, pathExists } from 'fs-extra'
 
+import { CommandContract, GeneratorContract, GeneratorFileOptions } from '../Contracts'
 import { GeneratorFile } from './File'
-import { GeneratorFileOptions, GeneratorContract, CommandContract } from '../Contracts'
 
 /**
  * Exposes the API to generate entity files, like project

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,13 +10,14 @@
 /// <reference path="../../../adonis-typings/index.ts" />
 
 import { DateTime } from 'luxon'
-import { formatters } from '@poppinss/intl-formatter'
+
 import {
-  FormatterContract,
-  TimeFormatOptions,
-  NumberFormatOptions,
   CurrencyFormatOptions,
+  FormatterContract,
+  NumberFormatOptions,
+  TimeFormatOptions,
 } from '@ioc:Adonis/Addons/I18n'
+import { formatters } from '@poppinss/intl-formatter'
 
 import { format } from '../RelativeTime'
 

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
+import { extname, join, relative } from 'path'
 import slash from 'slash'
-import { join, relative, extname } from 'path'
+
 import { fsReadAll } from '@poppinss/utils/build/helpers'
 
 import { CommandsListFilterFn } from '../Contracts'

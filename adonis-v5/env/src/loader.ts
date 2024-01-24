@@ -1,5 +1,5 @@
 /*
- * @adonisjs/env
+ * @kubit/env
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 import { readFileSync } from 'fs'
 import { isAbsolute, join } from 'path'
+
 import { Exception } from '@poppinss/utils'
 
 /**

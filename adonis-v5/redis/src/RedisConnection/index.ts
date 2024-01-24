@@ -1,5 +1,5 @@
 /*
- * @adonisjs/redis
+ * @kubit/redis
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,11 +10,12 @@
 /// <reference path="../../adonis-typings/redis.ts" />
 
 import Redis, { RedisOptions } from 'ioredis'
+
 import { RedisConnectionConfig } from '@ioc:Adonis/Addons/Redis'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 
-import { ioMethods } from '../ioMethods'
 import { AbstractConnection } from '../AbstractConnection'
+import { ioMethods } from '../ioMethods'
 
 /**
  * Redis connection exposes the API to run Redis commands using `ioredis` as the

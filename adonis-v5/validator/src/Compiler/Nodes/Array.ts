@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,13 +9,13 @@
 
 import {
   SchemaArray,
-  SchemaObject,
   SchemaLiteral,
+  SchemaObject,
   ValidationField,
 } from '@ioc:Adonis/Core/Validator'
 
-import { Compiler } from '../index'
 import { CompilerBuffer } from '../Buffer'
+import { Compiler } from '../index'
 import { LiteralCompiler } from './Literal'
 
 /**

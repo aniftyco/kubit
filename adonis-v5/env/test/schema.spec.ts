@@ -1,5 +1,5 @@
 /*
- * @adonisjs/env
+ * @kubit/env
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { test } from '@japa/runner'
+
 import { schema } from '../src/Schema'
 
 test.group('schema | number', () => {

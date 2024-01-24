@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) AdonisJS
  *
@@ -10,6 +10,7 @@
 /// <reference path="../../adonis-typings/index.ts" />
 
 import Tokens from 'csrf'
+
 import { ContainerBindings } from '@ioc:Adonis/Core/Application'
 
 /**

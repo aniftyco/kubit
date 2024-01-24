@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,24 +9,23 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { Manager } from '@poppinss/manager'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
-import { LoggerContract } from '@ioc:Adonis/Core/Logger'
-import { Exception, ManagerConfigValidator } from '@poppinss/utils'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-
 import {
-  DisksList,
-  Visibility,
-  DriveConfig,
-  DriverContract,
-  DriveFileStats,
-  LocalDriverConfig,
-  DriveManagerContract,
-  FakeImplementationCallback,
   DirectoryListingContract,
+  DisksList,
+  DriveConfig,
+  DriveFileStats,
   DriveListItem,
+  DriveManagerContract,
+  DriverContract,
+  FakeImplementationCallback,
+  LocalDriverConfig,
+  Visibility,
 } from '@ioc:Adonis/Core/Drive'
+import { LoggerContract } from '@ioc:Adonis/Core/Logger'
+import { RouterContract } from '@ioc:Adonis/Core/Route'
+import { Manager } from '@poppinss/manager'
+import { Exception, ManagerConfigValidator } from '@poppinss/utils'
 
 import { FakeDrive } from '../Fake'
 

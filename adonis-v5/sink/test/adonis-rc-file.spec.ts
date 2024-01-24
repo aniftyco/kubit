@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
 
 import { AdonisRcFile } from '../src/Files/Special/AdonisRc'
@@ -596,13 +597,13 @@ test.group('AdonisRc file', (group) => {
 
   test('add multiple providers to providers array', async ({ assert }) => {
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addProvider('@adonisjs/core')
-    rcfile.addProvider('@adonisjs/fold')
+    rcfile.addProvider('@kubit/core')
+    rcfile.addProvider('@kubit/fold')
     rcfile.commit()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      providers: ['@adonisjs/core', '@adonisjs/fold'],
+      providers: ['@kubit/core', '@kubit/fold'],
     })
   })
 
@@ -611,7 +612,7 @@ test.group('AdonisRc file', (group) => {
       '.adonisrc.json',
       JSON.stringify(
         {
-          providers: ['@adonisjs/core', '@adonisjs/fold'],
+          providers: ['@kubit/core', '@kubit/fold'],
         },
         null,
         2
@@ -619,12 +620,12 @@ test.group('AdonisRc file', (group) => {
     )
 
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addProvider('@adonisjs/core')
+    rcfile.addProvider('@kubit/core')
     rcfile.commit()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      providers: ['@adonisjs/core', '@adonisjs/fold'],
+      providers: ['@kubit/core', '@kubit/fold'],
     })
   })
 
@@ -633,7 +634,7 @@ test.group('AdonisRc file', (group) => {
       '.adonisrc.json',
       JSON.stringify(
         {
-          providers: ['@adonisjs/core'],
+          providers: ['@kubit/core'],
         },
         null,
         2
@@ -641,12 +642,12 @@ test.group('AdonisRc file', (group) => {
     )
 
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addProvider('@adonisjs/fold')
+    rcfile.addProvider('@kubit/fold')
     rcfile.commit()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      providers: ['@adonisjs/core', '@adonisjs/fold'],
+      providers: ['@kubit/core', '@kubit/fold'],
     })
   })
 
@@ -655,7 +656,7 @@ test.group('AdonisRc file', (group) => {
       '.adonisrc.json',
       JSON.stringify(
         {
-          providers: ['@adonisjs/core'],
+          providers: ['@kubit/core'],
         },
         null,
         2
@@ -663,12 +664,12 @@ test.group('AdonisRc file', (group) => {
     )
 
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addProvider('@adonisjs/fold')
+    rcfile.addProvider('@kubit/fold')
     rcfile.rollback()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      providers: ['@adonisjs/core'],
+      providers: ['@kubit/core'],
     })
   })
 
@@ -685,13 +686,13 @@ test.group('AdonisRc file', (group) => {
 
   test('add multiple providers to ace providers array', async ({ assert }) => {
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addAceProvider('@adonisjs/core')
-    rcfile.addAceProvider('@adonisjs/fold')
+    rcfile.addAceProvider('@kubit/core')
+    rcfile.addAceProvider('@kubit/fold')
     rcfile.commit()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      aceProviders: ['@adonisjs/core', '@adonisjs/fold'],
+      aceProviders: ['@kubit/core', '@kubit/fold'],
     })
   })
 
@@ -700,7 +701,7 @@ test.group('AdonisRc file', (group) => {
       '.adonisrc.json',
       JSON.stringify(
         {
-          aceProviders: ['@adonisjs/core', '@adonisjs/fold'],
+          aceProviders: ['@kubit/core', '@kubit/fold'],
         },
         null,
         2
@@ -708,12 +709,12 @@ test.group('AdonisRc file', (group) => {
     )
 
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addAceProvider('@adonisjs/core')
+    rcfile.addAceProvider('@kubit/core')
     rcfile.commit()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      aceProviders: ['@adonisjs/core', '@adonisjs/fold'],
+      aceProviders: ['@kubit/core', '@kubit/fold'],
     })
   })
 
@@ -724,7 +725,7 @@ test.group('AdonisRc file', (group) => {
       '.adonisrc.json',
       JSON.stringify(
         {
-          aceProviders: ['@adonisjs/core'],
+          aceProviders: ['@kubit/core'],
         },
         null,
         2
@@ -732,12 +733,12 @@ test.group('AdonisRc file', (group) => {
     )
 
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addAceProvider('@adonisjs/fold')
+    rcfile.addAceProvider('@kubit/fold')
     rcfile.commit()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      aceProviders: ['@adonisjs/core', '@adonisjs/fold'],
+      aceProviders: ['@kubit/core', '@kubit/fold'],
     })
   })
 
@@ -746,7 +747,7 @@ test.group('AdonisRc file', (group) => {
       '.adonisrc.json',
       JSON.stringify(
         {
-          aceProviders: ['@adonisjs/core'],
+          aceProviders: ['@kubit/core'],
         },
         null,
         2
@@ -754,12 +755,12 @@ test.group('AdonisRc file', (group) => {
     )
 
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addAceProvider('@adonisjs/fold')
+    rcfile.addAceProvider('@kubit/fold')
     rcfile.rollback()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      aceProviders: ['@adonisjs/core'],
+      aceProviders: ['@kubit/core'],
     })
   })
 
@@ -776,13 +777,13 @@ test.group('AdonisRc file', (group) => {
 
   test('add multiple providers to test providers array', async ({ assert }) => {
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addTestProvider('@adonisjs/core')
-    rcfile.addTestProvider('@adonisjs/fold')
+    rcfile.addTestProvider('@kubit/core')
+    rcfile.addTestProvider('@kubit/fold')
     rcfile.commit()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      testProviders: ['@adonisjs/core', '@adonisjs/fold'],
+      testProviders: ['@kubit/core', '@kubit/fold'],
     })
   })
 
@@ -791,7 +792,7 @@ test.group('AdonisRc file', (group) => {
       '.adonisrc.json',
       JSON.stringify(
         {
-          testProviders: ['@adonisjs/core', '@adonisjs/fold'],
+          testProviders: ['@kubit/core', '@kubit/fold'],
         },
         null,
         2
@@ -799,12 +800,12 @@ test.group('AdonisRc file', (group) => {
     )
 
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addTestProvider('@adonisjs/core')
+    rcfile.addTestProvider('@kubit/core')
     rcfile.commit()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      testProviders: ['@adonisjs/core', '@adonisjs/fold'],
+      testProviders: ['@kubit/core', '@kubit/fold'],
     })
   })
 
@@ -815,7 +816,7 @@ test.group('AdonisRc file', (group) => {
       '.adonisrc.json',
       JSON.stringify(
         {
-          testProviders: ['@adonisjs/core'],
+          testProviders: ['@kubit/core'],
         },
         null,
         2
@@ -823,12 +824,12 @@ test.group('AdonisRc file', (group) => {
     )
 
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addTestProvider('@adonisjs/fold')
+    rcfile.addTestProvider('@kubit/fold')
     rcfile.commit()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      testProviders: ['@adonisjs/core', '@adonisjs/fold'],
+      testProviders: ['@kubit/core', '@kubit/fold'],
     })
   })
 
@@ -837,7 +838,7 @@ test.group('AdonisRc file', (group) => {
       '.adonisrc.json',
       JSON.stringify(
         {
-          testProviders: ['@adonisjs/core'],
+          testProviders: ['@kubit/core'],
         },
         null,
         2
@@ -845,12 +846,12 @@ test.group('AdonisRc file', (group) => {
     )
 
     const rcfile = new AdonisRcFile(fs.basePath)
-    rcfile.addTestProvider('@adonisjs/fold')
+    rcfile.addTestProvider('@kubit/fold')
     rcfile.rollback()
 
     const contents = await fs.get('.adonisrc.json')
     assert.deepEqual(JSON.parse(contents), {
-      testProviders: ['@adonisjs/core'],
+      testProviders: ['@kubit/core'],
     })
   })
 })

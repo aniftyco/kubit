@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,12 +9,13 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import qs from 'qs'
-import { parse } from 'url'
 import encodeurl from 'encodeurl'
 import { IncomingMessage } from 'http'
-import { RouterContract, MakeUrlOptions } from '@ioc:Adonis/Core/Route'
+import qs from 'qs'
+import { parse } from 'url'
+
 import { RedirectContract, ResponseContract } from '@ioc:Adonis/Core/Response'
+import { MakeUrlOptions, RouterContract } from '@ioc:Adonis/Core/Route'
 
 /**
  * Exposes the API to construct redirect routes

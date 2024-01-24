@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,11 +8,12 @@
  */
 
 import { test } from '@japa/runner'
-import { rules } from '../../src/Rules'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
+
 import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
 import { range } from '../../src/Validations/number/range'
+import { validate } from '../fixtures/rules/index'
 
 function compile(start: number, stop: number) {
   return range.compile('literal', 'number', rules.range(start, stop).options, {})

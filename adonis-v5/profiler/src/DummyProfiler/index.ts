@@ -1,5 +1,5 @@
 /*
- * @adonisjs/profiler
+ * @kubit/profiler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/profiler.ts" />
 
-import { ProfilerRowContract, ProfilerActionContract } from '@ioc:Adonis/Core/Profiler'
+import { ProfilerActionContract, ProfilerRowContract } from '@ioc:Adonis/Core/Profiler'
 
 /**
  * Dummy action is a noop implementation of [[ProfileActionContract]]. When

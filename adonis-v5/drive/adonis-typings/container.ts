@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 declare module '@ioc:Adonis/Core/Application' {
   import { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
+
   export interface ContainerBindings {
     'Adonis/Core/Drive': DriveManagerContract
   }

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/require-ts
+ * @kubit/require-ts
  *
  * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
  *
@@ -7,8 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
+
 import { getCachePathForFile } from '../src/utils'
 
 test.group('getCachePathForFile', () => {

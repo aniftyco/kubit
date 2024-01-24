@@ -1,5 +1,5 @@
 /*
- * @adonisjs/view
+ * @kubit/view
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -46,7 +46,7 @@ export async function setup(environment: 'web' | 'repl', setupDriveConfig: boole
   }
 
   const app = new Application(fs.basePath, environment, {
-    providers: ['@adonisjs/core', '@adonisjs/repl', '../../providers/ViewProvider'],
+    providers: ['@kubit/core', '@kubit/repl', '../../providers/ViewProvider'],
   })
 
   await app.setup()

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/hash
+ * @kubit/hash
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,9 @@
 
 import { test } from '@japa/runner'
 import phc from '@phc/format'
-import { scryptFactory } from '../test-helpers'
+
 import { kMaxUint24 } from '../src/utils'
+import { scryptFactory } from '../test-helpers'
 
 test.group('Scrypt', () => {
   test('hash value', async ({ assert }) => {

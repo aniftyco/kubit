@@ -1,5 +1,5 @@
 /*
- * @adonisjs/encryption
+ * @kubit/encryption
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { Exception } from '@poppinss/utils'
+
 import exceptions from '../../exceptions.json'
 
 export class AppKeyException extends Exception {

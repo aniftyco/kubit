@@ -1,5 +1,5 @@
 /*
- * @adonisjs/require-ts
+ * @kubit/require-ts
  *
  * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
  *
@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
+import { outputFileSync, readFileSync, removeSync } from 'fs-extra'
 import { join } from 'path'
 import revHash from 'rev-hash'
-import { readFileSync, outputFileSync, removeSync } from 'fs-extra'
-import { getCachePathForFile, debug } from '../utils'
+
+import { debug, getCachePathForFile } from '../utils'
 
 /**
  * Exposes the API to write file parsed contents to disk as cache. Handles

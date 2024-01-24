@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { test } from '@japa/runner'
+
 import { Store } from '../src/Store'
 
 test.group('Store', () => {

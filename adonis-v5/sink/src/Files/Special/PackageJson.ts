@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { packageJson, install, uninstall, NpmOptions } from 'mrm-core'
-import { spawnSync, SpawnSyncReturns, StdioOptions, spawn } from 'child_process'
+import { spawn, spawnSync, SpawnSyncReturns, StdioOptions } from 'child_process'
+import { install, NpmOptions, packageJson, uninstall } from 'mrm-core'
+
 import { File } from '../Base/File'
 
 type InstallerFns = 'install' | 'uninstall'

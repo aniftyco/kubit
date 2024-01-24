@@ -1,5 +1,5 @@
 /*
- * @adonisjs/redis
+ * @kubit/redis
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { RedisConnectionConfig, RedisClusterConfig } from '@ioc:Adonis/Addons/Redis'
+import { RedisClusterConfig, RedisConnectionConfig } from '@ioc:Adonis/Addons/Redis'
 
 /**
  * Expected shape of the config accepted by the "redisConfig"

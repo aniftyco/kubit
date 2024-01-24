@@ -1,5 +1,5 @@
 /**
- * @adonisjs/encryption
+ * @kubit/encryption
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 declare module '@ioc:Adonis/Core/Application' {
   import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+
   export interface ContainerBindings {
     'Adonis/Core/Encryption': EncryptionContract
   }

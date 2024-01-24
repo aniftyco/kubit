@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,11 +9,12 @@
 
 declare module '@ioc:Adonis/Core/Drive' {
   import * as fsExtra from 'fs-extra'
+
+  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+  import { ManagerContract } from '@poppinss/manager'
+
   import type { Volume as MemfsVolume } from 'memfs/lib/volume'
   import type { Dirent as MemfsDirent } from 'memfs/lib/Dirent'
-  import { ManagerContract } from '@poppinss/manager'
-  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-
   /**
    * Content options for files
    */

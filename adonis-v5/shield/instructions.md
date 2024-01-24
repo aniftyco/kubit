@@ -1,4 +1,4 @@
-Congratulations! You have configured `@adonisjs/shield` package successfully. Just make sure to add the following middleware inside the `start/kernel.ts` file.
+Congratulations! You have configured `@kubit/shield` package successfully. Just make sure to add the following middleware inside the `start/kernel.ts` file.
 
 ```ts
 Server.middleware.register([

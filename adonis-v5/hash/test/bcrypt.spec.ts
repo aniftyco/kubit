@@ -1,5 +1,5 @@
 /*
- * @adonisjs/hash
+ * @kubit/hash
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,11 @@
  * file that was distributed with this source code.
  */
 
+import PlainBcrypt from 'bcrypt'
+
 import { test } from '@japa/runner'
 import phc from '@phc/format'
-import PlainBcrypt from 'bcrypt'
+
 import { Bcrypt } from '../src/Drivers/Bcrypt'
 
 test.group('Bcrypt', () => {

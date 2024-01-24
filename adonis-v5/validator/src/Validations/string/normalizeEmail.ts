@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,11 +7,13 @@
  * file that was distributed with this source code.
  */
 
-import { snakeCase } from '@poppinss/utils/build/src/Helpers/string'
-import { SyncValidation, EmailNormalizationOptions } from '@ioc:Adonis/Core/Validator'
 import { default as normalize, NormalizeEmailOptions } from 'validator/lib/normalizeEmail'
 
+import { EmailNormalizationOptions, SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { snakeCase } from '@poppinss/utils/build/src/Helpers/string'
+
 import { wrapCompile } from '../../Validator/helpers'
+
 const RULE_NAME = 'normalizeEmail'
 
 /**

@@ -1,5 +1,5 @@
 /**
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

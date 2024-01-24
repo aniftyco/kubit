@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
+import Emittery from 'emittery'
 import execa from 'execa'
 import getPort from 'get-port'
-import Emittery from 'emittery'
+
 import { logger as uiLogger } from '@poppinss/cliui'
 import { resolveDir } from '@poppinss/utils/build/helpers'
 

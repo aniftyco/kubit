@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -19,7 +19,7 @@ export default function registerForAdonis(appRoot: string) {
     transformers: {
       after: [
         {
-          transform: '@adonisjs/assembler/build/src/requireHook/ioc-transformer',
+          transform: '@kubit/assembler/build/src/requireHook/ioc-transformer',
         },
       ],
     },

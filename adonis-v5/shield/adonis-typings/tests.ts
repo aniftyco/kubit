@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) AdonisJS
  *

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { logger } from '@poppinss/cliui'
 import termSize from 'term-size'
-import { sortAndGroupCommands } from './sortAndGroupCommands'
+
+import { logger } from '@poppinss/cliui'
+
 import { Aliases, CommandArg, CommandFlag, SerializedCommand } from '../Contracts'
+import { sortAndGroupCommands } from './sortAndGroupCommands'
 
 /**
  * Converts a line to rows at a specific width

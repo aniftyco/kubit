@@ -1,5 +1,5 @@
 /*
- * @adonisjs/application
+ * @kubit/application
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { test } from '@japa/runner'
+
 import { parse } from '../src/rcParser'
 
 test.group('Rc Parser', () => {
@@ -526,11 +527,11 @@ test.group('Rc Parser', () => {
   test('define custom providers', ({ assert }) => {
     assert.deepEqual(
       parse({
-        providers: ['@adonisjs/core'],
+        providers: ['@kubit/core'],
       }),
       {
         raw: {
-          providers: ['@adonisjs/core'],
+          providers: ['@kubit/core'],
         },
         typescript: true,
         directories: {
@@ -561,7 +562,7 @@ test.group('Rc Parser', () => {
         metaFiles: [],
         commands: [],
         commandsAliases: {},
-        providers: ['@adonisjs/core'],
+        providers: ['@kubit/core'],
         aceProviders: [],
         testProviders: [],
         tests: {
@@ -576,11 +577,11 @@ test.group('Rc Parser', () => {
   test('define custom commands', ({ assert }) => {
     assert.deepEqual(
       parse({
-        aceProviders: ['@adonisjs/commands'],
+        aceProviders: ['@kubit/commands'],
       }),
       {
         raw: {
-          aceProviders: ['@adonisjs/commands'],
+          aceProviders: ['@kubit/commands'],
         },
         typescript: true,
         directories: {
@@ -612,7 +613,7 @@ test.group('Rc Parser', () => {
         commands: [],
         commandsAliases: {},
         providers: [],
-        aceProviders: ['@adonisjs/commands'],
+        aceProviders: ['@kubit/commands'],
         testProviders: [],
         tests: {
           suites: [],

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) AdonisJS
  *

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/fold
+ * @kubit/fold
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { normalize } from 'path'
+
 import { IocContract } from '../Contracts'
 import { IocLookupException } from '../Exceptions/IocLookupException'
 

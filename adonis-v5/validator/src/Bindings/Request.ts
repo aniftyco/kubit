@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,8 @@
 
 import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
 import {
-  validator,
   RequestValidatorNode,
+  validator,
   ValidatorResolvedConfig,
 } from '@ioc:Adonis/Core/Validator'
 

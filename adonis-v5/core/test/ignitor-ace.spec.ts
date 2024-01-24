@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -54,7 +54,7 @@ test.group('Ignitor | Ace | Generate Manifest', (group) => {
     await fs.add(
       'FooCommand.ts',
       `
-      const { BaseCommand } = require('@adonisjs/ace')
+      const { BaseCommand } = require('@kubit/ace')
       module.exports = class FooCommand extends BaseCommand {
         static get commandName () {
           return 'foo'
@@ -185,7 +185,7 @@ test.group('Ignitor | Ace | Run Command', (group) => {
     await fs.add(
       'FooCommand.ts',
       `
-      const { BaseCommand } = require('@adonisjs/ace')
+      const { BaseCommand } = require('@kubit/ace')
       export default class FooCommand extends BaseCommand {
 				public static get settings() {
 					return {
@@ -232,7 +232,7 @@ test.group('Ignitor | Ace | Run Command', (group) => {
     await fs.add(
       'FooCommand.ts',
       `
-      const { BaseCommand } = require('@adonisjs/ace')
+      const { BaseCommand } = require('@kubit/ace')
       export default class FooCommand extends BaseCommand {
         static get commandName () {
           return 'foo'

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/env
+ * @kubit/env
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { Exception } from '@poppinss/utils'
 import { SchemaFnOptions } from '@ioc:Adonis/Core/Env'
-import { ensureValue, BOOLEAN_NEGATIVES, BOOLEAN_POSITIVES } from './helpers'
+import { Exception } from '@poppinss/utils'
+
+import { BOOLEAN_NEGATIVES, BOOLEAN_POSITIVES, ensureValue } from './helpers'
 
 /**
  * Validates the number to be present in the user defined choices.

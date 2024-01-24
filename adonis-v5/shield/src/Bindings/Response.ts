@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { string } from '@poppinss/utils/build/helpers'
 import { ResponseConstructorContract } from '@ioc:Adonis/Core/Response'
+import { string } from '@poppinss/utils/build/helpers'
 
 /**
  * Sharing CSP nonce with the response

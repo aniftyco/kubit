@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import * as ui from '@poppinss/cliui'
 import { ParsedOptions } from 'getopts'
+
+import { AppEnvironments, ApplicationContract } from '@ioc:Adonis/Core/Application'
+import * as ui from '@poppinss/cliui'
 import { PromptContract } from '@poppinss/prompts'
-import { ApplicationContract, AppEnvironments } from '@ioc:Adonis/Core/Application'
 
 /**
  * Settings excepted by the command

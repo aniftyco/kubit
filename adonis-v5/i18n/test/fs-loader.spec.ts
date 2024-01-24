@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,10 @@
  */
 
 import { join } from 'path'
+
 import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
+
 import { FsLoader } from '../src/Loaders/Fs'
 
 const fs = new Filesystem(join(__dirname, '__app'))

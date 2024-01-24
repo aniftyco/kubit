@@ -1,5 +1,5 @@
 /*
- * @adonisjs/application
+ * @kubit/application
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 declare module '@ioc:Adonis/Core/Application' {
   import validator from '@ioc:Adonis/Core/Validator'
+
   export interface ContainerBindings {
     'Adonis/Core/Validator': typeof validator
   }

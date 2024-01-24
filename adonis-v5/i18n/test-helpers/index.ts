@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -41,7 +41,7 @@ export async function setup(
   )
 
   const app = new Application(fs.basePath, environment, {
-    providers: ['@adonisjs/core', '@adonisjs/view'].concat(additionalProviders),
+    providers: ['@kubit/core', '@kubit/view'].concat(additionalProviders),
   })
 
   await app.setup()

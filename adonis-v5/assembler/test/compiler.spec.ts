@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,14 +7,15 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import execa from 'execa'
 import { join } from 'path'
-import { Filesystem } from '@poppinss/dev-utils'
+
+import { test } from '@japa/runner'
 import { instantiate } from '@poppinss/cliui/build/api'
+import { Filesystem } from '@poppinss/dev-utils'
 
 import { Compiler } from '../src/Compiler'
-import { success, info, warning, error, dimYellow } from '../test-helpers'
+import { dimYellow, error, info, success, warning } from '../test-helpers'
 
 const ui = instantiate(true)
 const fs = new Filesystem(join(__dirname, '__app'))

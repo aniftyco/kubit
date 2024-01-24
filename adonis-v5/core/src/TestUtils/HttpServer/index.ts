@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { ServerContract } from '@ioc:Adonis/Core/Server'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ServerContract } from '@ioc:Adonis/Core/Server'
 import { CustomServerCallback } from '@ioc:Adonis/Core/TestUtils'
 
 import { createHttpServer } from '../../utils'

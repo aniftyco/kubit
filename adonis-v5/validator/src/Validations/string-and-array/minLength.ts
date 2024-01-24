@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { SyncValidation, NodeSubType } from '@ioc:Adonis/Core/Validator'
+import { NodeSubType, SyncValidation } from '@ioc:Adonis/Core/Validator'
+
 import { wrapCompile } from '../../Validator/helpers'
 
 const RULE_NAME = 'minLength'

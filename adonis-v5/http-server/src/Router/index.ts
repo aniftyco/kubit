@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,29 +9,27 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { types } from '@poppinss/utils/build/helpers'
 import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
-
 import {
-  RouteNode,
-  RouteHandler,
-  MatchedRoute,
-  RouterContract,
-  MakeUrlOptions,
-  RouteMatchersNode,
   MakeSignedUrlOptions,
+  MakeUrlOptions,
+  MatchedRoute,
+  RouteHandler,
+  RouteMatchersNode,
+  RouteNode,
+  RouterContract,
 } from '@ioc:Adonis/Core/Route'
+import { types } from '@poppinss/utils/build/helpers'
 
+import { RouterException } from '../Exceptions/RouterException'
+import { normalizeMakeSignedUrlOptions, normalizeMakeUrlOptions, toRoutesJSON } from '../helpers'
+import { BriskRoute } from './BriskRoute'
+import { RouteGroup } from './Group'
+import { LookupStore } from './LookupStore'
+import { RouteMatchers } from './Matchers'
+import { RouteResource } from './Resource'
 import { Route } from './Route'
 import { Store } from './Store'
-import { RouteGroup } from './Group'
-import { BriskRoute } from './BriskRoute'
-import { RouteResource } from './Resource'
-import { RouterException } from '../Exceptions/RouterException'
-import { toRoutesJSON, normalizeMakeUrlOptions, normalizeMakeSignedUrlOptions } from '../helpers'
-
-import { RouteMatchers } from './Matchers'
-import { LookupStore } from './LookupStore'
 
 /**
  * Router class exposes unified API to create new routes, group them or

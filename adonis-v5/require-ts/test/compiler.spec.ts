@@ -1,5 +1,5 @@
 /*
- * @adonisjs/require-ts
+ * @kubit/require-ts
  *
  * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
  *
@@ -7,14 +7,15 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
-import ts from 'typescript'
 import revHash from 'rev-hash'
+import ts from 'typescript'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
 
 import { Compiler } from '../src/Compiler'
-import { stringToArray, inspectConsole } from '../test-helpers'
+import { inspectConsole, stringToArray } from '../test-helpers'
 
 const fs = new Filesystem(join(__dirname, 'app'))
 

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,13 +8,14 @@
  */
 
 import { dirname, join } from 'path'
+
+import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 import { esmRequire } from '@poppinss/utils'
 import { resolveFrom } from '@poppinss/utils/build/helpers'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 
 import * as sink from '../../../index'
-import { TemplatesManager } from '../TemplatesManager'
 import { PackageFile, PackageInstructionsBlock } from '../../Contracts'
+import { TemplatesManager } from '../TemplatesManager'
 
 /**
  * Exposes the API to execute the instructions of a package, defined inside

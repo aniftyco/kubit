@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,12 +9,9 @@
 
 /// <reference path="../../adonis-typings/bodyparser.ts" />
 
-import slash from 'slash'
+import { createReadStream, move } from 'fs-extra'
 import { join } from 'path'
-import { Exception } from '@poppinss/utils'
-import { move, createReadStream } from 'fs-extra'
-import { cuid } from '@poppinss/utils/build/helpers'
-import { DisksList, WriteOptions, DriveManagerContract } from '@ioc:Adonis/Core/Drive'
+import slash from 'slash'
 
 import {
   FileJSON,
@@ -22,9 +19,12 @@ import {
   FileValidationOptions,
   MultipartFileContract,
 } from '@ioc:Adonis/Core/BodyParser'
+import { DisksList, DriveManagerContract, WriteOptions } from '@ioc:Adonis/Core/Drive'
+import { Exception } from '@poppinss/utils'
+import { cuid } from '@poppinss/utils/build/helpers'
 
-import { SizeValidator } from './Validators/Size'
 import { ExtensionValidator } from './Validators/Extensions'
+import { SizeValidator } from './Validators/Size'
 
 /**
  * The file holds the meta/data for an uploaded file, along with

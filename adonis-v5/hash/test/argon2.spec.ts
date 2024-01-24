@@ -1,5 +1,5 @@
 /*
- * @adonisjs/hash
+ * @kubit/hash
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,11 @@
  * file that was distributed with this source code.
  */
 
+import argon2 from 'argon2'
+
 import { test } from '@japa/runner'
 import phc from '@phc/format'
-import argon2 from 'argon2'
+
 import { Argon } from '../src/Drivers/Argon'
 
 test.group('Argon', () => {

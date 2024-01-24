@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { esmResolver } from '@poppinss/utils'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { esmResolver } from '@poppinss/utils'
 
 /**
  * Provider to register validator with the IoC container

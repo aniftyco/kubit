@@ -1,5 +1,5 @@
 /*
- * @adonisjs/application
+ * @kubit/application
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -151,11 +151,11 @@ test.group('Application', (group) => {
     assert.equal(app.version!.major, 1)
   })
 
-  test('pull adonis version from "@adonisjs/core" package.json file', async ({ assert }) => {
+  test('pull adonis version from "@kubit/core" package.json file', async ({ assert }) => {
     await fs.add(
-      'node_modules/@adonisjs/core/package.json',
+      'node_modules/@kubit/core/package.json',
       JSON.stringify({
-        name: '@adonisjs/core',
+        name: '@kubit/core',
         version: '5.0.0',
       })
     )
@@ -166,9 +166,9 @@ test.group('Application', (group) => {
 
   test('parse prereleases', async ({ assert }) => {
     await fs.add(
-      'node_modules/@adonisjs/core/package.json',
+      'node_modules/@kubit/core/package.json',
       JSON.stringify({
-        name: '@adonisjs/core',
+        name: '@kubit/core',
         version: '5.0.0-preview-rc-1.12',
       })
     )

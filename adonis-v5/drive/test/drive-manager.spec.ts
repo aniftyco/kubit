@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
-import { setupApp, fs } from '../test-helpers'
+
+import { test } from '@japa/runner'
+
 import { DriveManager } from '../src/DriveManager'
+import { fs, setupApp } from '../test-helpers'
 
 test.group('Drive Manager', (group) => {
   group.each.teardown(async () => {

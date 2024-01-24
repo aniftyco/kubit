@@ -1,5 +1,5 @@
 /*
- * @adonisjs/application
+ * @kubit/application
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -163,7 +163,7 @@ declare module '@ioc:Adonis/Core/Application' {
     readonly appName: string
 
     /**
-     * Version of `@adonisjs/core` package
+     * Version of `@kubit/core` package
      */
     readonly adonisVersion: SemverNode | null
 

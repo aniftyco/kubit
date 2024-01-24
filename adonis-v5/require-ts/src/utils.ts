@@ -1,5 +1,5 @@
 /*
- * @adonisjs/require-ts
+ * @kubit/require-ts
  *
  * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
  *
@@ -38,7 +38,7 @@ export function loadTypescript(cwd: string) {
     return require(require.resolve('typescript', { paths: [cwd] }))
   } catch (error) {
     if (error.code === 'ENOENT') {
-      throw new Error('"@adonisjs/require-ts" expects the "typescript" to be installed')
+      throw new Error('"@kubit/require-ts" expects the "typescript" to be installed')
     }
     throw error
   }

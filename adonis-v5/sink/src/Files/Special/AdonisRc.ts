@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { AppEnvironments } from '@ioc:Adonis/Core/Application'
+
 import { JsonFile } from '../Formats/Json'
 
 /**

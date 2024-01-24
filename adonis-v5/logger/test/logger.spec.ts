@@ -1,5 +1,5 @@
 /*
- * @adonisjs/logger
+ * @kubit/logger
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { Writable } from 'stream'
-import { Logger, FakeLogger } from '../index'
+
+import { test } from '@japa/runner'
+
+import { FakeLogger, Logger } from '../index'
 
 function getFakeStream(fn: (line: string) => boolean) {
   const stream = new Writable()

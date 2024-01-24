@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,8 @@
  */
 
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
-import { wrapCompile, enforceArray, isRef } from '../../Validator/helpers'
+
+import { enforceArray, isRef, wrapCompile } from '../../Validator/helpers'
 
 const RULE_NAME = 'enumSet'
 const DEFAULT_MESSAGE = 'enumSet validation failed'

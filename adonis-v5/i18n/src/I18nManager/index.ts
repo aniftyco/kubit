@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,25 +9,25 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { Exception } from '@poppinss/utils'
-import { LoggerContract } from '@ioc:Adonis/Core/Logger'
-import { EmitterContract } from '@ioc:Adonis/Core/Event'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 import {
-  I18nConfig,
-  LoaderContract,
-  FsLoaderOptions,
-  I18nManagerContract,
-  LoaderExtendCallback,
   FormatterExtendCallback,
+  FsLoaderOptions,
+  I18nConfig,
+  I18nManagerContract,
+  LoaderContract,
+  LoaderExtendCallback,
   TranslationsFormatterContract,
 } from '@ioc:Adonis/Addons/I18n'
+import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { EmitterContract } from '@ioc:Adonis/Core/Event'
+import { LoggerContract } from '@ioc:Adonis/Core/Logger'
+import { Exception } from '@poppinss/utils'
 
-import { I18n } from '../I18n'
+import { IcuFormatter } from '../Formatters/Message/Icu'
 import { prettyPrint } from '../Helpers'
+import { I18n } from '../I18n'
 import { FsLoader } from '../Loaders/Fs'
 import { language } from '../Negotiator'
-import { IcuFormatter } from '../Formatters/Message/Icu'
 
 export class I18nManager implements I18nManagerContract {
   /**

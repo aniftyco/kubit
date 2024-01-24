@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,16 +9,17 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import Cache from 'tmp-cache'
 import { stat, Stats } from 'fs'
+import Cache from 'tmp-cache'
 
-import { Route } from './Router/Route'
-import { RouteGroup } from './Router/Group'
-import { BriskRoute } from './Router/BriskRoute'
-import { RouteResource } from './Router/Resource'
-import { RouterException } from './Exceptions/RouterException'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { RouteJSON, MakeUrlOptions, MakeSignedUrlOptions } from '@ioc:Adonis/Core/Route'
+import { MakeSignedUrlOptions, MakeUrlOptions, RouteJSON } from '@ioc:Adonis/Core/Route'
+
+import { RouterException } from './Exceptions/RouterException'
+import { BriskRoute } from './Router/BriskRoute'
+import { RouteGroup } from './Router/Group'
+import { RouteResource } from './Router/Resource'
+import { Route } from './Router/Route'
 
 const proxyCache = new Cache({ max: 200 })
 

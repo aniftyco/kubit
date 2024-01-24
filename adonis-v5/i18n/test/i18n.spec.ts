@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,13 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
 
-import { I18n } from '../src/I18n'
-import { setup, fs } from '../test-helpers'
-import { I18nManager } from '../src/I18nManager'
+import { test } from '@japa/runner'
+
 import { validatorBindings } from '../src/Bindings/Validator'
+import { I18n } from '../src/I18n'
+import { I18nManager } from '../src/I18nManager'
+import { fs, setup } from '../test-helpers'
 
 test.group('I18n', (group) => {
   group.each.teardown(async () => fs.cleanup())

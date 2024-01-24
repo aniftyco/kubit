@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,16 +9,15 @@
 
 /// <reference path="../../adonis-typings/session.ts" />
 
-import { Exception, lodash } from '@poppinss/utils'
-import { cuid } from '@poppinss/utils/build/helpers'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-
 import {
+  AllowedSessionValues,
   SessionConfig,
   SessionContract,
-  AllowedSessionValues,
   SessionDriverContract,
 } from '@ioc:Adonis/Addons/Session'
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { Exception, lodash } from '@poppinss/utils'
+import { cuid } from '@poppinss/utils/build/helpers'
 
 import { Store } from '../Store'
 

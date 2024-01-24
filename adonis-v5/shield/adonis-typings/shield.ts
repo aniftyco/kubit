@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,10 +8,11 @@
  */
 
 declare module '@ioc:Adonis/Addons/Shield' {
-  import { CookieOptions } from '@ioc:Adonis/Core/Response'
   import { ContentSecurityPolicyOptions } from 'helmet-csp'
+
   import { ApplicationContract } from '@ioc:Adonis/Core/Application'
   import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+  import { CookieOptions } from '@ioc:Adonis/Core/Response'
 
   /**
    * Config for `X-Frame-Options` header

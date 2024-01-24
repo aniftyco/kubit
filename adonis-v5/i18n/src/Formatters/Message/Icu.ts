@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,13 +9,14 @@
 
 /// <reference path="../../../adonis-typings/index.ts" />
 
-import { formatters } from '@poppinss/intl-formatter'
 import { Formats, IntlMessageFormat } from 'intl-messageformat'
+
 import {
-  TimeFormatOptions,
   NumberFormatOptions,
+  TimeFormatOptions,
   TranslationsFormatterContract,
 } from '@ioc:Adonis/Addons/I18n'
+import { formatters } from '@poppinss/intl-formatter'
 
 /**
  * Formatters for ICU message. We need the memoized

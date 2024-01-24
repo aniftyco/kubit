@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,11 +9,11 @@
 
 import { test } from '@japa/runner'
 
-import { rules } from '../../src/Rules'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
 import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
 import { ip } from '../../src/Validations/string/ip'
+import { validate } from '../fixtures/rules/index'
 
 function compile(options?: { version?: '4' | '6' }) {
   return ip.compile('literal', 'string', rules.ip(options).options, {})

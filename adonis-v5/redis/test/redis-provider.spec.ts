@@ -1,5 +1,5 @@
 /*
- * @adonisjs/events
+ * @kubit/events
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -39,7 +39,7 @@ async function setup(environment: 'web' | 'repl', redisConfig: any) {
   )
 
   const app = new Application(fs.basePath, environment, {
-    providers: ['@adonisjs/core', '@adonisjs/repl', '../../providers/RedisProvider'],
+    providers: ['@kubit/core', '@kubit/repl', '../../providers/RedisProvider'],
   })
 
   await app.setup()

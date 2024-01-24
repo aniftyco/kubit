@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
+
 import { GeneratorFile } from '../src/Generator/File'
 
 test.group('Generator File', () => {

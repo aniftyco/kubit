@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -68,9 +68,7 @@ export const bodyParserConfig: BodyParserConfig = {
  */
 export async function setupApp(providers?: string[]) {
   const app = new Application(fs.basePath, 'web', {
-    providers: ['@adonisjs/encryption', '@adonisjs/http-server', '@adonisjs/drive'].concat(
-      providers || []
-    ),
+    providers: ['@kubit/encryption', '@kubit/http-server', '@kubit/drive'].concat(providers || []),
   })
   await fs.add('.env', '')
   await fs.add(

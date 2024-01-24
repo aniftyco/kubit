@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import normalizeEmail, { NormalizeEmailOptions } from 'validator/lib/normalizeEmail'
 import isEmail, { IsEmailOptions } from 'validator/lib/isEmail'
-import { SyncValidation, EmailRuleOptions } from '@ioc:Adonis/Core/Validator'
+import normalizeEmail, { NormalizeEmailOptions } from 'validator/lib/normalizeEmail'
+
+import { EmailRuleOptions, SyncValidation } from '@ioc:Adonis/Core/Validator'
 
 import { isObject, wrapCompile } from '../../Validator/helpers'
 

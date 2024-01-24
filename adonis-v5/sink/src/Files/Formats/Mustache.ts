@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import mustache from 'mustache'
-import { file } from 'mrm-core'
 import { readFileSync } from 'fs'
+import { file } from 'mrm-core'
+import mustache from 'mustache'
+
 import { File } from '../Base/File'
 
 /**

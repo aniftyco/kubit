@@ -1,5 +1,5 @@
 /*
- * @adonisjs/hash
+ * @kubit/hash
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { test } from '@japa/runner'
+
 import { Fake } from '../src/Drivers/Fake'
 
 test.group('Fake', () => {

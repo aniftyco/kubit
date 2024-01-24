@@ -1,5 +1,5 @@
 /*
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,17 +7,18 @@
  * file that was distributed with this source code.
  */
 
-import qs from 'qs'
 import encodeurl from 'encodeurl'
+import qs from 'qs'
 
-import {
-  RouteJSON,
-  LookupStoreTree,
-  UrlBuilderContract,
-  LookupStoreContract,
-} from '@ioc:Adonis/Core/Route'
-import { RouterException } from '../Exceptions/RouterException'
 import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+import {
+  LookupStoreContract,
+  LookupStoreTree,
+  RouteJSON,
+  UrlBuilderContract,
+} from '@ioc:Adonis/Core/Route'
+
+import { RouterException } from '../Exceptions/RouterException'
 
 /**
  * A class to encapsulate finding routes

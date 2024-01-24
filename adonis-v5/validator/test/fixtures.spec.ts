@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,11 +7,11 @@
  * file that was distributed with this source code.
  */
 
+import { validator as validatorType } from '@ioc:Adonis/Core/Validator'
 import { test } from '@japa/runner'
 
-import { validator as validatorType } from '@ioc:Adonis/Core/Validator'
-import { validator as validatorBase } from '../src/Validator'
 import * as userProfile from '../fixtures/user-profile/schema'
+import { validator as validatorBase } from '../src/Validator'
 
 const validator = validatorBase as unknown as typeof validatorType
 

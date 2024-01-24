@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { LoggerContract } from '@ioc:Adonis/Core/Logger'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { LoggerContract } from '@ioc:Adonis/Core/Logger'
 
 /**
  * Http exception handler serves as the base exception handler

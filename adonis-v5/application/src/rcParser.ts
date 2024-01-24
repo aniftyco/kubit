@@ -1,5 +1,5 @@
 /*
- * @adonisjs/application
+ * @kubit/application
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,14 +9,14 @@
 
 /// <reference path="../adonis-typings/application.ts" />
 
-import { Exception } from '@poppinss/utils'
 import {
-  RcFile,
-  MetaFileNode,
-  PreloadNode,
   DirectoriesNode,
+  MetaFileNode,
   NamespacesNode,
+  PreloadNode,
+  RcFile,
 } from '@ioc:Adonis/Core/Application'
+import { Exception } from '@poppinss/utils'
 
 /**
  * Default set of directories for AdonisJs

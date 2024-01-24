@@ -1,5 +1,5 @@
 /*
- * @adonisjs/require-ts
+ * @kubit/require-ts
  *
  * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
  *
@@ -7,15 +7,15 @@
  * file that was distributed with this source code.
  */
 
+import findCacheDir from 'find-cache-dir'
 import { addHook } from 'pirates'
 import tsStatic from 'typescript'
-import findCacheDir from 'find-cache-dir'
 
 import { Cache } from './src/Cache'
-import { Config } from './src/Config'
 import { Compiler } from './src/Compiler'
-import { loadTypescript } from './src/utils'
+import { Config } from './src/Config'
 import { Transformers } from './src/Contracts'
+import { loadTypescript } from './src/utils'
 
 /**
  * Extensions to register require extension for

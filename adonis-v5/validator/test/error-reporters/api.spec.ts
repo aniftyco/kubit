@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,9 +8,10 @@
  */
 
 import { test } from '@japa/runner'
+
+import { ApiErrorReporter } from '../../src/ErrorReporter/index'
 import { MessagesBag } from '../../src/MessagesBag'
 import { validate } from '../fixtures/error-reporters'
-import { ApiErrorReporter } from '../../src/ErrorReporter/index'
 
 test.group('Api ErrorReporter', () => {
   validate(ApiErrorReporter, test, (messages) => {

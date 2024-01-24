@@ -1,5 +1,5 @@
 /*
- * @adonisjs/events
+ * @kubit/events
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,9 @@
  */
 
 import { test } from '@japa/runner'
+
 import { ShieldMiddleware } from '../src/ShieldMiddleware'
-import { setup, fs } from '../test-helpers'
+import { fs, setup } from '../test-helpers'
 
 test.group('Shield Provider', (group) => {
   group.each.teardown(async () => {

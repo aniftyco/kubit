@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,13 +10,14 @@
 /// <reference path="../../../adonis-typings/index.ts" />
 
 import { Middleware } from 'co-compose'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
-import { interpolate } from '@poppinss/utils/build/helpers'
+
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { MiddlewareStoreContract, ResolvedMiddlewareHandler } from '@ioc:Adonis/Core/Middleware'
+import { RouterContract } from '@ioc:Adonis/Core/Route'
+import { interpolate } from '@poppinss/utils/build/helpers'
 
-import { HttpException } from '../../Exceptions/HttpException'
 import { E_ROUTE_NOT_FOUND } from '../../../exceptions.json'
+import { HttpException } from '../../Exceptions/HttpException'
 
 /**
  * Handles the request by invoking it's middleware chain, along with the

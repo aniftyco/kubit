@@ -1,5 +1,5 @@
 /*
- * @adonisjs/encryption
+ * @kubit/encryption
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,9 +10,10 @@
 /// <reference path="../../adonis-typings/encryption.ts" />
 
 import { createHash } from 'crypto'
+
+import { MessageVerifierContract } from '@ioc:Adonis/Core/Encryption'
 import { Exception } from '@poppinss/utils'
 import { base64, MessageBuilder } from '@poppinss/utils/build/helpers'
-import { MessageVerifierContract } from '@ioc:Adonis/Core/Encryption'
 
 import { Hmac } from '../Hmac'
 

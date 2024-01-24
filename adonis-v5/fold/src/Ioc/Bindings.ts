@@ -1,5 +1,5 @@
 /*
- * @adonisjs/fold
+ * @kubit/fold
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { IocContract, BindCallback } from '../Contracts'
+import { BindCallback, IocContract } from '../Contracts'
 import { IocLookupException } from '../Exceptions/IocLookupException'
 
 /**

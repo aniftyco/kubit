@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -12,33 +12,32 @@
 import etag from 'etag'
 import * as fsExtra from 'fs-extra'
 import { dirname } from 'path'
-import { DirectoryListing } from '../DirectoryListing'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
 
 import {
-  Visibility,
-  DriveFileStats,
   ContentHeaders,
+  DirectoryListingContract,
+  DriveFileStats,
+  LocalDriveListItem,
   LocalDriverConfig,
   LocalDriverContract,
-  DirectoryListingContract,
-  LocalDriveListItem,
+  Visibility,
 } from '@ioc:Adonis/Core/Drive'
+import { RouterContract } from '@ioc:Adonis/Core/Route'
 
-import { pipelinePromise } from '../utils'
-import { LocalFileServer } from '../LocalFileServer'
-import { PathPrefixer } from '../PathPrefixer'
-
+import { DirectoryListing } from '../DirectoryListing'
 import {
   CannotCopyFileException,
+  CannotDeleteFileException,
+  CannotGenerateUrlException,
+  CannotGetMetaDataException,
+  CannotListDirectoryException,
   CannotMoveFileException,
   CannotReadFileException,
   CannotWriteFileException,
-  CannotGenerateUrlException,
-  CannotDeleteFileException,
-  CannotGetMetaDataException,
-  CannotListDirectoryException,
 } from '../Exceptions'
+import { LocalFileServer } from '../LocalFileServer'
+import { PathPrefixer } from '../PathPrefixer'
+import { pipelinePromise } from '../utils'
 
 /**
  * Local driver interacts with the local file system

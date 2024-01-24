@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,9 +9,10 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { string } from '@poppinss/utils/build/helpers'
 import { HstsOptions } from '@ioc:Adonis/Addons/Shield'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { string } from '@poppinss/utils/build/helpers'
+
 import { noop } from './noop'
 
 const DEFAULT_MAX_AGE = 180 * 24 * 60 * 60

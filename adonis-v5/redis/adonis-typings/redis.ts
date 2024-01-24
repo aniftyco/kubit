@@ -1,5 +1,5 @@
 /*
- * @adonisjs/redis
+ * @kubit/redis
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,9 @@
 
 declare module '@ioc:Adonis/Addons/Redis' {
   import { EventEmitter } from 'events'
+  import { Cluster, ClusterOptions, NodeRole, Redis as IoRedis, RedisOptions } from 'ioredis'
+
   import { HealthReportEntry } from '@ioc:Adonis/Core/HealthCheck'
-  import { Redis as IoRedis, RedisOptions, ClusterOptions, Cluster, NodeRole } from 'ioredis'
 
   /*
   |--------------------------------------------------------------------------

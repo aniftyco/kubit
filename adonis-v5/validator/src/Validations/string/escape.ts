@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,9 @@
  */
 
 import { default as escapeValue } from 'validator/lib/escape'
+
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+
 import { wrapCompile } from '../../Validator/helpers'
 
 const RULE_NAME = 'escape'

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,9 +8,10 @@
  */
 
 import { test } from '@japa/runner'
+
+import { JsonApiErrorReporter } from '../../src/ErrorReporter/index'
 import { MessagesBag } from '../../src/MessagesBag'
 import { validate } from '../fixtures/error-reporters'
-import { JsonApiErrorReporter } from '../../src/ErrorReporter/index'
 
 test.group('JSON API ErrorReporter', () => {
   validate(JsonApiErrorReporter, test, ({ errors }) => {

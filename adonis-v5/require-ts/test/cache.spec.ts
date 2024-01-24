@@ -1,5 +1,5 @@
 /*
- * @adonisjs/require-ts
+ * @kubit/require-ts
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
 import revHash from 'rev-hash'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
 
 import { Cache } from '../src/Cache'

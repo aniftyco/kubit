@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) AdonisJS
  *
@@ -8,7 +8,9 @@
  */
 
 import '@japa/api-client'
+
 import { InspectOptions } from 'util'
+
 import { AllowedSessionValues, SessionClientContract } from '@ioc:Adonis/Addons/Session'
 
 declare module '@japa/api-client' {

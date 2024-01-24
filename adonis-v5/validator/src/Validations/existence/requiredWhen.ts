@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,8 @@
  */
 
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
-import { exists, getFieldValue, wrapCompile, isRef } from '../../Validator/helpers'
+
+import { exists, getFieldValue, isRef, wrapCompile } from '../../Validator/helpers'
 
 const RULE_NAME = 'requiredWhen'
 const DEFAULT_MESSAGE = 'requiredWhen validation failed'

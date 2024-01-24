@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) ? (Please advice before merge, thanks!)
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import Tokens from 'csrf'
+
+import { test } from '@japa/runner'
 
 import { csrfFactory } from '../src/csrf'
 import { fs, setup } from '../test-helpers'

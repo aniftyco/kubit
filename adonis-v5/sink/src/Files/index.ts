@@ -1,5 +1,5 @@
 /*
- * @adonisjs/files
+ * @kubit/files
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,8 @@
  */
 
 declare module '@ioc:Adonis/Core/Cors' {
-  import { RequestContract } from '@ioc:Adonis/Core/Request'
   import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+  import { RequestContract } from '@ioc:Adonis/Core/Request'
 
   type AllowedValuesTypes = boolean | string | string[]
 

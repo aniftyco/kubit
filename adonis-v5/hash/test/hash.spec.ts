@@ -1,5 +1,5 @@
 /*
- * @adonisjs/hash
+ * @kubit/hash
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

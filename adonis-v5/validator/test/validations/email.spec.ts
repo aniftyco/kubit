@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,14 +7,14 @@
  * file that was distributed with this source code.
  */
 
+import { EmailValidationOptions } from '@ioc:Adonis/Core/Validator'
 import { test } from '@japa/runner'
 
-import { rules } from '../../src/Rules'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
 import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
 import { email } from '../../src/Validations/string/email'
-import { EmailValidationOptions } from '@ioc:Adonis/Core/Validator'
+import { validate } from '../fixtures/rules/index'
 
 function compile(options?: EmailValidationOptions) {
   return email.compile('literal', 'string', rules.email(options).options, {})

@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,14 +7,15 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { parse } from 'querystring'
-import { Router } from '../src/Router'
-import { Route } from '../src/Router/Route'
-import { RouteGroup } from '../src/Router/Group'
-import { BriskRoute } from '../src/Router/BriskRoute'
-import { RouteResource } from '../src/Router/Resource'
 
+import { test } from '@japa/runner'
+
+import { Router } from '../src/Router'
+import { BriskRoute } from '../src/Router/BriskRoute'
+import { RouteGroup } from '../src/Router/Group'
+import { RouteResource } from '../src/Router/Resource'
+import { Route } from '../src/Router/Route'
 import { encryption } from '../test-helpers'
 
 test.group('Router', () => {

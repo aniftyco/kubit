@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,40 +10,38 @@
 import Cache from 'tmp-cache'
 
 import {
+  CompilerOutput,
+  CustomMessages,
+  DefaultMessagesCallback,
+  ErrorReporterConstructorContract,
+  NodeSubType,
   NodeType,
   ParsedRule,
-  TypedSchema,
-  NodeSubType,
-  ValidatorNode,
-  CompilerOutput,
-  RequestNegotiator,
   ParsedTypedSchema,
+  RequestNegotiator,
+  TypedSchema,
   ValidationContract,
-  ValidatorResolvedConfig,
   validator as validatorStatic,
-  ErrorReporterConstructorContract,
-  DefaultMessagesCallback,
-  CustomMessages,
+  ValidatorNode,
+  ValidatorResolvedConfig,
 } from '@ioc:Adonis/Core/Validator'
 
-import { schema } from '../Schema'
 import { Compiler } from '../Compiler'
-import { rules, getRuleFn } from '../Rules'
+import { ApiErrorReporter, JsonApiErrorReporter, VanillaErrorReporter } from '../ErrorReporter'
 import { MessagesBag } from '../MessagesBag'
+import { getRuleFn, rules } from '../Rules'
+import { schema } from '../Schema'
 import * as validations from '../Validations'
-
 import {
   exists,
-  isRef,
-  isObject,
-  wrapCompile,
   existsStrict,
   getFieldValue,
   getRequestReporter,
+  isObject,
+  isRef,
   resolveAbsoluteName,
+  wrapCompile,
 } from './helpers'
-
-import { VanillaErrorReporter, ApiErrorReporter, JsonApiErrorReporter } from '../ErrorReporter'
 
 /**
  * The compiled output runtime helpers

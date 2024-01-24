@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,10 +8,11 @@
  */
 
 import { test } from '@japa/runner'
-import { Route } from '../src/Router/Route'
+
 import { toRoutesJSON } from '../src/helpers'
 import { RouteGroup } from '../src/Router/Group'
 import { RouteResource } from '../src/Router/Resource'
+import { Route } from '../src/Router/Route'
 
 test.group('Route Group', () => {
   test('add matcher for the given route', ({ assert }) => {

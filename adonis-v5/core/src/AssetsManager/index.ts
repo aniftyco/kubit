@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,18 +7,19 @@
  * file that was distributed with this source code.
  */
 
-import { Exception } from '@poppinss/utils'
 import stringifyAttributes from 'stringify-attributes'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 import {
-  ExtendCallback,
-  AssetsManagerConfig,
   AssetsDriverContract,
+  AssetsManagerConfig,
   AssetsManagerContract,
+  ExtendCallback,
 } from '@ioc:Adonis/Core/AssetsManager'
+import { Exception } from '@poppinss/utils'
 
-import { FakeDriver } from './Drivers/Fake'
 import { EncoreDriver } from './Drivers/Encore'
+import { FakeDriver } from './Drivers/Fake'
 import { ViteDriver } from './Drivers/Vite'
 
 /**

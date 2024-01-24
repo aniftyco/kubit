@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) AdonisJS
  *
@@ -9,9 +9,10 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { ContainerBindings } from '@ioc:Adonis/Core/Application'
-import { SessionManagerContract, AllowedSessionValues } from '@ioc:Adonis/Addons/Session'
 import { inspect, InspectOptions } from 'util'
+
+import { AllowedSessionValues, SessionManagerContract } from '@ioc:Adonis/Addons/Session'
+import { ContainerBindings } from '@ioc:Adonis/Core/Application'
 
 /**
  * Define test bindings

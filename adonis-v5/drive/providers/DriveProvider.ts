@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { DisksList, DriveConfig } from '@ioc:Adonis/Core/Drive'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { DisksList, DriveConfig } from '@ioc:Adonis/Core/Drive'
 
 /**
  * Registers drive with the IoC container

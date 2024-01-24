@@ -1,5 +1,5 @@
 /*
- * @adonisjs/logger
+ * @kubit/logger
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

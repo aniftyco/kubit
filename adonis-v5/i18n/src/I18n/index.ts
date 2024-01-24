@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,13 +9,14 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { LoggerContract } from '@ioc:Adonis/Core/Logger'
-import { EmitterContract } from '@ioc:Adonis/Core/Event'
 import {
   I18nContract,
   I18nManagerContract,
   ValidatorWildcardCallback,
 } from '@ioc:Adonis/Addons/I18n'
+import { EmitterContract } from '@ioc:Adonis/Core/Event'
+import { LoggerContract } from '@ioc:Adonis/Core/Logger'
+
 import { Formatter } from '../Formatters/Core'
 
 /**

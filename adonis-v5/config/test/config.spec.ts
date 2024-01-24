@@ -1,5 +1,5 @@
 /*
- * @adonisjs/config
+ * @kubit/config
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
+
 import { Config } from '../src/Config'
 
 test.group('Config', () => {

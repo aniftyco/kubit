@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,9 @@
  */
 
 import { Macroable } from 'macroable'
-import { TestUtilsContract } from '@ioc:Adonis/Core/TestUtils'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { TestUtilsContract } from '@ioc:Adonis/Core/TestUtils'
 
 import { loadAceCommands } from '../utils'
 import { TestHttpServer } from './HttpServer'

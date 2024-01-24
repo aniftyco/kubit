@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,9 @@
  */
 
 import { EOL } from 'os'
+
 import { test } from '@japa/runner'
+
 import { Compiler } from '../src/Compiler'
 
 const COMPILER_SYMBOL = Symbol.for('REQUIRE_TS_COMPILER')

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,8 @@
  */
 
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
-import { exists, getFieldValue, wrapCompile, resolveAbsoluteName } from '../../Validator/helpers'
+
+import { exists, getFieldValue, resolveAbsoluteName, wrapCompile } from '../../Validator/helpers'
 
 const RULE_NAME = 'confirmed'
 const DEFAULT_MESSAGE = 'confirmed validation failed'

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,9 @@
  */
 
 import { test } from '@japa/runner'
-import { setup, fs } from '../test-helpers'
+
 import { hstsFactory } from '../src/hsts'
+import { fs, setup } from '../test-helpers'
 
 test.group('Hsts', (group) => {
   group.each.teardown(async () => {

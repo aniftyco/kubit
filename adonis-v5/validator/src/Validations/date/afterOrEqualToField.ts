@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,7 +10,7 @@
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
-import { compile, validate, CompileReturnType } from './helpers/field'
+import { compile, CompileReturnType, validate } from './helpers/field'
 
 const RULE_NAME = 'afterOrEqualToField'
 const DEFAULT_MESSAGE = 'after or equal to date validation failed'

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,13 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
 
-import { LocalDriver } from '../src/Drivers/Local'
-import { DirectoryListing } from '../src/DirectoryListing'
-import { setupApp, fs } from '../test-helpers'
 import { DriveListItem } from '@ioc:Adonis/Core/Drive'
+import { test } from '@japa/runner'
+
+import { DirectoryListing } from '../src/DirectoryListing'
+import { LocalDriver } from '../src/Drivers/Local'
+import { fs, setupApp } from '../test-helpers'
 
 const TEST_ROOT = join(fs.basePath, 'storage')
 

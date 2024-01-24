@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { extname, join, normalize, isAbsolute } from 'path'
+import { extname, isAbsolute, join, normalize } from 'path'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 
 import * as sink from '../../../index'

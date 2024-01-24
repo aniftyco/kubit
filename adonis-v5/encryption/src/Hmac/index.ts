@@ -1,5 +1,5 @@
 /*
- * @adonisjs/encryption
+ * @kubit/encryption
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { createHmac } from 'crypto'
+
 import { base64, safeEqual } from '@poppinss/utils/build/helpers'
 
 /**

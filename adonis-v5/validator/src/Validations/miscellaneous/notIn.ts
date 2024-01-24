@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,10 @@
  */
 
 import { DateTime } from 'luxon'
-import { SyncValidation, NodeSubType } from '@ioc:Adonis/Core/Validator'
-import { wrapCompile, enforceArray, isRef } from '../../Validator/helpers'
+
+import { NodeSubType, SyncValidation } from '@ioc:Adonis/Core/Validator'
+
+import { enforceArray, isRef, wrapCompile } from '../../Validator/helpers'
 
 const RULE_NAME = 'notIn'
 const DEFAULT_MESSAGE = 'notIn validation failed'

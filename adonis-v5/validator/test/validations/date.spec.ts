@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,13 +7,15 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
-import { rules } from '../../src/Rules'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
-import { ApiErrorReporter } from '../../src/ErrorReporter'
-import { date } from '../../src/Validations/primitives/date'
 import { DateTime } from 'luxon'
+
+import { test } from '@japa/runner'
+
+import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
+import { date } from '../../src/Validations/primitives/date'
+import { validate } from '../fixtures/rules/index'
 
 function compile(options: { format?: string }) {
   return date.compile('literal', 'date', rules['date'](options).options, {})

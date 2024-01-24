@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
+import { CustomMessages, MessagesBagContract } from '@ioc:Adonis/Core/Validator'
 import { interpolate } from '@poppinss/utils/build/helpers'
-import { MessagesBagContract, CustomMessages } from '@ioc:Adonis/Core/Validator'
 
 /**
  * Message bag exposes the API to pull the most appropriate message for a

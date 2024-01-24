@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,8 @@
 
 /// <reference path="../../../adonis-typings/index.ts" />
 
-import { HookHandler, HooksContract } from '@ioc:Adonis/Core/Server'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HookHandler, HooksContract } from '@ioc:Adonis/Core/Server'
 
 /**
  * Exposes to API to register and execute before and after hooks

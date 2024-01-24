@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -127,7 +127,7 @@ export default class MakePreloadFile extends BaseGenerator {
     /**
      * Update preload file
      */
-    const { files } = await import('@adonisjs/sink')
+    const { files } = await import('@kubit/sink')
     const relativePath = file.toJSON().relativepath
     const rcFile = new files.AdonisRcFile(this.application.appRoot)
 

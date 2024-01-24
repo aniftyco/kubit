@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,11 +9,12 @@
 
 import { join } from 'path'
 import tsStatic from 'typescript'
-import { logger as uiLogger } from '@poppinss/cliui'
+
 import { TypescriptCompiler } from '@poppinss/chokidar-ts'
+import { logger as uiLogger } from '@poppinss/cliui'
 import { resolveFrom } from '@poppinss/utils/build/helpers'
 
-import { TSCONFIG_FILE_NAME, DEFAULT_BUILD_DIR } from '../../config/paths'
+import { DEFAULT_BUILD_DIR, TSCONFIG_FILE_NAME } from '../../config/paths'
 
 /**
  * Exposes the API to work with the Typescript compiler API

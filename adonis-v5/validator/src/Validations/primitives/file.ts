@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
+import { FileValidationOptions, MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
-import { MultipartFileContract, FileValidationOptions } from '@ioc:Adonis/Core/BodyParser'
+
 import { wrapCompile } from '../../Validator/helpers'
 
 const DEFAULT_MESSAGE = 'file validation failed'

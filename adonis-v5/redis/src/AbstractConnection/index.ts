@@ -1,5 +1,5 @@
 /*
- * @adonisjs/redis
+ * @kubit/redis
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,16 +10,19 @@
 /// <reference path="../../adonis-typings/redis.ts" />
 
 import { EventEmitter } from 'events'
-import { Redis, Cluster } from 'ioredis'
-import { Exception } from '@poppinss/utils'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { ContainerBindings, IocResolverContract } from '@ioc:Adonis/Core/Application'
+import { Cluster, Redis } from 'ioredis'
 
 import {
   HealthReportNode,
   PubSubChannelHandler,
   PubSubPatternHandler,
 } from '@ioc:Adonis/Addons/Redis'
+import {
+  ApplicationContract,
+  ContainerBindings,
+  IocResolverContract,
+} from '@ioc:Adonis/Core/Application'
+import { Exception } from '@poppinss/utils'
 
 /**
  * Helper to sleep

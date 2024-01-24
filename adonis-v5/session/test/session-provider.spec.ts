@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,12 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { createServer } from 'http'
+
 import { ApiClient } from '@japa/api-client'
-import { fs, setup } from '../test-helpers'
+import { test } from '@japa/runner'
+
 import { MemoryDriver } from '../src/Drivers/Memory'
 import { SessionManager } from '../src/SessionManager'
+import { fs, setup } from '../test-helpers'
 
 test.group('Session Provider', (group) => {
   group.each.teardown(async () => {

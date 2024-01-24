@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import execa from 'execa'
 import Emittery from 'emittery'
+import execa from 'execa'
+
 import { logger as uiLogger } from '@poppinss/cliui'
 
 /**
@@ -59,7 +60,7 @@ export class HttpServer extends Emittery {
         FORCE_COLOR: 'true',
         ...this.env,
       },
-      nodeOptions: ['-r', '@adonisjs/assembler/build/register'].concat(this.nodeArgs),
+      nodeOptions: ['-r', '@kubit/assembler/build/register'].concat(this.nodeArgs),
     })
 
     /**

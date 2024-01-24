@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,7 +8,9 @@
  */
 
 import { createHash } from 'crypto'
+
 import { AssetsDriverContract } from '@ioc:Adonis/Core/AssetsManager'
+
 import { BaseDriver } from './Base'
 
 /**

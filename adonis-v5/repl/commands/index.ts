@@ -1,5 +1,5 @@
 /*
- * @adonisjs/repl
+ * @kubit/repl
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,4 +7,4 @@
  * file that was distributed with this source code.
  */
 
-export default ['@adonisjs/repl/build/commands/AdonisRepl']
+export default ['@kubit/repl/build/commands/AdonisRepl']

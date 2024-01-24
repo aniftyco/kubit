@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,9 +8,9 @@
  */
 
 declare module '@ioc:Adonis/Addons/Session' {
-  import { CookieOptions } from '@ioc:Adonis/Core/Response'
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
   import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+  import { CookieOptions } from '@ioc:Adonis/Core/Response'
 
   /**
    * Shape of session config.

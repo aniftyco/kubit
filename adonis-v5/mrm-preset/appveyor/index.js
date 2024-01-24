@@ -1,30 +1,30 @@
 /*
-* @adonisjs/mrm-preset
-*
-* (c) Harminder Virk <virk@adonisjs.com>
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
+ * @kubit/mrm-preset
+ *
+ * (c) Harminder Virk <virk@adonisjs.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-const { yaml, deleteFiles } = require('mrm-core')
-const mergeConfig = require('../utils/mergeConfig')
+const { yaml, deleteFiles } = require('mrm-core');
+const mergeConfig = require('../utils/mergeConfig');
 
-function task (config) {
+function task(config) {
   mergeConfig(config, {
     services: [],
-    minNodeVersion: '17.0.0'
-  })
+    minNodeVersion: '17.0.0',
+  });
 
-  const appveyor = config.services.indexOf('appveyor') > -1
+  const appveyor = config.services.indexOf('appveyor') > -1;
 
   /**
    * Remove `appveyor.yml` file when `appveyor` is missing inside
    * services array.
    */
   if (!appveyor) {
-    deleteFiles(['appveyor.yml'])
-    return
+    deleteFiles(['appveyor.yml']);
+    return;
   }
 
   const appveyorFile = yaml('appveyor.yml')
@@ -34,10 +34,10 @@ function task (config) {
     .set('test_script', ['node --version', 'npm --version', 'npm run test'])
     .set('build', 'off')
     .set('clone_depth', 1)
-    .set('matrix.fast_finish', true)
+    .set('matrix.fast_finish', true);
 
-  appveyorFile.save()
+  appveyorFile.save();
 }
 
-task.description = 'Adds appveyor.yml file'
-module.exports = task
+task.description = 'Adds appveyor.yml file';
+module.exports = task;

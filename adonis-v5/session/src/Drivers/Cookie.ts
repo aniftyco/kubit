@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,8 @@
 
 /// <reference path="../../adonis-typings/session.ts" />
 
+import { SessionConfig, SessionDriverContract } from '@ioc:Adonis/Addons/Session'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { SessionDriverContract, SessionConfig } from '@ioc:Adonis/Addons/Session'
 
 /**
  * Cookie driver utilizes the encrypted HTTP cookies to write session value.

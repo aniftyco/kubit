@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -96,10 +96,7 @@ export class App {
 
     let assemblerVersion = 'Not Installed'
     try {
-      assemblerVersion = require(resolveFrom(
-        this.appRoot,
-        '@adonisjs/assembler/package.json'
-      )).version
+      assemblerVersion = require(resolveFrom(this.appRoot, '@kubit/assembler/package.json')).version
     } catch (error) {}
 
     sticker()

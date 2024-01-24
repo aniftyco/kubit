@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -12,8 +12,8 @@
  */
 declare module '@ioc:Adonis/Core/Request' {
   import {
-    MultipartContract,
     FileValidationOptions,
+    MultipartContract,
     MultipartFileContract,
   } from '@ioc:Adonis/Core/BodyParser'
 

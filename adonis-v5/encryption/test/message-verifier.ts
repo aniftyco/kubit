@@ -1,5 +1,5 @@
 /*
- * @adonisjs/encryption
+ * @kubit/encryption
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 import { test } from '@japa/runner'
 import { base64 } from '@poppinss/utils/build/helpers'
+
 import { MessageVerifier } from '../src/MessageVerifier'
 
 const SECRET = 'averylongradom32charactersstring'

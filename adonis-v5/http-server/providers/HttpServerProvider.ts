@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { Exception } from '@poppinss/utils'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { Exception } from '@poppinss/utils'
 
 export default class HttpServerProvider {
   constructor(protected application: ApplicationContract) {}

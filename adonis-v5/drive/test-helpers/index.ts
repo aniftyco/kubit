@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -16,7 +16,7 @@ export const fs = new Filesystem(join(__dirname, '__app'))
 
 export async function setupApp(providers?: string[]) {
   const app = new Application(fs.basePath, 'web', {
-    providers: ['@adonisjs/encryption', '@adonisjs/http-server'].concat(providers || []),
+    providers: ['@kubit/encryption', '@kubit/http-server'].concat(providers || []),
   })
   await fs.add('.env', '')
   await fs.add(

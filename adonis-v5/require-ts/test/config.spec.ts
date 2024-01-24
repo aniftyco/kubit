@@ -1,5 +1,5 @@
 /*
- * @adonisjs/require-ts
+ * @kubit/require-ts
  *
  * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
  *
@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
-import ts from 'typescript'
 import revisionHash from 'rev-hash'
+import ts from 'typescript'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
 
 import { Config } from '../src/Config'
@@ -26,7 +27,7 @@ test.group('Config', (group) => {
     const cwd = fs.basePath
     const cacheRoot = join(fs.basePath, 'cache')
     const contents = JSON.stringify({
-      extends: '../../node_modules/@adonisjs/mrm-preset/_tsconfig',
+      extends: '../../node_modules/@kubit/mrm-preset/_tsconfig',
     })
 
     await fs.add('tsconfig.json', contents)
@@ -44,7 +45,7 @@ test.group('Config', (group) => {
     const cwd = fs.basePath
     const cacheRoot = join(fs.basePath, 'cache')
     const contents = JSON.stringify({
-      extends: '../../node_modules/@adonisjs/mrm-preset/_tsconfig',
+      extends: '../../node_modules/@kubit/mrm-preset/_tsconfig',
     })
 
     await fs.add('tsconfig.json', contents)
@@ -65,7 +66,7 @@ test.group('Config', (group) => {
     const cwd = fs.basePath
     const cacheRoot = join(fs.basePath, 'cache')
     const contents = JSON.stringify({
-      extends: '../../node_modules/@adonisjs/mrm-preset/_tsconfig',
+      extends: '../../node_modules/@kubit/mrm-preset/_tsconfig',
     })
 
     await fs.add('tsconfig.json', contents)
@@ -90,7 +91,7 @@ test.group('Config', (group) => {
     const options = () => config.parse()
     assert.throws(
       options,
-      '"@adonisjs/require-ts" expects the "tsconfig.json" file to exists in the app root'
+      '"@kubit/require-ts" expects the "tsconfig.json" file to exists in the app root'
     )
   })
 
@@ -98,7 +99,7 @@ test.group('Config', (group) => {
     const cwd = fs.basePath
     const cacheRoot = join(fs.basePath, 'cache')
     const contents = JSON.stringify({
-      extends: './node_modules/@adonisjs/mrm-preset/_tsconfig',
+      extends: './node_modules/@kubit/mrm-preset/_tsconfig',
     })
 
     await fs.add('tsconfig.json', contents)
@@ -113,7 +114,7 @@ test.group('Config', (group) => {
     assert.isNull(options.options)
     assert.equal(
       options.error![0].messageText,
-      `File './node_modules/@adonisjs/mrm-preset/_tsconfig' not found.`
+      `File './node_modules/@kubit/mrm-preset/_tsconfig' not found.`
     )
   })
 
@@ -121,7 +122,7 @@ test.group('Config', (group) => {
     const cwd = fs.basePath
     const cacheRoot = join(fs.basePath, 'cache')
     const contents = JSON.stringify({
-      extends: '../../node_modules/@adonisjs/mrm-preset/_tsconfig',
+      extends: '../../node_modules/@kubit/mrm-preset/_tsconfig',
     })
 
     await fs.add('tsconfig.json', contents)
@@ -154,7 +155,7 @@ test.group('Config', (group) => {
     const cwd = fs.basePath
     const cacheRoot = join(fs.basePath, 'cache')
     const contents = JSON.stringify({
-      extends: '../../node_modules/@adonisjs/mrm-preset/_tsconfig',
+      extends: '../../node_modules/@kubit/mrm-preset/_tsconfig',
     })
 
     await fs.add('tsconfig.json', contents)
@@ -184,7 +185,7 @@ test.group('Config', (group) => {
     const cwd = fs.basePath
     const cacheRoot = join(fs.basePath, 'cache')
     const contents = JSON.stringify({
-      extends: '../../node_modules/@adonisjs/mrm-preset/_tsconfig',
+      extends: '../../node_modules/@kubit/mrm-preset/_tsconfig',
     })
 
     await fs.add('tsconfig.json', contents)
@@ -214,13 +215,13 @@ test.group('Config', (group) => {
     const cwd = fs.basePath
     const cacheRoot = join(fs.basePath, 'cache')
     const contents = JSON.stringify({
-      extends: './node_modules/@adonisjs/mrm-preset/_tsconfig',
+      extends: './node_modules/@kubit/mrm-preset/_tsconfig',
     })
 
     await fs.add(
       'tsconfig.json',
       JSON.stringify({
-        extends: '../../node_modules/@adonisjs/mrm-preset/_tsconfig',
+        extends: '../../node_modules/@kubit/mrm-preset/_tsconfig',
       })
     )
 
@@ -252,9 +253,9 @@ test.group('Config', (group) => {
     await fs.add(
       'tsconfig.json',
       JSON.stringify({
-        extends: '../../node_modules/@adonisjs/mrm-preset/_tsconfig',
+        extends: '../../node_modules/@kubit/mrm-preset/_tsconfig',
         transformers: {
-          after: [{ transform: '@adonisjs/ioc-transformer' }],
+          after: [{ transform: '@kubit/ioc-transformer' }],
         },
       })
     )
@@ -264,7 +265,7 @@ test.group('Config', (group) => {
 
     assert.isNull(error)
     assert.deepEqual(options?.transformers, {
-      after: [{ transform: '@adonisjs/ioc-transformer' }],
+      after: [{ transform: '@kubit/ioc-transformer' }],
       before: undefined,
       afterDeclarations: undefined,
     })
@@ -275,9 +276,9 @@ test.group('Config', (group) => {
     const cacheRoot = join(fs.basePath, 'cache')
 
     const contents = JSON.stringify({
-      extends: '../../node_modules/@adonisjs/mrm-preset/_tsconfig',
+      extends: '../../node_modules/@kubit/mrm-preset/_tsconfig',
       transformers: {
-        after: [{ transform: '@adonisjs/ioc-transformer' }],
+        after: [{ transform: '@kubit/ioc-transformer' }],
       },
     })
     await fs.add('tsconfig.json', contents)
@@ -287,7 +288,7 @@ test.group('Config', (group) => {
 
     const cacheContents = await fs.get(`cache/tsconfig/${revisionHash(contents)}.json`)
     assert.deepEqual(JSON.parse(cacheContents).options.transformers, {
-      after: [{ transform: '@adonisjs/ioc-transformer' }],
+      after: [{ transform: '@kubit/ioc-transformer' }],
     })
   })
 })

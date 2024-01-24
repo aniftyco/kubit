@@ -1,5 +1,5 @@
 /*
- * @adonisjs/hash
+ * @kubit/hash
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,17 +9,16 @@
 
 /// <reference path="../../adonis-typings/hash.ts" />
 
-import { Manager } from '@poppinss/manager'
-import { ManagerConfigValidator } from '@poppinss/utils'
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-
 import {
-  HashConfig,
   FakeContract,
+  HashConfig,
   HashContract,
   HashDriverContract,
   HashersList,
 } from '@ioc:Adonis/Core/Hash'
+import { Manager } from '@poppinss/manager'
+import { ManagerConfigValidator } from '@poppinss/utils'
 
 /**
  * The Hash module exposes the API to hash values using an underlying

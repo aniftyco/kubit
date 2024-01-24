@@ -1,5 +1,5 @@
 /*
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,9 @@
  */
 
 import { test } from '@japa/runner'
-import { encryption } from '../test-helpers'
+
 import { CookieClient } from '../src/Cookie/Client'
+import { encryption } from '../test-helpers'
 
 test.group('Cookie Client', () => {
   test('sign cookie using cookie client', async ({ assert }) => {

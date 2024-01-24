@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -21,11 +21,11 @@ import { resolveFrom } from '@poppinss/utils/build/helpers'
  */
 export function registerTsHook(appRoot: string) {
   try {
-    require(resolveFrom(appRoot, '@adonisjs/assembler/build/src/requireHook')).default(appRoot)
+    require(resolveFrom(appRoot, '@kubit/assembler/build/src/requireHook')).default(appRoot)
   } catch (error) {
     if (['MODULE_NOT_FOUND', 'ENOENT'].includes(error.code!)) {
       throw new Error(
-        'AdonisJS requires "@adonisjs/assembler" in order to run typescript source directly'
+        'AdonisJS requires "@kubit/assembler" in order to run typescript source directly'
       )
     }
 
@@ -77,7 +77,7 @@ function resolve(fromPath: string, resolvePath: string, onMatch: (path: string) 
 export function loadAceCommands(application: ApplicationContract, ace: Kernel) {
   const manifestFiles: { basePath: string; manifestAbsPath: string }[] = []
 
-  resolve(application.appRoot, '@adonisjs/assembler/build/ace-manifest.json', (manifestAbsPath) => {
+  resolve(application.appRoot, '@kubit/assembler/build/ace-manifest.json', (manifestAbsPath) => {
     const basePath = join(manifestAbsPath, '../')
     manifestFiles.push({ manifestAbsPath, basePath })
   })

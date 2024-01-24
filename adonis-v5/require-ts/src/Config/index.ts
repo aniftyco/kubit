@@ -1,5 +1,5 @@
 /*
- * @adonisjs/require-ts
+ * @kubit/require-ts
  *
  * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
  *
@@ -7,14 +7,14 @@
  * file that was distributed with this source code.
  */
 
+import { readFileSync } from 'fs-extra'
 import { join } from 'path'
 import tsStatic from 'typescript'
-import { readFileSync } from 'fs-extra'
 
-import { debug } from '../utils'
-import { Transformers } from '../Contracts'
 import { Cache, FakeCache } from '../Cache'
+import { Transformers } from '../Contracts'
 import { DiagnosticsReporter } from '../DiagnosticsReporter'
+import { debug } from '../utils'
 
 /**
  * Exposes the API to parse tsconfig file and cache it until the
@@ -61,7 +61,7 @@ export class Config {
     } catch (error) {
       if (error.code === 'ENOENT') {
         throw new Error(
-          '"@adonisjs/require-ts" expects the "tsconfig.json" file to exists in the app root'
+          '"@kubit/require-ts" expects the "tsconfig.json" file to exists in the app root'
         )
       }
 

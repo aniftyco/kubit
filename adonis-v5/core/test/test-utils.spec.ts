@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,15 +7,16 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
+import { createServer } from 'http'
 import { join } from 'path'
 import supertest from 'supertest'
-import { createServer } from 'http'
 import { stdout } from 'test-console'
+
+import { test } from '@japa/runner'
 
 import { Ignitor } from '../src/Ignitor'
 import { TestUtils } from '../src/TestUtils'
-import { setupApplicationFiles, fs } from '../test-helpers'
+import { fs, setupApplicationFiles } from '../test-helpers'
 
 test.group('Test utils', (group) => {
   group.each.teardown(async () => {
@@ -66,7 +67,7 @@ test.group('Test utils', (group) => {
     await fs.add(
       'FooCommand.ts',
       `
-      const { BaseCommand } = require('@adonisjs/ace')
+      const { BaseCommand } = require('@kubit/ace')
       export default class FooCommand extends BaseCommand {
         static get commandName () {
           return 'foo'

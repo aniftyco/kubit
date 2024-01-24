@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,16 +7,17 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { DateTime } from 'luxon'
-import { NodeSubType } from '@ioc:Adonis/Core/Validator'
 
+import { NodeSubType } from '@ioc:Adonis/Core/Validator'
+import { test } from '@japa/runner'
+
+import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
 import { rules } from '../../src/Rules'
 import { schema } from '../../src/Schema'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
-import { ApiErrorReporter } from '../../src/ErrorReporter'
 import { notIn } from '../../src/Validations/miscellaneous/notIn'
+import { validate } from '../fixtures/rules/index'
 
 function compile(values: any, subtype?: NodeSubType) {
   return notIn.compile('literal', subtype || 'string', rules.notIn(values).options, {})

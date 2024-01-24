@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,12 +7,13 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
 
-import { Generator } from '../src/Generator'
+import { test } from '@japa/runner'
+
 import { BaseCommand } from '../src/BaseCommand'
-import { setupApp, fs, getKernel } from '../test-helpers'
+import { Generator } from '../src/Generator'
+import { fs, getKernel, setupApp } from '../test-helpers'
 
 class GeneratorCommand extends BaseCommand {
   public async handle() {}

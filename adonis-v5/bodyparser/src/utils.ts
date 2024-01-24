@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,9 +9,9 @@
 
 /// <reference path="../adonis-typings/bodyparser.ts" />
 
-import { extname } from 'path'
-import { fromBuffer, extensions } from 'file-type'
+import { extensions, fromBuffer } from 'file-type'
 import mediaTyper from 'media-typer'
+import { extname } from 'path'
 
 /**
  * We can detect file types for these files using the magic

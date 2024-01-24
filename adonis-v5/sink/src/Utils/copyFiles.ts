@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
 import copyFile from 'cp-file'
 import { existsSync } from 'fs'
+import { join } from 'path'
 
 /**
  * Utility method to copy files

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/env
+ * @kubit/env
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { Exception } from '@poppinss/utils'
 import { StringFnOptions, StringFnUrlOptions } from '@ioc:Adonis/Core/Env'
+import { Exception } from '@poppinss/utils'
+
 import { ensureValue } from './helpers'
 
 /**

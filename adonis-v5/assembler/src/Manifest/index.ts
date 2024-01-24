@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import execa from 'execa'
+
 import { logger as uiLogger } from '@poppinss/cliui'
 
 const WARN_MESSAGE = [

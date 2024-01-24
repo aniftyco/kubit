@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,8 +10,8 @@
 import { test } from '@japa/runner'
 
 import { Compiler } from '../src/Compiler'
-import { ObjectCompiler } from '../src/Compiler/Nodes/Object'
 import { CompilerBuffer } from '../src/Compiler/Buffer'
+import { ObjectCompiler } from '../src/Compiler/Nodes/Object'
 
 test.group('Object Compiler', () => {
   test('compile an object node with rules', async ({ assert }) => {

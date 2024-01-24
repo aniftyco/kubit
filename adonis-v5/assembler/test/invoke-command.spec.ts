@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -25,9 +25,9 @@ test.group('Invoke', (group) => {
 
   test('execute instructions defined in package.json file', async ({ assert }) => {
     await fs.add(
-      'node_modules/@adonisjs/sample/package.json',
+      'node_modules/@kubit/sample/package.json',
       JSON.stringify({
-        name: '@adonisjs/sample',
+        name: '@kubit/sample',
         adonisjs: {
           env: {
             PORT: '3333',
@@ -39,7 +39,7 @@ test.group('Invoke', (group) => {
     const app = new Application(fs.basePath, 'test', {})
 
     const invoke = new Invoke(app, new Kernel(app).mockConsoleOutput())
-    invoke.packages = ['@adonisjs/sample']
+    invoke.packages = ['@kubit/sample']
     await invoke.run()
 
     const envFile = await fs.fsExtra.readFile(join(fs.basePath, '.env'), 'utf-8')

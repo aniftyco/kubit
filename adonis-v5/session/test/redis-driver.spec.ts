@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,8 +10,9 @@
 /// <reference path="../adonis-typings/session.ts" />
 
 import { test } from '@japa/runner'
+
 import { RedisDriver } from '../src/Drivers/Redis'
-import { fs, setup, sleep, sessionConfig, getRedisManager } from '../test-helpers'
+import { fs, getRedisManager, sessionConfig, setup, sleep } from '../test-helpers'
 
 const config = Object.assign({}, sessionConfig, { driver: 'redis', redisConnection: 'session' })
 

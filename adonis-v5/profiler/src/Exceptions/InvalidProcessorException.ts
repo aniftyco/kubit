@@ -1,5 +1,5 @@
 /*
- * @adonisjs/profiler
+ * @kubit/profiler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { Exception } from '@poppinss/utils'
+
 import exceptions from '../../exceptions.json'
 
 export class InvalidProcessorException extends Exception {

@@ -1,4 +1,4 @@
-require('@adonisjs/require-ts/build/register')
+require('@kubit/require-ts/build/register')
 
 const { configure } = require('japa')
 

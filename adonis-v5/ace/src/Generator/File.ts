@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,11 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { basename, join, isAbsolute, sep } from 'path'
+import { basename, isAbsolute, join, sep } from 'path'
 
-import { StringTransformer } from './StringTransformer'
+import { GeneratorFileContract, GeneratorFileOptions } from '../Contracts'
 import { template, templateFromFile } from '../utils/template'
-import { GeneratorFileOptions, GeneratorFileContract } from '../Contracts'
+import { StringTransformer } from './StringTransformer'
 
 /**
  * Exposes the API to construct the output file content, path

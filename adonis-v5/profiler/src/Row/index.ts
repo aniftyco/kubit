@@ -1,5 +1,5 @@
 /*
- * @adonisjs/profiler
+ * @kubit/profiler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,19 +9,18 @@
 
 /// <reference path="../../adonis-typings/profiler.ts" />
 
-import { cuid } from '@poppinss/utils/build/helpers'
+import {
+  ProfilerActionContract,
+  ProfilerContract,
+  ProfilerRow as ProfilerRowData,
+  ProfilerRowContract,
+} from '@ioc:Adonis/Core/Profiler'
 import { Exception } from '@poppinss/utils'
+import { cuid } from '@poppinss/utils/build/helpers'
 
 import { ProfilerAction } from '../Action'
 import { dummyAction, dummyRow } from '../DummyProfiler'
 import { AbstractProfiler } from '../Profiler/AbstractProfiler'
-
-import {
-  ProfilerRow as ProfilerRowData,
-  ProfilerContract,
-  ProfilerRowContract,
-  ProfilerActionContract,
-} from '@ioc:Adonis/Core/Profiler'
 
 /**
  * Profiler row class is used to group profiling actions together. Any

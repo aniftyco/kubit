@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,19 +8,19 @@
  */
 
 import {
-  ParsedRule,
-  SchemaArray,
-  SchemaObject,
-  SchemaLiteral,
-  ValidationField,
-  ParsedSchemaTree,
   CompilerOutput,
+  ParsedRule,
+  ParsedSchemaTree,
+  SchemaArray,
+  SchemaLiteral,
+  SchemaObject,
+  ValidationField,
 } from '@ioc:Adonis/Core/Validator'
 
 import { CompilerBuffer } from './Buffer'
 import { ArrayCompiler } from './Nodes/Array'
-import { ObjectCompiler } from './Nodes/Object'
 import { LiteralCompiler } from './Nodes/Literal'
+import { ObjectCompiler } from './Nodes/Object'
 
 /**
  * Compiler exposes the API to compile the schema tree into a set of Javascript

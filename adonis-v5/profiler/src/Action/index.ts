@@ -1,5 +1,5 @@
 /*
- * @adonisjs/profiler
+ * @kubit/profiler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,8 @@
 
 /// <reference path="../../adonis-typings/profiler.ts" />
 
-import { Exception } from '@poppinss/utils'
 import { ProfilerAction as ProfilerActionData, ProfilerProcessor } from '@ioc:Adonis/Core/Profiler'
+import { Exception } from '@poppinss/utils'
 
 /**
  * Profiler action is used to time the function. A connection can be

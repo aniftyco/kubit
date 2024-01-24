@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,13 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
+import { createServer, IncomingMessage, ServerResponse } from 'http'
 import { Socket } from 'net'
 import supertest from 'supertest'
-import { createServer, IncomingMessage, ServerResponse } from 'http'
 
-import { Router } from '../src/Router'
+import { test } from '@japa/runner'
+
 import { Response } from '../src/Response'
+import { Router } from '../src/Router'
 import { encryption, responseConfig } from '../test-helpers'
 
 test.group('Redirect', () => {

@@ -1,5 +1,5 @@
 /**
- * @adonisjs/view
+ * @kubit/view
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -12,6 +12,7 @@
  */
 declare module '@ioc:Adonis/Core/HttpContext' {
   import { ViewRendererContract } from '@ioc:Adonis/Core/View'
+
   interface HttpContextContract {
     view: ViewRendererContract
   }

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,9 +8,9 @@
  */
 
 import {
+  ErrorReporterContract,
   JsonApiErrorNode,
   MessagesBagContract,
-  ErrorReporterContract,
 } from '@ioc:Adonis/Core/Validator'
 
 import { ValidationException } from '../ValidationException'

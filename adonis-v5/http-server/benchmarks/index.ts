@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
-import { fork } from 'child_process'
 import autocannon from 'autocannon'
+import { fork } from 'child_process'
+import { join } from 'path'
 
 function coolOff() {
   return new Promise((resolve) => setTimeout(resolve, 2000))

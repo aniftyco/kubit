@@ -1,5 +1,5 @@
 /**
- * @adonisjs/view
+ * @kubit/view
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/fold
+ * @kubit/fold
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,16 +9,16 @@
 
 import { Exception } from '@poppinss/utils'
 import { types } from '@poppinss/utils/build/helpers'
-import { IocContract, BindCallback, FakeCallback, LookupNode, InferMakeType } from '../Contracts'
 
-import { Fakes } from './Fakes'
-import { Bindings } from './Bindings'
-import { Injector } from './Injector'
-import { IocResolver } from '../Resolver'
-import { ImportAliases } from './ImportAliases'
-import { ensureIsFunction, isEsm } from '../helpers'
-import { IocProxyClass, IocProxyObject } from './IocProxy'
+import { BindCallback, FakeCallback, InferMakeType, IocContract, LookupNode } from '../Contracts'
 import { IocLookupException } from '../Exceptions/IocLookupException'
+import { ensureIsFunction, isEsm } from '../helpers'
+import { IocResolver } from '../Resolver'
+import { Bindings } from './Bindings'
+import { Fakes } from './Fakes'
+import { ImportAliases } from './ImportAliases'
+import { Injector } from './Injector'
+import { IocProxyClass, IocProxyObject } from './IocProxy'
 
 export class Ioc implements IocContract {
   private fakes: Fakes = new Fakes(this)

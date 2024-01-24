@@ -1,5 +1,5 @@
 /*
- * @adonisjs/env
+ * @kubit/env
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,7 +10,9 @@
 /// <reference path="../../adonis-typings/env.ts" />
 
 import { DotenvParseOutput } from 'dotenv'
+
 import { EnvContract, ValidateFn } from '@ioc:Adonis/Core/Env'
+
 import { schema as EnvSchema } from '../Schema'
 
 /**

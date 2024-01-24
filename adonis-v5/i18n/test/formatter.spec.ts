@@ -1,5 +1,5 @@
 /*
- * @adonisjs/i18n
+ * @kubit/i18n
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { DateTime } from 'luxon'
+
+import { test } from '@japa/runner'
+
 import { Formatter } from '../src/Formatters/Core'
 
 test.group('Formatter', () => {

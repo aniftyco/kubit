@@ -1,5 +1,5 @@
 /*
- * @adonisjs/config
+ * @kubit/config
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

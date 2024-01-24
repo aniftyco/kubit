@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { json, yaml, ini } from 'mrm-core'
+import { ini, json, yaml } from 'mrm-core'
+
 import { File } from './File'
 
 /**

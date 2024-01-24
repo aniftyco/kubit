@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+
 import { exists, getFieldValue, wrapCompile } from '../../Validator/helpers'
 
 const RULE_NAME = 'requiredIfNotExists'

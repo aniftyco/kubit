@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,14 +7,16 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import etag from 'etag'
+import { createServer } from 'http'
 import { join } from 'path'
 import supertest from 'supertest'
-import { createServer } from 'http'
-import { setupApp, fs } from '../test-helpers'
+
+import { test } from '@japa/runner'
+
 import { LocalDriver } from '../src/Drivers/Local'
 import { LocalFileServer } from '../src/LocalFileServer'
+import { fs, setupApp } from '../test-helpers'
 
 const TEST_ROOT = join(fs.basePath, 'storage')
 

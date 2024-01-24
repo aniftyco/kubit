@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,12 +10,13 @@
 /// <reference path="../../adonis-typings/index.ts" />
 
 import { extname } from 'path'
-import { Exception } from '@poppinss/utils'
-import { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
-import { MultipartStream, FileValidationOptions } from '@ioc:Adonis/Core/BodyParser'
 
-import { File } from './File'
+import { FileValidationOptions, MultipartStream } from '@ioc:Adonis/Core/BodyParser'
+import { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
+import { Exception } from '@poppinss/utils'
+
 import { computeFileTypeFromName, getFileType, supportMagicFileTypes } from '../utils'
+import { File } from './File'
 
 /**
  * Part handler handles the progress of a stream and also internally validates

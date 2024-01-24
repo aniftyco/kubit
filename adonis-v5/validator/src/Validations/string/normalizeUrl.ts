@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { default as normalize } from 'normalize-url'
+
 import { SyncValidation, UrlNormalizationOptions } from '@ioc:Adonis/Core/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'

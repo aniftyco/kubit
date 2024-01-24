@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) AdonisJS
  *
@@ -9,9 +9,9 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { ServerContract } from '@ioc:Adonis/Core/Server'
 import { SessionManagerContract } from '@ioc:Adonis/Addons/Session'
 import { HttpContextConstructorContract } from '@ioc:Adonis/Core/HttpContext'
+import { ServerContract } from '@ioc:Adonis/Core/Server'
 
 /**
  * Share "session" with the HTTP context. Define hooks to initiate and

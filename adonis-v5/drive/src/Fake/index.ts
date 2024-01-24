@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) AdonisJS
  *
@@ -8,6 +8,7 @@
  */
 
 import { DisksList, FakeDriveContract, FakeDriverContract } from '@ioc:Adonis/Core/Drive'
+
 import { CannotReadFileException } from '../Exceptions'
 
 /**

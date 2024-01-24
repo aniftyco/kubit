@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,13 +10,14 @@
 /// <reference path="../adonis-typings/index.ts" />
 
 import Tokens from 'csrf'
-import { ViewContract } from '@ioc:Adonis/Core/View'
+
 import { CsrfOptions } from '@ioc:Adonis/Addons/Shield'
 import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { ViewContract } from '@ioc:Adonis/Core/View'
 
-import { noop } from './noop'
 import { InvalidCsrfTokenException } from './Exceptions/InvalidCsrfTokenException'
+import { noop } from './noop'
 
 /**
  * A class to encapsulate the logic of verifying and generating

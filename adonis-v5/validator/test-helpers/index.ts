@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -42,7 +42,7 @@ export async function setupApp(
   )
 
   const app = new Application(fs.basePath, 'web', {
-    providers: ['@adonisjs/encryption', '@adonisjs/http-server'].concat(providers || []),
+    providers: ['@kubit/encryption', '@kubit/http-server'].concat(providers || []),
   })
 
   await app.setup()

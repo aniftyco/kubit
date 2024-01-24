@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,6 +10,7 @@
 /// <reference path="../../../adonis-typings/bodyparser.ts" />
 
 import bytes from 'bytes'
+
 import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
 
 /**

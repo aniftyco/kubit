@@ -1,5 +1,5 @@
 /*
- * @adonisjs/repl
+ * @kubit/repl
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { test } from '@japa/runner'
+
 import { ImportsParser } from '../src/ImportsParser'
 
 test.group('Imports Parser', () => {

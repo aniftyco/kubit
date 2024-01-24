@@ -1,5 +1,5 @@
 /*
- * @adonisjs/fold
+ * @kubit/fold
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { IocContract, IocResolverLookupNode, IocResolverContract } from '../Contracts'
+import { IocContract, IocResolverContract, IocResolverLookupNode } from '../Contracts'
 
 /**
  * Exposes the API to resolve and call bindings from the IoC container. The resolver

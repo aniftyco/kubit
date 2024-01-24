@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { promisify } from 'util'
 import { pipeline } from 'stream'
+import { promisify } from 'util'
 
 export const pipelinePromise = promisify(pipeline)

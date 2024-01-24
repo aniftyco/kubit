@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import ms from 'ms'
 import cookie, { CookieSerializeOptions } from 'cookie'
-import { CookieOptions } from '@ioc:Adonis/Core/Response'
+import ms from 'ms'
+
 import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+import { CookieOptions } from '@ioc:Adonis/Core/Response'
 
 import { CookieClient } from '../Client'
 

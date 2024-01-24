@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,12 +9,13 @@
 
 /// <reference path="../adonis-typings/session.ts" />
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
 
 import { FileDriver } from '../src/Drivers/File'
-import { sleep, sessionConfig } from '../test-helpers'
+import { sessionConfig, sleep } from '../test-helpers'
 
 const fs = new Filesystem()
 const config = Object.assign({}, sessionConfig, {

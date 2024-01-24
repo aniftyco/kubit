@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 import { logger, sticker } from '@poppinss/cliui'
 import { Exception } from '@poppinss/utils'
+
 import { CommandConstructorContract } from '../Contracts'
 
 /**

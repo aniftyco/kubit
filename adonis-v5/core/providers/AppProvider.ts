@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+
 import { setApp } from '../services/base'
 
 /**
@@ -27,13 +28,13 @@ export default class AppProvider {
    * Additional providers to load
    */
   public provides = [
-    '@adonisjs/encryption',
-    '@adonisjs/events',
-    '@adonisjs/drive',
-    '@adonisjs/hash',
-    '@adonisjs/http-server',
-    '@adonisjs/bodyparser',
-    '@adonisjs/validator',
+    '@kubit/encryption',
+    '@kubit/events',
+    '@kubit/drive',
+    '@kubit/hash',
+    '@kubit/http-server',
+    '@kubit/bodyparser',
+    '@kubit/validator',
   ]
 
   /**
@@ -153,7 +154,7 @@ export default class AppProvider {
   protected registerAceKernel() {
     if (!this.app.container.hasBinding('Adonis/Core/Ace')) {
       this.app.container.singleton('Adonis/Core/Ace', () => {
-        const { Kernel } = require('@adonisjs/ace')
+        const { Kernel } = require('@kubit/ace')
         return new Kernel(this.app)
       })
     }

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/application
+ * @kubit/application
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { Validator } from 'jsonschema'
+
+import { test } from '@japa/runner'
 
 test.group('JSON Schema', () => {
   test('ensure required properties', ({ assert }) => {

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,17 +8,17 @@
  */
 
 import { readJSON } from 'fs-extra'
+
 import { esmRequire } from '@poppinss/utils'
 import { resolveFrom } from '@poppinss/utils/build/helpers'
 
 import {
   Aliases,
-  ManifestNode,
+  CommandConstructorContract,
   ManifestCommand,
   ManifestLoaderContract,
-  CommandConstructorContract,
+  ManifestNode,
 } from '../Contracts'
-
 import { validateCommand } from '../utils/validateCommand'
 
 /**

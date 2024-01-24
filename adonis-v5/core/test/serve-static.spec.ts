@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,13 +9,14 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { test } from '@japa/runner'
+import { createServer } from 'http'
 import { join } from 'path'
 import supertest from 'supertest'
-import { createServer } from 'http'
 
-import { setupApp, fs } from '../test-helpers'
+import { test } from '@japa/runner'
+
 import { ServeStatic } from '../src/Hooks/Static'
+import { fs, setupApp } from '../test-helpers'
 
 test.group('Serve Static', (group) => {
   group.each.teardown(async () => {

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -11,36 +11,34 @@
 
 import etag from 'etag'
 import { Volume } from 'memfs'
-import type { Dirent } from 'memfs/lib/Dirent'
 import { dirname } from 'path'
+
+import {
+  ContentHeaders,
+  DirectoryListingContract,
+  DisksList,
+  DriveFileStats,
+  FakeDriveListItem,
+  FakeDriverContract,
+  Visibility,
+} from '@ioc:Adonis/Core/Drive'
 import { RouterContract } from '@ioc:Adonis/Core/Route'
 
-import {
-  DisksList,
-  Visibility,
-  ContentHeaders,
-  DriveFileStats,
-  FakeDriverContract,
-  DirectoryListingContract,
-  FakeDriveListItem,
-} from '@ioc:Adonis/Core/Drive'
-
-import { pipelinePromise } from '../utils'
-import { LocalFileServer } from '../LocalFileServer'
-
+import { DirectoryListing } from '../DirectoryListing'
 import {
   CannotCopyFileException,
-  CannotMoveFileException,
-  CannotReadFileException,
-  CannotWriteFileException,
   CannotDeleteFileException,
   CannotGetMetaDataException,
   CannotListDirectoryException,
+  CannotMoveFileException,
+  CannotReadFileException,
+  CannotWriteFileException,
 } from '../Exceptions'
-
-import { DirectoryListing } from '../DirectoryListing'
+import { LocalFileServer } from '../LocalFileServer'
 import { PathPrefixer } from '../PathPrefixer'
+import { pipelinePromise } from '../utils'
 
+import type { Dirent } from 'memfs/lib/Dirent'
 /**
  * Memory driver is mainly used for testing
  */

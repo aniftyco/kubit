@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,8 +10,8 @@
 import { test } from '@japa/runner'
 
 import { Compiler } from '../src/Compiler'
-import { LiteralCompiler } from '../src/Compiler/Nodes/Literal'
 import { CompilerBuffer } from '../src/Compiler/Buffer'
+import { LiteralCompiler } from '../src/Compiler/Nodes/Literal'
 
 test.group('Literal Compiler', () => {
   test('do not output compiled code when field has no rules applied', async ({ assert }) => {

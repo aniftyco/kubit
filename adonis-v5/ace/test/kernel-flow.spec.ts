@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,12 +8,12 @@
  */
 
 import { test } from '@japa/runner'
-import { Kernel } from '../src/Kernel'
-import { BaseCommand } from '../src/BaseCommand'
 
-import { setupApp } from '../test-helpers'
+import { BaseCommand } from '../src/BaseCommand'
 import { args } from '../src/Decorators/args'
 import { flags } from '../src/Decorators/flags'
+import { Kernel } from '../src/Kernel'
+import { setupApp } from '../test-helpers'
 
 test.group('Kernel | no argv', () => {
   test('execute the default command when no argv are defined', async ({ assert }) => {

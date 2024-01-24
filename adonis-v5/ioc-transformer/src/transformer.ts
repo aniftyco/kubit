@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ioc-transformer
+ * @kubit/ioc-transformer
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *

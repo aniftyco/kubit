@@ -1,5 +1,5 @@
 /*
- * @adonisjs/env
+ * @kubit/env
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,10 +8,11 @@
  */
 
 import { EnvSchema } from '@ioc:Adonis/Core/Env'
-import { number } from './number'
-import { string } from './string'
+
 import { boolean } from './boolean'
+import { number } from './number'
 import { oneOf } from './oneOf'
+import { string } from './string'
 
 export const schema: EnvSchema = {
   number,

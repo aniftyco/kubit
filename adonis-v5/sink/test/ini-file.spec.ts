@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
-import { test } from '@japa/runner'
 import ini from 'ini'
+import { join } from 'path'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
 
 import { IniFile } from '../src/Files/Formats/Ini'

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+
 import { wrapCompile } from '../../Validator/helpers'
 
 const RULE_NAME = 'regex'
@@ -25,9 +26,7 @@ export const regex: SyncValidation<{ pattern: string; flags: string }> = {
 
     const match = regexPattern.toString().match(/^\/(.*)\/([gimuy]*)$/)
     if (!match) {
-      throw new Error(
-        'Unable to serialize regex. Please open an issue in "@adonisjs/validator" repo'
-      )
+      throw new Error('Unable to serialize regex. Please open an issue in "@kubit/validator" repo')
     }
 
     return {

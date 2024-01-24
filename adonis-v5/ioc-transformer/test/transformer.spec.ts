@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ioc-transformer
+ * @kubit/ioc-transformer
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 import test from 'japa'
 import ts from 'typescript'
+
 import { iocTransformer } from '../src/transformer'
 
 test.group('Transformer', () => {

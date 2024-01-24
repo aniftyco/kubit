@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,13 +9,14 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { test } from '@japa/runner'
+import { createServer } from 'http'
 import { join } from 'path'
 import supertest from 'supertest'
-import { createServer } from 'http'
+
+import { test } from '@japa/runner'
 
 import { Ignitor } from '../src/Ignitor'
-import { setupApplicationFiles, fs } from '../test-helpers'
+import { fs, setupApplicationFiles } from '../test-helpers'
 
 test.group('Ignitor | Http', (group) => {
   group.setup(() => {

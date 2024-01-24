@@ -1,5 +1,5 @@
 /**
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,14 +9,15 @@
 
 /// <reference path="../adonis-typings/session.ts" />
 
-import { test } from '@japa/runner'
-import supertest from 'supertest'
 import { createServer } from 'http'
+import supertest from 'supertest'
 
-import { Store } from '../src/Store'
-import { Session } from '../src/Session'
+import { test } from '@japa/runner'
+
 import { MemoryDriver } from '../src/Drivers/Memory'
-import { setup, fs, sessionConfig, unsignCookie, signCookie } from '../test-helpers/index'
+import { Session } from '../src/Session'
+import { Store } from '../src/Store'
+import { fs, sessionConfig, setup, signCookie, unsignCookie } from '../test-helpers/index'
 
 test.group('Session', (group) => {
   group.each.teardown(async () => {

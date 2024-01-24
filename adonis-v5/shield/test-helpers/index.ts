@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -39,12 +39,7 @@ export async function setup() {
   )
 
   const app = new Application(fs.basePath, 'web', {
-    providers: [
-      '@adonisjs/core',
-      '@adonisjs/session',
-      '@adonisjs/view',
-      '../../providers/ShieldProvider',
-    ],
+    providers: ['@kubit/core', '@kubit/session', '@kubit/view', '../../providers/ShieldProvider'],
   })
 
   await app.setup()

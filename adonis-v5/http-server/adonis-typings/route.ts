@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,6 +9,7 @@
 
 declare module '@ioc:Adonis/Core/Route' {
   import { MacroableConstructorContract } from 'macroable'
+
   import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
   import { ResolvedMiddlewareHandler } from '@ioc:Adonis/Core/Middleware'
 

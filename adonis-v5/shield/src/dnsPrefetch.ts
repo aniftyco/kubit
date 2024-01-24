@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -11,6 +11,7 @@
 
 import { DnsPrefetchOptions } from '@ioc:Adonis/Addons/Shield'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+
 import { noop } from './noop'
 
 /**

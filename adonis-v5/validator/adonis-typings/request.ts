@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { TypedSchema, RequestValidatorNode, ParsedTypedSchema } from '@ioc:Adonis/Core/Validator'
+import { ParsedTypedSchema, RequestValidatorNode, TypedSchema } from '@ioc:Adonis/Core/Validator'
 
 declare module '@ioc:Adonis/Core/Request' {
   interface RequestContract {

@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,8 +10,8 @@
 import { test } from '@japa/runner'
 import { base64, MessageBuilder } from '@poppinss/utils/build/helpers'
 
-import { encryption } from '../test-helpers'
 import { CookieSerializer } from '../src/Cookie/Serializer'
+import { encryption } from '../test-helpers'
 
 test.group('Cookie | serialize', () => {
   test('serialize and sign cookie', ({ assert }) => {

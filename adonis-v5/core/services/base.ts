@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,6 +8,7 @@
  */
 
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+
 let appInstance: ApplicationContract
 
 export function setApp(app: ApplicationContract) {

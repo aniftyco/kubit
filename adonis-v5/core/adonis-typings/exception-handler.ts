@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -12,8 +12,8 @@
  * file.
  */
 declare module '@ioc:Adonis/Core/HttpExceptionHandler' {
-  import { LoggerContract } from '@ioc:Adonis/Core/Logger'
   import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+  import { LoggerContract } from '@ioc:Adonis/Core/Logger'
 
   export default abstract class HttpExceptionHandler {
     constructor(logger: LoggerContract)

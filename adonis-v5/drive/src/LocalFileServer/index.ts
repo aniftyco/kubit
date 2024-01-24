@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,10 +10,11 @@
 /// <reference path="../../adonis-typings/index.ts" />
 
 import { extname } from 'path'
-import { Exception } from '@poppinss/utils'
+
+import { LocalDriverConfig, LocalDriverContract } from '@ioc:Adonis/Core/Drive'
 import { LoggerContract } from '@ioc:Adonis/Core/Logger'
 import { RouterContract } from '@ioc:Adonis/Core/Route'
-import { LocalDriverConfig, LocalDriverContract } from '@ioc:Adonis/Core/Drive'
+import { Exception } from '@poppinss/utils'
 
 /**
  * Registers the route to serve files from the local driver

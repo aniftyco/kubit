@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,9 +8,10 @@
  */
 
 import { test } from '@japa/runner'
-import { ArrayCompiler } from '../src/Compiler/Nodes/Array'
-import { CompilerBuffer } from '../src/Compiler/Buffer'
+
 import { Compiler } from '../src/Compiler'
+import { CompilerBuffer } from '../src/Compiler/Buffer'
+import { ArrayCompiler } from '../src/Compiler/Nodes/Array'
 
 test.group('Array Compiler', () => {
   test('compile an array node with rules and members', async ({ assert }) => {

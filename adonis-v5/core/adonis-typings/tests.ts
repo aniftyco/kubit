@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) AdonisJS
  *
@@ -8,6 +8,7 @@
  */
 
 import '@japa/api-client'
+
 declare module '@japa/api-client' {
   export interface ApiRequest {
     /**

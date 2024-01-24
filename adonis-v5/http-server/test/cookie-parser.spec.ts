@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,9 +9,9 @@
 
 import { test } from '@japa/runner'
 
-import { encryption } from '../test-helpers'
 import { CookieParser } from '../src/Cookie/Parser'
 import { CookieSerializer } from '../src/Cookie/Serializer'
+import { encryption } from '../test-helpers'
 
 const serializer = new CookieSerializer(encryption)
 

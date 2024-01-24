@@ -1,5 +1,5 @@
 /*
- * @adonisjs/hash
+ * @kubit/hash
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,9 +9,10 @@
 
 /// <reference path="../../adonis-typings/hash.ts" />
 
-import phc from '@phc/format'
 import bcrypt from 'phc-bcrypt'
+
 import { BcryptConfig, BcryptContract } from '@ioc:Adonis/Core/Hash'
+import phc from '@phc/format'
 
 /**
  * Generates and verifies hash using Bcrypt as underlying

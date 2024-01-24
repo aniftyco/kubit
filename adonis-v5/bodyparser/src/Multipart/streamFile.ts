@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { promisify } from 'util'
-import { unlink } from 'fs-extra'
 import { createWriteStream } from 'fs'
-import { Readable, pipeline } from 'stream'
+import { unlink } from 'fs-extra'
+import { pipeline, Readable } from 'stream'
+import { promisify } from 'util'
 
 const pump = promisify(pipeline)
 

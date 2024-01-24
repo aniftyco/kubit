@@ -1,15 +1,15 @@
 /*
-* @adonisjs/mrm-preset
-*
-* (c) Harminder Virk <virk@adonisjs.com>
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
+ * @kubit/mrm-preset
+ *
+ * (c) Harminder Virk <virk@adonisjs.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-const stale = require('./stale')
-const lock = require('./lock')
-const mergeConfig = require('../utils/mergeConfig')
+const stale = require('./stale');
+const lock = require('./lock');
+const mergeConfig = require('../utils/mergeConfig');
 
 /**
  * Configuring probot apps
@@ -20,23 +20,23 @@ const mergeConfig = require('../utils/mergeConfig')
  *
  * @return {void}
  */
-function task (config) {
+function task(config) {
   mergeConfig(config, {
-    probotApps: []
-  })
+    probotApps: [],
+  });
 
   if (config.probotApps.includes('stale')) {
-    stale.up()
+    stale.up();
   } else {
-    stale.down()
+    stale.down();
   }
 
   if (config.probotApps.includes('lock')) {
-    lock.up()
+    lock.up();
   } else {
-    lock.down()
+    lock.down();
   }
 }
 
-task.description = 'Configures certain probot applications'
-module.exports = task
+task.description = 'Configures certain probot applications';
+module.exports = task;

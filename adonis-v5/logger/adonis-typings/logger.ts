@@ -1,5 +1,5 @@
 /*
- * @adonisjs/logger
+ * @kubit/logger
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,14 +9,14 @@
 
 declare module '@ioc:Adonis/Core/Logger' {
   import {
-    Level,
-    TimeFn,
-    redactOptions,
-    PrettyOptions,
-    SerializerFn,
-    LevelMapping,
     Bindings,
     DestinationStream,
+    Level,
+    LevelMapping,
+    PrettyOptions,
+    redactOptions,
+    SerializerFn,
+    TimeFn,
   } from 'pino'
 
   /**

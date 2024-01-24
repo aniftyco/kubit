@@ -1,5 +1,5 @@
 /*
- * @adonisjs/config
+ * @kubit/config
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,8 @@
 
 /// <reference path="../adonis-typings/config.ts" />
 
-import { lodash } from '@poppinss/utils'
 import { ConfigContract } from '@ioc:Adonis/Core/Config'
+import { lodash } from '@poppinss/utils'
 
 /**
  * Config module eases the process of using configuration inside your AdonisJs

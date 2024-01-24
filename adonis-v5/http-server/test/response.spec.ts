@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,19 +7,19 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import etag from 'etag'
-import { join } from 'path'
-import supertest from 'supertest'
+import { createReadStream, createWriteStream } from 'fs'
 import { createServer } from 'http'
 import status from 'http-status-codes'
+import { join } from 'path'
+import supertest from 'supertest'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
-import { createWriteStream, createReadStream } from 'fs'
 
-import { Router } from '../src/Router'
-import { Response } from '../src/Response'
 import { CookieParser } from '../src/Cookie/Parser'
-
+import { Response } from '../src/Response'
+import { Router } from '../src/Router'
 import { encryption, responseConfig } from '../test-helpers'
 
 const router = new Router(encryption)

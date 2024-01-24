@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
+import { outputFile, readFile } from 'fs-extra'
 import open from 'open'
-import { join } from 'path'
 import { tmpdir } from 'os'
-import { readFile, outputFile } from 'fs-extra'
+import { join } from 'path'
 
 import { css } from './Styles'
 

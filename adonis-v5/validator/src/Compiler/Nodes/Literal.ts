@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { ValidationField, SchemaLiteral } from '@ioc:Adonis/Core/Validator'
+import { SchemaLiteral, ValidationField } from '@ioc:Adonis/Core/Validator'
 
-import { Compiler } from '../index'
 import { CompilerBuffer } from '../Buffer'
+import { Compiler } from '../index'
 
 /**
  * Exposes the API to compile the literal node to a set of inline

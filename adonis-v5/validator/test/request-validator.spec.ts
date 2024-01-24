@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,10 +9,10 @@
 
 import { test } from '@japa/runner'
 
+import { ApiErrorReporter, VanillaErrorReporter } from '../src/ErrorReporter'
 import { schema } from '../src/Schema'
 import { validator } from '../src/Validator'
-import { setupApp, fs } from '../test-helpers'
-import { ApiErrorReporter, VanillaErrorReporter } from '../src/ErrorReporter'
+import { fs, setupApp } from '../test-helpers'
 
 test.group('Request validator', (group) => {
   group.each.teardown(async () => {

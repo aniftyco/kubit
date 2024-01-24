@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -11,11 +11,10 @@ import getopts from 'getopts'
 
 import {
   CommandArg,
+  CommandConstructorContract,
   CommandFlag,
   GlobalFlagHandler,
-  CommandConstructorContract,
 } from '../Contracts'
-
 import { InvalidFlagException, MissingArgumentException, UnknownFlagException } from '../Exceptions'
 
 /**

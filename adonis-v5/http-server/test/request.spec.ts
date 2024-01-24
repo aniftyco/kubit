@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,15 +7,16 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
-import supertest from 'supertest'
 import { createServer } from 'http'
-import { escape } from 'querystring'
-import { createCertificate } from 'pem'
 import { createServer as httpsServer } from 'https'
+import { createCertificate } from 'pem'
+import { escape } from 'querystring'
+import supertest from 'supertest'
 
-import { Request } from '../src/Request'
+import { test } from '@japa/runner'
+
 import { CookieSerializer } from '../src/Cookie/Serializer'
+import { Request } from '../src/Request'
 import { encryption, requestConfig } from '../test-helpers'
 
 const serializer = new CookieSerializer(encryption)

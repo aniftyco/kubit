@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,13 +9,14 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { CspOptions } from '@ioc:Adonis/Addons/Shield'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import helmetCsp, { ContentSecurityPolicyOptions } from 'helmet-csp'
 
-type ValueOf<T> = T[keyof T]
+import { CspOptions } from '@ioc:Adonis/Addons/Shield'
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import { noop } from './noop'
+
+type ValueOf<T> = T[keyof T]
 
 /**
  * Directives to inspect for the `@nonce` keyword

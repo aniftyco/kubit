@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,23 +9,24 @@
 
 /// <reference path="../adonis-typings/bodyparser.ts" />
 
-import { test } from '@japa/runner'
+import { createWriteStream, pathExists, remove } from 'fs-extra'
+import { createServer } from 'http'
 import { join } from 'path'
 import supertest from 'supertest'
-import { createServer } from 'http'
-import { pathExists, remove, createWriteStream } from 'fs-extra'
+
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { test } from '@japa/runner'
 
 import { Multipart } from '../src/Multipart'
 import { File } from '../src/Multipart/File'
 import {
   fs,
-  sleep,
-  setupApp,
-  xlsFilePath,
-  xlsxFilePath,
   packageFilePath,
   packageFileSize,
+  setupApp,
+  sleep,
+  xlsFilePath,
+  xlsxFilePath,
 } from '../test-helpers'
 
 let app: ApplicationContract

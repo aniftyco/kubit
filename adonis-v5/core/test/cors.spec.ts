@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,13 +9,14 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { test } from '@japa/runner'
-import supertest from 'supertest'
 import { createServer } from 'http'
+import supertest from 'supertest'
+
+import { test } from '@japa/runner'
 
 import { Cors } from '../src/Hooks/Cors'
-import { specFixtures } from './fixtures/cors'
 import { fs, setupApp } from '../test-helpers'
+import { specFixtures } from './fixtures/cors'
 
 test.group('Cors', (group) => {
   group.each.teardown(async () => {

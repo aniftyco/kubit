@@ -1,5 +1,5 @@
 /**
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,14 +9,15 @@
 
 /// <reference path="../adonis-typings/session.ts" />
 
-import { test } from '@japa/runner'
-import supertest from 'supertest'
 import { createServer } from 'http'
+import supertest from 'supertest'
+
+import { test } from '@japa/runner'
 import { MessageBuilder } from '@poppinss/utils/build/helpers'
 
-import { Store } from '../src/Store'
 import { SessionManager } from '../src/SessionManager'
-import { setup, fs, sessionConfig, unsignCookie, getRedisManager } from '../test-helpers'
+import { Store } from '../src/Store'
+import { fs, getRedisManager, sessionConfig, setup, unsignCookie } from '../test-helpers'
 
 test.group('Session Manager', (group) => {
   group.each.teardown(async () => {

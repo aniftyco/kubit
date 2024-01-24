@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,14 +7,15 @@
  * file that was distributed with this source code.
  */
 
+import validator from 'validator'
+
 import { test } from '@japa/runner'
 
-import validator from 'validator'
-import { rules } from '../../src/Rules'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
 import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
 import { mobile } from '../../src/Validations/string/mobile'
+import { validate } from '../fixtures/rules/index'
 
 function compile(options?: { strict?: boolean; locale?: validator.MobilePhoneLocale[] }) {
   return mobile.compile('literal', 'string', rules.mobile(options).options, {})

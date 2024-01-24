@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,12 +8,14 @@
  */
 
 import 'reflect-metadata'
-import { test } from '@japa/runner'
+
 import { join } from 'path'
 
-import { fs } from '../test-helpers'
-import { ManifestLoader } from '../src/Manifest/Loader'
+import { test } from '@japa/runner'
+
 import { ManifestGenerator } from '../src/Manifest/Generator'
+import { ManifestLoader } from '../src/Manifest/Loader'
+import { fs } from '../test-helpers'
 
 test.group('Manifest Generator', (group) => {
   group.setup(async () => {

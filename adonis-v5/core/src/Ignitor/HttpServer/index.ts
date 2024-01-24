@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,8 +10,8 @@
 import { ServerContract } from '@ioc:Adonis/Core/Server'
 import { CustomServerCallback } from '@ioc:Adonis/Core/TestUtils'
 
-import { AppKernel } from '../Kernel'
 import { createHttpServer } from '../../utils'
+import { AppKernel } from '../Kernel'
 
 /**
  * Exposes the API to setup the application for starting the HTTP

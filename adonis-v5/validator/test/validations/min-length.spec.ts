@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,14 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { NodeSubType } from '@ioc:Adonis/Core/Validator'
+import { test } from '@japa/runner'
 
-import { rules } from '../../src/Rules'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
 import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
 import { minLength } from '../../src/Validations/string-and-array/minLength'
+import { validate } from '../fixtures/rules/index'
 
 function compile(subtype: NodeSubType, length: number) {
   return minLength.compile('literal', subtype, rules.minLength(length).options)

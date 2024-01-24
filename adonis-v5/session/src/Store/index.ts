@@ -1,5 +1,5 @@
 /*
- * @adonisjs/redis
+ * @kubit/redis
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,8 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { Exception, lodash } from '@poppinss/utils'
 import { AllowedSessionValues, StoreContract } from '@ioc:Adonis/Addons/Session'
+import { Exception, lodash } from '@poppinss/utils'
 
 /**
  * Session store to mutate and access values from the session object

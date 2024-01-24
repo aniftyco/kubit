@@ -5,7 +5,7 @@ import { Exception } from '@kubit/core/build/standalone'
 | Exception
 |--------------------------------------------------------------------------
 |
-| The Exception class imported from `@adonisjs/core` allows defining
+| The Exception class imported from `@kubit/core` allows defining
 | a status code and error code for every exception.
 |
 | @example

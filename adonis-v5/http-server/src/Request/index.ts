@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,24 +9,24 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import qs from 'qs'
-import fresh from 'fresh'
-import { isIP } from 'net'
-import typeIs from 'type-is'
 import accepts from 'accepts'
-import proxyaddr from 'proxy-addr'
+import fresh from 'fresh'
+import { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'http'
 import { Macroable } from 'macroable'
-import { lodash } from '@poppinss/utils'
+import { isIP } from 'net'
+import proxyaddr from 'proxy-addr'
+import qs from 'qs'
+import typeIs from 'type-is'
 import { parse, UrlWithStringQuery } from 'url'
-import { cuid } from '@poppinss/utils/build/helpers'
-import { ServerResponse, IncomingMessage, IncomingHttpHeaders } from 'http'
 
 import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { RequestContract, RequestConfig } from '@ioc:Adonis/Core/Request'
+import { RequestConfig, RequestContract } from '@ioc:Adonis/Core/Request'
+import { lodash } from '@poppinss/utils'
+import { cuid } from '@poppinss/utils/build/helpers'
 
-import { trustProxy } from '../helpers'
 import { CookieParser } from '../Cookie/Parser'
+import { trustProxy } from '../helpers'
 
 /**
  * HTTP Request class exposes the interface to consistently read values

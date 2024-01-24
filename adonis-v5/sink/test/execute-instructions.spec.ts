@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -313,7 +313,7 @@ test.group('Execute instructions', (group) => {
         name: '@fake/app',
         version: '1.0.0',
         adonisjs: {
-          types: '@adonisjs/core',
+          types: '@kubit/core',
         },
       })
     )
@@ -325,7 +325,7 @@ test.group('Execute instructions', (group) => {
     const tsContents = await fs.fsExtra.readJSON(join(fs.basePath, 'tsconfig.json'))
     assert.deepEqual(tsContents, {
       compilerOptions: {
-        types: ['@adonisjs/core'],
+        types: ['@kubit/core'],
       },
     })
   })

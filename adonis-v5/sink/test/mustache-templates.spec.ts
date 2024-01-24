@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import endent from 'endent'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
+
 import { MustacheFile } from '../src/Files/Formats/Mustache'
 
 const fs = new Filesystem(join(__dirname, '__app'))

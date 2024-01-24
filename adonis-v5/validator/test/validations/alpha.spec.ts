@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,11 +9,11 @@
 
 import { test } from '@japa/runner'
 
-import { rules } from '../../src/Rules'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
 import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
 import { alpha } from '../../src/Validations/string/alpha'
+import { validate } from '../fixtures/rules/index'
 
 function compile(options?: { allow?: ('space' | 'underscore' | 'dash')[] }) {
   return alpha.compile('literal', 'string', rules.alpha(options).options, {})

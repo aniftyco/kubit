@@ -1,5 +1,5 @@
 /*
- * @adonisjs/sink
+ * @kubit/sink
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
+
 import { PackageJsonFile } from '../src/Files/Special/PackageJson'
 
 const fs = new Filesystem(join(__dirname, '__app'))
@@ -162,11 +164,11 @@ test.group('Package file', (group) => {
     const pkg = new PackageJsonFile(fs.basePath)
 
     pkg.install('lodash', '1.0.0', false)
-    pkg.install('@adonisjs/core', 'latest', false)
+    pkg.install('@kubit/core', 'latest', false)
     pkg.install('mrm-core')
 
     assert.deepEqual(pkg.getInstalls(false), {
-      list: ['lodash', '@adonisjs/core'],
+      list: ['lodash', '@kubit/core'],
       versions: { lodash: '1.0.0' },
       dev: false,
     })

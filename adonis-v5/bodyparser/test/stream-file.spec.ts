@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
-import { join } from 'path'
-import { Filesystem } from '@poppinss/dev-utils'
 import { createReadStream, pathExists } from 'fs-extra'
+import { join } from 'path'
+
+import { test } from '@japa/runner'
+import { Filesystem } from '@poppinss/dev-utils'
 
 import { streamFile } from '../src/Multipart/streamFile'
 

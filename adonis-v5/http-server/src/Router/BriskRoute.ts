@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,15 +10,16 @@
 /// <reference path="../../adonis-typings/index.ts" />
 
 import { Macroable } from 'macroable'
+
+import {
+  BriskRouteContract,
+  MakeUrlOptions,
+  RouteHandler,
+  RouteMatchersNode,
+} from '@ioc:Adonis/Core/Route'
 import { Exception } from '@poppinss/utils'
 
 import { Route } from './Route'
-import {
-  BriskRouteContract,
-  RouteMatchersNode,
-  RouteHandler,
-  MakeUrlOptions,
-} from '@ioc:Adonis/Core/Route'
 
 /**
  * Brisk route enables you to expose expressive API for

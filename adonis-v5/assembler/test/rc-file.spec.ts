@@ -1,5 +1,5 @@
 /*
- * @adonisjs/assembler
+ * @kubit/assembler
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,8 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
 import { join } from 'path'
+
+import { test } from '@japa/runner'
 import { Filesystem } from '@poppinss/dev-utils'
 
 import { RcFile } from '../src/RcFile'
@@ -207,13 +208,13 @@ test.group('RcFile', (group) => {
       '.adonisrc.json',
       JSON.stringify({
         metaFiles: [],
-        commands: ['@adonisjs/foo'],
+        commands: ['@kubit/foo'],
       })
     )
 
     const rcFile = new RcFile(fs.basePath)
-    assert.isFalse(rcFile.isCommandsPath('@adonisjs/foo.ts'))
-    assert.isFalse(rcFile.isCommandsPath('@adonisjs/foo/foo.ts'))
+    assert.isFalse(rcFile.isCommandsPath('@kubit/foo.ts'))
+    assert.isFalse(rcFile.isCommandsPath('@kubit/foo/foo.ts'))
   })
 
   test('read file from the disk by-passing the cache', async ({ assert }) => {

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { runInNewContext } from 'vm'
-import Mustache from 'mustache'
 import { readFileSync } from 'fs'
+import Mustache from 'mustache'
+import { runInNewContext } from 'vm'
 
 const STACK_REGEXP = /evalmachine\.<anonymous>:(\d+)(?::(\d+))?\n/
 const STACK_REGEXP_ALL = new RegExp(STACK_REGEXP.source, 'g')

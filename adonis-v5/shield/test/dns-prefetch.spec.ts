@@ -1,5 +1,5 @@
 /*
- * @adonisjs/shield
+ * @kubit/shield
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,9 @@
  */
 
 import { test } from '@japa/runner'
-import { setup, fs } from '../test-helpers'
+
 import { dnsPrefetchFactory } from '../src/dnsPrefetch'
+import { fs, setup } from '../test-helpers'
 
 test.group('Dns Prefetch', (group) => {
   group.each.teardown(async () => {

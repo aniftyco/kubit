@@ -1,47 +1,47 @@
 /*
-* @adonisjs/mrm-preset
-*
-* (c) Harminder Virk <virk@adonisjs.com>
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
+ * @kubit/mrm-preset
+ *
+ * (c) Harminder Virk <virk@adonisjs.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-const { install, packageJson, ini } = require('mrm-core')
+const { install, packageJson, ini } = require('mrm-core');
 
-function task () {
+function task() {
   /**
    * Install required dev-dependencies
    */
-  install(['np'])
+  install(['np']);
 
-  const pkgFile = packageJson()
+  const pkgFile = packageJson();
 
   /**
    * Set npm config
    */
   pkgFile.set('np', {
     contents: '.',
-    anyBranch: false
-  })
+    anyBranch: false,
+  });
 
   /**
    * Set release script
    */
-  pkgFile.setScript('release', 'np --message="chore(release): %s"')
-  pkgFile.setScript('version', 'npm run build')
+  pkgFile.setScript('release', 'np --message="chore(release): %s"');
+  pkgFile.setScript('version', 'npm run build');
 
   /**
    * Save the package file
    */
-  pkgFile.save()
+  pkgFile.save();
 
   /**
    * Remove old npmrc file
    */
-  const npmrc = ini('.npmrc')
-  npmrc.delete()
+  const npmrc = ini('.npmrc');
+  npmrc.delete();
 }
 
-task.description = 'Adds np to do release management'
-module.exports = task
+task.description = 'Adds np to do release management';
+module.exports = task;

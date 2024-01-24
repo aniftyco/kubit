@@ -1,5 +1,5 @@
 /**
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,18 +7,17 @@
  * file that was distributed with this source code.
  */
 
-import { string } from '@poppinss/utils/build/helpers'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { Exception, ManagerConfigValidator } from '@poppinss/utils'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-
 import {
-  SessionConfig,
   ExtendCallback,
+  SessionClientContract,
+  SessionConfig,
   SessionDriverContract,
   SessionManagerContract,
-  SessionClientContract,
 } from '@ioc:Adonis/Addons/Session'
+import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { Exception, ManagerConfigValidator } from '@poppinss/utils'
+import { string } from '@poppinss/utils/build/helpers'
 
 import { Session } from '../Session'
 
@@ -121,7 +120,7 @@ export class SessionManager implements SessionManagerContract {
 
     if (!this.application.container.hasBinding('Adonis/Addons/Redis')) {
       throw new Error(
-        'Install "@adonisjs/redis" in order to use the redis driver for storing sessions'
+        'Install "@kubit/redis" in order to use the redis driver for storing sessions'
       )
     }
 

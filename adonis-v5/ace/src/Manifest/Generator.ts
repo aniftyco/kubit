@@ -1,5 +1,5 @@
 /*
- * @adonisjs/ace
+ * @kubit/ace
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,12 +8,13 @@
  */
 
 import { outputJSON } from 'fs-extra'
-import { isAbsolute, extname, join } from 'path'
+import { extname, isAbsolute, join } from 'path'
+
 import { esmRequire, Exception } from '@poppinss/utils'
 import { resolveFrom } from '@poppinss/utils/build/helpers'
 
-import { validateCommand } from '../utils/validateCommand'
 import { CommandConstructorContract, ManifestNode } from '../Contracts'
+import { validateCommand } from '../utils/validateCommand'
 
 /**
  * Exposes the API to generate the ace manifest file. The manifest file

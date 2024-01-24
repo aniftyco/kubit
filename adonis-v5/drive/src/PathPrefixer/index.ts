@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,8 +9,10 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { slash } from '@poppinss/utils'
 import { normalize, relative } from 'path'
+
+import { slash } from '@poppinss/utils'
+
 import { PathTraversalDetectedException } from '../Exceptions'
 
 /**

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/drive
+ * @kubit/drive
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -7,10 +7,12 @@
  * file that was distributed with this source code.
  */
 
+import { join, normalize, sep } from 'path'
+
 import { test } from '@japa/runner'
-import { join, sep, normalize } from 'path'
-import { fs } from '../test-helpers'
+
 import { PathPrefixer } from '../src/PathPrefixer'
+import { fs } from '../test-helpers'
 
 const TEST_ROOT = join(fs.basePath, 'storage')
 

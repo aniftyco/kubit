@@ -1,5 +1,5 @@
 /*
- * @adonisjs/repl
+ * @kubit/repl
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -31,7 +31,7 @@ export async function setup() {
   )
 
   const app = new Application(fs.basePath, 'web', {
-    providers: ['@adonisjs/core', '../../providers/ReplProvider'],
+    providers: ['@kubit/core', '../../providers/ReplProvider'],
   })
 
   await app.setup()

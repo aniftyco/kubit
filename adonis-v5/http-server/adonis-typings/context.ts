@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,14 +8,15 @@
  */
 
 declare module '@ioc:Adonis/Core/HttpContext' {
-  import { RouteNode } from '@ioc:Adonis/Core/Route'
   import { IncomingMessage, ServerResponse } from 'http'
   import { MacroableConstructorContract } from 'macroable'
+
+  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
   import { LoggerContract } from '@ioc:Adonis/Core/Logger'
+  import { ProfilerRowContract } from '@ioc:Adonis/Core/Profiler'
   import { RequestContract } from '@ioc:Adonis/Core/Request'
   import { ResponseContract } from '@ioc:Adonis/Core/Response'
-  import { ProfilerRowContract } from '@ioc:Adonis/Core/Profiler'
-  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+  import { RouteNode } from '@ioc:Adonis/Core/Route'
 
   /**
    * Http request context passed to all middleware

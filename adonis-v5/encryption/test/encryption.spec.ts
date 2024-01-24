@@ -1,5 +1,5 @@
 /*
- * @adonisjs/encryption
+ * @kubit/encryption
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,6 +10,7 @@
 /// <reference path="../adonis-typings/encryption.ts" />
 
 import { test } from '@japa/runner'
+
 import { Encryption } from '../src/Encryption'
 
 const SECRET = 'averylongradom32charactersstring'

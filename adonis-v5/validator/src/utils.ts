@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,12 +8,12 @@
  */
 
 import {
-  Rule,
   ParsedRule,
-  SchemaArray,
-  SchemaObject,
-  SchemaLiteral,
   ParsedSchemaTree,
+  Rule,
+  SchemaArray,
+  SchemaLiteral,
+  SchemaObject,
 } from '@ioc:Adonis/Core/Validator'
 
 import { rules as schemaRules } from './Rules'

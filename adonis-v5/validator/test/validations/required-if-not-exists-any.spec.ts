@@ -1,5 +1,5 @@
 /*
- * @adonisjs/validator
+ * @kubit/validator
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,11 +8,12 @@
  */
 
 import { test } from '@japa/runner'
-import { rules } from '../../src/Rules'
-import { validate } from '../fixtures/rules/index'
-import { MessagesBag } from '../../src/MessagesBag'
+
 import { ApiErrorReporter } from '../../src/ErrorReporter'
+import { MessagesBag } from '../../src/MessagesBag'
+import { rules } from '../../src/Rules'
 import { requiredIfNotExistsAny } from '../../src/Validations/existence/requiredIfNotExistsAny'
+import { validate } from '../fixtures/rules/index'
 
 function compile(fields: string[]) {
   return requiredIfNotExistsAny.compile(

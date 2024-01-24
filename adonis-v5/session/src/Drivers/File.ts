@@ -1,5 +1,5 @@
 /**
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,11 +9,12 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
+import { ensureFile, outputFile, readFile, remove } from 'fs-extra'
 import { join } from 'path'
+
+import { SessionConfig, SessionDriverContract } from '@ioc:Adonis/Addons/Session'
 import { Exception } from '@poppinss/utils'
 import { MessageBuilder } from '@poppinss/utils/build/helpers'
-import { readFile, ensureFile, outputFile, remove } from 'fs-extra'
-import { SessionDriverContract, SessionConfig } from '@ioc:Adonis/Addons/Session'
 
 /**
  * File driver to read/write session to filesystem

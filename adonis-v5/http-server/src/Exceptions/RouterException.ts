@@ -1,5 +1,5 @@
 /*
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,14 +9,15 @@
 
 import { Exception } from '@poppinss/utils'
 import { interpolate } from '@poppinss/utils/build/helpers'
+
 import {
-  E_DUPLICATE_ROUTE,
-  E_CANNOT_LOOKUP_ROUTE,
-  E_DUPLICATE_ROUTE_NAME,
-  E_CANNOT_LOOKUP_DOMAIN,
-  E_CANNOT_MAKE_ROUTE_URL,
-  E_DUPLICATE_ROUTE_PARAM,
   E_CANNOT_DEFINE_GROUP_NAME,
+  E_CANNOT_LOOKUP_DOMAIN,
+  E_CANNOT_LOOKUP_ROUTE,
+  E_CANNOT_MAKE_ROUTE_URL,
+  E_DUPLICATE_ROUTE,
+  E_DUPLICATE_ROUTE_NAME,
+  E_DUPLICATE_ROUTE_PARAM,
 } from '../../exceptions.json'
 
 /**

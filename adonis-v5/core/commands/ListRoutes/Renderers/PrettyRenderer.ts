@@ -1,5 +1,5 @@
 /*
- * @adonisjs/core
+ * @kubit/core
  *
  * (c) AdonisJS
  *
@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
+import ListRoutes, { SerializedRoute, type } from '../index'
 import { BaseRender } from './Base'
-import ListRoutes, { type SerializedRoute } from '../index'
 
 /**
  * Renders the routes as a pretty list

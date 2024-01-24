@@ -1,5 +1,5 @@
 /*
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,12 +9,12 @@
 
 /// <reference path="../../../adonis-typings/index.ts" />
 
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
 import { CookieClientContract } from '@ioc:Adonis/Core/CookieClient'
+import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
 
+import * as EncryptedCookie from '../Drivers/Encrypted'
 import * as PlainCookie from '../Drivers/Plain'
 import * as SignedCookie from '../Drivers/Signed'
-import * as EncryptedCookie from '../Drivers/Encrypted'
 
 /**
  * Cookie client exposes the API to parse/set AdonisJS

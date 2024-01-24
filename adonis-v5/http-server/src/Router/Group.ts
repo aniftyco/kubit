@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,16 +10,17 @@
 /// <reference path="../../adonis-typings/index.ts" />
 
 import { Macroable } from 'macroable'
+
 import {
   RouteGroupContract,
-  RouteParamMatcher,
   RouteMiddlewareHandler,
+  RouteParamMatcher,
 } from '@ioc:Adonis/Core/Route'
 
-import { Route } from './Route'
+import { RouterException } from '../Exceptions/RouterException'
 import { BriskRoute } from './BriskRoute'
 import { RouteResource } from './Resource'
-import { RouterException } from '../Exceptions/RouterException'
+import { Route } from './Route'
 
 /**
  * Group class exposes the API to take action on a group of routes.

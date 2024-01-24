@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,17 +9,17 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
+import {
+  DomainNode,
+  MatchedRoute,
+  MethodNode,
+  RouteJSON,
+  RouteNode,
+  RouteStoreMatch,
+  RoutesTree,
+} from '@ioc:Adonis/Core/Route'
 import matchit from '@poppinss/matchit'
 import { lodash } from '@poppinss/utils'
-import {
-  RouteNode,
-  RouteJSON,
-  DomainNode,
-  MethodNode,
-  RoutesTree,
-  MatchedRoute,
-  RouteStoreMatch,
-} from '@ioc:Adonis/Core/Route'
 
 import { RouterException } from '../Exceptions/RouterException'
 

@@ -1,5 +1,5 @@
 /*
- * @adonisjs/session
+ * @kubit/session
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -9,14 +9,14 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { cuid } from '@poppinss/utils/build/helpers'
 import {
+  SessionClientContract,
   SessionConfig,
   SessionDriverContract,
-  SessionClientContract,
 } from '@ioc:Adonis/Addons/Session'
-
 import { CookieClientContract } from '@ioc:Adonis/Core/CookieClient'
+import { cuid } from '@poppinss/utils/build/helpers'
+
 import { Store } from '../Store'
 
 /**

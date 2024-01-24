@@ -1,34 +1,34 @@
 /*
-* @adonisjs/mrm-preset
-*
-* (c) Harminder Virk <virk@adonisjs.com>
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
+ * @kubit/mrm-preset
+ *
+ * (c) Harminder Virk <virk@adonisjs.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-const chalk = require('chalk')
-const inquirer = require('inquirer')
-const { json, ini, packageJson } = require('mrm-core')
-const { execSync } = require('child_process')
-const debug = require('debug')('adonis:mrm-init')
+const chalk = require('chalk');
+const inquirer = require('inquirer');
+const { json, ini, packageJson } = require('mrm-core');
+const { execSync } = require('child_process');
+const debug = require('debug')('adonis:mrm-init');
 
 const gitOrigin = {
   type: 'input',
   message: 'Enter git origin url',
-  validate (input) {
-    return !input ? 'Please create a git project and enter it\'s remote origin' : true
+  validate(input) {
+    return !input ? "Please create a git project and enter it's remote origin" : true;
   },
-  when () {
-    const gitFile = ini('.git/config')
+  when() {
+    const gitFile = ini('.git/config');
     if (!gitFile.exists()) {
-      return true
+      return true;
     }
-    const origin = gitFile.get('remote "origin"')
-    return !origin || !origin.url
+    const origin = gitFile.get('remote "origin"');
+    return !origin || !origin.url;
   },
-  name: 'gitOrigin'
-}
+  name: 'gitOrigin',
+};
 
 /**
  * Whether written by the core team or not
@@ -38,8 +38,8 @@ const gitOrigin = {
 const isCore = {
   type: 'confirm',
   message: 'Is it a package written by the AdonisJS core team',
-  name: 'core'
-}
+  name: 'core',
+};
 
 /**
  * Generate readme toc or not
@@ -49,8 +49,8 @@ const isCore = {
 const generateToc = {
   type: 'confirm',
   message: 'Automatically generate TOC for the README file',
-  name: 'generateToc'
-}
+  name: 'generateToc',
+};
 
 /**
  * The minimum node version supported by the project.
@@ -68,10 +68,10 @@ const minNodeVersion = {
     },
     {
       name: 'latest',
-      value: 'latest'
-    }
-  ]
-}
+      value: 'latest',
+    },
+  ],
+};
 
 /**
  * The project license
@@ -82,8 +82,8 @@ const license = {
   type: 'list',
   choices: ['Apache-2.0', 'BSD-2-Clause', 'BSD-3-Clause', 'MIT', 'Unlicense'],
   message: 'Select project license. Select Unlicense if not sure',
-  name: 'license'
-}
+  name: 'license',
+};
 
 /**
  * Services to be used by the project
@@ -96,19 +96,19 @@ const services = {
   choices: [
     {
       name: 'Appveyor',
-      value: 'appveyor'
+      value: 'appveyor',
     },
     {
       name: 'Circle CI',
-      value: 'circleci'
+      value: 'circleci',
     },
     {
       name: 'Github actions',
-      value: 'github-actions'
+      value: 'github-actions',
     },
   ],
-  name: 'services'
-}
+  name: 'services',
+};
 
 /**
  * The appveyor username. Only asked when services
@@ -120,10 +120,10 @@ const appveyorUsername = {
   type: 'input',
   message: 'Enter appveyor username',
   when: function (answers) {
-    return answers.services.indexOf('appveyor') > -1
+    return answers.services.indexOf('appveyor') > -1;
   },
-  name: 'appveyorUsername'
-}
+  name: 'appveyorUsername',
+};
 
 /**
  * Ask if should configure github actions to run on windows too.
@@ -134,10 +134,10 @@ const runGhActionsOnWindows = {
   type: 'confirm',
   message: 'Run github actions on windows?',
   when: function (answers) {
-    return answers.services.indexOf('github-actions') > -1
+    return answers.services.indexOf('github-actions') > -1;
   },
-  name: 'runGhActionsOnWindows'
-}
+  name: 'runGhActionsOnWindows',
+};
 
 /**
  * The probot applications to use
@@ -149,15 +149,15 @@ const probotApps = {
   choices: [
     {
       name: 'Stale Issues',
-      value: 'stale'
+      value: 'stale',
     },
     {
       name: 'Lock Issues',
-      value: 'lock'
-    }
+      value: 'lock',
+    },
   ],
-  name: 'probotApps'
-}
+  name: 'probotApps',
+};
 
 /**
  * Running the task, asking questions and create a project
@@ -167,18 +167,18 @@ const probotApps = {
  *
  * @return {void}
  */
-async function task () {
-  const oldConfig = json('config.json')
+async function task() {
+  const oldConfig = json('config.json');
   /**
    * Move config file to package json
    */
   if (oldConfig.exists()) {
-    packageJson().set('mrmConfig', oldConfig.get()).save()
-    oldConfig.delete()
+    packageJson().set('mrmConfig', oldConfig.get()).save();
+    oldConfig.delete();
   }
 
-  const pkg = packageJson()
-  const existingAnswers = pkg.get('mrmConfig', {})
+  const pkg = packageJson();
+  const existingAnswers = pkg.get('mrmConfig', {});
 
   /**
    * Fill existing values
@@ -187,17 +187,17 @@ async function task () {
     minNodeVersion.choices.unshift({
       name: `${existingAnswers.minNodeVersion} (from existing config)`,
       value: existingAnswers.minNodeVersion,
-    })
-    minNodeVersion.default = 0
+    });
+    minNodeVersion.default = 0;
   }
 
-  isCore.default = existingAnswers.core
-  generateToc.default = existingAnswers.generateToc
-  license.default = existingAnswers.license
-  services.default = existingAnswers.services
-  appveyorUsername.default = existingAnswers.appveyorUsername
-  runGhActionsOnWindows.default = existingAnswers.runGhActionsOnWindows
-  probotApps.default = existingAnswers.probotApps
+  isCore.default = existingAnswers.core;
+  generateToc.default = existingAnswers.generateToc;
+  license.default = existingAnswers.license;
+  services.default = existingAnswers.services;
+  appveyorUsername.default = existingAnswers.appveyorUsername;
+  runGhActionsOnWindows.default = existingAnswers.runGhActionsOnWindows;
+  probotApps.default = existingAnswers.probotApps;
 
   const answers = await inquirer.prompt([
     gitOrigin,
@@ -208,8 +208,8 @@ async function task () {
     services,
     appveyorUsername,
     probotApps,
-    runGhActionsOnWindows
-  ])
+    runGhActionsOnWindows,
+  ]);
 
   const fileContent = {
     core: answers.core,
@@ -218,25 +218,25 @@ async function task () {
     appveyorUsername: answers.appveyorUsername,
     minNodeVersion: answers.minNodeVersion,
     probotApps: answers.probotApps,
-    runGhActionsOnWindows: answers.runGhActionsOnWindows
-  }
+    runGhActionsOnWindows: answers.runGhActionsOnWindows,
+  };
 
-  debug('init %o', fileContent)
+  debug('init %o', fileContent);
 
-  pkg.set('mrmConfig', fileContent)
-  pkg.save()
+  pkg.set('mrmConfig', fileContent);
+  pkg.save();
 
   /**
    * Initiate git repo, when answers has gitOrigin
    */
   if (answers.gitOrigin) {
-    console.log(chalk.yellow('git init'))
-    execSync('git init')
+    console.log(chalk.yellow('git init'));
+    execSync('git init');
 
-    console.log(chalk.yellow(`git remote add origin ${answers.gitOrigin}`))
-    execSync(`git remote add origin ${answers.gitOrigin}`)
+    console.log(chalk.yellow(`git remote add origin ${answers.gitOrigin}`));
+    execSync(`git remote add origin ${answers.gitOrigin}`);
   }
 }
 
-task.description = 'Initiate the project config file'
-module.exports = task
+task.description = 'Initiate the project config file';
+module.exports = task;

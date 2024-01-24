@@ -1,5 +1,5 @@
 /*
- * @adonisjs/bodyparser
+ * @kubit/bodyparser
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -10,19 +10,19 @@
 /// <reference path="../../adonis-typings/bodyparser.ts" />
 
 import bytes from 'bytes'
-import { Exception } from '@poppinss/utils'
-import multiparty from '@poppinss/multiparty'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import {
-  MultipartStream,
   MultipartContract,
+  MultipartStream,
   PartHandler as PartHandlerType,
 } from '@ioc:Adonis/Core/BodyParser'
+import { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import multiparty from '@poppinss/multiparty'
+import { Exception } from '@poppinss/utils'
 
 import { FormFields } from '../FormFields'
 import { PartHandler } from './PartHandler'
-import { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
 
 /**
  * Multipart class offers a low level API to interact the incoming

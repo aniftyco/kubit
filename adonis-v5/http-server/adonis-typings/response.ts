@@ -1,5 +1,5 @@
 /**
- * @adonisjs/http-server
+ * @kubit/http-server
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -8,8 +8,9 @@
  */
 
 declare module '@ioc:Adonis/Core/Response' {
-  import { ServerResponse, IncomingMessage } from 'http'
+  import { IncomingMessage, ServerResponse } from 'http'
   import { MacroableConstructorContract } from 'macroable'
+
   import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
   import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
   import { MakeUrlOptions, RouterContract } from '@ioc:Adonis/Core/Route'
