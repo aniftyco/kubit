@@ -1,9 +1,7 @@
 {
-  "extends": "./node_modules/@adonisjs/mrm-preset/_tsconfig",
+  "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
   "compilerOptions": {
     "resolveJsonModule": true
   },
-  "files": [
-    "./node_modules/@adonisjs/application/build/adonis-typings/index.d.ts"
-  ]
+  "files": ["../../node_modules/@kubit/application/build/adonis-typings/index.d.ts"]
 }

@@ -26,7 +26,7 @@
     "commit": "git-cz",
     "release": "np --message=\"chore(release): %s\"",
     "version": "npm run build",
-    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/assembler",
+    "sync-labels": "github-label-sync --labels ../../node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/assembler",
     "format": "prettier --write .",
     "prepublishOnly": "npm run build"
   },
@@ -82,7 +82,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ../../node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {

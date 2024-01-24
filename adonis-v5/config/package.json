@@ -22,7 +22,7 @@
     "format": "prettier --write .",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext=.ts",
-    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/config"
+    "sync-labels": "github-label-sync --labels ../../node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/config"
   },
   "keywords": [
     "config",

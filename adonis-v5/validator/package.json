@@ -23,7 +23,7 @@
     "benchmarks": "node build/benchmarks/index.js",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/validator",
+    "sync-labels": "github-label-sync --labels ../../node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/validator",
     "vscode:test": "node -r @kubit/require-ts/build/register bin/test.ts"
   },
   "types": "./build/adonis-typings/index.d.ts",
@@ -53,7 +53,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ../../node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {

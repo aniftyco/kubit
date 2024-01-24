@@ -21,7 +21,7 @@
     "test": "node japaFile.js",
     "prepublishOnly": "npm run build",
     "format": "prettier --write .",
-    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/ioc-transformer"
+    "sync-labels": "github-label-sync --labels ../../node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/ioc-transformer"
   },
   "repository": {
     "type": "git",
@@ -68,7 +68,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "doctoc README.md --title='## Table of contents' && git add README.md",
-      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ../../node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {

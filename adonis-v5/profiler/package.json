@@ -23,7 +23,7 @@
     "format": "prettier --write .",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext=.ts",
-    "sync-labels": "github-label-sync --labels ./node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/profiler"
+    "sync-labels": "github-label-sync --labels ../../node_modules/@kubit/mrm-preset/gh-labels.json adonisjs/profiler"
   },
   "keywords": [
     "profiler",
@@ -66,7 +66,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
+      "commit-msg": "node ../../node_modules/@kubit/mrm-preset/validateCommit/conventional/validate.js"
     }
   },
   "config": {

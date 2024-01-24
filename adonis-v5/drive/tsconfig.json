@@ -1,10 +1,10 @@
 {
-  "extends": "./node_modules/@adonisjs/mrm-preset/_tsconfig",
+  "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
   "compilerOptions": {
     "skipLibCheck": true
   },
   "files": [
-    "./node_modules/@adonisjs/application/build/adonis-typings/index.d.ts",
-    "./node_modules/@adonisjs/http-server/build/adonis-typings/index.d.ts"
+    "../../node_modules/@kubit/application/build/adonis-typings/index.d.ts",
+    "../../node_modules/@kubit/http-server/build/adonis-typings/index.d.ts"
   ]
 }
