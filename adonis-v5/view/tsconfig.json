@@ -1,0 +1,10 @@
+{
+  "extends": "./node_modules/@adonisjs/mrm-preset/_tsconfig",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "types": [
+      "@adonisjs/core",
+      "@adonisjs/repl"
+    ]
+  }
+}

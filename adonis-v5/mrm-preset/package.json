@@ -1,0 +1,62 @@
+{
+  "name": "@adonisjs/mrm-preset",
+  "version": "5.0.3",
+  "description": "MRM preset used by adonisjs for all core packages",
+  "main": "config.json",
+  "files": [
+    "*"
+  ],
+  "scripts": {
+    "lint": "standard",
+    "release": "np"
+  },
+  "keywords": [
+    "mrm",
+    "mrm-tasks"
+  ],
+  "author": "virk",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "debug": "^4.3.3",
+    "deep-extend": "^0.6.0",
+    "git-user-email": "^0.2.2",
+    "git-user-name": "^2.0.0",
+    "inquirer": "^8.2.0",
+    "mrm-core": "^6.1.7",
+    "mrm-task-license": "^4.0.8",
+    "parse-github-url": "^1.0.2",
+    "recast": "^0.20.4"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "doctoc": "^2.1.0",
+    "fs-extra": "^10.0.1",
+    "klaw": "^4.0.1",
+    "mrm": "^3.0.10",
+    "np": "^7.6.0",
+    "standard": "^16.0.4",
+    "yorkie": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "node bin/readme.js && doctoc README.md --title='## Table of contents' && git add README.md"
+  },
+  "np": {
+    "tests": false,
+    "branch": "master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adonisjs/mrm-preset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adonisjs/mrm-preset/issues"
+  },
+  "homepage": "https://github.com/adonisjs/mrm-preset#readme",
+  "snyk": true
+}

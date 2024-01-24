@@ -1,0 +1,16 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - inquirer > lodash:
+        patched: '2019-07-04T07:04:43.816Z'
+    - mrm-core > lodash:
+        patched: '2019-07-04T07:04:43.816Z'
+    - mrm-core > webpack-merge > lodash:
+        patched: '2019-07-04T07:04:43.816Z'
+    - mrm-task-license > mrm-core > lodash:
+        patched: '2019-07-04T07:04:43.816Z'
+    - mrm-task-license > mrm-core > webpack-merge > lodash:
+        patched: '2019-07-04T07:04:43.816Z'

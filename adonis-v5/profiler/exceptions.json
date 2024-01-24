@@ -1,0 +1,15 @@
+{
+  "E_INVALID_PROFILER_WORKER": {
+    "message": "Profiler worker file must export a \"process\" function",
+    "status": 500,
+    "code": "E_INVALID_PROFILER_WORKER",
+    "help": [
+      "Here's an example of how the profiler worker code should look like",
+      "```",
+      "import { ProfilerAction, ProfilerRow } from '@ioc:Adonis/Core/Profiler'",
+      "export function process (log: ProfilerAction | ProfilerRow) {",
+      "}",
+      "```"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "lib": ["es2020"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "declaration": true,
+    "moduleResolution": "node",
+    "rootDir": "../../../",
+    "outDir": "../../../build",
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "../../../**/*"
+  ],
+  "exclude": [
+    "../../../node_modules",
+    "../../../build"
+  ]
+}

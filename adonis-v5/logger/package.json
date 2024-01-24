@@ -1,0 +1,149 @@
+{
+	"name": "@adonisjs/logger",
+	"version": "4.1.5",
+	"description": "Logger built on top of pino to be used by AdonisJs",
+	"main": "build/index.js",
+	"files": [
+		"build/adonis-typings",
+		"build/providers",
+		"build/src",
+		"build/index.d.ts",
+		"build/index.js"
+	],
+	"scripts": {
+		"mrm": "mrm --preset=@adonisjs/mrm-preset",
+		"pretest": "npm run lint",
+		"test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+		"clean": "del build",
+		"compile": "npm run lint && npm run clean && tsc",
+		"build": "npm run compile",
+		"commit": "git-cz",
+		"release": "np --message=\"chore(release): %s\"",
+		"version": "npm run build",
+		"format": "prettier --write .",
+		"prepublishOnly": "npm run build",
+		"lint": "eslint . --ext=.ts",
+		"sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/logger"
+	},
+	"keywords": [
+		"logger",
+		"logging",
+		"pino",
+		"adonisjs"
+	],
+	"author": "virk,adonisjs",
+	"license": "MIT",
+	"devDependencies": {
+		"@adonisjs/mrm-preset": "^5.0.3",
+		"@adonisjs/require-ts": "^2.0.13",
+		"@japa/assert": "^1.3.6",
+		"@japa/run-failed-tests": "^1.1.0",
+		"@japa/runner": "^2.2.2",
+		"@japa/spec-reporter": "^1.3.2",
+		"@types/node": "^18.11.3",
+		"commitizen": "^4.2.5",
+		"cz-conventional-changelog": "^3.3.0",
+		"del-cli": "^5.0.0",
+		"eslint": "^8.25.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-adonis": "^2.1.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"github-label-sync": "^2.2.0",
+		"husky": "^8.0.1",
+		"mrm": "^4.1.13",
+		"np": "^7.6.2",
+		"pino-pretty": "^7.6.1",
+		"prettier": "^2.7.1",
+		"typescript": "^4.8.4"
+	},
+	"nyc": {
+		"exclude": [
+			"test"
+		],
+		"extension": [
+			".ts"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+		}
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"np": {
+		"contents": ".",
+		"anyBranch": false
+	},
+	"dependencies": {
+		"@poppinss/utils": "^5.0.0",
+		"@types/pino": "^6.3.12",
+		"abstract-logging": "^2.0.1",
+		"pino": "^6.14.0"
+	},
+	"directories": {
+		"doc": "docs",
+		"test": "test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/adonisjs/logger.git"
+	},
+	"bugs": {
+		"url": "https://github.com/adonisjs/logger/issues"
+	},
+	"homepage": "https://github.com/adonisjs/logger#readme",
+	"adonisjs": {
+		"exceptions": "./build/exceptions.json"
+	},
+	"publishConfig": {
+		"access": "public",
+		"tag": "latest"
+	},
+	"mrmConfig": {
+		"core": true,
+		"license": "MIT",
+		"services": [
+			"github-actions"
+		],
+		"minNodeVersion": "14.15.4",
+		"probotApps": [
+			"stale",
+			"lock"
+		],
+		"runGhActionsOnWindows": false
+	},
+	"eslintConfig": {
+		"extends": [
+			"plugin:adonis/typescriptPackage",
+			"prettier"
+		],
+		"plugins": [
+			"prettier"
+		],
+		"rules": {
+			"prettier/prettier": [
+				"error",
+				{
+					"endOfLine": "auto"
+				}
+			]
+		}
+	},
+	"eslintIgnore": [
+		"build"
+	],
+	"prettier": {
+		"trailingComma": "es5",
+		"semi": false,
+		"singleQuote": true,
+		"useTabs": false,
+		"quoteProps": "consistent",
+		"bracketSpacing": true,
+		"arrowParens": "always",
+		"printWidth": 100
+	}
+}

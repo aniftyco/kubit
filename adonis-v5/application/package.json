@@ -1,0 +1,148 @@
+{
+  "name": "@adonisjs/application",
+  "version": "5.3.0",
+  "description": "AdonisJS application class to read app related data",
+  "main": "build/index.js",
+  "files": [
+    "build/adonis-typings",
+    "build/src",
+    "build/index.d.ts",
+    "build/index.js"
+  ],
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "clean": "del-cli build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile",
+    "commit": "git-cz",
+    "release": "np --message=\"chore(release): %s\"",
+    "version": "npm run build",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/application"
+  },
+  "keywords": [
+    "adonisjs",
+    "app"
+  ],
+  "author": "virk,adonisjs",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^5.0.3",
+    "@adonisjs/require-ts": "^2.0.13",
+    "@japa/assert": "^1.3.6",
+    "@japa/run-failed-tests": "^1.1.0",
+    "@japa/runner": "^2.2.2",
+    "@japa/spec-reporter": "^1.3.2",
+    "@poppinss/dev-utils": "^2.0.3",
+    "@types/node": "^18.11.9",
+    "@types/semver": "^7.3.13",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-adonis": "^2.1.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "github-label-sync": "^2.2.0",
+    "husky": "^8.0.2",
+    "jsonschema": "^1.4.1",
+    "mrm": "^4.1.13",
+    "np": "^7.6.2",
+    "prettier": "^2.7.1",
+    "typescript": "^4.9.3"
+  },
+  "nyc": {
+    "exclude": [
+      "test"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@adonisjs/config": "^3.0.9",
+    "@adonisjs/env": "^3.0.9",
+    "@adonisjs/fold": "^8.2.0",
+    "@adonisjs/logger": "^4.1.5",
+    "@adonisjs/profiler": "^6.0.9",
+    "@poppinss/utils": "^5.0.0",
+    "semver": "^7.3.8"
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adonisjs/application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adonisjs/application/issues"
+  },
+  "homepage": "https://github.com/adonisjs/application#readme",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "mrmConfig": {
+    "core": true,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "14.15.4",
+    "probotApps": [
+      "stale",
+      "lock"
+    ],
+    "runGhActionsOnWindows": false
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  }
+}

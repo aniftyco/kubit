@@ -1,0 +1,140 @@
+{
+  "name": "@adonisjs/events",
+  "version": "7.2.1",
+  "description": "Event emitter with asynchronous events",
+  "main": "build/providers/EventProvider.js",
+  "files": [
+    "build/src",
+    "build/providers",
+    "build/adonis-typings",
+    "build/standalone.d.ts",
+    "build/standalone.js"
+  ],
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "clean": "del-cli build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile",
+    "commit": "git-cz",
+    "release": "np --message=\"chore(release): %s\"",
+    "version": "npm run build",
+    "format": "prettier --write .",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --ext=.ts",
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json adonisjs/events"
+  },
+  "keywords": [
+    "emitter",
+    "events"
+  ],
+  "author": "virk,adonisjs",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/application": "^5.1.5",
+    "@adonisjs/mrm-preset": "^5.0.2",
+    "@adonisjs/require-ts": "^2.0.7",
+    "@japa/assert": "^1.2.3",
+    "@japa/run-failed-tests": "^1.0.3",
+    "@japa/runner": "^2.0.6",
+    "@japa/spec-reporter": "^1.1.7",
+    "@poppinss/dev-utils": "^2.0.1",
+    "@types/node": "^17.0.8",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^4.0.1",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-adonis": "^2.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "github-label-sync": "^2.0.1",
+    "husky": "^7.0.1",
+    "mrm": "^4.0.0",
+    "np": "^7.5.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
+  },
+  "nyc": {
+    "exclude": [
+      "test"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
+  "dependencies": {
+    "emittery": "^0.10.0"
+  },
+  "peerDependencies": {
+    "@adonisjs/application": "^5.0.0"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adonisjs/events.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adonisjs/events/issues"
+  },
+  "homepage": "https://github.com/adonisjs/events#readme",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "mrmConfig": {
+    "core": true,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "14.15.4",
+    "probotApps": [
+      "stale",
+      "lock"
+    ],
+    "runGhActionsOnWindows": false
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  }
+}
