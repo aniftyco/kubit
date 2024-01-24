@@ -14,7 +14,7 @@
     "test": "node -r @kubit/require-ts/build/register ./bin/test.ts",
     "lint": "eslint . --ext=.ts",
     "clean": "del-cli build",
-    "compile": "npm run lint && npm run clean && tsc",
+    "compile": "npm run clean && tsc",
     "build": "npm run compile",
     "commit": "git-cz",
     "release": "FORCE_COLOR=true np --message=\"chore(release): %s\"",

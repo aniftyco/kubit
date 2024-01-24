@@ -19,7 +19,7 @@
     "test": "node -r @kubit/require-ts/build/register bin/test.ts",
     "clean": "del-cli build",
     "copyfiles": "copyfiles \"templates/**/*.txt\" \"instructions.md\" build",
-    "compile": "npm run lint && npm run clean && tsc",
+    "compile": "npm run clean && tsc",
     "build": "npm run compile && npm run copyfiles",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext=.ts",
