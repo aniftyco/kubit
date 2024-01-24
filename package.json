@@ -16,6 +16,7 @@
     }
   ],
   "workspaces": [
+    "adonis-v5/*",
     "packages/*",
     "templates/*"
   ],
@@ -25,6 +26,7 @@
     "@aniftyco/tsconfig": "^1.0.1",
     "@japa/expect": "^2.0.2",
     "@types/uuid": "^9.0.5",
+    "ajv": "^8.12.0",
     "lerna": "^7.3.0",
     "prettier": "^3.0.3",
     "rimraf": "^3.0.2",
