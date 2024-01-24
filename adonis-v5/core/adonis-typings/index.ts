@@ -12,7 +12,6 @@
 /// <reference path="../../../node_modules/@kubit/hash/build/adonis-typings/index.d.ts" />
 /// <reference path="../../../node_modules/@kubit/http-server/build/adonis-typings/index.d.ts" />
 /// <reference path="../../../node_modules/@kubit/encryption/build/adonis-typings/index.d.ts" />
-/// <reference path="../../../node_modules/@kubit/bodyparser/build/adonis-typings/index.d.ts" />
 /// <reference path="../../../node_modules/@kubit/validator/build/adonis-typings/index.d.ts" />
 /// <reference path="../../../node_modules/@kubit/drive/build/adonis-typings/index.d.ts" />
 /// <reference path="./ace.ts" />

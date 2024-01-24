@@ -7,8 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ReplContract } from '@ioc:Adonis/Addons/Repl'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Adonis/Core/Application';
 
 /**
  * Shortcuts to load containers bindings
@@ -24,7 +23,7 @@ function setupReplState(repl: any, key: string, value: any) {
  * Define repl bindings. The method must be invoked when application environment
  * is set to repl.
  */
-export function defineReplBindings(application: ApplicationContract, Repl: ReplContract) {
+export function defineReplBindings(application: ApplicationContract, Repl: any) {
   /**
    * Load the encryption module
    */
