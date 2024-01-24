@@ -5,7 +5,8 @@
     "outDir": "./build",
     "skipLibCheck": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "types": ["@kubit/core"]
   },
   "include": ["./**/*.ts"],
   "exclude": ["node_modules", "./build", "./test"],
