@@ -23,7 +23,7 @@ import { streamFile } from '../Multipart/streamFile'
 import type { ConfigContract } from '@ioc:Adonis/Core/Config'
 import type { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
 import type { BodyParserConfig } from '@ioc:Adonis/Core/BodyParser'
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+// import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 /**
  * BodyParser middleware parses the incoming request body and set it as
@@ -60,7 +60,7 @@ export class BodyParserMiddleware {
    * Returns a boolean telling if request `content-type` header
    * matches the expected types or not
    */
-  private isType(request: HttpContextContract['request'], types: string[]): boolean {
+  private isType(request: any, types: string[]): boolean {
     return !!(this.ensureTypes(types) && request.is(types))
   }
 
@@ -97,7 +97,7 @@ export class BodyParserMiddleware {
    * Handle HTTP request body by parsing it as per the user
    * config
    */
-  public async handle(ctx: HttpContextContract, next: () => Promise<void>): Promise<void> {
+  public async handle(ctx: any, next: () => Promise<void>): Promise<void> {
     /**
      * Initiating the `__raw_files` private property as an object
      */

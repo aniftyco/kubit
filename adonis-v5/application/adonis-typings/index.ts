@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-/// <reference path="../../../node_modules/@kubit/config/build/adonis-typings/config.d.ts" />
-/// <reference path="../../../node_modules/@kubit/env/build/adonis-typings/env.d.ts" />
-/// <reference path="../../../node_modules/@kubit/logger/build/adonis-typings/logger.d.ts" />
-/// <reference path="../../../node_modules/@kubit/profiler/build/adonis-typings/profiler.d.ts" />
+/// <reference types="@kubit/config/build/adonis-typings/config" />
+/// <reference types="@kubit/env/build/adonis-typings/env" />
+/// <reference types="@kubit/logger/build/adonis-typings/logger" />
+/// <reference types="@kubit/profiler/build/adonis-typings/profiler" />
 /// <reference path="./application.ts" />
 /// <reference path="./helpers.ts" />

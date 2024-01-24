@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-/// <reference path="../../../node_modules/@kubit/application/build/adonis-typings/index.d.ts" />
-/// <reference path="../../../node_modules/@kubit/events/build/adonis-typings/index.d.ts" />
-/// <reference path="../../../node_modules/@kubit/hash/build/adonis-typings/index.d.ts" />
-/// <reference path="../../../node_modules/@kubit/http-server/build/adonis-typings/index.d.ts" />
-/// <reference path="../../../node_modules/@kubit/encryption/build/adonis-typings/index.d.ts" />
-/// <reference path="../../../node_modules/@kubit/validator/build/adonis-typings/index.d.ts" />
-/// <reference path="../../../node_modules/@kubit/drive/build/adonis-typings/index.d.ts" />
+/// <reference types="@kubit/application/build/adonis-typings" />
+/// <reference types="@kubit/events/build/adonis-typings" />
+/// <reference types="@kubit/hash/build/adonis-typings" />
+/// <reference types="@kubit/http-server/build/adonis-typings" />
+/// <reference types="@kubit/encryption/build/adonis-typings" />
+/// <reference types="@kubit/drive/build/adonis-typings" />
+/// <reference types="@kubit/validator/build/adonis-typings" />
 /// <reference path="./ace.ts" />
 /// <reference path="./cors.ts" />
 /// <reference path="./health-check.ts" />

@@ -17,7 +17,7 @@ import {
   PartHandler as PartHandlerType,
 } from '@ioc:Adonis/Core/BodyParser'
 import { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+// import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import multiparty from '@poppinss/multiparty'
 import { Exception } from '@poppinss/utils'
 
@@ -89,7 +89,7 @@ export class Multipart implements MultipartContract {
   public state: 'idle' | 'processing' | 'error' | 'success' = 'idle'
 
   constructor(
-    private ctx: HttpContextContract,
+    private ctx: any,
     private config: Partial<{
       limit: string | number
       fieldsLimit: string | number

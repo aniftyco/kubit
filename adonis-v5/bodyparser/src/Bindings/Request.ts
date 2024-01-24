@@ -10,7 +10,7 @@
 /// <reference path="../../adonis-typings/bodyparser.ts" />
 
 import { FileValidationOptions } from '@ioc:Adonis/Core/BodyParser'
-import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
+// import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
 import { lodash } from '@poppinss/utils'
 
 import { File } from '../Multipart/File'
@@ -40,7 +40,7 @@ function isInstanceOfFile(file: any): file is File {
  * Extend the Request class by adding `file` and `files` macro to read processed
  * files
  */
-export default function extendRequest(Request: RequestConstructorContract) {
+export default function extendRequest(Request: any) {
   /**
    * Fetch a single file
    */

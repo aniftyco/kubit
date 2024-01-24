@@ -3,9 +3,9 @@
   "compilerOptions": {
     "rootDir": "./",
     "outDir": "./build",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "./build", "./test"],
-  "files": ["../../node_modules/@kubit/logger/build/adonis-typings/logger.d.ts"]
+  "exclude": ["node_modules", "./build", "./test", "./adonis-typings"]
 }

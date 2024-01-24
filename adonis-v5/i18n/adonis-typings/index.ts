@@ -7,6 +7,7 @@
  * file that was distributed with this source code.
  */
 
+/// <reference types="@kubit/validator/build/adonis-typings" />
 /// <reference path="./i18n.ts" />
 /// <reference path="./container.ts" />
 /// <reference path="./context.ts" />

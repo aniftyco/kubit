@@ -7,5 +7,7 @@
  * file that was distributed with this source code.
  */
 
+/// <reference types="@kubit/encryption/build/adonis-typings/encryption" />
+/// <reference types="@kubit/drive/build/adonis-typings" />
 /// <reference path="./bodyparser.ts" />
 /// <reference path="./request.ts" />
