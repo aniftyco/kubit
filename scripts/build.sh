@@ -4,22 +4,22 @@ set -eo pipefail
 # unless you know what you're doing
 PKGS=(
     require-ts 
-    sink
-    assembler
+    fold
     config
+    env
+    logger
     profiler
     application
-    env
-    fold
-    hash
+    sink
     repl
+    core
+    assembler
+    hash
     events
     drive
     validator
     ace
     http-server
-    core
-    logger
     ioc-transformer
     redis
     view
@@ -30,6 +30,11 @@ PKGS=(
     bodyparser
 )
 
+# Clean up old build stuff
+echo "Cleaning packages..."
+npx del adonis-v5/**/build
+
+# Build new stuff
 for package in "${PKGS[@]}"
 do
     echo "building ${package}";
