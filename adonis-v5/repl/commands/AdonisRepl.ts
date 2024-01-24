@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { BaseCommand } from '@kubit/core/build/standalone'
+import { BaseCommand } from '@kubit/ace';
 
 export default class ReplCommand extends BaseCommand {
   public static commandName = 'repl'
