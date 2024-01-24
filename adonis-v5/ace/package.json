@@ -102,10 +102,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonisjs/ace.git"
+    "url": "git+https://github.com/aniftyco/kubit.git"
   },
   "bugs": {
-    "url": "https://github.com/adonisjs/ace/issues"
+    "url": "https://github.com/aniftyco/kubit/issues"
   },
   "mrmConfig": {
     "core": true,

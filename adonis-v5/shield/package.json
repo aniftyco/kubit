@@ -86,12 +86,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonisjs/shield.git"
+    "url": "git+https://github.com/aniftyco/kubit.git"
   },
   "bugs": {
-    "url": "https://github.com/adonisjs/shield/issues"
+    "url": "https://github.com/aniftyco/kubit/issues"
   },
-  "homepage": "https://github.com/adonisjs/shield#readme",
+  "homepage": "https://github.com/aniftyco/kubit#readme",
   "nyc": {
     "exclude": [
       "test"

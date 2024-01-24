@@ -92,12 +92,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonisjs/application.git"
+    "url": "git+https://github.com/aniftyco/kubit.git"
   },
   "bugs": {
-    "url": "https://github.com/adonisjs/application/issues"
+    "url": "https://github.com/aniftyco/kubit/issues"
   },
-  "homepage": "https://github.com/adonisjs/application#readme",
+  "homepage": "https://github.com/aniftyco/kubit#readme",
   "publishConfig": {
     "access": "public",
     "tag": "latest"

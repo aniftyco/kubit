@@ -100,12 +100,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonisjs/repl.git"
+    "url": "git+https://github.com/aniftyco/kubit.git"
   },
   "bugs": {
-    "url": "https://github.com/adonisjs/repl/issues"
+    "url": "https://github.com/aniftyco/kubit/issues"
   },
-  "homepage": "https://github.com/adonisjs/repl#readme",
+  "homepage": "https://github.com/aniftyco/kubit#readme",
   "adonisjs": {
     "aceProviders": [
       "@adonisjs/repl"

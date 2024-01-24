@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/poppinss/hash.git"
+    "url": "git+ssh://git@github.com/aniftyco/kubit.git"
   },
   "keywords": [
     "hash",
@@ -39,9 +39,9 @@
   "author": "poppinss,virk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/poppinss/hash/issues"
+    "url": "https://github.com/aniftyco/kubit/issues"
   },
-  "homepage": "https://github.com/poppinss/hash#readme",
+  "homepage": "https://github.com/aniftyco/kubit#readme",
   "devDependencies": {
     "@adonisjs/application": "^5.2.5",
     "@adonisjs/mrm-preset": "^5.0.3",

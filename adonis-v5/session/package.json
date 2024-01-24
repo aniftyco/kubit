@@ -68,7 +68,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonisjs/adonis-session.git"
+    "url": "git+https://github.com/aniftyco/kubit.git"
   },
   "keywords": [
     "session",
@@ -77,9 +77,9 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/adonisjs/adonis-session/issues"
+    "url": "https://github.com/aniftyco/kubit/issues"
   },
-  "homepage": "https://github.com/adonisjs/adonis-session#readme",
+  "homepage": "https://github.com/aniftyco/kubit#readme",
   "nyc": {
     "exclude": [
       "test"

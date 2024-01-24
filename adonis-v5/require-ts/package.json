@@ -92,12 +92,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonisjs/require-ts.git"
+    "url": "git+https://github.com/aniftyco/kubit.git"
   },
   "bugs": {
-    "url": "https://github.com/adonisjs/require-ts/issues"
+    "url": "https://github.com/aniftyco/kubit/issues"
   },
-  "homepage": "https://github.com/adonisjs/require-ts#readme",
+  "homepage": "https://github.com/aniftyco/kubit#readme",
   "mrmConfig": {
     "core": true,
     "license": "MIT",

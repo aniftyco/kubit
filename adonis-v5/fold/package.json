@@ -27,7 +27,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/poppinss/adonis-fold.git"
+    "url": "git+https://github.com/aniftyco/kubit.git"
   },
   "keywords": [
     "ioc",
@@ -38,9 +38,9 @@
     "autoloading"
   ],
   "bugs": {
-    "url": "https://github.com/poppinss/adonis-fold/issues"
+    "url": "https://github.com/aniftyco/kubit/issues"
   },
-  "homepage": "https://github.com/poppinss/adonis-fold#readme",
+  "homepage": "https://github.com/aniftyco/kubit#readme",
   "devDependencies": {
     "@adonisjs/mrm-preset": "^5.0.3",
     "@adonisjs/require-ts": "^2.0.11",

@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonisjs/antl.git"
+    "url": "git+https://github.com/aniftyco/kubit.git"
   },
   "keywords": [
     "intl",
@@ -42,9 +42,9 @@
   "author": "virk,adonisjs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/adonisjs/antl/issues"
+    "url": "https://github.com/aniftyco/kubit/issues"
   },
-  "homepage": "https://github.com/adonisjs/antl#readme",
+  "homepage": "https://github.com/aniftyco/kubit#readme",
   "devDependencies": {
     "@adonisjs/core": "^5.8.2",
     "@adonisjs/mrm-preset": "^5.0.3",
