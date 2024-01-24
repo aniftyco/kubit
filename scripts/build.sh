@@ -17,9 +17,9 @@ PKGS=(
     http-server
     drive
     ace
+    bodyparser
     validator
     core
-    bodyparser
     assembler
     repl
     ioc-transformer
