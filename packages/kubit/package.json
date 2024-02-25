@@ -1,45 +1,15 @@
 {
   "name": "kubit",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": true,
-  "main": "dist/index.js",
-  "bin": {
-    "kubit": "./dist/bin.js"
-  },
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "types": "./types/index.d.ts"
-    },
-    "./TestProvider": {
-      "require": "./dist/tests.js",
-      "types": "./dist/test.d.ts"
-    },
-    "./*": "./*"
-  },
   "scripts": {
     "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
     "build": "rimraf dist && tsc -p tsconfig.json",
     "prepublishOnly": "npm run build"
   },
   "files": [
-    "dist",
-    "types"
+    "dist"
   ],
-  "dependencies": {
-    "@adonisjs/core": "^5.9.0",
-    "proxy-addr": "^2.0.7",
-    "reflect-metadata": "^0.1.13",
-    "source-map-support": "^0.5.21"
-  },
-  "devDependencies": {
-    "@adonisjs/assembler": "^5.9.5",
-    "@japa/preset-adonis": "^1.2.0",
-    "@japa/runner": "^2.5.1",
-    "@types/proxy-addr": "^2.0.0",
-    "@types/source-map-support": "^0.5.7",
-    "pino-pretty": "^10.2.0",
-    "youch": "^3.3.1",
-    "youch-terminal": "^2.2.2"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
