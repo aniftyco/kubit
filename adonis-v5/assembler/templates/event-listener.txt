@@ -1,3 +1,0 @@
-import type { EventsList } from '@ioc:Kubit/Event'
-
-export default class {{ filename }} {}

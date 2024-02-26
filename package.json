@@ -16,7 +16,7 @@
     }
   ],
   "workspaces": [
-    "adonis-v5/*",
+    "framework/*",
     "packages/*",
     "templates/*"
   ],

@@ -1,3 +1,0 @@
-// import type { HttpContextContract } from '@ioc:Kubit/HttpContext'
-
-export default class {{ filename }} {}

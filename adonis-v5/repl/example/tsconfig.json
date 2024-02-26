@@ -1,4 +1,0 @@
-{
-  "extends": "../node_modules/@kubit/mrm-preset/_tsconfig",
-  "files": ["../node_modules/@kubit/application/adonis-typings/index.ts"]
-}
