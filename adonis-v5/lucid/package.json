@@ -129,7 +129,7 @@
     "test": "test"
   },
   "keywords": [],
-  "kubit": {
+  "adonisjs": {
     "instructions": "./build/instructions.js",
     "instructionsMd": "./build/instructions.md",
     "types": "@kubit/lucid",
