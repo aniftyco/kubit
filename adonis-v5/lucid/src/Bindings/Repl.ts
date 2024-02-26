@@ -6,9 +6,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+/// <reference types="@kubit/repl" />
 
-import { ReplContract } from '@ioc:Kubit/Addons/Repl'
 import { ApplicationContract } from '@ioc:Kubit/Application'
+import { ReplContract } from '@ioc:Kubit/Repl'
 import { requireAll } from '@poppinss/utils/build/helpers'
 
 /**

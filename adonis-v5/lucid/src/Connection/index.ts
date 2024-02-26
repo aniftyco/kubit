@@ -239,7 +239,7 @@ export class Connection extends EventEmitter implements ConnectionContract {
         debug: false,
       })
     )
-    patchKnex(this.client, this.writeConfigResolver.bind(this))
+    patchKnex(this.client as any, this.writeConfigResolver.bind(this))
   }
 
   /**
@@ -258,7 +258,7 @@ export class Connection extends EventEmitter implements ConnectionContract {
         debug: false,
       })
     )
-    patchKnex(this.readClient, this.readConfigResolver.bind(this))
+    patchKnex(this.readClient as any, this.readConfigResolver.bind(this))
   }
 
   /**
@@ -407,8 +407,8 @@ export class Connection extends EventEmitter implements ConnectionContract {
       message: readError
         ? 'Unable to reach one of the read hosts'
         : error
-          ? 'Unable to reach the database server'
-          : 'Connection is healthy',
+        ? 'Unable to reach the database server'
+        : 'Connection is healthy',
       error: error || readError || null,
     }
   }
