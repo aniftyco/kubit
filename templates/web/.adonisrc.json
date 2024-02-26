@@ -1,6 +1,11 @@
 {
   "typescript": true,
-  "commands": ["./commands", "@kubit/core/build/commands/index.js", "@kubit/repl/build/commands"],
+  "commands": [
+    "./commands",
+    "@kubit/core/build/commands/index.js",
+    "@kubit/repl/build/commands",
+    "@kubit/lucid/build/commands"
+  ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
     "App": "app",
@@ -9,7 +14,14 @@
     "Contracts": "contracts"
   },
   "preloads": ["./start/routes", "./start/kernel"],
-  "providers": ["./providers/AppProvider", "@kubit/core", "@kubit/session", "@kubit/view", "@kubit/shield"],
+  "providers": [
+    "./providers/AppProvider",
+    "@kubit/core",
+    "@kubit/session",
+    "@kubit/view",
+    "@kubit/shield",
+    "@kubit/lucid"
+  ],
   "metaFiles": [
     {
       "pattern": "public/**",
