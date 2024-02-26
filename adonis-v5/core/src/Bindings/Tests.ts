@@ -7,15 +7,15 @@
  * file that was distributed with this source code.
  */
 
-import { ContainerBindings } from '@ioc:Kubit/Application'
+// import { ContainerBindings } from '@ioc:Kubit/Application'
 import { CookieClientContract } from '@ioc:Kubit/CookieClient'
 
 /**
  * Define test bindings
  */
 export function defineTestsBindings(
-  ApiRequest: ContainerBindings['Japa/Preset/ApiRequest'],
-  ApiClient: ContainerBindings['Japa/Preset/ApiClient'],
+  ApiRequest: any, // ContainerBindings['Japa/Preset/ApiRequest'],
+  ApiClient: any, // ContainerBindings['Japa/Preset/ApiClient'],
   CookieClient: CookieClientContract
 ) {
   /**

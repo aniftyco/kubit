@@ -1,0 +1,9 @@
+{
+  "extends": "../../node_modules/@kubit/mrm-preset/_tsconfig",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "useDefineForClassFields": true,
+  },
+}
