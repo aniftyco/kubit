@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { SessionConfig } from '@ioc:Adonis/Addons/Session'
+import { SessionConfig } from '@ioc:Kubit/Session';
 
 /**
  * Helper to define session config

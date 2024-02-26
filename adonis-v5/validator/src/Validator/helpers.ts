@@ -9,14 +9,14 @@
 
 import { DateTime } from 'luxon'
 
-import { RequestContract } from '@ioc:Adonis/Core/Request'
+import { RequestContract } from '@ioc:Kubit/Request'
 import {
   ErrorReporterConstructorContract,
   NodeSubType,
   NodeType,
   ParsedRule,
   SchemaRef,
-} from '@ioc:Adonis/Core/Validator'
+} from '@ioc:Kubit/Validator'
 import { lodash } from '@poppinss/utils'
 
 import * as ErrorReporters from '../ErrorReporter'

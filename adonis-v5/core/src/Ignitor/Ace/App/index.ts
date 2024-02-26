@@ -149,7 +149,7 @@ export class App {
          * Set ace instance within the container, so that the underlying
          * commands or the app can access it from the container
          */
-        this.kernel.application.container.singleton('Adonis/Core/Ace', () => this.ace)
+        this.kernel.application.container.singleton('Kubit/Ace', () => this.ace)
         await this.kernel.boot()
       }
     }

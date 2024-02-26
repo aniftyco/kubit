@@ -34,7 +34,7 @@ test.group('Serve Static', (group) => {
       const serveStatic = new ServeStatic(join(fs.basePath, 'public'), {
         enabled: true,
       })
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       await serveStatic.handle(ctx)
 
       assert.equal(ctx.response.response.listenerCount('finish'), 1)
@@ -53,7 +53,7 @@ test.group('Serve Static', (group) => {
       const serveStatic = new ServeStatic(join(fs.basePath, 'public'), {
         enabled: true,
       })
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       ctx.response.header('x-powered-by', 'adonis')
       await serveStatic.handle(ctx)
 
@@ -80,7 +80,7 @@ test.group('Serve Static', (group) => {
         enabled: true,
       })
 
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       ctx.response.header('x-powered-by', 'adonis')
       await serveStatic.handle(ctx)
 
@@ -102,7 +102,7 @@ test.group('Serve Static', (group) => {
       const serveStatic = new ServeStatic(join(fs.basePath, 'public'), {
         enabled: true,
       })
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       await serveStatic.handle(ctx)
 
       assert.equal(ctx.response.response.listenerCount('finish'), 1)
@@ -128,7 +128,7 @@ test.group('Serve Static', (group) => {
           }
         },
       })
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       ctx.response.header('x-powered-by', 'adonis')
       await serveStatic.handle(ctx)
 

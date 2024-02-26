@@ -11,7 +11,7 @@
  * The binding for the given module is defined inside `providers/AppProvider.ts`
  * file.
  */
-declare module '@ioc:Adonis/Core/HealthCheck' {
+declare module '@ioc:Kubit/HealthCheck' {
   export type Checker = string | (() => Promise<HealthReportEntry>)
 
   /**

@@ -7,6 +7,6 @@
  * file that was distributed with this source code.
  */
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 
 export function noop(_: HttpContextContract) {}

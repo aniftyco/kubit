@@ -9,20 +9,14 @@
 
 /// <reference path="../../adonis-typings/redis.ts" />
 
-import { EventEmitter } from 'events'
-import { Cluster, Redis } from 'ioredis'
+import { EventEmitter } from 'events';
+import { Cluster, Redis } from 'ioredis';
 
 import {
-  HealthReportNode,
-  PubSubChannelHandler,
-  PubSubPatternHandler,
-} from '@ioc:Adonis/Addons/Redis'
-import {
-  ApplicationContract,
-  ContainerBindings,
-  IocResolverContract,
-} from '@ioc:Adonis/Core/Application'
-import { Exception } from '@poppinss/utils'
+    ApplicationContract, ContainerBindings, IocResolverContract
+} from '@ioc:Kubit/Application';
+import { HealthReportNode, PubSubChannelHandler, PubSubPatternHandler } from '@ioc:Kubit/Redis';
+import { Exception } from '@poppinss/utils';
 
 /**
  * Helper to sleep

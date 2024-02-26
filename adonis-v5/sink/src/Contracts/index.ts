@@ -9,7 +9,7 @@
 
 import { PackageJson } from 'mrm-core'
 
-import { AppEnvironments } from '@ioc:Adonis/Core/Application'
+import { AppEnvironments } from '@ioc:Kubit/Application'
 
 /**
  * Shape of the template node

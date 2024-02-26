@@ -21,7 +21,7 @@ test.group('No Sniff', (group) => {
     const noSniff = noSniffFactory({ enabled: false })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     noSniff(ctx)
 
     assert.isUndefined(ctx.response.getHeader('X-Content-Type-Options'))
@@ -31,7 +31,7 @@ test.group('No Sniff', (group) => {
     const noSniff = noSniffFactory({ enabled: true })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     noSniff(ctx)
 
     assert.equal(ctx.response.getHeader('X-Content-Type-Options'), 'nosniff')

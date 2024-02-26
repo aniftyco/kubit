@@ -9,7 +9,7 @@
 
 import { join } from 'path'
 
-import { DriveListItem } from '@ioc:Adonis/Core/Drive'
+import { DriveListItem } from '@ioc:Kubit/Drive'
 import { test } from '@japa/runner'
 
 import { DirectoryListing } from '../src/DirectoryListing'
@@ -25,7 +25,7 @@ test.group('Directory listing', (group) => {
 
   test('directory listing is async iterable', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
     const listing = new DirectoryListing(driver, async function* () {})
@@ -40,7 +40,7 @@ test.group('Directory listing', (group) => {
     assert.plan(1)
 
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -55,7 +55,7 @@ test.group('Directory listing', (group) => {
 
   test('iterate over items yielded from listing generator', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -77,7 +77,7 @@ test.group('Directory listing', (group) => {
 
   test('toIterable returns async iterable', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -90,7 +90,7 @@ test.group('Directory listing', (group) => {
 
   test('using toIterable is equivalent of asyncIterator', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -110,7 +110,7 @@ test.group('Directory listing', (group) => {
 
   test('convert directory listing to array', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -139,7 +139,7 @@ test.group('Directory listing | pipe', (group) => {
     assert.plan(3)
 
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -156,7 +156,7 @@ test.group('Directory listing | pipe', (group) => {
 
   test('pipe returns cloned instance not affecting the original one', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -179,7 +179,7 @@ test.group('Directory listing | pipe', (group) => {
 
   test('pipe directory listing items through transformation function', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -210,7 +210,7 @@ test.group('Directory listing | pipe', (group) => {
 
   test('execute pipe chain in sequence', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -257,7 +257,7 @@ test.group('Directory listing | filter', (group) => {
 
   test('execute filter function for every list item', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -290,7 +290,7 @@ test.group('Directory listing | filter', (group) => {
 
   test('filter directory listing items', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -314,7 +314,7 @@ test.group('Directory listing | filter', (group) => {
 
   test('filter returns cloned instance not affecting the original one', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -341,7 +341,7 @@ test.group('Directory listing | map', (group) => {
 
   test('transform directory list items with mapper function', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -367,7 +367,7 @@ test.group('Directory listing | map', (group) => {
 
   test('map returns cloned instance not affecting the original one', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
     const driver = new LocalDriver('local', config, router)
 
@@ -394,7 +394,7 @@ test.group('Directory listing | recursive', (group) => {
 
   test('should recursively call driver list method until item is not file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const contents = {
@@ -435,7 +435,7 @@ test.group('Directory listing | recursive', (group) => {
 
   test('yield directory as leaf when it is empty', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const contents = {
@@ -476,7 +476,7 @@ test.group('Directory listing | recursive', (group) => {
 
   test('should apply pipe chain before recursively calling list', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const contents = {
@@ -529,7 +529,7 @@ test.group('Directory listing | recursive', (group) => {
     assert,
   }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const contents = {
@@ -584,7 +584,7 @@ test.group('Directory listing | recursive', (group) => {
 
   test('call next with depth argument', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const contents = {

@@ -20,16 +20,16 @@ import { cuid } from '@poppinss/utils/build/helpers'
 import { Multipart } from '../Multipart'
 import { streamFile } from '../Multipart/streamFile'
 
-import type { ConfigContract } from '@ioc:Adonis/Core/Config'
-import type { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
-import type { BodyParserConfig } from '@ioc:Adonis/Core/BodyParser'
-// import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import type { ConfigContract } from '@ioc:Kubit/Config'
+import type { DriveManagerContract } from '@ioc:Kubit/Drive'
+import type { BodyParserConfig } from '@ioc:Kubit/BodyParser'
+// import type { HttpContextContract } from '@ioc:Kubit/HttpContext'
 
 /**
  * BodyParser middleware parses the incoming request body and set it as
  * request body to be read later in the request lifecycle.
  */
-@inject(['Adonis/Core/Config', 'Adonis/Core/Drive'])
+@inject(['Kubit/Config', 'Kubit/Drive'])
 export class BodyParserMiddleware {
   /**
    * Bodyparser config

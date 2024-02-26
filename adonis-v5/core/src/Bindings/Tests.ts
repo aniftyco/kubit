@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { ContainerBindings } from '@ioc:Adonis/Core/Application'
-import { CookieClientContract } from '@ioc:Adonis/Core/CookieClient'
+import { ContainerBindings } from '@ioc:Kubit/Application'
+import { CookieClientContract } from '@ioc:Kubit/CookieClient'
 
 /**
  * Define test bindings

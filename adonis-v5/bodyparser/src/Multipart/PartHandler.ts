@@ -11,8 +11,8 @@
 
 import { extname } from 'path'
 
-import { FileValidationOptions, MultipartStream } from '@ioc:Adonis/Core/BodyParser'
-import { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
+import { FileValidationOptions, MultipartStream } from '@ioc:Kubit/BodyParser'
+import { DriveManagerContract } from '@ioc:Kubit/Drive'
 import { Exception } from '@poppinss/utils'
 
 import { computeFileTypeFromName, getFileType, supportMagicFileTypes } from '../utils'

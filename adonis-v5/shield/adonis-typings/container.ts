@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { ShieldMiddlewareContract } from '@ioc:Adonis/Addons/Shield'
+declare module '@ioc:Kubit/Application' {
+import { ShieldMiddlewareContract } from '@ioc:Kubit/Shield';
 
-  export interface ContainerBindings {
+    export interface ContainerBindings {
     'Adonis/Lucid/Shield': ShieldMiddlewareContract
   }
 }

@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+import { EncryptionContract } from '@ioc:Kubit/Encryption'
 
 /**
  * Signs a value to be shared as a cookie. The signed output has a

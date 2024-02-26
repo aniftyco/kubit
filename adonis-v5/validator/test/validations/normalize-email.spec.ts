@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { EmailNormalizationOptions } from '@ioc:Adonis/Core/Validator'
+import { EmailNormalizationOptions } from '@ioc:Kubit/Validator'
 import { test } from '@japa/runner'
 
 import { ApiErrorReporter } from '../../src/ErrorReporter'

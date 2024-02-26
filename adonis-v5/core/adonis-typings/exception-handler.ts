@@ -11,9 +11,9 @@
  * The binding for the given module is defined inside `providers/AppProvider.ts`
  * file.
  */
-declare module '@ioc:Adonis/Core/HttpExceptionHandler' {
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-  import { LoggerContract } from '@ioc:Adonis/Core/Logger'
+declare module '@ioc:Kubit/HttpExceptionHandler' {
+  import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+  import { LoggerContract } from '@ioc:Kubit/Logger'
 
   export default abstract class HttpExceptionHandler {
     constructor(logger: LoggerContract)

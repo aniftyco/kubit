@@ -21,7 +21,7 @@ test.group('Hsts', (group) => {
     const hsts = hstsFactory({ enabled: false })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     hsts(ctx)
 
     assert.isUndefined(ctx.response.getHeader('Strict-Transport-Security'))
@@ -31,7 +31,7 @@ test.group('Hsts', (group) => {
     const hsts = hstsFactory({ enabled: true, maxAge: 100 })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     hsts(ctx)
 
     assert.equal(ctx.response.getHeader('Strict-Transport-Security'), 'max-age=100')
@@ -41,7 +41,7 @@ test.group('Hsts', (group) => {
     const hsts = hstsFactory({ enabled: true, maxAge: '1s' })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     hsts(ctx)
 
     assert.equal(ctx.response.getHeader('Strict-Transport-Security'), 'max-age=1000')
@@ -51,7 +51,7 @@ test.group('Hsts', (group) => {
     const hsts = hstsFactory({ enabled: true, maxAge: '1s', includeSubDomains: true })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     hsts(ctx)
 
     assert.equal(
@@ -69,7 +69,7 @@ test.group('Hsts', (group) => {
     })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     hsts(ctx)
 
     assert.equal(

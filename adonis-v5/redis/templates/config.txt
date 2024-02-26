@@ -5,7 +5,7 @@
  * file.
  */
 
-import Env from '@ioc:Adonis/Core/Env'
+import Env from '@ioc:Kubit/Env'
 import { redisConfig } from '@kubit/redis/build/config'
 
 /*

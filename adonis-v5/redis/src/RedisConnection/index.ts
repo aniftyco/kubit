@@ -9,13 +9,13 @@
 
 /// <reference path="../../adonis-typings/redis.ts" />
 
-import Redis, { RedisOptions } from 'ioredis'
+import Redis, { RedisOptions } from 'ioredis';
 
-import { RedisConnectionConfig } from '@ioc:Adonis/Addons/Redis'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application';
+import { RedisConnectionConfig } from '@ioc:Kubit/Redis';
 
-import { AbstractConnection } from '../AbstractConnection'
-import { ioMethods } from '../ioMethods'
+import { AbstractConnection } from '../AbstractConnection';
+import { ioMethods } from '../ioMethods';
 
 /**
  * Redis connection exposes the API to run Redis commands using `ioredis` as the

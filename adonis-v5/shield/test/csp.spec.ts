@@ -20,7 +20,7 @@ test.group('Csp', (group) => {
   test('return noop function when enabled is false', async ({ assert }) => {
     const app = await setup()
     const csp = cspFactory({ enabled: false })
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     csp(ctx)
 
     assert.isUndefined(ctx.response.getHeader('Content-Security-Policy'))
@@ -28,7 +28,7 @@ test.group('Csp', (group) => {
 
   test('set Content-Security-Policy header', async ({ assert }) => {
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const csp = cspFactory({
       enabled: true,
@@ -44,7 +44,7 @@ test.group('Csp', (group) => {
 
   test('transform @nonce keyword on scriptSrc', async ({ assert }) => {
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const csp = cspFactory({
       enabled: true,
@@ -63,7 +63,7 @@ test.group('Csp', (group) => {
 
   test('transform @nonce keyword on styleSrc', async ({ assert }) => {
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const csp = cspFactory({
       enabled: true,
@@ -82,7 +82,7 @@ test.group('Csp', (group) => {
 
   test('transform @nonce keyword on defaultSrc', async ({ assert }) => {
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const csp = cspFactory({
       enabled: true,

@@ -10,9 +10,9 @@
 import { createServer } from 'http'
 import { join } from 'path'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { ServerContract } from '@ioc:Adonis/Core/Server'
-import { CustomServerCallback } from '@ioc:Adonis/Core/TestUtils'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { ServerContract } from '@ioc:Kubit/Server'
+import { CustomServerCallback } from '@ioc:Kubit/TestUtils'
 import { Kernel, ManifestLoader } from '@kubit/ace'
 import { resolveFrom } from '@poppinss/utils/build/helpers'
 

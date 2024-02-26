@@ -11,7 +11,7 @@
 
 import Tokens from 'csrf'
 
-import { ContainerBindings } from '@ioc:Adonis/Core/Application'
+import { ContainerBindings } from '@ioc:Kubit/Application'
 
 /**
  * Define test bindings

@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { RedisClusterConfig, RedisConnectionConfig } from '@ioc:Adonis/Addons/Redis'
+import { RedisClusterConfig, RedisConnectionConfig } from '@ioc:Kubit/Redis';
 
 /**
  * Expected shape of the config accepted by the "redisConfig"

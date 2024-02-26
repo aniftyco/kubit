@@ -10,12 +10,12 @@
 /**
  * Extending the `request` interface on the core module
  */
-declare module '@ioc:Adonis/Core/Request' {
+declare module '@ioc:Kubit/Request' {
   import {
     FileValidationOptions,
     MultipartContract,
     MultipartFileContract,
-  } from '@ioc:Adonis/Core/BodyParser'
+  } from '@ioc:Kubit/BodyParser'
 
   interface RequestContract {
     file(key: string, options?: Partial<FileValidationOptions>): MultipartFileContract | null

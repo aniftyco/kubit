@@ -41,21 +41,18 @@ test.group('Encryption Provider', (group) => {
 
   test('register encryption provider', async ({ assert }) => {
     const app = await setup()
-    assert.instanceOf(app.container.use('Adonis/Core/Encryption'), Encryption)
-    assert.deepEqual(
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/Encryption')
-    )
+    assert.instanceOf(app.container.use('Kubit/Encryption'), Encryption)
+    assert.deepEqual(app.container.use('Kubit/Encryption'), app.container.use('Kubit/Encryption'))
   })
 
   test('raise error when appKey is missing', async ({ assert }) => {
     const app = await setup(false)
-    const fn = () => app.container.use('Adonis/Core/Encryption')
+    const fn = () => app.container.use('Kubit/Encryption')
     assert.throws(fn, 'E_MISSING_APP_KEY: The value for "app.appKey" is undefined')
   })
 
   test('access verifier from encryption module', async ({ assert }) => {
     const app = await setup()
-    assert.instanceOf(app.container.use('Adonis/Core/Encryption').verifier, MessageVerifier)
+    assert.instanceOf(app.container.use('Kubit/Encryption').verifier, MessageVerifier)
   })
 })

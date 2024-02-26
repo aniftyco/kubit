@@ -7,11 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
+import { join } from 'path';
 
-import { I18nConfig } from '@ioc:Adonis/Addons/I18n'
-import { Application } from '@kubit/core/build/standalone'
-import { Filesystem } from '@poppinss/dev-utils'
+import { I18nConfig } from '@ioc:Kubit/I18n';
+import { Application } from '@kubit/core/build/standalone';
+import { Filesystem } from '@poppinss/dev-utils';
 
 export const fs = new Filesystem(join(__dirname, 'app'))
 

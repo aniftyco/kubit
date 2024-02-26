@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { ParsedTypedSchema, RequestValidatorNode, TypedSchema } from '@ioc:Adonis/Core/Validator'
+import { ParsedTypedSchema, RequestValidatorNode, TypedSchema } from '@ioc:Kubit/Validator'
 
-declare module '@ioc:Adonis/Core/Request' {
+declare module '@ioc:Kubit/Request' {
   interface RequestContract {
     /**
      * Validate current request. The data is optional here, since request

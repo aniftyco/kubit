@@ -9,12 +9,12 @@
 
 /// <reference path="./index.ts" />
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { ConfigContract } from '@ioc:Adonis/Core/Config'
-  import { EnvContract } from '@ioc:Adonis/Core/Env'
-  import * as Helpers from '@ioc:Adonis/Core/Helpers'
-  import { LoggerContract } from '@ioc:Adonis/Core/Logger'
-  import { ProfilerContract } from '@ioc:Adonis/Core/Profiler'
+declare module '@ioc:Kubit/Application' {
+  import { ConfigContract } from '@ioc:Kubit/Config'
+  import { EnvContract } from '@ioc:Kubit/Env'
+  import * as Helpers from '@ioc:Kubit/Helpers'
+  import { LoggerContract } from '@ioc:Kubit/Logger'
+  import { ProfilerContract } from '@ioc:Kubit/Profiler'
   import { IocContract } from '@kubit/fold'
 
   /**
@@ -22,12 +22,12 @@ declare module '@ioc:Adonis/Core/Application' {
    * the user land and other packages
    */
   export interface ContainerBindings {
-    'Adonis/Core/Application': ApplicationContract
-    'Adonis/Core/Profiler': ProfilerContract
-    'Adonis/Core/Logger': LoggerContract
-    'Adonis/Core/Config': ConfigContract
-    'Adonis/Core/Env': EnvContract
-    'Adonis/Core/Helpers': typeof Helpers
+    'Kubit/Application': ApplicationContract
+    'Kubit/Profiler': ProfilerContract
+    'Kubit/Logger': LoggerContract
+    'Kubit/Config': ConfigContract
+    'Kubit/Env': EnvContract
+    'Kubit/Helpers': typeof Helpers
   }
 
   export type ApplicationStates =

@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Request' {
+declare module '@ioc:Kubit/Request' {
   import { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'http'
   import { MacroableConstructorContract } from 'macroable'
   import { UrlWithStringQuery } from 'url'
 
-  import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+  import { EncryptionContract } from '@ioc:Kubit/Encryption'
+  import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 
   /**
    * Shape of the request class instance

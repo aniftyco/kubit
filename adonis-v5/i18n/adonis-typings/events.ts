@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Event' {
-  import { MissingTranslationEventData } from '@ioc:Adonis/Addons/I18n'
+declare module '@ioc:Kubit/Event' {
+import { MissingTranslationEventData } from '@ioc:Kubit/I18n';
 
-  export interface EventsList {
+    export interface EventsList {
     'i18n:missing:translation': MissingTranslationEventData
   }
 }

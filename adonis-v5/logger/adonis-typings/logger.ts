@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Logger' {
+declare module '@ioc:Kubit/Logger' {
   import {
     Bindings,
     DestinationStream,

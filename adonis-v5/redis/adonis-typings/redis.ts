@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Addons/Redis' {
-  import { EventEmitter } from 'events'
-  import { Cluster, ClusterOptions, NodeRole, Redis as IoRedis, RedisOptions } from 'ioredis'
+declare module '@ioc:Kubit/Redis' {
+import { EventEmitter } from 'events';
+import { Cluster, ClusterOptions, NodeRole, Redis as IoRedis, RedisOptions } from 'ioredis';
 
-  import { HealthReportEntry } from '@ioc:Adonis/Core/HealthCheck'
+import { HealthReportEntry } from '@ioc:Kubit/HealthCheck';
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Helpers
   |--------------------------------------------------------------------------

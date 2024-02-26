@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import type { ReplContract } from '@ioc:Adonis/Addons/Repl'
-import type { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import type { ReplContract } from '@ioc:Kubit/Repl'
+import type { ApplicationContract } from '@ioc:Kubit/Application'
 
 /**
  * Helper to define REPL state
@@ -27,7 +27,7 @@ export function replBindings(app: ApplicationContract, Repl: ReplContract) {
   Repl.addMethod(
     'loadI18n',
     (repl) => {
-      setupReplState(repl, 'I18n', app.container.use('Adonis/Addons/I18n'))
+      setupReplState(repl, 'I18n', app.container.use('Kubit/I18n'))
     },
     {
       description: 'Load I18n provider to the "I18n" property',

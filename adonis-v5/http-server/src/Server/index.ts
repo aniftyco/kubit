@@ -13,11 +13,11 @@ import { IncomingMessage, Server as HttpServer, ServerResponse } from 'http'
 import { Server as HttpsServer } from 'https'
 import ms from 'ms'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { ProfilerRowContract } from '@ioc:Adonis/Core/Profiler'
-import { ErrorHandler, ServerConfig, ServerContract } from '@ioc:Adonis/Core/Server'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { EncryptionContract } from '@ioc:Kubit/Encryption'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+import { ProfilerRowContract } from '@ioc:Kubit/Profiler'
+import { ErrorHandler, ServerConfig, ServerContract } from '@ioc:Kubit/Server'
 
 import { HttpContext } from '../HttpContext'
 import {

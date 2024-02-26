@@ -14,7 +14,7 @@ import 'reflect-metadata'
 import { createServer } from 'http'
 import supertest from 'supertest'
 
-import { ProfilerAction, ProfilerRow } from '@ioc:Adonis/Core/Profiler'
+import { ProfilerAction, ProfilerRow } from '@ioc:Kubit/Profiler'
 import { test } from '@japa/runner'
 import { inject } from '@kubit/fold'
 
@@ -22,7 +22,7 @@ import { HttpContext } from '../src/HttpContext'
 import { Server } from '../src/Server'
 import { encryption, fs, serverConfig, setupApp } from '../test-helpers'
 
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import type { HttpContextContract } from '@ioc:Kubit/HttpContext'
 test.group('Server | Response handling', (group) => {
   group.each.teardown(async () => {
     await fs.cleanup()

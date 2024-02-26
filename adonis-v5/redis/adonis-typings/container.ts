@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { RedisManagerContract } from '@ioc:Adonis/Addons/Redis'
+declare module '@ioc:Kubit/Application' {
+import { RedisManagerContract } from '@ioc:Kubit/Redis';
 
-  export interface ContainerBindings {
-    'Adonis/Addons/Redis': RedisManagerContract
+    export interface ContainerBindings {
+    'Kubit/Redis': RedisManagerContract
   }
 }

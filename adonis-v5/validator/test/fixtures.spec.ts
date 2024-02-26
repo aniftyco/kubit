@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { validator as validatorType } from '@ioc:Adonis/Core/Validator'
+import { validator as validatorType } from '@ioc:Kubit/Validator'
 import { test } from '@japa/runner'
 
 import * as userProfile from '../fixtures/user-profile/schema'

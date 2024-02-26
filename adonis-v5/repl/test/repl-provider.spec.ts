@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
+import { join } from 'path';
 
-import { test } from '@japa/runner'
-import { Application } from '@kubit/core/build/standalone'
-import { Filesystem } from '@poppinss/dev-utils'
+import { test } from '@japa/runner';
+import { Application } from '@kubit/core/build/standalone';
+import { Filesystem } from '@poppinss/dev-utils';
 
-import { Repl } from '../src/Repl'
+import { Repl } from '../src/Repl';
 
 const fs = new Filesystem(join(__dirname, './app'))
 
@@ -48,6 +48,6 @@ test.group('Repl Provider', (group) => {
 
   test('register repl provider', async ({ assert }) => {
     const app = await setup()
-    assert.instanceOf(app.container.use('Adonis/Addons/Repl'), Repl)
+    assert.instanceOf(app.container.use('Kubit/Repl'), Repl)
   })
 })

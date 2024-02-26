@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import type { DisksList } from '@ioc:Adonis/Core/Drive'
-import type { ViewContract } from '@ioc:Adonis/Core/View'
-import type { RouterContract } from '@ioc:Adonis/Core/Route'
-import type { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import type { AssetsManagerContract } from '@ioc:Adonis/Core/AssetsManager'
-import type { HttpContextConstructorContract } from '@ioc:Adonis/Core/HttpContext'
+import type { DisksList } from '@ioc:Kubit/Drive'
+import type { ViewContract } from '@ioc:Kubit/View'
+import type { RouterContract } from '@ioc:Kubit/Route'
+import type { ApplicationContract } from '@ioc:Kubit/Application'
+import type { AssetsManagerContract } from '@ioc:Kubit/AssetsManager'
+import type { HttpContextConstructorContract } from '@ioc:Kubit/HttpContext'
 
 /**
  * View provider to register view to the application
@@ -44,9 +44,9 @@ export default class ViewProvider {
    * templates.
    */
   private addGlobals(View: ViewContract, Application: ApplicationContract) {
-    const Config = Application.container.resolveBinding('Adonis/Core/Config')
-    const Env = Application.container.resolveBinding('Adonis/Core/Env')
-    const Drive = Application.container.resolveBinding('Adonis/Core/Drive')
+    const Config = Application.container.resolveBinding('Kubit/Config')
+    const Env = Application.container.resolveBinding('Kubit/Env')
+    const Drive = Application.container.resolveBinding('Kubit/Drive')
 
     View.global('app', Application)
     View.global('config', (key: string, defaultValue?: any) => Config.get(key, defaultValue))
@@ -103,7 +103,7 @@ export default class ViewProvider {
    * a boolean, so we need to handle that case
    */
   private shouldCacheViews(): boolean {
-    let cacheViews = this.app.container.resolveBinding('Adonis/Core/Env').get('CACHE_VIEWS')
+    let cacheViews = this.app.container.resolveBinding('Kubit/Env').get('CACHE_VIEWS')
     if (typeof cacheViews === 'string') {
       cacheViews = cacheViews === 'true'
     }
@@ -119,7 +119,7 @@ export default class ViewProvider {
       return
     }
 
-    this.app.container.withBindings(['Adonis/Addons/Repl'], (Repl) => {
+    this.app.container.withBindings(['Kubit/Repl'], (Repl) => {
       const { defineReplBindings } = require('../src/Bindings/Repl')
       defineReplBindings(this.app, Repl)
     })
@@ -137,7 +137,7 @@ export default class ViewProvider {
    * Register view binding
    */
   public register() {
-    this.app.container.singleton('Adonis/Core/View', () => {
+    this.app.container.singleton('Kubit/View', () => {
       const { Edge } = require('edge.js')
       const { Supercharged } = require('edge-supercharged')
 
@@ -164,10 +164,10 @@ export default class ViewProvider {
    * Setup view on boot
    */
   public boot() {
-    const View = this.app.container.resolveBinding('Adonis/Core/View')
-    const Route = this.app.container.resolveBinding('Adonis/Core/Route')
-    const HttpContext = this.app.container.resolveBinding('Adonis/Core/HttpContext')
-    const AssetsManager = this.app.container.resolveBinding('Adonis/Core/AssetsManager')
+    const View = this.app.container.resolveBinding('Kubit/View')
+    const Route = this.app.container.resolveBinding('Kubit/Route')
+    const HttpContext = this.app.container.resolveBinding('Kubit/HttpContext')
+    const AssetsManager = this.app.container.resolveBinding('Kubit/AssetsManager')
 
     /**
      * Repl and Assets manager bindings

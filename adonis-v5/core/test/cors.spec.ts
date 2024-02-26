@@ -34,7 +34,7 @@ test.group('Cors', (group) => {
         const cors = new Cors(fixture.configureOptions())
         fixture.configureRequest(req)
 
-        const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+        const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
         await cors.handle(ctx)
 
         if (!ctx.response.hasLazyBody) {

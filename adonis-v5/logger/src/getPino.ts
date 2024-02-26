@@ -11,7 +11,7 @@
 
 import Pino from 'pino'
 
-import { LoggerConfig, TimestampKeywords } from '@ioc:Adonis/Core/Logger'
+import { LoggerConfig, TimestampKeywords } from '@ioc:Kubit/Logger'
 
 /**
  * Mapping pino timestamp formatters to keywords

@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/profiler.ts" />
 
-import { AbstractProfilerContract, ProfilerActionContract } from '@ioc:Adonis/Core/Profiler'
+import { AbstractProfilerContract, ProfilerActionContract } from '@ioc:Kubit/Profiler'
 
 /**
  * Abstract class to be extended to add support for timing functions.

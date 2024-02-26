@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import {
   DirectoryListingContract,
   DisksList,
@@ -21,9 +21,9 @@ import {
   FakeImplementationCallback,
   LocalDriverConfig,
   Visibility,
-} from '@ioc:Adonis/Core/Drive'
-import { LoggerContract } from '@ioc:Adonis/Core/Logger'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
+} from '@ioc:Kubit/Drive'
+import { LoggerContract } from '@ioc:Kubit/Logger'
+import { RouterContract } from '@ioc:Kubit/Route'
 import { Manager } from '@poppinss/manager'
 import { Exception, ManagerConfigValidator } from '@poppinss/utils'
 

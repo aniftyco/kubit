@@ -7,12 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import {
-  SchemaArray,
-  SchemaLiteral,
-  SchemaObject,
-  ValidationField,
-} from '@ioc:Adonis/Core/Validator'
+import { SchemaArray, SchemaLiteral, SchemaObject, ValidationField } from '@ioc:Kubit/Validator'
 
 import { CompilerBuffer } from '../Buffer'
 import { Compiler } from '../index'

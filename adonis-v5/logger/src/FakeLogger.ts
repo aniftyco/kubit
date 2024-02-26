@@ -11,7 +11,7 @@
 
 import Pino from 'pino'
 
-import { LoggerConfig } from '@ioc:Adonis/Core/Logger'
+import { LoggerConfig } from '@ioc:Kubit/Logger'
 
 import { Logger } from './Logger'
 

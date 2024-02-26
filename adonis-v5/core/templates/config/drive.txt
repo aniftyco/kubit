@@ -5,9 +5,9 @@
  * file.
  */
 
-import Env from '@ioc:Adonis/Core/Env'
+import Env from '@ioc:Kubit/Env'
 import { driveConfig } from '@kubit/core/build/config'
-import Application from '@ioc:Adonis/Core/Application'
+import Application from '@ioc:Kubit/Application'
 
 /*
 |--------------------------------------------------------------------------

@@ -9,8 +9,8 @@
 
 import { Macroable } from 'macroable'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { TestUtilsContract } from '@ioc:Adonis/Core/TestUtils'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { TestUtilsContract } from '@ioc:Kubit/TestUtils'
 
 import { loadAceCommands } from '../utils'
 import { TestHttpServer } from './HttpServer'
@@ -35,7 +35,7 @@ export class TestUtils extends Macroable implements Omit<TestUtilsContract, 'con
       loadCommands: () => {
         return loadAceCommands(
           this.application,
-          this.application.container.resolveBinding('Adonis/Core/Ace')
+          this.application.container.resolveBinding('Kubit/Ace')
         )
       },
     }

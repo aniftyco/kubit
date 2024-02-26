@@ -1,7 +1,8 @@
+import { ParsedRule, ValidationContract } from '@ioc:Kubit/Validator'
 import { test } from '@japa/runner'
-import { ValidationContract, ParsedRule } from '@ioc:Adonis/Core/Validator'
-import { MessagesBag } from '../../../src/MessagesBag'
+
 import { ApiErrorReporter } from '../../../src/ErrorReporter/Api'
+import { MessagesBag } from '../../../src/MessagesBag'
 
 type ValidationOptions = {
   root?: any

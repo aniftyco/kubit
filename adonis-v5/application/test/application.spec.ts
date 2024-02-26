@@ -237,7 +237,7 @@ test.group('Application | setup', (group) => {
     await fs.add(
       'env.ts',
       `
-      const Env = global[Symbol.for('ioc.use')]('Adonis/Core/Env')
+      const Env = global[Symbol.for('ioc.use')]('Kubit/Env')
       Env.rules({
         ENV_APP_NAME: Env.schema.enum(['adonisjs', 'adonis'])
       })
@@ -344,7 +344,7 @@ test.group('Application | setup', (group) => {
     const app = getApp({})
     await app.setup()
 
-    const Config = app.container.use('Adonis/Core/Config')
+    const Config = app.container.use('Kubit/Config')
     assert.equal(Config.get('app.logger.name'), 'foobar')
   })
 
@@ -360,8 +360,8 @@ test.group('Application | setup', (group) => {
     const app = getApp({})
     await app.setup()
 
-    assert.instanceOf(app.container.use('Adonis/Core/Logger'), Logger)
-    assert.instanceOf(app.container.use('Adonis/Core/Profiler'), Profiler)
+    assert.instanceOf(app.container.use('Kubit/Logger'), Logger)
+    assert.instanceOf(app.container.use('Kubit/Profiler'), Profiler)
   })
 
   test('raise exception when "engines.node" does not satisfy node version', async ({ assert }) => {
@@ -643,7 +643,7 @@ test.group('Application | requirePreloads', (group) => {
     await fs.add(
       'start/foo.ts',
       `
-      global[Symbol.for('ioc.use')]('Adonis/Core/Application').container.bind('Start/Foo', () => {
+      global[Symbol.for('ioc.use')]('Kubit/Application').container.bind('Start/Foo', () => {
         return 'foo'
       })
     `
@@ -668,7 +668,7 @@ test.group('Application | requirePreloads', (group) => {
     await fs.add(
       'start/foo.ts',
       `
-      global[Symbol.for('ioc.use')]('Adonis/Core/Application').container.bind('Start/Foo', () => {
+      global[Symbol.for('ioc.use')]('Kubit/Application').container.bind('Start/Foo', () => {
         return 'foo'
       })
     `
@@ -700,7 +700,7 @@ test.group('Application | requirePreloads', (group) => {
     await fs.add(
       'start/foo.ts',
       `
-      global[Symbol.for('ioc.use')]('Adonis/Core/Application').container.bind('Start/Foo', () => {
+      global[Symbol.for('ioc.use')]('Kubit/Application').container.bind('Start/Foo', () => {
         return 'foo'
       })
     `
@@ -783,7 +783,7 @@ test.group('Application | requirePreloads', (group) => {
     await fs.add(
       'start/foo.ts',
       `
-      global['ioc.use']('Adonis/Core/Application').container.bind('Start/Foo', () => {
+      global['ioc.use']('Kubit/Application').container.bind('Start/Foo', () => {
         return 'foo'
       })
     `

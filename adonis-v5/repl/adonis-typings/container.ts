@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { ReplContract } from '@ioc:Adonis/Addons/Repl'
+declare module '@ioc:Kubit/Application' {
+import { ReplContract } from '@ioc:Kubit/Repl';
 
-  export interface ContainerBindings {
-    'Adonis/Addons/Repl': ReplContract
+    export interface ContainerBindings {
+    'Kubit/Repl': ReplContract
   }
 }

@@ -21,8 +21,8 @@ import {
   LocalDriverConfig,
   LocalDriverContract,
   Visibility,
-} from '@ioc:Adonis/Core/Drive'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
+} from '@ioc:Kubit/Drive'
+import { RouterContract } from '@ioc:Kubit/Route'
 
 import { DirectoryListing } from '../DirectoryListing'
 import {

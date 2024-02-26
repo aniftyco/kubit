@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { Rule, Rules } from '@ioc:Adonis/Core/Validator'
+import { Rule, Rules } from '@ioc:Kubit/Validator'
 
 import * as validations from '../Validations'
 

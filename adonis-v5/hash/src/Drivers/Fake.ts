@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/hash.ts" />
 
-import { FakeContract } from '@ioc:Adonis/Core/Hash'
+import { FakeContract } from '@ioc:Kubit/Hash'
 
 /**
  * Generates and verifies hash using no algorigthm.

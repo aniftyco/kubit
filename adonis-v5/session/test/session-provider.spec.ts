@@ -7,14 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { createServer } from 'http'
+import { createServer } from 'http';
 
-import { ApiClient } from '@japa/api-client'
-import { test } from '@japa/runner'
+import { ApiClient } from '@japa/api-client';
+import { test } from '@japa/runner';
 
-import { MemoryDriver } from '../src/Drivers/Memory'
-import { SessionManager } from '../src/SessionManager'
-import { fs, setup } from '../test-helpers'
+import { MemoryDriver } from '../src/Drivers/Memory';
+import { SessionManager } from '../src/SessionManager';
+import { fs, setup } from '../test-helpers';
 
 test.group('Session Provider', (group) => {
   group.each.teardown(async () => {
@@ -29,14 +29,11 @@ test.group('Session Provider', (group) => {
       driver: 'cookie',
     })
 
-    assert.instanceOf(app.container.use('Adonis/Addons/Session'), SessionManager)
-    assert.deepEqual(
-      app.container.use('Adonis/Addons/Session'),
-      app.container.use('Adonis/Addons/Session')
-    )
-    assert.deepEqual(app.container.use('Adonis/Addons/Session')['application'], app)
-    assert.equal(app.container.use('Adonis/Core/Server').hooks['hooks'].before.length, 1)
-    assert.equal(app.container.use('Adonis/Core/Server').hooks['hooks'].after.length, 1)
+    assert.instanceOf(app.container.use('Kubit/Session'), SessionManager)
+    assert.deepEqual(app.container.use('Kubit/Session'), app.container.use('Kubit/Session'))
+    assert.deepEqual(app.container.use('Kubit/Session')['application'], app)
+    assert.equal(app.container.use('Kubit/Server').hooks['hooks'].before.length, 1)
+    assert.equal(app.container.use('Kubit/Server').hooks['hooks'].after.length, 1)
   })
 
   test('raise error when config is missing', async ({ assert }) => {
@@ -58,14 +55,11 @@ test.group('Session Provider', (group) => {
       driver: 'cookie',
     })
 
-    assert.instanceOf(app.container.use('Adonis/Addons/Session'), SessionManager)
-    assert.deepEqual(
-      app.container.use('Adonis/Addons/Session'),
-      app.container.use('Adonis/Addons/Session')
-    )
-    assert.deepEqual(app.container.use('Adonis/Addons/Session')['application'], app)
-    assert.equal(app.container.use('Adonis/Core/Server').hooks['hooks'].before.length, 0)
-    assert.equal(app.container.use('Adonis/Core/Server').hooks['hooks'].after.length, 0)
+    assert.instanceOf(app.container.use('Kubit/Session'), SessionManager)
+    assert.deepEqual(app.container.use('Kubit/Session'), app.container.use('Kubit/Session'))
+    assert.deepEqual(app.container.use('Kubit/Session')['application'], app)
+    assert.equal(app.container.use('Kubit/Server').hooks['hooks'].before.length, 0)
+    assert.equal(app.container.use('Kubit/Server').hooks['hooks'].after.length, 0)
   })
 
   test('register test api request methods', async ({ assert }) => {
@@ -73,11 +67,8 @@ test.group('Session Provider', (group) => {
       driver: 'cookie',
     })
 
-    assert.instanceOf(app.container.use('Adonis/Addons/Session'), SessionManager)
-    assert.deepEqual(
-      app.container.use('Adonis/Addons/Session'),
-      app.container.use('Adonis/Addons/Session')
-    )
+    assert.instanceOf(app.container.use('Kubit/Session'), SessionManager)
+    assert.deepEqual(app.container.use('Kubit/Session'), app.container.use('Kubit/Session'))
 
     assert.isTrue(app.container.use('Japa/Preset/ApiRequest').hasMacro('session'))
     assert.isTrue(app.container.use('Japa/Preset/ApiRequest').hasMacro('flashMessages'))
@@ -91,7 +82,7 @@ test.group('Session Provider', (group) => {
     })
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       await ctx.session.initiate(false)
 
       try {
@@ -119,7 +110,7 @@ test.group('Session Provider', (group) => {
     })
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       await ctx.session.initiate(false)
       ctx.session.put('username', 'virk')
@@ -147,7 +138,7 @@ test.group('Session Provider', (group) => {
     })
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       await ctx.session.initiate(false)
       ctx.session.flash({ username: 'virk' })
@@ -175,7 +166,7 @@ test.group('Session Provider', (group) => {
     })
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       await ctx.session.initiate(false)
       ctx.session.put('username', 'virk')

@@ -9,7 +9,7 @@
 
 import { DateTime } from 'luxon'
 
-import { NodeSubType, SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { NodeSubType, SyncValidation } from '@ioc:Kubit/Validator'
 
 import { enforceArray, isRef, wrapCompile } from '../../Validator/helpers'
 

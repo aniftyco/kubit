@@ -36,7 +36,7 @@ export async function setupApp(
 			cookie: {},
 		}
 		export const validator = {
-			reporter: async () => use('Adonis/Core/Validator').validator.reporters['${configReporter}']
+			reporter: async () => use('Kubit/Validator').validator.reporters['${configReporter}']
 		}
 	`
   )

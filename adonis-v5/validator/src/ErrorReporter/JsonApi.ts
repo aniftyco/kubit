@@ -7,11 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import {
-  ErrorReporterContract,
-  JsonApiErrorNode,
-  MessagesBagContract,
-} from '@ioc:Adonis/Core/Validator'
+import { ErrorReporterContract, JsonApiErrorNode, MessagesBagContract } from '@ioc:Kubit/Validator'
 
 import { ValidationException } from '../ValidationException'
 

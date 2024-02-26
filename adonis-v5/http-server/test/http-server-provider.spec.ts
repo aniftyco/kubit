@@ -26,13 +26,13 @@ test.group('Http Server Provider', (group) => {
   test('register http server provider', async ({ assert }) => {
     const app = await setupApp(['@kubit/encryption', '../../providers/HttpServerProvider'])
 
-    assert.instanceOf(app.container.use('Adonis/Core/Route'), Router)
-    assert.deepEqual(app.container.use('Adonis/Core/Request'), Request)
-    assert.deepEqual(app.container.use('Adonis/Core/Response'), Response)
-    assert.instanceOf(app.container.use('Adonis/Core/Server'), Server)
-    assert.instanceOf(app.container.use('Adonis/Core/CookieClient'), CookieClient)
-    assert.deepEqual(app.container.use('Adonis/Core/MiddlewareStore'), MiddlewareStore)
-    assert.deepEqual(app.container.use('Adonis/Core/HttpContext'), HttpContext)
+    assert.instanceOf(app.container.use('Kubit/Route'), Router)
+    assert.deepEqual(app.container.use('Kubit/Request'), Request)
+    assert.deepEqual(app.container.use('Kubit/Response'), Response)
+    assert.instanceOf(app.container.use('Kubit/Server'), Server)
+    assert.instanceOf(app.container.use('Kubit/CookieClient'), CookieClient)
+    assert.deepEqual(app.container.use('Kubit/MiddlewareStore'), MiddlewareStore)
+    assert.deepEqual(app.container.use('Kubit/HttpContext'), HttpContext)
   })
 })
 

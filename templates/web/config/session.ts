@@ -5,8 +5,8 @@
  * file.
  */
 
-import Application from '@ioc:Adonis/Core/Application';
-import Env from '@ioc:Adonis/Core/Env';
+import Application from '@ioc:Kubit/Application';
+import Env from '@ioc:Kubit/Env';
 import { sessionConfig } from '@kubit/session/build/config';
 
 export default sessionConfig({

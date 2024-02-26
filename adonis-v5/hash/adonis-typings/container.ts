@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { HashContract } from '@ioc:Adonis/Core/Hash'
+declare module '@ioc:Kubit/Application' {
+  import { HashContract } from '@ioc:Kubit/Hash'
 
   export interface ContainerBindings {
-    'Adonis/Core/Hash': HashContract
+    'Kubit/Hash': HashContract
   }
 }

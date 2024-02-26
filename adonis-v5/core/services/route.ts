@@ -9,4 +9,4 @@
 
 import { getApp } from './base'
 
-export default getApp().container.resolveBinding('Adonis/Core/Route')
+export default getApp().container.resolveBinding('Kubit/Route')

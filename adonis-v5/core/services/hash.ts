@@ -9,4 +9,4 @@
 
 import { getApp } from './base'
 
-export default getApp().container.resolveBinding('Adonis/Core/Hash')
+export default getApp().container.resolveBinding('Kubit/Hash')

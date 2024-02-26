@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Addons/I18n' {
-  import { DateTime } from 'luxon'
+declare module '@ioc:Kubit/I18n' {
+import { DateTime } from 'luxon';
 
-  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application';
 
-  /**
+    /**
    * Data object for missing translation event
    */
   export type MissingTranslationEventData = {

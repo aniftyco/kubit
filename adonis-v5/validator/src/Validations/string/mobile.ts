@@ -10,7 +10,7 @@
 import * as validator from 'validator'
 import isMobilePhone from 'validator/lib/isMobilePhone'
 
-import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { SyncValidation } from '@ioc:Kubit/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
 

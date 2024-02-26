@@ -9,10 +9,10 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { XFrameOptions } from '@ioc:Adonis/Addons/Shield'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
+import { XFrameOptions } from '@ioc:Kubit/Shield';
 
-import { noop } from './noop'
+import { noop } from './noop';
 
 const ALLOWED_ACTIONS = ['DENY', 'ALLOW-FROM', 'SAMEORIGIN']
 

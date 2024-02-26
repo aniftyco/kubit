@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 
 export default class EventProvider {
   constructor(protected app: ApplicationContract) {}
@@ -16,7 +16,7 @@ export default class EventProvider {
    * Register `Event emitter` to the container.
    */
   public register() {
-    this.app.container.singleton('Adonis/Core/Event', () => {
+    this.app.container.singleton('Kubit/Event', () => {
       const { Emitter } = require('../src/Emitter')
       return new Emitter(this.app)
     })

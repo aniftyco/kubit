@@ -9,11 +9,11 @@
 
 /// <reference path="../adonis-typings/redis.ts" />
 
-import { RedisConnectionContract } from '@ioc:Adonis/Addons/Redis'
-import { test } from '@japa/runner'
-import { Application } from '@kubit/core/build/standalone'
+import { RedisConnectionContract } from '@ioc:Kubit/Redis';
+import { test } from '@japa/runner';
+import { Application } from '@kubit/core/build/standalone';
 
-import { RedisConnection } from '../src/RedisConnection'
+import { RedisConnection } from '../src/RedisConnection';
 
 test.group('Redis factory', () => {
   test('emit ready when connected to redis server', ({ assert }, done) => {

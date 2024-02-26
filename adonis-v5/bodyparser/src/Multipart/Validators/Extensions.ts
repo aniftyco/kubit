@@ -9,7 +9,7 @@
 
 /// <reference path="../../../adonis-typings/bodyparser.ts" />
 
-import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
+import { MultipartFileContract } from '@ioc:Kubit/BodyParser'
 
 /**
  * Validates the file extension

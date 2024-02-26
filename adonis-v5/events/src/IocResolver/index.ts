@@ -9,8 +9,8 @@
 
 /// <reference path="../../adonis-typings/events.ts" />
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { AnyHandler, EventHandler } from '@ioc:Adonis/Core/Event'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { AnyHandler, EventHandler } from '@ioc:Kubit/Event'
 
 /**
  * Resolves string based event listeners from the IoC container. Also this method wraps

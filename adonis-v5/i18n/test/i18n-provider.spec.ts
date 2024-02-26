@@ -7,11 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import { test } from '@japa/runner'
+import { test } from '@japa/runner';
 
-import { I18n } from '../src/I18n'
-import { I18nManager } from '../src/I18nManager'
-import { fs, setup } from '../test-helpers'
+import { I18n } from '../src/I18n';
+import { I18nManager } from '../src/I18nManager';
+import { fs, setup } from '../test-helpers';
 
 test.group('I18n Provider', (group) => {
   group.each.teardown(async () => {
@@ -28,11 +28,8 @@ test.group('I18n Provider', (group) => {
       ['../../providers/I18nProvider']
     )
 
-    assert.instanceOf(app.container.use('Adonis/Addons/I18n'), I18nManager)
-    assert.deepEqual(
-      app.container.use('Adonis/Addons/I18n'),
-      app.container.use('Adonis/Addons/I18n')
-    )
+    assert.instanceOf(app.container.use('Kubit/I18n'), I18nManager)
+    assert.deepEqual(app.container.use('Kubit/I18n'), app.container.use('Kubit/I18n'))
   })
 
   test('raise error when config is missing', async ({ assert }) => {
@@ -55,7 +52,7 @@ test.group('I18n Provider', (group) => {
       ['../../providers/I18nProvider']
     )
 
-    assert.instanceOf(app.container.use('Adonis/Core/HttpContext').create('/', {}).i18n, I18n)
+    assert.instanceOf(app.container.use('Kubit/HttpContext').create('/', {}).i18n, I18n)
   })
 
   test('register "t" translation helper', async ({ assert }) => {
@@ -68,8 +65,8 @@ test.group('I18n Provider', (group) => {
       ['../../providers/I18nProvider']
     )
 
-    const HttpContext = app.container.use('Adonis/Core/HttpContext').create('/', {})
-    const View = app.container.use('Adonis/Core/View')
+    const HttpContext = app.container.use('Kubit/HttpContext').create('/', {})
+    const View = app.container.use('Kubit/View')
     const view = View.share({ i18n: HttpContext.i18n })
 
     const value = await view.renderRaw(`{{ t('messages.greeting') }}`)
@@ -86,7 +83,7 @@ test.group('I18n Provider', (group) => {
       ['../../providers/I18nProvider']
     )
 
-    const View = app.container.use('Adonis/Core/View')
+    const View = app.container.use('Kubit/View')
     try {
       await View.renderRaw(`{{ t('messages.greeting') }}`)
     } catch ({ message }) {
@@ -108,7 +105,7 @@ test.group('I18n Provider', (group) => {
       'repl'
     )
 
-    const Repl = app.container.use('Adonis/Addons/Repl')
+    const Repl = app.container.use('Kubit/Repl')
     assert.property(Repl['customMethods'], 'loadI18n')
   })
 })

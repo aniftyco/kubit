@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { SyncValidation } from '@ioc:Kubit/Validator'
 
 import { enforceArray, isRef, wrapCompile } from '../../Validator/helpers'
 

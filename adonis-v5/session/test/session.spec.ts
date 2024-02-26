@@ -31,7 +31,7 @@ test.group('Session', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -49,7 +49,7 @@ test.group('Session', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -70,7 +70,7 @@ test.group('Session', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -94,7 +94,7 @@ test.group('Session', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -121,7 +121,7 @@ test.group('Session', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -161,7 +161,7 @@ test.group('Session', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -204,7 +204,7 @@ test.group('Session', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -235,7 +235,7 @@ test.group('Session', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -273,7 +273,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -305,7 +305,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       ctx.request.setInitialBody({ username: 'virk', age: 28 })
 
       const driver = new MemoryDriver()
@@ -336,7 +336,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       ctx.request.setInitialBody({
         username: 'virk',
@@ -376,7 +376,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       ctx.request.setInitialBody({
         username: 'virk',
@@ -416,7 +416,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       ctx.request.setInitialBody({
         username: 'virk',
@@ -452,7 +452,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -493,7 +493,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -531,7 +531,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -562,7 +562,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       ctx.request.setInitialBody({ username: 'virk', age: 28 })
       ctx.request.updateBody({ username: 'nikk', age: 22 })
@@ -596,7 +596,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       ctx.request.setInitialBody({ username: 'virk', age: 28 })
       ctx.request.updateBody({ username: 'nikk', age: 22 })
@@ -632,7 +632,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -673,7 +673,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)
@@ -715,7 +715,7 @@ test.group('Session | Flash', (group) => {
     const app = await setup()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const driver = new MemoryDriver()
       const session = new Session(ctx, sessionConfig, driver)

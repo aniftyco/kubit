@@ -14,8 +14,8 @@ import { IncomingMessage } from 'http'
 import qs from 'qs'
 import { parse } from 'url'
 
-import { RedirectContract, ResponseContract } from '@ioc:Adonis/Core/Response'
-import { MakeUrlOptions, RouterContract } from '@ioc:Adonis/Core/Route'
+import { RedirectContract, ResponseContract } from '@ioc:Kubit/Response'
+import { MakeUrlOptions, RouterContract } from '@ioc:Kubit/Route'
 
 /**
  * Exposes the API to construct redirect routes

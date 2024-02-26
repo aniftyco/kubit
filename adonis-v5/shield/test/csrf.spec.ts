@@ -3,7 +3,7 @@
  *
  * (c) ? (Please advice before merge, thanks!)
  *
- * For the full copyright and license information, please app.container.use('Adonis/Core/View') the LICENSE
+ * For the full copyright and license information, please app.container.use('Kubit/View') the LICENSE
  * file that was distributed with this source code.
  */
 
@@ -27,12 +27,12 @@ test.group('Csrf', (group) => {
 
   test('return noop function when enabled is false', async ({ assert }) => {
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const csrf = csrfFactory(
       { enabled: false },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
     await ctx.session.initiate(false)
 
@@ -44,12 +44,12 @@ test.group('Csrf', (group) => {
     assert.plan(1)
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const csrf = csrfFactory(
       { enabled: true },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
     await ctx.session.initiate(false)
@@ -66,12 +66,12 @@ test.group('Csrf', (group) => {
     assert,
   }) => {
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/users/:id', { id: 12453 })
+    const ctx = app.container.use('Kubit/HttpContext').create('/users/:id', { id: 12453 })
 
     const csrf = csrfFactory(
       { enabled: true, methods: ['POST', 'PATCH', 'DELETE'] },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
     await ctx.session.initiate(false)
@@ -87,11 +87,11 @@ test.group('Csrf', (group) => {
 
     const csrf = csrfFactory(
       { enabled: true, methods: ['POST', 'PATCH', 'DELETE'] },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/users/:id', { id: 12453 })
+    const ctx = app.container.use('Kubit/HttpContext').create('/users/:id', { id: 12453 })
     await ctx.session.initiate(false)
     ctx.request.request.method = 'PATCH'
 
@@ -108,11 +108,11 @@ test.group('Csrf', (group) => {
 
     const csrf = csrfFactory(
       { enabled: true, exceptRoutes: ['/users/:id'] },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/users/:id', { id: 12453 })
+    const ctx = app.container.use('Kubit/HttpContext').create('/users/:id', { id: 12453 })
 
     await ctx.session.initiate(false)
     ctx.request.request.method = 'PATCH'
@@ -127,11 +127,11 @@ test.group('Csrf', (group) => {
 
     const csrf = csrfFactory(
       { enabled: true, exceptRoutes: ['posts/:post/store'] },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/users/:id', { id: 12453 })
+    const ctx = app.container.use('Kubit/HttpContext').create('/users/:id', { id: 12453 })
 
     await ctx.session.initiate(false)
     ctx.request.request.method = 'PATCH'
@@ -148,11 +148,11 @@ test.group('Csrf', (group) => {
     const app = await setup()
     const csrf = csrfFactory(
       { enabled: true },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     await ctx.session.initiate(false)
 
@@ -170,11 +170,11 @@ test.group('Csrf', (group) => {
     const app = await setup()
     const csrf = csrfFactory(
       { enabled: true },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
 
     const secret = await tokens.secret()
@@ -193,11 +193,11 @@ test.group('Csrf', (group) => {
     const app = await setup()
     const csrf = csrfFactory(
       { enabled: true, enableXsrfCookie: true },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
 
     const secret = await tokens.secret()
@@ -207,7 +207,7 @@ test.group('Csrf', (group) => {
     ctx.request.request.method = 'PATCH'
     ctx.request.request.headers = {
       'x-xsrf-token': `e:${app.container
-        .use('Adonis/Core/Encryption')
+        .use('Kubit/Encryption')
         .encrypt(csrfToken, undefined, 'XSRF-TOKEN')!}`,
     }
 
@@ -220,10 +220,10 @@ test.group('Csrf', (group) => {
     const app = await setup()
     const csrf = csrfFactory(
       { enabled: true },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
 
     ctx.request.request.method = 'POST'
@@ -242,11 +242,11 @@ test.group('Csrf', (group) => {
     const app = await setup()
     const csrf = csrfFactory(
       { enabled: true },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
 
     ctx.request.request.method = 'POST'
@@ -267,11 +267,11 @@ test.group('Csrf', (group) => {
     const app = await setup()
     const csrf = csrfFactory(
       { enabled: true },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
 
     ctx.request.request.method = 'POST'
@@ -292,11 +292,11 @@ test.group('Csrf', (group) => {
     const app = await setup()
     const csrf = csrfFactory(
       { enabled: true },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
 
     const secret = await tokens.secret()
@@ -324,11 +324,11 @@ test.group('Csrf', (group) => {
 
     const csrf = csrfFactory(
       { enabled: true, enableXsrfCookie: false },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
 
     const secret = await tokens.secret()
@@ -338,7 +338,7 @@ test.group('Csrf', (group) => {
     ctx.request.request.method = 'PATCH'
     ctx.request.request.headers = {
       'x-xsrf-token': `e:${app.container
-        .use('Adonis/Core/Encryption')
+        .use('Kubit/Encryption')
         .encrypt(csrfToken, undefined, 'XSRF-TOKEN')}`,
     }
 
@@ -356,10 +356,10 @@ test.group('Csrf', (group) => {
 
     const csrf = csrfFactory(
       { enabled: true },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
 
     const secret = await tokens.secret()
@@ -381,14 +381,14 @@ test.group('Csrf', (group) => {
     await fs.add('resources/views/token-function.edge', '{{ csrfField() }}')
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
     ctx.request.request.method = 'GET'
 
     const csrf = csrfFactory(
       { enabled: true, exceptRoutes: ['/'] },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
     await csrf(ctx)
 
@@ -416,7 +416,7 @@ test.group('Csrf', (group) => {
     await fs.add('token-function.edge', '{{ csrfField() }}')
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     await ctx.session.initiate(false)
     ctx.request.request.method = 'GET'
 
@@ -426,8 +426,8 @@ test.group('Csrf', (group) => {
         exceptRoutes: ['/'],
         enableXsrfCookie: true,
       },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
     await csrf(ctx)
@@ -437,7 +437,7 @@ test.group('Csrf', (group) => {
     tokens.verify(ctx.session.get('csrf-secret'), ctx.request.csrfToken)
     assert.equal(
       app.container
-        .use('Adonis/Core/Encryption')
+        .use('Kubit/Encryption')
         .decrypt(cookie.replace('XSRF-TOKEN=e:', ''), 'XSRF-TOKEN'),
       ctx.request.csrfToken
     )
@@ -452,11 +452,11 @@ test.group('Csrf', (group) => {
         enabled: true,
         exceptRoutes: ({ request }) => request.url().startsWith('/users'),
       },
-      app.container.use('Adonis/Core/Encryption'),
-      app.container.use('Adonis/Core/View')
+      app.container.use('Kubit/Encryption'),
+      app.container.use('Kubit/View')
     )
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/users/:id', { id: 12453 })
+    const ctx = app.container.use('Kubit/HttpContext').create('/users/:id', { id: 12453 })
 
     await ctx.session.initiate(false)
     ctx.request.request.method = 'PATCH'

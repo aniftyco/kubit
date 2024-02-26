@@ -14,7 +14,7 @@ import phc from '@phc/format'
 import { kMaxUint24, randomBytesAsync } from '../utils'
 
 import type { BinaryLike, ScryptOptions } from 'crypto'
-import type { ScryptConfig, ScryptContract } from '@ioc:Adonis/Core/Hash'
+import type { ScryptConfig, ScryptContract } from '@ioc:Kubit/Hash'
 
 const defaultConfig = Object.freeze({
   cost: 16384,

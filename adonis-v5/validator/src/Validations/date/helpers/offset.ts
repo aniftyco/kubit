@@ -9,7 +9,7 @@
 
 import { DateTime } from 'luxon'
 
-import { DurationUnits, ValidationRuntimeOptions } from '@ioc:Adonis/Core/Validator'
+import { DurationUnits, ValidationRuntimeOptions } from '@ioc:Kubit/Validator'
 
 import { enforceDateTime, isRef } from '../../../Validator/helpers'
 

@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { ServerContract } from '@ioc:Adonis/Core/Server'
-import { CustomServerCallback } from '@ioc:Adonis/Core/TestUtils'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { ServerContract } from '@ioc:Kubit/Server'
+import { CustomServerCallback } from '@ioc:Kubit/TestUtils'
 
 import { createHttpServer } from '../../utils'
 
@@ -26,7 +26,7 @@ export class TestHttpServer {
    * created but not listening on any port.
    */
   private create(serverCallback?: CustomServerCallback) {
-    this.server = this.application.container.use('Adonis/Core/Server')
+    this.server = this.application.container.use('Kubit/Server')
     createHttpServer(this.application, this.server, serverCallback)
   }
 

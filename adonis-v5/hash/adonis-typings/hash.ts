@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Hash' {
-  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+declare module '@ioc:Kubit/Hash' {
+  import { ApplicationContract } from '@ioc:Kubit/Application'
   import { ManagerContract } from '@poppinss/manager'
 
   /**

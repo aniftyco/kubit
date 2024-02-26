@@ -24,7 +24,7 @@ import {
   validator as validatorStatic,
   ValidatorNode,
   ValidatorResolvedConfig,
-} from '@ioc:Adonis/Core/Validator'
+} from '@ioc:Kubit/Validator'
 
 import { Compiler } from '../Compiler'
 import { ApiErrorReporter, JsonApiErrorReporter, VanillaErrorReporter } from '../ErrorReporter'

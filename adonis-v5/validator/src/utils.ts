@@ -14,7 +14,7 @@ import {
   SchemaArray,
   SchemaLiteral,
   SchemaObject,
-} from '@ioc:Adonis/Core/Validator'
+} from '@ioc:Kubit/Validator'
 
 import { rules as schemaRules } from './Rules'
 import * as validations from './Validations'

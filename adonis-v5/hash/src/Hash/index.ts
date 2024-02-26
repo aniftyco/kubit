@@ -9,14 +9,14 @@
 
 /// <reference path="../../adonis-typings/hash.ts" />
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import {
   FakeContract,
   HashConfig,
   HashContract,
   HashDriverContract,
   HashersList,
-} from '@ioc:Adonis/Core/Hash'
+} from '@ioc:Kubit/Hash'
 import { Manager } from '@poppinss/manager'
 import { ManagerConfigValidator } from '@poppinss/utils'
 

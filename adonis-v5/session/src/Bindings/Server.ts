@@ -9,9 +9,9 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { SessionManagerContract } from '@ioc:Adonis/Addons/Session'
-import { HttpContextConstructorContract } from '@ioc:Adonis/Core/HttpContext'
-import { ServerContract } from '@ioc:Adonis/Core/Server'
+import { HttpContextConstructorContract } from '@ioc:Kubit/HttpContext';
+import { ServerContract } from '@ioc:Kubit/Server';
+import { SessionManagerContract } from '@ioc:Kubit/Session';
 
 /**
  * Share "session" with the HTTP context. Define hooks to initiate and

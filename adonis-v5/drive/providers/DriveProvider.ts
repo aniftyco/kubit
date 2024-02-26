@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { DisksList, DriveConfig } from '@ioc:Adonis/Core/Drive'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { DisksList, DriveConfig } from '@ioc:Kubit/Drive'
 
 /**
  * Registers drive with the IoC container
@@ -20,11 +20,11 @@ export default class DriveProvider {
    * Register drive with the container
    */
   protected registerDrive() {
-    this.app.container.singleton('Adonis/Core/Drive', () => {
+    this.app.container.singleton('Kubit/Drive', () => {
       const { DriveManager } = require('../src/DriveManager')
-      const Router = this.app.container.resolveBinding('Adonis/Core/Route')
-      const Config = this.app.container.resolveBinding('Adonis/Core/Config')
-      const Logger = this.app.container.resolveBinding('Adonis/Core/Logger')
+      const Router = this.app.container.resolveBinding('Kubit/Route')
+      const Config = this.app.container.resolveBinding('Kubit/Config')
+      const Logger = this.app.container.resolveBinding('Kubit/Logger')
 
       return new DriveManager(this.app, Router, Logger, Config.get('drive'))
     })
@@ -35,7 +35,7 @@ export default class DriveProvider {
    */
   protected defineDriveRoutes() {
     this.app.container.withBindings(
-      ['Adonis/Core/Config', 'Adonis/Core/Route', 'Adonis/Core/Logger'],
+      ['Kubit/Config', 'Kubit/Route', 'Kubit/Logger'],
       (Config, Router, Logger) => {
         /**
          * Do not attempt to resolve Drive from the container when there is
@@ -49,7 +49,7 @@ export default class DriveProvider {
           return
         }
 
-        const Drive = this.app.container.resolveBinding('Adonis/Core/Drive')
+        const Drive = this.app.container.resolveBinding('Kubit/Drive')
         const { LocalFileServer } = require('../src/LocalFileServer')
 
         Object.keys(driveConfig.disks).forEach((diskName: keyof DisksList) => {

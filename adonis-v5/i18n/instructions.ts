@@ -10,7 +10,7 @@
 import { existsSync, mkdirSync } from 'fs'
 import { join } from 'path'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import * as sinkStatic from '@kubit/sink'
 
 /**

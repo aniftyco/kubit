@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 
 /**
  * Exposes the API to invoke a callback when `SIGTERM` or

@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 
 export default class BodyParserProvider {
   constructor(protected app: ApplicationContract) {}
@@ -18,7 +18,7 @@ export default class BodyParserProvider {
    * Registers the bodyparser middleware namespace to the container.
    */
   public register() {
-    this.app.container.bind('Adonis/Core/BodyParser', () => {
+    this.app.container.bind('Kubit/BodyParser', () => {
       const { BodyParserMiddleware } = require('../src/BodyParser/index')
       return BodyParserMiddleware
     })
@@ -29,6 +29,6 @@ export default class BodyParserProvider {
    */
   public boot() {
     const extendRequest = require('../src/Bindings/Request').default
-    extendRequest(this.app.container.resolveBinding('Adonis/Core/Request'))
+    extendRequest(this.app.container.resolveBinding('Kubit/Request'))
   }
 }

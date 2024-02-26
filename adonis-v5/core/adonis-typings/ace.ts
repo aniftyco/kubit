@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Ace' {
+declare module '@ioc:Kubit/Ace' {
   import { Kernel } from '@kubit/ace'
 
   const Ace: Kernel

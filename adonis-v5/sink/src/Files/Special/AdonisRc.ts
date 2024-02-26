@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { AppEnvironments } from '@ioc:Adonis/Core/Application'
+import { AppEnvironments } from '@ioc:Kubit/Application'
 
 import { JsonFile } from '../Formats/Json'
 

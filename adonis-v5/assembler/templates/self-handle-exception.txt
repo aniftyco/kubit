@@ -1,5 +1,5 @@
 import { Exception } from '@kubit/core/build/standalone'
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import type { HttpContextContract } from '@ioc:Kubit/HttpContext'
 
 /*
 |--------------------------------------------------------------------------

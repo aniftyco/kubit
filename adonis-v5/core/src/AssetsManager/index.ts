@@ -9,13 +9,13 @@
 
 import stringifyAttributes from 'stringify-attributes'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import {
   AssetsDriverContract,
   AssetsManagerConfig,
   AssetsManagerContract,
   ExtendCallback,
-} from '@ioc:Adonis/Core/AssetsManager'
+} from '@ioc:Kubit/AssetsManager'
 import { Exception } from '@poppinss/utils'
 
 import { EncoreDriver } from './Drivers/Encore'

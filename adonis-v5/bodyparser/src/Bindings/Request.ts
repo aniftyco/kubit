@@ -9,8 +9,8 @@
 
 /// <reference path="../../adonis-typings/bodyparser.ts" />
 
-import { FileValidationOptions } from '@ioc:Adonis/Core/BodyParser'
-// import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
+import { FileValidationOptions } from '@ioc:Kubit/BodyParser'
+// import { RequestConstructorContract } from '@ioc:Kubit/Request'
 import { lodash } from '@poppinss/utils'
 
 import { File } from '../Multipart/File'

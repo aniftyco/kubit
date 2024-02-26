@@ -5,7 +5,7 @@
  * file.
  */
 
-declare module '@ioc:Adonis/Core/Env' {
+declare module '@ioc:Kubit/Env' {
   /*
   |--------------------------------------------------------------------------
   | Getting types for validated environment variables

@@ -9,10 +9,10 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { RedisConnectionContract, RedisManagerContract } from '@ioc:Adonis/Addons/Redis'
-import { SessionConfig, SessionDriverContract } from '@ioc:Adonis/Addons/Session'
-import { Exception } from '@poppinss/utils'
-import { MessageBuilder, string } from '@poppinss/utils/build/helpers'
+import { RedisConnectionContract, RedisManagerContract } from '@ioc:Kubit/Redis';
+import { SessionConfig, SessionDriverContract } from '@ioc:Kubit/Session';
+import { Exception } from '@poppinss/utils';
+import { MessageBuilder, string } from '@poppinss/utils/build/helpers';
 
 /**
  * File driver to read/write session to filesystem

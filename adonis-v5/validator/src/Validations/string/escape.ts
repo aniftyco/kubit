@@ -9,7 +9,7 @@
 
 import { default as escapeValue } from 'validator/lib/escape'
 
-import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { SyncValidation } from '@ioc:Kubit/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
 

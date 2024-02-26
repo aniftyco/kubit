@@ -15,9 +15,9 @@ import {
   MultipartContract,
   MultipartStream,
   PartHandler as PartHandlerType,
-} from '@ioc:Adonis/Core/BodyParser'
-import { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
-// import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+} from '@ioc:Kubit/BodyParser'
+import { DriveManagerContract } from '@ioc:Kubit/Drive'
+// import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 import multiparty from '@poppinss/multiparty'
 import { Exception } from '@poppinss/utils'
 

@@ -9,7 +9,7 @@
 
 import { DateTime } from 'luxon'
 
-import { validator as validatorType } from '@ioc:Adonis/Core/Validator'
+import { validator as validatorType } from '@ioc:Kubit/Validator'
 import { test } from '@japa/runner'
 
 import { ApiErrorReporter, VanillaErrorReporter } from '../src/ErrorReporter'

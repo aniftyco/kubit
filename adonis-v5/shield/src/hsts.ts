@@ -9,11 +9,11 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { HstsOptions } from '@ioc:Adonis/Addons/Shield'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { string } from '@poppinss/utils/build/helpers'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
+import { HstsOptions } from '@ioc:Kubit/Shield';
+import { string } from '@poppinss/utils/build/helpers';
 
-import { noop } from './noop'
+import { noop } from './noop';
 
 const DEFAULT_MAX_AGE = 180 * 24 * 60 * 60
 

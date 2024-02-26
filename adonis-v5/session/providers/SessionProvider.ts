@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application';
 
 /**
  * Session provider for AdonisJS
@@ -20,7 +20,7 @@ export default class SessionProvider {
    * Register Session Manager
    */
   public register(): void {
-    this.app.container.singleton('Adonis/Addons/Session', () => {
+    this.app.container.singleton('Kubit/Session', () => {
       const { SessionManager } = require('../src/SessionManager')
       return new SessionManager(this.app, this.app.config.get('session', {}))
     })
@@ -35,7 +35,7 @@ export default class SessionProvider {
         'Japa/Preset/ApiRequest',
         'Japa/Preset/ApiResponse',
         'Japa/Preset/ApiClient',
-        'Adonis/Addons/Session',
+        'Kubit/Session',
       ],
       (ApiRequest, ApiResponse, ApiClient, Session) => {
         const { defineTestsBindings } = require('../src/Bindings/Tests')
@@ -49,7 +49,7 @@ export default class SessionProvider {
    */
   protected registerServerBindings() {
     this.app.container.withBindings(
-      ['Adonis/Core/Server', 'Adonis/Core/HttpContext', 'Adonis/Addons/Session'],
+      ['Kubit/Server', 'Kubit/HttpContext', 'Kubit/Session'],
       (Server, HttpContext, Session) => {
         const { defineServerBindings } = require('../src/Bindings/Server')
         defineServerBindings(HttpContext, Server, Session)

@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { SessionDriverContract } from '@ioc:Adonis/Addons/Session'
+import { SessionDriverContract } from '@ioc:Kubit/Session';
 
 /**
  * Memory driver is meant to be used for writing tests.

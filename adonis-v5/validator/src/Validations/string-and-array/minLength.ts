@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { NodeSubType, SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { NodeSubType, SyncValidation } from '@ioc:Kubit/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
 

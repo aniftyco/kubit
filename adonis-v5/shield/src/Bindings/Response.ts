@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ResponseConstructorContract } from '@ioc:Adonis/Core/Response'
+import { ResponseConstructorContract } from '@ioc:Kubit/Response'
 import { string } from '@poppinss/utils/build/helpers'
 
 /**

@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { Edge } from 'edge.js'
-import { join } from 'path'
+import { Edge } from 'edge.js';
+import { join } from 'path';
 
-import { test } from '@japa/runner'
+import { test } from '@japa/runner';
 
-import { APP_KEY, fs, setup } from '../test-helpers'
+import { APP_KEY, fs, setup } from '../test-helpers';
 
 test.group('View Provider', (group) => {
   group.each.teardown(async () => {
@@ -22,9 +22,9 @@ test.group('View Provider', (group) => {
   test('register view provider', async ({ assert }) => {
     const app = await setup('web')
 
-    assert.instanceOf(app.container.use('Adonis/Core/View'), Edge)
+    assert.instanceOf(app.container.use('Kubit/View'), Edge)
     assert.equal(
-      app.container.use('Adonis/Core/View').loader.mounted.default,
+      app.container.use('Kubit/View').loader.mounted.default,
       join(fs.basePath, 'resources/views')
     )
   })
@@ -34,7 +34,7 @@ test.group('View Provider', (group) => {
     process.env.NODE_ENV = 'development'
 
     const output = await app.container
-      .use('Adonis/Core/View')
+      .use('Kubit/View')
       .renderRaw(`{{ config('app.appKey') }} {{ env('NODE_ENV') }}`)
 
     assert.equal(output, `${APP_KEY} ${process.env.NODE_ENV}`)
@@ -44,11 +44,11 @@ test.group('View Provider', (group) => {
   test('share route and signedRoute methods with view', async ({ assert }) => {
     const app = await setup('web')
 
-    app.container.use('Adonis/Core/Route').get('/', async () => {})
-    app.container.use('Adonis/Core/Route').get('/signed', async () => {})
-    app.container.use('Adonis/Core/Route').commit()
+    app.container.use('Kubit/Route').get('/', async () => {})
+    app.container.use('Kubit/Route').get('/signed', async () => {})
+    app.container.use('Kubit/Route').commit()
 
-    const view = app.container.use('Adonis/Core/View')
+    const view = app.container.use('Kubit/View')
     view.registerTemplate('dummy', { template: "{{ route('/', {}, 'root') }}" })
     view.registerTemplate('signedDummy', { template: "{{ signedRoute('/signed', {}, 'root') }}" })
 
@@ -58,44 +58,42 @@ test.group('View Provider', (group) => {
 
   test('add brisk route macro "render"', async ({ assert }) => {
     const app = await setup('web')
-    assert.isFunction(app.container.use('Adonis/Core/Route').on('/').render)
+    assert.isFunction(app.container.use('Kubit/Route').on('/').render)
   })
 
   test('ensure GLOBALS object exists on the View binding', async ({ assert }) => {
     const app = await setup('web')
-    assert.isDefined(app.container.use('Adonis/Core/View').GLOBALS)
-    assert.property(app.container.use('Adonis/Core/View').GLOBALS, 'route')
+    assert.isDefined(app.container.use('Kubit/View').GLOBALS)
+    assert.property(app.container.use('Kubit/View').GLOBALS, 'route')
   })
 
   test('register repl binding', async ({ assert }) => {
     const app = await setup('repl')
 
-    assert.property(app.container.use('Adonis/Addons/Repl')['customMethods'], 'loadView')
-    assert.isFunction(
-      app.container.use('Adonis/Addons/Repl')['customMethods']['loadView']['handler']
-    )
+    assert.property(app.container.use('Kubit/Repl')['customMethods'], 'loadView')
+    assert.isFunction(app.container.use('Kubit/Repl')['customMethods']['loadView']['handler'])
   })
 
   test('register view global for the assets manager', async ({ assert }) => {
     const app = await setup('web')
-    assert.property(app.container.use('Adonis/Core/View').GLOBALS, 'asset')
-    assert.property(app.container.use('Adonis/Core/View').GLOBALS, 'assetsManager')
-    assert.property(app.container.use('Adonis/Core/View').tags, 'entryPointStyles')
-    assert.property(app.container.use('Adonis/Core/View').tags, 'entryPointScripts')
+    assert.property(app.container.use('Kubit/View').GLOBALS, 'asset')
+    assert.property(app.container.use('Kubit/View').GLOBALS, 'assetsManager')
+    assert.property(app.container.use('Kubit/View').tags, 'entryPointStyles')
+    assert.property(app.container.use('Kubit/View').tags, 'entryPointScripts')
   })
 
   test('do not register repl binding when not in repl environment', async ({ assert }) => {
     const app = await setup('web')
-    assert.notProperty(app.container.use('Adonis/Addons/Repl')['customMethods'], 'loadView')
+    assert.notProperty(app.container.use('Kubit/Repl')['customMethods'], 'loadView')
   })
 
   test('register driveUrl and driveSignedUrl globals', async ({ assert }) => {
     const app = await setup('web', true)
 
-    app.container.use('Adonis/Core/Route').commit()
+    app.container.use('Kubit/Route').commit()
 
     const output = await app.container
-      .use('Adonis/Core/View')
+      .use('Kubit/View')
       .renderRaw(`{{ await driveUrl('foo.txt') }}`)
 
     assert.equal(output.trim(), '/uploads/foo.txt')

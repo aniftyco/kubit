@@ -9,15 +9,11 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import {
-  SessionClientContract,
-  SessionConfig,
-  SessionDriverContract,
-} from '@ioc:Adonis/Addons/Session'
-import { CookieClientContract } from '@ioc:Adonis/Core/CookieClient'
-import { cuid } from '@poppinss/utils/build/helpers'
+import { CookieClientContract } from '@ioc:Kubit/CookieClient';
+import { SessionClientContract, SessionConfig, SessionDriverContract } from '@ioc:Kubit/Session';
+import { cuid } from '@poppinss/utils/build/helpers';
 
-import { Store } from '../Store'
+import { Store } from '../Store';
 
 /**
  * SessionClient exposes the API to set session data as a client

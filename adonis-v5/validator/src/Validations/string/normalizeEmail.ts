@@ -9,7 +9,7 @@
 
 import { default as normalize, NormalizeEmailOptions } from 'validator/lib/normalizeEmail'
 
-import { EmailNormalizationOptions, SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { EmailNormalizationOptions, SyncValidation } from '@ioc:Kubit/Validator'
 import { snakeCase } from '@poppinss/utils/build/src/Helpers/string'
 
 import { wrapCompile } from '../../Validator/helpers'

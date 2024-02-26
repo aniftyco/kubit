@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { ViewContract } from '@ioc:Adonis/Core/View'
+declare module '@ioc:Kubit/Application' {
+  import { ViewContract } from '@ioc:Kubit/View'
 
   interface ContainerBindings {
-    'Adonis/Core/View': ViewContract
+    'Kubit/View': ViewContract
   }
 }

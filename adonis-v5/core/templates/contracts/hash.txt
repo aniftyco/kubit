@@ -8,6 +8,6 @@
 import type { InferListFromConfig } from '@kubit/core/build/config'
 import type hashConfig from '../config/hash'
 
-declare module '@ioc:Adonis/Core/Hash' {
+declare module '@ioc:Kubit/Hash' {
   interface HashersList extends InferListFromConfig<typeof hashConfig> {}
 }

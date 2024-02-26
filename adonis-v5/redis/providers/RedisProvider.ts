@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application';
 
 /**
  * Provider to bind redis to the container
@@ -28,14 +28,11 @@ export default class RedisProvider {
       return
     }
 
-    this.app.container.withBindings(
-      ['Adonis/Core/HealthCheck', 'Adonis/Addons/Redis'],
-      (HealthCheck, Redis) => {
-        if (Redis.healthChecksEnabled) {
-          HealthCheck.addChecker('redis', 'Adonis/Addons/Redis')
-        }
+    this.app.container.withBindings(['Kubit/HealthCheck', 'Kubit/Redis'], (HealthCheck, Redis) => {
+      if (Redis.healthChecksEnabled) {
+        HealthCheck.addChecker('redis', 'Kubit/Redis')
       }
-    )
+    })
   }
 
   /**
@@ -50,7 +47,7 @@ export default class RedisProvider {
       return
     }
 
-    this.app.container.withBindings(['Adonis/Addons/Repl'], (Repl) => {
+    this.app.container.withBindings(['Kubit/Repl'], (Repl) => {
       const { defineReplBindings } = require('../src/Bindings/Repl')
       defineReplBindings(this.app, Repl)
     })
@@ -60,9 +57,9 @@ export default class RedisProvider {
    * Register the redis binding
    */
   public register() {
-    this.app.container.singleton('Adonis/Addons/Redis', () => {
-      const config = this.app.container.resolveBinding('Adonis/Core/Config').get('redis', {})
-      const emitter = this.app.container.resolveBinding('Adonis/Core/Event')
+    this.app.container.singleton('Kubit/Redis', () => {
+      const config = this.app.container.resolveBinding('Kubit/Config').get('redis', {})
+      const emitter = this.app.container.resolveBinding('Kubit/Event')
       const { RedisManager } = require('../src/RedisManager')
 
       return new RedisManager(this.app, config, emitter)
@@ -81,7 +78,7 @@ export default class RedisProvider {
    * Gracefully shutdown connections when app goes down
    */
   public async shutdown() {
-    const Redis = this.app.container.resolveBinding('Adonis/Addons/Redis')
+    const Redis = this.app.container.resolveBinding('Kubit/Redis')
     await Redis.quitAll()
   }
 }

@@ -10,7 +10,7 @@
 import type { IncomingMessage } from 'http'
 import type { Assert } from '@japa/assert'
 
-import type { CorsConfig } from '@ioc:Adonis/Core/Cors'
+import type { CorsConfig } from '@ioc:Kubit/Cors'
 const corsConfig = {
   enabled: true,
   origin: true,

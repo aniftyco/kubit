@@ -9,13 +9,13 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { readFile } from 'fs'
-import { extname, join } from 'path'
-import yaml from 'yaml'
+import { readFile } from 'fs';
+import { extname, join } from 'path';
+import yaml from 'yaml';
 
-import { FsLoaderOptions, LoaderContract } from '@ioc:Adonis/Addons/I18n'
-import { flatten } from '@poppinss/utils'
-import { fsReadAll } from '@poppinss/utils/build/helpers'
+import { FsLoaderOptions, LoaderContract } from '@ioc:Kubit/I18n';
+import { flatten } from '@poppinss/utils';
+import { fsReadAll } from '@poppinss/utils/build/helpers';
 
 /**
  * Uses the filesystem to load messages from the JSON

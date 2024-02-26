@@ -7,14 +7,14 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Addons/Shield' {
-  import { ContentSecurityPolicyOptions } from 'helmet-csp'
+declare module '@ioc:Kubit/Shield' {
+import { ContentSecurityPolicyOptions } from 'helmet-csp';
 
-  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-  import { CookieOptions } from '@ioc:Adonis/Core/Response'
+import { ApplicationContract } from '@ioc:Kubit/Application';
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
+import { CookieOptions } from '@ioc:Kubit/Response';
 
-  /**
+    /**
    * Config for `X-Frame-Options` header
    */
   export type XFrameOptions =

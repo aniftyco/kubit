@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/HttpContext' {
-  import { I18nContract } from '@ioc:Adonis/Addons/I18n'
+declare module '@ioc:Kubit/HttpContext' {
+import { I18nContract } from '@ioc:Kubit/I18n';
 
-  interface HttpContextContract {
+    interface HttpContextContract {
     i18n: I18nContract
   }
 }

@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { EnvSchema } from '@ioc:Adonis/Core/Env'
+import { EnvSchema } from '@ioc:Kubit/Env'
 
 import { boolean } from './boolean'
 import { number } from './number'

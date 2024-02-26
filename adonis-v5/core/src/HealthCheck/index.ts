@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import {
   Checker,
   HealthCheckContract,
   HealthReport,
   HealthReportEntry,
-} from '@ioc:Adonis/Core/HealthCheck'
+} from '@ioc:Kubit/HealthCheck'
 
 /**
  * The module exposes the API to find the health, liveliness and readiness of

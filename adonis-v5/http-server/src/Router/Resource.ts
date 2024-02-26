@@ -18,7 +18,7 @@ import {
   RouteMiddlewareHandler,
   RouteParamMatcher,
   RouteResourceContract,
-} from '@ioc:Adonis/Core/Route'
+} from '@ioc:Kubit/Route'
 import { string } from '@poppinss/utils/build/helpers'
 
 import { Route } from './Route'

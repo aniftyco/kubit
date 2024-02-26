@@ -9,7 +9,7 @@
 
 import { extname, isAbsolute, join, normalize } from 'path'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 
 import * as sink from '../../../index'
 import { TemplateNode } from '../../Contracts'

@@ -21,8 +21,8 @@ test.group('I18n', (group) => {
 
   test('format a message by its identifier', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -51,8 +51,8 @@ test.group('I18n', (group) => {
 
   test('format a message by its identifier using short method i18n.t()', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -81,8 +81,8 @@ test.group('I18n', (group) => {
 
   test('use fallback messages when actual message is missing', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -113,8 +113,8 @@ test.group('I18n', (group) => {
     assert.plan(2)
 
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     emitter.on('i18n:missing:translation', (payload) => {
       assert.deepEqual(payload, {
@@ -155,8 +155,8 @@ test.group('I18n', (group) => {
 
   test('use fallback locale defined inside the config', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -195,8 +195,8 @@ test.group('I18n', (group) => {
 
   test('switch locale and fallback locale during switchLocale call', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -244,9 +244,9 @@ test.group('I18n | validatorBindings', (group) => {
     assert.plan(1)
 
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
-    const { validator, schema } = app.container.resolveBinding('Adonis/Core/Validator')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
+    const { validator, schema } = app.container.resolveBinding('Kubit/Validator')
 
     await fs.add(
       'resources/lang/en/validator.json',
@@ -292,9 +292,9 @@ test.group('I18n | validatorBindings', (group) => {
     assert.plan(1)
 
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
-    const { validator, schema } = app.container.resolveBinding('Adonis/Core/Validator')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
+    const { validator, schema } = app.container.resolveBinding('Kubit/Validator')
 
     await fs.add(
       'resources/lang/en/validator.json',
@@ -341,9 +341,9 @@ test.group('I18n | validatorBindings', (group) => {
     assert.plan(2)
 
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
-    const { validator, schema } = app.container.resolveBinding('Adonis/Core/Validator')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
+    const { validator, schema } = app.container.resolveBinding('Kubit/Validator')
 
     const i18nManager = new I18nManager(app, emitter, logger, {
       defaultLocale: 'en',
@@ -384,9 +384,9 @@ test.group('I18n | validatorBindings', (group) => {
     assert.plan(2)
 
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
-    const { validator, schema } = app.container.resolveBinding('Adonis/Core/Validator')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
+    const { validator, schema } = app.container.resolveBinding('Kubit/Validator')
 
     await fs.add(
       'resources/lang/en/validator.json',
@@ -435,8 +435,8 @@ test.group('I18n | validatorBindings', (group) => {
 
   test('find if a message exists', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -466,8 +466,8 @@ test.group('I18n | validatorBindings', (group) => {
 
   test('find if a fallback message exists', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -499,9 +499,9 @@ test.group('I18n | validatorBindings', (group) => {
     assert.plan(1)
 
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
-    const { validator, schema, rules } = app.container.resolveBinding('Adonis/Core/Validator')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
+    const { validator, schema, rules } = app.container.resolveBinding('Kubit/Validator')
 
     await fs.add(
       'resources/lang/en/validator.json',
@@ -551,8 +551,8 @@ test.group('I18n | validatorBindings', (group) => {
     assert.plan(1)
 
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     const i18nManager = new I18nManager(app, emitter, logger, {
       defaultLocale: 'en',

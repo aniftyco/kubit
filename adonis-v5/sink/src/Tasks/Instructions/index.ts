@@ -9,7 +9,7 @@
 
 import { dirname, join } from 'path'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import { esmRequire } from '@poppinss/utils'
 import { resolveFrom } from '@poppinss/utils/build/helpers'
 

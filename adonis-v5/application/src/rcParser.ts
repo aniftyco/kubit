@@ -15,7 +15,7 @@ import {
   NamespacesNode,
   PreloadNode,
   RcFile,
-} from '@ioc:Adonis/Core/Application'
+} from '@ioc:Kubit/Application'
 import { Exception } from '@poppinss/utils'
 
 /**

@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { UrlNormalizationOptions } from '@ioc:Adonis/Core/Validator'
+import { UrlNormalizationOptions } from '@ioc:Kubit/Validator'
 import { test } from '@japa/runner'
 
 import { ApiErrorReporter } from '../../src/ErrorReporter'

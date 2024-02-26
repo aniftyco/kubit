@@ -25,7 +25,7 @@ test.group('Local driver | put', (group) => {
 
   test('write file to the destination', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -37,7 +37,7 @@ test.group('Local driver | put', (group) => {
 
   test('create intermediate directories when missing', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -49,7 +49,7 @@ test.group('Local driver | put', (group) => {
 
   test('overwrite destination when file already exists', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -68,7 +68,7 @@ test.group('Local driver | putStream', (group) => {
 
   test('write stream to a file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -89,7 +89,7 @@ test.group('Local driver | putStream', (group) => {
 
   test('create intermediate directories when writing a stream to a file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -110,7 +110,7 @@ test.group('Local driver | putStream', (group) => {
 
   test('overwrite existing file when stream to a file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -138,7 +138,7 @@ test.group('Local driver | exists', (group) => {
 
   test('return true when a file exists', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -148,7 +148,7 @@ test.group('Local driver | exists', (group) => {
 
   test("return false when a file doesn't exists", async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -157,7 +157,7 @@ test.group('Local driver | exists', (group) => {
 
   test("return false when a file parent directory doesn't exists", async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -172,7 +172,7 @@ test.group('Local driver | delete', (group) => {
 
   test('remove file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -184,7 +184,7 @@ test.group('Local driver | delete', (group) => {
 
   test('do not error when trying to remove a non-existing file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -195,7 +195,7 @@ test.group('Local driver | delete', (group) => {
 
   test("do not error when file parent directory doesn't exists", async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -212,7 +212,7 @@ test.group('Local driver | copy', (group) => {
 
   test('copy file from within the disk root', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -225,7 +225,7 @@ test.group('Local driver | copy', (group) => {
 
   test('create intermediate directories when copying a file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -240,7 +240,7 @@ test.group('Local driver | copy', (group) => {
     assert.plan(1)
 
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -256,7 +256,7 @@ test.group('Local driver | copy', (group) => {
 
   test('overwrite destination when already exists', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -276,7 +276,7 @@ test.group('Local driver | move', (group) => {
 
   test('move file from within the disk root', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -290,7 +290,7 @@ test.group('Local driver | move', (group) => {
 
   test('create intermediate directories when moving a file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -305,7 +305,7 @@ test.group('Local driver | move', (group) => {
   test("return error when source doesn't exists", async ({ assert }) => {
     assert.plan(1)
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -323,7 +323,7 @@ test.group('Local driver | move', (group) => {
   test('overwrite destination when already exists', async ({ assert }) => {
     assert.plan(1)
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -345,7 +345,7 @@ test.group('Local driver | get', (group) => {
 
   test('get file contents', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -359,7 +359,7 @@ test.group('Local driver | get', (group) => {
     assert.plan(1)
 
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -375,7 +375,7 @@ test.group('Local driver | get', (group) => {
   test("return error when file doesn't exists", async ({ assert }) => {
     assert.plan(1)
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -395,7 +395,7 @@ test.group('Local driver | getStats', (group) => {
 
   test('get file stats', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -409,7 +409,7 @@ test.group('Local driver | getStats', (group) => {
   test('return error when file is missing', async ({ assert }) => {
     assert.plan(1)
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)
@@ -432,8 +432,8 @@ test.group('Local driver | getUrl', (group) => {
 
   test('get url to a given file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     const config = {
       driver: 'local' as const,
@@ -459,7 +459,7 @@ test.group('Local driver | getVisibility', (group) => {
 
   test('return disk visibility for a file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
 
     const config = {
       driver: 'local' as const,
@@ -481,7 +481,7 @@ test.group('Local driver | setVisibility', (group) => {
 
   test('setVisibility should result in noop', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
 
     const config = {
       driver: 'local' as const,
@@ -504,8 +504,8 @@ test.group('Local driver | getSignedUrl', (group) => {
 
   test('get signed url to a given file', async ({ assert }) => {
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     const config = {
       driver: 'local' as const,
@@ -539,7 +539,7 @@ test.group('Local driver | list', (group) => {
     ])
     .run(async ({ assert }, { path, contents }) => {
       const app = await setupApp()
-      const router = app.container.resolveBinding('Adonis/Core/Route')
+      const router = app.container.resolveBinding('Kubit/Route')
       const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
       const driver = new LocalDriver('local', config, router)
 
@@ -570,7 +570,7 @@ test.group('Local driver | list', (group) => {
     ])
     .run(async ({ assert }, { path, contents }) => {
       const app = await setupApp()
-      const router = app.container.resolveBinding('Adonis/Core/Route')
+      const router = app.container.resolveBinding('Kubit/Route')
       const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
       const driver = new LocalDriver('local', config, router)
 
@@ -591,7 +591,7 @@ test.group('Local driver | list', (group) => {
     ])
     .run(async ({ assert }, { path, contents }) => {
       const app = await setupApp()
-      const router = app.container.resolveBinding('Adonis/Core/Route')
+      const router = app.container.resolveBinding('Kubit/Route')
       const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
       const driver = new LocalDriver('local', config, router)
 
@@ -615,7 +615,7 @@ test.group('Local driver | list', (group) => {
     ])
     .run(async ({ assert }, { path, contents }) => {
       const app = await setupApp()
-      const router = app.container.resolveBinding('Adonis/Core/Route')
+      const router = app.container.resolveBinding('Kubit/Route')
       const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
       const driver = new LocalDriver('local', config, router)
 
@@ -652,7 +652,7 @@ test.group('Local driver | list', (group) => {
     ])
     .run(async ({ assert }, { path, contents }) => {
       const app = await setupApp()
-      const router = app.container.resolveBinding('Adonis/Core/Route')
+      const router = app.container.resolveBinding('Kubit/Route')
       const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
       const driver = new LocalDriver('local', config, router)
 
@@ -672,7 +672,7 @@ test.group('Local driver | list', (group) => {
   test('return error when directory does not exist', async ({ assert }) => {
     assert.plan(1)
     const app = await setupApp()
-    const router = app.container.resolveBinding('Adonis/Core/Route')
+    const router = app.container.resolveBinding('Kubit/Route')
     const config = { driver: 'local' as const, root: TEST_ROOT, visibility: 'public' as const }
 
     const driver = new LocalDriver('local', config, router)

@@ -2,8 +2,8 @@ Congratulations! You have configured `@kubit/shield` package successfully. Just 
 
 ```ts
 Server.middleware.register([
-  () => import('@ioc:Adonis/Core/BodyParser'),
-  () => import('@ioc:Adonis/Addons/Shield')
+  () => import('@ioc:Kubit/BodyParser'),
+  () => import('@ioc:Kubit/Shield')
   '...',
 ])
 ```

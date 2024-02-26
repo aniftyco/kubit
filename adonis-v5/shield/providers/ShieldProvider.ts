@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application';
 
 /**
  * Provider to register shield middleware
@@ -17,14 +17,14 @@ export default class ShieldProvider {
   public static needsApplication = true
 
   public register() {
-    this.app.container.singleton('Adonis/Addons/Shield', () => {
+    this.app.container.singleton('Kubit/Shield', () => {
       const { ShieldMiddleware } = require('../src/ShieldMiddleware')
       return ShieldMiddleware
     })
   }
 
   public boot() {
-    this.app.container.withBindings(['Adonis/Core/Response'], (Response) => {
+    this.app.container.withBindings(['Kubit/Response'], (Response) => {
       require('../src/Bindings/Response').default(Response)
     })
 

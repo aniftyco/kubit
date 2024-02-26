@@ -20,15 +20,15 @@ export default class ReplCommand extends BaseCommand {
   }
 
   public async run() {
-    this.application.container.withBindings(['Adonis/Core/Route'], (Route) => {
+    this.application.container.withBindings(['Kubit/Route'], (Route) => {
       Route.commit()
     })
-    this.application.container.use('Adonis/Addons/Repl').start()
+    this.application.container.use('Kubit/Repl').start()
 
     /**
      * Gracefully shutdown the application
      */
-    this.application.container.use('Adonis/Addons/Repl').server.on('exit', async () => {
+    this.application.container.use('Kubit/Repl').server.on('exit', async () => {
       await this.application.shutdown()
     })
   }

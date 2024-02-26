@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Cors' {
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-  import { RequestContract } from '@ioc:Adonis/Core/Request'
+declare module '@ioc:Kubit/Cors' {
+  import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+  import { RequestContract } from '@ioc:Kubit/Request'
 
   type AllowedValuesTypes = boolean | string | string[]
 

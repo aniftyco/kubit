@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application';
+import { ApplicationContract } from '@ioc:Kubit/Application'
 
 /**
  * Shortcuts to load containers bindings
@@ -30,11 +30,7 @@ export function defineReplBindings(application: ApplicationContract, Repl: any) 
   Repl.addMethod(
     'loadEncryption',
     (repl) => {
-      setupReplState(
-        repl,
-        'Encryption',
-        application.container.resolveBinding('Adonis/Core/Encryption')
-      )
+      setupReplState(repl, 'Encryption', application.container.resolveBinding('Kubit/Encryption'))
     },
     {
       description: 'Load encryption provider and save reference to the "Encryption" variable',
@@ -47,7 +43,7 @@ export function defineReplBindings(application: ApplicationContract, Repl: any) 
   Repl.addMethod(
     'loadHash',
     (repl) => {
-      setupReplState(repl, 'Hash', application.container.resolveBinding('Adonis/Core/Hash'))
+      setupReplState(repl, 'Hash', application.container.resolveBinding('Kubit/Hash'))
     },
     {
       description: 'Load hash provider and save reference to the "Hash" variable',
@@ -60,7 +56,7 @@ export function defineReplBindings(application: ApplicationContract, Repl: any) 
   Repl.addMethod(
     'loadEnv',
     (repl) => {
-      setupReplState(repl, 'Env', application.container.resolveBinding('Adonis/Core/Env'))
+      setupReplState(repl, 'Env', application.container.resolveBinding('Kubit/Env'))
     },
     {
       description: 'Load env provider and save reference to the "Env" variable',
@@ -73,7 +69,7 @@ export function defineReplBindings(application: ApplicationContract, Repl: any) 
   Repl.addMethod(
     'loadRouter',
     (repl) => {
-      setupReplState(repl, 'Route', application.container.resolveBinding('Adonis/Core/Route'))
+      setupReplState(repl, 'Route', application.container.resolveBinding('Kubit/Route'))
     },
     {
       description: 'Load router and save reference to the "Route" variable',
@@ -86,7 +82,7 @@ export function defineReplBindings(application: ApplicationContract, Repl: any) 
   Repl.addMethod(
     'loadConfig',
     (repl) => {
-      setupReplState(repl, 'Config', application.container.resolveBinding('Adonis/Core/Config'))
+      setupReplState(repl, 'Config', application.container.resolveBinding('Kubit/Config'))
     },
     {
       description: 'Load config and save reference to the "Config" variable',
@@ -99,11 +95,7 @@ export function defineReplBindings(application: ApplicationContract, Repl: any) 
   Repl.addMethod(
     'loadValidator',
     (repl) => {
-      setupReplState(
-        repl,
-        'Validator',
-        application.container.resolveBinding('Adonis/Core/Validator')
-      )
+      setupReplState(repl, 'Validator', application.container.resolveBinding('Kubit/Validator'))
     },
     {
       description: 'Load validator and save reference to the "Validator" variable',
@@ -116,7 +108,7 @@ export function defineReplBindings(application: ApplicationContract, Repl: any) 
   Repl.addMethod(
     'getContext',
     (_, route: string, params?: any) => {
-      return application.container.use('Adonis/Core/HttpContext').create(route, params || {})
+      return application.container.use('Kubit/HttpContext').create(route, params || {})
     },
     {
       description: 'Get HTTP context for a given route',
@@ -130,7 +122,7 @@ export function defineReplBindings(application: ApplicationContract, Repl: any) 
   Repl.addMethod(
     'loadHelpers',
     (repl) => {
-      setupReplState(repl, 'Helpers', application.container.resolveBinding('Adonis/Core/Helpers'))
+      setupReplState(repl, 'Helpers', application.container.resolveBinding('Kubit/Helpers'))
     },
     {
       description: 'Load helpers provider and save reference to the "Helpers" variable',

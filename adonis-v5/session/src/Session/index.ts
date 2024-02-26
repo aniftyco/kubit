@@ -9,17 +9,14 @@
 
 /// <reference path="../../adonis-typings/session.ts" />
 
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 import {
-  AllowedSessionValues,
-  SessionConfig,
-  SessionContract,
-  SessionDriverContract,
-} from '@ioc:Adonis/Addons/Session'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { Exception, lodash } from '@poppinss/utils'
-import { cuid } from '@poppinss/utils/build/helpers'
+    AllowedSessionValues, SessionConfig, SessionContract, SessionDriverContract
+} from '@ioc:Kubit/Session';
+import { Exception, lodash } from '@poppinss/utils';
+import { cuid } from '@poppinss/utils/build/helpers';
 
-import { Store } from '../Store'
+import { Store } from '../Store';
 
 /**
  * Session class exposes the API to read/write values to the session for

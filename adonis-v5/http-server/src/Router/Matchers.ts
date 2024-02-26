@@ -11,7 +11,7 @@
 
 import { Macroable } from 'macroable'
 
-import { RouteMatchersContract } from '@ioc:Adonis/Core/Route'
+import { RouteMatchersContract } from '@ioc:Kubit/Route'
 
 /**
  * Shortcut methods for commonly used route matchers

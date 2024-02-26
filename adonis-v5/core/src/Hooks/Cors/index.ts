@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { CorsConfig } from '@ioc:Adonis/Core/Cors'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { CorsConfig } from '@ioc:Kubit/Cors'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 
 /**
  * List of default exposed headers.

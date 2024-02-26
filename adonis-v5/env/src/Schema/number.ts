@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { SchemaFnOptions } from '@ioc:Adonis/Core/Env'
+import { SchemaFnOptions } from '@ioc:Kubit/Env'
 import { Exception } from '@poppinss/utils'
 
 import { ensureValue } from './helpers'

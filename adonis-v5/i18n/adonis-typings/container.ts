@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { I18nManagerContract } from '@ioc:Adonis/Addons/I18n'
+declare module '@ioc:Kubit/Application' {
+import { I18nManagerContract } from '@ioc:Kubit/I18n';
 
-  interface ContainerBindings {
-    'Adonis/Addons/I18n': I18nManagerContract
+    interface ContainerBindings {
+    'Kubit/I18n': I18nManagerContract
   }
 }

@@ -12,8 +12,8 @@
 import { stat, Stats } from 'fs'
 import Cache from 'tmp-cache'
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { MakeSignedUrlOptions, MakeUrlOptions, RouteJSON } from '@ioc:Adonis/Core/Route'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+import { MakeSignedUrlOptions, MakeUrlOptions, RouteJSON } from '@ioc:Kubit/Route'
 
 import { RouterException } from './Exceptions/RouterException'
 import { BriskRoute } from './Router/BriskRoute'

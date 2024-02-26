@@ -11,9 +11,9 @@
 
 import { Middleware } from 'co-compose'
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { MiddlewareStoreContract, ResolvedMiddlewareHandler } from '@ioc:Adonis/Core/Middleware'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+import { MiddlewareStoreContract, ResolvedMiddlewareHandler } from '@ioc:Kubit/Middleware'
+import { RouterContract } from '@ioc:Kubit/Route'
 import { interpolate } from '@poppinss/utils/build/helpers'
 
 import { E_ROUTE_NOT_FOUND } from '../../../exceptions.json'

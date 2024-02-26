@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
+import { join } from 'path';
 
-import { test } from '@japa/runner'
-import { Application } from '@kubit/application'
-import { Filesystem } from '@poppinss/dev-utils'
+import { test } from '@japa/runner';
+import { Application } from '@kubit/application';
+import { Filesystem } from '@poppinss/dev-utils';
 
-import { RedisManager } from '../src/RedisManager'
+import { RedisManager } from '../src/RedisManager';
 
 const fs = new Filesystem(join(__dirname, 'app'))
 
@@ -62,12 +62,9 @@ test.group('Redis Provider', (group) => {
       },
     })
 
-    assert.instanceOf(app.container.use('Adonis/Addons/Redis'), RedisManager)
-    assert.deepEqual(app.container.use('Adonis/Addons/Redis')['application'], app)
-    assert.deepEqual(
-      app.container.use('Adonis/Addons/Redis'),
-      app.container.use('Adonis/Addons/Redis')
-    )
+    assert.instanceOf(app.container.use('Kubit/Redis'), RedisManager)
+    assert.deepEqual(app.container.use('Kubit/Redis')['application'], app)
+    assert.deepEqual(app.container.use('Kubit/Redis'), app.container.use('Kubit/Redis'))
   })
 
   test('raise error when config is missing', async ({ assert }) => {
@@ -137,8 +134,8 @@ test.group('Redis Provider', (group) => {
       },
     })
 
-    assert.property(app.container.use('Adonis/Addons/Repl')['customMethods'], 'loadRedis')
-    assert.isFunction(app.container.use('Adonis/Addons/Repl')['customMethods']['loadRedis'].handler)
+    assert.property(app.container.use('Kubit/Repl')['customMethods'], 'loadRedis')
+    assert.isFunction(app.container.use('Kubit/Repl')['customMethods']['loadRedis'].handler)
   })
 
   test('define health checks', async ({ assert }) => {
@@ -151,10 +148,7 @@ test.group('Redis Provider', (group) => {
       },
     })
 
-    assert.property(app.container.use('Adonis/Core/HealthCheck')['healthCheckers'], 'redis')
-    assert.equal(
-      app.container.use('Adonis/Core/HealthCheck')['healthCheckers'].redis,
-      'Adonis/Addons/Redis'
-    )
+    assert.property(app.container.use('Kubit/HealthCheck')['healthCheckers'], 'redis')
+    assert.equal(app.container.use('Kubit/HealthCheck')['healthCheckers'].redis, 'Kubit/Redis')
   })
 })

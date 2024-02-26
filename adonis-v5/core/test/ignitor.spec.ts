@@ -52,7 +52,7 @@ test.group('Ignitor | App Provider', (group) => {
     const httpServer = new Ignitor(fs.basePath).httpServer()
     await httpServer.start()
 
-    const Server = httpServer.application.container.use('Adonis/Core/Server')
+    const Server = httpServer.application.container.use('Kubit/Server')
     assert.lengthOf(Server.hooks['hooks'].before, 1)
 
     await httpServer.close()
@@ -72,7 +72,7 @@ test.group('Ignitor | App Provider', (group) => {
     const httpServer = new Ignitor(fs.basePath).httpServer()
     await httpServer.start()
 
-    const Server = httpServer.application.container.use('Adonis/Core/Server')
+    const Server = httpServer.application.container.use('Kubit/Server')
     assert.lengthOf(Server.hooks['hooks'].before, 1)
 
     await httpServer.close()
@@ -92,7 +92,7 @@ test.group('Ignitor | App Provider', (group) => {
     const httpServer = new Ignitor(fs.basePath).httpServer()
     await httpServer.start()
 
-    const Server = httpServer.application.container.use('Adonis/Core/Server')
+    const Server = httpServer.application.container.use('Kubit/Server')
     assert.lengthOf(Server.hooks['hooks'].before, 0)
 
     await httpServer.close()
@@ -111,7 +111,7 @@ test.group('Ignitor | App Provider', (group) => {
     const httpServer = new Ignitor(fs.basePath).httpServer()
     await httpServer.start()
 
-    const Server = httpServer.application.container.use('Adonis/Core/Server')
+    const Server = httpServer.application.container.use('Kubit/Server')
     assert.lengthOf(Server.hooks['hooks'].before, 1)
 
     await httpServer.close()
@@ -123,7 +123,7 @@ test.group('Ignitor | App Provider', (group) => {
     const httpServer = new Ignitor(fs.basePath).httpServer()
     await httpServer.start()
 
-    const HealthCheck = httpServer.application.container.use('Adonis/Core/HealthCheck')
+    const HealthCheck = httpServer.application.container.use('Kubit/HealthCheck')
     assert.deepEqual(HealthCheck.servicesList, ['env', 'appKey'])
 
     await httpServer.close()

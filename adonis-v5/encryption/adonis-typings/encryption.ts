@@ -11,7 +11,7 @@
  * The binding for the given module is defined inside `providers/AppProvider.ts`
  * file.
  */
-declare module '@ioc:Adonis/Core/Encryption' {
+declare module '@ioc:Kubit/Encryption' {
   import { base64 } from '@poppinss/utils/build/helpers'
 
   /**

@@ -11,9 +11,9 @@
 
 import { extname } from 'path'
 
-import { LocalDriverConfig, LocalDriverContract } from '@ioc:Adonis/Core/Drive'
-import { LoggerContract } from '@ioc:Adonis/Core/Logger'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
+import { LocalDriverConfig, LocalDriverContract } from '@ioc:Kubit/Drive'
+import { LoggerContract } from '@ioc:Kubit/Logger'
+import { RouterContract } from '@ioc:Kubit/Route'
 import { Exception } from '@poppinss/utils'
 
 /**

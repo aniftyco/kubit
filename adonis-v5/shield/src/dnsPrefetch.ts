@@ -9,10 +9,10 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { DnsPrefetchOptions } from '@ioc:Adonis/Addons/Shield'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
+import { DnsPrefetchOptions } from '@ioc:Kubit/Shield';
 
-import { noop } from './noop'
+import { noop } from './noop';
 
 /**
  * Factory that returns a function to set `X-DNS-Prefetch-Control` header.

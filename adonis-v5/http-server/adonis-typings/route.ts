@@ -7,11 +7,11 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Route' {
+declare module '@ioc:Kubit/Route' {
   import { MacroableConstructorContract } from 'macroable'
 
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-  import { ResolvedMiddlewareHandler } from '@ioc:Adonis/Core/Middleware'
+  import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+  import { ResolvedMiddlewareHandler } from '@ioc:Kubit/Middleware'
 
   /**
    * Route.where param matcher shape

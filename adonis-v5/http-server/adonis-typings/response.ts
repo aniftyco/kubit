@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Response' {
+declare module '@ioc:Kubit/Response' {
   import { IncomingMessage, ServerResponse } from 'http'
   import { MacroableConstructorContract } from 'macroable'
 
-  import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-  import { MakeUrlOptions, RouterContract } from '@ioc:Adonis/Core/Route'
+  import { EncryptionContract } from '@ioc:Kubit/Encryption'
+  import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+  import { MakeUrlOptions, RouterContract } from '@ioc:Kubit/Route'
 
   /**
    * Cookie options can that can be set on the response

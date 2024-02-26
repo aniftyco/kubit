@@ -9,10 +9,10 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { inspect, InspectOptions } from 'util'
+import { inspect, InspectOptions } from 'util';
 
-import { AllowedSessionValues, SessionManagerContract } from '@ioc:Adonis/Addons/Session'
-import { ContainerBindings } from '@ioc:Adonis/Core/Application'
+import { ContainerBindings } from '@ioc:Kubit/Application';
+import { AllowedSessionValues, SessionManagerContract } from '@ioc:Kubit/Session';
 
 /**
  * Define test bindings

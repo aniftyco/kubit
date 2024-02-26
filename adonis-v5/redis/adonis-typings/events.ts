@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Event' {
-  import { Redis } from 'ioredis'
+declare module '@ioc:Kubit/Event' {
+import { Redis } from 'ioredis';
 
-  import { RedisClusterConnectionContract, RedisConnectionContract } from '@ioc:Adonis/Addons/Redis'
+import { RedisClusterConnectionContract, RedisConnectionContract } from '@ioc:Kubit/Redis';
 
-  interface EventsList {
+    interface EventsList {
     'redis:ready': { connection: RedisClusterConnectionContract | RedisConnectionContract }
     'redis:connect': { connection: RedisClusterConnectionContract | RedisConnectionContract }
     'redis:error': {

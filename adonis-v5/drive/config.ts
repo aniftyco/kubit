@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { DriversList } from '@ioc:Adonis/Core/Drive'
+import { DriversList } from '@ioc:Kubit/Drive'
 
 /**
  * Expected shape of the config accepted by the "driveConfig"

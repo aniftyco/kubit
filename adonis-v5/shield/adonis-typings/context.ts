@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Response' {
+declare module '@ioc:Kubit/Response' {
   interface ResponseContract {
     readonly nonce: string
   }
 }
 
-declare module '@ioc:Adonis/Core/Request' {
+declare module '@ioc:Kubit/Request' {
   interface RequestContract {
     csrfToken: string
   }

@@ -9,7 +9,7 @@
 
 import isUUID, { UUIDVersion } from 'validator/lib/isUUID'
 
-import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { SyncValidation } from '@ioc:Kubit/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
 

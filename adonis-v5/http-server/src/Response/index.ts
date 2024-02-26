@@ -21,8 +21,8 @@ import onFinished from 'on-finished'
 import { extname } from 'path'
 import vary from 'vary'
 
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { EncryptionContract } from '@ioc:Kubit/Encryption'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 import {
   CastableHeader,
   CookieOptions,
@@ -30,8 +30,8 @@ import {
   ResponseConfig,
   ResponseContract,
   ResponseStream,
-} from '@ioc:Adonis/Core/Response'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
+} from '@ioc:Kubit/Response'
+import { RouterContract } from '@ioc:Kubit/Route'
 import { Exception, safeStringify } from '@poppinss/utils'
 import { interpolate } from '@poppinss/utils/build/helpers'
 

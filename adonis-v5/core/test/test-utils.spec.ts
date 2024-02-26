@@ -37,8 +37,8 @@ test.group('Test utils', (group) => {
     const kernel = new Ignitor(fs.basePath).kernel('test')
     await kernel.boot()
 
-    const server = kernel.application.container.use('Adonis/Core/Server')
-    kernel.application.container.use('Adonis/Core/Route').get('/', async () => 'handled')
+    const server = kernel.application.container.use('Kubit/Server')
+    kernel.application.container.use('Kubit/Route').get('/', async () => 'handled')
 
     const testUtils = new TestUtils(kernel.application)
     const cleanup = await testUtils.httpServer().start((handler) => createServer(handler))
@@ -94,7 +94,7 @@ test.group('Test utils', (group) => {
     await kernel.boot()
 
     const testUtils = new TestUtils(kernel.application)
-    const ace = kernel.application.container.resolveBinding('Adonis/Core/Ace')
+    const ace = kernel.application.container.resolveBinding('Kubit/Ace')
     assert.isNull(await ace.find(['foo']))
 
     await testUtils.ace().loadCommands()
@@ -121,7 +121,7 @@ test.group('Test utils', (group) => {
     const kernel = new Ignitor(fs.basePath).kernel('test')
     await kernel.boot()
 
-    const testUtils = kernel.application.container.resolveBinding('Adonis/Core/TestUtils')
+    const testUtils = kernel.application.container.resolveBinding('Kubit/TestUtils')
     testUtils.constructor.macro('foo', () => 'bar')
 
     assert.equal(testUtils['foo'](), 'bar')
@@ -141,7 +141,7 @@ test.group('Test utils', (group) => {
     const kernel = new Ignitor(fs.basePath).kernel('test')
     await kernel.boot()
 
-    const testUtils = kernel.application.container.resolveBinding('Adonis/Core/TestUtils')
+    const testUtils = kernel.application.container.resolveBinding('Kubit/TestUtils')
     testUtils.constructor.macro('foo', () => 'bar')
     testUtils.constructor.getter('bar', function () {
       return this['foo']()

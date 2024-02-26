@@ -51,7 +51,7 @@ test.group('Ignitor | Http', (group) => {
 			public static needsApplication = true
 
       public async ready () {
-        this.$app.container.use('Adonis/Core/Server').hookCalled = true
+        this.$app.container.use('Kubit/Server').hookCalled = true
       }
     }
     `
@@ -62,7 +62,7 @@ test.group('Ignitor | Http', (group) => {
     const httpServer = new Ignitor(fs.basePath).httpServer()
     await httpServer.start()
 
-    const server = httpServer.application.container.use('Adonis/Core/Server')
+    const server = httpServer.application.container.use('Kubit/Server')
     server.instance!.close(() => {
       done()
     })
@@ -82,8 +82,8 @@ test.group('Ignitor | Http', (group) => {
     /**
      * Define routes
      */
-    const server = httpServer.application.container.use('Adonis/Core/Server')
-    httpServer.application.container.use('Adonis/Core/Route').get('/', async () => 'handled')
+    const server = httpServer.application.container.use('Kubit/Server')
+    httpServer.application.container.use('Kubit/Route').get('/', async () => 'handled')
 
     await httpServer.start((handler) => createServer(handler))
     assert.isTrue(httpServer.application.isReady)
@@ -138,7 +138,7 @@ test.group('Ignitor | Http', (group) => {
     await httpServer.application.bootProviders()
 
     await httpServer.start((handler) => createServer(handler))
-    const server = httpServer.application.container.use('Adonis/Core/Server')
+    const server = httpServer.application.container.use('Kubit/Server')
 
     const { text } = await supertest(server.instance).get('/').expect(404)
     server.instance!.close(() => {
@@ -164,7 +164,7 @@ test.group('Ignitor | Http', (group) => {
     }
 
     await httpServer.start((handler) => createServer(handler))
-    const server = httpServer.application.container.use('Adonis/Core/Server')
+    const server = httpServer.application.container.use('Kubit/Server')
     server.instance!.emit('error', new Error())
   })
 
@@ -176,7 +176,7 @@ test.group('Ignitor | Http', (group) => {
     const httpServer = ignitor.httpServer()
 
     await httpServer.start((handler) => createServer(handler))
-    const server = httpServer.application.container.use('Adonis/Core/Server')
+    const server = httpServer.application.container.use('Kubit/Server')
 
     server.instance!.on('close', () => {
       assert.isTrue(true)
@@ -197,7 +197,7 @@ test.group('Ignitor | Http', (group) => {
 				public static needsApplication = true
 
 	      public async shutdown () {
-	        this.$app.container.use('Adonis/Core/Server').hookCalled = true
+	        this.$app.container.use('Kubit/Server').hookCalled = true
 	      }
 	    }
 	    `
@@ -209,7 +209,7 @@ test.group('Ignitor | Http', (group) => {
     const httpServer = ignitor.httpServer()
 
     await httpServer.start((handler) => createServer(handler))
-    const server = httpServer.application.container.use('Adonis/Core/Server')
+    const server = httpServer.application.container.use('Kubit/Server')
 
     await httpServer.close()
     assert.isTrue(server['hookCalled'])
@@ -257,7 +257,7 @@ test.group('Ignitor | HTTP | Static Assets', (group) => {
     await httpServer.application.registerProviders()
     await httpServer.application.bootProviders()
 
-    const server = httpServer.application.container.use('Adonis/Core/Server')
+    const server = httpServer.application.container.use('Kubit/Server')
     await httpServer.start((handler) => createServer(handler))
     assert.isTrue(httpServer.application.isReady)
 
@@ -304,7 +304,7 @@ test.group('Ignitor | HTTP | Static Assets', (group) => {
     await httpServer.application.registerProviders()
     await httpServer.application.bootProviders()
 
-    const server = httpServer.application.container.use('Adonis/Core/Server')
+    const server = httpServer.application.container.use('Kubit/Server')
     await httpServer.start((handler) => createServer(handler))
 
     assert.isTrue(httpServer.application.isReady)
@@ -361,7 +361,7 @@ test.group('Ignitor | HTTP | CORS', (group) => {
     await httpServer.application.registerProviders()
     await httpServer.application.bootProviders()
 
-    const server = httpServer.application.container.use('Adonis/Core/Server')
+    const server = httpServer.application.container.use('Kubit/Server')
     await httpServer.start((handler) => createServer(handler))
     assert.isTrue(httpServer.application.isReady)
 

@@ -32,33 +32,30 @@ test.group('Validation Provider', (group) => {
 
   test('register validation provider', async ({ assert }) => {
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    assert.deepEqual(app.container.use('Adonis/Core/Validator'), {
+    assert.deepEqual(app.container.use('Kubit/Validator'), {
       validator,
       schema,
       rules,
       ValidationException,
     })
-    assert.isUndefined(app.container.use('Adonis/Core/Validator').validator.config.reporter)
+    assert.isUndefined(app.container.use('Kubit/Validator').validator.config.reporter)
   })
 
   test('export validation exception class', async ({ assert }) => {
     const app = await setupApp(['../../providers/ValidatorProvider'], 'api')
-    assert.deepEqual(
-      app.container.use('Adonis/Core/Validator').ValidationException,
-      ValidationException
-    )
+    assert.deepEqual(app.container.use('Kubit/Validator').ValidationException, ValidationException)
   })
 
   test('resolve reporter before passing it to the validator', async ({ assert }) => {
     const app = await setupApp(['../../providers/ValidatorProvider'], 'api')
     assert.deepEqual(
-      app.container.use('Adonis/Core/Validator').validator.config.reporter,
+      app.container.use('Kubit/Validator').validator.config.reporter,
       ApiErrorReporter
     )
   })
 
   test('extend request class by adding the validate method', async ({ assert }) => {
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    assert.property(app.container.use('Adonis/Core/Request').prototype, 'validate')
+    assert.property(app.container.use('Kubit/Request').prototype, 'validate')
   })
 })

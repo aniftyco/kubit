@@ -9,17 +9,14 @@
 
 /// <reference path="../../../adonis-typings/index.ts" />
 
-import { DateTime } from 'luxon'
+import { DateTime } from 'luxon';
 
 import {
-  CurrencyFormatOptions,
-  FormatterContract,
-  NumberFormatOptions,
-  TimeFormatOptions,
-} from '@ioc:Adonis/Addons/I18n'
-import { formatters } from '@poppinss/intl-formatter'
+    CurrencyFormatOptions, FormatterContract, NumberFormatOptions, TimeFormatOptions
+} from '@ioc:Kubit/I18n';
+import { formatters } from '@poppinss/intl-formatter';
 
-import { format } from '../RelativeTime'
+import { format } from '../RelativeTime';
 
 /**
  * Core formatter to format different values using the I18n API

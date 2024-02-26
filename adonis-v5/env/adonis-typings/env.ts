@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Env' {
+declare module '@ioc:Kubit/Env' {
   /**
    * An interface meant to be extended in the user land that holds
    * types for environment variables extracted using env.validate

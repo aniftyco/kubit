@@ -9,7 +9,7 @@
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
-import { AppEnvironments } from '@ioc:Adonis/Core/Application'
+import { AppEnvironments } from '@ioc:Kubit/Application'
 import { Application } from '@kubit/application'
 
 import { Ace } from './Ace'

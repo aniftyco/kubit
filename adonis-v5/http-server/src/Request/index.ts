@@ -19,9 +19,9 @@ import qs from 'qs'
 import typeIs from 'type-is'
 import { parse, UrlWithStringQuery } from 'url'
 
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { RequestConfig, RequestContract } from '@ioc:Adonis/Core/Request'
+import { EncryptionContract } from '@ioc:Kubit/Encryption'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+import { RequestConfig, RequestContract } from '@ioc:Kubit/Request'
 import { lodash } from '@poppinss/utils'
 import { cuid } from '@poppinss/utils/build/helpers'
 

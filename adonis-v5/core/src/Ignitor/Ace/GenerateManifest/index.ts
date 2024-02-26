@@ -56,7 +56,7 @@ export class GenerateManifest {
        * imports will break
        */
       this.kernel.application.container.trap((namespace) => {
-        if (namespace === 'Adonis/Core/Application') {
+        if (namespace === 'Kubit/Application') {
           return this.kernel.application
         }
 

@@ -11,7 +11,7 @@
 
 import { DotenvParseOutput } from 'dotenv'
 
-import { EnvContract, ValidateFn } from '@ioc:Adonis/Core/Env'
+import { EnvContract, ValidateFn } from '@ioc:Kubit/Env'
 
 import { schema as EnvSchema } from '../Schema'
 

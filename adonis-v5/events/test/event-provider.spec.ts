@@ -20,7 +20,7 @@ test.group('EventProvider', (group) => {
   test('register event provider', async ({ assert }) => {
     const app = await setUp()
 
-    assert.instanceOf(app.container.use('Adonis/Core/Event'), Emitter)
-    assert.deepEqual(app.container.use('Adonis/Core/Event'), app.container.use('Adonis/Core/Event'))
+    assert.instanceOf(app.container.use('Kubit/Event'), Emitter)
+    assert.deepEqual(app.container.use('Kubit/Event'), app.container.use('Kubit/Event'))
   })
 })

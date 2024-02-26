@@ -1,6 +1,7 @@
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { readFileSync, pathExistsSync } from 'fs-extra'
+import { pathExistsSync, readFileSync } from 'fs-extra'
 import { join } from 'path'
+
+import { ApplicationContract } from '@ioc:Kubit/Application'
 
 export abstract class BaseDriver {
   /**

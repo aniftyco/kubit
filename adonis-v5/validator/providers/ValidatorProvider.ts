@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import { esmResolver } from '@poppinss/utils'
 
 /**
@@ -22,8 +22,8 @@ export default class ValidationProvider {
    * resolve the imported reporter (when defined)
    */
   private async configureValidator() {
-    const Config = this.app.container.resolveBinding('Adonis/Core/Config')
-    const { validator } = this.app.container.resolveBinding('Adonis/Core/Validator')
+    const Config = this.app.container.resolveBinding('Kubit/Config')
+    const { validator } = this.app.container.resolveBinding('Kubit/Validator')
 
     /**
      * Resolve reporter when defined
@@ -41,7 +41,7 @@ export default class ValidationProvider {
    * Register validator
    */
   public register() {
-    this.app.container.singleton('Adonis/Core/Validator', () => {
+    this.app.container.singleton('Kubit/Validator', () => {
       const { validator } = require('../src/Validator')
       return {
         ValidationException: require('../src/ValidationException').ValidationException,
@@ -54,7 +54,7 @@ export default class ValidationProvider {
 
   public async boot() {
     const validator = await this.configureValidator()
-    this.app.container.withBindings(['Adonis/Core/Request'], (Request) => {
+    this.app.container.withBindings(['Kubit/Request'], (Request) => {
       require('../src/Bindings/Request').default(Request, validator.validate, validator.config)
     })
   }

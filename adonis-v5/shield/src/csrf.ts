@@ -9,15 +9,15 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import Tokens from 'csrf'
+import Tokens from 'csrf';
 
-import { CsrfOptions } from '@ioc:Adonis/Addons/Shield'
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { ViewContract } from '@ioc:Adonis/Core/View'
+import { EncryptionContract } from '@ioc:Kubit/Encryption';
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
+import { CsrfOptions } from '@ioc:Kubit/Shield';
+import { ViewContract } from '@ioc:Kubit/View';
 
-import { InvalidCsrfTokenException } from './Exceptions/InvalidCsrfTokenException'
-import { noop } from './noop'
+import { InvalidCsrfTokenException } from './Exceptions/InvalidCsrfTokenException';
+import { noop } from './noop';
 
 /**
  * A class to encapsulate the logic of verifying and generating

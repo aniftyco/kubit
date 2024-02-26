@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+declare module '@ioc:Kubit/Application' {
+  import { EncryptionContract } from '@ioc:Kubit/Encryption'
 
   export interface ContainerBindings {
-    'Adonis/Core/Encryption': EncryptionContract
+    'Kubit/Encryption': EncryptionContract
   }
 }

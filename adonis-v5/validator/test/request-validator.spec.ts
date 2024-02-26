@@ -32,7 +32,7 @@ test.group('Request validator', (group) => {
     assert.plan(1)
 
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     ctx.request.request.headers.accept = 'application/json'
     ctx.request.allFiles = function () {
@@ -66,7 +66,7 @@ test.group('Request validator', (group) => {
     assert.plan(1)
 
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     ctx.request.request.headers.accept = 'application/vnd.api+json'
     ctx.request.allFiles = function () {
@@ -100,7 +100,7 @@ test.group('Request validator', (group) => {
     assert.plan(2)
 
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     ctx.request.allFiles = function () {
       return {}
@@ -126,7 +126,7 @@ test.group('Request validator', (group) => {
     assert.plan(2)
 
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers['x-requested-with'] = 'XMLHttpRequest'
 
     ctx.request.allFiles = function () {
@@ -159,14 +159,14 @@ test.group('Request validator', (group) => {
     assert.plan(2)
 
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    app.container.use('Adonis/Core/Profiler').process((packet: any) => {
+    app.container.use('Kubit/Profiler').process((packet: any) => {
       if (packet.type === 'action') {
         assert.deepEqual(packet.data, { status: 'error' })
         assert.equal(packet.label, 'request:validate')
       }
     })
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.allFiles = function () {
       return {}
     }
@@ -184,7 +184,7 @@ test.group('Request validator', (group) => {
 
   test('return validated request body', async ({ assert }) => {
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     ctx.request.request.headers.accept = 'application/json'
     ctx.request.allFiles = function () {
@@ -204,7 +204,7 @@ test.group('Request validator', (group) => {
 
   test('provide custom data', async ({ assert }) => {
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers.accept = 'application/json'
     ctx.request.allFiles = function () {
       return {}
@@ -224,7 +224,7 @@ test.group('Request validator', (group) => {
 
   test('validate using vanilla object', async ({ assert }) => {
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     ctx.request.request.headers.accept = 'application/json'
     ctx.request.allFiles = function () {
@@ -245,7 +245,7 @@ test.group('Request validator', (group) => {
     validator.negotiator(() => ApiErrorReporter)
 
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.allFiles = function () {
       return {}
     }
@@ -276,7 +276,7 @@ test.group('Request validator', (group) => {
     validator.negotiator(() => ApiErrorReporter)
 
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.allFiles = function () {
       return {}
     }
@@ -306,7 +306,7 @@ test.group('Request validator', (group) => {
     })
 
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.allFiles = function () {
       return {}
     }
@@ -341,7 +341,7 @@ test.group('Request validator', (group) => {
     })
 
     const app = await setupApp(['../../providers/ValidatorProvider'])
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.allFiles = function () {
       return {}
     }

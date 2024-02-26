@@ -13,7 +13,7 @@ import { EOL } from 'os'
 import { join } from 'path'
 import slash from 'slash'
 
-import { BodyParserConfig } from '@ioc:Adonis/Core/BodyParser'
+import { BodyParserConfig } from '@ioc:Kubit/BodyParser'
 import { Application } from '@kubit/application'
 import { Filesystem } from '@poppinss/dev-utils'
 

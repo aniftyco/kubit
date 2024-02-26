@@ -40,7 +40,7 @@ test.group('Command | List Routes Json', (group) => {
     router.get('contact', async () => {})
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.logger.useRenderer(testingRenderer)
@@ -82,7 +82,7 @@ test.group('Command | List Routes Json', (group) => {
     router.get('contact', async () => {}).middleware(['auth', 'acl:admin'])
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.logger.useRenderer(testingRenderer)
@@ -127,7 +127,7 @@ test.group('Command | List Routes Json', (group) => {
     router.get('contact', 'ContactController')
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.json = true
@@ -172,7 +172,7 @@ test.group('Command | List Routes Json', (group) => {
     router.get('contact', 'ContactController').namespace('App/Admin')
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.json = true
@@ -217,7 +217,7 @@ test.group('Command | List Routes Json', (group) => {
     router.get('contact', 'ContactController').namespace('App/Controllers/Http')
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.json = true
@@ -259,7 +259,7 @@ test.group('Command | List Routes Json', (group) => {
     router.get('about', async () => {}).domain('blogger.com')
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.json = true
@@ -297,7 +297,7 @@ test.group('Command | List Routes Json', (group) => {
       .prefix('v1')
 
     router.commit()
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.json = true
@@ -331,7 +331,7 @@ test.group('Command | List Routes Json', (group) => {
     router.post('contact', async () => {})
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.logger.useRenderer(testingRenderer)
@@ -366,7 +366,7 @@ test.group('Command | List Routes Json', (group) => {
     router.post('contact', async () => {}).as('contactUs')
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.logger.useRenderer(testingRenderer)
@@ -401,7 +401,7 @@ test.group('Command | List Routes Json', (group) => {
     router.post('contact', async () => {})
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.logger.useRenderer(testingRenderer)
@@ -438,7 +438,7 @@ test.group('Command | List Routes Json', (group) => {
     router.get('contact', async () => {})
     router.commit()
 
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     const listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.logger.useRenderer(testingRenderer)

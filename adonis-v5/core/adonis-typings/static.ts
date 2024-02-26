@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Static' {
+declare module '@ioc:Kubit/Static' {
   import { Stats } from 'fs'
 
   export type AssetsConfig = {

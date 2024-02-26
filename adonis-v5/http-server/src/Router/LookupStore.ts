@@ -10,13 +10,13 @@
 import encodeurl from 'encodeurl'
 import qs from 'qs'
 
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+import { EncryptionContract } from '@ioc:Kubit/Encryption'
 import {
   LookupStoreContract,
   LookupStoreTree,
   RouteJSON,
   UrlBuilderContract,
-} from '@ioc:Adonis/Core/Route'
+} from '@ioc:Kubit/Route'
 
 import { RouterException } from '../Exceptions/RouterException'
 

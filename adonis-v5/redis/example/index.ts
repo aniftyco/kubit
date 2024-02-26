@@ -1,2 +1,3 @@
-import Redis from '@ioc:Adonis/Addons/Redis'
+import Redis from '@ioc:Kubit/Redis';
+
 Redis.connection().get('foo')

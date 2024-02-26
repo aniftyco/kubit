@@ -7,19 +7,16 @@
  * file that was distributed with this source code.
  */
 
+import { ApplicationContract } from '@ioc:Kubit/Application';
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 import {
-  ExtendCallback,
-  SessionClientContract,
-  SessionConfig,
-  SessionDriverContract,
-  SessionManagerContract,
-} from '@ioc:Adonis/Addons/Session'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { Exception, ManagerConfigValidator } from '@poppinss/utils'
-import { string } from '@poppinss/utils/build/helpers'
+    ExtendCallback, SessionClientContract, SessionConfig, SessionDriverContract,
+    SessionManagerContract
+} from '@ioc:Kubit/Session';
+import { Exception, ManagerConfigValidator } from '@poppinss/utils';
+import { string } from '@poppinss/utils/build/helpers';
 
-import { Session } from '../Session'
+import { Session } from '../Session';
 
 type SessionManagerConfig = SessionConfig & {
   cookie: {
@@ -118,13 +115,13 @@ export class SessionManager implements SessionManagerContract {
   private createRedisDriver(): any {
     const { RedisDriver } = require('../Drivers/Redis')
 
-    if (!this.application.container.hasBinding('Adonis/Addons/Redis')) {
+    if (!this.application.container.hasBinding('Kubit/Redis')) {
       throw new Error(
         'Install "@kubit/redis" in order to use the redis driver for storing sessions'
       )
     }
 
-    return new RedisDriver(this.config, this.application.container.use('Adonis/Addons/Redis'))
+    return new RedisDriver(this.config, this.application.container.use('Kubit/Redis'))
   }
 
   /**
@@ -173,7 +170,7 @@ export class SessionManager implements SessionManagerContract {
    */
   public client(): SessionClientContract {
     const { SessionClient } = require('../Client')
-    const CookieClient = this.application.container.resolveBinding('Adonis/Core/CookieClient')
+    const CookieClient = this.application.container.resolveBinding('Kubit/CookieClient')
 
     return new SessionClient(this.config, this.createMemoryDriver(), CookieClient, {})
   }

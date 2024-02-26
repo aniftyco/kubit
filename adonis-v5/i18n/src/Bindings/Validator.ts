@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import type { validator } from '@ioc:Adonis/Core/Validator'
-import type { I18nManagerContract } from '@ioc:Adonis/Addons/I18n'
+import type { validator } from '@ioc:Kubit/Validator'
+import type { I18nManagerContract } from '@ioc:Kubit/I18n'
 
 /**
  * Registers a hook to deliver default messages to the validator.

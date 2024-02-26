@@ -14,7 +14,7 @@ import { args, flags } from '@kubit/core/build/standalone'
 
 import { BaseGenerator } from './Base'
 
-import type { AppEnvironments } from '@ioc:Adonis/Core/Application'
+import type { AppEnvironments } from '@ioc:Kubit/Application'
 
 const ALLOWED_ENVIRONMENTS: AppEnvironments[] = ['console', 'web', 'repl', 'test']
 

@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Drive' {
+declare module '@ioc:Kubit/Drive' {
   import * as fsExtra from 'fs-extra'
 
-  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+  import { ApplicationContract } from '@ioc:Kubit/Application'
   import { ManagerContract } from '@poppinss/manager'
 
   import type { Volume as MemfsVolume } from 'memfs/lib/volume'

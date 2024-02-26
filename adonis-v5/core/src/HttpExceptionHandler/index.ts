@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { LoggerContract } from '@ioc:Adonis/Core/Logger'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+import { LoggerContract } from '@ioc:Kubit/Logger'
 
 /**
  * Http exception handler serves as the base exception handler

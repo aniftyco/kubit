@@ -54,13 +54,13 @@ test.group('Hash Provider', (group) => {
 
   test('register hash provider', async ({ assert }) => {
     const app = await setup()
-    assert.instanceOf(app.container.use('Adonis/Core/Hash'), Hash)
-    assert.deepEqual(app.container.use('Adonis/Core/Hash'), app.container.use('Adonis/Core/Hash'))
+    assert.instanceOf(app.container.use('Kubit/Hash'), Hash)
+    assert.deepEqual(app.container.use('Kubit/Hash'), app.container.use('Kubit/Hash'))
   })
 
   test('raise error when hash config is missing', async ({ assert }) => {
     const app = await setup(false)
-    const fn = () => app.container.use('Adonis/Core/Hash')
+    const fn = () => app.container.use('Kubit/Hash')
     assert.throws(
       fn,
       'Invalid "hash" config. Missing value for "default". Make sure to set it inside the "config/hash" file'

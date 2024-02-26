@@ -7,15 +7,15 @@
  * file that was distributed with this source code.
  */
 
-import test from 'japa'
-import ts from 'typescript'
+import test from 'japa';
+import ts from 'typescript';
 
-import { iocTransformer } from '../src/transformer'
+import { iocTransformer } from '../src/transformer';
 
 test.group('Transformer', () => {
   test('transform @ioc imports to container use method', async (assert) => {
     const contents = `
-      import Foo from '@ioc:Adonis/Foo'
+      import Foo from '@ioc:Kubit/Foo'
       Foo.bar()
     `
 

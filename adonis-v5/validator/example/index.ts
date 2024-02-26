@@ -1,4 +1,4 @@
-// import { schema, rules } from '@ioc:Adonis/Core/Validator'
+// import { schema, rules } from '@ioc:Kubit/Validator'
 
 // const data = schema.create({
 //   username: schema.date.nullable(),

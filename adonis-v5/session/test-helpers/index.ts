@@ -7,14 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { join } from 'path'
+import { join } from 'path';
 
-import { RedisManagerContract } from '@ioc:Adonis/Addons/Redis'
-import { SessionConfig } from '@ioc:Adonis/Addons/Session'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { Application } from '@kubit/core/build/standalone'
-import { RedisManager } from '@kubit/redis/build/src/RedisManager/index.js'
-import { Filesystem } from '@poppinss/dev-utils'
+import { ApplicationContract } from '@ioc:Kubit/Application';
+import { RedisManagerContract } from '@ioc:Kubit/Redis';
+import { SessionConfig } from '@ioc:Kubit/Session';
+import { Application } from '@kubit/core/build/standalone';
+import { RedisManager } from '@kubit/redis/build/src/RedisManager/index.js';
+import { Filesystem } from '@poppinss/dev-utils';
 
 export const fs = new Filesystem(join(__dirname, 'app'))
 
@@ -79,7 +79,7 @@ export function sleep(time: number): Promise<void> {
  * Signs value to be set as cookie header
  */
 export function signCookie(app: ApplicationContract, value: any, name: string) {
-  const encryption = app.container.use('Adonis/Core/Encryption')
+  const encryption = app.container.use('Kubit/Encryption')
   return `${name}=s:${encryption.verifier.sign(value, undefined, name)}`
 }
 
@@ -87,7 +87,7 @@ export function signCookie(app: ApplicationContract, value: any, name: string) {
  * Encrypt value to be set as cookie header
  */
 export function encryptCookie(app: ApplicationContract, value: any, name: string) {
-  const encryption = app.container.use('Adonis/Core/Encryption')
+  const encryption = app.container.use('Kubit/Encryption')
   return `${name}=e:${encryption.encrypt(value, undefined, name)}`
 }
 
@@ -95,7 +95,7 @@ export function encryptCookie(app: ApplicationContract, value: any, name: string
  * Decrypt cookie
  */
 export function decryptCookie(app: ApplicationContract, header: any, name: string) {
-  const encryption = app.container.use('Adonis/Core/Encryption')
+  const encryption = app.container.use('Kubit/Encryption')
   const cookieValue = decodeURIComponent(header['set-cookie'][0].split(';')[0])
     .replace(`${name}=`, '')
     .slice(2)
@@ -107,7 +107,7 @@ export function decryptCookie(app: ApplicationContract, header: any, name: strin
  * Unsign cookie
  */
 export function unsignCookie(app: ApplicationContract, header: any, name: string) {
-  const encryption = app.container.use('Adonis/Core/Encryption')
+  const encryption = app.container.use('Kubit/Encryption')
 
   const cookieValue = decodeURIComponent(header['set-cookie'][0].split(';')[0])
     .replace(`${name}=`, '')
@@ -131,6 +131,6 @@ export function getRedisManager(application: ApplicationContract) {
         },
       },
     } as any,
-    application.container.use('Adonis/Core/Event')
+    application.container.use('Kubit/Event')
   ) as unknown as RedisManagerContract
 }

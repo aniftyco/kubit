@@ -9,15 +9,11 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import {
-  I18nContract,
-  I18nManagerContract,
-  ValidatorWildcardCallback,
-} from '@ioc:Adonis/Addons/I18n'
-import { EmitterContract } from '@ioc:Adonis/Core/Event'
-import { LoggerContract } from '@ioc:Adonis/Core/Logger'
+import { EmitterContract } from '@ioc:Kubit/Event';
+import { I18nContract, I18nManagerContract, ValidatorWildcardCallback } from '@ioc:Kubit/I18n';
+import { LoggerContract } from '@ioc:Kubit/Logger';
 
-import { Formatter } from '../Formatters/Core'
+import { Formatter } from '../Formatters/Core';
 
 /**
  * I18n class works with a dedicated locale at a given point

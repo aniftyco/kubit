@@ -7,16 +7,16 @@
  * file that was distributed with this source code.
  */
 
-import { Recoverable, REPLServer, start } from 'repl'
-import stringWidth from 'string-width'
-import { inspect, promisify as utilPromisify } from 'util'
-import { Script } from 'vm'
+import { Recoverable, REPLServer, start } from 'repl';
+import stringWidth from 'string-width';
+import { inspect, promisify as utilPromisify } from 'util';
+import { Script } from 'vm';
 
-import { ContextOptions, Handler, ReplContract } from '@ioc:Adonis/Addons/Repl'
-import { Compiler as TsCompiler } from '@kubit/require-ts/build/src/Compiler'
-import { getBest } from '@poppinss/colors'
+import { ContextOptions, Handler, ReplContract } from '@ioc:Kubit/Repl';
+import { Compiler as TsCompiler } from '@kubit/require-ts/build/src/Compiler';
+import { getBest } from '@poppinss/colors';
 
-import { Compiler } from '../Compiler'
+import { Compiler } from '../Compiler';
 
 /**
  * List of node global properties to remove from the

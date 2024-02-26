@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { SessionManagerContract } from '@ioc:Adonis/Addons/Session'
+declare module '@ioc:Kubit/Application' {
+import { SessionManagerContract } from '@ioc:Kubit/Session';
 
-  interface ContainerBindings {
-    'Adonis/Addons/Session': SessionManagerContract
+    interface ContainerBindings {
+    'Kubit/Session': SessionManagerContract
   }
 }

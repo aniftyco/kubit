@@ -18,7 +18,7 @@ import {
   RouteMatchersNode,
   RouteMiddlewareHandler,
   RouteParamMatcher,
-} from '@ioc:Adonis/Core/Route'
+} from '@ioc:Kubit/Route'
 import { types } from '@poppinss/utils/build/helpers'
 
 import { dropSlash } from '../helpers'

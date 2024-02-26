@@ -9,15 +9,15 @@
 
 /// <reference path="../adonis-typings/session.ts" />
 
-import { createServer } from 'http'
-import supertest from 'supertest'
+import { createServer } from 'http';
+import supertest from 'supertest';
 
-import { test } from '@japa/runner'
-import { MessageBuilder } from '@poppinss/utils/build/helpers'
+import { test } from '@japa/runner';
+import { MessageBuilder } from '@poppinss/utils/build/helpers';
 
-import { SessionManager } from '../src/SessionManager'
-import { Store } from '../src/Store'
-import { fs, getRedisManager, sessionConfig, setup, unsignCookie } from '../test-helpers'
+import { SessionManager } from '../src/SessionManager';
+import { Store } from '../src/Store';
+import { fs, getRedisManager, sessionConfig, setup, unsignCookie } from '../test-helpers';
 
 test.group('Session Manager', (group) => {
   group.each.teardown(async () => {
@@ -30,7 +30,7 @@ test.group('Session Manager', (group) => {
     const manager = new SessionManager(app, config)
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = manager.create(ctx)
       await session.initiate(false)
 
@@ -49,7 +49,7 @@ test.group('Session Manager', (group) => {
     const manager = new SessionManager(app, sessionConfig)
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const session = manager.create(ctx)
       await session.initiate(false)
@@ -78,7 +78,7 @@ test.group('Session Manager', (group) => {
     const manager = new SessionManager(app, config)
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = manager.create(ctx)
       await session.initiate(false)
 
@@ -106,10 +106,10 @@ test.group('Session Manager', (group) => {
     const redis = getRedisManager(app)
     const manager = new SessionManager(app, config)
 
-    app.container.singleton('Adonis/Addons/Redis', () => redis)
+    app.container.singleton('Kubit/Redis', () => redis)
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = manager.create(ctx)
       await session.initiate(false)
 
@@ -151,15 +151,15 @@ test.group('Session Manager', (group) => {
       public destroy() {}
     }
 
-    app.container.singleton('Adonis/Addons/Redis', () => getRedisManager(app))
-    app.container.use('Adonis/Addons/Session').extend('mongo', (manager) => {
-      assert.deepEqual(app.container.use('Adonis/Addons/Session'), manager)
+    app.container.singleton('Kubit/Redis', () => getRedisManager(app))
+    app.container.use('Kubit/Session').extend('mongo', (manager) => {
+      assert.deepEqual(app.container.use('Kubit/Session'), manager)
       return new MongoDriver()
     })
 
     const session = app.container
-      .use('Adonis/Addons/Session')
-      .create(app.container.use('Adonis/Core/HttpContext').create('/', {}))
+      .use('Kubit/Session')
+      .create(app.container.use('Kubit/HttpContext').create('/', {}))
 
     await session.initiate(false)
     session.put('name', 'virk')

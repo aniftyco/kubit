@@ -11,7 +11,7 @@
 
 import Emittery from 'emittery'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import {
   AnyHandler,
   DataForEvent,
@@ -22,7 +22,7 @@ import {
   EventsList,
   TrapAllHandler,
   TrapHandler,
-} from '@ioc:Adonis/Core/Event'
+} from '@ioc:Kubit/Event'
 
 import { FakeEmitter } from '../FakeEmitter'
 import { IocResolver } from '../IocResolver'

@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application';
 
-import { setApp } from '../services/base'
+import { setApp } from '../services/base';
 
 /**
  * The application provider that sticks all core components
@@ -41,7 +41,7 @@ export default class AppProvider {
    * Register `HttpExceptionHandler` to the container.
    */
   protected registerHttpExceptionHandler() {
-    this.app.container.bind('Adonis/Core/HttpExceptionHandler', () => {
+    this.app.container.bind('Kubit/HttpExceptionHandler', () => {
       const { HttpExceptionHandler } = require('../src/HttpExceptionHandler')
       return HttpExceptionHandler
     })
@@ -51,7 +51,7 @@ export default class AppProvider {
    * Registering the health check provider
    */
   protected registerHealthCheck() {
-    this.app.container.singleton('Adonis/Core/HealthCheck', () => {
+    this.app.container.singleton('Kubit/HealthCheck', () => {
       const { HealthCheck } = require('../src/HealthCheck')
       return new HealthCheck(this.app)
     })
@@ -61,9 +61,9 @@ export default class AppProvider {
    * Registering the assets manager
    */
   protected registerAssetsManager() {
-    this.app.container.singleton('Adonis/Core/AssetsManager', () => {
+    this.app.container.singleton('Kubit/AssetsManager', () => {
       const { AssetsManager } = require('../src/AssetsManager')
-      const config = this.app.container.resolveBinding('Adonis/Core/Config').get('app.assets', {})
+      const config = this.app.container.resolveBinding('Kubit/Config').get('app.assets', {})
       return new AssetsManager(config, this.app)
     })
   }
@@ -83,19 +83,16 @@ export default class AppProvider {
     /**
      * Register the cors before hook with the server
      */
-    this.app.container.withBindings(
-      ['Adonis/Core/Config', 'Adonis/Core/Server'],
-      (Config, Server) => {
-        const config = Config.get('cors', {})
-        if (!config.enabled) {
-          return
-        }
-
-        const { Cors } = require('../src/Hooks/Cors')
-        const cors = new Cors(config)
-        Server.hooks.before(cors.handle.bind(cors))
+    this.app.container.withBindings(['Kubit/Config', 'Kubit/Server'], (Config, Server) => {
+      const config = Config.get('cors', {})
+      if (!config.enabled) {
+        return
       }
-    )
+
+      const { Cors } = require('../src/Hooks/Cors')
+      const cors = new Cors(config)
+      Server.hooks.before(cors.handle.bind(cors))
+    })
   }
 
   /**
@@ -114,7 +111,7 @@ export default class AppProvider {
      * Register the cors before hook with the server
      */
     this.app.container.withBindings(
-      ['Adonis/Core/Config', 'Adonis/Core/Server', 'Adonis/Core/Application'],
+      ['Kubit/Config', 'Kubit/Server', 'Kubit/Application'],
       (Config, Server, Application) => {
         const config = Config.get('static', {})
         if (!config.enabled) {
@@ -140,7 +137,7 @@ export default class AppProvider {
       return
     }
 
-    this.app.container.withBindings(['Adonis/Core/HealthCheck'], (healthCheck) => {
+    this.app.container.withBindings(['Kubit/HealthCheck'], (healthCheck) => {
       require('../src/HealthCheck/Checkers/Env').default(healthCheck)
       require('../src/HealthCheck/Checkers/AppKey').default(healthCheck)
     })
@@ -148,12 +145,12 @@ export default class AppProvider {
 
   /**
    * Register ace kernel to the container. When the process is started
-   * by running an ace command, then the "Adonis/Core/Ace" binding
+   * by running an ace command, then the "Kubit/Ace" binding
    * will already be in place and hence we do not overwrite it.
    */
   protected registerAceKernel() {
-    if (!this.app.container.hasBinding('Adonis/Core/Ace')) {
-      this.app.container.singleton('Adonis/Core/Ace', () => {
+    if (!this.app.container.hasBinding('Kubit/Ace')) {
+      this.app.container.singleton('Kubit/Ace', () => {
         const { Kernel } = require('@kubit/ace')
         return new Kernel(this.app)
       })
@@ -164,7 +161,7 @@ export default class AppProvider {
    * Register utilities object required during testing
    */
   protected registerTestUtils() {
-    this.app.container.singleton('Adonis/Core/TestUtils', () => {
+    this.app.container.singleton('Kubit/TestUtils', () => {
       const { TestUtils } = require('../src/TestUtils')
       return new TestUtils(this.app)
     })
@@ -185,7 +182,7 @@ export default class AppProvider {
     /**
      * Define REPL bindings
      */
-    this.app.container.withBindings(['Adonis/Addons/Repl'], (Repl) => {
+    this.app.container.withBindings(['Kubit/Repl'], (Repl) => {
       const { defineReplBindings } = require('../src/Bindings/Repl')
       defineReplBindings(this.app, Repl)
     })
@@ -196,7 +193,7 @@ export default class AppProvider {
    */
   protected defineTestsBindings() {
     this.app.container.withBindings(
-      ['Japa/Preset/ApiRequest', 'Japa/Preset/ApiClient', 'Adonis/Core/CookieClient'],
+      ['Japa/Preset/ApiRequest', 'Japa/Preset/ApiClient', 'Kubit/CookieClient'],
       (ApiRequest, ApiClient, CookieClient) => {
         const { defineTestsBindings } = require('../src/Bindings/Tests')
         defineTestsBindings(ApiRequest, ApiClient, CookieClient)

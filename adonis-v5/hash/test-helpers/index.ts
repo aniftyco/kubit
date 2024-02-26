@@ -1,5 +1,6 @@
 import { Scrypt } from '../src/Drivers/Scrypt'
-import type { ScryptConfig } from '@ioc:Adonis/Core/Hash'
+
+import type { ScryptConfig } from '@ioc:Kubit/Hash'
 
 export function scryptFactory(options?: Partial<ScryptConfig>): Scrypt {
   return new Scrypt({

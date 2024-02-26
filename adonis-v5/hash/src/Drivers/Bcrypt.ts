@@ -11,7 +11,7 @@
 
 import bcrypt from 'phc-bcrypt'
 
-import { BcryptConfig, BcryptContract } from '@ioc:Adonis/Core/Hash'
+import { BcryptConfig, BcryptContract } from '@ioc:Kubit/Hash'
 import phc from '@phc/format'
 
 /**

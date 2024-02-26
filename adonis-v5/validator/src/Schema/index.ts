@@ -22,7 +22,7 @@ import {
   SchemaRef,
   StringType,
   TypedSchema,
-} from '@ioc:Adonis/Core/Validator'
+} from '@ioc:Kubit/Validator'
 
 import { getArrayType, getLiteralType, getObjectType } from '../utils'
 

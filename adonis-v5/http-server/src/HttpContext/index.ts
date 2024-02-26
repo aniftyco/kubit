@@ -14,13 +14,13 @@ import { Macroable } from 'macroable'
 import { Socket } from 'net'
 import { inspect } from 'util'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { LoggerContract } from '@ioc:Adonis/Core/Logger'
-import { ProfilerRowContract } from '@ioc:Adonis/Core/Profiler'
-import { RequestContract } from '@ioc:Adonis/Core/Request'
-import { ResponseContract } from '@ioc:Adonis/Core/Response'
-import { RouteNode } from '@ioc:Adonis/Core/Route'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+import { LoggerContract } from '@ioc:Kubit/Logger'
+import { ProfilerRowContract } from '@ioc:Kubit/Profiler'
+import { RequestContract } from '@ioc:Kubit/Request'
+import { ResponseContract } from '@ioc:Kubit/Response'
+import { RouteNode } from '@ioc:Kubit/Route'
 import matchit from '@poppinss/matchit'
 import { Exception } from '@poppinss/utils'
 
@@ -166,10 +166,10 @@ export class HttpContext extends Macroable implements HttpContextContract {
     req?: IncomingMessage,
     res?: ServerResponse
   ) {
-    const Router = HttpContext.app.container.resolveBinding('Adonis/Core/Route')
-    const Encryption = HttpContext.app.container.resolveBinding('Adonis/Core/Encryption')
+    const Router = HttpContext.app.container.resolveBinding('Kubit/Route')
+    const Encryption = HttpContext.app.container.resolveBinding('Kubit/Encryption')
     const serverConfig = HttpContext.app.container
-      .resolveBinding('Adonis/Core/Config')
+      .resolveBinding('Kubit/Config')
       .get('app.http', {})
 
     req = req || new IncomingMessage(new Socket())

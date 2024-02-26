@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/CookieClient' {
+declare module '@ioc:Kubit/CookieClient' {
   export interface CookieClientContract {
     /**
      * Encrypt a key value pair to be sent in the cookie header

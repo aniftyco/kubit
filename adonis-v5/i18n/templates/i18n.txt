@@ -5,8 +5,8 @@
  * file.
  */
 
-import Application from '@ioc:Adonis/Core/Application'
-import { I18nConfig } from '@ioc:Adonis/Addons/I18n'
+import Application from '@ioc:Kubit/Application'
+import { I18nConfig } from '@ioc:Kubit/I18n'
 
 const i18nConfig: I18nConfig = {
   /*
@@ -69,7 +69,7 @@ const i18nConfig: I18nConfig = {
   | Fallback function if no identifier is found
   |--------------------------------------------------------------------------
   |
-  | The following function will be set as a fallback function if the 
+  | The following function will be set as a fallback function if the
   | translation is not found.
   |
   |

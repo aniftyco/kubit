@@ -10,8 +10,8 @@
 import cookie, { CookieSerializeOptions } from 'cookie'
 import ms from 'ms'
 
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
-import { CookieOptions } from '@ioc:Adonis/Core/Response'
+import { EncryptionContract } from '@ioc:Kubit/Encryption'
+import { CookieOptions } from '@ioc:Kubit/Response'
 
 import { CookieClient } from '../Client'
 

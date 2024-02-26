@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { CompilerOutput } from '@ioc:Adonis/Core/Validator'
+import { CompilerOutput } from '@ioc:Kubit/Validator'
 
 import { VanillaErrorReporter } from '../src/ErrorReporter/Vanilla'
 import { MessagesBag } from '../src/MessagesBag'

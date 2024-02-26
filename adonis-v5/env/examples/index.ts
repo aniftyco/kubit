@@ -1,4 +1,5 @@
-import Env from '@ioc:Adonis/Core/Env'
+import Env from '@ioc:Kubit/Env'
+
 const values = Env.rules({
   PORT: Env.schema.number(),
   HOST: Env.schema.string(),

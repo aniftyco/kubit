@@ -1,5 +1,7 @@
-import { AssetsDriverContract } from '@ioc:Adonis/Core/AssetsManager'
 import { join } from 'path'
+
+import { AssetsDriverContract } from '@ioc:Kubit/AssetsManager'
+
 import { BaseDriver } from './Base'
 
 /**

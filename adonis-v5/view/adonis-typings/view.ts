@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/View' {
+declare module '@ioc:Kubit/View' {
   import { EdgeContract, EdgeRendererContract } from 'edge.js'
 
   export interface ViewContract extends EdgeContract {}

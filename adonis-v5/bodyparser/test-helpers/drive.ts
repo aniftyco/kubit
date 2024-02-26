@@ -1,4 +1,4 @@
-declare module '@ioc:Adonis/Core/Drive' {
+declare module '@ioc:Kubit/Drive' {
   interface DisksList {
     local: {
       implementation: LocalDriverContract

@@ -11,8 +11,8 @@ import 'reflect-metadata'
 
 import stripAnsi from 'strip-ansi'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { RouterContract } from '@ioc:Adonis/Core/Route'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { RouterContract } from '@ioc:Kubit/Route'
 import { test } from '@japa/runner'
 import { Kernel } from '@kubit/ace'
 import { Application } from '@kubit/application'
@@ -39,7 +39,7 @@ test.group('Command | List Routes Pretty', (group) => {
   group.each.setup(async () => {
     app = new Application(__dirname, 'test', {})
     router = new Router({} as any, precompiler.compileRoute.bind(precompiler))
-    app.container.bind('Adonis/Core/Route', () => router)
+    app.container.bind('Kubit/Route', () => router)
 
     listRoutes = new ListRoutes(app, new Kernel(app))
     listRoutes.logger.useRenderer(testingRenderer)

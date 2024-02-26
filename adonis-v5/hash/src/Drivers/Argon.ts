@@ -11,7 +11,7 @@
 
 import argon2 from 'phc-argon2'
 
-import { ArgonConfig, ArgonContract } from '@ioc:Adonis/Core/Hash'
+import { ArgonConfig, ArgonContract } from '@ioc:Kubit/Hash'
 import phc from '@phc/format'
 
 /**

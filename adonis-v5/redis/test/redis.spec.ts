@@ -9,11 +9,11 @@
 
 /// <reference path="../adonis-typings/redis.ts" />
 
-import { RedisManagerContract } from '@ioc:Adonis/Addons/Redis'
-import { test } from '@japa/runner'
-import { Application, Emitter } from '@kubit/core/build/standalone'
+import { RedisManagerContract } from '@ioc:Kubit/Redis';
+import { test } from '@japa/runner';
+import { Application, Emitter } from '@kubit/core/build/standalone';
 
-import { RedisManager } from '../src/RedisManager'
+import { RedisManager } from '../src/RedisManager';
 
 const clusterNodes = process.env.REDIS_CLUSTER_PORTS!.split(',').map((port) => {
   return { host: process.env.REDIS_HOST!, port: Number(port) }

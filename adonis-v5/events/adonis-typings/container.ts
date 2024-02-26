@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { EmitterContract } from '@ioc:Adonis/Core/Event'
+declare module '@ioc:Kubit/Application' {
+  import { EmitterContract } from '@ioc:Kubit/Event'
 
   export interface ContainerBindings {
-    'Adonis/Core/Event': EmitterContract
+    'Kubit/Event': EmitterContract
   }
 }

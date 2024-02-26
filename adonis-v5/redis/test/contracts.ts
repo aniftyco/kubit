@@ -1,4 +1,4 @@
-declare module '@ioc:Adonis/Addons/Redis' {
+declare module '@ioc:Kubit/Redis' {
   export interface RedisConnectionsList {
     primary: RedisConnectionConfig
     cluster: RedisClusterConfig

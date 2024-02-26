@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import validator from '@ioc:Adonis/Core/Validator'
+declare module '@ioc:Kubit/Application' {
+  import validator from '@ioc:Kubit/Validator'
 
   export interface ContainerBindings {
-    'Adonis/Core/Validator': typeof validator
+    'Kubit/Validator': typeof validator
   }
 }

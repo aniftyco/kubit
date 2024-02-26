@@ -5,7 +5,7 @@
  * file.
  */
 
-import { ShieldConfig } from '@ioc:Adonis/Addons/Shield'
+import { ShieldConfig } from '@ioc:Kubit/Shield'
 
 /*
 |--------------------------------------------------------------------------

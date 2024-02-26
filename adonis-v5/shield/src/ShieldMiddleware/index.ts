@@ -7,27 +7,27 @@
  * file that was distributed with this source code.
  */
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 import { inject } from '@kubit/core/build/standalone'
 
 import * as shield from '../../standalone'
 
-import type { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import type { ApplicationContract } from '@ioc:Kubit/Application'
 
 /**
  * Shield middleware to protect web applications against common
  * web attacks
  */
-@inject(['Adonis/Core/Application'])
+@inject(['Kubit/Application'])
 export class ShieldMiddleware {
-  private config = this.application.container.resolveBinding('Adonis/Core/Config').get('shield', {})
-  private encryption = this.application.container.resolveBinding('Adonis/Core/Encryption')
+  private config = this.application.container.resolveBinding('Kubit/Config').get('shield', {})
+  private encryption = this.application.container.resolveBinding('Kubit/Encryption')
 
   /**
    * Resolve view provider, when exists
    */
-  private view = this.application.container.hasBinding('Adonis/Core/View')
-    ? this.application.container.resolveBinding('Adonis/Core/View')
+  private view = this.application.container.hasBinding('Kubit/View')
+    ? this.application.container.resolveBinding('Kubit/View')
     : undefined
 
   /**

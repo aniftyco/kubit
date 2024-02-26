@@ -9,7 +9,7 @@
 
 import { DateTime } from 'luxon'
 
-import { DurationUnits, ParsedRule, SchemaRef } from '@ioc:Adonis/Core/Validator'
+import { DurationUnits, ParsedRule, SchemaRef } from '@ioc:Kubit/Validator'
 import { test } from '@japa/runner'
 
 import { ApiErrorReporter } from '../../src/ErrorReporter'

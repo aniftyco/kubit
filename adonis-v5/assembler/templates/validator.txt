@@ -1,5 +1,5 @@
-import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator'
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { schema, CustomMessages } from '@ioc:Kubit/Validator'
+import type { HttpContextContract } from '@ioc:Kubit/HttpContext'
 
 export default class {{ filename }} {
   constructor(protected ctx: HttpContextContract) {}

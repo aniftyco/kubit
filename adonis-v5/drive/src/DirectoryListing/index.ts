@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { DirectoryListingContract, DriveListItem, DriverContract } from '@ioc:Adonis/Core/Drive'
+import { DirectoryListingContract, DriveListItem, DriverContract } from '@ioc:Kubit/Drive'
 
 /**
  * Directory listing exposes the API to list directory contents using async iterators

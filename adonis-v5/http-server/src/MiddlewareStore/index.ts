@@ -9,12 +9,12 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 import {
   MiddlewareHandler,
   MiddlewareStoreContract,
   ResolvedMiddlewareHandler,
-} from '@ioc:Adonis/Core/Middleware'
+} from '@ioc:Kubit/Middleware'
 import { IocContract, IocResolverContract } from '@kubit/fold'
 
 /**

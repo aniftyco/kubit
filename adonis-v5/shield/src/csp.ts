@@ -9,12 +9,12 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import helmetCsp, { ContentSecurityPolicyOptions } from 'helmet-csp'
+import helmetCsp, { ContentSecurityPolicyOptions } from 'helmet-csp';
 
-import { CspOptions } from '@ioc:Adonis/Addons/Shield'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
+import { CspOptions } from '@ioc:Kubit/Shield';
 
-import { noop } from './noop'
+import { noop } from './noop';
 
 type ValueOf<T> = T[keyof T]
 

@@ -9,7 +9,7 @@
 
 import { DateTime } from 'luxon'
 
-import { ValidationRuntimeOptions } from '@ioc:Adonis/Core/Validator'
+import { ValidationRuntimeOptions } from '@ioc:Kubit/Validator'
 
 import { getFieldValue } from '../../../Validator/helpers'
 import { toLuxon } from './toLuxon'

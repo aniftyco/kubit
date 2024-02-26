@@ -7,20 +7,20 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { CookieClientContract } from '@ioc:Adonis/Core/CookieClient'
-  import { HttpContextConstructorContract } from '@ioc:Adonis/Core/HttpContext'
-  import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
-  import { ResponseConstructorContract } from '@ioc:Adonis/Core/Response'
-  import { RouterContract } from '@ioc:Adonis/Core/Route'
-  import { ServerContract } from '@ioc:Adonis/Core/Server'
+declare module '@ioc:Kubit/Application' {
+  import { CookieClientContract } from '@ioc:Kubit/CookieClient'
+  import { HttpContextConstructorContract } from '@ioc:Kubit/HttpContext'
+  import { RequestConstructorContract } from '@ioc:Kubit/Request'
+  import { ResponseConstructorContract } from '@ioc:Kubit/Response'
+  import { RouterContract } from '@ioc:Kubit/Route'
+  import { ServerContract } from '@ioc:Kubit/Server'
 
   export interface ContainerBindings {
-    'Adonis/Core/Route': RouterContract
-    'Adonis/Core/Server': ServerContract
-    'Adonis/Core/CookieClient': CookieClientContract
-    'Adonis/Core/Request': RequestConstructorContract
-    'Adonis/Core/Response': ResponseConstructorContract
-    'Adonis/Core/HttpContext': HttpContextConstructorContract
+    'Kubit/Route': RouterContract
+    'Kubit/Server': ServerContract
+    'Kubit/CookieClient': CookieClientContract
+    'Kubit/Request': RequestConstructorContract
+    'Kubit/Response': ResponseConstructorContract
+    'Kubit/HttpContext': HttpContextConstructorContract
   }
 }

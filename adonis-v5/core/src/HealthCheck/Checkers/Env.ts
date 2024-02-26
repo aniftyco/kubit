@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { HealthCheckContract } from '@ioc:Adonis/Core/HealthCheck'
+import { HealthCheckContract } from '@ioc:Kubit/HealthCheck'
 
 /**
  * Message for missing app key

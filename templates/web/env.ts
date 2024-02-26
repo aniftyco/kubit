@@ -12,7 +12,7 @@
 |
 */
 
-import Env from '@ioc:Adonis/Core/Env';
+import Env from '@ioc:Kubit/Env';
 
 export default Env.rules({
   HOST: Env.schema.string({ format: 'host' }),

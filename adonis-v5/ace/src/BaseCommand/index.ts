@@ -9,7 +9,7 @@
 
 import { ParsedOptions } from 'getopts'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import { instantiate } from '@poppinss/cliui/build/api'
 import { FakePrompt, Prompt } from '@poppinss/prompts'
 import { defineStaticProperty, Exception } from '@poppinss/utils'

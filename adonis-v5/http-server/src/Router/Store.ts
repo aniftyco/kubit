@@ -17,7 +17,7 @@ import {
   RouteNode,
   RouteStoreMatch,
   RoutesTree,
-} from '@ioc:Adonis/Core/Route'
+} from '@ioc:Kubit/Route'
 import matchit from '@poppinss/matchit'
 import { lodash } from '@poppinss/utils'
 

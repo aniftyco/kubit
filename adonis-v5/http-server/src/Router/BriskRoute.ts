@@ -16,7 +16,7 @@ import {
   MakeUrlOptions,
   RouteHandler,
   RouteMatchersNode,
-} from '@ioc:Adonis/Core/Route'
+} from '@ioc:Kubit/Route'
 import { Exception } from '@poppinss/utils'
 
 import { Route } from './Route'

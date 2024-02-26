@@ -29,7 +29,7 @@ test.group('Cookie driver', (group) => {
     const sessionId = '1234'
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = new CookieDriver(sessionConfig, ctx)
       const value = session.read(sessionId)
       assert.isNull(value)
@@ -46,7 +46,7 @@ test.group('Cookie driver', (group) => {
     const sessionId = '1234'
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = new CookieDriver(sessionConfig, ctx)
       const value = session.read(sessionId)
       assert.isNull(value)
@@ -61,7 +61,7 @@ test.group('Cookie driver', (group) => {
     const sessionId = '1234'
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const session = new CookieDriver(sessionConfig, ctx)
       const value = session.read(sessionId)
@@ -83,7 +83,7 @@ test.group('Cookie driver', (group) => {
     const sessionId = '1234'
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const session = new CookieDriver(sessionConfig, ctx)
       session.write(sessionId, { message: 'hello-world' })
@@ -101,7 +101,7 @@ test.group('Cookie driver', (group) => {
     const sessionId = '1234'
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const session = new CookieDriver(sessionConfig, ctx)
       session.touch(sessionId)

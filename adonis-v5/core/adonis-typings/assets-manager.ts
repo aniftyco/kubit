@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/AssetsManager' {
-  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+declare module '@ioc:Kubit/AssetsManager' {
+  import { ApplicationContract } from '@ioc:Kubit/Application'
 
   /**
    * Shape of the extend callback

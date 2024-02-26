@@ -1,6 +1,7 @@
+import { ErrorReporterConstructorContract } from '@ioc:Kubit/Validator'
 import { test } from '@japa/runner'
+
 import { MessagesBag } from '../../../src/MessagesBag'
-import { ErrorReporterConstructorContract } from '@ioc:Adonis/Core/Validator'
 
 /**
  * Ensure errors are collected

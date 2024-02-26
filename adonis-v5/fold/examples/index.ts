@@ -1,18 +1,18 @@
 // import { IocContract } from '../src/Contracts'
 
 // type Bindings = {
-//   'Adonis/Core/Server': { http: true }
-//   'Adonis/Core/Request': { url: string }
+//   'Kubit/Server': { http: true }
+//   'Kubit/Request': { url: string }
 // }
 // const ioc = {} as IocContract<Bindings>
 
-// ioc.bind('Adonis/Core/Request', () => {
+// ioc.bind('Kubit/Request', () => {
 //   return {
 //     url: '/',
 //   }
 // })
 
-// ioc.fake('Adonis/Core/Request', (container, originalValue) => {
+// ioc.fake('Kubit/Request', (container, originalValue) => {
 //   return {
 //     url: '/',
 //   }
@@ -20,17 +20,17 @@
 
 // ioc.use('foo')
 
-// ioc.fake('Adonis/Core/Request', () => {
+// ioc.fake('Kubit/Request', () => {
 //   return {
 //     url: '/',
 //   }
 // })
 
-// ioc.use('Adonis/Core/Request').url
-// ioc.use({ namespace: 'Adonis/Core/Request', type: 'binding' }).url
+// ioc.use('Kubit/Request').url
+// ioc.use({ namespace: 'Kubit/Request', type: 'binding' }).url
 
-// ioc.make('Adonis/Core/Request').url
-// ioc.make({ namespace: 'Adonis/Core/Request', type: 'binding' }).url
+// ioc.make('Kubit/Request').url
+// ioc.make({ namespace: 'Kubit/Request', type: 'binding' }).url
 
 // class Foo {
 //   public foo = 'foo'
@@ -43,17 +43,17 @@
 //   public foo = 'foo'
 // }
 
-// ioc.make('Adonis/Core/Request').url
+// ioc.make('Kubit/Request').url
 // ioc.make(Foo).foo
 // ioc.make(FooPlain).makePlain
 
-// ioc.hasFake('Adonis/Core/Request')
+// ioc.hasFake('Kubit/Request')
 // ioc.hasFake('foo')
 
-// ioc.hasBinding('Adonis/Core/Request')
+// ioc.hasBinding('Kubit/Request')
 // ioc.hasBinding('foo')
 
-// ioc.with(['Adonis/Core/Request', 'foo'], (req, foo) => {
+// ioc.with(['Kubit/Request', 'foo'], (req, foo) => {
 //   req.url
 //   foo
 // })

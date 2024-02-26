@@ -100,16 +100,16 @@ export async function setupApp(additionalProviders?: string[], serveAssets: bool
 }
 
 export async function registerBodyParserMiddleware(app: Application) {
-  app.container.use('Adonis/Core/Server').middleware.clear()
-  app.container.use('Adonis/Core/Server').middleware.register([
+  app.container.use('Kubit/Server').middleware.clear()
+  app.container.use('Kubit/Server').middleware.register([
     async () => {
       return {
-        default: app.container.use('Adonis/Core/BodyParser'),
+        default: app.container.use('Kubit/BodyParser'),
       }
     },
   ])
 
-  app.container.use('Adonis/Core/Config').set('bodyparser', {
+  app.container.use('Kubit/Config').set('bodyparser', {
     whitelistedMethods: ['POST', 'PUT', 'PATCH', 'DELETE'],
     json: {
       types: [],

@@ -34,8 +34,8 @@ test.group('Drive Manager', (group) => {
       },
     }
 
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
     const drive = new DriveManager(app, router, logger, config)
     assert.isFalse(await drive.use('local').exists('foo.txt'))
   })
@@ -55,8 +55,8 @@ test.group('Drive Manager', (group) => {
       },
     }
 
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
     const drive = new DriveManager(app, router, logger, config)
 
     await drive.put('foo.txt', 'hello world')
@@ -101,8 +101,8 @@ test.group('Drive Manager', (group) => {
       }
     }
 
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
     const drive = new DriveManager(app, router, logger, config)
     drive.extend('s3', () => new DummyS3() as any)
 
@@ -124,8 +124,8 @@ test.group('Drive Manager', (group) => {
       },
     }
 
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
     const drive = new DriveManager(app, router, logger, config)
     const fakeDrive = drive.fake()
     assert.equal(drive.use().name, 'fake')
@@ -176,8 +176,8 @@ test.group('Drive Manager', (group) => {
       },
     }
 
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
     const drive = new DriveManager(app, router, logger, config)
     const fakeDrive = drive.fake()
 
@@ -213,8 +213,8 @@ test.group('Drive Manager', (group) => {
       },
     }
 
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
     const drive = new DriveManager(app, router, logger, config)
     const fakeDrive = drive.fake()
 
@@ -248,8 +248,8 @@ test.group('Drive Manager', (group) => {
       },
     }
 
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
     const drive = new DriveManager(app, router, logger, config)
     drive.fake()
 
@@ -276,8 +276,8 @@ test.group('Drive Manager', (group) => {
       },
     }
 
-    const router = app.container.resolveBinding('Adonis/Core/Route')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const router = app.container.resolveBinding('Kubit/Route')
+    const logger = app.container.resolveBinding('Kubit/Logger')
     const drive = new DriveManager(app, router, logger, config)
     drive.fake()
     assert.equal(drive.use().name, 'fake')

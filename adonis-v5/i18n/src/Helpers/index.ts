@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { MissingTranslationEventData } from '@ioc:Adonis/Addons/I18n'
+import { MissingTranslationEventData } from '@ioc:Kubit/I18n';
 
 /**
  * Pretty prints the missing translation message on the console

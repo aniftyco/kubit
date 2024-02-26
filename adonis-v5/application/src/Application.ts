@@ -20,7 +20,7 @@ import {
   PreloadNode,
   RcFile,
   SemverNode,
-} from '@ioc:Adonis/Core/Application'
+} from '@ioc:Kubit/Application'
 import { Config } from '@kubit/config'
 import { Env, envLoader, EnvParser } from '@kubit/env'
 import { Ioc, Registrar } from '@kubit/fold'
@@ -325,7 +325,7 @@ export class Application implements ApplicationContract {
    * Registering itself to the container
    */
   private registerItselfToTheContainer() {
-    this.container.singleton('Adonis/Core/Application', () => this)
+    this.container.singleton('Kubit/Application', () => this)
   }
 
   /**
@@ -383,7 +383,7 @@ export class Application implements ApplicationContract {
       { values: new EnvParser(true).parse(envContents), overwriteExisting: false },
       { values: new EnvParser(false).parse(testEnvContent), overwriteExisting: true },
     ])
-    this.container.singleton('Adonis/Core/Env', () => this.env)
+    this.container.singleton('Kubit/Env', () => this.env)
 
     /**
      * Attempt to load `env.(ts|js)` files to setup the validation rules
@@ -406,33 +406,33 @@ export class Application implements ApplicationContract {
    */
   private loadConfig() {
     this.config = new Config(helpers.requireAll(this.configPath()))
-    this.container.singleton('Adonis/Core/Config', () => this.config)
+    this.container.singleton('Kubit/Config', () => this.config)
   }
 
   /**
    * Setup logger
    */
   private setupLogger() {
-    const config = this.container.resolveBinding('Adonis/Core/Config').get('app.logger', {})
+    const config = this.container.resolveBinding('Kubit/Config').get('app.logger', {})
     this.logger = new Logger(config)
-    this.container.singleton('Adonis/Core/Logger', () => this.logger)
+    this.container.singleton('Kubit/Logger', () => this.logger)
   }
 
   /**
    * Setup profiler
    */
   private setupProfiler() {
-    const config = this.container.resolveBinding('Adonis/Core/Config').get('app.profiler', {})
-    const logger = this.container.resolveBinding('Adonis/Core/Logger')
+    const config = this.container.resolveBinding('Kubit/Config').get('app.profiler', {})
+    const logger = this.container.resolveBinding('Kubit/Logger')
     this.profiler = new Profiler(this.appRoot, logger, config)
-    this.container.singleton('Adonis/Core/Profiler', () => this.profiler)
+    this.container.singleton('Kubit/Profiler', () => this.profiler)
   }
 
   /**
    * Setup helpers
    */
   private setupHelpers() {
-    this.container.bind('Adonis/Core/Helpers', () => helpers)
+    this.container.bind('Kubit/Helpers', () => helpers)
   }
 
   /**

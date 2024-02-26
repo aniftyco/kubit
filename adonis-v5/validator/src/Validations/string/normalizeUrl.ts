@@ -9,7 +9,7 @@
 
 import { default as normalize } from 'normalize-url'
 
-import { SyncValidation, UrlNormalizationOptions } from '@ioc:Adonis/Core/Validator'
+import { SyncValidation, UrlNormalizationOptions } from '@ioc:Kubit/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
 

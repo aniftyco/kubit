@@ -9,8 +9,8 @@
 
 /// <reference path="../../../adonis-typings/index.ts" />
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { HookHandler, HooksContract } from '@ioc:Adonis/Core/Server'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+import { HookHandler, HooksContract } from '@ioc:Kubit/Server'
 
 /**
  * Exposes to API to register and execute before and after hooks

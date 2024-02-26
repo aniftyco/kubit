@@ -7,15 +7,15 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Server' {
+declare module '@ioc:Kubit/Server' {
   import { IncomingMessage, Server as HttpServer, ServerResponse } from 'http'
   import { Server as HttpsServer } from 'https'
 
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-  import { MiddlewareStoreContract } from '@ioc:Adonis/Core/Middleware'
-  import { RequestConfig } from '@ioc:Adonis/Core/Request'
-  import { ResponseConfig } from '@ioc:Adonis/Core/Response'
-  import { RouterContract } from '@ioc:Adonis/Core/Route'
+  import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+  import { MiddlewareStoreContract } from '@ioc:Kubit/Middleware'
+  import { RequestConfig } from '@ioc:Kubit/Request'
+  import { ResponseConfig } from '@ioc:Kubit/Response'
+  import { RouterContract } from '@ioc:Kubit/Route'
 
   /**
    * Before hooks are executed before finding the route or finding

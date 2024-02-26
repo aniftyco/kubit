@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { StringFnOptions, StringFnUrlOptions } from '@ioc:Adonis/Core/Env'
+import { StringFnOptions, StringFnUrlOptions } from '@ioc:Kubit/Env'
 import { Exception } from '@poppinss/utils'
 
 import { ensureValue } from './helpers'

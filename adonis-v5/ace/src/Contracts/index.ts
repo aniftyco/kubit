@@ -9,7 +9,7 @@
 
 import { ParsedOptions } from 'getopts'
 
-import { AppEnvironments, ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { AppEnvironments, ApplicationContract } from '@ioc:Kubit/Application'
 import * as ui from '@poppinss/cliui'
 import { PromptContract } from '@poppinss/prompts'
 

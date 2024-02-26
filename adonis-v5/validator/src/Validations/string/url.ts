@@ -10,7 +10,7 @@
 import normalizeUrl from 'normalize-url'
 import isUrl, { IsURLOptions } from 'validator/lib/isURL'
 
-import { SyncValidation, UrlOptions } from '@ioc:Adonis/Core/Validator'
+import { SyncValidation, UrlOptions } from '@ioc:Kubit/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
 

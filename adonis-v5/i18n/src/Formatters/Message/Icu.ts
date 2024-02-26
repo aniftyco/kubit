@@ -9,14 +9,12 @@
 
 /// <reference path="../../../adonis-typings/index.ts" />
 
-import { Formats, IntlMessageFormat } from 'intl-messageformat'
+import { Formats, IntlMessageFormat } from 'intl-messageformat';
 
 import {
-  NumberFormatOptions,
-  TimeFormatOptions,
-  TranslationsFormatterContract,
-} from '@ioc:Adonis/Addons/I18n'
-import { formatters } from '@poppinss/intl-formatter'
+    NumberFormatOptions, TimeFormatOptions, TranslationsFormatterContract
+} from '@ioc:Kubit/I18n';
+import { formatters } from '@poppinss/intl-formatter';
 
 /**
  * Formatters for ICU message. We need the memoized

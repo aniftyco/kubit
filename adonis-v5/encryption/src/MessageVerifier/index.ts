@@ -11,7 +11,7 @@
 
 import { createHash } from 'crypto'
 
-import { MessageVerifierContract } from '@ioc:Adonis/Core/Encryption'
+import { MessageVerifierContract } from '@ioc:Kubit/Encryption'
 import { Exception } from '@poppinss/utils'
 import { base64, MessageBuilder } from '@poppinss/utils/build/helpers'
 

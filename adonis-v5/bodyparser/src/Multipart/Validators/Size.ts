@@ -11,7 +11,7 @@
 
 import bytes from 'bytes'
 
-import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
+import { MultipartFileContract } from '@ioc:Kubit/BodyParser'
 
 /**
  * Size validator validates the file size

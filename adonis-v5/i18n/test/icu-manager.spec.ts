@@ -20,8 +20,8 @@ test.group('I18nManager', (group) => {
 
   test('get i18n instance using manager', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     const i18nManager = new I18nManager(app, emitter, logger, {
       defaultLocale: 'en',
@@ -41,8 +41,8 @@ test.group('I18nManager', (group) => {
 
   test('format message using identifier', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -72,8 +72,8 @@ test.group('I18nManager', (group) => {
 
   test('do not load messages when loader is disabled', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -103,8 +103,8 @@ test.group('I18nManager', (group) => {
 
   test('reload messages', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add('resources/lang/en/messages.json', JSON.stringify({}))
 
@@ -147,8 +147,8 @@ test.group('I18nManager', (group) => {
 
   test('add a custom loader', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -198,8 +198,8 @@ test.group('I18nManager', (group) => {
 
   test('add a custom formatter', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -238,8 +238,8 @@ test.group('I18nManager', (group) => {
 
   test('raise error when formatter is missing', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -270,8 +270,8 @@ test.group('I18nManager', (group) => {
     assert.plan(1)
 
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -300,8 +300,8 @@ test.group('I18nManager', (group) => {
 
   test('return supported languages', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -328,8 +328,8 @@ test.group('I18nManager', (group) => {
 
   test('return supported languages when multiple loaders are configured', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -374,8 +374,8 @@ test.group('I18nManager', (group) => {
 
   test('return supported configured via config', async ({ assert }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',
@@ -405,8 +405,8 @@ test.group('I18nManager', (group) => {
     assert,
   }) => {
     const app = await setup()
-    const emitter = app.container.resolveBinding('Adonis/Core/Event')
-    const logger = app.container.resolveBinding('Adonis/Core/Logger')
+    const emitter = app.container.resolveBinding('Kubit/Event')
+    const logger = app.container.resolveBinding('Kubit/Logger')
 
     await fs.add(
       'resources/lang/en/messages.json',

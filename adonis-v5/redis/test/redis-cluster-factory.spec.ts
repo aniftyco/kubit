@@ -9,11 +9,11 @@
 
 /// <reference path="../adonis-typings/redis.ts" />
 
-import { RedisClusterConnectionContract } from '@ioc:Adonis/Addons/Redis'
-import { test } from '@japa/runner'
-import { Application } from '@kubit/core/build/standalone'
+import { RedisClusterConnectionContract } from '@ioc:Kubit/Redis';
+import { test } from '@japa/runner';
+import { Application } from '@kubit/core/build/standalone';
 
-import { RedisClusterConnection } from '../src/RedisClusterConnection'
+import { RedisClusterConnection } from '../src/RedisClusterConnection';
 
 const nodes = process.env.REDIS_CLUSTER_PORTS!.split(',').map((port) => {
   return { host: process.env.REDIS_HOST!, port: Number(port) }

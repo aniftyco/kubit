@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Middleware' {
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+declare module '@ioc:Kubit/Middleware' {
+  import { HttpContextContract } from '@ioc:Kubit/HttpContext'
   import { IocContract } from '@kubit/fold'
 
   export type DefaultExport<T> = Promise<{ default: T }>

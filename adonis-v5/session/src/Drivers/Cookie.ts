@@ -9,8 +9,8 @@
 
 /// <reference path="../../adonis-typings/session.ts" />
 
-import { SessionConfig, SessionDriverContract } from '@ioc:Adonis/Addons/Session'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
+import { SessionConfig, SessionDriverContract } from '@ioc:Kubit/Session';
 
 /**
  * Cookie driver utilizes the encrypted HTTP cookies to write session value.

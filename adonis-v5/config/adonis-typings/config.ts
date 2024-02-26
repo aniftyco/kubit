@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Config' {
+declare module '@ioc:Kubit/Config' {
   /**
    * The config module de-couples the application configuration from the filesystem
    * and offers a unified API to read the application configuration. For example:
@@ -23,7 +23,7 @@ declare module '@ioc:Adonis/Core/Config' {
    *
    * @example
    * ```ts
-   * import Config from '@ioc:Adonis/Core/Config'
+   * import Config from '@ioc:Kubit/Config'
    * ```
    */
   export interface ConfigContract {

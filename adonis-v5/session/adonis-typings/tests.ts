@@ -7,11 +7,11 @@
  * file that was distributed with this source code.
  */
 
-import '@japa/api-client'
+import '@japa/api-client';
 
-import { InspectOptions } from 'util'
+import { InspectOptions } from 'util';
 
-import { AllowedSessionValues, SessionClientContract } from '@ioc:Adonis/Addons/Session'
+import { AllowedSessionValues, SessionClientContract } from '@ioc:Kubit/Session';
 
 declare module '@japa/api-client' {
   export interface ApiRequest {

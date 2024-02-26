@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { FileValidationOptions } from '@ioc:Adonis/Core/BodyParser'
+import { FileValidationOptions } from '@ioc:Kubit/BodyParser'
 import { test } from '@japa/runner'
 import { File } from '@kubit/bodyparser/build/src/Multipart/File'
 

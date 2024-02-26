@@ -46,7 +46,7 @@ export class IocResolver implements IocResolverContract<any> {
      * way for us to read rcFile namespaces and hence we use the fallback
      * namespace
      */
-    if (!this.container.hasBinding('Adonis/Core/Application')) {
+    if (!this.container.hasBinding('Kubit/Application')) {
       return this.fallbackNamespace
     }
 
@@ -58,7 +58,7 @@ export class IocResolver implements IocResolverContract<any> {
      * }
      * We will use the value next to the `controllers` key
      */
-    const application = this.container.use('Adonis/Core/Application')
+    const application = this.container.use('Kubit/Application')
     return application.namespacesMap.get(this.rcNamespaceKey) || this.fallbackNamespace
   }
 

@@ -37,7 +37,7 @@ test.group('Session Client', (group) => {
     const { signedSessionId, cookieName } = await client.commit()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = manager.create(ctx)
       await session.initiate(false)
 
@@ -60,7 +60,7 @@ test.group('Session Client', (group) => {
     const { signedSessionId, cookieName } = await client.commit()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = manager.create(ctx)
       await session.initiate(false)
 
@@ -83,7 +83,7 @@ test.group('Session Client', (group) => {
     const { signedSessionId, cookieName } = await client.commit()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = manager.create(ctx)
       await session.initiate(false)
 
@@ -100,14 +100,14 @@ test.group('Session Client', (group) => {
 
     const config = Object.assign({}, sessionConfig, { driver: 'memory', clearWithBrowser: true })
     const manager = new SessionManager(app, config)
-    const cookieClient = app.container.resolveBinding('Adonis/Core/CookieClient')
+    const cookieClient = app.container.resolveBinding('Kubit/CookieClient')
 
     const client = manager.client()
     client.set('username', 'virk')
     const { signedSessionId, cookieName } = await client.commit()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = manager.create(ctx)
       await session.initiate(false)
       session.put('age', 22)
@@ -140,13 +140,13 @@ test.group('Session Client', (group) => {
 
     const config = Object.assign({}, sessionConfig, { driver: 'memory', clearWithBrowser: true })
     const manager = new SessionManager(app, config)
-    const cookieClient = app.container.resolveBinding('Adonis/Core/CookieClient')
+    const cookieClient = app.container.resolveBinding('Kubit/CookieClient')
 
     const client = manager.client()
     const { signedSessionId, cookieName } = await client.commit()
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const session = manager.create(ctx)
       await session.initiate(false)
 

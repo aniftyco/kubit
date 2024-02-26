@@ -7,12 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
-import {
-  RequestValidatorNode,
-  validator,
-  ValidatorResolvedConfig,
-} from '@ioc:Adonis/Core/Validator'
+import { RequestConstructorContract } from '@ioc:Kubit/Request'
+import { RequestValidatorNode, validator, ValidatorResolvedConfig } from '@ioc:Kubit/Validator'
 
 /**
  * Extends the request class by adding `validate` method

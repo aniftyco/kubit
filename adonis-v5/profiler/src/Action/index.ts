@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/profiler.ts" />
 
-import { ProfilerAction as ProfilerActionData, ProfilerProcessor } from '@ioc:Adonis/Core/Profiler'
+import { ProfilerAction as ProfilerActionData, ProfilerProcessor } from '@ioc:Kubit/Profiler'
 import { Exception } from '@poppinss/utils'
 
 /**

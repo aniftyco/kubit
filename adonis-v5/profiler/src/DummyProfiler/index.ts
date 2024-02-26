@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/profiler.ts" />
 
-import { ProfilerActionContract, ProfilerRowContract } from '@ioc:Adonis/Core/Profiler'
+import { ProfilerActionContract, ProfilerRowContract } from '@ioc:Kubit/Profiler'
 
 /**
  * Dummy action is a noop implementation of [[ProfileActionContract]]. When

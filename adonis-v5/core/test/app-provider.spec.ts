@@ -22,31 +22,28 @@ test.group('App Provider', (group) => {
 
   test('register app provider', async ({ assert }) => {
     const app = await setupApp([], true)
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Env'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Config'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Logger'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Encryption'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Profiler'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Request'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Response'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Server'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/MiddlewareStore'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/HttpContext'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Event'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Hash'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/BodyParser'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/Validator'))
-    assert.isTrue(app.container.hasBinding('Adonis/Core/AssetsManager'))
-    assert.instanceOf(app.container.use('Adonis/Core/HealthCheck'), HealthCheck)
-    assert.deepEqual(
-      app.container.use('Adonis/Core/HttpExceptionHandler'),
-      HttpExceptionHandler as any
-    )
+    assert.isTrue(app.container.hasBinding('Kubit/Env'))
+    assert.isTrue(app.container.hasBinding('Kubit/Config'))
+    assert.isTrue(app.container.hasBinding('Kubit/Logger'))
+    assert.isTrue(app.container.hasBinding('Kubit/Encryption'))
+    assert.isTrue(app.container.hasBinding('Kubit/Profiler'))
+    assert.isTrue(app.container.hasBinding('Kubit/Request'))
+    assert.isTrue(app.container.hasBinding('Kubit/Response'))
+    assert.isTrue(app.container.hasBinding('Kubit/Server'))
+    assert.isTrue(app.container.hasBinding('Kubit/MiddlewareStore'))
+    assert.isTrue(app.container.hasBinding('Kubit/HttpContext'))
+    assert.isTrue(app.container.hasBinding('Kubit/Event'))
+    assert.isTrue(app.container.hasBinding('Kubit/Hash'))
+    assert.isTrue(app.container.hasBinding('Kubit/BodyParser'))
+    assert.isTrue(app.container.hasBinding('Kubit/Validator'))
+    assert.isTrue(app.container.hasBinding('Kubit/AssetsManager'))
+    assert.instanceOf(app.container.use('Kubit/HealthCheck'), HealthCheck)
+    assert.deepEqual(app.container.use('Kubit/HttpExceptionHandler'), HttpExceptionHandler as any)
 
     /**
      * Ensure drive routes are registerd
      */
-    const router = app.container.use('Adonis/Core/Route')
+    const router = app.container.use('Kubit/Route')
     router.commit()
     const routes = router.toJSON()
 

@@ -27,13 +27,13 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected ignoreCodes = ['E_BAD_REQUEST']
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const handler = new AppHandler(fakeLogger)
     handler.report(new Exception('bad request', 500, 'E_BAD_REQUEST'), ctx)
@@ -48,7 +48,7 @@ test.group('HttpExceptionHandler', (group) => {
 
     class AppHandler extends HttpExceptionHandler {}
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const handler = new AppHandler(app.logger)
     handler.report(new Exception('bad request', 500, 'E_BAD_REQUEST'), ctx)
@@ -76,7 +76,7 @@ test.group('HttpExceptionHandler', (group) => {
       protected dontReport = []
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const handler = new AppHandler(app.logger)
     handler.report(new Exception('bad request', 500, 'E_BAD_REQUEST'), ctx)
@@ -94,7 +94,7 @@ test.group('HttpExceptionHandler', (group) => {
       }
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const handler = new AppHandler(app.logger)
     handler.report(new Exception('bad request', 500, 'E_BAD_REQUEST'), ctx)
@@ -119,7 +119,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected context() {
@@ -133,7 +133,7 @@ test.group('HttpExceptionHandler', (group) => {
       }
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
 
     const handler = new AppHandler(fakeLogger)
     handler.report(new InvalidAuth('bad request'), ctx)
@@ -143,7 +143,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected context() {
@@ -153,7 +153,7 @@ test.group('HttpExceptionHandler', (group) => {
 
     class InvalidAuth extends Exception {}
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'text/html' }
 
     const handler = new AppHandler(fakeLogger)
@@ -166,7 +166,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected context() {
@@ -176,7 +176,7 @@ test.group('HttpExceptionHandler', (group) => {
 
     class InvalidAuth extends Exception {}
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'application/json' }
 
     const handler = new AppHandler(fakeLogger)
@@ -189,7 +189,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected context() {
@@ -199,7 +199,7 @@ test.group('HttpExceptionHandler', (group) => {
 
     class InvalidAuth extends Exception {}
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'application/vnd.api+json' }
 
     const handler = new AppHandler(fakeLogger)
@@ -225,7 +225,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected context() {
@@ -235,7 +235,7 @@ test.group('HttpExceptionHandler', (group) => {
 
     class InvalidAuth extends Exception {}
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'application/json' }
 
     const handler = new AppHandler(fakeLogger)
@@ -249,7 +249,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected context() {
@@ -259,7 +259,7 @@ test.group('HttpExceptionHandler', (group) => {
 
     class InvalidAuth extends Exception {}
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'text/html' }
 
     const handler = new AppHandler(fakeLogger)
@@ -274,7 +274,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected context() {
@@ -288,7 +288,7 @@ test.group('HttpExceptionHandler', (group) => {
       }
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'text/html' }
 
     const handler = new AppHandler(fakeLogger)
@@ -299,7 +299,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected context() {
@@ -313,7 +313,7 @@ test.group('HttpExceptionHandler', (group) => {
       }
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'text/html' }
 
     const handler = new AppHandler(fakeLogger)
@@ -328,7 +328,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected statusPages = {
@@ -346,7 +346,7 @@ test.group('HttpExceptionHandler', (group) => {
       }
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'text/html' }
 
     const handler = new AppHandler(fakeLogger)
@@ -366,7 +366,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected statusPages = {
@@ -384,7 +384,7 @@ test.group('HttpExceptionHandler', (group) => {
       }
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'application/json' }
 
     const handler = new AppHandler(fakeLogger)
@@ -405,7 +405,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected statusPages = {
@@ -425,7 +425,7 @@ test.group('HttpExceptionHandler', (group) => {
       }
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'text/html' }
 
     const handler = new AppHandler(fakeLogger)
@@ -448,7 +448,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected statusPages = {
@@ -468,7 +468,7 @@ test.group('HttpExceptionHandler', (group) => {
       }
     }
 
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     ctx.request.request.headers = { accept: 'text/html' }
 
     ctx['view'] = {
@@ -488,7 +488,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected statusPages = {
@@ -520,7 +520,7 @@ test.group('HttpExceptionHandler', (group) => {
     const app = await setupApp()
     app.container.useProxies()
     const fakeLogger = new FakeLogger({ enabled: true, name: 'adonisjs', level: 'info' })
-    app.container.fake('Adonis/Core/Logger', () => fakeLogger)
+    app.container.fake('Kubit/Logger', () => fakeLogger)
 
     class AppHandler extends HttpExceptionHandler {
       protected statusPages = {

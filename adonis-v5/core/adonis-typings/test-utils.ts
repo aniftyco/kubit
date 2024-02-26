@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/TestUtils' {
+declare module '@ioc:Kubit/TestUtils' {
   import type { Server as HttpsServer } from 'https'
   import type { MacroableConstructorContract } from 'macroable'
   import type { IncomingMessage, ServerResponse, Server } from 'http'

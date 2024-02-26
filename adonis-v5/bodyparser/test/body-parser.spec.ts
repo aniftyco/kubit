@@ -19,9 +19,9 @@ import { tmpdir } from 'os'
 import { join } from 'path'
 import supertest from 'supertest'
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
-import { RequestConstructorContract } from '@ioc:Adonis/Core/Request'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { MultipartFileContract } from '@ioc:Kubit/BodyParser'
+import { RequestConstructorContract } from '@ioc:Kubit/Request'
 import { test } from '@japa/runner'
 import { Request as BaseRequest } from '@kubit/http-server/build/src/Request'
 import { lodash } from '@poppinss/utils'
@@ -46,10 +46,10 @@ test.group('BodyParser Middleware | generic', (group) => {
 
   test('do not parse get requests', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -65,10 +65,10 @@ test.group('BodyParser Middleware | generic', (group) => {
 
   test('by pass when body is empty', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -84,10 +84,10 @@ test.group('BodyParser Middleware | generic', (group) => {
 
   test('by pass when content type is not supported', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -117,10 +117,10 @@ test.group('BodyParser Middleware | form data', (group) => {
 
   test('handle request with form data', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -136,16 +136,16 @@ test.group('BodyParser Middleware | form data', (group) => {
 
   test('abort if request size is over limit', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
-      lodash.merge(app.container.use('Adonis/Core/Config').get('bodyparser'), {
+      lodash.merge(app.container.use('Kubit/Config').get('bodyparser'), {
         form: {
           limit: 2,
         },
       })
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       try {
@@ -167,16 +167,16 @@ test.group('BodyParser Middleware | form data', (group) => {
 
   test('abort if specified encoding is not supported', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
-      lodash.merge(app.container.use('Adonis/Core/Config').get('bodyparser'), {
+      lodash.merge(app.container.use('Kubit/Config').get('bodyparser'), {
         form: {
           encoding: 'foo',
         },
       })
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       try {
@@ -198,10 +198,10 @@ test.group('BodyParser Middleware | form data', (group) => {
 
   test('ignore fields with empty name', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -216,10 +216,10 @@ test.group('BodyParser Middleware | form data', (group) => {
 
   test('convert empty strings to null', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -237,11 +237,11 @@ test.group('BodyParser Middleware | form data', (group) => {
 
   test('abort when multipart body is invalid', async ({ assert, cleanup }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       try {
@@ -268,11 +268,11 @@ test.group('BodyParser Middleware | form data', (group) => {
 
   test('abort when multipart body is invalid newline characters', async ({ assert, cleanup }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       try {
@@ -310,10 +310,10 @@ test.group('BodyParser Middleware | json', (group) => {
 
   test('handle request with json body', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -329,16 +329,16 @@ test.group('BodyParser Middleware | json', (group) => {
 
   test('abort if request size is over limit', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
-      lodash.merge(app.container.use('Adonis/Core/Config').get('bodyparser'), {
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
+      lodash.merge(app.container.use('Kubit/Config').get('bodyparser'), {
         json: {
           limit: 2,
         },
       })
 
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       try {
@@ -360,10 +360,10 @@ test.group('BodyParser Middleware | json', (group) => {
 
   test('ignore fields with empty name', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -390,10 +390,10 @@ test.group('BodyParser Middleware | raw body', (group) => {
 
   test('handle request with raw body', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -412,16 +412,16 @@ test.group('BodyParser Middleware | raw body', (group) => {
 
   test('abort if request size is over limit', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
-      lodash.merge(app.container.use('Adonis/Core/Config').get('bodyparser'), {
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
+      lodash.merge(app.container.use('Kubit/Config').get('bodyparser'), {
         raw: {
           limit: 2,
         },
       })
 
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
       try {
         await middleware.handle(ctx, async () => {})
@@ -453,10 +453,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('handle request with just files', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -480,10 +480,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('handle request with files and fields', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -510,10 +510,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('handle request array of files', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -538,9 +538,9 @@ test.group('BodyParser Middleware | multipart', (group) => {
     let index = 0
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
 
-      lodash.merge(app.container.use('Adonis/Core/Config').get('bodyparser'), {
+      lodash.merge(app.container.use('Kubit/Config').get('bodyparser'), {
         multipart: {
           autoProcess: true,
           tmpFileName() {
@@ -551,8 +551,8 @@ test.group('BodyParser Middleware | multipart', (group) => {
         },
       })
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       try {
@@ -579,10 +579,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('handle request with empty field name', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -601,10 +601,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('handle request with empty file name', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -622,16 +622,16 @@ test.group('BodyParser Middleware | multipart', (group) => {
     assert.plan(2)
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
-      lodash.merge(app.container.use('Adonis/Core/Config').get('bodyparser'), {
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
+      lodash.merge(app.container.use('Kubit/Config').get('bodyparser'), {
         multipart: {
           autoProcess: false,
         },
       })
 
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -649,8 +649,8 @@ test.group('BodyParser Middleware | multipart', (group) => {
     assert.plan(2)
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
-      lodash.merge(app.container.use('Adonis/Core/Config').get('bodyparser'), {
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
+      lodash.merge(app.container.use('Kubit/Config').get('bodyparser'), {
         multipart: {
           autoProcess: true,
           processManually: ['/'],
@@ -658,8 +658,8 @@ test.group('BodyParser Middleware | multipart', (group) => {
       })
 
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -678,10 +678,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
     const server = createServer(async (req, res) => {
       const ctx = app.container
-        .use('Adonis/Core/HttpContext')
+        .use('Kubit/HttpContext')
         .create('/project/:id/file', { id: 1 }, req, res)
 
-      lodash.merge(app.container.use('Adonis/Core/Config').get('bodyparser'), {
+      lodash.merge(app.container.use('Kubit/Config').get('bodyparser'), {
         multipart: {
           autoProcess: true,
           processManually: ['/project/:id/file'],
@@ -689,8 +689,8 @@ test.group('BodyParser Middleware | multipart', (group) => {
       })
 
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -706,10 +706,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('detect file ext and mime type using magic number', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -739,10 +739,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('validate file when access via request.file method', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -779,10 +779,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('validate array of files when access via request.file method', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -840,10 +840,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('pull first file even when source is an array', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -883,10 +883,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test("return null when file doesn't exists", async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -902,10 +902,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test("return empty array file doesn't exists", async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -921,10 +921,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('get file from nested object', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -956,10 +956,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
     const uploadsDir = join(__dirname, 'uploads')
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -990,10 +990,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
     const uploadsDir = join(__dirname, 'uploads')
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -1026,10 +1026,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
     const uploadsDir = join(__dirname, 'uploads')
 
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -1058,10 +1058,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('validate file extension and file size seperately', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -1109,10 +1109,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('calling validate multiple times must be a noop', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -1166,10 +1166,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
     assert,
   }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -1215,10 +1215,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('updating sizeLimit multiple times must not be allowed', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -1245,10 +1245,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('updating allowedExtensions multiple times must not be allowed', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -1275,10 +1275,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('get all files as an object', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -1312,10 +1312,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('convert empty strings to null', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {
@@ -1335,10 +1335,10 @@ test.group('BodyParser Middleware | multipart', (group) => {
 
   test('move file using drive', async ({ assert }) => {
     const server = createServer(async (req, res) => {
-      const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {}, req, res)
+      const ctx = app.container.use('Kubit/HttpContext').create('/', {}, req, res)
       const middleware = new BodyParserMiddleware(
-        app.container.use('Adonis/Core/Config'),
-        app.container.use('Adonis/Core/Drive')
+        app.container.use('Kubit/Config'),
+        app.container.use('Kubit/Drive')
       )
 
       await middleware.handle(ctx, async () => {

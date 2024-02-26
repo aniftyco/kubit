@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 import { Exception } from '@poppinss/utils'
 
 /**

@@ -7,14 +7,14 @@
 
 import proxyAddr from 'proxy-addr';
 
-import Application from '@ioc:Adonis/Core/Application';
-import Env from '@ioc:Adonis/Core/Env';
+import Application from '@ioc:Kubit/Application';
+import Env from '@ioc:Kubit/Env';
 
-import type { ServerConfig } from '@ioc:Adonis/Core/Server';
-import type { LoggerConfig } from '@ioc:Adonis/Core/Logger';
-import type { ProfilerConfig } from '@ioc:Adonis/Core/Profiler';
-import type { ValidatorConfig } from '@ioc:Adonis/Core/Validator';
-import type { AssetsManagerConfig } from '@ioc:Adonis/Core/AssetsManager';
+import type { ServerConfig } from '@ioc:Kubit/Server';
+import type { LoggerConfig } from '@ioc:Kubit/Logger';
+import type { ProfilerConfig } from '@ioc:Kubit/Profiler';
+import type { ValidatorConfig } from '@ioc:Kubit/Validator';
+import type { AssetsManagerConfig } from '@ioc:Kubit/AssetsManager';
 
 /*
 |--------------------------------------------------------------------------

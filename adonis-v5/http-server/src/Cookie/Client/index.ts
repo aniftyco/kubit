@@ -9,8 +9,8 @@
 
 /// <reference path="../../../adonis-typings/index.ts" />
 
-import { CookieClientContract } from '@ioc:Adonis/Core/CookieClient'
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+import { CookieClientContract } from '@ioc:Kubit/CookieClient'
+import { EncryptionContract } from '@ioc:Kubit/Encryption'
 
 import * as EncryptedCookie from '../Drivers/Encrypted'
 import * as PlainCookie from '../Drivers/Plain'

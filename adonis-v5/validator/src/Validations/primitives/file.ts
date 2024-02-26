@@ -8,8 +8,8 @@
  */
 
 // TODO: Revert this
-// import { FileValidationOptions, MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
-import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+// import { FileValidationOptions, MultipartFileContract } from '@ioc:Kubit/BodyParser'
+import { SyncValidation } from '@ioc:Kubit/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
 

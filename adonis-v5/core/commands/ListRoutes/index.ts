@@ -12,7 +12,7 @@ import { BaseCommand, flags } from '@kubit/ace'
 import { RoutesPrettyRenderer } from './Renderers/PrettyRenderer'
 import { RoutesTableRenderer } from './Renderers/TableRenderer'
 
-import type { RouteNode } from '@ioc:Adonis/Core/Route'
+import type { RouteNode } from '@ioc:Kubit/Route'
 
 /**
  * Shape of a route serialized by the ListRoute JSON serializer
@@ -145,7 +145,7 @@ export default class ListRoutes extends BaseCommand {
    * flags passed to the command
    */
   public serializeRoutes() {
-    const Router = this.application.container.use('Adonis/Core/Route')
+    const Router = this.application.container.use('Kubit/Route')
     Router.commit()
 
     const routes = Router.toJSON()

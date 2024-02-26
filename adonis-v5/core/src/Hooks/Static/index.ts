@@ -10,8 +10,8 @@
 import { Stats } from 'fs'
 import staticServer from 'serve-static'
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { AssetsConfig } from '@ioc:Adonis/Core/Static'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+import { AssetsConfig } from '@ioc:Kubit/Static'
 
 /**
  * A simple server hook to serve static files from the public directory.

@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/BodyParser' {
+declare module '@ioc:Kubit/BodyParser' {
   import { Readable } from 'stream'
 
-  import { DisksList, WriteOptions } from '@ioc:Adonis/Core/Drive'
+  import { DisksList, WriteOptions } from '@ioc:Kubit/Drive'
 
-  // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+  // import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 
   /**
    * Qs module config

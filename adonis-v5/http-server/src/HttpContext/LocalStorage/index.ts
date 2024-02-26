@@ -11,7 +11,7 @@
 
 import { AsyncLocalStorage } from 'async_hooks'
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
 
 /**
  * Find if the async localstorage is enabled or not

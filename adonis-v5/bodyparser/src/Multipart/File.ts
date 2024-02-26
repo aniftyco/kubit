@@ -18,8 +18,8 @@ import {
   FileUploadError,
   FileValidationOptions,
   MultipartFileContract,
-} from '@ioc:Adonis/Core/BodyParser'
-import { DisksList, DriveManagerContract, WriteOptions } from '@ioc:Adonis/Core/Drive'
+} from '@ioc:Kubit/BodyParser'
+import { DisksList, DriveManagerContract, WriteOptions } from '@ioc:Kubit/Drive'
 import { Exception } from '@poppinss/utils'
 import { cuid } from '@poppinss/utils/build/helpers'
 

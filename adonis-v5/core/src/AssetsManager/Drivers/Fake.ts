@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-import { AssetsDriverContract } from '@ioc:Adonis/Core/AssetsManager'
+import { ApplicationContract } from '@ioc:Kubit/Application'
+import { AssetsDriverContract } from '@ioc:Kubit/AssetsManager'
 
 /**
  * Fake driver stubs out the implementation of the Assets

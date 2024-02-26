@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application';
 
-import { contextBindings } from '../src/Bindings/Context'
-import { validatorBindings } from '../src/Bindings/Validator'
-import { viewBindings } from '../src/Bindings/View'
-import { I18nManager } from '../src/I18nManager'
+import { contextBindings } from '../src/Bindings/Context';
+import { validatorBindings } from '../src/Bindings/Validator';
+import { viewBindings } from '../src/Bindings/View';
+import { I18nManager } from '../src/I18nManager';
 
 export default class I18nProvider {
   constructor(protected application: ApplicationContract) {}
@@ -21,10 +21,10 @@ export default class I18nProvider {
    * Register I18n as a binding to the container
    */
   public register() {
-    this.application.container.singleton('Adonis/Addons/I18n', () => {
-      const emitter = this.application.container.resolveBinding('Adonis/Core/Event')
-      const logger = this.application.container.resolveBinding('Adonis/Core/Logger')
-      const config = this.application.container.resolveBinding('Adonis/Core/Config').get('i18n', {})
+    this.application.container.singleton('Kubit/I18n', () => {
+      const emitter = this.application.container.resolveBinding('Kubit/Event')
+      const logger = this.application.container.resolveBinding('Kubit/Logger')
+      const config = this.application.container.resolveBinding('Kubit/Config').get('i18n', {})
       return new I18nManager(this.application, emitter, logger, config)
     })
   }
@@ -34,19 +34,19 @@ export default class I18nProvider {
    * helper
    */
   public boot() {
-    const I18n = this.application.container.resolveBinding('Adonis/Addons/I18n')
+    const I18n = this.application.container.resolveBinding('Kubit/I18n')
 
     /**
      * Share I18n instance with the HTTP context
      */
-    this.application.container.withBindings(['Adonis/Core/HttpContext'], (Context) => {
+    this.application.container.withBindings(['Kubit/HttpContext'], (Context) => {
       contextBindings(Context, I18n)
     })
 
     /**
      * Add required globals to the template engine
      */
-    this.application.container.withBindings(['Adonis/Core/View'], (View) => {
+    this.application.container.withBindings(['Kubit/View'], (View) => {
       viewBindings(View, I18n)
     })
 
@@ -54,7 +54,7 @@ export default class I18nProvider {
      * Hook into validator to provide default validation messages
      */
     if (I18n.config.provideValidatorMessages === true) {
-      this.application.container.withBindings(['Adonis/Core/Validator'], ({ validator }) => {
+      this.application.container.withBindings(['Kubit/Validator'], ({ validator }) => {
         validatorBindings(validator, I18n)
       })
     }
@@ -63,7 +63,7 @@ export default class I18nProvider {
      * Register repl binding when in repl environment
      */
     if (this.application.environment === 'repl') {
-      this.application.container.withBindings(['Adonis/Addons/Repl'], (Repl) => {
+      this.application.container.withBindings(['Kubit/Repl'], (Repl) => {
         const { replBindings } = require('../src/Bindings/Repl')
         replBindings(this.application, Repl)
       })
@@ -75,7 +75,7 @@ export default class I18nProvider {
    * messages
    */
   public async ready() {
-    const I18n = this.application.container.resolveBinding('Adonis/Addons/I18n')
+    const I18n = this.application.container.resolveBinding('Kubit/I18n')
     await I18n.loadTranslations()
   }
 }

@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { FakeEmitterContract } from '@ioc:Adonis/Core/Event'
+import { FakeEmitterContract } from '@ioc:Kubit/Event'
 
 /**
  * Fake emitter to be used for finding and asserting

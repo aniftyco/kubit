@@ -110,7 +110,7 @@ test.group('Ignitor | Ace | Generate Manifest', (group) => {
       'FooCommand.ts',
       `
 			import { BaseCommand } from '@kubit/ace'
-			global[Symbol.for('ioc.use')]('Adonis/Core/Env').__esModule.get('')
+			global[Symbol.for('ioc.use')]('Kubit/Env').__esModule.get('')
 
 			export default class FooCommand extends BaseCommand {
         static get commandName () {

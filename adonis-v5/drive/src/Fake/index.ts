@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { DisksList, FakeDriveContract, FakeDriverContract } from '@ioc:Adonis/Core/Drive'
+import { DisksList, FakeDriveContract, FakeDriverContract } from '@ioc:Kubit/Drive'
 
 import { CannotReadFileException } from '../Exceptions'
 

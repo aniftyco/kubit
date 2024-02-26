@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { HashDrivers } from '@ioc:Adonis/Core/Hash'
+import { HashDrivers } from '@ioc:Kubit/Hash'
 
 /**
  * Expected shape of the config accepted by the "hashConfig"

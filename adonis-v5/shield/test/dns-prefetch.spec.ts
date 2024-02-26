@@ -21,7 +21,7 @@ test.group('Dns Prefetch', (group) => {
     const dnsPrefetch = dnsPrefetchFactory({ enabled: false })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     dnsPrefetch(ctx)
 
     assert.isUndefined(ctx.response.getHeader('X-DNS-Prefetch-Control'))
@@ -31,7 +31,7 @@ test.group('Dns Prefetch', (group) => {
     const dnsPrefetch = dnsPrefetchFactory({ enabled: true, allow: true })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     dnsPrefetch(ctx)
 
     assert.equal(ctx.response.getHeader('X-DNS-Prefetch-Control'), 'on')
@@ -40,7 +40,7 @@ test.group('Dns Prefetch', (group) => {
   test('set X-DNS-Prefetch-Control header to off', async ({ assert }) => {
     const dnsPrefetch = dnsPrefetchFactory({ enabled: true, allow: false })
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     dnsPrefetch(ctx)
 
     assert.equal(ctx.response.getHeader('X-DNS-Prefetch-Control'), 'off')

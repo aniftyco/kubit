@@ -1,4 +1,4 @@
-import Event from '@ioc:Adonis/Core/Event'
+import Event from '@ioc:Kubit/Event'
 
 Event.on('another:user', (data) => {
   data.id

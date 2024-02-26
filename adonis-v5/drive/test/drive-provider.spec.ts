@@ -21,12 +21,12 @@ test.group('Drive Provider', (group) => {
 
   test('register drive provider', async ({ assert }) => {
     const app = await setupApp([join(__dirname, '../providers/DriveProvider')])
-    assert.instanceOf(app.container.use('Adonis/Core/Drive'), DriveManager)
+    assert.instanceOf(app.container.use('Kubit/Drive'), DriveManager)
   })
 
   test('register route for serving files from local disk', async ({ assert }) => {
     const app = await setupApp([join(__dirname, '../providers/DriveProvider')])
-    const router = app.container.use('Adonis/Core/Route')
+    const router = app.container.use('Kubit/Route')
     router.commit()
     const routes = router.toJSON()
 

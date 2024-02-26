@@ -9,7 +9,7 @@
 
 /// <reference path="../../adonis-typings/index.ts" />
 
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+import { EncryptionContract } from '@ioc:Kubit/Encryption'
 import {
   MakeSignedUrlOptions,
   MakeUrlOptions,
@@ -18,7 +18,7 @@ import {
   RouteMatchersNode,
   RouteNode,
   RouterContract,
-} from '@ioc:Adonis/Core/Route'
+} from '@ioc:Kubit/Route'
 import { types } from '@poppinss/utils/build/helpers'
 
 import { RouterException } from '../Exceptions/RouterException'

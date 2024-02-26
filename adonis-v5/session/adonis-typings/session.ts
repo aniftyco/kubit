@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Addons/Session' {
-  import { ApplicationContract } from '@ioc:Adonis/Core/Application'
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-  import { CookieOptions } from '@ioc:Adonis/Core/Response'
+declare module '@ioc:Kubit/Session' {
+import { ApplicationContract } from '@ioc:Kubit/Application';
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
+import { CookieOptions } from '@ioc:Kubit/Response';
 
-  /**
+    /**
    * Shape of session config.
    */
   export interface SessionConfig {

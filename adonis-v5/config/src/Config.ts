@@ -9,7 +9,7 @@
 
 /// <reference path="../adonis-typings/config.ts" />
 
-import { ConfigContract } from '@ioc:Adonis/Core/Config'
+import { ConfigContract } from '@ioc:Kubit/Config'
 import { lodash } from '@poppinss/utils'
 
 /**

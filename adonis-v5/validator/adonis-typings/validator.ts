@@ -7,15 +7,15 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Validator' {
+declare module '@ioc:Kubit/Validator' {
   import { DateTime, DurationObjectUnits } from 'luxon'
   import { Options as NormalizeUrlOptions } from 'normalize-url'
   import * as validatorJs from 'validator'
   import { UUIDVersion } from 'validator/lib/isUUID'
 
-  import { FileValidationOptions, MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
-  import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-  import { RequestContract } from '@ioc:Adonis/Core/Request'
+  import { FileValidationOptions, MultipartFileContract } from '@ioc:Kubit/BodyParser'
+  import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+  import { RequestContract } from '@ioc:Kubit/Request'
 
   /**
    * Accepted duration units. Luxon has removed support for

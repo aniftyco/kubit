@@ -14,7 +14,7 @@ import {
   ProfilerContract,
   ProfilerRow as ProfilerRowData,
   ProfilerRowContract,
-} from '@ioc:Adonis/Core/Profiler'
+} from '@ioc:Kubit/Profiler'
 import { Exception } from '@poppinss/utils'
 import { cuid } from '@poppinss/utils/build/helpers'
 

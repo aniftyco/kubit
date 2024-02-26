@@ -7,12 +7,12 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Addons/Repl' {
-  import { REPLServer } from 'repl'
+declare module '@ioc:Kubit/Repl' {
+import { REPLServer } from 'repl';
 
-  import { getBest } from '@poppinss/colors'
+import { getBest } from '@poppinss/colors';
 
-  /**
+    /**
    * Custom method callback
    */
   export type Handler = (repl: ReplContract, ...args: any[]) => any

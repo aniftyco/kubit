@@ -7,6 +7,6 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Helpers' {
+declare module '@ioc:Kubit/Helpers' {
   export * from '@poppinss/utils/build/helpers'
 }

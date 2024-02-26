@@ -11,11 +11,7 @@
 
 import { Macroable } from 'macroable'
 
-import {
-  RouteGroupContract,
-  RouteMiddlewareHandler,
-  RouteParamMatcher,
-} from '@ioc:Adonis/Core/Route'
+import { RouteGroupContract, RouteMiddlewareHandler, RouteParamMatcher } from '@ioc:Kubit/Route'
 
 import { RouterException } from '../Exceptions/RouterException'
 import { BriskRoute } from './BriskRoute'

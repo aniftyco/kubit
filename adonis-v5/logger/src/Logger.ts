@@ -12,7 +12,7 @@
 import abstractLogging from 'abstract-logging'
 import Pino from 'pino'
 
-import { LoggerConfig, LoggerContract } from '@ioc:Adonis/Core/Logger'
+import { LoggerConfig, LoggerContract } from '@ioc:Kubit/Logger'
 
 import { getPino } from './getPino'
 

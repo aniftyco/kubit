@@ -9,7 +9,7 @@
 
 import { createHash } from 'crypto'
 
-import { AssetsDriverContract } from '@ioc:Adonis/Core/AssetsManager'
+import { AssetsDriverContract } from '@ioc:Kubit/AssetsManager'
 
 import { BaseDriver } from './Base'
 

@@ -9,7 +9,7 @@
 
 import isIP from 'validator/lib/isIP'
 
-import { SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { SyncValidation } from '@ioc:Kubit/Validator'
 
 import { wrapCompile } from '../../Validator/helpers'
 

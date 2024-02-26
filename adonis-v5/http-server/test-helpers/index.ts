@@ -10,9 +10,9 @@
 import { join } from 'path'
 import proxyaddr from 'proxy-addr'
 
-import { RequestConfig } from '@ioc:Adonis/Core/Request'
-import { ResponseConfig } from '@ioc:Adonis/Core/Response'
-import { ServerConfig } from '@ioc:Adonis/Core/Server'
+import { RequestConfig } from '@ioc:Kubit/Request'
+import { ResponseConfig } from '@ioc:Kubit/Response'
+import { ServerConfig } from '@ioc:Kubit/Server'
 import { Application } from '@kubit/application'
 import { Encryption } from '@kubit/encryption/build/standalone'
 import { Filesystem } from '@poppinss/dev-utils'

@@ -10,7 +10,7 @@
 import isEmail, { IsEmailOptions } from 'validator/lib/isEmail'
 import normalizeEmail, { NormalizeEmailOptions } from 'validator/lib/normalizeEmail'
 
-import { EmailRuleOptions, SyncValidation } from '@ioc:Adonis/Core/Validator'
+import { EmailRuleOptions, SyncValidation } from '@ioc:Kubit/Validator'
 
 import { isObject, wrapCompile } from '../../Validator/helpers'
 

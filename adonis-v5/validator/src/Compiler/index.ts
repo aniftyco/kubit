@@ -15,7 +15,7 @@ import {
   SchemaLiteral,
   SchemaObject,
   ValidationField,
-} from '@ioc:Adonis/Core/Validator'
+} from '@ioc:Kubit/Validator'
 
 import { CompilerBuffer } from './Buffer'
 import { ArrayCompiler } from './Nodes/Array'

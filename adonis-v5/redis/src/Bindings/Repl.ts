@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { ReplContract } from '@ioc:Adonis/Addons/Repl'
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application';
+import { ReplContract } from '@ioc:Kubit/Repl';
 
 /**
  * Defune repl bindings. The method must be invoked when application environment
@@ -18,7 +18,7 @@ export function defineReplBindings(application: ApplicationContract, Repl: ReplC
   Repl.addMethod(
     'loadRedis',
     (repl) => {
-      repl.server.context.Redis = application.container.use('Adonis/Addons/Redis')
+      repl.server.context.Redis = application.container.use('Kubit/Redis')
       repl.notify(
         `Loaded Redis module. You can access it using the "${repl.colors.underline(
           'Redis'

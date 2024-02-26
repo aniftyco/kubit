@@ -9,8 +9,8 @@
 
 /// <reference path="../../../adonis-typings/index.ts" />
 
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { ErrorHandler, ResolvedErrorHandler } from '@ioc:Adonis/Core/Server'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext'
+import { ErrorHandler, ResolvedErrorHandler } from '@ioc:Kubit/Server'
 import { IocContract, IocResolverContract, IocResolverLookupNode } from '@kubit/fold'
 
 import { useReturnValue } from '../../helpers'

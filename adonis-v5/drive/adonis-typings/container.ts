@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Application' {
-  import { DriveManagerContract } from '@ioc:Adonis/Core/Drive'
+declare module '@ioc:Kubit/Application' {
+  import { DriveManagerContract } from '@ioc:Kubit/Drive'
 
   export interface ContainerBindings {
-    'Adonis/Core/Drive': DriveManagerContract
+    'Kubit/Drive': DriveManagerContract
   }
 }

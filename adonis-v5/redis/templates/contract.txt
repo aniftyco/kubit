@@ -8,6 +8,6 @@
 import { InferConnectionsFromConfig } from '@kubit/redis/build/config'
 import redisConfig from '../config/redis'
 
-declare module '@ioc:Adonis/Addons/Redis' {
+declare module '@ioc:Kubit/Redis' {
   interface RedisConnectionsList extends InferConnectionsFromConfig<typeof redisConfig> {}
 }

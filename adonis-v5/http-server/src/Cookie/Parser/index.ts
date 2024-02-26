@@ -9,7 +9,7 @@
 
 import cookie from 'cookie'
 
-import { EncryptionContract } from '@ioc:Adonis/Core/Encryption'
+import { EncryptionContract } from '@ioc:Kubit/Encryption'
 
 import { CookieClient } from '../Client'
 

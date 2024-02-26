@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Adonis/Core/Event' {
+declare module '@ioc:Kubit/Event' {
   /**
    * Returns the data type for a given key
    */

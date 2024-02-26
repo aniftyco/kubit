@@ -21,7 +21,7 @@ test.group('FrameGuard', (group) => {
     const frameGuard = frameGuardFactory({ enabled: false })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     frameGuard(ctx)
 
     assert.isUndefined(ctx.response.getHeader('X-Frame-Options'))
@@ -49,7 +49,7 @@ test.group('FrameGuard', (group) => {
     const frameGuard = frameGuardFactory({ enabled: true })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     frameGuard(ctx)
 
     assert.equal(ctx.response.getHeader('X-Frame-Options'), 'SAMEORIGIN')
@@ -59,7 +59,7 @@ test.group('FrameGuard', (group) => {
     const frameGuard = frameGuardFactory({ enabled: true, action: 'ALLOW-FROM', domain: 'foo.com' })
 
     const app = await setup()
-    const ctx = app.container.use('Adonis/Core/HttpContext').create('/', {})
+    const ctx = app.container.use('Kubit/HttpContext').create('/', {})
     frameGuard(ctx)
 
     assert.equal(ctx.response.getHeader('X-Frame-Options'), 'ALLOW-FROM foo.com')

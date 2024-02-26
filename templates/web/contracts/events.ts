@@ -5,7 +5,7 @@
  * file.
  */
 
-declare module '@ioc:Adonis/Core/Event' {
+declare module '@ioc:Kubit/Event' {
   /*
   |--------------------------------------------------------------------------
   | Define typed events

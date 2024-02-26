@@ -9,10 +9,10 @@
 
 /// <reference path="../adonis-typings/index.ts" />
 
-import { ContentTypeSniffingOptions } from '@ioc:Adonis/Addons/Shield'
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Kubit/HttpContext';
+import { ContentTypeSniffingOptions } from '@ioc:Kubit/Shield';
 
-import { noop } from './noop'
+import { noop } from './noop';
 
 /**
  * Factory function that returns a function to Add `X-Content-Type-Options`

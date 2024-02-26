@@ -10,8 +10,8 @@
 /**
  * Decorate context
  */
-declare module '@ioc:Adonis/Core/HttpContext' {
-  import { ViewRendererContract } from '@ioc:Adonis/Core/View'
+declare module '@ioc:Kubit/HttpContext' {
+  import { ViewRendererContract } from '@ioc:Kubit/View'
 
   interface HttpContextContract {
     view: ViewRendererContract
@@ -21,7 +21,7 @@ declare module '@ioc:Adonis/Core/HttpContext' {
 /**
  * Decorate router
  */
-declare module '@ioc:Adonis/Core/Route' {
+declare module '@ioc:Kubit/Route' {
   interface BriskRouteContract {
     render: (template: string, data?: any) => Exclude<this['route'], null>
   }

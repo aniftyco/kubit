@@ -11,7 +11,7 @@
 
 import { createCipheriv, createDecipheriv, createHash } from 'crypto'
 
-import { EncryptionContract, EncryptionOptions } from '@ioc:Adonis/Core/Encryption'
+import { EncryptionContract, EncryptionOptions } from '@ioc:Kubit/Encryption'
 import { Exception } from '@poppinss/utils'
 import { base64 as utilsBase64, MessageBuilder, string } from '@poppinss/utils/build/helpers'
 

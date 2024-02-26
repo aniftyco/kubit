@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import { ApplicationContract } from '@ioc:Kubit/Application'
 import { Exception } from '@poppinss/utils'
 
 export default class HttpServerProvider {
@@ -32,11 +32,11 @@ export default class HttpServerProvider {
    * Register request and response bindings to the container
    */
   protected registerRequestResponse() {
-    this.application.container.singleton('Adonis/Core/Request', () => {
+    this.application.container.singleton('Kubit/Request', () => {
       return require('../src/Request').Request
     })
 
-    this.application.container.singleton('Adonis/Core/Response', () => {
+    this.application.container.singleton('Kubit/Response', () => {
       return require('../src/Response').Response
     })
   }
@@ -45,7 +45,7 @@ export default class HttpServerProvider {
    * Registering middleware store to the container
    */
   protected registerMiddlewareStore() {
-    this.application.container.bind('Adonis/Core/MiddlewareStore', () => {
+    this.application.container.bind('Kubit/MiddlewareStore', () => {
       return require('../src/MiddlewareStore').MiddlewareStore
     })
   }
@@ -54,9 +54,9 @@ export default class HttpServerProvider {
    * Registering the HTTP context
    */
   protected registerHTTPContext() {
-    this.application.container.bind('Adonis/Core/HttpContext', () => {
+    this.application.container.bind('Kubit/HttpContext', () => {
       const { HttpContext } = require('../src/HttpContext')
-      HttpContext.app = this.application.container.resolveBinding('Adonis/Core/Application')
+      HttpContext.app = this.application.container.resolveBinding('Kubit/Application')
       return HttpContext
     })
   }
@@ -65,11 +65,11 @@ export default class HttpServerProvider {
    * Register the HTTP server
    */
   protected registerHttpServer() {
-    this.application.container.singleton('Adonis/Core/Server', () => {
+    this.application.container.singleton('Kubit/Server', () => {
       const { Server } = require('../src/Server')
 
-      const Config = this.application.container.resolveBinding('Adonis/Core/Config')
-      const Encryption = this.application.container.resolveBinding('Adonis/Core/Encryption')
+      const Config = this.application.container.resolveBinding('Kubit/Config')
+      const Encryption = this.application.container.resolveBinding('Kubit/Encryption')
 
       const serverConfig = Config.get('app.http', {})
       this.validateServerConfig(serverConfig)
@@ -83,8 +83,8 @@ export default class HttpServerProvider {
    * by the middleware
    */
   protected registerRouter() {
-    this.application.container.singleton('Adonis/Core/Route', () => {
-      return this.application.container.resolveBinding('Adonis/Core/Server').router
+    this.application.container.singleton('Kubit/Route', () => {
+      return this.application.container.resolveBinding('Kubit/Server').router
     })
   }
 
@@ -92,9 +92,9 @@ export default class HttpServerProvider {
    * Registers the cookie client with the container
    */
   protected registerCookieClient() {
-    this.application.container.singleton('Adonis/Core/CookieClient', () => {
+    this.application.container.singleton('Kubit/CookieClient', () => {
       const { CookieClient } = require('../src/Cookie/Client')
-      const Encryption = this.application.container.resolveBinding('Adonis/Core/Encryption')
+      const Encryption = this.application.container.resolveBinding('Kubit/Encryption')
       return new CookieClient(Encryption)
     })
   }

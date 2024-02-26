@@ -5,7 +5,7 @@
  * file.
  */
 
-import { AssetsConfig } from '@ioc:Adonis/Core/Static'
+import { AssetsConfig } from '@ioc:Kubit/Static'
 
 const staticConfig: AssetsConfig = {
   /*
