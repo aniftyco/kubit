@@ -20,7 +20,8 @@
     "@kubit/session",
     "@kubit/view",
     "@kubit/shield",
-    "@kubit/lucid"
+    "@kubit/lucid",
+    "@kubit/auth"
   ],
   "metaFiles": [
     {
