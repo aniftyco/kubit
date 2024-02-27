@@ -9,6 +9,7 @@
     "test": "node ace test"
   },
   "dependencies": {
+    "@kubit/auth": "^0.0.1",
     "@kubit/core": "^0.0.1",
     "@kubit/repl": "^0.0.1",
     "@kubit/session": "^0.0.1",
