@@ -10,7 +10,7 @@ html, body {
 
 body:before {
   content: '';
-  background: #5A45FF;
+  background: #b91c1c;
   top: 0;
   left: 0;
   right: 0;
@@ -24,7 +24,7 @@ body:before {
 }
 
 a {
-  color: #5A45FF;
+  color: #b91c1c;
   text-decoration: none;
 }
 
@@ -71,6 +71,8 @@ main li:before {
 }
 
 main code {
-  font-size: 16px;
-  background: #e6e2ff;
+  font-size: 12px;
+  padding: 4px 5px;
+  background: #fee2e2;
+  color: #b91c1c;
 }
