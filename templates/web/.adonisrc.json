@@ -4,7 +4,8 @@
     "./commands",
     "@kubit/core/build/commands/index.js",
     "@kubit/repl/build/commands",
-    "@kubit/lucid/build/commands"
+    "@kubit/lucid/build/commands",
+    "@kubit/mail/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
@@ -21,7 +22,8 @@
     "@kubit/view",
     "@kubit/shield",
     "@kubit/lucid",
-    "@kubit/auth"
+    "@kubit/auth",
+    "@kubit/mail"
   ],
   "metaFiles": [
     {

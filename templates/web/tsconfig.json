@@ -21,6 +21,7 @@
       "@japa/preset-adonis/build/adonis-typings",
       "@kubit/lucid",
       "@kubit/auth",
+      "@kubit/mail",
     ],
   },
 }
