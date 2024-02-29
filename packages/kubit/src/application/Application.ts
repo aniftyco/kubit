@@ -1,12 +1,3 @@
-/*
- * @kubit/application
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { join } from 'path';
 import { parse as semverParse, satisfies as semverSatisfies } from 'semver';
 
@@ -19,14 +10,14 @@ import {
   RcFile,
   SemverNode,
 } from '@ioc:Kubit/Application';
-import { Config } from '@kubit/config';
-import { Env, envLoader, EnvParser } from '@kubit/env';
-import { Ioc, Registrar } from '@kubit/fold';
-import { Logger } from '@kubit/logger';
-import { Profiler } from '@kubit/profiler';
 import { Exception } from '@poppinss/utils';
 import * as helpers from '@poppinss/utils/build/helpers';
 
+import { Config } from '../config';
+import { Env, envLoader, EnvParser } from '../env';
+import { Ioc, Registrar } from '../fold';
+import { Logger } from '../logger';
+import { Profiler } from '../profiler';
 import { parse } from './rcParser';
 
 /**
@@ -82,7 +73,7 @@ export class Application implements ApplicationContract {
   public readonly version: SemverNode | null;
 
   /**
-   * `@kubit/core` version
+   * `../core` version
    */
   public readonly adonisVersion: SemverNode | null;
 
@@ -259,11 +250,11 @@ export class Application implements ApplicationContract {
   }
 
   /**
-   * Loads the package.json file for the "@kubit/core" package. Swallows
+   * Loads the package.json file for the "../core" package. Swallows
    * the exception when file is missing
    */
   private loadCorePackageJson(): { version?: string } {
-    const pkgFile = this.resolveModule('@kubit/core/package.json', () => {
+    const pkgFile = this.resolveModule('../core/package.json', () => {
       return {};
     });
 

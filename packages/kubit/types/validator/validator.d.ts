@@ -1,12 +1,3 @@
-/*
- * @kubit/validator
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare module '@ioc:Kubit/Validator' {
   import { DateTime, DurationObjectUnits } from 'luxon';
   import { Options as NormalizeUrlOptions } from 'normalize-url';

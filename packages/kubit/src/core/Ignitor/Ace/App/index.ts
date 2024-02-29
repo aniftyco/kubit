@@ -1,17 +1,8 @@
-/*
- * @kubit/core
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-import { Kernel } from '@kubit/ace';
-import { SerializedCommand } from '@kubit/ace/build/src/Contracts';
 import { logger, sticker } from '@poppinss/cliui';
 import { resolveFrom } from '@poppinss/utils/build/helpers';
 
+import { Kernel } from '../../../../ace';
+import { SerializedCommand } from '../../../../ace/Contracts';
 import { loadAceCommands } from '../../../utils';
 import { AppKernel } from '../../Kernel';
 import { GenerateManifest } from '../GenerateManifest';
@@ -96,7 +87,7 @@ export class App {
 
     let assemblerVersion = 'Not Installed';
     try {
-      assemblerVersion = require(resolveFrom(this.appRoot, '@kubit/assembler/package.json')).version;
+      assemblerVersion = require(resolveFrom(this.appRoot, '../assembler/package.json')).version;
     } catch (error) {}
 
     sticker()

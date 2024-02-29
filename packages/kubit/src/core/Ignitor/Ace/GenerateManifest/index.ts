@@ -1,15 +1,6 @@
-/*
- * @kubit/core
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-import { ManifestGenerator } from '@kubit/ace';
 import { logger } from '@poppinss/cliui';
 
+import { ManifestGenerator } from '../../../../ace';
 import { AppKernel } from '../../Kernel';
 import { AceRuntimeException } from '../Exceptions';
 

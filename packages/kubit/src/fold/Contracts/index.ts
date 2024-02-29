@@ -1,12 +1,3 @@
-/*
- * @kubit/fold
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 type Function = (...args: any[]) => any;
 
 export type ExtractFunctions<T> = {

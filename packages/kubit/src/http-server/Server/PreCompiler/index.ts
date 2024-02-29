@@ -1,22 +1,13 @@
-/**
- * @kubit/http-server
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { Middleware } from 'co-compose';
 import haye from 'haye';
 
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 import { MiddlewareStoreContract, ResolvedMiddlewareHandler } from '@ioc:Kubit/Middleware';
 import { RouteNode } from '@ioc:Kubit/Route';
-import { IocContract, IocResolverContract } from '@kubit/fold';
 import { Exception } from '@poppinss/utils';
 import { interpolate } from '@poppinss/utils/build/helpers';
 
+import { IocContract, IocResolverContract } from '../../../fold';
 import { E_MISSING_NAMED_MIDDLEWARE } from '../../exceptions.json';
 import { useReturnValue } from '../../helpers';
 

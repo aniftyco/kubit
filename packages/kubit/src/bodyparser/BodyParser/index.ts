@@ -1,20 +1,11 @@
-/*
- * @kubit/bodyparser
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { tmpdir } from 'os';
 import { isAbsolute, join } from 'path';
 
-import { inject } from '@kubit/application';
 import coBody from '@poppinss/co-body';
 import { Exception } from '@poppinss/utils';
 import { cuid } from '@poppinss/utils/build/helpers';
 
+import { inject } from '../../application';
 import { Multipart } from '../Multipart';
 import { streamFile } from '../Multipart/streamFile';
 

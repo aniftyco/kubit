@@ -1,12 +1,3 @@
-/**
- * @kubit/session
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { ApplicationContract } from '@ioc:Kubit/Application';
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 import {
@@ -122,7 +113,7 @@ export class SessionManager implements SessionManagerContract {
     const { RedisDriver } = require('../Drivers/Redis');
 
     if (!this.application.container.hasBinding('Kubit/Redis')) {
-      throw new Error('Install "@kubit/redis" in order to use the redis driver for storing sessions');
+      throw new Error('Install "../redis" in order to use the redis driver for storing sessions');
     }
 
     return new RedisDriver(this.config, this.application.container.use('Kubit/Redis'));

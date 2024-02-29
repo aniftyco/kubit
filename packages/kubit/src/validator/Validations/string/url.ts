@@ -1,12 +1,3 @@
-/*
- * @kubit/validator
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import normalizeUrl from 'normalize-url';
 import isUrl, { IsURLOptions } from 'validator/lib/isURL';
 

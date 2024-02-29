@@ -1,21 +1,12 @@
-/*
- * @kubit/core
- *
- * (c) AdonisJS
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-// import { ContainerBindings } from '@ioc:Kubit/Application'
+import { ContainerBindings } from '@ioc:Kubit/Application';
 import { CookieClientContract } from '@ioc:Kubit/CookieClient';
 
 /**
  * Define test bindings
  */
 export function defineTestsBindings(
-  ApiRequest: any, // ContainerBindings['Japa/Preset/ApiRequest'],
-  ApiClient: any, // ContainerBindings['Japa/Preset/ApiClient'],
+  ApiRequest: ContainerBindings['Japa/Preset/ApiRequest'],
+  ApiClient: ContainerBindings['Japa/Preset/ApiClient'],
   CookieClient: CookieClientContract
 ) {
   /**

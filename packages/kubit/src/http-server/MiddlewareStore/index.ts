@@ -1,15 +1,7 @@
-/**
- * @kubit/http-server
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 import { MiddlewareHandler, MiddlewareStoreContract, ResolvedMiddlewareHandler } from '@ioc:Kubit/Middleware';
-import { IocContract, IocResolverContract } from '@kubit/fold';
+
+import { IocContract, IocResolverContract } from '../../fold';
 
 /**
  * Middleware store register and keep all the application middleware at one

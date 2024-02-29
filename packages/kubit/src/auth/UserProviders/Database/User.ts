@@ -1,14 +1,6 @@
-/*
- * @adonisjs/auth
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-import { inject } from '@adonisjs/core/build/standalone';
 import { Exception } from '@poppinss/utils';
+
+import { inject } from '../../../core';
 
 import type { HashContract } from '@ioc:Kubit/Hash';
 import type { ProviderUserContract, DatabaseProviderRow, DatabaseProviderConfig } from '@ioc:Kubit/Auth';

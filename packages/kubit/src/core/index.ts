@@ -1,21 +1,12 @@
-/*
- * @kubit/core
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+export * from '../application';
+export * from '../drive';
+export { Hash } from '../hash';
+export { Emitter } from '../events';
+export { Encryption } from '../encryption';
 
-export * from '@kubit/application';
-export * from '@kubit/drive/build/standalone';
-export { Hash } from '@kubit/hash/build/standalone';
-export { Emitter } from '@kubit/events/build/standalone';
-export { Encryption } from '@kubit/encryption/build/standalone';
+export { Server, Router, Request, Response, HttpContext, MiddlewareStore } from '../http-server';
 
-export { Server, Router, Request, Response, HttpContext, MiddlewareStore } from '@kubit/http-server/build/standalone';
-
-export { args, flags, Kernel, BaseCommand, ManifestLoader, ManifestGenerator, listDirectoryFiles } from '@kubit/ace';
+export { args, flags, Kernel, BaseCommand, ManifestLoader, ManifestGenerator, listDirectoryFiles } from '../ace';
 
 export { Ignitor } from './Ignitor';
 export { Exception } from '@poppinss/utils';

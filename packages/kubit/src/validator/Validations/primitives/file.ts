@@ -1,13 +1,3 @@
-/*
- * @kubit/validator
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-// TODO: Revert this
 import { FileValidationOptions, MultipartFileContract } from '@ioc:Kubit/BodyParser';
 import { SyncValidation } from '@ioc:Kubit/Validator';
 
@@ -19,9 +9,9 @@ const RULE_NAME = 'file';
 /**
  * Ensure the value is a valid file instance
  */
-export const file: SyncValidation<Partial<MultipartFileContract>> = {
+export const file: SyncValidation<Partial<FileValidationOptions>> = {
   compile: wrapCompile(RULE_NAME, [], ([options]) => {
-    const validationOptions: Partial<any> = {};
+    const validationOptions: Partial<FileValidationOptions> = {};
     if (options && options.size) {
       validationOptions.size = options.size;
     }
@@ -34,7 +24,7 @@ export const file: SyncValidation<Partial<MultipartFileContract>> = {
       compiledOptions: validationOptions,
     };
   }),
-  validate(fileToValidate: FileValidationOptions, compiledOptions, { errorReporter, pointer, arrayExpressionPointer }) {
+  validate(fileToValidate: MultipartFileContract, compiledOptions, { errorReporter, pointer, arrayExpressionPointer }) {
     /**
      * Raise error when not a multipart file instance
      */

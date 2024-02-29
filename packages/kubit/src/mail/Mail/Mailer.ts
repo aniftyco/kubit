@@ -1,12 +1,3 @@
-/*
- * @kubit/mail
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import {
   CompiledMailNode,
   DriverOptionsType,
@@ -34,11 +25,11 @@ export class Mailer<Name extends keyof MailersList> implements MailerContract<Na
   ) {}
 
   /**
-   * Ensure "@kubit/view" is installed
+   * Ensure "../view" is installed
    */
   private ensureView(methodName: string) {
     if (!this.manager.view) {
-      throw new Error(`"@kubit/view" must be installed before using "message.${methodName}"`);
+      throw new Error(`"../view" must be installed before using "message.${methodName}"`);
     }
   }
 

@@ -1,12 +1,3 @@
-/*
- * @kubit/assembler
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import execa from 'execa';
 
 import { logger as uiLogger } from '@poppinss/cliui';
@@ -64,7 +55,7 @@ export class TestProcess {
           FORCE_COLOR: 'true',
           ...this.env,
         },
-        nodeOptions: ['-r', '@kubit/assembler/build/register'].concat(this.nodeArgs),
+        nodeOptions: ['-r', '../assembler/build/register'].concat(this.nodeArgs),
       });
       return { hasErrors: false };
     } catch {

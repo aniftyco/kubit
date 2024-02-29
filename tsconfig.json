@@ -1,12 +1,3 @@
 {
-  "extends": "@aniftyco/tsconfig",
-  "compilerOptions": {
-    "lib": ["ESNEXT", "DOM"],
-    "pretty": true,
-    "declaration": true,
-    "strict": false,
-    "incremental": false
-  },
   "exclude": ["node_modules"],
-  "include": ["src"]
 }

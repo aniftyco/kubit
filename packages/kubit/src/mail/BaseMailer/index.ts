@@ -1,12 +1,3 @@
-/*
- * @kubit/mail
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { BaseMailerContract, MailerContract, MailersList, MailManagerContract, MessageContract } from '@ioc:Kubit/Mail';
 
 export abstract class BaseMailer implements BaseMailerContract<keyof MailersList> {

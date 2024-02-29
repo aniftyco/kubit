@@ -16,7 +16,6 @@
     }
   ],
   "workspaces": [
-    "framework/*",
     "packages/*",
     "templates/*"
   ],

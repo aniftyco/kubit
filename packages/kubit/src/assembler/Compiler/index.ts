@@ -1,21 +1,12 @@
-/*
- * @kubit/assembler
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import copyfiles from 'cpy';
 import { outputJSON, remove } from 'fs-extra';
 import { join, relative } from 'path';
 import slash from 'slash';
 import tsStatic from 'typescript';
 
-import { iocTransformer } from '@kubit/ioc-transformer';
 import { instructions, logger as uiLogger } from '@poppinss/cliui';
 
+import { iocTransformer } from '../../ioc-transformer';
 import { AssetsBundler } from '../AssetsBundler';
 import { RCFILE_NAME } from '../config/paths';
 import { Manifest } from '../Manifest';

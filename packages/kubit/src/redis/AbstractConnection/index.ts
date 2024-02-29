@@ -1,18 +1,11 @@
-/*
- * @kubit/redis
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { EventEmitter } from 'events';
 import { Cluster, Redis } from 'ioredis';
 
-import { ApplicationContract, ContainerBindings, IocResolverContract } from '@ioc:Kubit/Application';
+import { ApplicationContract, ContainerBindings } from '@ioc:Kubit/Application';
 import { HealthReportNode, PubSubChannelHandler, PubSubPatternHandler } from '@ioc:Kubit/Redis';
 import { Exception } from '@poppinss/utils';
+
+import { IocResolverContract } from '../../fold';
 
 /**
  * Helper to sleep

@@ -1,30 +1,22 @@
-/*
- * @kubit/core
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { createServer } from 'http';
 import { join } from 'path';
 
 import { ApplicationContract } from '@ioc:Kubit/Application';
 import { ServerContract } from '@ioc:Kubit/Server';
 import { CustomServerCallback } from '@ioc:Kubit/TestUtils';
-import { Kernel, ManifestLoader } from '@kubit/ace';
 import { resolveFrom } from '@poppinss/utils/build/helpers';
+
+import { Kernel, ManifestLoader } from '../../ace';
 
 /**
  * Registers the ts hook to compile typescript code within the memory
  */
 export function registerTsHook(appRoot: string) {
   try {
-    require(resolveFrom(appRoot, '@kubit/assembler/build/src/requireHook')).default(appRoot);
+    require(resolveFrom(appRoot, '../assembler/build/src/requireHook')).default(appRoot);
   } catch (error) {
     if (['MODULE_NOT_FOUND', 'ENOENT'].includes(error.code!)) {
-      throw new Error('AdonisJS requires "@kubit/assembler" in order to run typescript source directly');
+      throw new Error('AdonisJS requires "../assembler" in order to run typescript source directly');
     }
 
     throw error;
@@ -75,7 +67,7 @@ function resolve(fromPath: string, resolvePath: string, onMatch: (path: string) 
 export function loadAceCommands(application: ApplicationContract, ace: Kernel) {
   const manifestFiles: { basePath: string; manifestAbsPath: string }[] = [];
 
-  resolve(application.appRoot, '@kubit/assembler/build/ace-manifest.json', (manifestAbsPath) => {
+  resolve(application.appRoot, '../assembler/build/ace-manifest.json', (manifestAbsPath) => {
     const basePath = join(manifestAbsPath, '../');
     manifestFiles.push({ manifestAbsPath, basePath });
   });

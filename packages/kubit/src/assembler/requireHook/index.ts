@@ -1,13 +1,4 @@
-/*
- * @kubit/assembler
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-import { register } from '@kubit/require-ts';
+import { register } from '../../require-ts';
 
 /**
  * Exports the function to be used for registering require hook
@@ -19,7 +10,7 @@ export default function registerForAdonis(appRoot: string) {
     transformers: {
       after: [
         {
-          transform: '@kubit/assembler/build/src/requireHook/ioc-transformer',
+          transform: '../assembler/requireHook/ioc-transformer',
         },
       ],
     },

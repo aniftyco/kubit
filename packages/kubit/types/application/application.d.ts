@@ -1,19 +1,11 @@
-/*
- * @kubit/application
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare module '@ioc:Kubit/Application' {
+  import { IocContract, IocResolverContract } from 'kubit/types';
+
   import { ConfigContract } from '@ioc:Kubit/Config';
   import { EnvContract } from '@ioc:Kubit/Env';
   import * as Helpers from '@ioc:Kubit/Helpers';
   import { LoggerContract } from '@ioc:Kubit/Logger';
   import { ProfilerContract } from '@ioc:Kubit/Profiler';
-  import { IocContract } from '@kubit/fold';
 
   /**
    * The interface that is meant to be extended in

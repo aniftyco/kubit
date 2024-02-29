@@ -1,14 +1,5 @@
-/*
- * @kubit/bodyparser
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { FileValidationOptions } from '@ioc:Kubit/BodyParser';
-// import { RequestConstructorContract } from '@ioc:Kubit/Request'
+import { RequestConstructorContract } from '@ioc:Kubit/Request';
 import { lodash } from '@poppinss/utils';
 
 import { File } from '../Multipart/File';
@@ -38,7 +29,7 @@ function isInstanceOfFile(file: any): file is File {
  * Extend the Request class by adding `file` and `files` macro to read processed
  * files
  */
-export default function extendRequest(Request: any) {
+export default function extendRequest(Request: RequestConstructorContract) {
   /**
    * Fetch a single file
    */

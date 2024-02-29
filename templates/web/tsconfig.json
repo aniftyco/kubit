@@ -12,16 +12,6 @@
       "Contracts/*": ["./contracts/*"],
       "Database/*": ["./database/*"],
     },
-    "types": [
-      "@kubit/core",
-      "@kubit/repl",
-      "@kubit/session",
-      "@kubit/view",
-      "@kubit/shield",
-      "@japa/preset-adonis/build/adonis-typings",
-      "@kubit/lucid",
-      "@kubit/auth",
-      "@kubit/mail",
-    ],
+    "types": ["kubit/types"],
   },
 }

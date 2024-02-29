@@ -1,17 +1,9 @@
-/*
- * @kubit/core
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import { AppEnvironments } from '@ioc:Kubit/Application';
-import { Application } from '@kubit/application';
 
+import { Application } from '../../application';
 import { Ace } from './Ace';
 import { HttpServer } from './HttpServer';
 import { AppKernel } from './Kernel';

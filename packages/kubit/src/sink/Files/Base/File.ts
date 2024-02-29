@@ -1,12 +1,3 @@
-/*
- * @kubit/sink
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 /**
  * Base file exposes the API to add action and `cd` in/out from
  * the application base directory.

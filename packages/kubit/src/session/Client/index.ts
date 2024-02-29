@@ -1,12 +1,3 @@
-/*
- * @kubit/session
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { CookieClientContract } from '@ioc:Kubit/CookieClient';
 import { SessionClientContract, SessionConfig, SessionDriverContract } from '@ioc:Kubit/Session';
 import { cuid } from '@poppinss/utils/build/helpers';

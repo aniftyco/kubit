@@ -1,19 +1,10 @@
-/*
- * @kubit/assembler
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import getPort from 'get-port';
 import { extname } from 'path';
 import picomatch from 'picomatch';
 
-import { getWatcherHelpers } from '@kubit/require-ts';
 import { logger as uiLogger } from '@poppinss/cliui';
 
+import { getWatcherHelpers } from '../../require-ts';
 import { ENV_FILES, TESTS_ENTRY_FILE } from '../config/paths';
 import { JapaFlags } from '../Contracts';
 import { EnvParser } from '../EnvParser';

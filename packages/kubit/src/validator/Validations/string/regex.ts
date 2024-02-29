@@ -1,12 +1,3 @@
-/*
- * @kubit/validator
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { SyncValidation } from '@ioc:Kubit/Validator';
 
 import { wrapCompile } from '../../Validator/helpers';
@@ -26,7 +17,7 @@ export const regex: SyncValidation<{ pattern: string; flags: string }> = {
 
     const match = regexPattern.toString().match(/^\/(.*)\/([gimuy]*)$/);
     if (!match) {
-      throw new Error('Unable to serialize regex. Please open an issue in "@kubit/validator" repo');
+      throw new Error('Unable to serialize regex. Please open an issue in "../validator" repo');
     }
 
     return {

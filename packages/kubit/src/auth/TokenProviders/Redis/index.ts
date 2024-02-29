@@ -1,12 +1,3 @@
-/*
- * @adonisjs/auth
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { ProviderTokenContract, RedisTokenProviderConfig, TokenProviderContract } from '@ioc:Kubit/Auth';
 import { RedisClusterConnectionContract, RedisConnectionContract, RedisManagerContract } from '@ioc:Kubit/Redis';
 import { Exception } from '@poppinss/utils';

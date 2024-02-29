@@ -1,15 +1,6 @@
-/*
- * @kubit/shield
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-import { inject } from '@kubit/core/build/standalone';
 
+import { inject } from '../../core';
 import * as shield from '../index';
 
 import type { ApplicationContract } from '@ioc:Kubit/Application';

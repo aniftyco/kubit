@@ -1,17 +1,9 @@
-/**
- * @kubit/http-server
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { EncryptionContract } from '@ioc:Kubit/Encryption';
 import {
   MakeSignedUrlOptions,
   MakeUrlOptions,
   MatchedRoute,
+  RouteContract,
   RouteHandler,
   RouteMatchersNode,
   RouteNode,
@@ -47,7 +39,7 @@ export class Router extends LookupStore implements RouterContract {
    * Collection of routes, including route resource and route
    * group. To get a flat list of routes, call `router.toJSON()`
    */
-  public routes: (Route | RouteResource | RouteGroup | BriskRoute)[] = [];
+  public routes: (RouteContract | RouteResource | RouteGroup | BriskRoute)[] = [];
 
   /**
    * Exposing BriskRoute, RouteGroup and RouteResource constructors

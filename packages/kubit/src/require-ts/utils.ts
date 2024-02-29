@@ -1,12 +1,3 @@
-/*
- * @kubit/require-ts
- *
- * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import Debug from 'debug';
 import normalizePath from 'normalize-path';
 
@@ -38,7 +29,7 @@ export function loadTypescript(cwd: string) {
     return require(require.resolve('typescript', { paths: [cwd] }));
   } catch (error) {
     if (error.code === 'ENOENT') {
-      throw new Error('"@kubit/require-ts" expects the "typescript" to be installed');
+      throw new Error('"../require-ts" expects the "typescript" to be installed');
     }
     throw error;
   }

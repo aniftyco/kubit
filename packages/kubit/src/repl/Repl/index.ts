@@ -1,21 +1,12 @@
-/*
- * @kubit/repl
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { Recoverable, REPLServer, start } from 'repl';
 import stringWidth from 'string-width';
 import { inspect, promisify as utilPromisify } from 'util';
 import { Script } from 'vm';
 
 import { ContextOptions, Handler, ReplContract } from '@ioc:Kubit/Repl';
-import { Compiler as TsCompiler } from '@kubit/require-ts/build/src/Compiler';
 import { getBest } from '@poppinss/colors';
 
+import { Compiler as TsCompiler } from '../../require-ts/Compiler';
 import { Compiler } from '../Compiler';
 
 /**

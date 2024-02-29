@@ -9,13 +9,7 @@
     "test": "node ace test"
   },
   "dependencies": {
-    "@kubit/auth": "^0.0.1",
-    "@kubit/core": "^0.0.1",
-    "@kubit/mail": "^0.0.1",
-    "@kubit/repl": "^0.0.1",
-    "@kubit/session": "^0.0.1",
-    "@kubit/shield": "^0.0.1",
-    "@kubit/view": "^0.0.1",
+    "kubit": "^0.0.1",
     "luxon": "^3.4.4",
     "pg": "^8.11.3",
     "proxy-addr": "^2.0.7",

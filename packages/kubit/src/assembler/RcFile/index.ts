@@ -1,20 +1,11 @@
-/*
- * @kubit/assembler
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { readJSONSync } from 'fs-extra';
 import { join, relative } from 'path';
 import picomatch from 'picomatch';
 import slash from 'slash';
 
-import { Application } from '@kubit/application';
 import { resolveFrom } from '@poppinss/utils/build/helpers';
 
+import { Application } from '../../application';
 import { ACE_FILE_NAME, RCFILE_NAME } from '../config/paths';
 
 /**

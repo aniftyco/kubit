@@ -1,12 +1,3 @@
-/*
- * @kubit/core
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { Macroable } from 'macroable';
 
 import { ApplicationContract } from '@ioc:Kubit/Application';
@@ -19,7 +10,7 @@ import { TestHttpServer } from './HttpServer';
  * Test utils module is meant to be extended to add custom
  * utilities required for testing AdonisJS applications.
  */
-export class TestUtils extends Macroable implements Omit<TestUtilsContract, 'constructor'> {
+export class TestUtils extends Macroable implements Omit<TestUtilsContract, 'constructor' | 'db'> {
   public static macros = {};
   public static getters = {};
 

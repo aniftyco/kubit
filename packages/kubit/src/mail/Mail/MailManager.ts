@@ -1,12 +1,3 @@
-/*
- * @kubit/mail
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import fastq from 'fastq';
 import nodemailer from 'nodemailer';
 
@@ -87,7 +78,7 @@ export class MailManager
   public BaseMailer = BaseMailer;
 
   /**
-   * Dependencies from the "@kubit/core" and "@kubit/view". The manager classes
+   * Dependencies from the "../core" and "../view". The manager classes
    * in AdonisJS codebase heavily relies on the container and hence we can pull
    * container bindings directly here.
    */
@@ -102,7 +93,7 @@ export class MailManager
     private config: MailConfig
   ) {
     super(app);
-    this.BaseMailer.mail = this;
+    (this.BaseMailer as any).mail = this;
     this.validateConfig();
   }
 

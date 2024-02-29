@@ -1,12 +1,3 @@
-/*
- * @kubit/require-ts
- *
- * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import findCacheDir from 'find-cache-dir';
 import { addHook } from 'pirates';
 import tsStatic from 'typescript';

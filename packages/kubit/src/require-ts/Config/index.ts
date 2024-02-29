@@ -1,12 +1,3 @@
-/*
- * @kubit/require-ts
- *
- * (c) Harminder Virk <virk@adonisjs.comharminder@cav.ai>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { readFileSync } from 'fs-extra';
 import { join } from 'path';
 import tsStatic from 'typescript';
@@ -58,7 +49,7 @@ export class Config {
       return readFileSync(this.configFilePath, 'utf-8');
     } catch (error) {
       if (error.code === 'ENOENT') {
-        throw new Error('"@kubit/require-ts" expects the "tsconfig.json" file to exists in the app root');
+        throw new Error('"../require-ts" expects the "tsconfig.json" file to exists in the app root');
       }
 
       throw error;

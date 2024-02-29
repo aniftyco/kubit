@@ -1,12 +1,3 @@
-/**
- * @kubit/session
- *
- * (c) Harminder Virk <virk@adonisjs.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 import { RedisConnectionContract, RedisManagerContract } from '@ioc:Kubit/Redis';
 import { SessionConfig, SessionDriverContract } from '@ioc:Kubit/Session';
 import { Exception } from '@poppinss/utils';
