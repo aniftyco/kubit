@@ -1,9 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "target": "ESNext",
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
+    "useDefineForClassFields": false,
+    "resolveJsonModule": true,
   },
   "include": ["**/*.ts"],
-  "exclude": ["dist", "tests"]
+  "exclude": ["dist", "tests"],
 }
