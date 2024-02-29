@@ -1,0 +1,16 @@
+/*
+ * @kubit/lucid
+ *
+ * (c) Harminder Virk <virk@adonisjs.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+import { DialectContract } from '@ioc:Kubit/Lucid/Database';
+
+import { BaseSqliteDialect } from './SqliteBase';
+
+export class BetterSqliteDialect extends BaseSqliteDialect implements DialectContract {
+  public readonly name = 'better-sqlite3';
+}

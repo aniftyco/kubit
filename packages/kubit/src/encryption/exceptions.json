@@ -1,0 +1,20 @@
+{
+  "E_MISSING_APP_KEY": {
+    "message": "The value for \"app.appKey\" is undefined",
+    "status": 500,
+    "code": "E_MISSING_APP_KEY",
+    "help": [
+      "The Encryption module relies on the \"appKey\" property defined inside the \"config/app\" file",
+      "The \"app.appKey\" is currently missing and ideally should rely on the \"APP_KEY\" environment variable. So double check the config file, along with the environment variable"
+    ]
+  },
+  "E_INSECURE_APP_KEY": {
+    "message": "The value of \"app.appKey\" is not secure",
+    "status": 500,
+    "code": "E_INSECURE_APP_KEY",
+    "help": [
+      "The length of the \"app.appKey\" must be 16 characters long",
+      "You can generate a secure key using the \"node ace generate:key\" command and then update the environment variable to use the new secure value."
+    ]
+  }
+}
