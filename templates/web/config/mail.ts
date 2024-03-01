@@ -5,10 +5,11 @@
  * file.
  */
 
-import Env from '@ioc:Kubit/Env';
-import { mailConfig } from '@kubit/mail/build/config';
+import { defineConfig } from 'kubit';
 
-export default mailConfig({
+import Env from '@ioc:Kubit/Env';
+
+export default defineConfig({
   /*
   |--------------------------------------------------------------------------
   | Default mailer

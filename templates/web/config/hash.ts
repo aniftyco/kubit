@@ -5,8 +5,9 @@
  * file.
  */
 
+import { defineConfig } from 'kubit';
+
 import Env from '@ioc:Kubit/Env';
-import { hashConfig } from '@kubit/core/build/config';
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ import { hashConfig } from '@kubit/core/build/config';
 | defined inside `contracts` directory.
 |
 */
-export default hashConfig({
+export default defineConfig({
   /*
   |--------------------------------------------------------------------------
   | Default hasher

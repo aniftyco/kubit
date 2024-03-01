@@ -51,7 +51,7 @@ export class HttpServer extends Emittery {
         FORCE_COLOR: 'true',
         ...this.env,
       },
-      nodeOptions: ['-r', '../assembler/build/register'].concat(this.nodeArgs),
+      nodeOptions: ['-r', 'kubit/dist/assembler/build/register'].concat(this.nodeArgs),
     });
 
     /**

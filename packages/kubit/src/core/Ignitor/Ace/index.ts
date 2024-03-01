@@ -1,5 +1,4 @@
 import { App } from './App';
-import { GenerateManifest } from './GenerateManifest';
 
 /**
  * Exposes the API to execute ace commands.
@@ -12,11 +11,6 @@ export class Ace {
    */
   public async handle(argv: string[]) {
     process.env.ADONIS_ACE_CWD = this.appRoot;
-
-    if (argv[0] === 'generate:manifest' && !argv.includes('--help')) {
-      await new GenerateManifest(this.appRoot).handle();
-      return;
-    }
 
     /**
      * Proxy over to application commands

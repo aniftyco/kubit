@@ -3,6 +3,4 @@ export { args } from './Decorators/args';
 export { flags } from './Decorators/flags';
 export { BaseCommand } from './BaseCommand';
 export { handleError } from './utils/handleError';
-export { ManifestLoader } from './Manifest/Loader';
-export { ManifestGenerator } from './Manifest/Generator';
 export { listDirectoryFiles } from './utils/listDirectoryFiles';

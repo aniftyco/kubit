@@ -10,7 +10,7 @@ export default function registerForAdonis(appRoot: string) {
     transformers: {
       after: [
         {
-          transform: '../assembler/requireHook/ioc-transformer',
+          transform: 'kubit/dist/assembler/requireHook/ioc-transformer',
         },
       ],
     },

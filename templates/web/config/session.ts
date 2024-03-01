@@ -5,11 +5,12 @@
  * file.
  */
 
+import { defineConfig } from 'kubit';
+
 import Application from '@ioc:Kubit/Application';
 import Env from '@ioc:Kubit/Env';
-import { sessionConfig } from '@kubit/session/build/config';
 
-export default sessionConfig({
+export default defineConfig({
   /*
   |--------------------------------------------------------------------------
   | Enable/Disable sessions

@@ -1,11 +1,8 @@
 import { logger, sticker } from '@poppinss/cliui';
-import { resolveFrom } from '@poppinss/utils/build/helpers';
 
 import { Kernel } from '../../../../ace';
 import { SerializedCommand } from '../../../../ace/Contracts';
-import { loadAceCommands } from '../../../utils';
 import { AppKernel } from '../../Kernel';
-import { GenerateManifest } from '../GenerateManifest';
 
 /**
  * A local list of assembler commands. We need this, so that when assembler
@@ -70,7 +67,7 @@ export class App {
       return;
     }
 
-    this.ace.printHelp(command, [GenerateManifest.getManifestJSON()]);
+    this.ace.printHelp(command);
     process.exit(0);
   }
 
@@ -85,16 +82,10 @@ export class App {
     const appVersion = this.kernel.application.version;
     const adonisVersion = this.kernel.application.adonisVersion;
 
-    let assemblerVersion = 'Not Installed';
-    try {
-      assemblerVersion = require(resolveFrom(this.appRoot, '../assembler/package.json')).version;
-    } catch (error) {}
-
     sticker()
       .heading('node ace --version')
       .add(`App version: ${logger.colors.cyan(appVersion ? appVersion.version : 'NA')}`)
       .add(`Framework version: ${logger.colors.cyan(adonisVersion ? adonisVersion.version : 'NA')}`)
-      .add(`Assembler version: ${logger.colors.cyan(assemblerVersion)}`)
       .render();
 
     process.exit(0);
@@ -182,22 +173,10 @@ export class App {
   }
 
   /**
-   * Load commands using manifest loader
-   */
-  public async loadCommands() {
-    await loadAceCommands(this.kernel.application, this.ace);
-  }
-
-  /**
    * Handle application command
    */
   public async handle(argv: string[]) {
     try {
-      /**
-       * Manifest files to load
-       */
-      await this.loadCommands();
-
       /**
        * Define ace hooks to wire the application (if required)
        */

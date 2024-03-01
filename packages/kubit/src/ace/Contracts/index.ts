@@ -262,20 +262,10 @@ export interface KernelContract {
   flag(name: string, handler: GlobalFlagHandler, options: Partial<Exclude<CommandFlag, 'name' | 'propertyName'>>): this;
 
   /**
-   * Register the manifest loader
-   */
-  useManifest(manifestLoacder: ManifestLoaderContract): this;
-
-  /**
    * Register an on exit callback listener. It should always
    * exit the process
    */
   onExit(callback: (kernel: this) => void | Promise<void>): this;
-
-  /**
-   * Preload the manifest file
-   */
-  preloadManifest(): void;
 
   /**
    * Get command suggestions

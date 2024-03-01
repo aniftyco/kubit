@@ -1,6 +1,6 @@
 {
   "name": "kubit",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
@@ -12,7 +12,6 @@
     "types"
   ],
   "main": "dist/index.js",
-  "types": "types/index.d.ts",
   "dependencies": {
     "@faker-js/faker": "^8.0.1",
     "@phc/format": "^1.0.0",

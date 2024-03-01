@@ -5,9 +5,10 @@
  * file.
  */
 
+import { defineConfig } from 'kubit';
+
 import Application from '@ioc:Kubit/Application';
 import Env from '@ioc:Kubit/Env';
-import { driveConfig } from '@kubit/core/build/config';
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ import { driveConfig } from '@kubit/core/build/config';
 | defined inside the `contracts` directory.
 |
 */
-export default driveConfig({
+export default defineConfig({
   /*
   |--------------------------------------------------------------------------
   | Default disk

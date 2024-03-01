@@ -10,5 +10,5 @@
 require('reflect-metadata');
 require('source-map-support').install({ handleUncaughtExceptions: false });
 
-const { Ignitor } = require('@kubit/core/build/standalone');
+const { Ignitor } = require('kubit');
 new Ignitor(__dirname).ace().handle(process.argv.slice(2));

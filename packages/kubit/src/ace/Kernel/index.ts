@@ -14,7 +14,6 @@ import {
 import { InvalidCommandException } from '../Exceptions';
 import { HelpCommand } from '../HelpCommand';
 import { Hooks } from '../Hooks';
-import { ManifestLoader } from '../Manifest/Loader';
 import { Parser } from '../Parser';
 import { printHelp, printHelpFor } from '../utils/help';
 import { validateCommand } from '../utils/validateCommand';
@@ -29,12 +28,6 @@ export class Kernel implements KernelContract {
    * hooks
    */
   private hooks = new Hooks();
-
-  /**
-   * Reference to the manifest loader. If defined, we will give preference
-   * to the manifest files.
-   */
-  private manifestLoader: ManifestLoader;
 
   /**
    * The command that started the process
@@ -135,16 +128,6 @@ export class Kernel implements KernelContract {
     );
 
     let aliases = {};
-
-    /**
-     * Concat manifest commands when they exists
-     */
-    if (this.manifestLoader && this.manifestLoader.booted) {
-      const { commands: manifestCommands, aliases: manifestAliases } = this.manifestLoader.getCommands();
-
-      commands = commands.concat(manifestCommands);
-      aliases = Object.assign(aliases, manifestAliases);
-    }
 
     return {
       commands,
@@ -380,14 +363,6 @@ export class Kernel implements KernelContract {
   }
 
   /**
-   * Use manifest instance to lazy load commands
-   */
-  public useManifest(manifestLoader: ManifestLoader): this {
-    this.manifestLoader = manifestLoader;
-    return this;
-  }
-
-  /**
    * Register an exit handler
    */
   public onExit(callback: (kernel: this) => void | Promise<void>): this {
@@ -407,19 +382,6 @@ export class Kernel implements KernelContract {
       .map(({ commandName }) => commandName);
 
     return suggestions.concat(Object.keys(aliases).filter((alias) => leven(name, alias) <= distance));
-  }
-
-  /**
-   * Preload the manifest file. Re-running this method twice will
-   * result in a noop
-   */
-  public async preloadManifest() {
-    /**
-     * Load manifest commands when instance of manifest loader exists.
-     */
-    if (this.manifestLoader) {
-      await this.manifestLoader.boot();
-    }
   }
 
   /**
@@ -452,56 +414,29 @@ export class Kernel implements KernelContract {
     const aliasCommandName = this.aliases[commandName];
 
     /**
-     * Manifest commands gets preference over manually registered commands.
-     *
-     * - We check the manifest loader is register
-     * - The manifest loader has the command
-     * - Or the manifest loader has the alias command
+     * Try to find command inside manually registered command or fallback
+     * to null
      */
-    const commandNode = this.manifestLoader
-      ? this.manifestLoader.hasCommand(commandName)
-        ? this.manifestLoader.getCommand(commandName)
-        : this.manifestLoader.hasCommand(aliasCommandName)
-          ? this.manifestLoader.getCommand(aliasCommandName)
-          : undefined
-      : undefined;
+    const command = this.commands[commandName] || this.commands[aliasCommandName] || null;
 
-    if (commandNode) {
-      commandNode.command.aliases = commandNode.command.aliases || [];
-      if (aliasCommandName && !commandNode.command.aliases.includes(commandName)) {
-        commandNode.command.aliases.push(commandName);
+    /**
+     * Share main command name as an alias with the command
+     */
+    if (command) {
+      command.aliases = command.aliases || [];
+      if (aliasCommandName && !command.aliases.includes(commandName)) {
+        command.aliases.push(commandName);
       }
-
-      await this.hooks.execute('before', 'find', commandNode.command);
-      const command = await this.manifestLoader.loadCommand(commandNode.command.commandName);
-      await this.hooks.execute('after', 'find', command);
-      return command;
-    } else {
-      /**
-       * Try to find command inside manually registered command or fallback
-       * to null
-       */
-      const command = this.commands[commandName] || this.commands[aliasCommandName] || null;
-
-      /**
-       * Share main command name as an alias with the command
-       */
-      if (command) {
-        command.aliases = command.aliases || [];
-        if (aliasCommandName && !command.aliases.includes(commandName)) {
-          command.aliases.push(commandName);
-        }
-      }
-
-      /**
-       * Executing before and after together to be compatible
-       * with the manifest find before and after hooks
-       */
-      await this.hooks.execute('before', 'find', command);
-      await this.hooks.execute('after', 'find', command);
-
-      return command;
     }
+
+    /**
+     * Executing before and after together to be compatible
+     * with the manifest find before and after hooks
+     */
+    await this.hooks.execute('before', 'find', command);
+    await this.hooks.execute('after', 'find', command);
+
+    return command;
   }
 
   /**
@@ -629,11 +564,6 @@ export class Kernel implements KernelContract {
     this.state = 'running';
 
     try {
-      /**
-       * Preload the manifest file to load the manifest files
-       */
-      this.preloadManifest();
-
       /**
        * Branch 1
        * Run default command and invoke the exit handler
