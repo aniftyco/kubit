@@ -6,7 +6,7 @@ import { ApplicationContract } from '@ioc:Kubit/Application';
 import { EncryptionContract } from '@ioc:Kubit/Encryption';
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 import { ProfilerRowContract } from '@ioc:Kubit/Profiler';
-import { ErrorHandler, ServerConfig, ServerContract } from '@ioc:Kubit/Server';
+import { ErrorHandler, ServerConfig } from '@ioc:Kubit/Server';
 
 import { HttpContext } from '../HttpContext';
 import { httpContextLocalStorage, useAsyncLocalStorage, usingAsyncLocalStorage } from '../HttpContext/LocalStorage';
@@ -22,7 +22,7 @@ import { RequestHandler } from './RequestHandler';
 /**
  * Server class handles the HTTP requests by using all Adonis micro modules.
  */
-export class Server implements ServerContract {
+export class Server {
   /**
    * The server itself doesn't create the http server instance. However, the consumer
    * of this class can create one and set the instance for further reference. This
@@ -58,7 +58,7 @@ export class Server implements ServerContract {
   /**
    * Request handler to handle request after route is found
    */
-  private requestHandler = new RequestHandler(this.middleware, this.router);
+  private requestHandler = new RequestHandler(this.middleware, this.router as any);
 
   constructor(
     private application: ApplicationContract,
@@ -83,9 +83,9 @@ export class Server implements ServerContract {
      * Start with before hooks upfront. If they raise error
      * then execute error handler.
      */
-    return this.hooks.executeBefore(ctx).then((shortcircuit) => {
+    return this.hooks.executeBefore(ctx as any).then((shortcircuit) => {
       if (!shortcircuit) {
-        return this.requestHandler.handle(ctx);
+        return this.requestHandler.handle(ctx as any);
       }
     });
   }
@@ -106,8 +106,8 @@ export class Server implements ServerContract {
    */
   private getContext(request: Request, response: Response, profilerRow: ProfilerRowContract) {
     return new HttpContext(
-      request,
-      response,
+      request as any,
+      response as any,
       this.application.logger.child({
         request_id: request.id(),
       }),
@@ -124,9 +124,9 @@ export class Server implements ServerContract {
      * and route handler
      */
     try {
-      await this.runBeforeHooksAndHandler(ctx);
+      await this.runBeforeHooksAndHandler(ctx as any);
     } catch (error) {
-      await this.exception.handle(error, ctx);
+      await this.exception.handle(error, ctx as any);
     }
 
     /*
@@ -139,11 +139,11 @@ export class Server implements ServerContract {
      * block.
      */
     try {
-      await this.hooks.executeAfter(ctx);
+      await this.hooks.executeAfter(ctx as any);
       requestAction.end({ status_code: res.statusCode });
       ctx.response.finish();
     } catch (error) {
-      await this.exception.handle(error, ctx);
+      await this.exception.handle(error, ctx as any);
       requestAction.end({ status_code: res.statusCode, error });
       ctx.response.finish();
     }
@@ -175,7 +175,7 @@ export class Server implements ServerContract {
    */
   public async handle(req: IncomingMessage, res: ServerResponse): Promise<void> {
     const request = new Request(req, res, this.encryption, this.httpConfig);
-    const response = new Response(req, res, this.encryption, this.httpConfig, this.router);
+    const response = new Response(req, res, this.encryption, this.httpConfig, this.router as any);
 
     const requestAction = this.getProfilerRow(request);
     const ctx = this.getContext(request, response, requestAction);
@@ -185,11 +185,11 @@ export class Server implements ServerContract {
      */
     const accept = this.httpConfig.forceContentNegotiationTo;
     if (accept) {
-      req.headers['accept'] = typeof accept === 'function' ? accept(ctx) : accept;
+      req.headers['accept'] = typeof accept === 'function' ? accept(ctx as any) : accept;
     }
 
     if (usingAsyncLocalStorage) {
-      return httpContextLocalStorage.run(ctx, () => this.handleRequest(ctx, requestAction, res));
+      return httpContextLocalStorage.run(ctx as any, () => this.handleRequest(ctx, requestAction, res));
     } else {
       return this.handleRequest(ctx, requestAction, res);
     }

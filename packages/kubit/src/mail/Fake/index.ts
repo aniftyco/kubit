@@ -1,7 +1,7 @@
 import { FakeMailManagerContract, MailerContract, MailersList, MessageNode, MessageSearchNode } from '@ioc:Kubit/Mail';
 
 export class FakeMailManager implements FakeMailManagerContract {
-  public fakedMailers: Map<keyof MailersList, MailerContract<never>> = new Map();
+  public fakedMailers: Map<string, MailerContract<never>> = new Map();
 
   /**
    * Returns the faked mailer instance
@@ -40,7 +40,7 @@ export class FakeMailManager implements FakeMailManagerContract {
    */
   public find(messageOrCallback: MessageSearchNode | ((mail: MessageSearchNode) => boolean)): MessageSearchNode | null {
     for (let [, mailer] of this.fakedMailers) {
-      const message = mailer.driver.find(messageOrCallback);
+      const message = (mailer.driver as any).find(messageOrCallback);
       if (message) {
         return message;
       }
@@ -55,7 +55,7 @@ export class FakeMailManager implements FakeMailManagerContract {
   public filter(messageOrCallback: MessageSearchNode | ((mail: MessageSearchNode) => boolean)): MessageNode[] {
     let messages: MessageNode[] = [];
     for (let [, mailer] of this.fakedMailers) {
-      messages = messages.concat(mailer.driver.filter(messageOrCallback));
+      messages = messages.concat((mailer.driver as any).filter(messageOrCallback));
     }
 
     return messages;

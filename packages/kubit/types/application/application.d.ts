@@ -1,8 +1,7 @@
 declare module '@ioc:Kubit/Application' {
-  import { IocContract, IocResolverContract } from 'kubit/types';
-
   import { ConfigContract } from '@ioc:Kubit/Config';
   import { EnvContract } from '@ioc:Kubit/Env';
+  import { IocContract, IocResolverContract } from '@ioc:Kubit/Fold';
   import * as Helpers from '@ioc:Kubit/Helpers';
   import { LoggerContract } from '@ioc:Kubit/Logger';
   import { ProfilerContract } from '@ioc:Kubit/Profiler';

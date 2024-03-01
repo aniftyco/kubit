@@ -1,4 +1,11 @@
-import { AuthContract, AuthManagerContract } from '@ioc:Kubit/Auth';
+import {
+  AuthContract,
+  AuthManagerContract,
+  GetProviderRealUser,
+  GuardContract,
+  GuardsList,
+  ProvidersList,
+} from '@ioc:Kubit/Auth';
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 
 /**
@@ -25,7 +32,7 @@ export class Auth implements AuthContract {
   /**
    * Returns an instance of a named or the default mapping
    */
-  public use(mapping?: string) {
+  public use(mapping?: string): GuardContract<keyof ProvidersList, keyof GuardsList> {
     mapping = mapping || this.defaultGuard;
 
     if (!this.mappingsCache.has(mapping)) {
@@ -33,7 +40,7 @@ export class Auth implements AuthContract {
       this.mappingsCache.set(mapping, this.manager.makeMapping(this.ctx, mapping));
     }
 
-    return this.mappingsCache.get(mapping)!;
+    return this.mappingsCache.get(mapping);
   }
 
   /**
@@ -119,7 +126,7 @@ export class Auth implements AuthContract {
   /**
    * Login a user without any verification
    */
-  public async login(user: any, ...args: any[]) {
+  public async login(user: GetProviderRealUser<keyof ProvidersList>, ...args: any[]) {
     return this.use().login(user, ...args);
   }
 

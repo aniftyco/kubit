@@ -10,7 +10,7 @@ import { parse, UrlWithStringQuery } from 'url';
 
 import { EncryptionContract } from '@ioc:Kubit/Encryption';
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-import { RequestConfig, RequestContract } from '@ioc:Kubit/Request';
+import { RequestConfig } from '@ioc:Kubit/Request';
 import { lodash } from '@poppinss/utils';
 import { cuid } from '@poppinss/utils/build/helpers';
 
@@ -26,7 +26,7 @@ import { trustProxy } from '../helpers';
  * You can access the original [IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
  * using `request.request` property.
  */
-export class Request extends Macroable implements RequestContract {
+export class Request extends Macroable {
   /**
    * Request body set using `setBody` method
    */
@@ -406,7 +406,7 @@ export class Request extends Macroable implements RequestContract {
   public ip(): string {
     const ipFn = this.config.getIp;
     if (typeof ipFn === 'function') {
-      return ipFn(this);
+      return ipFn(this as any);
     }
 
     return proxyaddr(this.request, this.config.trustProxy);

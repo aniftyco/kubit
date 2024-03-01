@@ -1,6 +1,6 @@
 import { Macroable } from 'macroable';
 
-import { RouteGroupContract, RouteMiddlewareHandler, RouteParamMatcher } from '@ioc:Kubit/Route';
+import { RouteMiddlewareHandler, RouteParamMatcher } from '@ioc:Kubit/Route';
 
 import { RouterException } from '../Exceptions/RouterException';
 import { BriskRoute } from './BriskRoute';
@@ -11,7 +11,7 @@ import { Route } from './Route';
  * Group class exposes the API to take action on a group of routes.
  * The group routes must be pre-defined using the constructor.
  */
-export class RouteGroup extends Macroable implements RouteGroupContract {
+export class RouteGroup extends Macroable {
   protected static macros = {};
   protected static getters = {};
 
@@ -44,7 +44,7 @@ export class RouteGroup extends Macroable implements RouteGroupContract {
     }
 
     if (route instanceof RouteGroup) {
-      route.routes.forEach((child) => this.invoke(child, method, params));
+      route.routes.forEach((child) => this.invoke(child as any, method, params));
       return;
     }
 

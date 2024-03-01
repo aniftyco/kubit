@@ -10,6 +10,7 @@ import {
   GuardsList,
   LucidProviderConfig,
   OATGuardConfig,
+  ProvidersList,
   SessionGuardConfig,
   UserProviderContract,
 } from '@ioc:Kubit/Auth';
@@ -116,7 +117,7 @@ export class AuthManager implements AuthManagerContract {
    */
   private makeSessionGuard(
     mapping: string,
-    config: SessionGuardConfig<any>,
+    config: SessionGuardConfig<keyof ProvidersList>,
     provider: UserProviderContract<any>,
     ctx: HttpContextContract
   ) {
@@ -129,7 +130,7 @@ export class AuthManager implements AuthManagerContract {
    */
   private makeOatGuard(
     mapping: string,
-    config: OATGuardConfig<any>,
+    config: OATGuardConfig<keyof ProvidersList>,
     provider: UserProviderContract<any>,
     ctx: HttpContextContract
   ) {
@@ -143,7 +144,7 @@ export class AuthManager implements AuthManagerContract {
    */
   private makeBasicAuthGuard(
     mapping: string,
-    config: BasicAuthGuardConfig<any>,
+    config: BasicAuthGuardConfig<keyof ProvidersList>,
     provider: UserProviderContract<any>,
     ctx: HttpContextContract
   ) {
@@ -171,7 +172,11 @@ export class AuthManager implements AuthManagerContract {
   /**
    * Returns an instance of the session client
    */
-  private makeSessionClient(mapping: string, config: SessionGuardConfig<any>, provider: UserProviderContract<any>) {
+  private makeSessionClient(
+    mapping: string,
+    config: SessionGuardConfig<keyof ProvidersList>,
+    provider: UserProviderContract<any>
+  ) {
     const { SessionClient } = require('../Clients/Session');
     return new SessionClient(mapping, config, provider);
   }
@@ -179,7 +184,11 @@ export class AuthManager implements AuthManagerContract {
   /**
    * Returns an instance of the session client
    */
-  private makeOatClient(mapping: string, config: OATGuardConfig<any>, provider: UserProviderContract<any>) {
+  private makeOatClient(
+    mapping: string,
+    config: OATGuardConfig<keyof ProvidersList>,
+    provider: UserProviderContract<any>
+  ) {
     const { OATClient } = require('../Clients/Oat');
     const tokenProvider = this.makeTokenProviderInstance(config.tokenProvider);
     return new OATClient(mapping, config, provider, tokenProvider);
@@ -284,7 +293,7 @@ export class AuthManager implements AuthManagerContract {
    * Make an instance of a given mapping for the current HTTP request.
    */
   public makeMapping(ctx: HttpContextContract, mapping: keyof GuardsList) {
-    const mappingConfig = this.config.guards[mapping];
+    const mappingConfig = this.config.guards[mapping] as any;
 
     if (mappingConfig === undefined) {
       throw new Exception(`Invalid guard "${mapping}". Make sure the guard is defined inside the config/auth file`);
@@ -298,7 +307,7 @@ export class AuthManager implements AuthManagerContract {
    * Returns an instance of the testing
    */
   public client(mapping: keyof GuardsList) {
-    const mappingConfig = this.config.guards[mapping];
+    const mappingConfig = this.config.guards[mapping] as any;
 
     if (mappingConfig === undefined) {
       throw new Exception(`Invalid guard "${mapping}". Make sure the guard is defined inside the config/auth file`);

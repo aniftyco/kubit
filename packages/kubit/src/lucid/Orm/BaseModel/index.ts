@@ -1,7 +1,7 @@
 import equal from 'fast-deep-equal';
 import { DateTime } from 'luxon';
 
-import { IocContract } from '@ioc:Kubit/Application';
+import { IocContract } from '@ioc:Kubit/Fold';
 import { QueryClientContract, TransactionClientContract } from '@ioc:Kubit/Lucid/Database';
 import {
   AdapterContract,

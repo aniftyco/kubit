@@ -1,13 +1,12 @@
 import { EncryptionContract } from '@ioc:Kubit/Encryption';
 import {
+  BriskRouteContract,
   MakeSignedUrlOptions,
   MakeUrlOptions,
   MatchedRoute,
-  RouteContract,
   RouteHandler,
   RouteMatchersNode,
   RouteNode,
-  RouterContract,
 } from '@ioc:Kubit/Route';
 import { types } from '@poppinss/utils/build/helpers';
 
@@ -34,12 +33,12 @@ import { Store } from './Store';
  * })
  * ```
  */
-export class Router extends LookupStore implements RouterContract {
+export class Router extends LookupStore {
   /**
    * Collection of routes, including route resource and route
    * group. To get a flat list of routes, call `router.toJSON()`
    */
-  public routes: (RouteContract | RouteResource | RouteGroup | BriskRoute)[] = [];
+  public routes: (Route | RouteResource | RouteGroup | BriskRoute)[] = [];
 
   /**
    * Exposing BriskRoute, RouteGroup and RouteResource constructors
@@ -218,17 +217,17 @@ export class Router extends LookupStore implements RouterContract {
   /**
    * Returns a brisk route instance for a given URL pattern
    */
-  public on(pattern: string): BriskRoute {
+  public on(pattern: string): BriskRouteContract {
     const briskRoute = new BriskRoute(pattern, this.paramMatchers);
     const openedGroup = this.getRecentGroup();
 
     if (openedGroup) {
-      openedGroup.routes.push(briskRoute);
+      openedGroup.routes.push(briskRoute as any);
     } else {
-      this.routes.push(briskRoute);
+      this.routes.push(briskRoute as any);
     }
 
-    return briskRoute;
+    return briskRoute as unknown as BriskRouteContract;
   }
 
   /**
@@ -269,7 +268,7 @@ export class Router extends LookupStore implements RouterContract {
   public commit() {
     const names: string[] = [];
 
-    toRoutesJSON(this.routes).forEach((route) => {
+    toRoutesJSON(this.routes as any).forEach((route) => {
       /*
        * Raise error when route name is already in use. Route names have to be unique
        * to ensure that only one route is returned during lookup.

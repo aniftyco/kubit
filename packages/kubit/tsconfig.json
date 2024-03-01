@@ -14,12 +14,14 @@
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "strictNullChecks": false,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "useUnknownInCatchVariables": false,
+    "strict": false,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false
   },
   "include": ["**/*.ts"],
-  "exclude": ["dist", "tests"],
+  "exclude": ["dist", "tests"]
 }

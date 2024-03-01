@@ -112,7 +112,7 @@ export class MailManager
    */
   private async sendQueuedEmail(mail: CompiledMailNode, cb: (error: null | any, response?: any) => void) {
     try {
-      const response = await this.use(mail.mailer).sendCompiled(mail);
+      const response = await (this.use(mail.mailer) as any).sendCompiled(mail);
       cb(null, { mail, response });
     } catch (error) {
       error.mail = mail;
@@ -145,7 +145,7 @@ export class MailManager
     mappingName: Name,
     driver: MailDriverContract
   ): MailerContract<Name> {
-    return new Mailer(mappingName, this, true, driver);
+    return new Mailer(mappingName, this, true, driver as never);
   }
 
   /**
@@ -224,7 +224,10 @@ export class MailManager
 
     const { FakeDriver } = require('../Drivers/Fake');
     mailersToFake.forEach((mailer) => {
-      this.fakeMailManager.fakedMailers.set(mailer, new Mailer('fake' as any, this, false, new FakeDriver()));
+      this.fakeMailManager.fakedMailers.set(
+        mailer,
+        new Mailer('fake' as never, this, false, new FakeDriver() as never)
+      );
     });
 
     return this.fakeMailManager;
@@ -260,7 +263,7 @@ export class MailManager
       return this.fakeMailManager.use(this.getDefaultMappingName()).send(callback);
     }
 
-    return this.use().send(callback);
+    return (this.use() as any).send(callback);
   }
 
   /**
@@ -274,7 +277,7 @@ export class MailManager
       return this.fakeMailManager.use(this.getDefaultMappingName()).send(callback);
     }
 
-    return this.use().sendLater(callback);
+    return (this.use() as any).sendLater(callback);
   }
 
   /**
@@ -287,10 +290,10 @@ export class MailManager
      * Use fake
      */
     if (this.fakeMailManager.isFaked(name)) {
-      return this.fakeMailManager.use(name);
+      return this.fakeMailManager.use(name) as never;
     }
 
-    return super.use(name);
+    return super.use(name) as never;
   }
 
   /**
@@ -298,14 +301,14 @@ export class MailManager
    */
   public async close(name?: keyof MailersList): Promise<void> {
     const mailer = name ? this.use(name) : this.use();
-    await mailer.close();
+    await (mailer as any).close();
   }
 
   /**
    * Closes the mapping instance and removes it from the cache
    */
   public async closeAll(): Promise<void> {
-    await Promise.all(Array.from(this['mappingsCache'].keys()).map((name: string) => this.close(name as any)));
+    await Promise.all(Array.from(this['mappingsCache'].keys()).map((name: string) => this.close(name as never)));
   }
 
   /**
@@ -326,8 +329,8 @@ export class MailManager
       },
     });
 
-    const mailer = this.wrapDriverResponse(mappingName, smtpDriver);
-    const response = await mailer.send(callback);
+    const mailer = this.wrapDriverResponse(mappingName as never, smtpDriver);
+    const response = (await mailer.send(callback)) as any;
 
     return {
       ...response,

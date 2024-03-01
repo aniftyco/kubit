@@ -14,7 +14,7 @@ function formatRecipients(recipients: string[]) {
  */
 function getAcceptedRecipients(response: MailEventData['response']): string | undefined {
   if ('accepted' in response) {
-    return formatRecipients(response.accepted);
+    return formatRecipients((response as any).accepted);
   }
 }
 
@@ -23,7 +23,7 @@ function getAcceptedRecipients(response: MailEventData['response']): string | un
  */
 function getRejectedRecipients(response: MailEventData['response']): string | undefined {
   if ('rejected' in response) {
-    return formatRecipients(response.rejected);
+    return formatRecipients((response as any).rejected);
   }
 }
 

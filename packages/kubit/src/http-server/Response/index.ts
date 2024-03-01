@@ -12,14 +12,7 @@ import vary from 'vary';
 
 import { EncryptionContract } from '@ioc:Kubit/Encryption';
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-import {
-  CastableHeader,
-  CookieOptions,
-  RedirectContract,
-  ResponseConfig,
-  ResponseContract,
-  ResponseStream,
-} from '@ioc:Kubit/Response';
+import { CastableHeader, CookieOptions, RedirectContract, ResponseConfig, ResponseStream } from '@ioc:Kubit/Response';
 import { RouterContract } from '@ioc:Kubit/Route';
 import { Exception, safeStringify } from '@poppinss/utils';
 import { interpolate } from '@poppinss/utils/build/helpers';
@@ -44,7 +37,7 @@ class AbortException extends HttpException {
  * The response is a wrapper over [ServerResponse](https://nodejs.org/api/http.html#http_class_http_serverresponse)
  * streamlining the process of writing response body and automatically setting up appropriate headers.
  */
-export class Response extends Macroable implements ResponseContract {
+export class Response extends Macroable {
   protected static macros = {};
   protected static getters = {};
 
@@ -481,7 +474,7 @@ export class Response extends Macroable implements ResponseContract {
   /**
    * Writes headers to the response.
    */
-  public flushHeaders(statusCode?: number): this {
+  public flushHeaders(statusCode?: number) {
     this.response.writeHead(statusCode || this.response.statusCode, this.headers);
     return this;
   }
@@ -513,7 +506,7 @@ export class Response extends Macroable implements ResponseContract {
    * response.header('content-type', 'application/json')
    * ```
    */
-  public header(key: string, value: CastableHeader): this {
+  public header(key: string, value: CastableHeader) {
     if (value) {
       this.headers[key.toLowerCase()] = this.castHeaderValue(value);
     }
@@ -531,7 +524,7 @@ export class Response extends Macroable implements ResponseContract {
    * response.append('set-cookie', 'username=virk')
    * ```
    */
-  public append(key: string, value: CastableHeader): this {
+  public append(key: string, value: CastableHeader) {
     /* istanbul ignore if */
     if (!value) {
       return this;
@@ -561,7 +554,7 @@ export class Response extends Macroable implements ResponseContract {
   /**
    * Adds HTTP response header, when it doesn't exists already.
    */
-  public safeHeader(key: string, value: CastableHeader): this {
+  public safeHeader(key: string, value: CastableHeader) {
     if (!this.getHeader(key)) {
       this.header(key, value);
     }
@@ -571,7 +564,7 @@ export class Response extends Macroable implements ResponseContract {
   /**
    * Removes the existing response header from being sent.
    */
-  public removeHeader(key: string): this {
+  public removeHeader(key: string) {
     key = key.toLowerCase();
     if (this.headers[key]) {
       delete this.headers[key.toLowerCase()];
@@ -589,7 +582,7 @@ export class Response extends Macroable implements ResponseContract {
   /**
    * Set HTTP status code
    */
-  public status(code: number): this {
+  public status(code: number) {
     this.explicitStatus = true;
     this.response.statusCode = code;
     return this;
@@ -599,7 +592,7 @@ export class Response extends Macroable implements ResponseContract {
    * Set's status code only when it's not explictly
    * set
    */
-  public safeStatus(code: number): this {
+  public safeStatus(code: number) {
     if (this.explicitStatus) {
       return this;
     }
@@ -620,7 +613,7 @@ export class Response extends Macroable implements ResponseContract {
    * response.type('.json') // Content-type: application/json
    * ```
    */
-  public type(type: string, charset?: string): this {
+  public type(type: string, charset?: string) {
     type = charset ? `${type}; charset=${charset}` : type;
     this.header('Content-Type', mime.contentType(type));
 
@@ -630,7 +623,7 @@ export class Response extends Macroable implements ResponseContract {
   /**
    * Set the Vary HTTP header
    */
-  public vary(field: string | string[]): this {
+  public vary(field: string | string[]) {
     vary(this.response, field);
     return this;
   }
@@ -641,7 +634,7 @@ export class Response extends Macroable implements ResponseContract {
    *
    * Use this function, when you want to compute etag manually for some other resons.
    */
-  public setEtag(body: any, weak: boolean = false): this {
+  public setEtag(body: any, weak: boolean = false) {
     this.header('Etag', etag(body, { weak }));
     return this;
   }
@@ -837,7 +830,7 @@ export class Response extends Macroable implements ResponseContract {
    * response.location('/login')
    * ```
    */
-  public location(url: string): this {
+  public location(url: string) {
     this.header('Location', url);
     return this;
   }
@@ -859,7 +852,7 @@ export class Response extends Macroable implements ResponseContract {
     forwardQueryString: boolean = false,
     statusCode: number = 302
   ): RedirectContract | void {
-    const handler = new Redirect(this.request, this, this.router);
+    const handler = new Redirect(this.request, this as any, this.router);
 
     if (forwardQueryString) {
       handler.withQs();
@@ -908,7 +901,7 @@ export class Response extends Macroable implements ResponseContract {
    * Set signed cookie as the response header. The inline options overrides
    * all options from the config (means they are not merged).
    */
-  public cookie(key: string, value: any, options?: Partial<CookieOptions>): this {
+  public cookie(key: string, value: any, options?: Partial<CookieOptions>) {
     options = Object.assign({}, this.config.cookie, options);
 
     const serialized = this.cookieSerializer.sign(key, value, options);
@@ -924,7 +917,7 @@ export class Response extends Macroable implements ResponseContract {
    * Set unsigned cookie as the response header. The inline options overrides
    * all options from the config (means they are not merged)
    */
-  public plainCookie(key: string, value: any, options?: Partial<CookieOptions & { encode: boolean }>): this {
+  public plainCookie(key: string, value: any, options?: Partial<CookieOptions & { encode: boolean }>) {
     options = Object.assign({}, this.config.cookie, options);
 
     const serialized = this.cookieSerializer.encode(key, value, options);
@@ -940,7 +933,7 @@ export class Response extends Macroable implements ResponseContract {
    * Set unsigned cookie as the response header. The inline options overrides
    * all options from the config (means they are not merged)
    */
-  public encryptedCookie(key: string, value: any, options?: Partial<CookieOptions>): this {
+  public encryptedCookie(key: string, value: any, options?: Partial<CookieOptions>) {
     options = Object.assign({}, this.config.cookie, options);
 
     const serialized = this.cookieSerializer.encrypt(key, value, options);
@@ -955,7 +948,7 @@ export class Response extends Macroable implements ResponseContract {
   /**
    * Clear existing cookie.
    */
-  public clearCookie(key: string, options?: Partial<CookieOptions>): this {
+  public clearCookie(key: string, options?: Partial<CookieOptions>) {
     options = Object.assign({}, this.config.cookie, options);
     options.expires = new Date(1);
     options.maxAge = -1;

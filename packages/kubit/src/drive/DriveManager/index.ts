@@ -5,7 +5,6 @@ import {
   DriveConfig,
   DriveFileStats,
   DriveListItem,
-  DriveManagerContract,
   DriverContract,
   FakeImplementationCallback,
   LocalDriverConfig,
@@ -22,15 +21,12 @@ import { FakeDrive } from '../Fake';
  * Drive manager exposes the API to resolve disks and extend by
  * adding custom drivers
  */
-export class DriveManager
-  extends Manager<
-    ApplicationContract,
-    DriverContract,
-    DriverContract,
-    { [P in keyof DisksList]: DisksList[P]['implementation'] }
-  >
-  implements DriveManagerContract
-{
+export class DriveManager extends Manager<
+  ApplicationContract,
+  DriverContract,
+  DriverContract,
+  { [P in keyof DisksList]: DisksList[P]['implementation'] }
+> {
   /**
    * Find if drive is ready to be used
    */
@@ -95,7 +91,7 @@ export class DriveManager
    * Returns config for a given mapping
    */
   protected getMappingConfig(diskName: keyof DisksList) {
-    return this.config.disks[diskName];
+    return this.config.disks[diskName] as any;
   }
 
   /**
@@ -121,9 +117,12 @@ export class DriveManager
     const disksToFake = Array.isArray(disks) ? disks : [disks];
 
     disksToFake.forEach((disk) => {
-      if (!this.fakeDrive.isFaked(disk)) {
+      if (!this.fakeDrive.isFaked(disk as never)) {
         this.logger.trace({ disk: disk }, 'drive faking disk');
-        this.fakeDrive.fakes.set(disk, this.fakeCallback(this, disk, this.getMappingConfig(disk)));
+        this.fakeDrive.fakes.set(
+          disk as never,
+          this.fakeCallback(this as any, disk as never, this.getMappingConfig(disk as never))
+        );
       }
     });
 
@@ -138,9 +137,9 @@ export class DriveManager
     const disksToRestore = Array.isArray(disks) ? disks : [disks];
 
     disksToRestore.forEach((disk) => {
-      if (this.fakeDrive.isFaked(disk)) {
+      if (this.fakeDrive.isFaked(disk as never)) {
         this.logger.trace({ disk: disk }, 'drive restoring disk fake');
-        this.fakeDrive.restore(disk);
+        this.fakeDrive.restore(disk as never);
       }
     });
   }
@@ -149,13 +148,13 @@ export class DriveManager
    * Restore all fakes1
    */
   public restoreAll() {
-    this.fakeDrive.fakes = new Map();
+    (this.fakeDrive.fakes as any) = new Map();
   }
 
   /**
    * Resolve instance for a disk
    */
-  public use(disk?: keyof DisksList): any {
+  public use(disk?: keyof DisksList): never {
     if (!this.isReady) {
       throw new Exception(
         'Missing configuration for drive. Visit https://bit.ly/2WnR5j9 for setup instructions',
@@ -166,7 +165,7 @@ export class DriveManager
 
     disk = disk || this.getDefaultMappingName();
     if (this.fakeDrive.isFaked(disk)) {
-      return this.fakeDrive.use(disk);
+      return this.fakeDrive.use(disk) as never;
     }
 
     return super.use(disk);
@@ -185,49 +184,49 @@ export class DriveManager
    * converting the buffer to a string.
    */
   public async get(location: string, ...args: any[]): Promise<Buffer> {
-    return this.use().get(location, ...args);
+    return (this.use() as any).get(location, ...args);
   }
 
   /**
    * Returns the file contents as a stream
    */
   public async getStream(location: string, ...args: any[]): Promise<NodeJS.ReadableStream> {
-    return this.use().getStream(location, ...args);
+    return (this.use() as any).getStream(location, ...args);
   }
 
   /**
    * A boolean to find if the location path exists or not
    */
   public exists(location: string, ...args: any[]): Promise<boolean> {
-    return this.use().exists(location, ...args);
+    return (this.use() as any).exists(location, ...args);
   }
 
   /**
    * Returns the location path visibility
    */
   public async getVisibility(location: string, ...args: any[]): Promise<Visibility> {
-    return this.use().getVisibility(location, ...args);
+    return (this.use() as any).getVisibility(location, ...args);
   }
 
   /**
    * Returns the location path stats
    */
   public async getStats(location: string, ...args: any[]): Promise<DriveFileStats> {
-    return this.use().getStats(location, ...args);
+    return (this.use() as any).getStats(location, ...args);
   }
 
   /**
    * Returns a signed URL for a given location path
    */
   public getSignedUrl(location: string, ...args: any[]): Promise<string> {
-    return this.use().getSignedUrl(location, ...args);
+    return (this.use() as any).getSignedUrl(location, ...args);
   }
 
   /**
    * Returns a URL for a given location path
    */
   public getUrl(location: string, ...args: any[]): Promise<string> {
-    return this.use().getUrl(location, ...args);
+    return (this.use() as any).getUrl(location, ...args);
   }
 
   /**
@@ -235,7 +234,7 @@ export class DriveManager
    * intermediate directories will be created (if required).
    */
   public put(location: string, ...args: any[]): Promise<void> {
-    return this.use().put(location, ...args);
+    return (this.use() as any).put(location, ...args);
   }
 
   /**
@@ -243,21 +242,21 @@ export class DriveManager
    * directories will be created (if required).
    */
   public putStream(location: string, ...args: any[]): Promise<void> {
-    return this.use().putStream(location, ...args);
+    return (this.use() as any).putStream(location, ...args);
   }
 
   /**
    * Not supported
    */
   public setVisibility(location: string, ...args: any[]): Promise<void> {
-    return this.use().setVisibility(location, ...args);
+    return (this.use() as any).setVisibility(location, ...args);
   }
 
   /**
    * Remove a given location path
    */
   public delete(location: string, ...args: any[]): Promise<void> {
-    return this.use().delete(location, ...args);
+    return (this.use() as any).delete(location, ...args);
   }
 
   /**
@@ -265,7 +264,7 @@ export class DriveManager
    * The missing intermediate directories will be created (if required)
    */
   public copy(source: string, ...args: any[]): Promise<void> {
-    return this.use().copy(source, ...args);
+    return (this.use() as any).copy(source, ...args);
   }
 
   /**
@@ -273,14 +272,14 @@ export class DriveManager
    * The missing intermediate directories will be created (if required)
    */
   public move(source: string, ...args: any[]): Promise<void> {
-    return this.use().move(source, ...args);
+    return (this.use() as any).move(source, ...args);
   }
 
   /**
    * Return a listing directory iterator for given location.
    */
   public list(location: string): DirectoryListingContract<DriverContract, DriveListItem> {
-    const driver = this.use();
+    const driver = this.use() as any;
 
     if (typeof driver.list !== 'function') {
       throw new Exception(`List is not supported by the "${driver.name}" driver.`, 500, 'E_LIST_NOT_SUPPORTED');

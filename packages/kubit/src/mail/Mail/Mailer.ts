@@ -75,7 +75,7 @@ export class Mailer<Name extends keyof MailersList> implements MailerContract<Na
     /**
      * Send email for real
      */
-    const response = await this.driver.send(mail.message, mail.config);
+    const response = await (this.driver as any).send(mail.message, mail.config);
 
     /**
      * Emit event
@@ -84,7 +84,7 @@ export class Mailer<Name extends keyof MailersList> implements MailerContract<Na
       message: mail.message,
       views: Object.keys(mail.views).map((view) => mail.views[view].template),
       mailer: mail.mailer,
-      response: response,
+      response: response as never,
     });
 
     return response as unknown as Promise<MailerResponseType<Name>>;
@@ -131,7 +131,7 @@ export class Mailer<Name extends keyof MailersList> implements MailerContract<Na
    * Invokes `close` method on the driver
    */
   public async close() {
-    await this.driver.close();
+    await (this.driver as any).close();
     this.manager.release(this.name);
   }
 }

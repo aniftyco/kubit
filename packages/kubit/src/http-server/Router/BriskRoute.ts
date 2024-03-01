@@ -1,6 +1,6 @@
 import { Macroable } from 'macroable';
 
-import { BriskRouteContract, MakeUrlOptions, RouteHandler, RouteMatchersNode } from '@ioc:Kubit/Route';
+import { MakeUrlOptions, RouteHandler, RouteMatchersNode } from '@ioc:Kubit/Route';
 import { Exception } from '@poppinss/utils';
 
 import { Route } from './Route';
@@ -13,7 +13,7 @@ import { Route } from './Route';
  * to render a view without defining a controller method or
  * closure.
  */
-export class BriskRoute extends Macroable implements BriskRouteContract {
+export class BriskRoute extends Macroable {
   protected static macros = {};
   protected static getters = {};
 

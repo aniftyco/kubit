@@ -1,15 +1,15 @@
-import { DisksList, FakeDriveContract, FakeDriverContract } from '@ioc:Kubit/Drive';
+import { DisksList, FakeDriverContract } from '@ioc:Kubit/Drive';
 
 import { CannotReadFileException } from '../Exceptions';
 
 /**
  * An implementation of the fake drive
  */
-export class FakeDrive implements FakeDriveContract {
+export class FakeDrive {
   /**
    * Reference to registered fakes
    */
-  public fakes: Map<keyof DisksList, FakeDriverContract> = new Map();
+  public fakes: Map<string, any> = new Map();
 
   /**
    * Find a file for the given path exists. Searched

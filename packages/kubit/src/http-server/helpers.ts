@@ -31,7 +31,7 @@ export function dropSlash(input: string): string {
 export function toRoutesJSON(routes: (RouteGroup | RouteResource | Route | BriskRoute)[]): RouteJSON[] {
   return routes.reduce((list: RouteJSON[], route) => {
     if (route instanceof RouteGroup) {
-      list = list.concat(toRoutesJSON(route.routes));
+      list = list.concat(toRoutesJSON(route.routes as any));
       return list;
     }
 

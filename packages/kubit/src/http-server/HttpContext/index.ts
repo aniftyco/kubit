@@ -23,7 +23,7 @@ import { httpContextLocalStorage, usingAsyncLocalStorage } from './LocalStorage'
  * Http context is passed to all route handlers, middleware,
  * error handler and server hooks.
  */
-export class HttpContext extends Macroable implements HttpContextContract {
+export class HttpContext extends Macroable {
   /**
    * Set inside the provider
    */
@@ -125,8 +125,8 @@ export class HttpContext extends Macroable implements HttpContextContract {
      * other ctx properties like `logger`, `profiler` inside those
      * extended methods.
      */
-    this.request.ctx = this;
-    this.response.ctx = this;
+    this.request.ctx = this as any;
+    this.response.ctx = this as any;
   }
 
   /**
@@ -188,7 +188,12 @@ export class HttpContext extends Macroable implements HttpContextContract {
     /*
      * Creating new ctx instance
      */
-    const ctx = new HttpContext(request, response, this.app.logger.child({}), this.app.profiler.create('http:context'));
+    const ctx = new HttpContext(
+      request as any,
+      response as any,
+      this.app.logger.child({}),
+      this.app.profiler.create('http:context')
+    );
 
     /*
      * Attaching route to the ctx
