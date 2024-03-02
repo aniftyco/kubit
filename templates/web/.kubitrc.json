@@ -1,6 +1,6 @@
 {
   "typescript": true,
-  "commands": ["./commands"],
+  "commands": ["./app/Commands"],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
     "App": "app",
@@ -9,7 +9,7 @@
     "Contracts": "contracts"
   },
   "preloads": ["./routes/web", "./bootstrap/kernel"],
-  "providers": ["./providers/AppProvider"],
+  "providers": ["./app/Providers/AppProvider"],
   "metaFiles": [
     {
       "pattern": "public/**",

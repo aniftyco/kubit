@@ -18,10 +18,8 @@
 |
 */
 
-import User from 'App/Models/User';
-
 import Route from '@ioc:Kubit/Route';
 
-Route.get('/', async () => {
-  return User.firstOrFail();
+Route.get('/', async ({ view }) => {
+  return view.render('welcome');
 });

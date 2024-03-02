@@ -17,4 +17,4 @@ import Application from '@ioc:Kubit/Application';
 | 2. We must ignore this file to avoid getting into an infinite loop
 |
 */
-export default listDirectoryFiles(__dirname, Application.appRoot, ['./commands/index']);
+export default listDirectoryFiles(__dirname, Application.appRoot, ['./app/Commands/index']);
