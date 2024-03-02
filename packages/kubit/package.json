@@ -90,6 +90,7 @@
     "pretty-hrtime": "^1.0.3",
     "proxy-addr": "^2.0.7",
     "qs": "^6.11.2",
+    "reflect-metadata": "^0.2.1",
     "rev-hash": "^3.0.0",
     "slash": "^3.0.0",
     "source-map-support": "^0.5.21",
