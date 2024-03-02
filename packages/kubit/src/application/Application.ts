@@ -2,13 +2,8 @@ import { join } from 'path';
 import { parse as semverParse, satisfies as semverSatisfies } from 'semver';
 
 import {
-  AppEnvironments,
-  ApplicationContract,
-  ApplicationStates,
-  AssetsDriver,
-  PreloadNode,
-  RcFile,
-  SemverNode,
+    AppEnvironments, ApplicationContract, ApplicationStates, AssetsDriver, PreloadNode, RcFile,
+    SemverNode
 } from '@ioc:Kubit/Application';
 import { Exception } from '@poppinss/utils';
 import * as helpers from '@poppinss/utils/build/helpers';
@@ -255,7 +250,7 @@ export class Application implements ApplicationContract {
    * the exception when file is missing
    */
   private loadCorePackageJson(): { version?: string } {
-    const pkgFile = this.resolveModule('../core/package.json', () => {
+    const pkgFile = this.resolveModule('kubit/package.json', () => {
       return {};
     });
 
@@ -375,7 +370,7 @@ export class Application implements ApplicationContract {
     /**
      * Attempt to load `env.(ts|js)` files to setup the validation rules
      */
-    this.resolveModule('./env', () => {});
+    this.resolveModule('./bootstrap/env', () => {});
 
     /**
      * Process environment variables. This will trigger validations as well

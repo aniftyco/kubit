@@ -5,7 +5,7 @@
  * file.
  */
 
-import { InferMailersFromConfig } from '@kubit/mail/build/config';
+import { InferMailersFromConfig } from 'kubit';
 
 import mailConfig from '../config/mail';
 

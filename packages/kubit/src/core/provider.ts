@@ -2,11 +2,18 @@ import { resolve } from 'path';
 
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
+interface ServiceProvider {
+  register(): void;
+  boot?(): Promise<void>;
+  ready?(): Promise<void>;
+  shutdown?(): Promise<void>;
+}
+
 /**
  * The application provider that sticks all core components
  * to the container.
  */
-export default class AppProvider {
+export default class AppProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 
@@ -27,6 +34,12 @@ export default class AppProvider {
     resolve(__dirname, '../bodyparser/provider'),
     resolve(__dirname, '../validator/provider'),
     resolve(__dirname, '../view/provider'),
+    resolve(__dirname, '../lucid/provider'),
+    resolve(__dirname, '../auth/provider'),
+    resolve(__dirname, '../mail/provider'),
+    resolve(__dirname, '../redis/provider'),
+    resolve(__dirname, '../session/provider'),
+    resolve(__dirname, '../shield/provider'),
   ];
 
   /**
@@ -207,11 +220,19 @@ export default class AppProvider {
   /**
    * Register hooks and health checkers on boot
    */
-  public boot() {
+  public async boot() {
     this.registerCorsHook();
     this.registerStaticAssetsHook();
     this.registerHealthCheckers();
     this.defineReplBindings();
     this.defineTestsBindings();
+  }
+
+  async ready() {
+    // App is ready
+  }
+
+  async shutdown() {
+    // Cleanup, since app is going down
   }
 }

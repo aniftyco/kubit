@@ -5,7 +5,7 @@
  * file.
  */
 
-import type { InferDisksFromConfig } from '@kubit/core/build/config';
+import type { InferDisksFromConfig } from 'kubit';
 import type driveConfig from '../config/drive';
 
 declare module '@ioc:Kubit/Drive' {

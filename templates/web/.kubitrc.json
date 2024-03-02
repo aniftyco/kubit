@@ -8,8 +8,8 @@
     "Database": "database",
     "Contracts": "contracts"
   },
-  "preloads": ["./start/routes", "./start/kernel"],
-  "providers": ["./providers/AppProvider", "kubit"],
+  "preloads": ["./routes/web", "./bootstrap/kernel"],
+  "providers": ["./providers/AppProvider"],
   "metaFiles": [
     {
       "pattern": "public/**",
@@ -25,7 +25,7 @@
     "suites": [
       {
         "name": "functional",
-        "files": ["tests/functional/**/*.spec(.ts|.js)"],
+        "files": ["tests/functional/**/*.spec.ts"],
         "timeout": 60000
       }
     ]

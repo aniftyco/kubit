@@ -13,8 +13,9 @@
 import 'reflect-metadata';
 
 import { Ignitor } from 'kubit';
+import { resolve } from 'path';
 import sourceMapSupport from 'source-map-support';
 
 sourceMapSupport.install({ handleUncaughtExceptions: false });
 
-new Ignitor(__dirname).httpServer().start();
+new Ignitor(resolve(__dirname, '../')).httpServer().start();

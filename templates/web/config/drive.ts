@@ -5,7 +5,7 @@
  * file.
  */
 
-import { defineConfig } from 'kubit';
+import { defineConfig, DriveConfig } from 'kubit';
 
 import Application from '@ioc:Kubit/Application';
 import Env from '@ioc:Kubit/Env';
@@ -19,7 +19,7 @@ import Env from '@ioc:Kubit/Env';
 | defined inside the `contracts` directory.
 |
 */
-export default defineConfig({
+export default defineConfig<DriveConfig>({
   /*
   |--------------------------------------------------------------------------
   | Default disk
@@ -29,7 +29,7 @@ export default defineConfig({
   | the `DRIVE_DISK` environment variable.
   |
   */
-  disk: Env.get('DRIVE_DISK'),
+  disk: Env.get('DRIVE_DISK', 'local'),
 
   disks: {
     /*

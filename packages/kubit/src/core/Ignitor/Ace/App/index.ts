@@ -84,8 +84,8 @@ export class App {
 
     sticker()
       .heading('node ace --version')
-      .add(`App version: ${logger.colors.cyan(appVersion ? appVersion.version : 'NA')}`)
-      .add(`Framework version: ${logger.colors.cyan(adonisVersion ? adonisVersion.version : 'NA')}`)
+      .add(`Kubit: ${logger.colors.cyan(adonisVersion ? adonisVersion.version : 'NA')}`)
+      .add(`App: ${logger.colors.cyan(appVersion ? appVersion.version : 'NA')}`)
       .render();
 
     process.exit(0);
