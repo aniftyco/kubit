@@ -12,10 +12,8 @@
 
 import 'reflect-metadata';
 
-import sourceMapSupport from 'source-map-support';
+import { Ignitor } from 'kubit';
 
-import { Ignitor } from '@kubit/core/build/standalone';
-
-sourceMapSupport.install({ handleUncaughtExceptions: false });
+require('source-map-support').install({ handleUncaughtExceptions: false });
 
 new Ignitor(__dirname).httpServer().start();

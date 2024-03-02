@@ -9,7 +9,7 @@
     "Contracts": "contracts"
   },
   "preloads": ["./start/routes", "./start/kernel"],
-  "providers": ["./providers/AppProvider"],
+  "providers": ["./providers/AppProvider", "kubit"],
   "metaFiles": [
     {
       "pattern": "public/**",
@@ -20,7 +20,7 @@
       "reloadServer": false
     }
   ],
-  "aceProviders": [],
+  "aceProviders": ["kubit/dist/repl/provider"],
   "tests": {
     "suites": [
       {

@@ -1,6 +1,9 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 import { isInteractive, logger } from '@poppinss/cliui';
 
+import { HelpCommand } from '../Commands/Help';
+import { ReplCommand } from '../Commands/Repl';
+import { ServeCommand } from '../Commands/Serve';
 import {
   CommandConstructorContract,
   CommandContract,
@@ -12,7 +15,6 @@ import {
   RunHookCallback,
 } from '../Contracts';
 import { InvalidCommandException } from '../Exceptions';
-import { HelpCommand } from '../HelpCommand';
 import { Hooks } from '../Hooks';
 import { Parser } from '../Parser';
 import { printHelp, printHelpFor } from '../utils/help';
@@ -91,7 +93,9 @@ export class Kernel implements KernelContract {
    */
   public error?: any;
 
-  constructor(public application: ApplicationContract) {}
+  constructor(public application: ApplicationContract) {
+    this.register([ServeCommand, ReplCommand]);
+  }
 
   /**
    * Executing global flag handlers. The global flag handlers are

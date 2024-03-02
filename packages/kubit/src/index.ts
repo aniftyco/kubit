@@ -1,2 +1,4 @@
-export { Ignitor } from './core/Ignitor';
-export { defineConfig } from './config/defineConfig';
+export { BaseCommand } from './ace/BaseCommand';
+export { Ignitor, listDirectoryFiles } from './core';
+export { defineConfig } from './config';
+export { default } from './core/provider';

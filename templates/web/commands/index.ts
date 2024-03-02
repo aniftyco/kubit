@@ -1,5 +1,6 @@
+import { listDirectoryFiles } from 'kubit';
+
 import Application from '@ioc:Kubit/Application';
-import { listDirectoryFiles } from '@kubit/core/build/standalone';
 
 /*
 |--------------------------------------------------------------------------

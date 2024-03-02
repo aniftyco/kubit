@@ -12,7 +12,7 @@ import { loadTypescript } from './utils';
  * Extensions to register require extension for
  */
 const EXTS = ['.ts', '.tsx'];
-const CACHE_DIR_NAME = 'adonis-require-ts';
+const CACHE_DIR_NAME = 'kubit-require-ts';
 
 /**
  * Symbols that can be used to get the global reference of the compiler

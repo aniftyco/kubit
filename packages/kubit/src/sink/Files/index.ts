@@ -8,6 +8,6 @@ export { NewLineFile } from './Formats/NewLine';
 export { TemplateLiteralFile } from './Formats/TemplateLiteral';
 export { YamlFile } from './Formats/Yaml';
 
-export { AdonisRcFile } from './Special/AdonisRc';
+export { RCFile } from './Special/RCFile';
 export { EnvFile } from './Special/Env';
 export { PackageJsonFile } from './Special/PackageJson';

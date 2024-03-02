@@ -13,6 +13,7 @@ import {
 import { Exception } from '@poppinss/utils';
 import * as helpers from '@poppinss/utils/build/helpers';
 
+import { RCFILE_NAME } from '../assembler/config/paths';
 import { Config } from '../config';
 import { Env, envLoader, EnvParser } from '../env';
 import { Ioc, Registrar } from '../fold';
@@ -225,8 +226,8 @@ export class Application implements ApplicationContract {
    * Loads the rc file from the application root
    */
   private loadRcFile() {
-    return this.resolveModule('./.adonisrc.json', () => {
-      throw new Error('AdonisJS expects ".adonisrc.json" file to exist in the application root');
+    return this.resolveModule(`./${RCFILE_NAME}`, () => {
+      throw new Error(`Kubit expects "${RCFILE_NAME}" file to exist in the application root`);
     });
   }
 
@@ -629,6 +630,7 @@ export class Application implements ApplicationContract {
     this.state = 'setup';
     this.registerAliases();
     this.loadEnvironmentVariables();
+    await new Promise((r) => setTimeout(r, 100));
     this.loadConfig();
     this.setupLogger();
     this.setupProfiler();

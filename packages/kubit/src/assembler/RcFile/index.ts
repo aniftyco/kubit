@@ -120,7 +120,7 @@ export class RcFile {
    */
   public getMetaData(filePath: string) {
     /**
-     * File path === '.adonisrc.json'
+     * File path === '.kubitrc.json'
      */
     if (this.isRcFile(filePath)) {
       return {

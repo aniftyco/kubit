@@ -1,11 +1,12 @@
 import { AppEnvironments } from '@ioc:Kubit/Application';
 
+import { RCFILE_NAME } from '../../../assembler/config/paths';
 import { JsonFile } from '../Formats/Json';
 
 /**
- * Exposes API to mutate the contents of `.adonisrc.json` file.
+ * Exposes API to mutate the contents of `.kubitrc.json` file.
  */
-export class AdonisRcFile extends JsonFile {
+export class RCFile extends JsonFile {
   /**
    * Storing a local copy of preloads for concatenating
    * new entries.
@@ -43,7 +44,7 @@ export class AdonisRcFile extends JsonFile {
   private testProviders: any[] = [];
 
   constructor(basePath: string) {
-    super(basePath, '.adonisrc.json');
+    super(basePath, RCFILE_NAME);
     this.preloads = this.get('preloads', []);
     this.metaFiles = this.get('metaFiles', []);
     this.commands = this.get('commands', []);

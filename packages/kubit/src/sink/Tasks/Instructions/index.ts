@@ -147,15 +147,15 @@ export class Instructions {
       return;
     }
 
-    const adonisRcFile = new sink.files.AdonisRcFile(this.projectRoot);
+    const rcFile = new sink.files.RCFile(this.projectRoot);
     instructions.metaFiles.forEach((metaFile) => {
       if (typeof metaFile === 'string') {
-        adonisRcFile.addMetaFile(metaFile);
+        rcFile.addMetaFile(metaFile);
       } else {
-        adonisRcFile.addMetaFile(metaFile.pattern, metaFile.reloadServer);
+        rcFile.addMetaFile(metaFile.pattern, metaFile.reloadServer);
       }
     });
-    adonisRcFile.commit();
+    rcFile.commit();
 
     const suffix = this.getSuffix(
       this.formatArray(
@@ -177,15 +177,15 @@ export class Instructions {
       return;
     }
 
-    const adonisRcFile = new sink.files.AdonisRcFile(this.projectRoot);
+    const rcFile = new sink.files.RCFile(this.projectRoot);
     instructions.preloads.forEach((preloadFile) => {
       if (typeof preloadFile === 'string') {
-        adonisRcFile.setPreload(preloadFile);
+        rcFile.setPreload(preloadFile);
       } else {
-        adonisRcFile.setPreload(preloadFile.file, preloadFile.environment, preloadFile.optional);
+        rcFile.setPreload(preloadFile.file, preloadFile.environment, preloadFile.optional);
       }
     });
-    adonisRcFile.commit();
+    rcFile.commit();
 
     const suffix = this.getSuffix(
       this.formatArray(
@@ -207,9 +207,9 @@ export class Instructions {
       return;
     }
 
-    const adonisRcFile = new sink.files.AdonisRcFile(this.projectRoot);
-    instructions.commands.forEach((command) => adonisRcFile.addCommand(command));
-    adonisRcFile.commit();
+    const rcFile = new sink.files.RCFile(this.projectRoot);
+    instructions.commands.forEach((command) => rcFile.addCommand(command));
+    rcFile.commit();
 
     const suffix = this.getSuffix(this.formatArray(instructions.commands), 'commands');
     this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
@@ -223,19 +223,19 @@ export class Instructions {
       return;
     }
 
-    const adonisRcFile = new sink.files.AdonisRcFile(this.projectRoot);
+    const rcFile = new sink.files.RCFile(this.projectRoot);
     const tsConfig = new sink.files.JsonFile(this.projectRoot, 'tsconfig.json');
 
     const existingPaths = tsConfig.get('compilerOptions.paths') || {};
 
     Object.keys(instructions.aliases).forEach((alias) => {
-      adonisRcFile.setAlias(alias, instructions.aliases![alias]);
+      rcFile.setAlias(alias, instructions.aliases![alias]);
       existingPaths[`${alias}/*`] = [`${instructions.aliases![alias]}/*`];
     });
 
     const suffix = this.getSuffix(this.formatObject(instructions.aliases), 'aliases');
 
-    adonisRcFile.commit();
+    rcFile.commit();
     this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
 
     tsConfig.set('compilerOptions.paths', existingPaths);
@@ -254,20 +254,20 @@ export class Instructions {
       return;
     }
 
-    const adonisRcFile = new sink.files.AdonisRcFile(this.projectRoot);
+    const rcFile = new sink.files.RCFile(this.projectRoot);
     if (instructions.providers) {
-      instructions.providers.forEach((provider) => adonisRcFile.addProvider(provider));
+      instructions.providers.forEach((provider) => rcFile.addProvider(provider));
     }
 
     if (instructions.aceProviders) {
-      instructions.aceProviders.forEach((provider) => adonisRcFile.addAceProvider(provider));
+      instructions.aceProviders.forEach((provider) => rcFile.addAceProvider(provider));
     }
 
     if (instructions.testProviders) {
-      instructions.testProviders.forEach((provider) => adonisRcFile.addTestProvider(provider));
+      instructions.testProviders.forEach((provider) => rcFile.addTestProvider(provider));
     }
 
-    adonisRcFile.commit();
+    rcFile.commit();
 
     if (instructions.providers) {
       const suffix = this.getSuffix(this.formatArray(instructions.providers), 'providers');
