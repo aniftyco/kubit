@@ -10,7 +10,7 @@ export default class ReplProvider {
   public register() {
     this.app.container.singleton('Kubit/Repl', () => {
       const compiler = global[Symbol.for('REQUIRE_TS_COMPILER')];
-      const { Repl } = require('../src/Repl');
+      const { Repl } = require('./Repl');
       return new Repl(compiler, join(homedir(), '.adonis_repl_history'));
     });
   }

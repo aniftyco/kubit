@@ -2,8 +2,12 @@ import { EventEmitter } from 'events';
 import slash from 'slash';
 
 import { ApplicationContract } from '@ioc:Kubit/Application';
-import { DatabaseContract, FileNode, QueryClientContract, TransactionClientContract } from '@ioc:Kubit/Lucid/Database';
-import { MigratedFileNode, MigrationListNode, MigratorContract, MigratorOptions } from '@ioc:Kubit/Lucid/Migrator';
+import {
+    DatabaseContract, FileNode, QueryClientContract, TransactionClientContract
+} from '@ioc:Kubit/Lucid/Database';
+import {
+    MigratedFileNode, MigrationListNode, MigratorContract, MigratorOptions
+} from '@ioc:Kubit/Lucid/Migrator';
 import { SchemaConstructorContract } from '@ioc:Kubit/Lucid/Schema';
 import { Exception } from '@poppinss/utils';
 
@@ -174,7 +178,7 @@ export class Migrator extends EventEmitter implements MigratorContract {
   private async getMigrationSource(migration: FileNode<unknown>): Promise<SchemaConstructorContract> {
     const source = await migration.getSource();
     if (typeof source === 'function' && 'disableTransactions' in source) {
-      return source;
+      return source as any;
     }
 
     throw new Error(`Invalid schema class exported by "${migration.name}"`);

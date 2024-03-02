@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@aniftyco/tsconfig",
   "include": ["**/*"],
   "exclude": ["node_modules", "build"],
   "compilerOptions": {
@@ -10,8 +10,8 @@
       "App/*": ["./app/*"],
       "Config/*": ["./config/*"],
       "Contracts/*": ["./contracts/*"],
-      "Database/*": ["./database/*"],
+      "Database/*": ["./database/*"]
     },
-    "types": ["kubit/types"],
-  },
+    "types": ["kubit/types"]
+  }
 }

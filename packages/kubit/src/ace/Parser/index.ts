@@ -1,7 +1,11 @@
 import getopts from 'getopts';
 
-import { CommandArg, CommandConstructorContract, CommandFlag, GlobalFlagHandler } from '../Contracts';
-import { InvalidFlagException, MissingArgumentException, UnknownFlagException } from '../Exceptions';
+import {
+    CommandArg, CommandConstructorContract, CommandFlag, GlobalFlagHandler
+} from '../Contracts';
+import {
+    InvalidFlagException, MissingArgumentException, UnknownFlagException
+} from '../Exceptions';
 
 /**
  * The job of the parser is to parse the command line values by taking

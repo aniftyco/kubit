@@ -26,6 +26,7 @@ export default class AppProvider {
     resolve(__dirname, '../http-server/provider'),
     resolve(__dirname, '../bodyparser/provider'),
     resolve(__dirname, '../validator/provider'),
+    resolve(__dirname, '../view/provider'),
   ];
 
   /**
