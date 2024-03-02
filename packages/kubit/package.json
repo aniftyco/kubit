@@ -9,8 +9,13 @@
   },
   "files": [
     "dist",
-    "types"
+    "types",
+    "bin.js"
   ],
+  "bin": {
+    "kubit": "bin.js",
+    "ace": "bin.js"
+  },
   "main": "dist/index.js",
   "dependencies": {
     "@faker-js/faker": "^8.0.1",
