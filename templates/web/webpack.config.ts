@@ -1,5 +1,6 @@
-const { join } = require('path');
-const Encore = require('@symfony/webpack-encore');
+import { join } from 'path';
+
+import Encore from '@symfony/webpack-encore';
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,10 @@ Encore.setPublicPath('/assets');
 | entrypoints.
 |
 */
-Encore.addEntry('app', './resources/js/app.js');
+Encore.addEntry('app', './resources/js/app.ts');
+Encore.enableTypeScriptLoader((config) => {
+  config.transpileOnly = true;
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -129,6 +133,11 @@ Encore.enableVersioning(Encore.isProduction());
 */
 Encore.configureDevServerOptions((options) => {
   /**
+   * Allow hosts so that the dev server is accessible
+   */
+  options.allowedHosts = 'all';
+
+  /**
    * Normalize "options.static" property to an array
    */
   if (!options.static) {
@@ -169,8 +178,8 @@ Encore.configureDevServerOptions((options) => {
 | PostCSS or CSS.
 |
 */
-// Encore.enablePostCssLoader()
-// Encore.configureCssLoader(() => {})
+// Encore.enablePostCssLoader();
+// Encore.configureCssLoader(() => {});
 
 /*
 |--------------------------------------------------------------------------
@@ -211,4 +220,4 @@ config.stats = 'errors-warnings';
 | Export config for webpack to do its job
 |
 */
-module.exports = config;
+export default config;
