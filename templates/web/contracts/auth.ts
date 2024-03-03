@@ -5,7 +5,7 @@
  * file.
  */
 
-import type User from 'App/Models/User';
+import type User from '@app/Models/User';
 
 declare module '@ioc:Kubit/Auth' {
   /*

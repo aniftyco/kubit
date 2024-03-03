@@ -18,7 +18,7 @@ declare module '@ioc:Kubit/Env' {
   |
   */
 
-  type CustomTypes = typeof import('../env').default;
+  type CustomTypes = typeof import('../bootstrap/env').default;
   interface EnvTypes extends CustomTypes {
     //
   }

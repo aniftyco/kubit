@@ -5,7 +5,7 @@
  * file.
  */
 
-import { defineConfig } from 'kubit';
+import { defineConfig, HashConfig } from 'kubit';
 
 import Env from '@ioc:Kubit/Env';
 
@@ -18,7 +18,7 @@ import Env from '@ioc:Kubit/Env';
 | defined inside `contracts` directory.
 |
 */
-export default defineConfig({
+export default defineConfig<HashConfig>({
   /*
   |--------------------------------------------------------------------------
   | Default hasher

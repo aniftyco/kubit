@@ -5,7 +5,7 @@
  * file.
  */
 
-import { defineConfig } from 'kubit';
+import { defineConfig, RedisConfig } from 'kubit';
 
 import Env from '@ioc:Kubit/Env';
 
@@ -22,7 +22,7 @@ import Env from '@ioc:Kubit/Env';
 |
 | Make sure to check `contracts/redis.ts` file for defining extra connections
 */
-export default defineConfig({
+export default defineConfig<RedisConfig>({
   connection: Env.get('REDIS_CONNECTION', 'local'),
 
   connections: {
