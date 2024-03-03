@@ -3,6 +3,7 @@
   "version": "0.1.4",
   "main": "./dist/index.js",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
     "build": "rimraf dist && tsc -p tsconfig.json && npm run copy-instructions",
