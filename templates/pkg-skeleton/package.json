@@ -2,6 +2,7 @@
   "name": "@kubit/pkg",
   "version": "0.0.1",
   "main": "./dist/index.js",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
