@@ -1,7 +1,7 @@
 import { BaseCommand } from '../BaseCommand';
 import { flags } from '../Decorators/flags';
 
-export class ServeCommand extends BaseCommand {
+export class Serve extends BaseCommand {
   public static commandName = 'serve';
   public static description =
     'Start the AdonisJS HTTP server, along with the file watcher. Also starts the webpack dev server when webpack encore is installed';

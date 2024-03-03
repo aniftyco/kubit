@@ -1,18 +1,10 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 import { isInteractive, logger } from '@poppinss/cliui';
 
-import { HelpCommand } from '../Commands/Help';
-import { ReplCommand } from '../Commands/Repl';
-import { ServeCommand } from '../Commands/Serve';
+import * as commands from '../Commands';
 import {
-  CommandConstructorContract,
-  CommandContract,
-  CommandFlag,
-  FindHookCallback,
-  GlobalFlagHandler,
-  KernelContract,
-  ManifestCommand,
-  RunHookCallback,
+    CommandConstructorContract, CommandContract, CommandFlag, FindHookCallback, GlobalFlagHandler,
+    KernelContract, ManifestCommand, RunHookCallback
 } from '../Contracts';
 import { InvalidCommandException } from '../Exceptions';
 import { Hooks } from '../Hooks';
@@ -69,7 +61,7 @@ export class Kernel implements KernelContract {
    * The default command that will be invoked when no command is
    * defined
    */
-  public defaultCommand: CommandConstructorContract = HelpCommand;
+  public defaultCommand: CommandConstructorContract = commands.Help;
 
   /**
    * List of registered commands
@@ -94,7 +86,7 @@ export class Kernel implements KernelContract {
   public error?: any;
 
   constructor(public application: ApplicationContract) {
-    this.register([ServeCommand, ReplCommand]);
+    this.register(Object.keys(commands).map((key) => commands[key]));
   }
 
   /**

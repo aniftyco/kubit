@@ -1,6 +1,6 @@
 import { BaseCommand } from '../BaseCommand';
 
-export class ReplCommand extends BaseCommand {
+export class Repl extends BaseCommand {
   public static commandName = 'repl';
   public static description = 'Start a new REPL session';
 

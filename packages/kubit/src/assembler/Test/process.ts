@@ -55,7 +55,7 @@ export class TestProcess {
           FORCE_COLOR: 'true',
           ...this.env,
         },
-        nodeOptions: ['-r', '../assembler/build/register'].concat(this.nodeArgs),
+        nodeOptions: ['-r', 'kubit/dist/assembler/register'].concat(this.nodeArgs),
       });
       return { hasErrors: false };
     } catch {

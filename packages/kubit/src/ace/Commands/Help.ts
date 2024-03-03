@@ -3,7 +3,7 @@ import { BaseCommand } from '../BaseCommand';
 /**
  * The help command for print the help output
  */
-export class HelpCommand extends BaseCommand {
+export class Help extends BaseCommand {
   public static commandName = 'help';
   public static description = 'See help for all the commands';
 
