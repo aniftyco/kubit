@@ -1,6 +1,6 @@
 # Welcome to Kubit!
 
-[Kubit](https://kubitjs.com) is a full stack framework for building applications.
+[Kubit](https://kubitjs.com) is a full stack framework for building applications in Node.js.
 
 To get started, open a new shell and run:
 
