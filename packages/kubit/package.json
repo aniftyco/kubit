@@ -1,6 +1,6 @@
 {
   "name": "kubit",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Full stack framework for building applications in Node.js",
   "scripts": {
     "start": "tsc -p tsconfig.json -w --preserveWatchOutput",
