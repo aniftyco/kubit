@@ -7,10 +7,7 @@
     "rootDir": "./",
     "sourceMap": true,
     "paths": {
-      "App/*": ["./app/*"],
-      "Config/*": ["./config/*"],
-      "Contracts/*": ["./contracts/*"],
-      "Database/*": ["./database/*"]
+      "@app/*": ["./app/*"]
     },
     "types": ["kubit/types"]
   }

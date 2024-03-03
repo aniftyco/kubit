@@ -1,18 +1,8 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 import {
-  AuthConfig,
-  AuthManagerContract,
-  BasicAuthGuardConfig,
-  DatabaseProviderConfig,
-  ExtendClientCallback,
-  ExtendGuardCallback,
-  ExtendProviderCallback,
-  GuardsList,
-  LucidProviderConfig,
-  OATGuardConfig,
-  ProvidersList,
-  SessionGuardConfig,
-  UserProviderContract,
+    AuthConfig, AuthManagerContract, BasicAuthGuardConfig, DatabaseProviderConfig,
+    ExtendClientCallback, ExtendGuardCallback, ExtendProviderCallback, GuardsList,
+    LucidProviderConfig, OATGuardConfig, ProvidersList, SessionGuardConfig, UserProviderContract
 } from '@ioc:Kubit/Auth';
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 import { Exception, ManagerConfigValidator } from '@poppinss/utils';
@@ -76,7 +66,7 @@ export class AuthManager implements AuthManagerContract {
    * Lazily makes an instance of the database provider
    */
   private makeDatabaseProvider(config: DatabaseProviderConfig) {
-    const Database = this.application.container.use('Adonis/Lucid/Database');
+    const Database = this.application.container.use('Kubit/Lucid/Database');
     return new (require('../UserProviders/Database').DatabaseProvider)(this.application, config, Database);
   }
 
@@ -96,7 +86,7 @@ export class AuthManager implements AuthManagerContract {
    * Lazily makes an instance of the token database provider
    */
   private makeTokenDatabaseProvider(config: DatabaseProviderConfig) {
-    const Database = this.application.container.use('Adonis/Lucid/Database');
+    const Database = this.application.container.use('Kubit/Lucid/Database');
     return new (require('../TokenProviders/Database').TokenDatabaseProvider)(config, Database);
   }
 

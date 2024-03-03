@@ -1,4 +1,4 @@
-import { AuthenticationException } from '@kubit/auth/build/standalone';
+import { AuthenticationException } from 'kubit';
 
 import type { GuardsList } from '@ioc:Kubit/Auth';
 import type { HttpContextContract } from '@ioc:Kubit/HttpContext';
@@ -7,7 +7,7 @@ import type { HttpContextContract } from '@ioc:Kubit/HttpContext';
  * Auth middleware is meant to restrict un-authenticated access to a given route
  * or a group of routes.
  *
- * You must register this middleware inside `start/kernel.ts` file under the list
+ * You must register this middleware inside `bootstrap/kernel.ts` file under the list
  * of named middleware.
  */
 export default class AuthMiddleware {

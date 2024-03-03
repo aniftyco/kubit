@@ -1,17 +1,17 @@
 declare module '@ioc:Kubit/Application' {
-  import { DatabaseContract } from '@ioc:Kubit/Lucid/Database';
-  import { FactoryManagerContract } from '@ioc:Kubit/Lucid/Factory';
-  import Migrator from '@ioc:Kubit/Lucid/Migrator';
-  import * as Orm from '@ioc:Kubit/Lucid/Orm';
-  import { SchemaConstructorContract } from '@ioc:Kubit/Lucid/Schema';
-  import { SeederConstructorContract } from '@ioc:Kubit/Lucid/Seeder';
+import { DatabaseContract } from '@ioc:Kubit/Lucid/Database';
+import { FactoryManagerContract } from '@ioc:Kubit/Lucid/Factory';
+import Migrator from '@ioc:Kubit/Lucid/Migrator';
+import * as Orm from '@ioc:Kubit/Lucid/Orm';
+import { SchemaConstructorContract } from '@ioc:Kubit/Lucid/Schema';
+import { SeederConstructorContract } from '@ioc:Kubit/Lucid/Seeder';
 
-  export interface ContainerBindings {
-    'Adonis/Lucid/Database': DatabaseContract;
-    'Adonis/Lucid/Factory': FactoryManagerContract;
-    'Adonis/Lucid/Orm': typeof Orm;
-    'Adonis/Lucid/Migrator': typeof Migrator;
-    'Adonis/Lucid/Schema': SchemaConstructorContract;
-    'Adonis/Lucid/Seeder': SeederConstructorContract;
+    export interface ContainerBindings {
+    'Kubit/Lucid/Database': DatabaseContract;
+    'Kubit/Lucid/Factory': FactoryManagerContract;
+    'Kubit/Lucid/Orm': typeof Orm;
+    'Kubit/Lucid/Migrator': typeof Migrator;
+    'Kubit/Lucid/Schema': SchemaConstructorContract;
+    'Kubit/Lucid/Seeder': SeederConstructorContract;
   }
 }

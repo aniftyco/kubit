@@ -1,7 +1,7 @@
 declare module '@ioc:Kubit/Application' {
-  import { ShieldMiddlewareContract } from '@ioc:Kubit/Shield';
+import { ShieldMiddlewareContract } from '@ioc:Kubit/Shield';
 
-  export interface ContainerBindings {
-    'Adonis/Lucid/Shield': ShieldMiddlewareContract;
+    export interface ContainerBindings {
+    'Kubit/Lucid/Shield': ShieldMiddlewareContract;
   }
 }

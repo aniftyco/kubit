@@ -8,7 +8,6 @@ import {
 import { Exception } from '@poppinss/utils';
 import * as helpers from '@poppinss/utils/build/helpers';
 
-import { RCFILE_NAME } from '../assembler/config/paths';
 import { Config } from '../config';
 import { Env, envLoader, EnvParser } from '../env';
 import { Ioc, Registrar } from '../fold';
@@ -146,14 +145,15 @@ export class Application implements ApplicationContract {
     public environment: AppEnvironments,
     rcContents?: any
   ) {
-    this.rcFile = parse(rcContents || this.loadRcFile());
+    const pkgFile = this.loadAppPackageJson();
+
+    this.rcFile = parse(rcContents || pkgFile.rcConfig);
     this.typescript = this.rcFile.typescript;
 
     /**
      * Loads the package.json files to collect optional
      * info about the app.
      */
-    const pkgFile = this.loadAppPackageJson();
     const corePkgFile = this.loadCorePackageJson();
     this.verifyNodeEngine(pkgFile.engines);
 
@@ -218,15 +218,6 @@ export class Application implements ApplicationContract {
   }
 
   /**
-   * Loads the rc file from the application root
-   */
-  private loadRcFile() {
-    return this.resolveModule(`./${RCFILE_NAME}`, () => {
-      throw new Error(`Kubit expects "${RCFILE_NAME}" file to exist in the application root`);
-    });
-  }
-
-  /**
    * Loads the package.json file from the application root. Swallows
    * the exception when file is missing
    */
@@ -234,6 +225,7 @@ export class Application implements ApplicationContract {
     name: string;
     engines?: { node?: string };
     version: string;
+    rcConfig: Record<string, any>;
   } {
     const pkgFile = this.resolveModule('./package.json', () => {
       return {};
@@ -242,6 +234,7 @@ export class Application implements ApplicationContract {
       name: pkgFile.name || 'adonis-app',
       version: pkgFile.version || '0.0.0',
       engines: pkgFile.engines,
+      rcConfig: pkgFile.kubit || {},
     };
   }
 

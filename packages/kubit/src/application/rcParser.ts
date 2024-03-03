@@ -1,37 +1,5 @@
-import { DirectoriesNode, MetaFileNode, NamespacesNode, PreloadNode, RcFile } from '@ioc:Kubit/Application';
+import { MetaFileNode, PreloadNode, RcFile } from '@ioc:Kubit/Application';
 import { Exception } from '@poppinss/utils';
-
-/**
- * Default set of directories for AdonisJs
- * applications
- */
-const DEFAULT_DIRECTORIES: DirectoriesNode = {
-  config: 'config',
-  public: 'public',
-  contracts: 'contracts',
-  providers: 'providers',
-  database: 'database',
-  migrations: 'database/migrations',
-  seeds: 'database/seeders',
-  resources: 'resources',
-  views: 'resources/views',
-  start: 'start',
-  tmp: 'tmp',
-  tests: 'tests',
-};
-
-/**
- * A list of default namespaces.
- */
-const DEFAULT_NAMESPACES: NamespacesNode = {
-  models: 'App/Models',
-  middleware: 'App/Middleware',
-  exceptions: 'App/Exceptions',
-  validators: 'App/Validators',
-  httpControllers: 'App/Controllers/Http',
-  eventListeners: 'App/Listeners',
-  redisListeners: 'App/Listeners',
-};
 
 /**
  * Parses the contents of `.adonisrc.json` file and merges it with the
@@ -41,18 +9,65 @@ export function parse(contents: { [key: string]: any }): RcFile {
   const normalizedContents = Object.assign(
     {
       typescript: true,
-      directories: {},
-      namespaces: {},
-      preloads: [],
-      aliases: {},
+      directories: {
+        config: 'config',
+        public: 'public',
+        contracts: 'contracts',
+        providers: 'app/Providers',
+        database: 'database',
+        migrations: 'database/migrations',
+        seeds: 'database/seeders',
+        resources: 'resources',
+        views: 'resources/views',
+        start: 'bootstrap',
+        tmp: 'storage/tmp',
+        tests: 'tests',
+      },
+      namespaces: {
+        models: '@app/Models',
+        middleware: '@app/Http/Middleware',
+        exceptions: '@app/Exceptions',
+        validators: '@app/Validators',
+        httpControllers: '@app/Http/Controllers',
+        eventListeners: '@app/Listeners',
+        redisListeners: '@app/Listeners',
+      },
+      commands: ['./app/Commands'],
       commandsAliases: {},
-      metaFiles: [],
-      commands: [],
-      providers: [],
-      aceProviders: [],
-      testProviders: [],
+      exceptionHandlerNamespace: '@app/Exceptions/Handler',
+      preloads: ['./bootstrap/kernel', './routes/web', './routes/api'],
+      aliases: { '@app': 'app' },
+      providers: ['./app/Providers/AppProvider'],
+      aceProviders: ['kubit/dist/repl/provider'],
+      testProviders: ['@japa/preset-adonis/TestsProvider'],
+      metaFiles: [
+        {
+          pattern: 'public/**',
+          reloadServer: false,
+        },
+        {
+          pattern: 'resources/views/**/*.edge',
+          reloadServer: false,
+        },
+      ],
       tests: {
-        suites: [],
+        suites: [
+          {
+            name: 'functional',
+            files: ['tests/functional/**/*.spec.ts'],
+            timeout: 60000,
+          },
+          {
+            name: 'unit',
+            files: ['tests/unit/**/*.spec.ts'],
+            timeout: 60000,
+          },
+          {
+            name: 'e2e',
+            files: ['tests/e2e/**/*.spec.ts'],
+            timeout: 60000,
+          },
+        ],
         timeout: 2000,
         forceExit: true,
       },
@@ -75,7 +90,7 @@ export function parse(contents: { [key: string]: any }): RcFile {
   return {
     typescript: normalizedContents.typescript,
     ...(assetsDriver ? { assetsDriver } : {}),
-    directories: Object.assign({}, DEFAULT_DIRECTORIES, normalizedContents.directories),
+    directories: Object.assign({}, normalizedContents.directories),
     ...(normalizedContents.exceptionHandlerNamespace
       ? { exceptionHandlerNamespace: normalizedContents.exceptionHandlerNamespace }
       : {}),
@@ -98,7 +113,7 @@ export function parse(contents: { [key: string]: any }): RcFile {
         environment: preload.environment === undefined ? ['web', 'console', 'test', 'repl'] : preload.environment,
       };
     }),
-    namespaces: Object.assign({}, DEFAULT_NAMESPACES, normalizedContents.namespaces),
+    namespaces: Object.assign({}, normalizedContents.namespaces),
     aliases: Object.assign({}, normalizedContents.autoloads, normalizedContents.aliases),
     metaFiles: normalizedContents.metaFiles.map((file: MetaFileNode | string, index) => {
       if (typeof file === 'string') {

@@ -37,7 +37,7 @@ export function defineReplBindings(app: ApplicationContract, Repl: ReplContract)
   Repl.addMethod(
     'loadDb',
     (repl) => {
-      setupReplState(repl, 'Db', app.container.use('Adonis/Lucid/Database'));
+      setupReplState(repl, 'Db', app.container.use('Kubit/Lucid/Database'));
     },
     {
       description: 'Load database provider to the "Db" property',

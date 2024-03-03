@@ -107,7 +107,7 @@ export default class ViewProvider {
       return;
     }
 
-    this.app.container.withBindings(['Adonis/Addons/Repl'], (Repl) => {
+    this.app.container.withBindings(['Kubit/Repl'], (Repl) => {
       const { defineReplBindings } = require('./Bindings/Repl');
       defineReplBindings(this.app, Repl);
     });

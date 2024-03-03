@@ -1,6 +1,6 @@
 import '@japa/runner';
 
-import { MakeUrlOptions } from '@ioc:Adonis/Core/Route';
+import { MakeUrlOptions } from '@ioc:Kubit/Route';
 
 declare module '@japa/runner' {
   interface TestContext {

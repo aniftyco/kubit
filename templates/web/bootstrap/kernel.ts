@@ -20,7 +20,11 @@ import Server from '@ioc:Kubit/Server';
 | are defined for every HTTP requests.
 |
 */
-Server.middleware.register([() => import('@ioc:Kubit/BodyParser')]);
+Server.middleware.register([
+  () => import('@ioc:Kubit/BodyParser'),
+  () => import('@ioc:Kubit/Shield'),
+  () => import('@app/Http/Middleware/SilentAuth'),
+]);
 
 /*
 |--------------------------------------------------------------------------
@@ -31,11 +35,13 @@ Server.middleware.register([() => import('@ioc:Kubit/BodyParser')]);
 | or middleware function and key is the alias. Later you can use these
 | alias on individual routes. For example:
 |
-| { auth: () => import('App/Middleware/Auth') }
+| { auth: () => import('@app/Http/Middleware/Auth') }
 |
 | and then use it as follows
 |
 | Route.get('dashboard', 'UserController.dashboard').middleware('auth')
 |
 */
-Server.middleware.registerNamed({});
+Server.middleware.registerNamed({
+  auth: () => import('@app/Http/Middleware/Auth'),
+});

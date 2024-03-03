@@ -187,7 +187,7 @@ export default class AppProvider implements ServiceProvider {
     /**
      * Define REPL bindings
      */
-    this.app.container.withBindings(['Adonis/Addons/Repl'], (Repl) => {
+    this.app.container.withBindings(['Kubit/Repl'], (Repl) => {
       const { defineReplBindings } = require('./Bindings/Repl');
       defineReplBindings(this.app, Repl);
     });
