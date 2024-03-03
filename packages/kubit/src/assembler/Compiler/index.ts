@@ -1,6 +1,6 @@
 import copyfiles from 'cpy';
-import { outputJSON, remove } from 'fs-extra';
-import { join, relative } from 'path';
+import { remove } from 'fs-extra';
+import { relative } from 'path';
 import slash from 'slash';
 import tsStatic from 'typescript';
 
@@ -8,8 +8,6 @@ import { instructions, logger as uiLogger } from '@poppinss/cliui';
 
 import { iocTransformer } from '../../ioc-transformer';
 import { AssetsBundler } from '../AssetsBundler';
-import { RCFILE_NAME } from '../config/paths';
-import { Manifest } from '../Manifest';
 import { RcFile } from '../RcFile';
 import { Ts } from '../Ts';
 
@@ -58,24 +56,6 @@ export class Compiler {
       `cleaning up ${this.logger.colors.dim().yellow(`"./${this.getRelativeUnixPath(outDir)}"`)} directory`
     );
     await remove(outDir);
-  }
-
-  /**
-   * Copies .adonisrc.json file to the destination
-   */
-  private async copyAdonisRcFile(outDir: string) {
-    this.logger.info(
-      `copy { ${this.logger.colors.dim().yellow(`${RCFILE_NAME} => ${this.getRelativeUnixPath(outDir)}`)} }`
-    );
-
-    await outputJSON(
-      join(outDir, RCFILE_NAME),
-      Object.assign({}, this.rcFile.getDiskContents(), {
-        typescript: false,
-        lastCompiledAt: new Date().toISOString(),
-      }),
-      { spaces: 2 }
-    );
   }
 
   /**
@@ -219,26 +199,6 @@ export class Compiler {
      */
     await this.copyMetaFiles(config.options.outDir!, extraFiles);
 
-    /**
-     * Copy `.adonisrc.json` file
-     */
-    await this.copyAdonisRcFile(config.options.outDir!);
-
-    /**
-     * Manifest instance to generate ace manifest file
-     */
-    const manifest = new Manifest(config.options.outDir!, this.logger);
-    const created = await manifest.generate();
-
-    /**
-     * Do not continue when unable to generate the manifest file as commands
-     * won't be available
-     */
-    if (!created) {
-      await this.cleanupBuildDirectory(config.options.outDir!);
-      return false;
-    }
-
     this.logger.success('built successfully');
     return true;
   }
@@ -302,26 +262,6 @@ export class Compiler {
      * Begin by copying meta files
      */
     await this.copyMetaFiles(config.options.outDir!, pkgFiles);
-
-    /**
-     * Copy `.adonisrc.json` file
-     */
-    await this.copyAdonisRcFile(config.options.outDir!);
-
-    /**
-     * Generate commands manifest
-     */
-    const manifest = new Manifest(config.options.outDir!, this.logger);
-    const created = await manifest.generate();
-
-    /**
-     * Do not continue when unable to generate the manifest file as commands
-     * won't be available
-     */
-    if (!created) {
-      await this.cleanupBuildDirectory(config.options.outDir!);
-      return false;
-    }
 
     /**
      * Print usage instructions
