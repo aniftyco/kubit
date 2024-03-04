@@ -12,8 +12,8 @@
     "prepublishOnly": "npm run build"
   },
   "files": [
+    "contracts",
     "dist",
-    "types",
     "templates",
     "bin.js"
   ],

@@ -9,6 +9,6 @@
     "paths": {
       "@app/*": ["./app/*"]
     },
-    "types": ["kubit/types"]
+    "types": ["kubit/contracts"]
   }
 }
