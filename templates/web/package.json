@@ -19,8 +19,6 @@
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-typescript": "^7.22.15",
     "@babel/register": "^7.22.15",
-    "@japa/preset-adonis": "^1.2.0",
-    "@japa/runner": "^2.5.1",
     "@symfony/webpack-encore": "^4.1.1",
     "ajv": "^8.12.0",
     "ts-loader": "^9.5.1",
