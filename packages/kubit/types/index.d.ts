@@ -19,6 +19,6 @@
 /// <reference path="./repl/index.d.ts" />
 /// <reference path="./session/index.d.ts" />
 /// <reference path="./shield/index.d.ts" />
+/// <reference path="./test/index.d.ts" />
 /// <reference path="./validator/index.d.ts" />
 /// <reference path="./view/index.d.ts" />
-/// <reference path="./tests/index.d.ts" />

@@ -40,6 +40,7 @@ export default class AppProvider implements ServiceProvider {
     resolve(__dirname, '../redis/provider'),
     resolve(__dirname, '../session/provider'),
     resolve(__dirname, '../shield/provider'),
+    resolve(__dirname, '../test/provider'),
   ];
 
   /**
