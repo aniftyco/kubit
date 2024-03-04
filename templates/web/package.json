@@ -9,7 +9,7 @@
   },
   "prettier": "@aniftyco/prettier",
   "dependencies": {
-    "kubit": "^0.1.2",
+    "kubit": "^0.1.0",
     "luxon": "^3.4.4",
     "pg": "^8.11.3"
   },
