@@ -91,7 +91,7 @@ export class DevServer {
 
     const envOptions = envParser.asEnvObject(['PORT', 'TZ', 'HOST']);
     const HOST = process.env.HOST || envOptions.HOST || '0.0.0.0';
-    let PORT = process.env.PORT || envOptions.PORT || '3333';
+    let PORT = process.env.PORT || envOptions.PORT || '1337';
 
     /**
      * Obtains a random port by giving preference to the one defined inside
