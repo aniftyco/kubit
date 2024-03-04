@@ -8,7 +8,6 @@ import { getWatcherHelpers } from '../../require-ts';
 import { ENV_FILES, TESTS_ENTRY_FILE } from '../config/paths';
 import { JapaFlags } from '../Contracts';
 import { EnvParser } from '../EnvParser';
-import { Manifest } from '../Manifest';
 import { RcFile } from '../RcFile';
 import { Ts } from '../Ts';
 import { TestProcess } from './process';
@@ -38,11 +37,6 @@ export class TestsServer {
    * Reference to the RCFile
    */
   private rcFile = new RcFile(this.appRoot);
-
-  /**
-   * Manifest instance to generate ace manifest file
-   */
-  private manifest = new Manifest(this.appRoot, this.logger);
 
   /**
    * Require-ts watch helpers
@@ -227,13 +221,6 @@ export class TestsServer {
       this.logger.action('delete').succeeded(relativePath);
 
       /**
-       * Generate manifest when filePath is a commands path
-       */
-      if (this.rcFile.isCommandsPath(relativePath)) {
-        this.manifest.generate();
-      }
-
-      /**
        * Run all tests when any of the source, except the
        * test file changes
        */
@@ -283,13 +270,6 @@ export class TestsServer {
       }
 
       this.logger.action('update').succeeded(relativePath);
-
-      /**
-       * Generate manifest when filePath is a commands path
-       */
-      if (this.rcFile.isCommandsPath(relativePath)) {
-        this.manifest.generate();
-      }
 
       /**
        * Run all tests when any of the source, except the
@@ -371,13 +351,6 @@ export class TestsServer {
 
       const metaData = this.rcFile.getMetaData(relativePath);
       if (!metaData.metaFile) {
-        return;
-      }
-
-      if (metaData.rcFile) {
-        this.logger.info('cannot continue after deletion of .adonisrc.json file');
-        watcher.chokidar.close();
-        this.kill();
         return;
       }
 
