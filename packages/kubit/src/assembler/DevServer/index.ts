@@ -342,13 +342,6 @@ export class DevServer {
         return;
       }
 
-      if (metaData.rcFile) {
-        this.logger.info('cannot continue after deletion of .adonisrc.json file');
-        watcher.chokidar.close();
-        this.kill();
-        return;
-      }
-
       this.logger.action('delete').succeeded(relativePath);
       if (metaData.reload) {
         this.httpServer.restart();
