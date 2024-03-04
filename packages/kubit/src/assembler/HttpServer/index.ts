@@ -41,7 +41,7 @@ export class HttpServer extends Emittery {
       throw new Error('Http server is already connected. Call restart instead');
     }
 
-    this.logger.info(this.childProcess ? 're-starting http server...' : 'starting http server...');
+    this.logger.info(this.childProcess ? 'Re-starting HTTP server...' : 'Starting HTTP server...');
 
     this.childProcess = execa.node(this.sourceFile, [], {
       buffer: false,

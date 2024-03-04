@@ -159,7 +159,7 @@ export class DevServer {
     /**
      * Log getting ready
      */
-    this.logger.info('building project...');
+    this.logger.info('building application...');
 
     /**
      * Start the HTTP server right away
@@ -185,7 +185,7 @@ export class DevServer {
 
     const encore = new AssetsBundler(this.appRoot, this.encoreArgs, this.buildAssets, this.logger);
     encore.on('exit', ({ code }) => {
-      this.logger.warning(`Underlying encore dev server died with "${code} code"`);
+      this.logger.warning(`Underlying Encore Dev Server died with "${code} code"`);
     });
 
     this.encoreDevServerResponse = await encore.startDevServer();

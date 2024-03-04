@@ -8,7 +8,7 @@ import { flags } from '../Decorators/flags';
  */
 export class Test extends BaseCommand {
   public static commandName = 'test';
-  public static description = 'Run AdonisJS tests';
+  public static description = 'Run tests';
   public static settings = {
     stayAlive: true,
   };
@@ -45,7 +45,7 @@ export class Test extends BaseCommand {
   /**
    * Arguments to pass to the `node` binary
    */
-  @flags.array({ description: 'CLI options to pass to the node command line' })
+  @flags.array({ description: 'CLI options to pass to the Node.js command line' })
   public nodeArgs: string[] = [];
 
   /**

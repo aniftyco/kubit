@@ -4,7 +4,7 @@ import { flags } from '../Decorators/flags';
 export class Serve extends BaseCommand {
   public static commandName = 'serve';
   public static description =
-    'Start the AdonisJS HTTP server, along with the file watcher. Also starts the webpack dev server when webpack encore is installed';
+    'Start the HTTP server, along with the file watcher. Also starts the Webpack Dev Server when Webpack Encore is installed';
 
   public static settings = {
     stayAlive: true,
@@ -14,7 +14,7 @@ export class Serve extends BaseCommand {
    * Bundle frontend assets. Defaults to true
    */
   @flags.boolean({
-    description: 'Start webpack dev server when encore is installed. Use "--no-assets" to disable',
+    description: 'Start Webpack Dev Server when Encore is installed. Use "--no-assets" to disable',
   })
   public assets: boolean = true;
 
@@ -39,13 +39,13 @@ export class Serve extends BaseCommand {
   /**
    * Arguments to pass to the `node` binary
    */
-  @flags.array({ description: 'CLI options to pass to the node command line' })
+  @flags.array({ description: 'CLI options to pass to the Node.js command line' })
   public nodeArgs: string[] = [];
 
   /**
    * Arguments to pass to the `encore` binary
    */
-  @flags.array({ description: 'CLI options to pass to the encore command line' })
+  @flags.array({ description: 'CLI options to pass to the Encore command line' })
   public encoreArgs: string[] = [];
 
   public async run() {

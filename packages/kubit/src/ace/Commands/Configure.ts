@@ -9,7 +9,7 @@ import { args } from '../Decorators/args';
  */
 export class Configure extends BaseCommand {
   public static commandName = 'configure';
-  public static description = 'Configure one or more AdonisJS packages';
+  public static description = 'Configure one or more Kubit packages';
   public static aliases = ['invoke'];
 
   /**
@@ -76,7 +76,7 @@ export class Configure extends BaseCommand {
         logger.fatal({ message: 'Unable to configure encore', stack: response.stderr.toString() });
       } else {
         spinner.stop();
-        logger.success('Configured encore successfully');
+        logger.success('Configured Encore successfully');
       }
     } catch (error) {
       spinner.stop();

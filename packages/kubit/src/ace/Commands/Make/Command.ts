@@ -21,7 +21,7 @@ export class MakeCommand extends GeneratorCommand {
    * Command meta data
    */
   public static commandName = 'make:command';
-  public static description = 'Make a new ace command';
+  public static description = 'Make a new console command';
 
   @args.string({ description: 'Name of the command class' })
   public name: string;

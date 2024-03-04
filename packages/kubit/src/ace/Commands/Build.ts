@@ -8,7 +8,7 @@ import { flags } from '../Decorators/flags';
 export class Build extends BaseCommand {
   public static commandName = 'build';
   public static description =
-    'Compile project from Typescript to Javascript. Also compiles the frontend assets if using webpack encore';
+    'Compile project from Typescript to JavaScript. Also compiles the frontend assets if using Webpack Encore';
 
   /**
    * Build for production
@@ -20,7 +20,7 @@ export class Build extends BaseCommand {
    * Bundle frontend assets. Defaults to true
    */
   @flags.boolean({
-    description: 'Build frontend assets when webpack encore is installed. Use --no-assets to disable',
+    description: 'Build frontend assets when Webpack Encore is installed. Use --no-assets to disable',
   })
   public assets: boolean = true;
 
@@ -28,7 +28,7 @@ export class Build extends BaseCommand {
    * Ignore ts errors and complete the build process. Defaults to false
    */
   @flags.boolean({
-    description: 'Ignore typescript errors and complete the build process',
+    description: 'Ignore TypeScript errors and complete the build process',
   })
   public ignoreTsErrors: boolean;
 
@@ -43,7 +43,7 @@ export class Build extends BaseCommand {
   /**
    * Arguments to pass to the `encore` binary
    */
-  @flags.array({ description: 'CLI options to pass to the encore command line' })
+  @flags.array({ description: 'CLI options to pass to the Encore command line' })
   public encoreArgs: string[] = [];
 
   /**

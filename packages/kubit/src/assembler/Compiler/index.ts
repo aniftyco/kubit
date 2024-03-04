@@ -89,17 +89,17 @@ export class Compiler {
     skipped: boolean;
     hasErrors: boolean;
   } {
-    this.logger.info('compiling typescript source files');
+    this.logger.info('compiling TypeScript source files');
 
     const builder = this.ts.tsCompiler.builder(config);
     const { skipped, diagnostics } = builder.build();
 
     if (skipped) {
-      this.logger.warning('typescript emit skipped');
+      this.logger.warning('TypeScript emit skipped');
     }
 
     if (diagnostics.length) {
-      this.logger.error('typescript compiler errors');
+      this.logger.error('TypeScript compiler errors');
       this.ts.renderDiagnostics(diagnostics, builder.host);
     }
 
@@ -116,7 +116,7 @@ export class Compiler {
     this.logger.logError('');
     this.logger.logError(
       this.logger.colors.bgRed(
-        `Cannot complete the build process as there are typescript errors. Use "--ignore-ts-errors" flag to ignore Typescript errors`
+        `Cannot complete the build process as there are TypeScript errors. Use "--ignore-ts-errors" flag to ignore TypeScript errors`
       )
     );
   }
@@ -130,14 +130,14 @@ export class Compiler {
       return false;
     }
 
-    this.logger.info('type checking typescript source files');
+    this.logger.info('type checking TypeScript source files');
 
     config.options.noEmit = true;
     const builder = this.ts.tsCompiler.builder(config);
     const { diagnostics } = builder.build();
 
     if (diagnostics.length) {
-      this.logger.error('typescript compiler errors');
+      this.logger.error('TypeScript compiler errors');
       this.ts.renderDiagnostics(diagnostics, builder.host);
       return false;
     }
