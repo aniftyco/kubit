@@ -1,7 +1,7 @@
 import { logger, sticker } from '@poppinss/cliui';
 
-import { Kernel } from '../../../../ace';
-import { SerializedCommand } from '../../../../ace/Contracts';
+import { Kernel } from '../../../../console';
+import { SerializedCommand } from '../../../../console/Contracts';
 import { AppKernel } from '../../Kernel';
 
 /**

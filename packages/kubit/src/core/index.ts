@@ -6,7 +6,7 @@ export { Encryption } from '../encryption';
 
 export { Server, Router, Request, Response, HttpContext, MiddlewareStore } from '../http-server';
 
-export { args, flags, Kernel, BaseCommand, BaseCommand as Command, listDirectoryFiles } from '../ace';
+export { args, flags, Kernel, BaseCommand, BaseCommand as Command, listDirectoryFiles } from '../console';
 
 export { Ignitor } from './Ignitor';
 export { Exception } from '@poppinss/utils';
