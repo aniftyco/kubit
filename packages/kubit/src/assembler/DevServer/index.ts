@@ -159,7 +159,7 @@ export class DevServer {
     /**
      * Log getting ready
      */
-    this.logger.info('building application...');
+    this.logger.info('Building application...');
 
     /**
      * Start the HTTP server right away
@@ -228,7 +228,7 @@ export class DevServer {
      * Watcher is ready after first compile
      */
     watcher.on('watcher:ready', () => {
-      this.logger.info('watching file system for changes');
+      this.logger.info('Watching file system for changes');
       this.watcherState = 'ready';
       this.renderServerIsReady();
     });

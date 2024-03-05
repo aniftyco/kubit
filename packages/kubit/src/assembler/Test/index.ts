@@ -205,7 +205,7 @@ export class TestsServer {
      * Watcher is ready after first compile
      */
     watcher.on('watcher:ready', () => {
-      this.logger.info('watching file system for changes');
+      this.logger.info('Watching file system for changes');
     });
 
     /**
