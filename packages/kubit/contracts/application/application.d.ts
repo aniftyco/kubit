@@ -1,7 +1,7 @@
 import { AssetsManagerConfig } from '@ioc:Kubit/AssetsManager';
 import { ConfigContract } from '@ioc:Kubit/Config';
+import { IocContract, IocResolverContract } from '@ioc:Kubit/Container';
 import { EnvContract } from '@ioc:Kubit/Env';
-import { IocContract, IocResolverContract } from '@ioc:Kubit/Fold';
 import * as Helpers from '@ioc:Kubit/Helpers';
 import { LoggerConfig, LoggerContract } from '@ioc:Kubit/Logger';
 import { ProfilerContract } from '@ioc:Kubit/Profiler';
@@ -394,5 +394,5 @@ declare module '@ioc:Kubit/Application' {
   /**
    * Export Ioc Container static types
    */
-  export * from '../fold/Contracts';
+  export * from '../container/Contracts';
 }

@@ -1,7 +1,7 @@
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 import { MiddlewareHandler, MiddlewareStoreContract, ResolvedMiddlewareHandler } from '@ioc:Kubit/Middleware';
 
-import { IocContract, IocResolverContract } from '../../fold';
+import { IocContract, IocResolverContract } from '../../container';
 
 /**
  * Middleware store register and keep all the application middleware at one

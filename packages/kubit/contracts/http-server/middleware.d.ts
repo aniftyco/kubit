@@ -1,6 +1,6 @@
 declare module '@ioc:Kubit/Middleware' {
   import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-  import { IocContract } from '@kubit/fold';
+  import { IocContract } from '@kubit/Container';
 
   export type DefaultExport<T> = Promise<{ default: T }>;
 

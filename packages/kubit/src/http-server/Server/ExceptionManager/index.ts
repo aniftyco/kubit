@@ -1,7 +1,7 @@
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
 import { ErrorHandler, ResolvedErrorHandler } from '@ioc:Kubit/Server';
 
-import { IocContract, IocResolverContract, IocResolverLookupNode } from '../../../fold';
+import { IocContract, IocResolverContract, IocResolverLookupNode } from '../../../container';
 import { useReturnValue } from '../../helpers';
 
 /**

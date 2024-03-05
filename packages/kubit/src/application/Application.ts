@@ -14,8 +14,8 @@ import { Exception } from '@poppinss/utils';
 import * as helpers from '@poppinss/utils/build/helpers';
 
 import { Config } from '../config';
+import { Ioc, Registrar } from '../container';
 import { Env, envLoader, EnvParser } from '../env';
-import { Ioc, Registrar } from '../fold';
 import { Logger } from '../logger';
 import { Profiler } from '../profiler';
 import * as bootConfig from './bootConfig';

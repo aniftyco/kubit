@@ -7,7 +7,7 @@ import { RouteNode } from '@ioc:Kubit/Route';
 import { Exception } from '@poppinss/utils';
 import { interpolate } from '@poppinss/utils/build/helpers';
 
-import { IocContract, IocResolverContract } from '../../../fold';
+import { IocContract, IocResolverContract } from '../../../container';
 import { E_MISSING_NAMED_MIDDLEWARE } from '../../exceptions.json';
 import { useReturnValue } from '../../helpers';
 

@@ -1,4 +1,4 @@
-declare module '@ioc:Kubit/Fold' {
+declare module '@ioc:Kubit/Container' {
   type Function = (...args: any[]) => any;
   type ExtractFunctions<T> = {
     [P in keyof T]: T[P] extends Function ? P : never;

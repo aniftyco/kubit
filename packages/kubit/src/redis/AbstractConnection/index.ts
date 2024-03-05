@@ -5,7 +5,7 @@ import { ApplicationContract, ContainerBindings } from '@ioc:Kubit/Application';
 import { HealthReportNode, PubSubChannelHandler, PubSubPatternHandler } from '@ioc:Kubit/Redis';
 import { Exception } from '@poppinss/utils';
 
-import { IocResolverContract } from '../../fold';
+import { IocResolverContract } from '../../container';
 
 /**
  * Helper to sleep

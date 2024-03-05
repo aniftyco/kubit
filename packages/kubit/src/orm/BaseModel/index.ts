@@ -1,8 +1,8 @@
 import equal from 'fast-deep-equal';
 import { DateTime } from 'luxon';
 
+import { IocContract } from '@ioc:Kubit/Container';
 import { QueryClientContract, TransactionClientContract } from '@ioc:Kubit/Database';
-import { IocContract } from '@ioc:Kubit/Fold';
 import {
   AdapterContract,
   CacheNode,
