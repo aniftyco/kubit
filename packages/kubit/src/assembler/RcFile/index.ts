@@ -53,7 +53,7 @@ export class RcFile {
    * set to true
    */
   private getRestartServerFilesGlob(): string[] {
-    return this.application.rcFile.metaFiles
+    return this.application.bootConfig.metaFiles
       .filter(({ reloadServer, pattern }) => {
         return reloadServer === true && ![RCFILE_NAME, ACE_FILE_NAME].includes(pattern);
       })
@@ -65,7 +65,7 @@ export class RcFile {
    * command paths to glob pattern
    */
   private commandsGlob(): string[] {
-    const commands = this.application.rcFile.commands.reduce((result: string[], commandPath) => {
+    const commands = this.application.bootConfig.commands.reduce((result: string[], commandPath) => {
       if (/^(.){1,2}\//.test(commandPath)) {
         commandPath = slash(relative(this.appRoot, join(this.appRoot, commandPath)));
         result = result.concat([`${commandPath}.*`, `${commandPath}/**/*`]);
@@ -88,7 +88,7 @@ export class RcFile {
    * to be copied
    */
   public getMetaFilesGlob(): string[] {
-    return this.application.rcFile.metaFiles
+    return this.application.bootConfig.metaFiles
       .filter(({ pattern }) => ![RCFILE_NAME, ACE_FILE_NAME].includes(pattern))
       .map(({ pattern }) => pattern)
       .concat([ACE_FILE_NAME]);
@@ -98,7 +98,7 @@ export class RcFile {
    * Returns an array of globs for the test files
    */
   public getTestsFileGlob(): string[] {
-    return this.application.rcFile.tests.suites.reduce((result, suite) => {
+    return this.application.bootConfig.tests.suites.reduce((result, suite) => {
       if (suite.files) {
         result = result.concat(suite.files);
       }

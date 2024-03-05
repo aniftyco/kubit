@@ -2,8 +2,13 @@ import { join } from 'path';
 import { parse as semverParse, satisfies as semverSatisfies } from 'semver';
 
 import {
-    AppEnvironments, ApplicationContract, ApplicationStates, AssetsDriver, PreloadNode, RcFile,
-    SemverNode
+  AppEnvironments,
+  ApplicationContract,
+  ApplicationStates,
+  AssetsDriver,
+  BootConfig,
+  PreloadNode,
+  SemverNode,
 } from '@ioc:Kubit/Application';
 import { Exception } from '@poppinss/utils';
 import * as helpers from '@poppinss/utils/build/helpers';
@@ -13,7 +18,7 @@ import { Env, envLoader, EnvParser } from '../env';
 import { Ioc, Registrar } from '../fold';
 import { Logger } from '../logger';
 import { Profiler } from '../profiler';
-import { parse } from './rcParser';
+import * as bootConfig from './bootConfig';
 
 /**
  * Aliases for different environments
@@ -73,9 +78,9 @@ export class Application implements ApplicationContract {
   public readonly adonisVersion: SemverNode | null;
 
   /**
-   * Reference to fully parser rcFile
+   * Reference to fully parsed boot config
    */
-  public readonly rcFile: RcFile;
+  public readonly bootConfig: BootConfig<PreloadNode>;
 
   /**
    * The typescript flag indicates a couple of things, which can help tweak the tooling
@@ -117,7 +122,7 @@ export class Application implements ApplicationContract {
   /**
    * An array of files to be preloaded
    */
-  public preloads: PreloadNode[] = [];
+  public preloads: string[] | PreloadNode[] = [];
 
   /**
    * A map of pre-configured directories
@@ -143,12 +148,12 @@ export class Application implements ApplicationContract {
   constructor(
     public readonly appRoot: string,
     public environment: AppEnvironments,
-    rcContents?: any
+    bootConfigContents?: any
   ) {
     const pkgFile = this.loadAppPackageJson();
 
-    this.rcFile = parse(rcContents || pkgFile.rcConfig);
-    this.typescript = this.rcFile.typescript;
+    this.bootConfig = bootConfig.parse(bootConfigContents || pkgFile.bootConfig);
+    this.typescript = this.bootConfig.typescript;
 
     /**
      * Loads the package.json files to collect optional
@@ -167,12 +172,12 @@ export class Application implements ApplicationContract {
     /**
      * Fetching following info from the `.adonisrc.json` file.
      */
-    this.preloads = this.rcFile.preloads;
-    this.exceptionHandlerNamespace = this.rcFile.exceptionHandlerNamespace;
-    this.assetsDriver = this.rcFile.assetsDriver;
-    this.directoriesMap = new Map(Object.entries(this.rcFile.directories));
-    this.aliasesMap = new Map(Object.entries(this.rcFile.aliases));
-    this.namespacesMap = new Map(Object.entries(this.rcFile.namespaces));
+    this.preloads = this.bootConfig.preloads;
+    this.exceptionHandlerNamespace = this.bootConfig.exceptionHandlerNamespace;
+    this.assetsDriver = this.bootConfig.assetsDriver;
+    this.directoriesMap = new Map(Object.entries(this.bootConfig.directories));
+    this.aliasesMap = new Map(Object.entries(this.bootConfig.aliases));
+    this.namespacesMap = new Map(Object.entries(this.bootConfig.namespaces));
 
     this.setEnvVars();
     this.setupGlobals();
@@ -225,7 +230,7 @@ export class Application implements ApplicationContract {
     name: string;
     engines?: { node?: string };
     version: string;
-    rcConfig: Record<string, any>;
+    bootConfig: BootConfig;
   } {
     const pkgFile = this.resolveModule('./package.json', () => {
       return {};
@@ -234,7 +239,7 @@ export class Application implements ApplicationContract {
       name: pkgFile.name || 'adonis-app',
       version: pkgFile.version || '0.0.0',
       engines: pkgFile.engines,
-      rcConfig: pkgFile.kubit || {},
+      bootConfig: pkgFile.kubit || {},
     };
   }
 
@@ -443,19 +448,19 @@ export class Application implements ApplicationContract {
      * Return null when rcfile doesn't have a special
      * entry for namespaces
      */
-    if (!this.rcFile.namespaces[namespaceFor]) {
+    if (!this.bootConfig.namespaces[namespaceFor]) {
       return null;
     }
 
     let output: string | null = null;
 
-    Object.keys(this.rcFile.aliases).forEach((baseNamespace) => {
-      const autoloadPath = this.rcFile.aliases[baseNamespace];
+    Object.keys(this.bootConfig.aliases).forEach((baseNamespace) => {
+      const autoloadPath = this.bootConfig.aliases[baseNamespace];
       if (
-        this.rcFile.namespaces[namespaceFor].startsWith(`${baseNamespace}/`) ||
-        this.rcFile.namespaces[namespaceFor] === baseNamespace
+        this.bootConfig.namespaces[namespaceFor].startsWith(`${baseNamespace}/`) ||
+        this.bootConfig.namespaces[namespaceFor] === baseNamespace
       ) {
-        output = this.rcFile.namespaces[namespaceFor].replace(baseNamespace, autoloadPath);
+        output = this.bootConfig.namespaces[namespaceFor].replace(baseNamespace, autoloadPath);
       }
     });
 
@@ -635,9 +640,9 @@ export class Application implements ApplicationContract {
     this.state = 'registered';
 
     await this.profiler.profile('providers:register', {}, async () => {
-      const providers = this.rcFile.providers
-        .concat(this.rcFile.aceProviders)
-        .concat(this.inTest ? this.rcFile.testProviders : []);
+      const providers = this.bootConfig.providers
+        .concat(this.bootConfig.aceProviders)
+        .concat(this.inTest ? this.bootConfig.testProviders : []);
 
       this.logger.trace('registering providers', providers);
       this.registrar = new Registrar([this], this.appRoot);
@@ -684,14 +689,14 @@ export class Application implements ApplicationContract {
    */
   public async requirePreloads(): Promise<void> {
     this.preloads
-      .filter((node) => {
+      .filter((node: PreloadNode) => {
         if (!node.environment || this.environment === 'unknown') {
           return true;
         }
 
         return node.environment.indexOf(this.environment) > -1;
       })
-      .forEach((node) => {
+      .forEach((node: PreloadNode) => {
         this.profiler.profile('file:preload', node, () => {
           this.logger.trace(node, 'file:preload');
           this.resolveModule(node.file, (error) => {

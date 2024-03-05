@@ -95,13 +95,13 @@ declare module '@ioc:Kubit/Application' {
   };
 
   /**
-   * Shape of rc file
+   * Shape of boot config
    */
-  export type RcFile = {
+  export type BootConfig<Preload = string | PreloadNode> = {
     typescript: boolean;
     exceptionHandlerNamespace?: string;
     assetsDriver?: AssetsDriver;
-    preloads: PreloadNode[];
+    preloads: Preload[];
     metaFiles: MetaFileNode[];
     commands: string[];
     providers: string[];
@@ -131,7 +131,7 @@ declare module '@ioc:Kubit/Application' {
     /**
      * Readonly reference to the parsed rc file
      */
-    readonly rcFile: RcFile;
+    readonly bootConfig: BootConfig;
 
     /**
      * Absolute path to the application root
@@ -199,7 +199,7 @@ declare module '@ioc:Kubit/Application' {
     /**
      * Reference to preloads defined inside `.adonisrc.json` file
      */
-    preloads: PreloadNode[];
+    preloads: string[] | PreloadNode[];
 
     /**
      * Value of `NODE_ENV`. But normalized in certain cases.

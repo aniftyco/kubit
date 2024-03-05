@@ -87,7 +87,7 @@ export class TestsServer {
    * are picked.
    */
   private getFilesForSelectedSuites() {
-    return this.rcFile.application.rcFile.tests.suites.reduce((result, suite) => {
+    return this.rcFile.application.bootConfig.tests.suites.reduce((result, suite) => {
       if (!suite.files) {
         return result;
       }

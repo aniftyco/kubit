@@ -1,11 +1,78 @@
-import { MetaFileNode, PreloadNode, RcFile } from '@ioc:Kubit/Application';
+import { BootConfig, MetaFileNode, PreloadNode } from '@ioc:Kubit/Application';
 import { Exception } from '@poppinss/utils';
 
+export const defaultBootConfig: BootConfig = {
+  typescript: true,
+  directories: {
+    config: 'config',
+    public: 'public',
+    contracts: 'contracts',
+    providers: 'app/Providers',
+    database: 'database',
+    migrations: 'database/migrations',
+    seeds: 'database/seeders',
+    resources: 'resources',
+    views: 'resources/views',
+    start: 'bootstrap',
+    tmp: 'storage/tmp',
+    tests: 'tests',
+  },
+  namespaces: {
+    models: '@app/Models',
+    middleware: '@app/Http/Middleware',
+    exceptions: '@app/Exceptions',
+    validators: '@app/Validators',
+    httpControllers: '@app/Http/Controllers',
+    eventListeners: '@app/Listeners',
+    redisListeners: '@app/Listeners',
+  },
+  commands: ['./app/Commands'],
+  commandsAliases: {},
+  exceptionHandlerNamespace: '@app/Exceptions/Handler',
+  preloads: ['./bootstrap/kernel', './routes/web', './routes/api'],
+  aliases: { '@app': 'app' },
+  providers: ['kubit/dist/provider', './app/Providers/AppProvider'],
+  aceProviders: ['kubit/dist/repl/provider'],
+  testProviders: ['kubit/dist/test/provider'],
+  metaFiles: [
+    {
+      pattern: 'public/**',
+      reloadServer: false,
+    },
+    {
+      pattern: 'resources/views/**/*.edge',
+      reloadServer: false,
+    },
+  ],
+  tests: {
+    suites: [
+      {
+        name: 'functional',
+        files: ['tests/functional/**/*.spec.ts'],
+        timeout: 60000,
+      },
+      {
+        name: 'unit',
+        files: ['tests/unit/**/*.spec.ts'],
+        timeout: 60000,
+      },
+      {
+        name: 'e2e',
+        files: ['tests/e2e/**/*.spec.ts'],
+        timeout: 60000,
+      },
+    ],
+    timeout: 2000,
+    forceExit: true,
+  },
+  raw: null,
+};
+
 /**
- * Parses the contents of `.adonisrc.json` file and merges it with the
- * defaults
+ * Parses the contents of `package.json#kubit` config and merges it with the
+ * defaults.
  */
-export function parse(contents: { [key: string]: any }): RcFile {
+export function parse(contents: { [key: string]: any }): BootConfig<PreloadNode> {
   const normalizedContents = Object.assign(
     {
       typescript: true,

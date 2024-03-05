@@ -35,7 +35,7 @@ export class Compiler {
   ) {
     this.ts = new Ts(this.appRoot, this.logger, tsconfig);
     this.ts.tsCompiler.use(() => {
-      return iocTransformer(this.ts.tsCompiler.ts, this.rcFile.application.rcFile);
+      return iocTransformer(this.ts.tsCompiler.ts, this.rcFile.application.bootConfig);
     }, 'after');
   }
 

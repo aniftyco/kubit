@@ -19,7 +19,7 @@ export class MakeSeeder extends BaseCommand {
   public async run(): Promise<void> {
     const stub = join(__dirname, '../../../..', 'templates', 'seeder.txt');
 
-    const path = this.application.rcFile.directories.seeds;
+    const path = this.application.bootConfig.directories.seeds;
 
     this.generator
       .addFile(this.name, { pattern: 'pascalcase', form: 'singular' })

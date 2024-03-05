@@ -86,7 +86,7 @@ export class AppKernel {
     /**
      * Register ts hook when running typescript code directly
      */
-    if (this.application.rcFile.typescript && !this.hasRegisteredTsHook) {
+    if (this.application.bootConfig.typescript && !this.hasRegisteredTsHook) {
       this.hasRegisteredTsHook = true;
       registerTsHook(this.application.appRoot);
     }

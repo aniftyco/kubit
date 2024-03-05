@@ -44,7 +44,7 @@ export class MakeCommand extends GeneratorCommand {
    * Path to the commands directory
    */
   protected getDestinationPath(): string {
-    return this.application.rcFile.directories.commands || 'app/Commands';
+    return this.application.bootConfig.directories.commands || 'app/Commands';
   }
 
   /**

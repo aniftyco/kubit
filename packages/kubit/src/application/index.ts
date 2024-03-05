@@ -1,5 +1,5 @@
 export { Ioc, Registrar, inject } from '../fold';
 export { Application } from './Application';
-import * as rcParser from './rcParser';
+import * as bootConfig from './bootConfig';
 
-export { rcParser };
+export { bootConfig };

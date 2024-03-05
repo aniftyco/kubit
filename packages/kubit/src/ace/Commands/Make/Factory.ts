@@ -33,7 +33,7 @@ export class MakeFactory extends BaseCommand {
    * Generate model import path used in the factory
    */
   private generateModelImportPath() {
-    let base = this.application.rcFile.namespaces.models || '@app/Models';
+    let base = this.application.bootConfig.namespaces.models || '@app/Models';
     if (!base.endsWith('/')) {
       base += '/';
     }
@@ -56,7 +56,7 @@ export class MakeFactory extends BaseCommand {
    * Path to the factories directory
    */
   protected getDestinationPath() {
-    const base = this.application.rcFile.directories.database || 'database';
+    const base = this.application.bootConfig.directories.database || 'database';
     return join(base, 'factories');
   }
 

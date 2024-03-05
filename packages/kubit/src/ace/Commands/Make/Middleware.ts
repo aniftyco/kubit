@@ -50,7 +50,7 @@ export class MakeMiddleware extends GeneratorCommand {
   public async run() {
     this.resourceName = this.name;
     this.createExact = this.exact;
-    const middlewareNamespace = this.application.rcFile.namespaces.middleware || '@pp/Middleware';
+    const middlewareNamespace = this.application.bootConfig.namespaces.middleware || '@pp/Middleware';
 
     const file = await super.generate();
     if (!file) {

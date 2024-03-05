@@ -3,8 +3,14 @@ import { isInteractive, logger } from '@poppinss/cliui';
 
 import * as commands from '../Commands';
 import {
-    CommandConstructorContract, CommandContract, CommandFlag, FindHookCallback, GlobalFlagHandler,
-    KernelContract, ManifestCommand, RunHookCallback
+  CommandConstructorContract,
+  CommandContract,
+  CommandFlag,
+  FindHookCallback,
+  GlobalFlagHandler,
+  KernelContract,
+  ManifestCommand,
+  RunHookCallback,
 } from '../Contracts';
 import { InvalidCommandException } from '../Exceptions';
 import { Hooks } from '../Hooks';
@@ -67,7 +73,7 @@ export class Kernel implements KernelContract {
    * List of registered commands
    */
   public commands: { [name: string]: CommandConstructorContract } = {};
-  public aliases: { [alias: string]: string } = this.application.rcFile.commandsAliases;
+  public aliases: { [alias: string]: string } = this.application.bootConfig.commandsAliases;
 
   /**
    * List of registered flags

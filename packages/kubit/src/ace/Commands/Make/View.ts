@@ -43,7 +43,7 @@ export class MakeView extends GeneratorCommand {
    * Path to the providers directory
    */
   protected getDestinationPath(): string {
-    return this.application.rcFile.directories.views || 'resources/views';
+    return this.application.bootConfig.directories.views || 'resources/views';
   }
 
   public async run() {
