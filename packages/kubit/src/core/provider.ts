@@ -122,14 +122,14 @@ export default class KubitProvider implements ServiceProvider {
   }
 
   /**
-   * Register ace kernel to the container. When the process is started
-   * by running an ace command, then the "Kubit/Ace" binding
+   * Register console kernel to the container. When the process is started
+   * by running a console command, then the "Kubit/Console" binding
    * will already be in place and hence we do not overwrite it.
    */
-  protected registerAceKernel() {
-    if (!this.app.container.hasBinding('Kubit/Ace')) {
-      this.app.container.singleton('Kubit/Ace', () => {
-        const { Kernel } = require('../ace');
+  protected registerConsoleKernel() {
+    if (!this.app.container.hasBinding('Kubit/Console')) {
+      this.app.container.singleton('Kubit/Console', () => {
+        const { Kernel } = require('../console');
         return new Kernel(this.app);
       });
     }
@@ -186,7 +186,7 @@ export default class KubitProvider implements ServiceProvider {
     this.registerHttpExceptionHandler();
     this.registerHealthCheck();
     this.registerAssetsManager();
-    this.registerAceKernel();
+    this.registerConsoleKernel();
     this.registerTestUtils();
   }
 
