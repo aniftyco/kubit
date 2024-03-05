@@ -1,7 +1,7 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 import { LucidProviderConfig, LucidProviderContract, LucidProviderModel, ProviderUserContract } from '@ioc:Kubit/Auth';
-import { QueryClientContract } from '@ioc:Kubit/Lucid/Database';
-import { ModelQueryBuilderContract } from '@ioc:Kubit/Lucid/Orm';
+import { QueryClientContract } from '@ioc:Kubit/Database';
+import { ModelQueryBuilderContract } from '@ioc:Kubit/ORM';
 import { Hooks } from '@poppinss/hooks';
 import { esmResolver } from '@poppinss/utils';
 

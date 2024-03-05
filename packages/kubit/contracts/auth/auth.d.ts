@@ -2,10 +2,10 @@ declare module '@ioc:Kubit/Auth' {
   import { DateTime } from 'luxon';
 
   import { ApplicationContract } from '@ioc:Kubit/Application';
+  import { DatabaseQueryBuilderContract, QueryClientContract } from '@ioc:Kubit/Database';
   import { HashersList } from '@ioc:Kubit/Hash';
   import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-  import { DatabaseQueryBuilderContract, QueryClientContract } from '@ioc:Kubit/Lucid/Database';
-  import { LucidModel, LucidRow, ModelQueryBuilderContract } from '@ioc:Kubit/Lucid/Orm';
+  import { LucidModel, LucidRow, ModelQueryBuilderContract } from '@ioc:Kubit/ORM';
 
   /*
   |--------------------------------------------------------------------------

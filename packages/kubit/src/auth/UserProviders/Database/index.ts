@@ -5,7 +5,7 @@ import {
   DatabaseProviderRow,
   ProviderUserContract,
 } from '@ioc:Kubit/Auth';
-import { DatabaseContract, DatabaseQueryBuilderContract, QueryClientContract } from '@ioc:Kubit/Lucid/Database';
+import { DatabaseContract, DatabaseQueryBuilderContract, QueryClientContract } from '@ioc:Kubit/Database';
 import { Hooks } from '@poppinss/hooks';
 import { esmResolver, Exception } from '@poppinss/utils';
 

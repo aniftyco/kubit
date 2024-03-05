@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 
 import { DatabaseTokenProviderConfig, ProviderTokenContract, TokenProviderContract } from '@ioc:Kubit/Auth';
-import { DatabaseContract, QueryClientContract } from '@ioc:Kubit/Lucid/Database';
+import { DatabaseContract, QueryClientContract } from '@ioc:Kubit/Database';
 import { safeEqual } from '@poppinss/utils/build/helpers';
 
 import { ProviderToken } from '../../Tokens/ProviderToken';
