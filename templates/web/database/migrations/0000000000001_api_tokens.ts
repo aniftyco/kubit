@@ -1,6 +1,6 @@
-import BaseSchema from '@ioc:Kubit/Database/Schema';
+import Schema from '@ioc:Kubit/Database/Schema';
 
-export default class extends BaseSchema {
+export default class CreateApiTokensTable extends Schema {
   protected tableName = 'api_tokens';
 
   public async up() {
