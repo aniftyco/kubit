@@ -250,7 +250,7 @@ export class Instructions {
     /**
      * Return early when not providers are mentioned
      */
-    if (!instructions.providers && !instructions.aceProviders && !instructions.testProviders) {
+    if (!instructions.providers && !instructions.consoleProviders && !instructions.testProviders) {
       return;
     }
 
@@ -259,8 +259,8 @@ export class Instructions {
       instructions.providers.forEach((provider) => rcFile.addProvider(provider));
     }
 
-    if (instructions.aceProviders) {
-      instructions.aceProviders.forEach((provider) => rcFile.addAceProvider(provider));
+    if (instructions.consoleProviders) {
+      instructions.consoleProviders.forEach((provider) => rcFile.addAceProvider(provider));
     }
 
     if (instructions.testProviders) {
@@ -274,8 +274,8 @@ export class Instructions {
       this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
     }
 
-    if (instructions.aceProviders) {
-      const suffix = this.getSuffix(this.formatArray(instructions.aceProviders), 'aceProviders');
+    if (instructions.consoleProviders) {
+      const suffix = this.getSuffix(this.formatArray(instructions.consoleProviders), 'consoleProviders');
       this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
     }
 

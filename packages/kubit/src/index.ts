@@ -1,4 +1,4 @@
-export { BaseCommand } from './ace/BaseCommand';
+export { BaseCommand } from './console/BaseCommand';
 export { Ignitor, listDirectoryFiles } from './core';
 export { defineConfig } from './config';
 

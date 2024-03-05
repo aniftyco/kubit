@@ -641,7 +641,7 @@ export class Application implements ApplicationContract {
 
     await this.profiler.profile('providers:register', {}, async () => {
       const providers = this.bootConfig.providers
-        .concat(this.bootConfig.aceProviders)
+        .concat(this.bootConfig.consoleProviders)
         .concat(this.inTest ? this.bootConfig.testProviders : []);
 
       this.logger.trace('registering providers', providers);

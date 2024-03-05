@@ -47,7 +47,7 @@ export type PackageInstructionsBlock = {
   commands?: string[];
   providers?: string[];
   aliases?: { [key: string]: string };
-  aceProviders?: string[];
+  consoleProviders?: string[];
   testProviders?: string[];
 };
 

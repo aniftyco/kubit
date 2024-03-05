@@ -105,7 +105,7 @@ declare module '@ioc:Kubit/Application' {
     metaFiles: MetaFileNode[];
     commands: string[];
     providers: string[];
-    aceProviders: string[];
+    consoleProviders: string[];
     testProviders: string[];
     directories: DirectoriesNode;
     commandsAliases: {

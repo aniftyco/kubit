@@ -49,9 +49,9 @@ export class App {
   private kernel = new AppKernel(this.appRoot, 'console');
 
   /**
-   * Reference to the ace kernel
+   * Reference to the console kernel
    */
-  private ace = new Kernel(this.kernel.application);
+  private console = new Kernel(this.kernel.application);
 
   /**
    * Source root always points to the compiled source
@@ -67,7 +67,7 @@ export class App {
       return;
     }
 
-    this.ace.printHelp(command);
+    this.console.printHelp(command);
     process.exit(0);
   }
 
@@ -131,7 +131,7 @@ export class App {
          * Set ace instance within the container, so that the underlying
          * commands or the app can access it from the container
          */
-        this.kernel.application.container.singleton('Kubit/Ace', () => this.ace);
+        this.kernel.application.container.singleton('Kubit/Console', () => this.console);
         await this.kernel.boot();
       }
     }
@@ -150,26 +150,26 @@ export class App {
    * Hooks into ace lifecycle events to conditionally
    * load the app.
    */
-  private registerAceHooks() {
-    this.ace.before('find', async (command) => this.onFind(command));
-    this.ace.before('run', async () => this.onRun());
+  private registerConsoleHooks() {
+    this.console.before('find', async (command) => this.onFind(command));
+    this.console.before('run', async () => this.onRun());
   }
 
   /**
    * Adding flags
    */
-  private registerAceFlags() {
+  private registerConsoleFlags() {
     /**
      * Showing help including core commands
      */
-    this.ace.flag('help', async (value, _, command) => this.printHelp(value, command), {
+    this.console.flag('help', async (value, _, command) => this.printHelp(value, command), {
       alias: 'h',
     });
 
     /**
      * Showing app and AdonisJs version
      */
-    this.ace.flag('version', async (value) => this.printVersion(value), { alias: 'v' });
+    this.console.flag('version', async (value) => this.printVersion(value), { alias: 'v' });
   }
 
   /**
@@ -180,12 +180,12 @@ export class App {
       /**
        * Define ace hooks to wire the application (if required)
        */
-      this.registerAceHooks();
+      this.registerConsoleHooks();
 
       /**
        * Define global flags
        */
-      this.registerAceFlags();
+      this.registerConsoleFlags();
 
       /**
        * Print help when no arguments have been passed
@@ -205,22 +205,22 @@ export class App {
       /**
        * Listen for the exit signal on ace kernel
        */
-      this.ace.onExit(async () => {
+      this.console.onExit(async () => {
         if (this.kernel.hasBooted) {
           await this.kernel.close();
         }
 
-        if (!this.ace.error) {
-          process.exit(this.ace.exitCode);
+        if (!this.console.error) {
+          process.exit(this.console.exitCode);
         }
 
-        return this.kernel.handleError(this.ace.error).finally(() => process.exit(this.ace.exitCode));
+        return this.kernel.handleError(this.console.error).finally(() => process.exit(this.console.exitCode));
       });
 
       /**
        * Handle command
        */
-      await this.ace.handle(argv);
+      await this.console.handle(argv);
     } catch (error) {
       if (!error) {
         process.exit(1);

@@ -32,7 +32,7 @@ export const defaultBootConfig: BootConfig = {
   preloads: ['./bootstrap/kernel', './routes/web', './routes/api'],
   aliases: { '@app': 'app' },
   providers: ['kubit/dist/provider', './app/Providers/AppProvider'],
-  aceProviders: ['kubit/dist/repl/provider'],
+  consoleProviders: ['kubit/dist/repl/provider'],
   testProviders: ['kubit/dist/test/provider'],
   metaFiles: [
     {
@@ -105,7 +105,7 @@ export function parse(contents: { [key: string]: any }): BootConfig<PreloadNode>
       preloads: ['./bootstrap/kernel', './routes/web', './routes/api'],
       aliases: { '@app': 'app' },
       providers: ['kubit/dist/provider', './app/Providers/AppProvider'],
-      aceProviders: ['kubit/dist/repl/provider'],
+      consoleProviders: ['kubit/dist/repl/provider'],
       testProviders: ['kubit/dist/test/provider'],
       metaFiles: [
         {
@@ -203,7 +203,7 @@ export function parse(contents: { [key: string]: any }): BootConfig<PreloadNode>
     commands: normalizedContents.commands,
     commandsAliases: normalizedContents.commandsAliases,
     providers: normalizedContents.providers,
-    aceProviders: normalizedContents.aceProviders,
+    consoleProviders: normalizedContents.consoleProviders,
     testProviders: normalizedContents.testProviders,
     tests: {
       suites: (normalizedContents.tests.suites || []).map((suite: any, index) => {

@@ -1,13 +1,13 @@
 import { App } from './App';
 
 /**
- * Exposes the API to execute ace commands.
+ * Exposes the API to execute console commands.
  */
-export class Ace {
+export class Console {
   constructor(private appRoot: string) {}
 
   /**
-   * Handles the ace command
+   * Handles the console command
    */
   public async handle(argv: string[]) {
     process.env.ADONIS_ACE_CWD = this.appRoot;

@@ -32,10 +32,10 @@ export class RCFile extends JsonFile {
   private providers: any[] = [];
 
   /**
-   * Storing a local copy of aceProviders for concatenating
+   * Storing a local copy of consoleProviders for concatenating
    * new entries.
    */
-  private aceProviders: any[] = [];
+  private consoleProviders: any[] = [];
 
   /**
    * Storing a local copy of testProviders for concatenating
@@ -49,7 +49,7 @@ export class RCFile extends JsonFile {
     this.metaFiles = this.get('metaFiles', []);
     this.commands = this.get('commands', []);
     this.providers = this.get('providers', []);
-    this.aceProviders = this.get('aceProviders', []);
+    this.consoleProviders = this.get('consoleProviders', []);
     this.testProviders = this.get('testProviders', []);
   }
 
@@ -78,8 +78,8 @@ export class RCFile extends JsonFile {
         key = 'providers';
       }
 
-      if (body.key.startsWith('aceProviders')) {
-        key = 'aceProviders';
+      if (body.key.startsWith('consoleProviders')) {
+        key = 'consoleProviders';
       }
 
       if (body.key.startsWith('testProviders')) {
@@ -220,14 +220,14 @@ export class RCFile extends JsonFile {
    * Add new providers to the ace providers array
    */
   public addAceProvider(provider: string) {
-    let entryIndex = this.aceProviders.findIndex((command) => {
+    let entryIndex = this.consoleProviders.findIndex((command) => {
       return command === provider;
     });
 
-    entryIndex = entryIndex === -1 ? this.aceProviders.length : entryIndex;
+    entryIndex = entryIndex === -1 ? this.consoleProviders.length : entryIndex;
 
-    this.aceProviders[entryIndex] = provider;
-    this.set(`aceProviders[${entryIndex}]`, provider);
+    this.consoleProviders[entryIndex] = provider;
+    this.set(`consoleProviders[${entryIndex}]`, provider);
   }
 
   /**

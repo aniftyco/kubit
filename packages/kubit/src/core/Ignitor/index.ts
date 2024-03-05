@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { AppEnvironments } from '@ioc:Kubit/Application';
 
 import { Application } from '../../application';
-import { Ace } from './Ace';
+import { Console } from './Console';
 import { HttpServer } from './HttpServer';
 import { AppKernel } from './Kernel';
 
@@ -47,10 +47,10 @@ export class Ignitor {
   }
 
   /**
-   * Returns instance of ace to handle console
+   * Returns instance of console to handle console
    * commands
    */
-  public ace() {
-    return new Ace(this.appRoot);
+  public console() {
+    return new Console(this.appRoot);
   }
 }
