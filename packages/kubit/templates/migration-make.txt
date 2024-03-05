@@ -1,6 +1,6 @@
-import BaseSchema from '@ioc:Kubit/Lucid/Schema'
+import Schema from '@ioc:Kubit/Database/Schema'
 
-export default class extends BaseSchema {
+export default class extends Schema {
   protected tableName = '{{#toTableName}}{{ filename }}{{/toTableName}}'
 
   public async up () {

@@ -1,6 +1,6 @@
-import BaseSeeder from '@ioc:Kubit/Lucid/Seeder'
+import Seeder from '@ioc:Kubit/Database/Seeder'
 
-export default class extends BaseSeeder {
+export default class extends Seeder {
   public async run () {
     // Write your database queries inside the run method
   }

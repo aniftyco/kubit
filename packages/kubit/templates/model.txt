@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Kubit/Lucid/Orm'
+import { BaseModel, column } from '@ioc:Kubit/ORM'
 
 export default class {{ filename }} extends BaseModel {
   @column({ isPrimary: true })

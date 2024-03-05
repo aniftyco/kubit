@@ -1,5 +1,5 @@
 import {{#toModelName}}{{{ model }}}{{/toModelName}} from '{{{ modelImportPath }}}'
-import Factory from '@ioc:Kubit/Lucid/Factory'
+import Factory from '@ioc:Kubit/ORM/Factory'
 
 export default Factory.define({{#toModelName}}{{{ model }}}{{/toModelName}}, ({ faker }) => {
   return {
