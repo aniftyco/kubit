@@ -1,6 +1,8 @@
-import { defineConfig, HashConfig } from 'kubit';
+import { defineConfig } from 'kubit';
 
 import Env from '@ioc:Kubit/Env';
+
+import type { HashConfig } from '@ioc:Kubit/Hash';
 
 /*
 |--------------------------------------------------------------------------

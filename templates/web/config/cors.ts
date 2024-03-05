@@ -1,6 +1,8 @@
+import { defineConfig } from 'kubit';
+
 import type { CorsConfig } from '@ioc:Kubit/Cors';
 
-const corsConfig: CorsConfig = {
+export default defineConfig<CorsConfig>({
   /*
   |--------------------------------------------------------------------------
   | Enabled
@@ -114,6 +116,4 @@ const corsConfig: CorsConfig = {
   |
   */
   maxAge: 90,
-};
-
-export default corsConfig;
+});

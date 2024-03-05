@@ -1,8 +1,10 @@
+import { defineConfig } from 'kubit';
+
 import Env from '@ioc:Kubit/Env';
 
 import type { DatabaseConfig } from '@ioc:Kubit/Database';
 
-const databaseConfig: DatabaseConfig = {
+export default defineConfig<DatabaseConfig>({
   /*
   |--------------------------------------------------------------------------
   | Connection
@@ -43,6 +45,4 @@ const databaseConfig: DatabaseConfig = {
       debug: false,
     },
   },
-};
-
-export default databaseConfig;
+});

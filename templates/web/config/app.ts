@@ -1,270 +1,264 @@
+import { defineConfig } from 'kubit';
 import proxyAddr from 'proxy-addr';
 
 import Application from '@ioc:Kubit/Application';
 import Env from '@ioc:Kubit/Env';
 
-import type { ServerConfig } from '@ioc:Kubit/Server';
-import type { LoggerConfig } from '@ioc:Kubit/Logger';
-import type { ProfilerConfig } from '@ioc:Kubit/Profiler';
-import type { ValidatorConfig } from '@ioc:Kubit/Validator';
-import type { AssetsManagerConfig } from '@ioc:Kubit/AssetsManager';
+import type { ApplicationConfig } from '@ioc:Kubit/Application';
 
-/*
-|--------------------------------------------------------------------------
-| Application secret key
-|--------------------------------------------------------------------------
-|
-| The secret to encrypt and sign different values in your application.
-| Make sure to keep the `APP_KEY` as an environment variable and secure.
-|
-| Note: Changing the application key for an existing app will make all
-| the cookies invalid and also the existing encrypted data will not
-| be decrypted.
-|
-*/
-export const appKey: string = Env.get('APP_KEY');
-
-/*
-|--------------------------------------------------------------------------
-| Http server configuration
-|--------------------------------------------------------------------------
-|
-| The configuration for the HTTP(s) server. Make sure to go through all
-| the config properties to make keep server secure.
-|
-*/
-export const http: ServerConfig = {
+export default defineConfig<ApplicationConfig>({
   /*
   |--------------------------------------------------------------------------
-  | Allow method spoofing
+  | Application secret key
   |--------------------------------------------------------------------------
   |
-  | Method spoofing enables defining custom HTTP methods using a query string
-  | `_method`. This is usually required when you are making traditional
-  | form requests and wants to use HTTP verbs like `PUT`, `DELETE` and
-  | so on.
+  | The secret to encrypt and sign different values in your application.
+  | Make sure to keep the `APP_KEY` as an environment variable and secure.
+  |
+  | Note: Changing the application key for an existing app will make all
+  | the cookies invalid and also the existing encrypted data will not
+  | be decrypted.
   |
   */
-  allowMethodSpoofing: false,
-
+  appKey: Env.get('APP_KEY'),
   /*
   |--------------------------------------------------------------------------
-  | Subdomain offset
-  |--------------------------------------------------------------------------
-  */
-  subdomainOffset: 2,
-
-  /*
-  |--------------------------------------------------------------------------
-  | Request Ids
+  | Http server configuration
   |--------------------------------------------------------------------------
   |
-  | Setting this value to `true` will generate a unique request id for each
-  | HTTP request and set it as `x-request-id` header.
+  | The configuration for the HTTP(s) server. Make sure to go through all
+  | the config properties to make keep server secure.
   |
   */
-  generateRequestId: false,
+  http: {
+    /*
+    |--------------------------------------------------------------------------
+    | Allow method spoofing
+    |--------------------------------------------------------------------------
+    |
+    | Method spoofing enables defining custom HTTP methods using a query string
+    | `_method`. This is usually required when you are making traditional
+    | form requests and wants to use HTTP verbs like `PUT`, `DELETE` and
+    | so on.
+    |
+    */
+    allowMethodSpoofing: false,
 
-  /*
-  |--------------------------------------------------------------------------
-  | Trusting proxy servers
-  |--------------------------------------------------------------------------
-  |
-  | Define the proxy servers that AdonisJs must trust for reading `X-Forwarded`
-  | headers.
-  |
-  */
-  trustProxy: proxyAddr.compile('loopback'),
+    /*
+    |--------------------------------------------------------------------------
+    | Subdomain offset
+    |--------------------------------------------------------------------------
+    */
+    subdomainOffset: 2,
 
-  /*
-  |--------------------------------------------------------------------------
-  | Generating Etag
-  |--------------------------------------------------------------------------
-  |
-  | Whether or not to generate an etag for every response.
-  |
-  */
-  etag: false,
+    /*
+    |--------------------------------------------------------------------------
+    | Request Ids
+    |--------------------------------------------------------------------------
+    |
+    | Setting this value to `true` will generate a unique request id for each
+    | HTTP request and set it as `x-request-id` header.
+    |
+    */
+    generateRequestId: false,
 
-  /*
-  |--------------------------------------------------------------------------
-  | JSONP Callback
-  |--------------------------------------------------------------------------
-  */
-  jsonpCallbackName: 'callback',
+    /*
+    |--------------------------------------------------------------------------
+    | Trusting proxy servers
+    |--------------------------------------------------------------------------
+    |
+    | Define the proxy servers that AdonisJs must trust for reading `X-Forwarded`
+    | headers.
+    |
+    */
+    trustProxy: proxyAddr.compile('loopback'),
 
-  /*
-  |--------------------------------------------------------------------------
-  | Cookie settings
-  |--------------------------------------------------------------------------
-  */
-  cookie: {
-    domain: '',
-    path: '/',
-    maxAge: '2h',
-    httpOnly: true,
-    secure: false,
-    sameSite: false,
-  },
-};
+    /*
+    |--------------------------------------------------------------------------
+    | Generating Etag
+    |--------------------------------------------------------------------------
+    |
+    | Whether or not to generate an etag for every response.
+    |
+    */
+    etag: false,
 
-/*
-|--------------------------------------------------------------------------
-| Logger
-|--------------------------------------------------------------------------
-*/
-export const logger: LoggerConfig = {
-  /*
-  |--------------------------------------------------------------------------
-  | Application name
-  |--------------------------------------------------------------------------
-  |
-  | The name of the application you want to add to the log. It is recommended
-  | to always have app name in every log line.
-  |
-  | The `APP_NAME` environment variable is automatically set by AdonisJS by
-  | reading the `name` property from the `package.json` file.
-  |
-  */
-  name: Env.get('APP_NAME'),
+    /*
+    |--------------------------------------------------------------------------
+    | JSONP Callback
+    |--------------------------------------------------------------------------
+    */
+    jsonpCallbackName: 'callback',
 
-  /*
-  |--------------------------------------------------------------------------
-  | Toggle logger
-  |--------------------------------------------------------------------------
-  |
-  | Enable or disable logger application wide
-  |
-  */
-  enabled: true,
-
-  /*
-  |--------------------------------------------------------------------------
-  | Logging level
-  |--------------------------------------------------------------------------
-  |
-  | The level from which you want the logger to flush logs. It is recommended
-  | to make use of the environment variable, so that you can define log levels
-  | at deployment level and not code level.
-  |
-  */
-  level: Env.get('LOG_LEVEL', 'info'),
-
-  /*
-  |--------------------------------------------------------------------------
-  | Pretty print
-  |--------------------------------------------------------------------------
-  |
-  | It is highly advised NOT to use `prettyPrint` in production, since it
-  | can have huge impact on performance.
-  |
-  */
-  prettyPrint: Env.get('NODE_ENV') === 'development',
-};
-
-/*
-|--------------------------------------------------------------------------
-| Profiler
-|--------------------------------------------------------------------------
-*/
-export const profiler: ProfilerConfig = {
-  /*
-  |--------------------------------------------------------------------------
-  | Toggle profiler
-  |--------------------------------------------------------------------------
-  |
-  | Enable or disable profiler
-  |
-  */
-  enabled: true,
-
-  /*
-  |--------------------------------------------------------------------------
-  | Blacklist actions/row labels
-  |--------------------------------------------------------------------------
-  |
-  | Define an array of actions or row labels that you want to disable from
-  | getting profiled.
-  |
-  */
-  blacklist: [],
-
-  /*
-  |--------------------------------------------------------------------------
-  | Whitelist actions/row labels
-  |--------------------------------------------------------------------------
-  |
-  | Define an array of actions or row labels that you want to whitelist for
-  | the profiler. When whitelist is defined, then `blacklist` is ignored.
-  |
-  */
-  whitelist: [],
-};
-
-/*
-|--------------------------------------------------------------------------
-| Validator
-|--------------------------------------------------------------------------
-|
-| Configure the global configuration for the validator.
-|
-*/
-export const validator: ValidatorConfig = {};
-
-/*
-|--------------------------------------------------------------------------
-| Assets
-|--------------------------------------------------------------------------
-|
-| Configure the asset manager you are using to compile the frontend assets.
-|
-*/
-export const assets: AssetsManagerConfig = {
-  /*
-  |--------------------------------------------------------------------------
-  | Driver
-  |--------------------------------------------------------------------------
-  |
-  | Currently we only support webpack encore and may introduce more drivers
-  | in the future.
-  |
-  */
-  driver: Env.get('ASSETS_DRIVER'),
-
-  /*
-  |--------------------------------------------------------------------------
-  | Public path
-  |--------------------------------------------------------------------------
-  |
-  | Directory to search for the "manifest.json" and the "entrypoints.json"
-  | files
-  |
-  */
-  publicPath: Application.publicPath('assets'),
-
-  /*
-  |--------------------------------------------------------------------------
-  | Script tag
-  |--------------------------------------------------------------------------
-  |
-  | Define attributes for the entryPointScripts tags.
-  |
-  */
-  script: {
-    attributes: {
-      defer: true,
+    /*
+    |--------------------------------------------------------------------------
+    | Cookie settings
+    |--------------------------------------------------------------------------
+    */
+    cookie: {
+      domain: '',
+      path: '/',
+      maxAge: '2h',
+      httpOnly: true,
+      secure: false,
+      sameSite: false,
     },
   },
-
   /*
   |--------------------------------------------------------------------------
-  | Style tag
+  | Logger
+  |--------------------------------------------------------------------------
+  */
+  logger: {
+    /*
+    |--------------------------------------------------------------------------
+    | Application name
+    |--------------------------------------------------------------------------
+    |
+    | The name of the application you want to add to the log. It is recommended
+    | to always have app name in every log line.
+    |
+    | The `APP_NAME` environment variable is automatically set by AdonisJS by
+    | reading the `name` property from the `package.json` file.
+    |
+    */
+    name: Env.get('APP_NAME'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Toggle logger
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable logger application wide
+    |
+    */
+    enabled: true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Logging level
+    |--------------------------------------------------------------------------
+    |
+    | The level from which you want the logger to flush logs. It is recommended
+    | to make use of the environment variable, so that you can define log levels
+    | at deployment level and not code level.
+    |
+    */
+    level: Env.get('LOG_LEVEL', 'info'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Pretty print
+    |--------------------------------------------------------------------------
+    |
+    | It is highly advised NOT to use `prettyPrint` in production, since it
+    | can have huge impact on performance.
+    |
+    */
+    prettyPrint: Env.get('NODE_ENV') === 'development',
+  },
+  /*
+  |--------------------------------------------------------------------------
+  | Profiler
+  |--------------------------------------------------------------------------
+  */
+  profiler: {
+    /*
+    |--------------------------------------------------------------------------
+    | Toggle profiler
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable profiler
+    |
+    */
+    enabled: true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Blacklist actions/row labels
+    |--------------------------------------------------------------------------
+    |
+    | Define an array of actions or row labels that you want to disable from
+    | getting profiled.
+    |
+    */
+    blacklist: [],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Whitelist actions/row labels
+    |--------------------------------------------------------------------------
+    |
+    | Define an array of actions or row labels that you want to whitelist for
+    | the profiler. When whitelist is defined, then `blacklist` is ignored.
+    |
+    */
+    whitelist: [],
+  },
+  /*
+  |--------------------------------------------------------------------------
+  | Validator
   |--------------------------------------------------------------------------
   |
-  | Define attributes for the entryPointStyles tags.
+  | Configure the global configuration for the validator.
   |
   */
-  style: {
-    attributes: {},
+  validator: {},
+  /*
+  |--------------------------------------------------------------------------
+  | Assets
+  |--------------------------------------------------------------------------
+  |
+  | Configure the asset manager you are using to compile the frontend assets.
+  |
+  */
+  assets: {
+    /*
+    |--------------------------------------------------------------------------
+    | Driver
+    |--------------------------------------------------------------------------
+    |
+    | Currently we only support webpack encore and may introduce more drivers
+    | in the future.
+    |
+    */
+    driver: Env.get('ASSETS_DRIVER'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Public path
+    |--------------------------------------------------------------------------
+    |
+    | Directory to search for the "manifest.json" and the "entrypoints.json"
+    | files
+    |
+    */
+    publicPath: Application.publicPath('assets'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Script tag
+    |--------------------------------------------------------------------------
+    |
+    | Define attributes for the entryPointScripts tags.
+    |
+    */
+    script: {
+      attributes: {
+        defer: true,
+      },
+    },
+
+    /*
+    |--------------------------------------------------------------------------
+    | Style tag
+    |--------------------------------------------------------------------------
+    |
+    | Define attributes for the entryPointStyles tags.
+    |
+    */
+    style: {
+      attributes: {},
+    },
   },
-};
+});

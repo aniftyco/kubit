@@ -1,7 +1,9 @@
-import { defineConfig, DriveConfig } from 'kubit';
+import { defineConfig } from 'kubit';
 
 import Application from '@ioc:Kubit/Application';
 import Env from '@ioc:Kubit/Env';
+
+import type { DriveConfig } from '@ioc:Kubit/Drive';
 
 /*
 |--------------------------------------------------------------------------

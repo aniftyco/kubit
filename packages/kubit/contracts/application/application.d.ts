@@ -1,11 +1,14 @@
-declare module '@ioc:Kubit/Application' {
-  import { ConfigContract } from '@ioc:Kubit/Config';
-  import { EnvContract } from '@ioc:Kubit/Env';
-  import { IocContract, IocResolverContract } from '@ioc:Kubit/Fold';
-  import * as Helpers from '@ioc:Kubit/Helpers';
-  import { LoggerContract } from '@ioc:Kubit/Logger';
-  import { ProfilerContract } from '@ioc:Kubit/Profiler';
+import { AssetsManagerConfig } from '@ioc:Kubit/AssetsManager';
+import { ConfigContract } from '@ioc:Kubit/Config';
+import { EnvContract } from '@ioc:Kubit/Env';
+import { IocContract, IocResolverContract } from '@ioc:Kubit/Fold';
+import * as Helpers from '@ioc:Kubit/Helpers';
+import { LoggerConfig, LoggerContract } from '@ioc:Kubit/Logger';
+import { ProfilerContract } from '@ioc:Kubit/Profiler';
+import { ServerConfig } from '@ioc:Kubit/Server';
+import { ValidatorConfig } from '@ioc:Kubit/Validator';
 
+declare module '@ioc:Kubit/Application' {
   /**
    * The interface that is meant to be extended in
    * the user land and other packages
@@ -376,11 +379,20 @@ declare module '@ioc:Kubit/Application' {
     shutdown(): Promise<void>;
   }
 
+  export interface ApplicationConfig {
+    appKey: string;
+    http: ServerConfig;
+    logger: LoggerConfig;
+    profiler: ProfilerConfig;
+    validator: ValidatorConfig;
+    assets: AssetsManagerConfig;
+  }
+
   const Application: ApplicationContract;
   export default Application;
 
   /**
    * Export Ioc Container static types
    */
-  export * from '@kubit/fold/build/src/Contracts';
+  export * from '../fold/Contracts';
 }

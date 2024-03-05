@@ -1,3 +1,5 @@
+import { defineConfig } from 'kubit';
+
 import type { AuthConfig } from '@ioc:Kubit/Auth';
 
 /*
@@ -9,7 +11,7 @@ import type { AuthConfig } from '@ioc:Kubit/Auth';
 | inside the `contracts/auth.ts` file before mentioning them here.
 |
 */
-const authConfig: AuthConfig = {
+export default defineConfig<AuthConfig>({
   guard: 'web',
   guards: {
     /*
@@ -221,6 +223,4 @@ const authConfig: AuthConfig = {
       },
     },
   },
-};
-
-export default authConfig;
+});

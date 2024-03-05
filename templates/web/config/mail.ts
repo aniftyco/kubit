@@ -1,6 +1,8 @@
-import { defineConfig, MailConfig } from 'kubit';
+import { defineConfig } from 'kubit';
 
 import Env from '@ioc:Kubit/Env';
+
+import type { MailConfig } from '@ioc:Kubit/Mail';
 
 export default defineConfig<MailConfig>({
   /*

@@ -3,7 +3,9 @@ import { defineConfig } from 'kubit';
 import Application from '@ioc:Kubit/Application';
 import Env from '@ioc:Kubit/Env';
 
-export default defineConfig({
+import type { SessionConfig } from '@ioc:Kubit/Session';
+
+export default defineConfig<SessionConfig>({
   /*
   |--------------------------------------------------------------------------
   | Enable/Disable sessions

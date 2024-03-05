@@ -1,6 +1,8 @@
-import { defineConfig, RedisConfig } from 'kubit';
+import { defineConfig } from 'kubit';
 
 import Env from '@ioc:Kubit/Env';
+
+import type { RedisConfig } from '@ioc:Kubit/Redis';
 
 /*
 |--------------------------------------------------------------------------

@@ -1,6 +1,8 @@
+import { defineConfig } from 'kubit';
+
 import type { BodyParserConfig } from '@ioc:Kubit/BodyParser';
 
-const bodyParserConfig: BodyParserConfig = {
+export default defineConfig<BodyParserConfig>({
   /*
   |--------------------------------------------------------------------------
   | White listed methods
@@ -188,6 +190,4 @@ const bodyParserConfig: BodyParserConfig = {
     */
     types: ['multipart/form-data'],
   },
-};
-
-export default bodyParserConfig;
+});

@@ -1,6 +1,8 @@
-import { AssetsConfig } from '@ioc:Kubit/Static';
+import { defineConfig } from 'kubit';
 
-const staticConfig: AssetsConfig = {
+import type { AssetsConfig } from '@ioc:Kubit/Static';
+
+export default defineConfig<AssetsConfig>({
   /*
   |--------------------------------------------------------------------------
   | Enabled
@@ -72,6 +74,4 @@ const staticConfig: AssetsConfig = {
   |
   */
   immutable: false,
-};
-
-export default staticConfig;
+});
