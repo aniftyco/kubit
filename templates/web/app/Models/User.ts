@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 
 import Hash from '@ioc:Kubit/Hash';
-import { BaseModel, beforeSave, column } from '@ioc:Kubit/Lucid/Orm';
+import { BaseModel, beforeSave, column } from '@ioc:Kubit/ORM';
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })

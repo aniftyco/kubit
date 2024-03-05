@@ -1,1 +1,1 @@
-// import Factory from '@ioc:Kubit/Lucid/Factory'
+// import Factory from '@ioc:Kubit/ORM/Factory'

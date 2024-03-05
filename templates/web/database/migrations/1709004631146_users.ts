@@ -1,4 +1,4 @@
-import BaseSchema from '@ioc:Kubit/Lucid/Schema';
+import BaseSchema from '@ioc:Kubit/Database/Schema';
 
 export default class extends BaseSchema {
   protected tableName = 'users';
