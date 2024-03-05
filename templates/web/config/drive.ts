@@ -1,10 +1,3 @@
-/**
- * Config source: https://git.io/JBt3o
- *
- * Feel free to let us know via PR, if you find something broken in this config
- * file.
- */
-
 import { defineConfig, DriveConfig } from 'kubit';
 
 import Application from '@ioc:Kubit/Application';
@@ -61,7 +54,7 @@ export default defineConfig<DriveConfig>({
       | Serve files - Local driver only
       |--------------------------------------------------------------------------
       |
-      | When this is set to true, AdonisJS will configure a files server to serve
+      | When this is set to true, Kubit will configure a files server to serve
       | files from the disk root. This is done to mimic the behavior of cloud
       | storage services that has inbuilt capabilities to serve files.
       |

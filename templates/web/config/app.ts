@@ -1,10 +1,3 @@
-/**
- * Config source: https://git.io/JfefZ
- *
- * Feel free to let us know via PR, if you find something broken in this config
- * file.
- */
-
 import proxyAddr from 'proxy-addr';
 
 import Application from '@ioc:Kubit/Application';
@@ -213,8 +206,7 @@ export const profiler: ProfilerConfig = {
 | Validator
 |--------------------------------------------------------------------------
 |
-| Configure the global configuration for the validator. Here's the reference
-| to the default config https://git.io/JT0WE
+| Configure the global configuration for the validator.
 |
 */
 export const validator: ValidatorConfig = {};
@@ -224,7 +216,7 @@ export const validator: ValidatorConfig = {};
 | Assets
 |--------------------------------------------------------------------------
 |
-| Configure the asset manager you are using to compile the frontend assets
+| Configure the asset manager you are using to compile the frontend assets.
 |
 */
 export const assets: AssetsManagerConfig = {
@@ -234,7 +226,7 @@ export const assets: AssetsManagerConfig = {
   |--------------------------------------------------------------------------
   |
   | Currently we only support webpack encore and may introduce more drivers
-  | in the future
+  | in the future.
   |
   */
   driver: Env.get('ASSETS_DRIVER'),
@@ -255,7 +247,7 @@ export const assets: AssetsManagerConfig = {
   | Script tag
   |--------------------------------------------------------------------------
   |
-  | Define attributes for the entryPointScripts tags
+  | Define attributes for the entryPointScripts tags.
   |
   */
   script: {
@@ -269,7 +261,7 @@ export const assets: AssetsManagerConfig = {
   | Style tag
   |--------------------------------------------------------------------------
   |
-  | Define attributes for the entryPointStyles tags
+  | Define attributes for the entryPointStyles tags.
   |
   */
   style: {

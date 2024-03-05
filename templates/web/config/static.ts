@@ -1,10 +1,3 @@
-/**
- * Config source: https://git.io/Jfefl
- *
- * Feel free to let us know via PR, if you find something broken in this config
- * file.
- */
-
 import { AssetsConfig } from '@ioc:Kubit/Static';
 
 const staticConfig: AssetsConfig = {
@@ -15,9 +8,6 @@ const staticConfig: AssetsConfig = {
   |
   | A boolean to enable or disable serving static files. The static files
   | are served from the `public` directory inside the application root.
-  | However, you can override the default path inside `.adonisrc.json`
-  | file.
-  |
   |
   */
   enabled: true,
@@ -67,8 +57,6 @@ const staticConfig: AssetsConfig = {
   |
   | Set the value for the max-age directive. Set a higher value in production
   | if you fingerprint your assets.
-  |
-  | Learn more: https://docs.adonisjs.com/guides/deployment#serving-static-assets
   |
   */
   maxAge: 0,

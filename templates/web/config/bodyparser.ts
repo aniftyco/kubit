@@ -1,10 +1,3 @@
-/**
- * Config source: https://git.io/Jfefn
- *
- * Feel free to let us know via PR, if you find something broken in this config
- * file.
- */
-
 import type { BodyParserConfig } from '@ioc:Kubit/BodyParser';
 
 const bodyParserConfig: BodyParserConfig = {
@@ -134,7 +127,7 @@ const bodyParserConfig: BodyParserConfig = {
     |--------------------------------------------------------------------------
     |
     | When auto processing is on. We will use this method to compute the temporary
-    | file name. AdonisJs will compute a unique `tmpPath` for you automatically,
+    | file name. Kubit will compute a unique `tmpPath` for you automatically,
     | However, you can also define your own custom method.
     |
     */

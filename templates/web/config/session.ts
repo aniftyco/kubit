@@ -1,10 +1,3 @@
-/**
- * Config source: https://git.io/JeYHp
- *
- * Feel free to let us know via PR, if you find something broken in this config
- * file.
- */
-
 import { defineConfig } from 'kubit';
 
 import Application from '@ioc:Kubit/Application';

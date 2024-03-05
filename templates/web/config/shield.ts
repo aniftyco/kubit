@@ -1,10 +1,3 @@
-/**
- * Config source: https://git.io/Jvwvt
- *
- * Feel free to let us know via PR, if you find something broken in this config
- * file.
- */
-
 import { ShieldConfig } from '@ioc:Kubit/Shield';
 
 /*
@@ -98,7 +91,7 @@ export const csrf: ShieldConfig['csrf'] = {
   | Enable Sharing Token Via Cookie
   |--------------------------------------------------------------------------
   |
-  | When the following flag is enabled, AdonisJS will drop `XSRF-TOKEN`
+  | When the following flag is enabled, Kubit will drop `XSRF-TOKEN`
   | cookie that frontend frameworks can read and return back as a
   | `X-XSRF-TOKEN` header.
   |

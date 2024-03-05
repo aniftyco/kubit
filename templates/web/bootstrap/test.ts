@@ -3,12 +3,11 @@
 | Tests
 |--------------------------------------------------------------------------
 |
-| The contents in this file boots the AdonisJS application and configures
+| The contents in this file boots the Kubit application and configures
 | the Japa tests runner.
 |
 | For the most part you will never edit this file. The configuration
-| for the tests can be controlled via ".adonisrc.json" and
-| "tests/bootstrap.ts" files.
+| for the tests can be controlled via the "tests/bootstrap.ts" file.
 |
 */
 

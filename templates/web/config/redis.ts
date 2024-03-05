@@ -1,10 +1,3 @@
-/**
- * Config source: https://git.io/JemcF
- *
- * Feel free to let us know via PR, if you find something broken in this config
- * file.
- */
-
 import { defineConfig, RedisConfig } from 'kubit';
 
 import Env from '@ioc:Kubit/Env';
@@ -18,7 +11,7 @@ import Env from '@ioc:Kubit/Env';
 | the redis server and execute redis commands.
 |
 | Do make sure to pre-define the connections type inside `contracts/redis.ts`
-| file for AdonisJs to recognize connections.
+| file for Kubit to recognize connections.
 |
 | Make sure to check `contracts/redis.ts` file for defining extra connections
 */

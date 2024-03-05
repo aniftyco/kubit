@@ -1,10 +1,3 @@
-/**
- * File source: https://bit.ly/3ukaHTz
- *
- * Feel free to let us know via PR, if you find something broken in this contract
- * file.
- */
-
 import type { Config } from '@japa/runner';
 import TestUtils from '@ioc:Kubit/TestUtils';
 import { apiClient } from '@japa/api-client';
@@ -58,9 +51,6 @@ export const runnerHooks: Pick<Required<Config>, 'setup' | 'teardown'> = {
 |--------------------------------------------------------------------------
 | Configure individual suites
 |--------------------------------------------------------------------------
-|
-| The configureSuite method gets called for every test suite registered
-| within ".adonisrc.json" file.
 |
 | You can use this method to configure suites. For example: Only start
 | the HTTP server when it is a functional suite.

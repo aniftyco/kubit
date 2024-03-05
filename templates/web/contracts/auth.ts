@@ -1,10 +1,3 @@
-/**
- * Contract source: https://git.io/JOdz5
- *
- * Feel free to let us know via PR, if you find something broken in this
- * file.
- */
-
 import type User from '@app/Models/User';
 
 declare module '@ioc:Kubit/Auth' {

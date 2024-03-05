@@ -1,10 +1,3 @@
-/**
- * Config source: https://git.io/JfefW
- *
- * Feel free to let us know via PR, if you find something broken in this config
- * file.
- */
-
 import { defineConfig, HashConfig } from 'kubit';
 
 import Env from '@ioc:Kubit/Env';
@@ -25,7 +18,7 @@ export default defineConfig<HashConfig>({
   |--------------------------------------------------------------------------
   |
   | By default we make use of the argon hasher to hash values. However, feel
-  | free to change the default value
+  | free to change the default value.
   |
   */
   default: Env.get('HASH_DRIVER', 'scrypt'),
