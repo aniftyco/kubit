@@ -32,7 +32,7 @@ kernel
     const app: RunnerHooksHandler[] = [() => kernel.start()];
 
     configure({
-      ...kernel.application.rcFile.tests,
+      ...kernel.application.bootConfig.tests,
       ...processCliArgs(process.argv.slice(2)),
       ...config,
       ...{

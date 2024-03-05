@@ -1,5 +1,5 @@
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-import { XFrameOptions } from '@ioc:Kubit/Shield';
+import { XFrameOptions } from '@ioc:Kubit/Security';
 
 import { noop } from './noop';
 

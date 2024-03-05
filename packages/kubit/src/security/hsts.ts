@@ -1,5 +1,5 @@
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-import { HstsOptions } from '@ioc:Kubit/Shield';
+import { HstsOptions } from '@ioc:Kubit/Security';
 import { string } from '@poppinss/utils/build/helpers';
 
 import { noop } from './noop';
@@ -16,7 +16,7 @@ function normalizeMaxAge(maxAge?: string | number): number {
 
   maxAge = (typeof maxAge === 'string' ? string.toMs(maxAge) : maxAge) as number;
   if (maxAge < 0) {
-    throw new Error('Max age for "shield.hsts" cannot be a negative value');
+    throw new Error('Max age for "security.hsts" cannot be a negative value');
   }
 
   return maxAge;

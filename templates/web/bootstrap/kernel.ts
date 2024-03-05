@@ -22,7 +22,7 @@ import Server from '@ioc:Kubit/Server';
 */
 Server.middleware.register([
   () => import('@ioc:Kubit/BodyParser'),
-  () => import('@ioc:Kubit/Shield'),
+  () => import('@ioc:Kubit/Security'),
   () => import('@app/Http/Middleware/SilentAuth'),
 ]);
 

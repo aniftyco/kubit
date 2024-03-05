@@ -23,8 +23,8 @@ export default class KubitProvider {
     resolve(__dirname, './auth/provider'),
     resolve(__dirname, './mail/provider'),
     resolve(__dirname, './redis/provider'),
+    resolve(__dirname, './security/provider'),
     resolve(__dirname, './session/provider'),
-    resolve(__dirname, './shield/provider'),
     resolve(__dirname, './test/provider'),
   ];
 }

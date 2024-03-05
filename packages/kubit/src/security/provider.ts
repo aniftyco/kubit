@@ -5,14 +5,14 @@ import { ServiceProvider } from '../index';
 /**
  * Provider to register shield middleware
  */
-export default class ShieldProvider implements ServiceProvider {
+export default class SecurityProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 
   public register() {
-    this.app.container.singleton('Kubit/Shield', () => {
-      const { ShieldMiddleware } = require('./ShieldMiddleware');
-      return ShieldMiddleware;
+    this.app.container.singleton('Kubit/Security', () => {
+      const { SecurityMiddleware } = require('./SecurityMiddleware');
+      return SecurityMiddleware;
     });
   }
 

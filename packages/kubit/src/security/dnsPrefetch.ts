@@ -1,5 +1,5 @@
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-import { DnsPrefetchOptions } from '@ioc:Kubit/Shield';
+import { DnsPrefetchOptions } from '@ioc:Kubit/Security';
 
 import { noop } from './noop';
 

@@ -2,7 +2,7 @@ import Tokens from 'csrf';
 
 import { EncryptionContract } from '@ioc:Kubit/Encryption';
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-import { CsrfOptions } from '@ioc:Kubit/Shield';
+import { CsrfOptions } from '@ioc:Kubit/Security';
 import { ViewContract } from '@ioc:Kubit/View';
 
 import { InvalidCsrfTokenException } from './Exceptions/InvalidCsrfTokenException';

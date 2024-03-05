@@ -10,7 +10,7 @@ import type { ApplicationContract } from '@ioc:Kubit/Application';
  * web attacks
  */
 @inject(['Kubit/Application'])
-export class ShieldMiddleware {
+export class SecurityMiddleware {
   private config = this.application.container.resolveBinding('Kubit/Config').get('shield', {});
   private encryption = this.application.container.resolveBinding('Kubit/Encryption');
 

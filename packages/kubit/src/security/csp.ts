@@ -1,7 +1,7 @@
 import helmetCsp, { ContentSecurityPolicyOptions } from 'helmet-csp';
 
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-import { CspOptions } from '@ioc:Kubit/Shield';
+import { CspOptions } from '@ioc:Kubit/Security';
 
 import { noop } from './noop';
 

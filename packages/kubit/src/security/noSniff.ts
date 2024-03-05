@@ -1,5 +1,5 @@
 import { HttpContextContract } from '@ioc:Kubit/HttpContext';
-import { ContentTypeSniffingOptions } from '@ioc:Kubit/Shield';
+import { ContentTypeSniffingOptions } from '@ioc:Kubit/Security';
 
 import { noop } from './noop';
 

@@ -1,4 +1,4 @@
-declare module '@ioc:Kubit/Shield' {
+declare module '@ioc:Kubit/Security' {
   import { ContentSecurityPolicyOptions } from 'helmet-csp';
 
   import { ApplicationContract } from '@ioc:Kubit/Application';
@@ -63,7 +63,7 @@ declare module '@ioc:Kubit/Shield' {
   /**
    * Shield config file types
    */
-  export type ShieldConfig = {
+  export type SecurityConfig = {
     xFrame: XFrameOptions;
     contentTypeSniffing: ContentTypeSniffingOptions;
     hsts: HstsOptions;
@@ -73,14 +73,14 @@ declare module '@ioc:Kubit/Shield' {
   };
 
   /**
-   * Shape of the shield middleware class constructor
+   * Shape of the security middleware class constructor
    */
-  export interface ShieldMiddlewareContract {
+  export interface SecurityMiddlewareContract {
     new (application: ApplicationContract): {
       handle(ctx: HttpContextContract, next: () => Promise<void>): any;
     };
   }
 
-  const ShieldMiddleware: ShieldMiddlewareContract;
-  export default ShieldMiddleware;
+  const SecurityMiddleware: SecurityMiddlewareContract;
+  export default SecurityMiddleware;
 }

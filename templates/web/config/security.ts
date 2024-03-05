@@ -1,8 +1,8 @@
 import { defineConfig } from 'kubit';
 
-import type { ShieldConfig } from '@ioc:Kubit/Shield';
+import type { SecurityConfig } from '@ioc:Kubit/Security';
 
-export default defineConfig<ShieldConfig>({
+export default defineConfig<SecurityConfig>({
   /*
   |--------------------------------------------------------------------------
   | Content Security Policy
