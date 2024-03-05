@@ -6,6 +6,7 @@ declare module '@ioc:Kubit/ORM' {
   };
   export const scope: ScopeFn;
   export const BaseModel: LucidModel;
+  export const Model: LucidModel;
 
   /**
    * Relationships

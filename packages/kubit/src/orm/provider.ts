@@ -28,6 +28,7 @@ export default class ORMServiceProvider {
 
       return {
         BaseModel,
+        Model: BaseModel,
         ModelPaginator,
         SnakeCaseNamingStrategy,
         scope,
