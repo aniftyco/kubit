@@ -1,4 +1,4 @@
-import { QueryClientContract } from '@ioc:Kubit/Lucid/Database';
+import { QueryClientContract } from '@ioc:Kubit/Database';
 
 import { BaseCommand } from '../../BaseCommand';
 import { flags } from '../../Decorators/flags';
@@ -65,7 +65,7 @@ export class DbTruncate extends BaseCommand {
    * process inside this method
    */
   private async runAsSubCommand() {
-    const db = this.application.container.use('Kubit/Lucid/Database');
+    const db = this.application.container.use('Kubit/Database');
     this.connection = this.connection || db.primaryConnectionName;
     const connection = db.connection(this.connection || db.primaryConnectionName);
 
@@ -124,7 +124,7 @@ export class DbTruncate extends BaseCommand {
    */
   public async completed() {
     if (this.isMain) {
-      await this.application.container.use('Kubit/Lucid/Database').manager.closeAll(true);
+      await this.application.container.use('Kubit/Database').manager.closeAll(true);
     }
   }
 }

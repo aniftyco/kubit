@@ -1,13 +1,13 @@
 import { extname } from 'path';
 import slash from 'slash';
 
-import { FileNode } from '@ioc:Kubit/Lucid/Database';
-import { SeederFileNode } from '@ioc:Kubit/Lucid/Seeder';
+import { FileNode } from '@ioc:Kubit/Database';
+import { SeederFileNode } from '@ioc:Kubit/Database/Seeder';
 
 import { BaseCommand } from '../../BaseCommand';
 import { flags } from '../../Decorators/flags';
 
-import type { SeedsRunner } from '../../../lucid/SeedsRunner';
+import type { SeedsRunner } from '../../../database/SeedsRunner';
 
 export class DbSeed extends BaseCommand {
   public static commandName = 'db:seed';
@@ -134,8 +134,8 @@ export class DbSeed extends BaseCommand {
    * Instantiate seeders runner
    */
   private async instantiateSeeder() {
-    const db = this.application.container.use('Kubit/Lucid/Database');
-    const { SeedsRunner } = await import('../../../lucid/SeedsRunner');
+    const db = this.application.container.use('Kubit/Database');
+    const { SeedsRunner } = await import('../../../database/SeedsRunner');
     this.seeder = new SeedsRunner(db, this.application, this.connection);
   }
 
@@ -208,7 +208,7 @@ export class DbSeed extends BaseCommand {
    * process here
    */
   private async runAsSubCommand() {
-    const db = this.application.container.use('Kubit/Lucid/Database');
+    const db = this.application.container.use('Kubit/Database');
     this.connection = this.connection || db.primaryConnectionName;
 
     /**

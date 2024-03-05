@@ -1,4 +1,4 @@
-import { MigratorContract } from '@ioc:Kubit/Lucid/Migrator';
+import { MigratorContract } from '@ioc:Kubit/Database/Migrator';
 
 import { flags } from '../../Decorators/flags';
 import { MigrationsBase } from './Base';
@@ -58,8 +58,8 @@ export class Rollback extends MigrationsBase {
    * Instantiating the migrator instance
    */
   private instantiateMigrator() {
-    const db = this.application.container.use('Kubit/Lucid/Database');
-    const Migrator = this.application.container.resolveBinding('Kubit/Lucid/Migrator');
+    const db = this.application.container.use('Kubit/Database');
+    const Migrator = this.application.container.resolveBinding('Kubit/Database/Migrator');
 
     this.migrator = new Migrator(db, this.application, {
       direction: 'down',
@@ -75,7 +75,7 @@ export class Rollback extends MigrationsBase {
    * process inside this method
    */
   private async runAsSubCommand() {
-    const db = this.application.container.use('Kubit/Lucid/Database');
+    const db = this.application.container.use('Kubit/Database');
     this.connection = this.connection || db.primaryConnectionName;
 
     /**

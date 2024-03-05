@@ -75,7 +75,7 @@ export class MakeMigration extends BaseCommand {
    * Execute command
    */
   public async run(): Promise<void> {
-    const db = this.application.container.use('Kubit/Lucid/Database');
+    const db = this.application.container.use('Kubit/Database');
     this.connection = this.connection || db.primaryConnectionName;
     const connection = db.getRawConnection(this.connection || db.primaryConnectionName);
 
