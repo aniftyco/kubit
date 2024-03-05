@@ -2,8 +2,8 @@ import prettyHrTime from 'pretty-hrtime';
 
 import { MigratedFileNode, MigratorContract } from '@ioc:Kubit/Database/Migrator';
 
-import { prettyPrint } from '../../../lucid/Helpers/prettyPrint';
-import { getDDLMethod } from '../../../lucid/utils';
+import { prettyPrint } from '../../../database/Helpers/prettyPrint';
+import { getDDLMethod } from '../../../database/utils';
 import { BaseCommand } from '../../BaseCommand';
 
 /**
