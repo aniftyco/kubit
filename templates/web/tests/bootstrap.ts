@@ -7,7 +7,10 @@
 
 import type { Config } from '@japa/runner';
 import TestUtils from '@ioc:Kubit/TestUtils';
-import { apiClient, assert, runFailedTests, specReporter } from '@japa/preset-adonis';
+import { apiClient } from '@japa/api-client';
+import { assert } from '@japa/assert';
+import { runFailedTests } from '@japa/run-failed-tests';
+import { specReporter } from '@japa/spec-reporter';
 
 /*
 |--------------------------------------------------------------------------

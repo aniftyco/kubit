@@ -39,7 +39,7 @@ export function parse(contents: { [key: string]: any }): RcFile {
       aliases: { '@app': 'app' },
       providers: ['./app/Providers/AppProvider'],
       aceProviders: ['kubit/dist/repl/provider'],
-      testProviders: ['@japa/preset-adonis/TestsProvider'],
+      testProviders: ['kubit/dist/test/provider'],
       metaFiles: [
         {
           pattern: 'public/**',
