@@ -1,9 +1,11 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
+import { ServiceProvider } from '../index';
+
 /**
  * Auth provider to register the auth binding
  */
-export default class AuthProvider {
+export default class AuthProvider implements ServiceProvider {
   constructor(protected application: ApplicationContract) {}
   public static needsApplication = true;
 

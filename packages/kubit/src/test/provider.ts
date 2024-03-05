@@ -1,9 +1,10 @@
 import type { ApplicationContract } from '@ioc:Kubit/Application';
+import { ServiceProvider } from '../index';
 
 /**
  * AdonisJS provider for registering japa class to the container
  */
-export default class TestsProvider {
+export default class TestsProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
 
   public register() {
@@ -38,7 +39,7 @@ export default class TestsProvider {
     });
   }
 
-  public boot() {
+  public async boot() {
     this.app.container.withBindings(
       ['Kubit/Route', 'Japa/Preset/TestContext', 'Japa/Preset/ApiResponse'],
       (Route, TestContext, Response) => {

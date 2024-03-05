@@ -1,10 +1,12 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 import { DisksList, DriveConfig } from '@ioc:Kubit/Drive';
 
+import { ServiceProvider } from '../index';
+
 /**
  * Registers drive with the IoC container
  */
-export default class DriveProvider {
+export default class DriveProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
 
   /**
@@ -60,7 +62,7 @@ export default class DriveProvider {
   /**
    * Register drive routes
    */
-  public boot() {
+  public async boot() {
     this.defineDriveRoutes();
   }
 }

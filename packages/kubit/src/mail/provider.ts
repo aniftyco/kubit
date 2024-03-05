@@ -1,9 +1,11 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
+import { ServiceProvider } from '../index';
+
 /**
  * Mail provider to register mail specific bindings
  */
-export default class MailProvider {
+export default class MailProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 
@@ -21,7 +23,7 @@ export default class MailProvider {
   /**
    * Setup REPL bindings
    */
-  public boot() {
+  public async boot() {
     if (this.app.environment !== 'repl') {
       return;
     }

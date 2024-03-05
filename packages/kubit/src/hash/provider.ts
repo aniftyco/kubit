@@ -1,6 +1,8 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
-export default class HashProvider {
+import { ServiceProvider } from '../index';
+
+export default class HashProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 

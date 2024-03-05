@@ -1,9 +1,11 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
+import { ServiceProvider } from '../index';
+
 /**
  * Database service provider
  */
-export default class DatabaseServiceProvider {
+export default class DatabaseServiceProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 
@@ -114,7 +116,7 @@ export default class DatabaseServiceProvider {
   /**
    * Called when registering providers
    */
-  public register(): void {
+  public register() {
     this.registerDatabase();
     this.registerSchema();
     this.registerBaseSeeder();
@@ -124,7 +126,7 @@ export default class DatabaseServiceProvider {
   /**
    * Called when all bindings are in place
    */
-  public boot(): void {
+  public async boot() {
     this.registerHealthChecker();
     this.defineValidationRules();
     this.defineReplBindings();

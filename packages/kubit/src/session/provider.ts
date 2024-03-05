@@ -1,16 +1,18 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
+import { ServiceProvider } from '../index';
+
 /**
  * Session provider for AdonisJS
  */
-export default class SessionProvider {
+export default class SessionProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 
   /**
    * Register Session Manager
    */
-  public register(): void {
+  public register() {
     this.app.container.singleton('Kubit/Session', () => {
       const { SessionManager } = require('./SessionManager');
       return new SessionManager(this.app, this.app.config.get('session', {}));
@@ -43,7 +45,7 @@ export default class SessionProvider {
     );
   }
 
-  public boot(): void {
+  public async boot() {
     this.registerServerBindings();
     this.registerTestsBindings();
   }

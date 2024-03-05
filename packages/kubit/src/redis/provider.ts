@@ -1,9 +1,11 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
+import { ServiceProvider } from '../index';
+
 /**
  * Provider to bind redis to the container
  */
-export default class RedisProvider {
+export default class RedisProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 
@@ -60,7 +62,7 @@ export default class RedisProvider {
   /**
    * Registering the health check checker with HealthCheck service
    */
-  public boot() {
+  public async boot() {
     this.registerHealthCheck();
     this.defineReplBindings();
   }

@@ -1,19 +1,12 @@
-import { resolve } from 'path';
-
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
-interface ServiceProvider {
-  register(): void;
-  boot?(): Promise<void>;
-  ready?(): Promise<void>;
-  shutdown?(): Promise<void>;
-}
+import { ServiceProvider } from '../index';
 
 /**
  * The application provider that sticks all core components
  * to the container.
  */
-export default class AppProvider implements ServiceProvider {
+export default class KubitProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 
@@ -21,28 +14,6 @@ export default class AppProvider implements ServiceProvider {
    * Find if web or test environment
    */
   private isWebOrTestEnvironment = ['web', 'test'].includes(this.app.environment);
-
-  /**
-   * Additional providers to load
-   */
-  public provides = [
-    resolve(__dirname, '../encryption/provider'),
-    resolve(__dirname, '../events/provider'),
-    resolve(__dirname, '../drive/provider'),
-    resolve(__dirname, '../hash/provider'),
-    resolve(__dirname, '../http-server/provider'),
-    resolve(__dirname, '../bodyparser/provider'),
-    resolve(__dirname, '../validator/provider'),
-    resolve(__dirname, '../view/provider'),
-    resolve(__dirname, '../database/provider'),
-    resolve(__dirname, '../orm/provider'),
-    resolve(__dirname, '../auth/provider'),
-    resolve(__dirname, '../mail/provider'),
-    resolve(__dirname, '../redis/provider'),
-    resolve(__dirname, '../session/provider'),
-    resolve(__dirname, '../shield/provider'),
-    resolve(__dirname, '../test/provider'),
-  ];
 
   /**
    * Register `HttpExceptionHandler` to the container.

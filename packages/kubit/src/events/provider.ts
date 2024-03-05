@@ -1,6 +1,8 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
-export default class EventProvider {
+import { ServiceProvider } from '../index';
+
+export default class EventProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
 
   /**

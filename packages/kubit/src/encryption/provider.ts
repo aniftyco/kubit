@@ -1,9 +1,11 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
+import { ServiceProvider } from '../index';
+
 /**
  * Encryption provider to binding encryption class to the container
  */
-export default class EncryptionProvider {
+export default class EncryptionProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 

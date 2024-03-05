@@ -1,10 +1,12 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 import { esmResolver } from '@poppinss/utils';
 
+import { ServiceProvider } from '../index';
+
 /**
  * Provider to register validator with the IoC container
  */
-export default class ValidationProvider {
+export default class ValidationProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 

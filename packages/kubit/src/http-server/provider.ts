@@ -1,7 +1,9 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 import { Exception } from '@poppinss/utils';
 
-export default class HttpServerProvider {
+import { ServiceProvider } from '../index';
+
+export default class HttpServerProvider implements ServiceProvider {
   constructor(protected application: ApplicationContract) {}
 
   /**

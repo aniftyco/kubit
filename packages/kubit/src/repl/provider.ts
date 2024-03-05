@@ -3,7 +3,9 @@ import { join } from 'path';
 
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
-export default class ReplProvider {
+import { ServiceProvider } from '../index';
+
+export default class ReplProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 

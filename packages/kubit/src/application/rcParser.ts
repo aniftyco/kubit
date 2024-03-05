@@ -37,7 +37,7 @@ export function parse(contents: { [key: string]: any }): RcFile {
       exceptionHandlerNamespace: '@app/Exceptions/Handler',
       preloads: ['./bootstrap/kernel', './routes/web', './routes/api'],
       aliases: { '@app': 'app' },
-      providers: ['./app/Providers/AppProvider'],
+      providers: ['kubit/dist/provider', './app/Providers/AppProvider'],
       aceProviders: ['kubit/dist/repl/provider'],
       testProviders: ['kubit/dist/test/provider'],
       metaFiles: [

@@ -1,6 +1,8 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
-export default class BodyParserProvider {
+import { ServiceProvider } from '../index';
+
+export default class BodyParserProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
 
   public static needsApplication = true;
@@ -18,7 +20,7 @@ export default class BodyParserProvider {
   /**
    * Adding the `file` macro to add support for reading request files.
    */
-  public boot() {
+  public async boot() {
     const { default: extendRequest } = require('./Bindings/Request');
     extendRequest(this.app.container.resolveBinding('Kubit/Request'));
   }

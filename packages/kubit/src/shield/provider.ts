@@ -1,9 +1,11 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
+import { ServiceProvider } from '../index';
+
 /**
  * Provider to register shield middleware
  */
-export default class ShieldProvider {
+export default class ShieldProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 
@@ -14,7 +16,7 @@ export default class ShieldProvider {
     });
   }
 
-  public boot() {
+  public async boot() {
     this.app.container.withBindings(['Kubit/Response'], (Response) => {
       require('./Bindings/Response').default(Response);
     });

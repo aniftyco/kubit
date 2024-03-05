@@ -4,11 +4,12 @@ import type { RouterContract } from '@ioc:Kubit/Route';
 import type { ApplicationContract } from '@ioc:Kubit/Application';
 import type { AssetsManagerContract } from '@ioc:Kubit/AssetsManager';
 import type { HttpContextConstructorContract } from '@ioc:Kubit/HttpContext';
+import { ServiceProvider } from '../index';
 
 /**
  * View provider to register view to the application
  */
-export default class ViewProvider {
+export default class ViewProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
 
   /**
@@ -151,7 +152,7 @@ export default class ViewProvider {
   /**
    * Setup view on boot
    */
-  public boot() {
+  public async boot() {
     const View = this.app.container.resolveBinding('Kubit/View');
     const Route = this.app.container.resolveBinding('Kubit/Route');
     const HttpContext = this.app.container.resolveBinding('Kubit/HttpContext');

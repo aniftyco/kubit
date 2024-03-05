@@ -1,9 +1,11 @@
 import { ApplicationContract } from '@ioc:Kubit/Application';
 
+import { ServiceProvider } from '../index';
+
 /**
  * ORM service provider
  */
-export default class ORMServiceProvider {
+export default class ORMServiceProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}
   public static needsApplication = true;
 
@@ -64,7 +66,7 @@ export default class ORMServiceProvider {
   /**
    * Called when registering providers
    */
-  public register(): void {
+  public register() {
     this.registerORM();
     this.registerFactory();
   }
@@ -72,7 +74,7 @@ export default class ORMServiceProvider {
   /**
    * Called when all bindings are in place
    */
-  public boot(): void {
+  public async boot() {
     this.defineReplBindings();
   }
 }
