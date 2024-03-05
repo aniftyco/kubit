@@ -7,7 +7,7 @@
 
 import Env from '@ioc:Kubit/Env';
 
-import type { DatabaseConfig } from '@ioc:Kubit/Lucid/Database';
+import type { DatabaseConfig } from '@ioc:Kubit/Database';
 
 const databaseConfig: DatabaseConfig = {
   /*
