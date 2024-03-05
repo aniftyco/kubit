@@ -202,7 +202,7 @@ declare module '@ioc:Kubit/Request' {
 
     /**
      * Returns the ip address of the user. This method is optimize to fetch
-     * ip address even when running your AdonisJs app behind a proxy.
+     * ip address even when running your Kubit app behind a proxy.
      *
      * You can also define your own custom function to compute the ip address by
      * defining `app.http.getIp` as a function inside the config file.
@@ -236,7 +236,7 @@ declare module '@ioc:Kubit/Request' {
     /**
      * Returns an array of ip addresses from most to least trusted one.
      * This method is optimize to fetch ip address even when running
-     * your AdonisJs app behind a proxy.
+     * your Kubit app behind a proxy.
      *
      * You can control the behavior of trusting the proxy values by defining it
      * inside the `config/app.js` file.
@@ -514,7 +514,7 @@ declare module '@ioc:Kubit/Request' {
      * server must return `304` response, telling the browser to
      * use the client cache.
      *
-     * You won't have to deal with this method directly, since AdonisJs will
+     * You won't have to deal with this method directly, since Kubit will
      * handle this for you when `http.etag = true` inside `config/app.js` file.
      *
      * However, this is how you can use it manually.

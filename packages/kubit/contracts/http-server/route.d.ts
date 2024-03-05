@@ -327,7 +327,7 @@ declare module '@ioc:Kubit/Route' {
      * @example
      * ```ts
      * Route.group(() => {
-     * }).domain(':name.adonisjs.com')
+     * }).domain(':name.kubitjs.com')
      * ```
      */
     domain(domain: string): this;

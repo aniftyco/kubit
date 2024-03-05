@@ -20,7 +20,7 @@ import { PreCompiler } from './PreCompiler';
 import { RequestHandler } from './RequestHandler';
 
 /**
- * Server class handles the HTTP requests by using all Adonis micro modules.
+ * Server class handles the HTTP requests by using all Kubit micro modules.
  */
 export class Server {
   /**

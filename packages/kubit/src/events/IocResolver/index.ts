@@ -23,7 +23,7 @@ export class IocResolver {
   private anyHandlers: Map<string, AnyHandler> = new Map();
 
   /**
-   * Reference to AdonisJS IoC container resolver. It looks for listeners inside the
+   * Reference to Kubit IoC container resolver. It looks for listeners inside the
    * `App/Listeners` namespace or the namespace defined inside `eventListeners`
    * property
    */

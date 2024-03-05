@@ -3,7 +3,7 @@ import { ApplicationContract } from '@ioc:Kubit/Application';
 import { ServiceProvider } from '../index';
 
 /**
- * Session provider for AdonisJS
+ * Session provider for Kubit
  */
 export default class SessionProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}

@@ -41,7 +41,7 @@ export class MakeValidator extends GeneratorCommand {
 
   /**
    * Pull path for the `validators` directory declaration from
-   * the `.adonisrc.json` file or fallback to `app/Validators`
+   * the `package.json` file or fallback to `app/Validators`
    */
   protected getDestinationPath(): string {
     return this.getPathForNamespace('validators') || 'app/Validators';

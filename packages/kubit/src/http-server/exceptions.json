@@ -24,7 +24,7 @@
     "code": "E_CANNOT_SERIALIZE_RESPONSE_BODY",
     "status": 500,
     "help": [
-      "AdonisJS can only send following data types as a response",
+      "Kubit can only send following data types as a response",
       "- object, array, number, boolean, date, buffer and string",
       "- For sending streams, you must use `response.stream` method",
       "- For downloading files, you must use `response.download` method"
@@ -85,9 +85,7 @@
     "message": "\"{{ param }}\" param is required to make URL for \"{{ pattern }}\" route",
     "code": "E_CANNOT_MAKE_ROUTE_URL",
     "status": 500,
-    "help": [
-      "Make sure to define params object when using `Route.makeUrl` or the view help `route`."
-    ]
+    "help": ["Make sure to define params object when using `Route.makeUrl` or the view help `route`."]
   },
   "E_INVALID_ALS_ACCESS": {
     "message": "HTTP context is not available. Set \"useAsyncLocalStorage\" to true inside \"config/app.ts\" file",

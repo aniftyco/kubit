@@ -109,7 +109,7 @@ export class RouteGroup extends Macroable {
    * @example
    * ```ts
    * Route.group(() => {
-   * }).domain(':name.adonisjs.com')
+   * }).domain(':name.kubitjs.com')
    * ```
    */
   public domain(domain: string): this {

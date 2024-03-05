@@ -26,7 +26,7 @@ export abstract class BaseCommand implements CommandContract {
   protected exitHandler?: () => void | Promise<void>;
 
   /**
-   * Accepting AdonisJs application instance and kernel instance
+   * Accepting Kubit application instance and kernel instance
    */
   constructor(
     public application: ApplicationContract,

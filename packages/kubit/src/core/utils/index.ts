@@ -13,7 +13,7 @@ export function registerTsHook(appRoot: string) {
 }
 
 /**
- * Creates the AdonisJS HTTP server. The method is abstracted to be used by
+ * Creates the Kubit HTTP server. The method is abstracted to be used by
  * test utils and the HTTP server process both.
  */
 export function createHttpServer(

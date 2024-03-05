@@ -234,7 +234,7 @@ export class RedisManager implements RedisBaseManagerContract {
 }
 
 /**
- * Since types in AdonisJS are derived from interfaces, we take the leverage
+ * Since types in Kubit are derived from interfaces, we take the leverage
  * of dynamically adding redis methods to the class prototype.
  */
 pubsubMethods.forEach((method) => {

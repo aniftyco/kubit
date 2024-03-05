@@ -9,7 +9,7 @@ import { HttpServer } from './HttpServer';
 import { AppKernel } from './Kernel';
 
 /**
- * Ignitor is used to wireup different pieces of AdonisJs to bootstrap
+ * Ignitor is used to wireup different pieces of Kubit to bootstrap
  * the application.
  */
 export class Ignitor {

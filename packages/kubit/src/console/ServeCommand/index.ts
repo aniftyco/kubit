@@ -5,7 +5,7 @@ import { flags } from '../Decorators/flags';
 export class ServeCommand extends BaseCommand implements CommandContract {
   public static commandName = 'serve';
   public static description =
-    'Start the AdonisJS HTTP server, along with the file watcher. Also starts the webpack dev server when webpack encore is installed';
+    'Start the Kubit HTTP server, along with the file watcher. Also starts the webpack dev server when webpack encore is installed';
 
   public static settings = {
     stayAlive: true,

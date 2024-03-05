@@ -2,7 +2,7 @@ import type { ApplicationContract } from '@ioc:Kubit/Application';
 import { ServiceProvider } from '../index';
 
 /**
- * AdonisJS provider for registering japa class to the container
+ * Kubit provider for registering japa class to the container
  */
 export default class TestsProvider implements ServiceProvider {
   constructor(protected app: ApplicationContract) {}

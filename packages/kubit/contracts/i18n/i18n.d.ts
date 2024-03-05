@@ -264,7 +264,7 @@ declare module '@ioc:Kubit/I18n' {
     config: I18nConfig;
 
     /**
-     * Reference to the AdonisJS application
+     * Reference to the Kubit application
      */
     application: ApplicationContract;
 

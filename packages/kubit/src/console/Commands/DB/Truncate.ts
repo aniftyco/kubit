@@ -50,11 +50,11 @@ export class DbTruncate extends BaseCommand {
   }
 
   /**
-   * Truncate all tables except adonis migrations table
+   * Truncate all tables except kubit migrations table
    */
   private async performTruncate(client: QueryClientContract) {
     let tables = await client.getAllTables(['public']);
-    tables = tables.filter((table) => !['adonis_schema', 'adonis_schema_versions'].includes(table));
+    tables = tables.filter((table) => !['kubit_schema', 'kubit_schema_versions'].includes(table));
 
     await Promise.all(tables.map((table) => client.truncate(table, true)));
     this.logger.success('Truncated tables successfully');

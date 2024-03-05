@@ -222,7 +222,7 @@ export class HasManyThroughQueryBuilder
       direction: 'desc',
     };
 
-    const rowName = 'adonis_group_limit_counter';
+    const rowName = 'kubit_group_limit_counter';
     const partitionBy = `PARTITION BY ${this.prefixThroughTable(this.relation.foreignKeyColumnName)}`;
     const orderBy = `ORDER BY ${column} ${direction}`;
 
@@ -233,7 +233,7 @@ export class HasManyThroughQueryBuilder
       this.select('*');
     }
 
-    this.select(this.client.raw(`row_number() over (${partitionBy} ${orderBy}) as ${rowName}`)).as('adonis_temp');
+    this.select(this.client.raw(`row_number() over (${partitionBy} ${orderBy}) as ${rowName}`)).as('kubit_temp');
 
     const groupQuery = this.relation.relatedModel().query();
     groupQuery.usePreloader(this.preloader);

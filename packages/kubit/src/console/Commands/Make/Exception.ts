@@ -44,7 +44,7 @@ export class MakeException extends GeneratorCommand {
 
   /**
    * Pull path from the `exceptions` namespace declaration from
-   * the `.adonisrc.json` file or fallback to `app/Exceptions`
+   * the `package.json` file or fallback to `app/Exceptions`
    */
   protected getDestinationPath(): string {
     return this.getPathForNamespace('exceptions') || 'app/Exceptions';

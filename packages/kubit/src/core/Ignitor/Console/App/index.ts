@@ -80,11 +80,11 @@ export class App {
     }
 
     const appVersion = this.kernel.application.version;
-    const adonisVersion = this.kernel.application.adonisVersion;
+    const kubitVersion = this.kernel.application.kubitVersion;
 
     sticker()
       .heading('node ace --version')
-      .add(`Kubit: ${logger.colors.cyan(adonisVersion ? adonisVersion.version : 'NA')}`)
+      .add(`Kubit: ${logger.colors.cyan(kubitVersion ? kubitVersion.version : 'NA')}`)
       .add(`App: ${logger.colors.cyan(appVersion ? appVersion.version : 'NA')}`)
       .render();
 
@@ -167,7 +167,7 @@ export class App {
     });
 
     /**
-     * Showing app and AdonisJs version
+     * Showing app and Kubit version
      */
     this.console.flag('version', async (value) => this.printVersion(value), { alias: 'v' });
   }

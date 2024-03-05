@@ -39,7 +39,7 @@ export class MarkdownRenderer {
    * file and opens up the file inside the browser.
    */
   private async openContentsInBrowser(html: string) {
-    const filePath = join(tmpdir(), `adonis-${new Date().getTime()}.html`);
+    const filePath = join(tmpdir(), `kubit-${new Date().getTime()}.html`);
     await outputFile(filePath, html);
     await open(filePath, { wait: false });
   }

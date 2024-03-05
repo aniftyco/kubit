@@ -52,9 +52,9 @@ export type PackageInstructionsBlock = {
 };
 
 /**
- * Shape of the package file along with the adonisjs
+ * Shape of the package file along with the kubit
  * block
  */
 export type PackageFile = PackageJson & {
-  adonisjs: PackageInstructionsBlock;
+  kubit: PackageInstructionsBlock;
 };

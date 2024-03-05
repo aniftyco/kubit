@@ -105,7 +105,7 @@ export class RCFile extends JsonFile {
   }
 
   /**
-   * Set the preload file to the `.adonisrc.json` file.
+   * Set the preload file to the `package.json` file.
    */
   public setPreload(filePath: string, environment?: AppEnvironments[], optional?: boolean): this {
     let preloadIndex = this.preloads.findIndex((preload) => {

@@ -165,7 +165,7 @@ export class BasicAuthGuard extends BaseGuard<any> implements BasicAuthGuardCont
     /**
      * Emit event
      */
-    this.emitter.emit('adonis:basic:authenticate', this.getAuthenticateEventData(user));
+    this.emitter.emit('kubit:basic:authenticate', this.getAuthenticateEventData(user));
 
     return this.user;
   }

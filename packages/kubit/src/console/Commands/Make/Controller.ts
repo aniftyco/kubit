@@ -50,7 +50,7 @@ export class MakeController extends GeneratorCommand {
 
   /**
    * Pull path from the `httpControllers` directory declaration from
-   * the `.adonisrc.json` file or fallback to `app/Http/Controllers`
+   * the `package.json` file or fallback to `app/Http/Controllers`
    */
   protected getDestinationPath(): string {
     return this.getPathForNamespace('httpControllers') || 'app/Http/Controllers';

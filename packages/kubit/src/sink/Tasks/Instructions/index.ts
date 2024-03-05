@@ -140,7 +140,7 @@ export class Instructions {
   }
 
   /**
-   * Adds the meta files to `.adonisrc.json` file
+   * Adds the meta files to `package.json` file
    */
   private setMetaFiles(instructions: PackageInstructionsBlock) {
     if (!instructions.metaFiles) {
@@ -166,11 +166,11 @@ export class Instructions {
       'metaFiles'
     );
 
-    this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
+    this.logger.action('update').succeeded(`package.json ${suffix}`);
   }
 
   /**
-   * Adds the preloads to `.adonisrc.json` file
+   * Adds the preloads to `package.json` file
    */
   private setPreloads(instructions: PackageInstructionsBlock) {
     if (!instructions.preloads) {
@@ -196,11 +196,11 @@ export class Instructions {
       'preloads'
     );
 
-    this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
+    this.logger.action('update').succeeded(`package.json ${suffix}`);
   }
 
   /**
-   * Set commands inside the adonisrc.json file
+   * Set commands inside the package.json file
    */
   private setCommands(instructions: PackageInstructionsBlock) {
     if (!instructions.commands) {
@@ -212,11 +212,11 @@ export class Instructions {
     rcFile.commit();
 
     const suffix = this.getSuffix(this.formatArray(instructions.commands), 'commands');
-    this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
+    this.logger.action('update').succeeded(`package.json ${suffix}`);
   }
 
   /**
-   * Set aliases inside the adonisrc.json file
+   * Set aliases inside the package.json file
    */
   private setAliases(instructions: PackageInstructionsBlock) {
     if (!instructions.aliases) {
@@ -236,7 +236,7 @@ export class Instructions {
     const suffix = this.getSuffix(this.formatObject(instructions.aliases), 'aliases');
 
     rcFile.commit();
-    this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
+    this.logger.action('update').succeeded(`package.json ${suffix}`);
 
     tsConfig.set('compilerOptions.paths', existingPaths);
     tsConfig.commit();
@@ -244,7 +244,7 @@ export class Instructions {
   }
 
   /**
-   * Sets providers or ace providers inside the `.adonisrc.json` file
+   * Sets providers or ace providers inside the `package.json` file
    */
   private setProviders(instructions: PackageInstructionsBlock) {
     /**
@@ -271,17 +271,17 @@ export class Instructions {
 
     if (instructions.providers) {
       const suffix = this.getSuffix(this.formatArray(instructions.providers), 'providers');
-      this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
+      this.logger.action('update').succeeded(`package.json ${suffix}`);
     }
 
     if (instructions.consoleProviders) {
       const suffix = this.getSuffix(this.formatArray(instructions.consoleProviders), 'consoleProviders');
-      this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
+      this.logger.action('update').succeeded(`package.json ${suffix}`);
     }
 
     if (instructions.testProviders) {
       const suffix = this.getSuffix(this.formatArray(instructions.testProviders), 'testProviders');
-      this.logger.action('update').succeeded(`.adonisrc.json ${suffix}`);
+      this.logger.action('update').succeeded(`package.json ${suffix}`);
     }
   }
 
@@ -368,20 +368,20 @@ export class Instructions {
    */
   public async execute() {
     const pkg = this.loadPackageJsonFile();
-    if (!pkg.adonisjs) {
+    if (!pkg.kubit) {
       return true;
     }
 
-    await this.runInstructions(pkg.adonisjs);
-    this.copyTemplates(pkg.adonisjs);
-    this.setEnvVariables(pkg.adonisjs);
-    this.setTypes(pkg.adonisjs);
-    this.setCommands(pkg.adonisjs);
-    this.setAliases(pkg.adonisjs);
-    this.setProviders(pkg.adonisjs);
-    this.setMetaFiles(pkg.adonisjs);
-    this.setPreloads(pkg.adonisjs);
-    await this.renderMarkdownFile(pkg.adonisjs);
+    await this.runInstructions(pkg.kubit);
+    this.copyTemplates(pkg.kubit);
+    this.setEnvVariables(pkg.kubit);
+    this.setTypes(pkg.kubit);
+    this.setCommands(pkg.kubit);
+    this.setAliases(pkg.kubit);
+    this.setProviders(pkg.kubit);
+    this.setMetaFiles(pkg.kubit);
+    this.setPreloads(pkg.kubit);
+    await this.renderMarkdownFile(pkg.kubit);
     return true;
   }
 }

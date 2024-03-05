@@ -22,7 +22,7 @@ export class Migrator extends EventEmitter implements MigratorContract {
    */
   private migrationsConfig = Object.assign(
     {
-      tableName: 'adonis_schema',
+      tableName: 'kubit_schema',
       disableTransactions: false,
     },
     this.config.migrations

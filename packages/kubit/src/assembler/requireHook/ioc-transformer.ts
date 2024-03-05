@@ -6,7 +6,7 @@ import { RCFILE_NAME } from '../config/paths';
 
 import type tsStatic from 'typescript';
 /**
- * Transformer to transform AdonisJS IoC container import
+ * Transformer to transform Kubit IoC container import
  * statements
  */
 export default function (ts: typeof tsStatic, appRoot: string) {

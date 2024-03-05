@@ -2,10 +2,10 @@ import { register } from '../../require-ts';
 
 /**
  * Exports the function to be used for registering require hook
- * for AdonisJS applications
+ * for Kubit applications
  */
-export default function registerForAdonis(appRoot: string) {
-  return register(appRoot, {
+export default (appRoot: string) =>
+  register(appRoot, {
     cache: true,
     transformers: {
       after: [
@@ -15,4 +15,3 @@ export default function registerForAdonis(appRoot: string) {
       ],
     },
   });
-}

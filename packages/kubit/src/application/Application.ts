@@ -29,7 +29,7 @@ const TEST_ENVS = ['test', 'testing'];
 
 /**
  * The main application instance to know about the environment, filesystem
- * in which your AdonisJs app is running
+ * in which your Kubit app is running
  */
 export class Application implements ApplicationContract {
   public helpers = helpers as any;
@@ -57,25 +57,25 @@ export class Application implements ApplicationContract {
 
   /**
    * Current working directory for the CLI and not the build directory
-   * The `ADONIS_CLI_CWD` is set by the cli
+   * The `KUBIT_CONSOLE_CWD` is set by the cli
    */
-  public readonly cliCwd?: string = process.env.ADONIS_ACE_CWD;
+  public readonly cliCwd?: string = process.env.KUBIT_CONSOLE_CWD;
 
   /**
-   * The name of the application picked from `.adonisrc.json` file. This can
+   * The name of the application picked from `package.json` file. This can
    * be used to prefix logs.
    */
   public readonly appName: string;
 
   /**
-   * The application version. Again picked from `.adonisrc.json` file
+   * The application version. Again picked from `package.json` file
    */
   public readonly version: SemverNode | null;
 
   /**
    * `../core` version
    */
-  public readonly adonisVersion: SemverNode | null;
+  public readonly kubitVersion: SemverNode | null;
 
   /**
    * Reference to fully parsed boot config
@@ -87,7 +87,7 @@ export class Application implements ApplicationContract {
    * and runtime behavior of the application as well.
    *
    * 1. When `typescript=true`, it means that the project is written using typescript.
-   * 2. After compiling to Javascript, AdonisJs will set this value to `false` in the build folder.
+   * 2. After compiling to Javascript, Kubit will set this value to `false` in the build folder.
    * 3. At runtime when `typescript=true`, it means the app is using ts-node to start.
    */
   public readonly typescript: boolean;
@@ -167,10 +167,10 @@ export class Application implements ApplicationContract {
      */
     this.appName = pkgFile.name;
     this.version = this.parseVersion(pkgFile.version);
-    this.adonisVersion = corePkgFile.version ? this.parseVersion(corePkgFile.version) : null;
+    this.kubitVersion = corePkgFile.version ? this.parseVersion(corePkgFile.version) : null;
 
     /**
-     * Fetching following info from the `.adonisrc.json` file.
+     * Fetching following info from the `package.json` file.
      */
     this.preloads = this.bootConfig.preloads;
     this.exceptionHandlerNamespace = this.bootConfig.exceptionHandlerNamespace;
@@ -236,7 +236,7 @@ export class Application implements ApplicationContract {
       return {};
     });
     return {
-      name: pkgFile.name || 'adonis-app',
+      name: pkgFile.name || 'kubit-app',
       version: pkgFile.version || '0.0.0',
       engines: pkgFile.engines,
       bootConfig: pkgFile.kubit || {},
@@ -287,8 +287,8 @@ export class Application implements ApplicationContract {
       process.env.APP_VERSION = this.version.toString();
     }
 
-    if (this.adonisVersion) {
-      process.env.ADONIS_VERSION = this.adonisVersion.toString();
+    if (this.kubitVersion) {
+      process.env.KUBIT_VERSION = this.kubitVersion.toString();
     }
   }
 
@@ -586,7 +586,7 @@ export class Application implements ApplicationContract {
       nodeEnvironment: this.nodeEnvironment,
       appName: this.appName,
       version: this.version ? this.version.toString() : null,
-      adonisVersion: this.adonisVersion ? this.adonisVersion.toString() : null,
+      kubitVersion: this.kubitVersion ? this.kubitVersion.toString() : null,
     };
   }
 
@@ -685,7 +685,7 @@ export class Application implements ApplicationContract {
   }
 
   /**
-   * Require files registered as preloads inside `.adonisrc.json` file
+   * Require files registered as preloads inside `package.json` file
    */
   public async requirePreloads(): Promise<void> {
     this.preloads

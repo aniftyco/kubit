@@ -7,7 +7,7 @@ import { TestHttpServer } from './HttpServer';
 
 /**
  * Test utils module is meant to be extended to add custom
- * utilities required for testing AdonisJS applications.
+ * utilities required for testing Kubit applications.
  */
 export class TestUtils extends Macroable implements Omit<TestUtilsContract, 'constructor' | 'db' | 'ace'> {
   public static macros = {};

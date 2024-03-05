@@ -9,7 +9,7 @@ import { Route } from './Route';
  * Brisk route enables you to expose expressive API for
  * defining route handler.
  *
- * For example: AdonisJs uses [[BriskRoute]] `Route.on().render()`
+ * For example: Kubit uses [[BriskRoute]] `Route.on().render()`
  * to render a view without defining a controller method or
  * closure.
  */

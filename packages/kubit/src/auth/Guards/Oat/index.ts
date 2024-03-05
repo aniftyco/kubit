@@ -323,7 +323,7 @@ export class OATGuard extends BaseGuard<any> implements OATGuardContract<any, an
     /**
      * Emit login event. It can be used to track user logins.
      */
-    this.emitter.emit('adonis:api:login', this.getLoginEventData(providerUser.user, apiToken));
+    this.emitter.emit('kubit:api:login', this.getLoginEventData(providerUser.user, apiToken));
 
     /**
      * Marking user as logged in
@@ -362,7 +362,7 @@ export class OATGuard extends BaseGuard<any> implements OATGuardContract<any, an
 
     this.markUserAsLoggedIn(providerUser.user, true);
     this.token = providerToken;
-    this.emitter.emit('adonis:api:authenticate', this.getAuthenticateEventData(providerUser.user, this.token));
+    this.emitter.emit('kubit:api:authenticate', this.getAuthenticateEventData(providerUser.user, this.token));
     return providerUser.user;
   }
 

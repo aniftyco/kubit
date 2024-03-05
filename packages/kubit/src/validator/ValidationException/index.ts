@@ -3,7 +3,7 @@ import { Exception } from '@poppinss/utils';
 
 /**
  * Validation exception raised by the error reporters. The handle method is called
- * automatically during an HTTP request by AdonisJS to self handle the exception
+ * automatically during an HTTP request by Kubit to self handle the exception
  */
 export class ValidationException extends Exception {
   constructor(

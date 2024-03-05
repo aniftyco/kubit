@@ -86,8 +86,8 @@ declare module '@ioc:Kubit/Application' {
   };
 
   /**
-   * Shape of the meta file inside the `metaFiles` array inside
-   * `.adonisrc.json` file.
+   * Shape of the meta file inside the `kubit.metaFiles` array inside
+   * `package.json` file.
    */
   export type MetaFileNode = {
     pattern: string;
@@ -151,7 +151,7 @@ declare module '@ioc:Kubit/Application' {
     /**
      * Version of `@kubit/core` package
      */
-    readonly adonisVersion: SemverNode | null;
+    readonly kubitVersion: SemverNode | null;
 
     /**
      * Version of the application defined inside package.json file
@@ -197,7 +197,7 @@ declare module '@ioc:Kubit/Application' {
     helpers: typeof Helpers;
 
     /**
-     * Reference to preloads defined inside `.adonisrc.json` file
+     * Reference to preloads defined inside `package.json` file
      */
     preloads: string[] | PreloadNode[];
 
@@ -241,7 +241,7 @@ declare module '@ioc:Kubit/Application' {
 
     /**
      * Reference to the relative paths of conventional and custom directories
-     * defined inside `.adonisrc.json` file
+     * defined inside `package.json` file
      */
     directoriesMap: Map<string, string>;
 
@@ -258,7 +258,7 @@ declare module '@ioc:Kubit/Application' {
 
     /**
      * Returns path for a given namespace by replacing the base namespace
-     * with the defined directories map inside the .adonisrc file.
+     * with the defined directories map inside the package.json file.
      */
     resolveNamespaceDirectory(namespaceFor: string): string | null;
 
@@ -334,7 +334,7 @@ declare module '@ioc:Kubit/Application' {
       nodeEnvironment: string;
       appName: string;
       version: string | null;
-      adonisVersion: string | null;
+      kubitVersion: string | null;
     };
 
     /**

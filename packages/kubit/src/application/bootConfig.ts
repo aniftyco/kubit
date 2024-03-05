@@ -148,7 +148,7 @@ export function parse(contents: { [key: string]: any }): BootConfig<PreloadNode>
   const { assetsDriver } = normalizedContents;
   if (assetsDriver && !['vite', 'encore', 'fake'].includes(assetsDriver)) {
     throw new Exception(
-      `Invalid assets driver "${assetsDriver}" defined in .adonisrc.json file`,
+      `Invalid assets driver "${assetsDriver}" defined in package.json file`,
       500,
       'E_INVALID_ASSETS_DRIVER'
     );

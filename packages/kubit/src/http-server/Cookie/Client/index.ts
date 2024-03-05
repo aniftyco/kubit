@@ -6,7 +6,7 @@ import * as PlainCookie from '../Drivers/Plain';
 import * as SignedCookie from '../Drivers/Signed';
 
 /**
- * Cookie client exposes the API to parse/set AdonisJS
+ * Cookie client exposes the API to parse/set Kubit
  * cookies as a client.
  */
 export class CookieClient implements CookieClientContract {

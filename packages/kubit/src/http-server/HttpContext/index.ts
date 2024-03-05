@@ -138,7 +138,7 @@ export class HttpContext extends Macroable {
 
   /**
    * Creates a new fake context instance for a given route. The method is
-   * meant to be used inside an AdonisJS application since it relies
+   * meant to be used inside an Kubit application since it relies
    * directly on the IoC container.
    */
   public static create(

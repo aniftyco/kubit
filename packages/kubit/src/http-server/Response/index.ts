@@ -26,7 +26,7 @@ import { Redirect } from '../Redirect';
 class AbortException extends HttpException {
   /**
    * Handle itself by making the response. This only works when using the
-   * base exception handler shipped by AdonisJs
+   * base exception handler shipped by Kubit
    */
   public handle(error: HttpException, ctx: HttpContextContract) {
     ctx.response.status(error.status).send(error.body);
@@ -645,7 +645,7 @@ export class Response extends Macroable {
    * server must return `304` response, telling the browser to
    * use the client cache.
    *
-   * You won't have to deal with this method directly, since AdonisJs will
+   * You won't have to deal with this method directly, since Kubit will
    * handle this for you when `http.etag = true` inside `config/app.js` file.
    *
    * However, this is how you can use it manually.

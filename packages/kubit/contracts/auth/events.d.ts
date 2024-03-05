@@ -9,10 +9,10 @@ declare module '@ioc:Kubit/Event' {
   } from '@ioc:Kubit/Auth';
 
   export interface EventsList {
-    'adonis:basic:authenticate': BasicAuthAuthenticateEventData<keyof ProvidersList>;
-    'adonis:session:login': SessionLoginEventData<keyof ProvidersList>;
-    'adonis:session:authenticate': SessionAuthenticateEventData<keyof ProvidersList>;
-    'adonis:api:authenticate': OATAuthenticateEventData<keyof ProvidersList>;
-    'adonis:api:login': OATLoginEventData<keyof ProvidersList>;
+    'kubit:basic:authenticate': BasicAuthAuthenticateEventData<keyof ProvidersList>;
+    'kubit:session:login': SessionLoginEventData<keyof ProvidersList>;
+    'kubit:session:authenticate': SessionAuthenticateEventData<keyof ProvidersList>;
+    'kubit:api:authenticate': OATAuthenticateEventData<keyof ProvidersList>;
+    'kubit:api:login': OATLoginEventData<keyof ProvidersList>;
   }
 }

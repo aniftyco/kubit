@@ -8,7 +8,7 @@ import { schema as EnvSchema } from '../Schema';
  * The ENV module enables the use of environment variables by parsing dotfiles syntax
  * and updates the `process.env` object in Node.js.
  *
- * AdonisJs automatically reads and passes the contents of `.env` file to this class.
+ * Kubit automatically reads and passes the contents of `.env` file to this class.
  */
 export class Env implements EnvContract {
   /**

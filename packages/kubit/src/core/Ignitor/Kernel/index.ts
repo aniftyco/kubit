@@ -108,7 +108,7 @@ export class AppKernel {
   public ready(eventPayload: Record<string, any>) {
     if (process.send) {
       process.send('ready');
-      process.send({ isAdonisJS: true, environment: this.application.environment, ...eventPayload });
+      process.send({ isKubit: true, environment: this.application.environment, ...eventPayload });
     }
   }
 

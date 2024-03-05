@@ -12,7 +12,7 @@ import { RcFile } from '../RcFile';
 import { Ts } from '../Ts';
 
 /**
- * Exposes the API to build the AdonisJs project for development or
+ * Exposes the API to build the Kubit project for development or
  * production. The production build has it's own set of node_modules
  */
 export class Compiler {

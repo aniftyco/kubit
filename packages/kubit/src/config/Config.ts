@@ -2,7 +2,7 @@ import { ConfigContract } from '@ioc:Kubit/Config';
 import { lodash } from '@poppinss/utils';
 
 /**
- * Config module eases the process of using configuration inside your AdonisJs
+ * Config module eases the process of using configuration inside your Kubit
  * applications.
  *
  * The config files are stored inside a seperate directory, which are loaded and cached

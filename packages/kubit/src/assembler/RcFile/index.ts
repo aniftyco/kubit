@@ -9,7 +9,7 @@ import { Application } from '../../application';
 import { ACE_FILE_NAME, RCFILE_NAME } from '../config/paths';
 
 /**
- * Exposes the API to pull meta files from the `.adonisrc.json` file and
+ * Exposes the API to pull meta files from the `package.json` file and
  * also match relative file paths against the defined globs.
  */
 export class RcFile {
@@ -42,7 +42,7 @@ export class RcFile {
 
   /**
    * Commands match to know, if file path is part of the commands paths defined
-   * inside `.adonisrc.json` file
+   * inside `package.json` file
    */
   public isCommandsPath: (filePath: string) => boolean = picomatch(this.commandsGlob());
 
@@ -77,7 +77,7 @@ export class RcFile {
   }
 
   /**
-   * Returns true when file is `.adonisrc.json` itself
+   * Returns true when file is `package.json` itself
    */
   private isRcFile(filePath: string) {
     return filePath === RCFILE_NAME;

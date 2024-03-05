@@ -22,7 +22,7 @@ export abstract class BaseSubQueryBuilder
    * Alias for the self join table
    */
   public get selfJoinAlias(): string {
-    return `adonis_temp_${this.selfJoinCounter}`;
+    return `kubit_temp_${this.selfJoinCounter}`;
   }
 
   /**

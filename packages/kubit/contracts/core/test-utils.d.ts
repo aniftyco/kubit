@@ -18,7 +18,7 @@ declare module '@ioc:Kubit/TestUtils' {
 
   /**
    * Test utils module is meant to be extended to add custom
-   * utilities required for testing AdonisJS applications.
+   * utilities required for testing Kubit applications.
    */
   const TestUtils: TestUtilsContract;
   export default TestUtils;

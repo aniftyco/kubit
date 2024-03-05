@@ -24,8 +24,8 @@ export class Configure extends BaseCommand {
    * Returns package manager for installing dependencies
    */
   private getPackageManager() {
-    if (process.env['ADONIS_CREATE_APP_CLIENT']) {
-      return process.env['ADONIS_CREATE_APP_CLIENT'] as 'yarn' | 'npm' | 'pnpm';
+    if (process.env['KUBIT_CREATE_APP_CLIENT']) {
+      return process.env['KUBIT_CREATE_APP_CLIENT'] as 'yarn' | 'npm' | 'pnpm';
     }
     return utils.getPackageManager(this.application.appRoot);
   }

@@ -57,7 +57,7 @@ export class BodyParserMiddleware {
   }
 
   /**
-   * Returns a proper Adonis style exception for popular error codes
+   * Returns a proper Kubit style exception for popular error codes
    * returned by https://github.com/stream-utils/raw-body#readme.
    */
   private getExceptionFor(error: { type: string; status: number; message: string }) {

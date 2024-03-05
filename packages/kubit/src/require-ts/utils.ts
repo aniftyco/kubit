@@ -1,7 +1,7 @@
 import Debug from 'debug';
 import normalizePath from 'normalize-path';
 
-export const debug = Debug('adonis:require-ts');
+export const debug = Debug('kubit:require-ts');
 
 /**
  * Returns the cache directory path for a given file. The idea is to

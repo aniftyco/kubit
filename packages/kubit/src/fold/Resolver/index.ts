@@ -22,7 +22,7 @@ export class IocResolver implements IocResolverContract<any> {
 
   /**
    * Returns the prefix namespace by giving preference to the
-   * `.adonisrc.json` file
+   * `package.json` file
    */
   private getPrefixNamespace(): string | undefined {
     /**

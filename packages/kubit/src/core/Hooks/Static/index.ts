@@ -6,7 +6,7 @@ import { AssetsConfig } from '@ioc:Kubit/Static';
 
 /**
  * A simple server hook to serve static files from the public directory.
- * The public directory must be configured within the `.adonisrc.json`
+ * The public directory must be configured within the `package.json`
  * file.
  */
 export class ServeStatic {

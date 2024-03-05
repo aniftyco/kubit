@@ -43,7 +43,7 @@ export class RedisConnection extends AbstractConnection<Redis> {
 }
 
 /**
- * Since types in AdonisJS are derived from interfaces, we take the leverage
+ * Since types in Kubit are derived from interfaces, we take the leverage
  * of dynamically adding redis methods to the class prototype.
  */
 ioMethods.forEach((method) => {

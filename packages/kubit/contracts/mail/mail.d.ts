@@ -571,7 +571,7 @@ declare module '@ioc:Kubit/Mail' {
   };
 
   /**
-   * Packet emitted by the `adonis:mail:sent` event
+   * Packet emitted by the `kubit:mail:sent` event
    */
   export type MailEventData = {
     message: MessageNode;

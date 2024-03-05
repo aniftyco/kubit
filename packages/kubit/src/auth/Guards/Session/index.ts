@@ -53,7 +53,7 @@ export class SessionGuard extends BaseGuard<any> implements SessionGuardContract
    */
   private getSession() {
     if (!this.ctx.session) {
-      throw new Exception('"@adonisjs/session" is required to use the "session" auth driver');
+      throw new Exception('"kubit/session" is required to use the "session" auth driver');
     }
     return this.ctx.session;
   }
@@ -254,7 +254,7 @@ export class SessionGuard extends BaseGuard<any> implements SessionGuardContract
      * Emit login event. It can be used to track user logins and their devices.
      */
     this.emitter.emit(
-      'adonis:session:login',
+      'kubit:session:login',
       this.getLoginEventData(providerUser.user, providerUser.getRememberMeToken())
     );
 
@@ -281,7 +281,7 @@ export class SessionGuard extends BaseGuard<any> implements SessionGuardContract
     if (sessionId) {
       const providerUser = await this.getUserForSessionId(sessionId);
       this.markUserAsLoggedIn(providerUser.user, true);
-      this.emitter.emit('adonis:session:authenticate', this.getAuthenticateEventData(providerUser.user, false));
+      this.emitter.emit('kubit:session:authenticate', this.getAuthenticateEventData(providerUser.user, false));
       return this.user;
     }
 
@@ -307,7 +307,7 @@ export class SessionGuard extends BaseGuard<any> implements SessionGuardContract
     this.setRememberMeCookie(rememberMeToken.id, rememberMeToken.token);
 
     this.markUserAsLoggedIn(providerUser.user, true, true);
-    this.emitter.emit('adonis:session:authenticate', this.getAuthenticateEventData(providerUser.user, true));
+    this.emitter.emit('kubit:session:authenticate', this.getAuthenticateEventData(providerUser.user, true));
     return this.user;
   }
 

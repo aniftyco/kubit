@@ -10,7 +10,7 @@ export class Console {
    * Handles the console command
    */
   public async handle(argv: string[]) {
-    process.env.ADONIS_ACE_CWD = this.appRoot;
+    process.env.KUBIT_CONSOLE_CWD = this.appRoot;
 
     /**
      * Proxy over to application commands

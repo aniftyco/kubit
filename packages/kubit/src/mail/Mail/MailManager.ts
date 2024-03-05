@@ -79,7 +79,7 @@ export class MailManager
 
   /**
    * Dependencies from the "../core" and "../view". The manager classes
-   * in AdonisJS codebase heavily relies on the container and hence we can pull
+   * in Kubit codebase heavily relies on the container and hence we can pull
    * container bindings directly here.
    */
   public view = this.app.container.hasBinding('Kubit/View') ? this.app.container.use('Kubit/View') : undefined;

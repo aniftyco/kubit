@@ -20,7 +20,7 @@ export abstract class GeneratorCommand extends BaseCommand {
 
   /**
    * Returns path for a given namespace by replacing the base namespace
-   * with the defined directories map inside the `.adonisrc.json`
+   * with the defined directories map inside the `package.json`
    * file
    */
   protected getPathForNamespace(namespaceFor: string): string | null {
