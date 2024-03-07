@@ -9,3 +9,4 @@ export { Build } from './Build';
 export { Test } from './Test';
 export { GenerateKey } from './GenerateKey';
 export { ListRoutes } from './ListRoutes';
+export { Scheduler } from './Scheduler';
