@@ -29,7 +29,7 @@ export const defaultBootConfig: BootConfig = {
   commands: ['./app/Commands'],
   commandsAliases: {},
   exceptionHandlerNamespace: '@app/Exceptions/Handler',
-  preloads: ['./bootstrap/kernel', './routes/web', './routes/api'],
+  preloads: ['./bootstrap/kernel', './bootstrap/scheduler', './routes/web', './routes/api'],
   aliases: { '@app': 'app' },
   providers: ['kubit/dist/provider', './app/Providers/AppProvider'],
   consoleProviders: ['kubit/dist/repl/provider'],
@@ -73,74 +73,7 @@ export const defaultBootConfig: BootConfig = {
  * defaults.
  */
 export function parse(contents: { [key: string]: any }): BootConfig<PreloadNode> {
-  const normalizedContents = Object.assign(
-    {
-      typescript: true,
-      directories: {
-        config: 'config',
-        public: 'public',
-        contracts: 'contracts',
-        providers: 'app/Providers',
-        database: 'database',
-        migrations: 'database/migrations',
-        seeds: 'database/seeders',
-        resources: 'resources',
-        views: 'resources/views',
-        start: 'bootstrap',
-        tmp: 'storage/tmp',
-        tests: 'tests',
-      },
-      namespaces: {
-        models: '@app/Models',
-        middleware: '@app/Http/Middleware',
-        exceptions: '@app/Exceptions',
-        validators: '@app/Validators',
-        httpControllers: '@app/Http/Controllers',
-        eventListeners: '@app/Listeners',
-        redisListeners: '@app/Listeners',
-      },
-      commands: ['./app/Commands'],
-      commandsAliases: {},
-      exceptionHandlerNamespace: '@app/Exceptions/Handler',
-      preloads: ['./bootstrap/kernel', './routes/web', './routes/api'],
-      aliases: { '@app': 'app' },
-      providers: ['kubit/dist/provider', './app/Providers/AppProvider'],
-      consoleProviders: ['kubit/dist/repl/provider'],
-      testProviders: ['kubit/dist/test/provider'],
-      metaFiles: [
-        {
-          pattern: 'public/**',
-          reloadServer: false,
-        },
-        {
-          pattern: 'resources/views/**/*.edge',
-          reloadServer: false,
-        },
-      ],
-      tests: {
-        suites: [
-          {
-            name: 'functional',
-            files: ['tests/functional/**/*.spec.ts'],
-            timeout: 60000,
-          },
-          {
-            name: 'unit',
-            files: ['tests/unit/**/*.spec.ts'],
-            timeout: 60000,
-          },
-          {
-            name: 'e2e',
-            files: ['tests/e2e/**/*.spec.ts'],
-            timeout: 60000,
-          },
-        ],
-        timeout: 2000,
-        forceExit: true,
-      },
-    },
-    contents
-  );
+  const normalizedContents = Object.assign({}, defaultBootConfig, contents);
 
   /**
    * Validate the assetsDriver value
