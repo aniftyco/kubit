@@ -1,6 +1,7 @@
 export * from './Make';
 export * from './DB';
 export * from './Migration';
+export * from './Queue';
 export { Help } from './Help';
 export { Serve } from './Serve';
 export { Repl } from './Repl';

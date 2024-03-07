@@ -16,6 +16,7 @@
 /// <reference path="./orm/index.d.ts" />
 /// <reference path="./mail/index.d.ts" />
 /// <reference path="./profiler/index.d.ts" />
+/// <reference path="./queue/index.d.ts" />
 /// <reference path="./redis/index.d.ts" />
 /// <reference path="./repl/index.d.ts" />
 /// <reference path="./scheduler/index.d.ts" />

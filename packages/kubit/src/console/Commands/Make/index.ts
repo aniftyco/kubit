@@ -10,3 +10,4 @@ export { MakeModel } from './Model';
 export { MakeSeeder } from './Seeder';
 export { MakeValidator } from './Validator';
 export { MakeView } from './View';
+export { MakeJob } from './Job';
