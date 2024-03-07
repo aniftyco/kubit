@@ -25,8 +25,9 @@ export class BullManager implements QueueContract {
     this.queues.set(
       'default',
       new Queue('default', {
-        connection: this.connection as ConnectionOptions,
         ...this.options,
+        connection: this.connection as ConnectionOptions,
+        prefix: `${this.app.env.get('APP_NAME', 'kubit-app')}:queue`,
       })
     );
   }
@@ -38,8 +39,9 @@ export class BullManager implements QueueContract {
       this.queues.set(
         queueName,
         new Queue(queueName, {
-          connection: this.connection as ConnectionOptions,
           ...this.options,
+          connection: this.connection as ConnectionOptions,
+          prefix: `${this.app.env.get('APP_NAME', 'kubit-app')}:${queueName}`,
         })
       );
     }
@@ -84,8 +86,9 @@ export class BullManager implements QueueContract {
         }
       },
       {
-        connection: this.connection as ConnectionOptions,
         ...this.options,
+        connection: this.connection as ConnectionOptions,
+        prefix: `${this.app.env.get('APP_NAME', 'kubit-app')}:queue`,
       }
     );
 
