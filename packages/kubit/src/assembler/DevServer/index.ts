@@ -7,7 +7,6 @@ import { AssetsBundler, DevServerResponse } from '../AssetsBundler';
 import { ENV_FILES, SERVER_ENTRY_FILE } from '../config/paths';
 import { EnvParser } from '../EnvParser';
 import { HttpServer } from '../HttpServer';
-import { Manifest } from '../Manifest';
 import { RcFile } from '../RcFile';
 import { Ts } from '../Ts';
 
@@ -51,11 +50,6 @@ export class DevServer {
    * Reference to the RCFile
    */
   private rcFile = new RcFile(this.appRoot);
-
-  /**
-   * Manifest instance to generate ace manifest file
-   */
-  private manifest = new Manifest(this.appRoot, this.logger);
 
   /**
    * Require-ts watch helpers
@@ -240,13 +234,6 @@ export class DevServer {
       this.watchHelpers.clear(absPath);
       this.logger.action('delete').succeeded(relativePath);
 
-      /**
-       * Generate manifest when filePath is a commands path
-       */
-      if (this.rcFile.isCommandsPath(relativePath)) {
-        this.manifest.generate();
-      }
-
       this.httpServer.restart();
     });
 
@@ -257,13 +244,6 @@ export class DevServer {
       this.watchHelpers.clear(absPath);
       this.logger.action('add').succeeded(relativePath);
 
-      /**
-       * Generate manifest when filePath if file is in commands path
-       */
-      if (this.rcFile.isCommandsPath(relativePath)) {
-        this.manifest.generate();
-      }
-
       this.httpServer.restart();
     });
 
@@ -273,13 +253,6 @@ export class DevServer {
     watcher.on('source:change', async ({ absPath, relativePath }) => {
       this.watchHelpers.clear(absPath);
       this.logger.action('update').succeeded(relativePath);
-
-      /**
-       * Generate manifest when filePath is a commands path
-       */
-      if (this.rcFile.isCommandsPath(relativePath)) {
-        this.manifest.generate();
-      }
 
       this.httpServer.restart();
     });

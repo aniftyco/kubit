@@ -3,7 +3,7 @@ declare module '@ioc:Kubit/Application' {
   import { FactoryManagerContract } from '@ioc:Kubit/ORM/Factory';
 
   export interface ContainerBindings {
-    'Kubit/Lucid/Factory': FactoryManagerContract;
-    'Kubit/Lucid/Orm': typeof Orm;
+    'Kubit/ORM': typeof Orm;
+    'Kubit/ORM/Factory': FactoryManagerContract;
   }
 }

@@ -22,6 +22,7 @@ export default class KubitProvider {
     resolve(__dirname, './orm/provider'),
     resolve(__dirname, './auth/provider'),
     resolve(__dirname, './mail/provider'),
+    resolve(__dirname, './queue/provider'),
     resolve(__dirname, './redis/provider'),
     resolve(__dirname, './scheduler/provider'),
     resolve(__dirname, './security/provider'),
