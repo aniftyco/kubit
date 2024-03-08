@@ -2,10 +2,13 @@ import { CacheStoreContract } from '@ioc:Kubit/Cache';
 import { RedisManagerContract } from '@ioc:Kubit/Redis';
 
 export class RedisStore implements CacheStoreContract {
-  constructor(private client: RedisManagerContract) {}
+  constructor(
+    private client: RedisManagerContract,
+    private prefix: string
+  ) {}
 
   public async get<T = any>(key: string): Promise<T | null> {
-    const value = await this.client.get(key);
+    const value = await this.client.get(`${this.prefix}:${key}`);
 
     return value !== null ? JSON.parse(value) : null;
   }
@@ -15,7 +18,7 @@ export class RedisStore implements CacheStoreContract {
   }
 
   public async put<T = any>(key: string, value: T, ttl: number): Promise<void> {
-    await this.client.psetex(key, ttl, JSON.stringify(value));
+    await this.client.psetex(`${this.prefix}:${key}`, ttl, JSON.stringify(value));
   }
 
   public async putMany<T = any>(values: Record<string, T>, ttl: number): Promise<void> {
@@ -25,7 +28,7 @@ export class RedisStore implements CacheStoreContract {
   }
 
   public async forget(key: string): Promise<boolean> {
-    const result = await this.client.del(key);
+    const result = await this.client.del(`${this.prefix}:${key}`);
 
     return Boolean(result);
   }

@@ -16,12 +16,15 @@ export default class CacheProvider implements ServiceProvider {
       const { RedisStore } = require('./Stores/RedisStore');
       const { CacheManager } = require('./CacheManager');
 
-      const { driver } = this.app.config.get('cache', { driver: 'in-memory' });
+      const { store } = this.app.config.get('cache');
       const Event = this.app.container.use('Kubit/Event');
 
-      switch (driver) {
+      switch (store) {
         case 'redis':
-          return new CacheManager(Event, new RedisStore(this.app.container.use('Kubit/Redis')));
+          return new CacheManager(
+            Event,
+            new RedisStore(this.app.container.use('Kubit/Redis'), `${this.app.env.get('APP_NAME', 'kubit-app')}:cache`)
+          );
         case 'in-memory':
         default:
           return new CacheManager(Event, new InMemoryStore());
