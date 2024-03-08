@@ -30,15 +30,20 @@ declare module '@ioc:Kubit/Cache' {
     forever<T = any>(key: string, callback: () => Promise<T>): Promise<T>;
   }
 
-  export type CacheConfig = {
-    store: 'in-memory' | 'redis';
+  type InMemoryStoreConfig = {
+    store: 'in-memory';
+  };
 
+  type RedisStoreConfig = {
+    store: 'redis';
     stores: {
       redis: {
         connection: keyof RedisConfig['connections'];
       };
     };
   };
+
+  export type CacheConfig = InMemoryStoreConfig | RedisStoreConfig;
 
   const CacheManager: CacheManagerContract;
 
