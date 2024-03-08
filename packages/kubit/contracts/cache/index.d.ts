@@ -1,2 +1,2 @@
-/// <reference path="./container.ts" />
-/// <reference path="./cache.ts" />
+/// <reference path="./container.d.ts" />
+/// <reference path="./cache.d.ts" />
