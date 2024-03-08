@@ -65,7 +65,7 @@ export class ListRoutes extends BaseCommand {
       return 'Closure';
     }
 
-    const defaultControllersNamespace = this.application.namespacesMap.get('httpControllers');
+    const defaultControllersNamespace = this.application.namespacesMap.get('controllers');
 
     return `${resolvedHandler.namespace.replace(
       new RegExp(`^${defaultControllersNamespace}\/`),

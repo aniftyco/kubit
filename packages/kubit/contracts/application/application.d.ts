@@ -29,19 +29,30 @@ declare module '@ioc:Kubit/Application' {
    * directories
    */
   export interface DirectoriesNode {
+    commands: string;
+    controllers: string;
+    middleware: string;
     config: string;
+    jobs: string;
+    listeners: string;
+    mailers: string;
+    jobs: string;
+    models: string;
+    exceptions: string;
+    bootstrap: string;
     public: string;
     contracts: string;
     providers: string;
     database: string;
     migrations: string;
     seeds: string;
+    factories: string;
     resources: string;
+    validators: string;
     views: string;
-    start: string;
-    tmp: string;
+    routes: string;
+    storage: string;
     tests: string;
-    [key: string]: string;
   }
 
   /**
@@ -52,11 +63,13 @@ declare module '@ioc:Kubit/Application' {
     models: string;
     exceptions: string;
     middleware: string;
-    httpControllers: string;
-    eventListeners: string;
-    redisListeners: string;
+    controllers: string;
+    listeners: string;
     validators: string;
-    [key: string]: string;
+    commands: string;
+    jobs: string;
+    mailers: string;
+    providers: string;
   }
 
   /**
@@ -315,14 +328,14 @@ declare module '@ioc:Kubit/Application' {
     viewsPath(...paths: string[]): string;
 
     /**
-     * Make path to a file or directory from the start path root
+     * Make path to a file or directory from the bootstrap path root
      */
-    startPath(...paths: string[]): string;
+    bootstrapPath(...paths: string[]): string;
 
     /**
-     * Make path to a file or directory from the tmp path root
+     * Make path to a file or directory from the storage path root
      */
-    tmpPath(...paths: string[]): string;
+    storagePath(...paths: string[]): string;
 
     /**
      * Serialized output

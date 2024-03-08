@@ -96,7 +96,7 @@ export default defineConfig<SessionConfig>({
   |
   */
   file: {
-    location: Application.tmpPath('sessions'),
+    location: Application.storagePath('sessions'),
   },
 
   /*

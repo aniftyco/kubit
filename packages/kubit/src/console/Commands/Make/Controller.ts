@@ -49,11 +49,11 @@ export class MakeController extends GeneratorCommand {
   }
 
   /**
-   * Pull path from the `httpControllers` directory declaration from
+   * Pull path from the `controllers` directory declaration from
    * the `package.json` file or fallback to `app/Http/Controllers`
    */
   protected getDestinationPath(): string {
-    return this.getPathForNamespace('httpControllers') || 'app/Http/Controllers';
+    return this.getPathForNamespace('controllers') || 'app/Http/Controllers';
   }
 
   public async run() {

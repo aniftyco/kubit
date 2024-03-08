@@ -43,7 +43,7 @@ export class MakeListener extends GeneratorCommand {
    * the `package.json` file or fallback to `app/Listeners`
    */
   protected getDestinationPath(): string {
-    return this.getPathForNamespace('eventListeners') || 'app/Listeners';
+    return this.getPathForNamespace('listeners') || 'app/Listeners';
   }
 
   public async run() {

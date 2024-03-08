@@ -49,7 +49,7 @@ export default defineConfig<DriveConfig>({
       | files.
       |
       */
-      root: Application.tmpPath('uploads'),
+      root: Application.storagePath('uploads'),
 
       /*
       |--------------------------------------------------------------------------

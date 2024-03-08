@@ -555,8 +555,8 @@ export class Application implements ApplicationContract {
   /**
    * Makes path to the start directory
    */
-  public startPath(...paths: string[]): string {
-    return this.makePath(this.directoriesMap.get('start')!, ...paths);
+  public bootstrapPath(...paths: string[]): string {
+    return this.makePath(this.directoriesMap.get('bootstrap')!, ...paths);
   }
 
   /**
@@ -571,8 +571,8 @@ export class Application implements ApplicationContract {
    * writing at the runtime, we use `cwd` path to the write to the
    * source and not the build directory.
    */
-  public tmpPath(...paths: string[]): string {
-    return this.makePath(this.directoriesMap.get('tmp')!, ...paths);
+  public storagePath(...paths: string[]): string {
+    return this.makePath(this.directoriesMap.get('storage')!, ...paths);
   }
 
   /**

@@ -35,7 +35,7 @@ export class IocResolver {
   private listenersBaseNamespace?: string;
 
   constructor(app: ApplicationContract) {
-    this.containerResolver = app.container.getResolver(undefined, 'eventListeners', 'App/Listeners');
+    this.containerResolver = app.container.getResolver(undefined, 'listeners', 'App/Listeners');
   }
 
   /**
