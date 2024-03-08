@@ -16,7 +16,7 @@ export class IocResolver implements IocResolverContract<any> {
   constructor(
     private container: IocContract,
     private fallbackMethod?: string,
-    private rcNamespaceKey?: string,
+    private namespaceKey?: string,
     private fallbackNamespace?: string
   ) {}
 
@@ -28,7 +28,7 @@ export class IocResolver implements IocResolverContract<any> {
     /**
      * Use fallback namespace, when lookup inside rcFile is not required
      */
-    if (!this.rcNamespaceKey) {
+    if (!this.namespaceKey) {
       return this.fallbackNamespace;
     }
 
@@ -50,7 +50,7 @@ export class IocResolver implements IocResolverContract<any> {
      * We will use the value next to the `controllers` key
      */
     const application = this.container.use('Kubit/Application');
-    return application.namespacesMap.get(this.rcNamespaceKey) || this.fallbackNamespace;
+    return application.namespacesMap.get(this.namespaceKey) || this.fallbackNamespace;
   }
 
   /**

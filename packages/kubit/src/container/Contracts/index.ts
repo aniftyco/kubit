@@ -350,7 +350,7 @@ export interface IocContract<ContainerBindings extends any = any> {
    */
   getResolver(
     fallbackMethod?: string,
-    rcNamespaceKey?: string,
+    namespaceKey?: string,
     fallbackNamespace?: string
   ): IocResolverContract<ContainerBindings>;
 }

@@ -525,7 +525,7 @@ export class Ioc implements IocContract {
    * improve the lookup speed, we suggest keeping a reference to
    * the output of this method to leverage caching
    */
-  public getResolver(fallbackMethod?: string, rcNamespaceKey?: string, fallbackNamespace?: string): IocResolver {
-    return new IocResolver(this, fallbackMethod, rcNamespaceKey, fallbackNamespace);
+  public getResolver(fallbackMethod?: string, namespaceKey?: string, fallbackNamespace?: string): IocResolver {
+    return new IocResolver(this, fallbackMethod, namespaceKey, fallbackNamespace);
   }
 }
