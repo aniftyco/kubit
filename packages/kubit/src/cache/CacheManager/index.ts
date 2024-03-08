@@ -1,21 +1,13 @@
-import { ApplicationContract } from '@ioc:Kubit/Application';
 import { CacheManagerContract, CacheStoreContract } from '@ioc:Kubit/Cache';
 import { EmitterContract } from '@ioc:Kubit/Event';
 
-import { InMemoryStore } from '../Stores/InMemoryStore';
-
 const DEFAULT_TTL = 6000;
 
-export default class CacheManager implements CacheManagerContract {
-  private storage: CacheStoreContract;
-
+export class CacheManager implements CacheManagerContract {
   constructor(
-    private app: ApplicationContract,
-    private event: EmitterContract
-  ) {
-    const config = this.app.config.get('cache', { driver: 'in-memory' });
-    this.storage = config.driver === 'in-memory' ? new InMemoryStore() : null;
-  }
+    private event: EmitterContract,
+    private storage: CacheStoreContract
+  ) {}
 
   public async get<T = null>(key: string, defaultValue: T = null): Promise<T | null> {
     const value = await this.storage.get<T>(key);

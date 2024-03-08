@@ -1,6 +1,7 @@
 /// <reference path="./application/index.d.ts" />
 /// <reference path="./auth/index.d.ts" />
 /// <reference path="./bodyparser/index.d.ts" />
+/// <reference path="./cache/index.d.ts" />
 /// <reference path="./config/index.d.ts" />
 /// <reference path="./container/index.d.ts" />
 /// <reference path="./core/index.d.ts" />

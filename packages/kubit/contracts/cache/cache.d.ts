@@ -1,4 +1,6 @@
 declare module '@ioc:Kubit/Cache' {
+  import { RedisConfig } from '@ioc:Kubit/Redis';
+
   export interface CacheStoreContract {
     get<T = any>(key: string): Promise<T | null>;
     getMany<T = any>(keys: string[]): Promise<(T | null)[]>;
@@ -28,7 +30,15 @@ declare module '@ioc:Kubit/Cache' {
     forever<T = any>(key: string, callback: () => Promise<T>): Promise<T>;
   }
 
-  export type CacheDriver = 'in-memory' | 'redis';
+  export type CacheConfig = {
+    store: 'in-memory' | 'redis';
+
+    stores: {
+      redis: {
+        connection: keyof RedisConfig['connections'];
+      };
+    };
+  };
 
   const CacheManager: CacheManagerContract;
 
