@@ -72,14 +72,10 @@ export class CacheManager implements CacheManagerContract {
       return value;
     }
 
-    const newValue = await callback();
+    const newValue = typeof callback === 'function' ? await callback() : callback;
 
     await this.put(key, newValue, ttl);
 
     return newValue;
-  }
-
-  public async forever<T = any>(key: string, callback: () => Promise<T>): Promise<T> {
-    return this.remember(key, 0, callback);
   }
 }

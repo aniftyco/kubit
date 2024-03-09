@@ -25,9 +25,8 @@ declare module '@ioc:Kubit/Cache' {
 
     forget(key: string): Promise<boolean>;
 
+    remember<T = any>(key: string, ttl: number, value: T): Promise<T>;
     remember<T = any>(key: string, ttl: number, callback: () => Promise<T>): Promise<T>;
-
-    forever<T = any>(key: string, callback: () => Promise<T>): Promise<T>;
   }
 
   type InMemoryStoreConfig = {
