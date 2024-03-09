@@ -10,6 +10,7 @@ export default class KubitProvider {
    */
   public provides = [
     resolve(__dirname, './core/provider'),
+    resolve(__dirname, './cache/provider'),
     resolve(__dirname, './encryption/provider'),
     resolve(__dirname, './events/provider'),
     resolve(__dirname, './drive/provider'),

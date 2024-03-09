@@ -37,6 +37,7 @@ declare module '@ioc:Kubit/Config' {
      * ```
      */
     get(key: string, defaultValue?: any): any;
+    get<T = any>(key: string, defaultValue?: T): T;
 
     /**
      * Similar to `Config.get`, but you can also define default values, which
