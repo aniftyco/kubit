@@ -661,6 +661,32 @@ export class ModelQueryBuilder extends Chainable implements ModelQueryBuilderCon
     return this;
   }
 
+  private ensureHasSoftDeletes() {
+    if (!('ignoreDeleted' in this.model && 'ignoreDeletedPaginate' in this.model)) {
+      throw new Exception(`${this.constructor.name} model don't support soft deletes`, 500, 'E_MODEL_SOFT_DELETE');
+    }
+  }
+
+  public async restore() {
+    this.ensureHasSoftDeletes();
+
+    const deletedAtColumn = this.model.$getColumn('deletedAt')?.columnName;
+    await this.update({ [deletedAtColumn]: null });
+  }
+
+  public async withTrashed() {
+    this.ensureHasSoftDeletes();
+
+    return (this.model as any).disableIgnore(this);
+  }
+
+  public async onlyTrashed() {
+    this.ensureHasSoftDeletes();
+
+    const deletedAtColumn = this.model.$getColumn('deletedAt')?.columnName;
+    return (this.model as any).disableIgnore(this).whereNotNull(`${this.model.table}.${deletedAtColumn}`);
+  }
+
   /**
    * Alias for [[del]]
    */

@@ -29,6 +29,8 @@ import {
 } from '@ioc:Kubit/ORM';
 import { Hooks } from '@poppinss/hooks';
 import { defineStaticProperty, Exception, lodash } from '@poppinss/utils';
+import { compose } from '@poppinss/utils/build/helpers';
+import { UnaryFunction } from '@poppinss/utils/build/src/Helpers/compose';
 
 import { ModelKeys } from '../ModelKeys';
 import { SnakeCaseNamingStrategy } from '../NamingStrategies/SnakeCase';
@@ -147,6 +149,10 @@ export class BaseModel implements LucidRow {
     serializedToColumns: ModelKeysContract;
     serializedToAttributes: ModelKeysContract;
   };
+
+  public static use(...mixins: UnaryFunction<typeof BaseModel, unknown>[]) {
+    return compose.call(null, this, ...mixins);
+  }
 
   /**
    * Creates a new model instance with payload and adapter options

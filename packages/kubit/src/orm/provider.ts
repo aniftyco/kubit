@@ -17,6 +17,7 @@ export default class ORMServiceProvider implements ServiceProvider {
       const { Adapter } = require('./Adapter');
       const { scope } = require('./Helpers/scope');
       const decorators = require('./Decorators');
+      const mixins = require('./Mixins');
       const { BaseModel } = require('./BaseModel');
       const { ModelPaginator } = require('./Paginator');
       const { SnakeCaseNamingStrategy } = require('./NamingStrategies/SnakeCase');
@@ -35,6 +36,7 @@ export default class ORMServiceProvider implements ServiceProvider {
         SnakeCaseNamingStrategy,
         scope,
         ...decorators,
+        ...mixins,
       };
     });
   }
