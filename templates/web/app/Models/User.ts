@@ -1,9 +1,9 @@
 import { DateTime } from 'luxon';
 
 import Hash from '@ioc:Kubit/Hash';
-import { beforeSave, column, Model } from '@ioc:Kubit/ORM';
+import { beforeSave, column, Model, SoftDeletes } from '@ioc:Kubit/ORM';
 
-export default class User extends Model {
+export default class User extends Model.use(SoftDeletes) {
   @column({ isPrimary: true })
   public id: number;
 

@@ -24,6 +24,12 @@ declare module '@ioc:Kubit/ORM' {
    * ------------------------------------------------------
    */
 
+  type Constructor = new (...args: any[]) => any;
+
+  interface UnaryFunction<T, R> {
+    (source: T): R;
+  }
+
   /**
    * Same as [[Parameters]] but omits the first parameter
    */
@@ -824,6 +830,19 @@ declare module '@ioc:Kubit/ORM' {
      * Boot model
      */
     boot(): void;
+
+    /**
+     * Use mixins on the model
+     */
+    use<A>(mixin: UnaryFunction<LucidModel, A>): A;
+    use<A, B>(mixin: UnaryFunction<LucidModel, A, B>): B;
+    use<A, B, C>(mixin: UnaryFunction<LucidModel, A, B, C>): C;
+    use<A, B, C, D>(mixin: UnaryFunction<LucidModel, A, B, C, D>): D;
+    use<A, B, C, D, E>(mixin: UnaryFunction<LucidModel, A, B, C, D, E>): E;
+    use<A, B, C, D, E, F>(mixin: UnaryFunction<LucidModel, A, B, C, D, E, F>): F;
+    use<A, B, C, D, E, F, G>(mixin: UnaryFunction<LucidModel, A, B, C, D, E, F, G>): G;
+    use<A, B, C, D, E, F, G, H>(mixin: UnaryFunction<LucidModel, A, B, C, D, E, F, G, H>): H;
+    use<A, B, C, D, E, F, G, H, I>(mixin: UnaryFunction<LucidModel, A, B, C, D, E, F, G, H, I>): I;
 
     /**
      * Register a before hook

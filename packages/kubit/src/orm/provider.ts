@@ -17,6 +17,9 @@ export default class ORMServiceProvider implements ServiceProvider {
       const { Adapter } = require('./Adapter');
       const { scope } = require('./Helpers/scope');
       const decorators = require('./Decorators');
+      const { Slugify } = require('./Decorators/Slugify');
+      const { SlugifyManager } = require('./Slugify/SlugifyManager');
+      const mixins = require('./Mixins');
       const { BaseModel } = require('./BaseModel');
       const { ModelPaginator } = require('./Paginator');
       const { SnakeCaseNamingStrategy } = require('./NamingStrategies/SnakeCase');
@@ -28,13 +31,19 @@ export default class ORMServiceProvider implements ServiceProvider {
       BaseModel.$adapter = new Adapter(this.app.container.resolveBinding('Kubit/Database'));
       BaseModel.$container = this.app.container;
 
+      const manager = new SlugifyManager(this.app);
+      const slugify = new Slugify(manager);
+
       return {
         BaseModel,
         Model: BaseModel,
         ModelPaginator,
         SnakeCaseNamingStrategy,
         scope,
+        Slugify: manager,
         ...decorators,
+        slugify: slugify.slugifyDecorator.bind(slugify),
+        ...mixins,
       };
     });
   }
