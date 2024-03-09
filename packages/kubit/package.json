@@ -1,6 +1,6 @@
 {
   "name": "kubit",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Full stack framework for building applications in Node.js",
   "license": "MIT",
   "repository": "aniftyco/kubit",
