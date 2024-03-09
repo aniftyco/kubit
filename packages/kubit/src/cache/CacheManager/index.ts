@@ -6,16 +6,17 @@ const DEFAULT_TTL = 6000;
 export class CacheManager implements CacheManagerContract {
   constructor(
     private event: EmitterContract,
-    private storage: CacheStoreContract
+    private storage: CacheStoreContract,
+    private defaultTtl: number = DEFAULT_TTL
   ) {}
 
-  public async get<T = null>(key: string, defaultValue: T = null): Promise<T | null> {
+  public async get<T = null>(key: string, callback?: () => Promise<T>): Promise<T | null> {
     const value = await this.storage.get<T>(key);
 
     if (value === null) {
       this.event.emit('cache:missed', key);
 
-      return defaultValue;
+      return await (typeof callback === 'function' ? callback : async () => callback || null).call(undefined);
     }
 
     this.event.emit('cache:hit', [key, value]);
@@ -37,14 +38,14 @@ export class CacheManager implements CacheManagerContract {
     return values;
   }
 
-  public async put<T = any>(key: string, value: T, ttl: number = DEFAULT_TTL): Promise<void> {
-    await this.storage.put(key, value, ttl);
+  public async put<T = any>(key: string, value: T, ttl?: number): Promise<void> {
+    await this.storage.put(key, value, ttl || this.defaultTtl);
 
     this.event.emit('cache:written', [key, value]);
   }
 
-  public async putMany<T = any>(values: Record<string, T>, ttl: number = DEFAULT_TTL): Promise<void> {
-    await this.storage.putMany(values, ttl);
+  public async putMany<T = any>(values: Record<string, T>, ttl?: number): Promise<void> {
+    await this.storage.putMany(values, ttl || this.defaultTtl);
 
     Object.keys(values).forEach((key) => {
       this.event.emit('cache:written', [key, values[key]]);
@@ -72,7 +73,7 @@ export class CacheManager implements CacheManagerContract {
       return value;
     }
 
-    const newValue = typeof callback === 'function' ? await callback() : callback;
+    const newValue = await (typeof callback === 'function' ? callback : async () => callback || null).call(undefined);
 
     await this.put(key, newValue, ttl);
 

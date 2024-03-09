@@ -48,7 +48,7 @@ export class Config implements ConfigContract {
    * Config.get('database.mysql')
    * ```
    */
-  public get(key: string, defaultValue?: any): any {
+  public get<T = any>(key: string, defaultValue?: T): T {
     return lodash.get(this.config, key, defaultValue);
   }
 

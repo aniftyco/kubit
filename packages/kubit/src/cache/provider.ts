@@ -1,5 +1,7 @@
 import type { ApplicationContract } from '@ioc:Kubit/Application';
 
+import { CacheConfig, RedisStoreConfig } from '@ioc:Kubit/Cache';
+
 import { ServiceProvider } from '../index';
 
 /**
@@ -16,18 +18,21 @@ export default class CacheProvider implements ServiceProvider {
       const { RedisStore } = require('./Stores/RedisStore');
       const { CacheManager } = require('./CacheManager');
 
-      const { store } = this.app.config.get('cache');
+      const { store, ttl = 6000, stores = {} } = this.app.config.get<CacheConfig & { stores: any }>('cache');
       const Event = this.app.container.use('Kubit/Event');
 
       switch (store) {
-        case 'redis':
-          return new CacheManager(
-            Event,
-            new RedisStore(this.app.container.use('Kubit/Redis'), `${this.app.env.get('APP_NAME', 'kubit-app')}:cache`)
-          );
+        case 'redis': {
+          const connection = this.app.container
+            .use('Kubit/Redis')
+            .connection((stores as RedisStoreConfig['stores']).redis.connection || 'local');
+          const store = new RedisStore(connection, `${this.app.env.get('APP_NAME', 'kubit-app')}:cache`);
+
+          return new CacheManager(Event, store, ttl);
+        }
         case 'in-memory':
         default:
-          return new CacheManager(Event, new InMemoryStore());
+          return new CacheManager(Event, new InMemoryStore(), ttl);
       }
     });
   }
