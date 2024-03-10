@@ -1,3 +1,0 @@
-# Kubit Documentation
-
-> Coming soon!

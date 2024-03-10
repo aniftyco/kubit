@@ -2,3 +2,5 @@
 node_modules/
 packages/*/dist/
 packages/*/*.tsbuildinfo
+.vitepress/.cache/
+.vitepress/dist/
