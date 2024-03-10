@@ -1,8 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "start": "turbo start",
-    "test": "node -r ts-node/register/transpile-only bin/test.ts"
+    "start": "npm -w kubit run build -- --watch",
+    "docs": "vitepress dev .",
+    "docs:build": "vitepress build .",
+    "docs:preview": "vitepress preview ."
   },
   "author": {
     "name": "NiftyCo, LLC",
@@ -23,15 +25,12 @@
   "devDependencies": {
     "@aniftyco/prettier": "^0.1.0",
     "@aniftyco/tsconfig": "^1.0.1",
-    "@japa/expect": "^2.0.2",
-    "@types/uuid": "^9.0.5",
-    "ajv": "^8.12.0",
+    "@types/node": "^20.11.25",
     "lerna": "^7.3.0",
     "prettier": "^3.0.3",
     "rimraf": "^3.0.2",
-    "source-map-support": "^0.5.21",
-    "ts-node": "^10.9.1",
     "turbo": "^1.10.14",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitepress": "^1.0.0-rc.45"
   }
 }
