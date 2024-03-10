@@ -97,6 +97,7 @@
     "ms": "^2.1.3",
     "multi-part": "^3.0.0",
     "mustache": "^4.2.0",
+    "nanoid": "^5.0.6",
     "node-cron": "^3.0.3",
     "node-repl-await": "^0.1.2",
     "nodemailer": "^6.9.1",
