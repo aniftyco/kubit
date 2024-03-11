@@ -46,7 +46,7 @@ features:
     title: Authorization
     details: Build your own ACL using access actions and policies.
   - icon: 🗄️
-    title: Drive
+    title: Filesystem
     details: Store user uploaded files in Amazon S3, Google Cloud Service or within the local file system.
 ---
 
