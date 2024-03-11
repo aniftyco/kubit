@@ -1,78 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
-
-html, body {
-  background-color: #F7F8FA;
-  font-family: 'Poppins', sans-serif;
+body {
+  background-color: rgb(27, 27, 31) !important;
+  color: rgba(255, 255, 245, 0.86) !important;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.flex {
+  display: flex;
+}
+.center-all {
+  justify-content: center;
+  align-items: center;
+}
+.center-between {
+  justify-content: space-between;
+  align-items: center;
+}
+.center-start {
+  justify-content: flex-start;
+  align-items: center;
+}
+.h-screen {
   height: 100vh;
-  color: #46444c;
+}
+p {
+  color: rgba(235, 235, 245, .6);
+}
+.mt-1 {
+  margin-top: 10px;
+}
+.mt-2 {
+  margin-top: 20px;
+}
+.mt-3 {
+  margin-top: 30px;
+}
+.ml-1 {
+  margin-left: 10px;
+}
+.ml-2 {
+  margin-left: 20px;
+}
+.ml-3 {
+  margin-left: 30px;
+}
+.mr-1 {
+  margin-right: 10px;
+}
+.mr-2 {
+  margin-right: 20px;
+}
+.mr-3 {
+  margin-right: 30px;
+}
+.container {
+  max-width: 900px;
+  padding: 20px;
+}
+.cards {
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+.card {
+  background: rgb(32, 33, 39);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 8px;
+  width: calc(50% - 80px);
+  display: flex;
+  align-items: start;
+}
+.icon {
+  margin-top: 4px;
+  font-size: 24px;
+  width: 48px;
+}
+.brand {
+  background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer {
+  display: flex;
+  justify-content: end;
+  padding-left: 8px;
+  padding-right: 10px;
+  margin-top: -10px;
+}
+.version {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+
+}
+.image-container {
+  width: 35px;
+  height: 35px;
   position: relative;
+  margin-right: 12px;
 }
-
-body:before {
-  content: '';
-  background: #b91c1c;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
+.bg-blur {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  filter: blur(16px);
+  transform: translate(-50%,-50%);
 }
-
-* {
-  margin: 0;
-  padding: 0;
+.src {
+  height: 35px;
+  margin-right: 15px;
 }
-
 a {
-  color: #b91c1c;
+  color: rgb(168, 177, 255);
   text-decoration: none;
 }
-
-main {
-  max-width: 620px;
-  margin: auto;
-  height: 100vh;
-  padding: 0 30px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.title {
-  font-size: 50px;
-  line-height: 50px;
-  margin-bottom: 10px;
-  color: #17161A;
-}
-
-.subtitle {
-  font-size: 26px;
-  margin-bottom: 40px;
-}
-
-p {
-  margin-bottom: 20px;
-}
-
-main ul {
-  list-style: none;
-}
-
-main li {
-  margin-bottom: 5px;
-  position: relative;
-  padding-left: 25px;
-}
-
-main li:before {
-  content: '—';
-  position: absolute;
-  left: 0;
-}
-
-main code {
-  font-size: 12px;
-  padding: 4px 5px;
-  background: #fee2e2;
-  color: #b91c1c;
+a:hover {
+  text-decoration: underline;
 }
