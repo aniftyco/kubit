@@ -14,6 +14,7 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,
+  scrollOffset: 'header',
   themeConfig: {
     siteTitle: false,
     logo: {
