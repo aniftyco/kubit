@@ -6,7 +6,7 @@ hero:
   name: Kubit
   text: Web framework for Node.js
   tagline:
-    TypeScript-first web framework with everything you need to build an application with an ecosystem of official
+    TypeScript-first web framework with everything you need to build a full-stack application with an ecosystem of official
     packages and more.
   actions:
     - theme: brand
@@ -29,25 +29,25 @@ features:
       controller classes.
   - icon: 📤
     title: File Uploads
-    details: Along with the standard bodyparser, the support for managing file uploads is baked into the framework core.
+    details: Along with the standard bodyparser, the support for managing file uploads is baked into the framework's core.
   - icon: 🔍
     title: Validator
     details: The schema based validator in Kubit provides you both the runtime validations and static type safety.
   - icon: 🛠️
     title: Template Engine
-    details: Create traditional style server rendered web apps using home grown template engine of Kubit.
+    details: Create traditional style server rendered web apps using the home grown template engine of Kubit.
   - icon: 🗃️
     title: Object-Relational Mapping (ORM)
-    details: A SQL ORM built on top of Active Record pattern.
+    details: An SQL ORM built on top of Active Record pattern.
   - icon: 🔒
     title: Authentication
     details: Build login flows using API tokens or sessions.
   - icon: 🔑
     title: Authorization
-    details: Build your own ACL using acess actions and policies.
+    details: Build your own ACL using access actions and policies.
   - icon: 🗄️
-    title: Dive
-    details: Store user uploaded files in S3, GCS or within the local file system.
+    title: Drive
+    details: Store user uploaded files in Amazon S3, Google Cloud Service or within the local file system.
 ---
 
 <style>
