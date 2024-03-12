@@ -3,7 +3,7 @@ import 'reflect-metadata';
 
 import sourcemaps from 'source-map-support';
 
-import { Ignitor } from './Ignitor';
+import { Ignitor } from './core/Ignitor';
 
 sourcemaps.install({ handleUncaughtExceptions: false });
 

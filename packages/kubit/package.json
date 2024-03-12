@@ -14,12 +14,10 @@
   "files": [
     "contracts",
     "dist",
-    "templates",
-    "bin.js"
+    "templates"
   ],
   "bin": {
-    "kubit": "bin.js",
-    "ace": "bin.js"
+    "kubit": "dist/bin.js"
   },
   "main": "dist/index.js",
   "engines": {
