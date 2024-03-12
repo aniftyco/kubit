@@ -1,7 +1,6 @@
 {
   "name": "create-kubit",
   "version": "0.1.0",
-  "private": true,
   "bin": {
     "create-kubit": "./dist/index.js"
   },
@@ -12,5 +11,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "download-git-repo": "^3.0.2"
+  }
 }

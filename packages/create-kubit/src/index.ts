@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-// Coming soon!
-process.stderr.write('Coming soon!\n');
-process.exit(1);
+
+import { program } from './program';
+
+program(process.argv.slice(2), process.cwd()).catch(console.error);
