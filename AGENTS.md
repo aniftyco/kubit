@@ -17,6 +17,79 @@ Always consult these docs before changing public APIs or directory structure. If
 
 If any file under `docs/` changes (SPEC, SKELETON_APP, TEST_PLAN, ROADMAP, BRAINDUMP, or new docs), you must update `AGENTS.md` in the same change to reflect new or modified guidance. This prevents agents from operating against stale instructions and ensures new capabilities are discoverable here.
 
+## Spec Elicitation Playbook
+
+When expanding the spec, use the prompts below to extract details and capture them in `docs/SPEC.md` under the appropriate subsystem sections. Prefer concrete examples and TypeScript signatures.
+
+General prompts (ask per subsystem):
+- Goals vs. non‑goals: What is in scope for MVP vs. later?
+- Inputs/outputs: What goes in and what must come out? Data shapes?
+- Lifecycle: Step‑by‑step flow; extension points?
+- Configuration: Knobs, defaults, and override mechanisms?
+- Errors: Failure modes; error types; surfacing to users/devs?
+- Edge cases: Tricky scenarios to support or explicitly reject?
+- Security: AuthN/Z, CSRF, CORS, secrets, privacy?
+- Performance: Latency, streaming, caching, batching?
+- Extensibility: Hooks, interfaces, adapters, plugin points?
+- Testing: What tests prove it? Unit/integration/e2e? Fixtures?
+- Open questions: Anything undecided → add to SPEC “Open Questions”.
+
+Subsystem deep‑dive prompts:
+- HTTP Kernel & Responses
+  - Request/response abstraction (Node vs. Web standard)? Streaming?
+  - Middleware pipeline order/composition? Error handling policy?
+  - Static vs. app route precedence? 404/405/500 behavior?
+- Router
+  - Path syntax, params, constraints, trailing slash, case sensitivity?
+  - Named routes, reverse routing, route groups, per‑route middleware?
+  - Controller action resolution: instantiation, async, context binding?
+- Controllers & DI
+  - Construction: DI container or factories? Access to request/config?
+  - Return types: text, JSON, redirects, `view()`, streams; helpers?
+  - Validation strategy and error reporting (MVP vs. future)?
+- Views, SSR & Inertia‑style Protocol
+  - Envelope shape: `{ component, props, url, version }`? Layouts?
+  - Hydration: bundle splitting, asset manifest, client runtime duties?
+  - Forms/links: enhancement, file uploads, optimistic UI?
+- Assets & Static
+  - Bundler choice (Vite/esbuild/rollup) and dev server integration?
+  - Cache headers, etags, fingerprinting?
+- Config & Env
+  - Loading order (`.env`, process env), type casting, overrides?
+  - Runtime vs. build‑time config split?
+- ORM/DB & Migrations
+  - Table builder DSL surface and compat plan (Knex/Drizzle)?
+  - Runner: tracking table, up/down, transactions, seeding?
+- Jobs & Queue
+  - Dispatch API, queue names, retries/backoff, idempotency, scheduling?
+  - Worker lifecycle, graceful shutdown, visibility timeouts?
+- Mail
+  - Rendering API, transport abstraction, env config, attachments?
+  - Preview/dev mailbox, test fakes?
+- CLI
+  - Commands, flags, config discovery, watch mode, error UX?
+- Observability
+  - Logging format/levels, tracing hooks, metrics?
+
+Capture answers in the relevant SPEC section; when a decision is made, add it to the SPEC’s Decision Log.
+
+## Subsystem Spec Template (use in SPEC)
+
+For each subsystem in `docs/SPEC.md`, structure content using this outline:
+- Goals
+- Non‑Goals
+- Concepts & Vocabulary
+- API Surface (TypeScript)
+- Configuration
+- Lifecycle & Control Flow
+- Edge Cases & Errors
+- Security & Privacy
+- Performance & Scaling
+- Extensibility & Integration Points
+- Testing Strategy & Fixtures
+- Open Questions
+- Alternatives Considered
+
 ## Way of Working
 
 - Plan first: keep a short, up‑to‑date plan and mark progress as you go.
