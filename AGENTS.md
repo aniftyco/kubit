@@ -10,6 +10,8 @@ Scope: The entire repository unless superseded by a more specific AGENTS.md deep
 - Skeleton app spec: `docs/SKELETON_APP.md`
 - Test plan: `docs/TEST_PLAN.md`
 - Background/motivation: `docs/BRAINDUMP.md`
+- RFC process: `docs/rfcs/README.md`
+- RFC template: `docs/RFC_TEMPLATE.md`
 
 Always consult these docs before changing public APIs or directory structure. If you adjust the API, update the spec and tests in the same change.
 
@@ -150,8 +152,9 @@ As noted in `docs/SPEC.md`, initial implementations can be simplified:
 
 ## Proposing Changes
 
+0. For non‑trivial design or any public API change, create an RFC (`docs/rfcs/README.md`) and follow the template.
 1. Update acceptance criteria in `docs/SKELETON_APP.md` and/or `docs/TEST_PLAN.md`
 2. Add/adjust tests in `skeleton/tests/*`
 3. Update `packages/core/index.d.ts` if the public API changes
 4. Implement the minimal feature in `packages/*`
-5. Ensure docs remain accurate
+5. Ensure docs remain accurate (including `AGENTS.md` per Docs Sync Requirement)
