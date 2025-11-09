@@ -1,6 +1,6 @@
 # Kubit
 
-TypeScript‑first, monolithic MVC for the modern web. React for views. Inertia‑style navigation. Batteries included.
+TypeScript‑first MVC full‑stack framework for the modern web. React for views. Inertia‑style navigation. Batteries included.
 
 Status: exploratory. This repo contains a skeleton application and type‑only “core” stubs that define Kubit’s public API
 while implementation evolves.
@@ -33,7 +33,6 @@ worlds.
 - Framework spec: `docs/SPEC.md`
 - Skeleton app spec: `docs/SKELETON_APP.md`
 - Test plan: `docs/TEST_PLAN.md`
-- Roadmap: `docs/ROADMAP.md`
 - RFCs: `docs/rfcs/README.md`
 - Background and motivation: `docs/BRAINDUMP.md`
 

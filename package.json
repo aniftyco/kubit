@@ -1,5 +1,6 @@
 {
   "name": "kubit",
+  "description": "TypeScript-first MVC full-stack framework for the modern web",
   "private": true,
   "prettier": "@aniftyco/prettier",
   "devDependencies": {
