@@ -1,5 +1,10 @@
 {
   "private": true,
+  "scripts": {
+    "start": "kubit start",
+    "build": "kubit build",
+    "test": "kubit test"
+  },
   "dependencies": {
     "kubit": "*",
     "react": "^19.2.0",
