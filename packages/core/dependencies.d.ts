@@ -3,3 +3,7 @@ declare module "react" {
     (props: P): any;
   }
 }
+
+declare module "datetime" {
+  export type DateTime = Date;
+}
