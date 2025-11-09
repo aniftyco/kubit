@@ -11,6 +11,7 @@ export default class extends Migration {
       table.rememberToken();
 
       table.timestamps();
+      table.softDeletes();
     });
   }
 
