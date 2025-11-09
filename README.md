@@ -5,6 +5,9 @@ TypeScript‑first, monolithic MVC for the modern web. React for views. Inertia�
 Status: exploratory. This repo contains a skeleton application and type‑only “core” stubs that define Kubit’s public API
 while implementation evolves.
 
+> [!CAUTION]
+> This project reflects my personal vision of an ideal full‑stack framework for JavaScript and for my own needs. Feedback is welcome, but I reserve the right to ignore any or all of it.
+
 ## What Is Kubit?
 
 Kubit aims to combine a classic MVC backend with a modern React frontend story: controllers and models on the server,
