@@ -6,6 +6,6 @@
       "@app/views/*": ["./views/*"],
       "@app/*": ["./app/*"]
     },
-    "types": ["../packages/core/index.d.ts"]
+    "types": ["../packages/core/index.d.ts", "../packages/core/tests.d.ts"]
   }
 }
