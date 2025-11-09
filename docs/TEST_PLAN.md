@@ -15,6 +15,10 @@ Phase 0: Types
 
 - `tsc` passes for the skeleton
 - Imports from `kubit:*` resolve via `packages/core/index.d.ts`
+- Decorators compile for models (tsconfig: `experimentalDecorators` enabled)
+- DOM types available for React components (`lib: [ESNext, DOM]`)
+- Ambient `datetime` module resolves and `DateTime` types fields
+- `kubit:hash` import resolves and has async `hash(string)` signature
 
 Phase 1: Routing + Responses
 

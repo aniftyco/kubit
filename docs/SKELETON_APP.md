@@ -6,6 +6,7 @@ The skeleton demonstrates the intended developer experience and acts as the acce
 
 - `skeleton/app/routes.ts`: route definitions
 - `skeleton/app/controllers/*`: class‑based controllers
+- `skeleton/app/models/*`: class‑based models using decorators, relations, and traits
 - `skeleton/views/*`: React page components
 - `skeleton/components/*`: shared React components
 - `skeleton/config/app.ts`: app config via `defineConfig` and `env`
@@ -31,6 +32,7 @@ The skeleton demonstrates the intended developer experience and acts as the acce
 
 - Routes: `skeleton/app/routes.ts:1`
 - Controller: `skeleton/app/controllers/home.ts:1`
+- Models: `skeleton/app/models/user.ts:1`, `skeleton/app/models/post.ts:1`
 - View: `skeleton/views/home.tsx:1`
 - Component: `skeleton/components/button.tsx:1`
 - Config: `skeleton/config/app.ts:1`

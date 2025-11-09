@@ -71,13 +71,28 @@ Package entry (ambient types provided in packages/core/index.d.ts):
   - Supports optional layout wrappers and page metadata
 
 - `kubit:orm`
-  - `class Model {}` base with future: `find`, `query`, relations, scopes
+  - `class Model {}` base with initial async `save()`/`destroy()` and static `find(id)`
+  - Property decorators for columns and timestamps:
+    - `column(options?)`: marks a property as a persisted attribute
+    - `column.dateTime(options?)`: convenience for timestamp fields
+  - Lifecycle hooks as decorators:
+    - `before(event: 'save' | 'create' | 'update' | 'destroy')`
+    - `after(event: 'save' | 'create' | 'update' | 'destroy')`
+  - Relations (shape-only for MVP):
+    - `hasOne(() => Model)` → property typed as `HasOne<typeof Related>`
+    - `hasMany(() => Model)` → property typed as `HasMany<typeof Related>` (alias of `Collection<T>`)
+  - Traits and mixins:
+    - `use(...traits)` class decorator
+    - `SoftDeletes` trait (adds `deletedAt` semantics)
+
+- `kubit:hash`
+  - `hash(value: string): Promise<string>` — async one-way hashing helper for common tasks (e.g., passwords)
 
 - `kubit:db`
   - `class Migration { up(); down(); }`
   - `schema.createTable(name, (table) => { ... })`
   - `schema.dropTableIfExists(name)`
-  - Table builder (MVP): `uuid`, `string`, `primary`, `unique`, `index`, `timestamps`, `rememberToken`
+  - Table builder (MVP): `uuid`, `string`, `text`, `primary`, `unique`, `index`, `timestamps`, `softDeletes`, `rememberToken`, `foreignIdFor(Model)`
 
 - `kubit:jobs`
   - `class Job { async handle() {} }`
@@ -96,7 +111,17 @@ Package entry (ambient types provided in packages/core/index.d.ts):
   - `config/` for runtime config; `config/app.ts` as entry
   - `database/migrations` for migration classes
   - `public/` for static assets
-  - `storage/` for runtime storage/logs/cache (implementation TBD)
+- `storage/` for runtime storage/logs/cache (implementation TBD)
+
+### TypeScript & Ambient Types
+
+- Skeleton `tsconfig.json` enables decorators and DOM types for React:
+  - `"lib": ["ESNext", "DOM"]`
+  - `"experimentalDecorators": true`
+  - `"types": ["../packages/core/index.d.ts", "../packages/core/tests.d.ts"]`
+- Ambient modules provided by `packages/core`:
+  - `datetime` exposes `export type DateTime = Date;` for timestamp fields
+  - React’s minimal `FC` is available for page/components typing
 
 ## CLI (initial contract)
 
