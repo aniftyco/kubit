@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "paths": {
+      "@app/components/*": ["./components/*"],
+      "@app/*": ["./app/*"]
+    },
+    "types": ["../packages/core/index.d.ts"]
+  }
+}

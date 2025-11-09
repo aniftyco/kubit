@@ -4,6 +4,14 @@ declare module "react" {
   }
 }
 
+declare module "@app:config" {
+  export function defineConfig<T>(config: T): T;
+}
+
+declare module "@app:env" {
+  export function env<T>(key: string, defaultValue: T): T;
+}
+
 declare module "@app:inertia" {
   export function view(
     page: string,
@@ -40,6 +48,18 @@ declare module "@app:orm" {
   export class Model {
     // ORM base model methods and properties
   }
+}
+
+declare module "@app:db" {
+  export class Migration {}
+
+  export const schema: {
+    createTable(
+      table: string,
+      callback: (table: Record<string, any>) => void
+    ): Promise<void>;
+    dropTableIfExists(table: string): Promise<void>;
+  };
 }
 
 declare module "@app:jobs" {
