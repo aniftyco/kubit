@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "lib": ["ESNext"],
     "jsx": "preserve",
     "paths": {
       "@app/components/*": ["./components/*"],
