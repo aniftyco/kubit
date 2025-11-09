@@ -24,6 +24,11 @@ Kubit aims to combine a classic MVC backend with a modern React frontend story: 
 
 ## Read More
 
+- Framework spec: `docs/SPEC.md`
+- Skeleton app spec: `docs/SKELETON_APP.md`
+- Test plan: `docs/TEST_PLAN.md`
+- Roadmap: `docs/ROADMAP.md`
+- RFCs: `docs/rfcs/README.md`
 - Background and motivation: `docs/BRAINDUMP.md`
 
 ## Status and Next Steps
