@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext"],
+    "lib": ["ESNext", "DOM"],
     "jsx": "preserve",
+    "experimentalDecorators": true,
     "paths": {
       "@app/components/*": ["./components/*"],
       "@app/views/*": ["./views/*"],
