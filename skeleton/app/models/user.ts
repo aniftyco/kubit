@@ -1,15 +1,7 @@
-import { DateTime } from "datetime";
-import {
-  Model,
-  column,
-  before,
-  use,
-  SoftDeletes,
-  hasMany,
-  HasMany,
-} from "kubit:orm";
-import { hash } from "kubit:hash";
-import { Post } from "@app/models/post";
+import { DateTime } from 'datetime';
+import { hash } from 'kubit:hash';
+import { Model, column, before, use, SoftDeletes, hasMany, HasMany } from 'kubit:orm';
+import { Post } from '@app/models/post';
 
 @use(SoftDeletes)
 export class User extends Model {

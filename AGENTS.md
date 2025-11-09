@@ -13,17 +13,22 @@ Scope: The entire repository unless superseded by a more specific AGENTS.md deep
 - RFC process: `docs/rfcs/README.md`
 - RFC template: `docs/RFC_TEMPLATE.md`
 
-Always consult these docs before changing public APIs or directory structure. If you adjust the API, update the spec and tests in the same change.
+Always consult these docs before changing public APIs or directory structure. If you adjust the API, update the spec and
+tests in the same change.
 
 ## Docs Sync Requirement
 
-If any file under `docs/` changes (SPEC, SKELETON_APP, TEST_PLAN, ROADMAP, BRAINDUMP, or new docs), you must update `AGENTS.md` in the same change to reflect new or modified guidance. This prevents agents from operating against stale instructions and ensures new capabilities are discoverable here.
+If any file under `docs/` changes (SPEC, SKELETON_APP, TEST_PLAN, ROADMAP, BRAINDUMP, or new docs), you must update
+`AGENTS.md` in the same change to reflect new or modified guidance. This prevents agents from operating against stale
+instructions and ensures new capabilities are discoverable here.
 
 ## Spec Elicitation Playbook
 
-When expanding the spec, use the prompts below to extract details and capture them in `docs/SPEC.md` under the appropriate subsystem sections. Prefer concrete examples and TypeScript signatures.
+When expanding the spec, use the prompts below to extract details and capture them in `docs/SPEC.md` under the
+appropriate subsystem sections. Prefer concrete examples and TypeScript signatures.
 
 General prompts (ask per subsystem):
+
 - Goals vs. non‑goals: What is in scope for MVP vs. later?
 - Inputs/outputs: What goes in and what must come out? Data shapes?
 - Lifecycle: Step‑by‑step flow; extension points?
@@ -37,6 +42,7 @@ General prompts (ask per subsystem):
 - Open questions: Anything undecided → add to SPEC “Open Questions”.
 
 Subsystem deep‑dive prompts:
+
 - HTTP Kernel & Responses
   - Request/response abstraction (Node vs. Web standard)? Streaming?
   - Middleware pipeline order/composition? Error handling policy?
@@ -78,6 +84,7 @@ Capture answers in the relevant SPEC section; when a decision is made, add it to
 ## Subsystem Spec Template (use in SPEC)
 
 For each subsystem in `docs/SPEC.md`, structure content using this outline:
+
 - Goals
 - Non‑Goals
 - Concepts & Vocabulary
@@ -102,14 +109,16 @@ For each subsystem in `docs/SPEC.md`, structure content using this outline:
 
 ## Source of Truth (Public API)
 
-- `packages/core/index.d.ts` defines the ambient types for the public API (`kubit`, `kubit:router`, `kubit:inertia`, `kubit:orm`, `kubit:db`, `kubit:jobs`, `kubit:mail`).
+- `packages/core/index.d.ts` defines the ambient types for the public API (`kubit`, `kubit:router`, `kubit:inertia`,
+  `kubit:orm`, `kubit:db`, `kubit:jobs`, `kubit:mail`).
 - Treat these definitions as the contract. When adding capabilities, update the types, the spec, and the tests together.
 
 ## Implementation Guidance
 
 - Language: TypeScript. Favor class‑based objects for controllers, models, jobs, and mailables.
 - Views: React (19) for SSR + hydration. Inertia‑style protocol for navigation.
-- Minimal viable implementations are acceptable initially (no‑op/stub) if they match the API and enable tests to pass. Examples:
+- Minimal viable implementations are acceptable initially (no‑op/stub) if they match the API and enable tests to pass.
+  Examples:
   - DB/migrations can record schema calls in memory without a real database.
   - Jobs and Mail can log to console/return HTML while preserving the API.
 - Packages: start small. Likely candidates as code emerges (names may evolve):
@@ -123,7 +132,8 @@ For each subsystem in `docs/SPEC.md`, structure content using this outline:
 
 Subpath Exports:
 
-- The skeleton imports module IDs like `kubit:router`. When creating a runtime package, ensure `kubit` provides subpath exports (Node `exports` field) so `kubit:router` resolves properly.
+- The skeleton imports module IDs like `kubit:router`. When creating a runtime package, ensure `kubit` provides subpath
+  exports (Node `exports` field) so `kubit:router` resolves properly.
 
 ## Conventions
 

@@ -1,13 +1,13 @@
-import { Migration, schema } from "kubit:db";
+import { Migration, schema } from 'kubit:db';
 
 export default class extends Migration {
   async up() {
-    return schema.createTable("users", (table) => {
-      table.uuid("id").primary();
+    return schema.createTable('users', (table) => {
+      table.uuid('id').primary();
 
-      table.string("name");
-      table.string("email").unique().index();
-      table.string("password");
+      table.string('name');
+      table.string('email').unique().index();
+      table.string('password');
       table.rememberToken();
 
       table.timestamps();
@@ -16,6 +16,6 @@ export default class extends Migration {
   }
 
   async down() {
-    return schema.dropTableIfExists("users");
+    return schema.dropTableIfExists('users');
   }
 }

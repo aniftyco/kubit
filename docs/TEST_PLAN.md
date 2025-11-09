@@ -1,8 +1,10 @@
 # Test Plan
 
-We will drive Kubit’s core via tests authored against the skeleton app. The plan starts with minimal unit/integration tests and grows toward end‑to‑end.
+We will drive Kubit’s core via tests authored against the skeleton app. The plan starts with minimal unit/integration
+tests and grows toward end‑to‑end.
 
 ## Tooling
+
 - Test runner: Vitest (or Jest) in the skeleton
 - HTTP assertions: Supertest‑style or native fetch against the dev server
 - Type checks: `tsc --noEmit` against skeleton with `packages/core` types
@@ -10,37 +12,44 @@ We will drive Kubit’s core via tests authored against the skeleton app. The pl
 ## Phases
 
 Phase 0: Types
+
 - `tsc` passes for the skeleton
 - Imports from `kubit:*` resolve via `packages/core/index.d.ts`
 
 Phase 1: Routing + Responses
+
 - GET `/` returns 200 and HTML containing “Welcome to the Home Page”
 - GET `/foo` returns 200 and text `foo`
 - GET `/bar` returns 200 and text `bar`
 - Route table contains names: `home`, `foo`, `bar`
 
 Phase 2: Views + Inertia SSR
+
 - `view('home', { time })` renders time into HTML
 - Response includes minimal client boot script for hydration
 - Client hydration runs; Button click triggers `alert`
 
 Phase 3: Static Files
+
 - GET `/favicon.ico` returns file from `public/`
 
 Phase 4: Config
+
 - `config/app.ts` evaluates with defaults when env vars are missing
 - `env('APP_DEBUG', false)` is boolean false by default; true when set
 
 Phase 5: DB Migrations (No‑op Backend)
+
 - `schema.createTable(...)` calls are recorded and surfaced in logs
 - `schema.dropTableIfExists(...)` calls are recorded
 
 Phase 6: Jobs + Mail (Stubs)
+
 - `ExampleJob.handle()` runs once per dispatch; logs a line
 - `ExampleMail.handle()` returns HTML string from `view('emails.example', ...)`
 
 ## Stretch (Future)
+
 - Reverse routing: `route('home')` produces `/`
 - Form posts: minimal body parsing and validation errors envelope
 - Error pages: 404/500 templates
-

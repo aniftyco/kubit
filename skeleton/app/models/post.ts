@@ -1,6 +1,6 @@
-import { DateTime } from "datetime";
-import { Model, column, use, hasOne, SoftDeletes, HasOne } from "kubit:orm";
-import { User } from "@app/models/user";
+import { DateTime } from 'datetime';
+import { Model, column, use, hasOne, SoftDeletes, HasOne } from 'kubit:orm';
+import { User } from '@app/models/user';
 
 @use(SoftDeletes)
 export class Post extends Model {

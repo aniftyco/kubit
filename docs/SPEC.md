@@ -1,16 +1,21 @@
 # Kubit Framework Spec (Living Doc)
 
-This document defines Kubit’s goals, architecture, and public APIs. It is the living source of truth that evolves alongside the skeleton app and tests. See AGENTS.md for the elicitation playbook and editing guidance.
+This document defines Kubit’s goals, architecture, and public APIs. It is the living source of truth that evolves
+alongside the skeleton app and tests. See AGENTS.md for the elicitation playbook and editing guidance.
 
 ## How to Use This Spec
-- Treat this as a specification you can extend. Start by updating acceptance criteria in `docs/SKELETON_APP.md` and tests, then reflect decisions here.
+
+- Treat this as a specification you can extend. Start by updating acceptance criteria in `docs/SKELETON_APP.md` and
+  tests, then reflect decisions here.
 - When a design decision is made, record it under Decision Log with a brief rationale.
 - Capture unknowns under Open Questions; mirror them in subsystem sections.
 
 ## Decision Log
+
 - [TBD] Decisions will be recorded here with date and rationale.
 
 ## Open Questions
+
 - [TBD] Aggregate unresolved items here and link to subsystem sections.
 
 ## Goals
@@ -51,36 +56,30 @@ This document defines Kubit’s goals, architecture, and public APIs. It is the 
 Package entry (ambient types provided in packages/core/index.d.ts):
 
 - `kubit`
-
   - `defineConfig<T>(config: T): T`
   - `env<T>(key: string, defaultValue: T): T`
 
 - `kubit:router`
-
   - `router.name(name: string): router`
   - `router.get(path, handler)`; later: post/put/patch/delete/options
   - `handler`: `(...args) => any | Promise<any>` OR `[ControllerClass, "method"]`
   - Named routes enable reverse URL generation (future: `route('name', params)`).
 
 - `kubit:inertia`
-
   - `view(page: string, data?: Record<string, any>)`
   - Resolves React component at `views/<page>.tsx` and renders SSR + envelope
   - Supports optional layout wrappers and page metadata
 
 - `kubit:orm`
-
   - `class Model {}` base with future: `find`, `query`, relations, scopes
 
 - `kubit:db`
-
   - `class Migration { up(); down(); }`
   - `schema.createTable(name, (table) => { ... })`
   - `schema.dropTableIfExists(name)`
   - Table builder (MVP): `uuid`, `string`, `primary`, `unique`, `index`, `timestamps`, `rememberToken`
 
 - `kubit:jobs`
-
   - `class Job { async handle() {} }`
   - Future: `dispatch(job)`, queue workers, retries, backoff
 
@@ -125,15 +124,18 @@ Package entry (ambient types provided in packages/core/index.d.ts):
 
 ## Evolution
 
-We’ll use the skeleton app and the tests in `docs/TEST_PLAN.md` to drive features. Any new capability should be expressed first in the skeleton or tests, then implemented in core with minimal API churn.
+We’ll use the skeleton app and the tests in `docs/TEST_PLAN.md` to drive features. Any new capability should be
+expressed first in the skeleton or tests, then implemented in core with minimal API churn.
 
 ---
 
 # Subsystem Specifications
 
-Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts, API Surface, Configuration, Lifecycle, Edge Cases & Errors, Security, Performance, Extensibility, Testing, Open Questions, Alternatives.
+Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts, API Surface, Configuration, Lifecycle,
+Edge Cases & Errors, Security, Performance, Extensibility, Testing, Open Questions, Alternatives.
 
 ## HTTP Kernel & Server
+
 - Goals: Minimal Node HTTP server with middleware pipeline and error handling.
 - Non‑Goals: Full framework‑agnostic server replacement.
 - Concepts: Request/Response abstraction (TBD: Node vs. Web standard), middleware chain.
@@ -149,6 +151,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: Undici fetch/Web standard vs. Node `http`.
 
 ## Router
+
 - Goals: Named routes, controller actions, inline handlers.
 - Non‑Goals: Advanced pattern matching beyond basic params.
 - Concepts: Route table, name map, method map.
@@ -164,6 +167,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: Trie vs. regex routing; groups vs. middleware stacks.
 
 ## Controllers & Request/Response
+
 - Goals: Class‑based controllers; clean access to request/context.
 - Non‑Goals: Full DI container in MVP.
 - Concepts: Controller instance per request; context shaping.
@@ -179,6 +183,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: Functional handlers only vs. class methods.
 
 ## Middleware
+
 - Goals: Simple, composable pipeline for cross‑cutting concerns.
 - Non‑Goals: Complex dependency graph of middlewares.
 - Concepts: `next()` chain; request context mutation.
@@ -194,6 +199,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: Koa‑style vs. Express‑style.
 
 ## Config & Env
+
 - Goals: Typed config via `defineConfig` and `env()`.
 - Non‑Goals: Full schema validation engine in MVP.
 - Concepts: Central `config/app.ts`; environment overlay.
@@ -209,6 +215,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: zod‑based schema validation later.
 
 ## Views, SSR & Inertia‑style Protocol
+
 - Goals: Server render React views and hydrate; lightweight client runtime.
 - Non‑Goals: Full RSC adoption in MVP.
 - Concepts: Page component, props, layout, envelope.
@@ -224,6 +231,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: Inertia protocol compatibility vs. bespoke envelope.
 
 ## Static Files & Assets
+
 - Goals: Serve files from `public/`; integrate bundler for client assets.
 - Non‑Goals: Full asset pipeline initially.
 - Concepts: Static route prefix; fingerprinted assets.
@@ -239,6 +247,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: Vite integration vs. esbuild custom.
 
 ## ORM/DB & Migrations
+
 - Goals: Migration runner + schema DSL (no‑op/in‑memory for MVP).
 - Non‑Goals: Full ORM in MVP.
 - Concepts: Migration class (up/down); schema builder.
@@ -254,6 +263,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: Knex/Drizzle/Prisma migrations.
 
 ## Jobs & Queue
+
 - Goals: Define jobs and run them (in‑memory in MVP).
 - Non‑Goals: Distributed queue initially.
 - Concepts: Job class; dispatcher; worker loop.
@@ -269,6 +279,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: BullMQ, Mini‑queues.
 
 ## Mail
+
 - Goals: Render mailables via React; send via transport (stub in MVP).
 - Non‑Goals: Complex templating beyond React.
 - Concepts: Mailable class; transport abstraction.
@@ -284,6 +295,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: Nodemailer vs. provider SDKs.
 
 ## CLI
+
 - Goals: One entry point for dev/build/test/migrate/queue/mail.
 - Non‑Goals: Full project generator initially (beyond `make:*`).
 - Concepts: Commands, flags, config discovery.
@@ -299,6 +311,7 @@ Each subsystem below follows a consistent outline: Goals, Non‑Goals, Concepts,
 - Alternatives: Oclif/Commander custom CLI.
 
 ## Observability & Errors
+
 - Goals: Useful logs; clear stack traces and error pages.
 - Non‑Goals: Full tracing/metrics initially.
 - Concepts: Logger interface; error boundary page.

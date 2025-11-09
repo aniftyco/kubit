@@ -1,13 +1,13 @@
-import { defineConfig, env } from "kubit";
+import { defineConfig, env } from 'kubit';
 
 export default defineConfig({
-  name: env("APP_NAME", "Kubit"),
+  name: env('APP_NAME', 'Kubit'),
 
-  env: env("APP_ENV", "production"),
+  env: env('APP_ENV', 'production'),
 
-  debug: env("APP_DEBUG", false),
+  debug: env('APP_DEBUG', false),
 
-  url: env("APP_URL", "http://localhost"),
+  url: env('APP_URL', 'http://localhost'),
 
-  timezone: env("APP_TIMEZONE", "UTC"),
+  timezone: env('APP_TIMEZONE', 'UTC'),
 });

@@ -3,6 +3,7 @@
 The skeleton demonstrates the intended developer experience and acts as the acceptance suite driver for core features.
 
 ## Layout
+
 - `skeleton/app/routes.ts`: route definitions
 - `skeleton/app/controllers/*`: class‑based controllers
 - `skeleton/views/*`: React page components
@@ -14,6 +15,7 @@ The skeleton demonstrates the intended developer experience and acts as the acce
 - `skeleton/tests/*`: tests driving features
 
 ## Must‑Have Behaviors (MVP)
+
 - Boot a dev server that:
   - Serves `/` via `HomeController.index` returning `view('home', props)`
   - Serves `/foo` and `/bar` with inline handlers (string/async)
@@ -26,6 +28,7 @@ The skeleton demonstrates the intended developer experience and acts as the acce
 - Render a `Mailable` via `view()` returning HTML (no transport in MVP).
 
 ## Example References
+
 - Routes: `skeleton/app/routes.ts:1`
 - Controller: `skeleton/app/controllers/home.ts:1`
 - View: `skeleton/views/home.tsx:1`
@@ -38,27 +41,33 @@ The skeleton demonstrates the intended developer experience and acts as the acce
 ## Acceptance Criteria Checklists
 
 Server + Router
+
 - Resolves inline and controller handlers
 - Supports `router.name()` and persists names in route table
 - Returns 200 for `/`, `/foo`, `/bar`
 
 Views + Inertia
+
 - `view('home', props)` SSR matches component output and includes props
 - Client hydration enables Button click alert
 
 Static Files
+
 - Requests to `/favicon.ico` return file from `public/`
 
 Config
+
 - `defineConfig` returns typed object
 - `env()` resolves string/boolean with default fallback
 
 Migrations
+
 - `schema.createTable()` and `schema.dropTableIfExists()` are callable and tracked
 
 Jobs
+
 - `new ExampleJob().handle()` is callable and runs once
 
 Mail
-- `new ExampleMail().handle()` returns HTML via `view()`
 
+- `new ExampleMail().handle()` returns HTML via `view()`

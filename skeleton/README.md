@@ -11,4 +11,5 @@ This shows how an app would be structured and coded in Kubit.
 - Jobs: `app/jobs/*`
 - Mail: `app/mail/*`
 
-Note: The `kubit` CLI and runtime are not implemented yet; this is a design target used to drive the framework via tests.
+Note: The `kubit` CLI and runtime are not implemented yet; this is a design target used to drive the framework via
+tests.
