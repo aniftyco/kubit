@@ -26,6 +26,8 @@ Phase 1: Routing + Responses
 - GET `/foo` returns 200 and text `foo`
 - GET `/bar` returns 200 and text `bar`
 - Route table contains names: `home`, `foo`, `bar`
+- Controller handlers receive `HttpContext` (with `{ request: { method, url }, response: { status, body } }`)
+- Setting `response.status = 200` in a controller method is reflected in the response
 
 Phase 2: Views + Inertia SSR
 

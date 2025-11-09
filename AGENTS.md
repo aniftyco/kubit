@@ -110,7 +110,7 @@ For each subsystem in `docs/SPEC.md`, structure content using this outline:
 ## Source of Truth (Public API)
 
 - `packages/core/index.d.ts` defines the ambient types for the public API (`kubit`, `kubit:router`, `kubit:inertia`,
-  `kubit:orm`, `kubit:db`, `kubit:jobs`, `kubit:mail`, `kubit:hash`).
+  `kubit:server`, `kubit:orm`, `kubit:db`, `kubit:jobs`, `kubit:mail`, `kubit:hash`).
 - Treat these definitions as the contract. When adding capabilities, update the types, the spec, and the tests together.
 
 ## Implementation Guidance

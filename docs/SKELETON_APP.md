@@ -21,6 +21,7 @@ The skeleton demonstrates the intended developer experience and acts as the acce
   - Serves `/` via `HomeController.index` returning `view('home', props)`
   - Serves `/foo` and `/bar` with inline handlers (string/async)
   - Serves static assets from `public/`
+- Controller actions receive an `HttpContext` param and may set `response.status`
 - Render `views/home.tsx` to HTML on the server, include assets, and hydrate on the client so the Button click works.
 - Support named routes (`router.name('home')`) and preserve them for reverse routing later.
 - Load typed config from `config/app.ts` using `env()` fallbacks.

@@ -45,7 +45,7 @@ alongside the skeleton app and tests. See AGENTS.md for the elicitation playbook
 1. Node HTTP server receives request
 2. Middleware pipeline executes (auth/csrf/static/…)
 3. Router matches path and method
-4. Handler runs (inline or controller method)
+4. Handler runs (inline or controller method) and receives `HttpContext`
 5. Handler returns a Response, a `view()` result, JSON, redirect, or stream
 6. If `view()`: server renders React page + envelope; injects assets and layout
 7. Response written with status, headers, cookies
@@ -69,6 +69,11 @@ Package entry (ambient types provided in packages/core/index.d.ts):
   - `view(page: string, data?: Record<string, any>)`
   - Resolves React component at `views/<page>.tsx` and renders SSR + envelope
   - Supports optional layout wrappers and page metadata
+
+- `kubit:server`
+  - `type HttpContext = { request: { method: string; url: string }, response: { status: number; body: any } }`
+  - Route handlers and controller actions receive `HttpContext` as the first parameter
+  - Handlers may set `response.status`/`response.body` in addition to returning a value (e.g., `view()`)
 
 - `kubit:orm`
   - `class Model {}` base with initial async `save()`/`destroy()` and static `find(id)`
@@ -163,7 +168,7 @@ Edge Cases & Errors, Security, Performance, Extensibility, Testing, Open Questio
 
 - Goals: Minimal Node HTTP server with middleware pipeline and error handling.
 - Non‑Goals: Full framework‑agnostic server replacement.
-- Concepts: Request/Response abstraction (TBD: Node vs. Web standard), middleware chain.
+ - Concepts: Request/Response abstraction (TBD: Node vs. Web standard), middleware chain. Ambient `kubit:server` module exposes `HttpContext` (request: `{ method, url }`, response: `{ status, body }`).
 - API Surface: `createServer(app)`, `use(middleware)`, `Response` helpers (text/json/redirect/stream).
 - Configuration: Port, host, trust proxy, error pages, static root.
 - Lifecycle: Accept → parse → middleware → route → handler → response → finalize.
