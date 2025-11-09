@@ -1,5 +1,4 @@
-import { defineConfig } from "@app:config";
-import { env } from "@app:env";
+import { defineConfig, env } from "kubit";
 
 export default defineConfig({
   name: env("APP_NAME", "Kubit"),

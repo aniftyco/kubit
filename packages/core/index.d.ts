@@ -1,25 +1,25 @@
+// Peer dependencies
 declare module "react" {
   interface FC<P = {}> {
     (props: P): any;
   }
 }
 
-declare module "@app:config" {
+// Public API
+declare module "kubit" {
   export function defineConfig<T>(config: T): T;
-}
-
-declare module "@app:env" {
   export function env<T>(key: string, defaultValue: T): T;
 }
 
-declare module "@app:inertia" {
+// Services
+declare module "kubit:inertia" {
   export function view(
     page: string,
     data?: Record<string, any>
   ): any | Promise<any>;
 }
 
-declare module "@app:router" {
+declare module "kubit:router" {
   export type Constructor = new (...args: any[]) => any;
   export type ControllerMethod<C extends Constructor> = Extract<
     {
@@ -44,13 +44,13 @@ declare module "@app:router" {
   };
 }
 
-declare module "@app:orm" {
+declare module "kubit:orm" {
   export class Model {
     // ORM base model methods and properties
   }
 }
 
-declare module "@app:db" {
+declare module "kubit:db" {
   export class Migration {}
 
   export const schema: {
@@ -62,13 +62,13 @@ declare module "@app:db" {
   };
 }
 
-declare module "@app:jobs" {
+declare module "kubit:jobs" {
   export class Job {
     // Job base class methods and properties
   }
 }
 
-declare module "@app:mail" {
+declare module "kubit:mail" {
   export class Mailable {
     view(template: string, data?: Record<string, any>): any | Promise<any>;
   }

@@ -1,4 +1,4 @@
-import { Model } from "@app:orm";
+import { Model } from "kubit:orm";
 
 export class User extends Model {
   // ...

@@ -1,4 +1,4 @@
-import { view } from "@app:inertia";
+import { view } from "kubit:inertia";
 
 export default class HomeController {
   public async index() {

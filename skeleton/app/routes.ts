@@ -1,4 +1,4 @@
-import { router } from "@app:router";
+import { router } from "kubit:router";
 import HomeController from "@app/controllers/home";
 
 router.get("/", [HomeController, "index"]).name("home");

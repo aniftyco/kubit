@@ -1,4 +1,4 @@
-import { Job } from "@app:jobs";
+import { Job } from "kubit:jobs";
 
 export class ExampleJob extends Job {
   async handle() {

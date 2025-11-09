@@ -1,4 +1,4 @@
-import { Migration, schema } from "@app:db";
+import { Migration, schema } from "kubit:db";
 
 export default class extends Migration {
   async up() {
