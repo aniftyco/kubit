@@ -3,6 +3,7 @@
     "jsx": "preserve",
     "paths": {
       "@app/components/*": ["./components/*"],
+      "@app/views/*": ["./views/*"],
       "@app/*": ["./app/*"]
     },
     "types": ["../packages/core/index.d.ts"]
