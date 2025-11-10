@@ -22,6 +22,13 @@ If any file under `docs/` changes (SPEC, SKELETON_APP, TEST_PLAN, ROADMAP, BRAIN
 `AGENTS.md` in the same change to reflect new or modified guidance. This prevents agents from operating against stale
 instructions and ensures new capabilities are discoverable here.
 
+Documentation conventions:
+
+- When updating public APIs, include concise TypeScript signatures in `docs/SPEC.md`.
+- Avoid inline code examples in docs; instead, reference the living examples in `skeleton/*` using file paths (e.g., `skeleton/app/routes.ts:1`).
+- Keep skeleton references (`skeleton/*`) in `docs/SKELETON_APP.md` accurate.
+- Prefer declarative instructions in `docs/TEST_PLAN.md`; commands should point to the skeleton where relevant.
+
 ## Spec Elicitation Playbook
 
 When expanding the spec, use the prompts below to extract details and capture them in `docs/SPEC.md` under the
@@ -110,7 +117,7 @@ For each subsystem in `docs/SPEC.md`, structure content using this outline:
 ## Source of Truth (Public API)
 
 - `packages/core/index.d.ts` defines the ambient types for the public API (`kubit`, `kubit:router`, `kubit:inertia`,
-  `kubit:server`, `kubit:orm`, `kubit:db`, `kubit:jobs`, `kubit:mail`, `kubit:hash`).
+  `kubit:server`, `kubit:orm`, `kubit:db`, `kubit:queue`, `kubit:mail`, `kubit:hash`).
 - Treat these definitions as the contract. When adding capabilities, update the types, the spec, and the tests together.
 
 ## Implementation Guidance

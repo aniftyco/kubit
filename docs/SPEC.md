@@ -35,7 +35,7 @@ alongside the skeleton app and tests. See AGENTS.md for the elicitation playbook
 - Views: React components rendered on the server; hydrated via small client runtime
 - Inertia‑style Protocol: responses carry a page component + props envelope
 - ORM + DB: Model base class; migrations with a schema DSL
-- Jobs: base Job, queue abstraction (in‑memory first, pluggable later)
+- Queue: base Job with dispatching and property injection (in‑memory first, pluggable later)
 - Mail: mailables rendered via React; transport abstraction (log/dev, SMTP, provider)
 - Config: typed config via defineConfig and env helpers
 - CLI: `kubit` entry to run/dev/build/test/migrate/queue/mail
@@ -58,17 +58,21 @@ Package entry (ambient types provided in packages/core/index.d.ts):
 - `kubit`
   - `defineConfig<T>(config: T): T`
   - `env<T>(key: string, defaultValue: T): T`
+  - `type Trait = <BaseClass>(base: BaseClass) => void`
+  - `use<T = Trait>(...traits: T[]): ClassDecorator`
 
 - `kubit:router`
   - `router.name(name: string): router`
-  - `router.get(path, handler)`; later: post/put/patch/delete/options
+  - `router.get(path, handler)`; `router.post(path, handler)`; later: put/patch/delete/options
   - `handler`: `(...args) => any | Promise<any>` OR `[ControllerClass, "method"]`
   - Named routes enable reverse URL generation (future: `route('name', params)`).
+  - Examples: `skeleton/app/routes.ts:1`
 
 - `kubit:inertia`
   - `view(page: string, data?: Record<string, any>)`
   - Resolves React component at `views/<page>.tsx` and renders SSR + envelope
   - Supports optional layout wrappers and page metadata
+  - Controller example: `skeleton/app/controllers/home.ts:1`
 
 - `kubit:server`
   - `type HttpContext = { request: { method: string; url: string }, response: { status: number; body: any } }`
@@ -87,8 +91,8 @@ Package entry (ambient types provided in packages/core/index.d.ts):
     - `hasOne(() => Model)` → property typed as `HasOne<typeof Related>`
     - `hasMany(() => Model)` → property typed as `HasMany<typeof Related>` (alias of `Collection<T>`)
   - Traits and mixins:
-    - `use(...traits)` class decorator
-    - `SoftDeletes` trait (adds `deletedAt` semantics)
+    - `SoftDeletes` trait (adds `deletedAt` semantics); apply via root `kubit.use()`
+  - Examples: `skeleton/app/models/user.ts:1`, `skeleton/app/models/post.ts:1`
 
 - `kubit:hash`
   - `hash(value: string): Promise<string>` — async one-way hashing helper for common tasks (e.g., passwords)
@@ -98,14 +102,21 @@ Package entry (ambient types provided in packages/core/index.d.ts):
   - `schema.createTable(name, (table) => { ... })`
   - `schema.dropTableIfExists(name)`
   - Table builder (MVP): `uuid`, `string`, `text`, `primary`, `unique`, `index`, `timestamps`, `softDeletes`, `rememberToken`, `foreignIdFor(Model)`
+  - Examples: `skeleton/database/migrations/0000_00_00_000000_create_users_table.ts:1`, `skeleton/database/migrations/0000_00_00_000001_create_posts_table.ts:1`
 
-- `kubit:jobs`
-  - `class Job { async handle() {} }`
-  - Future: `dispatch(job)`, queue workers, retries, backoff
+- `kubit:queue`
+  - `type PublicPropertyNames<T>` and `type PublicProperties<T>` for job payload extraction
+  - `class Job` with `static dispatch<T extends Job>(props?: PublicProperties<T>): Promise<void>` and `handle()`
+  - `property(options?)` decorator to mark queueable properties
+  - Future: queue workers, retries, backoff
+  - Example: `skeleton/app/jobs/example.ts:1`
 
 - `kubit:mail`
-  - `class Mailable { view(template: string, data?: Record<string, any>) }`
-  - Future: `to`, `subject`, transports, queueable mails
+  - `class Mailable extends Job`
+  - Chainable instance methods: `subject(string)`, `to(email, name?)`, `view(template, data?)`
+  - `static send<T extends Mailable>(props?: PublicProperties<T>): Promise<void>` convenience for dispatching
+  - Future: transports and queue integration
+  - Example: `skeleton/app/mail/example.ts:1`
 
 ## Conventions and Structure
 
@@ -128,6 +139,8 @@ Package entry (ambient types provided in packages/core/index.d.ts):
   - `datetime` exposes `export type DateTime = Date;` for timestamp fields
   - React’s minimal `FC` is available for page/components typing
 
+See `skeleton/tsconfig.json:1` for the concrete configuration.
+
 ## CLI (initial contract)
 
 - `kubit start`: run the built server or start dev server with hot reload for server + client
@@ -143,7 +156,7 @@ Package entry (ambient types provided in packages/core/index.d.ts):
 - Static file serving from `public/`
 - Config loading via `config/app.ts`, `env()` fallbacks
 - Migrations with in-memory adapter (no real DB yet), table builder DSL (no-ops for now) to satisfy skeleton
-- Jobs + Mail as stubs that log to console while preserving API shape
+- Queue + Mail as stubs that log to console while preserving API shape
 - CLI commands that wire the above together
 
 ## Non-Goals (for MVP)
@@ -173,6 +186,7 @@ Edge Cases & Errors, Security, Performance, Extensibility, Testing, Open Questio
 - Configuration: Port, host, trust proxy, error pages, static root.
 - Lifecycle: Accept → parse → middleware → route → handler → response → finalize.
 - Edge Cases & Errors: 404/405/500 behavior; body size limits; timeouts.
+  If both a handler returns a value and sets `response.body`, the return value wins (MVP rule; subject to change).
 - Security: CORS, CSRF (later), headers; cookie flags.
 - Performance: Streaming, keep‑alive, compression (later), caching headers.
 - Extensibility: Middleware API; hooks for request start/end; error hook.

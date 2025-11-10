@@ -26,7 +26,7 @@ worlds.
 
 - `packages/core` — ambient type definitions describing the public API
 - `skeleton` — example app showing intended DX
-- `docs` — spec, skeleton requirements, test plan, roadmap, and brain dump
+- `docs` — spec, skeleton requirements, test plan, and brain dump
 
 ## Read More
 

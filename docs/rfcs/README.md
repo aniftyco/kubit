@@ -8,6 +8,7 @@ Process
 - Fill in all sections, including test plan and required repo changes.
 - Open a PR with the RFC and link to any prototype branches if applicable.
 - On acceptance, update `docs/SPEC.md` (Decision Log + relevant subsystems) and `AGENTS.md`.
+  - If a roadmap doc exists, optionally add milestones. If not, skip.
 
 Naming
 

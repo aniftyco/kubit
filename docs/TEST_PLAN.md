@@ -9,6 +9,8 @@ tests and grows toward end‑to‑end.
 - HTTP assertions: Supertest‑style or native fetch against the dev server
 - Type checks: `tsc --noEmit` against skeleton with `packages/core` types
 
+Type checks should be run against the skeleton app (see `skeleton/tsconfig.json:1`).
+
 ## Phases
 
 Phase 0: Types
@@ -48,11 +50,12 @@ Phase 5: DB Migrations (No‑op Backend)
 
 - `schema.createTable(...)` calls are recorded and surfaced in logs
 - `schema.dropTableIfExists(...)` calls are recorded
+- Table builder calls include: `uuid`, `string`, `text`, `primary`, `unique`, `index`, `timestamps`, `softDeletes`, `rememberToken`, `foreignIdFor(Model)`
 
-Phase 6: Jobs + Mail (Stubs)
+Phase 6: Queue + Mail (Stubs)
 
-- `ExampleJob.handle()` runs once per dispatch; logs a line
-- `ExampleMail.handle()` returns HTML string from `view('emails.example', ...)`
+- `ExampleJob.dispatch({...})` enqueues and runs once; logs a line
+- `ExampleMail.send({...})` dispatches; `handle()` returns HTML string from `view('emails.example', ...)`
 
 ## Stretch (Future)
 

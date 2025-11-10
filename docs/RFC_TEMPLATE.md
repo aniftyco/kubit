@@ -82,7 +82,7 @@ Implementation Plan
 
 Phases & Milestones
 
-- Incremental steps mapped to `docs/ROADMAP.md` where relevant
+- Incremental steps optionally mapped to a roadmap document (if present)
 
 Test Plan & Acceptance Criteria
 

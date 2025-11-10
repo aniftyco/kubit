@@ -26,7 +26,7 @@ The skeleton demonstrates the intended developer experience and acts as the acce
 - Support named routes (`router.name('home')`) and preserve them for reverse routing later.
 - Load typed config from `config/app.ts` using `env()` fallbacks.
 - Execute migration classes (no real DB required in MVP; schema API can be no‑op but callable).
-- Process a `Job` subclass by calling `handle()` (console log is acceptable in MVP).
+- Dispatch a `Job` subclass via `Job.dispatch()` (console log is acceptable in MVP).
 - Render a `Mailable` via `view()` returning HTML (no transport in MVP).
 
 ## Example References
@@ -40,6 +40,16 @@ The skeleton demonstrates the intended developer experience and acts as the acce
 - Migration: `skeleton/database/migrations/0000_00_00_000000_create_users_table.ts:1`
 - Job: `skeleton/app/jobs/example.ts:1`
 - Mail: `skeleton/app/mail/example.ts:1`
+
+## TypeScript Settings
+
+- See `skeleton/tsconfig.json:1` for the exact configuration (decorators enabled, DOM types included for React).
+
+## Imports & Module IDs
+
+- Ambient modules provided by `packages/core`:
+  - `kubit:*` (e.g., `kubit:router`, `kubit:inertia`, `kubit:server`, `kubit:orm`, `kubit:db`, `kubit:queue`, `kubit:mail`, `kubit:hash`)
+  - `datetime` providing `DateTime` type alias
 
 ## Acceptance Criteria Checklists
 

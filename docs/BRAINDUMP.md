@@ -1,51 +1,39 @@
 # Brain Dump
 
-So JavaScript is the most popular and widely used language, everyone uses it for their frontends because it's the only
-language that can run on that side. To keep from context switching JavaScript on the server has been proliferating, but
-I feel that we're lacking heavily on a good backend story for JavaScript because most of the people in that world are
-heavily skewed towards frontend and most of their work is client side heavy where they maybe need to fetch a few things
-and make some API calls.
+JavaScript is the most widely used language. Everyone uses it for frontends because it's the only language that runs in the browser. To reduce context switching, JavaScript on the server is growing too. Still, the backend story often feels lacking, because many tools are optimized for client‑heavy apps that make a few API calls.
 
-JavaScript meta frameworks like Next, Remix (v3), Nuxt, SvelteKit, etc all focus heavily on the rendering of the client
-side stuff with a little help on the backend.
+JavaScript meta‑frameworks like Next, Remix (v3), Nuxt, and SvelteKit focus primarily on client rendering with helpful, but limited, backend support.
 
-Sure things like Tanstack are starting to make splashes with more of the backend stuff, but they're still very bare
-bones.
+Tools like TanStack are starting to push backend concerns forward, but they’re still fairly bare‑bones for a full MVC experience.
 
-I come from a PHP background where we have things like Symfony and Laravel, things that provide everything we need to
-build a full stack application in anything. Rails, Django, even Phoenix for Elixir offer similar stuff.
+I come from a PHP background where frameworks like Symfony and Laravel provide everything needed to build full‑stack applications. Rails, Django, and Phoenix offer similar experiences in their ecosystems.
 
-But these frameworks suffer from one common thing: They are primarily backend focused and really miss out on the
-frontend aspect. Sure they all have some really good frontend stories for things too, htmx is an awesome paradigm, so is
-Livewire, Hotwire and LiveView. But they're not using the biggest frontend libraries and often reinvent the wheel for
-everything...
+But these frameworks are primarily backend‑focused and can miss the modern frontend story. htmx, Livewire, Hotwire, and LiveView are great paradigms, but they’re not built around the most widely used frontend libraries, and often reinvent parts of the wheel.
 
-We already have a proven great ecosystem when it comes to the frontend. We just need Something that bridges both of
-these together in a cohesive way and I truly think JavaScript (Or TypeScript) on the backend with enough love and care
-can be the holy grail of web dev.
+We already have a great, proven frontend ecosystem. We need something that bridges backend and frontend in a cohesive way. JavaScript (or TypeScript) on the backend—with sufficient care—can be the sweet spot.
 
-What I have here is what I think is the best of both worlds. A completely JavaScript monolithic MVC framework, because
-MVC just fucking works great, that couples a modern frontend story.
+What I have here aims for the best of both worlds: a monolithic MVC framework in JavaScript—because MVC works great—paired with a modern frontend story.
 
-You have background jobs, an ORM, database migrations, cli tool, mailables, controllers, view rendering and all that
-good stuff.
+You have background jobs, an ORM, database migrations, a CLI tool, mailables, controllers, view rendering—the expected building blocks.
 
-But the views are not their own custom template language, they're React components. Special JavaScript components that
-get their props from the backend.
+Views are React components—not a custom template language. They receive props from the backend.
 
-When you have a route that looks like this:
+In the routes (see `skeleton/app/routes.ts:1`), the first argument to `view()` is the page key used to resolve the React component under `views/`. The renderer outputs the component with any layouts to a single HTML blob returned to the browser. Then an Inertia‑style protocol mounts onto that server HTML and the client takes over.
 
-```ts
-router.get('greet', () => view('greet', { name: 'Josh' }));
-```
+React is the view layer for everything. Mailables render in JSX too.
 
-That `greet` key in the `view()` function tells the view renderer to use the `greet` view, which is located in
-`./app/views/greet.tsx`. The prop passed to that React component is the props you pass into the view render function (in
-this case `{ name: 'Josh' }`). The view render then renders that component and the wrapping layouts, everything
-necessary to produce a single html blob to return back to the browser. Then we utilize Inertia like protocol to mount
-onto that html returned by the server and client side stuff takes over.
+I believe a JavaScript backend like this—coupled with React and an Inertia‑style protocol to blur the frontend and backend—is a compelling way to build apps in 2026.
 
-React is the view layer for everything. All your mailable templates are rendered in JSX too.
+## Why Another Framework?
 
-I truly think a JavaScript backend like this coupled with React and an Inertia like protocol to blur the frontend and
-backend is the ultimate way to build an app in JavaScript in 2026.
+- Reduce context switching: one language end‑to‑end
+- Use React for views without inventing a template DSL
+- Favor conventions with clear extension points
+
+## How It Fits Together (At a Glance)
+
+- Routes map to inline handlers or controller methods
+- Controllers can return `view()` or other responses and can set `response.status`
+- Views are React components rendered on the server and hydrated on the client
+- Models use decorators for columns, timestamps, and hooks; basic relations exist for shape
+- Migrations use a familiar DSL; Jobs and Mail are stubs initially to prove the API
