@@ -1,4 +1,4 @@
-import { Job, property } from 'kubit:jobs';
+import { Job, property } from 'kubit:queue';
 
 export class ExampleJob extends Job {
   @property()

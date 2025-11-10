@@ -1,4 +1,4 @@
-declare module 'kubit:jobs' {
+declare module 'kubit:queue' {
   export type PublicPropertyNames<T> = {
     [K in keyof T]: T[K] extends Function ? never : K;
   }[keyof T];
