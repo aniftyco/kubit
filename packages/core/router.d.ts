@@ -13,5 +13,9 @@ declare module 'kubit:router' {
       path: string,
       handler: [Controller, Method] | ((...args: any[]) => any | Promise<any>)
     ): typeof router;
+    post<Controller extends Constructor, Method extends ControllerMethod<Controller>>(
+      path: string,
+      handler: [Controller, Method] | ((...args: any[]) => any | Promise<any>)
+    ): typeof router;
   };
 }
