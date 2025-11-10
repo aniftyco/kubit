@@ -1,8 +1,13 @@
-import { Job } from 'kubit:jobs';
+import { Job, property } from 'kubit:jobs';
 
 export class ExampleJob extends Job {
+  @property()
+  public name: string;
+
+  @property()
+  public message: string;
+
   async handle() {
-    // Job logic here
-    console.log('Example job is being processed.');
+    console.log(`Hello, ${this.name}! ${this.message}`);
   }
 }
