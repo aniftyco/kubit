@@ -1,5 +1,6 @@
 import { DateTime } from 'datetime';
-import { Model, column, use, hasOne, SoftDeletes, HasOne } from 'kubit:orm';
+import { use } from 'kubit';
+import { Model, column, hasOne, SoftDeletes, HasOne } from 'kubit:orm';
 import { User } from '@app/models/user';
 
 @use(SoftDeletes)

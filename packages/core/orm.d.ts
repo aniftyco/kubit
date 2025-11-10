@@ -37,11 +37,5 @@ declare module 'kubit:orm' {
 
   export type HasMany<T> = Collection<T>;
 
-  export type Trait = (model: typeof Model) => void;
-
-  export const use: {
-    (...traits: Trait[]): ClassDecorator;
-  };
-
-  export const SoftDeletes: Trait;
+  export const SoftDeletes: (model: typeof Model) => void;
 }
