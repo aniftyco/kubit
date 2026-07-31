@@ -1,0 +1,29 @@
+{
+  "name": "kubit-workspace",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "react"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace kubit",
+    "test": "npm run test --workspace kubit",
+    "test:types": "npm run test:types --workspace kubit",
+    "fixtures": "node scripts/build-fixtures.mjs",
+    "test:visual": "playwright test --config tests/visual/playwright.config.ts",
+    "check:css": "node scripts/check-css-parity.mjs",
+    "check:icons": "node scripts/check-icon-versions.mjs",
+    "format": "prettier --write \"*.{json,md}\" \"docs/*.md\" \"scripts/*.mjs\" \"tests/visual/**/*.{ts,json}\" \"react/*.{json,ts}\" \"react/{src,tests}/**/*.{ts,tsx}\"",
+    "format:check": "prettier --check \"*.{json,md}\" \"docs/*.md\" \"scripts/*.mjs\" \"tests/visual/**/*.{ts,json}\" \"react/*.{json,ts}\" \"react/{src,tests}/**/*.{ts,tsx}\""
+  },
+  "prettier": "@aniftyco/prettier",
+  "devDependencies": {
+    "@aniftyco/prettier": "^1.3.0",
+    "@playwright/test": "^1.56.0",
+    "@tailwindcss/cli": "^4.3.3",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "prettier": "^3.9.6",
+    "tailwindcss": "^4.3.3"
+  }
+}
