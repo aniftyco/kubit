@@ -1,0 +1,80 @@
+/*
+ * Kubit — design tokens
+ *
+ * PROVISIONAL VALUES. The token *names* below are the public API and are settled;
+ * renaming one is a breaking change. Every *value* is a placeholder standing in
+ * until the design system lands, and none of them has been chosen.
+ *
+ * The emerald here is a demo accent, not Kubit's accent. It is deliberately a
+ * stock Tailwind scale step so that nothing in this file reads as a decision.
+ * The system has to hold for any hue, so treat a hardcoded emerald anywhere
+ * outside this file as a bug.
+ *
+ * Light and dark are separate deliberate pairs rather than one derived from the
+ * other. Satisfying the contrast contract moves a hue in opposite directions
+ * between modes: light wants a darker step under a light foreground, dark wants a
+ * lighter, less saturated step under a dark one.
+ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Accent — the brand hue. */
+  --color-accent: var(--color-emerald-700);
+  --color-accent-hover: var(--color-emerald-800);
+  --color-accent-foreground: var(--color-white);
+
+  /* Danger — destructive actions. */
+  --color-danger: var(--color-red-600);
+  --color-danger-hover: var(--color-red-700);
+  --color-danger-foreground: var(--color-white);
+  --color-danger-content: var(--color-red-700);
+
+  /* Surfaces — the page and the things sitting on it. */
+  --color-surface: var(--color-white);
+  --color-surface-hover: var(--color-zinc-100);
+
+  /* Text. */
+  --color-content: var(--color-zinc-900);
+  --color-content-muted: var(--color-zinc-500);
+
+  /* Borders. */
+  --color-border: var(--color-zinc-200);
+  --color-border-strong: var(--color-zinc-300);
+
+  /* Control geometry — shared by every interactive control so a button, an
+     input, and a select line up without any of them knowing about each other. */
+  --radius-control: 0.5rem;
+  --spacing-control: 2.25rem;
+  --spacing-control-sm: 2rem;
+  --spacing-control-xs: 1.5rem;
+
+  /* Default icon size. Icons inside a control take the control's size instead,
+     so this is what a standalone icon falls back to. */
+  --spacing-icon: 1.25rem;
+}
+
+/*
+ * Dark mode. The accent moves a step *and* flips its foreground — carrying the
+ * light-mode step straight across leaves the control nearly invisible against the
+ * page.
+ */
+.dark {
+  --color-accent: var(--color-emerald-500);
+  --color-accent-hover: var(--color-emerald-400);
+  --color-accent-foreground: var(--color-zinc-950);
+
+  --color-danger: var(--color-red-500);
+  --color-danger-hover: var(--color-red-400);
+  --color-danger-foreground: var(--color-zinc-950);
+  --color-danger-content: var(--color-red-400);
+
+  --color-surface: var(--color-zinc-900);
+  --color-surface-hover: var(--color-zinc-800);
+
+  --color-content: var(--color-zinc-50);
+  --color-content-muted: var(--color-zinc-400);
+
+  --color-border: var(--color-zinc-700);
+  --color-border-strong: var(--color-zinc-600);
+}
