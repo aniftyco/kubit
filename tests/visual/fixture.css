@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@import '../../resources/css/kubit.css';
+
+/* Scan the rendered pages themselves, so the stylesheet contains exactly the
+   classes both stacks emitted and nothing else. */
+@source './build';
