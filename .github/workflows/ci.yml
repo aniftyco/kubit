@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  blade:
+    name: blade
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - uses: ramsey/composer-install@v3
+
+      - name: Lint
+        run: vendor/bin/pint --test
+
+      - name: Test
+        run: vendor/bin/pest
+
+  react:
+    name: react
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Format
+        run: npm run format:check
+
+      - name: Test
+        run: npm test
+
+      # vitest transpiles without checking, so the specs need their own pass.
+      - name: Types
+        run: npm run test:types
+
+      - name: Build
+        run: npm run build
+
+      # A token change must not land in one stack and not the other.
+      - name: Theme parity
+        run: npm run check:css
+
+      # A missing icon is obvious; a redrawn one is not.
+      - name: Icon version parity
+        run: npm run check:icons
+
+  visual:
+    name: visual
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - uses: ramsey/composer-install@v3
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build fixtures
+        run: npm run fixtures
+
+      - name: Compare stacks
+        run: npm run test:visual
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: visual-failures
+          path: tests/visual/failures
+          retention-days: 7
