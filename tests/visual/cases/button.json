@@ -1,0 +1,41 @@
+[
+  { "name": "primary", "props": { "variant": "primary" }, "slot": "Save", "tolerance": 0.01 },
+  { "name": "outline", "props": { "variant": "outline" }, "slot": "Save", "tolerance": 0.01 },
+  { "name": "ghost", "props": { "variant": "ghost" }, "slot": "Save", "tolerance": 0.01 },
+  { "name": "subtle", "props": { "variant": "subtle" }, "slot": "Save", "tolerance": 0.01 },
+  { "name": "danger", "props": { "variant": "danger" }, "slot": "Delete", "tolerance": 0.01 },
+
+  { "name": "size-xs", "props": { "variant": "primary", "size": "xs" }, "slot": "Save", "tolerance": 0.01 },
+  { "name": "size-sm", "props": { "variant": "primary", "size": "sm" }, "slot": "Save", "tolerance": 0.01 },
+  { "name": "size-base", "props": { "variant": "primary", "size": "base" }, "slot": "Save", "tolerance": 0.01 },
+
+  {
+    "name": "primary-disabled",
+    "props": { "variant": "primary", "disabled": true },
+    "slot": "Save",
+    "tolerance": 0.01
+  },
+  { "name": "danger-loading", "props": { "variant": "danger", "loading": true }, "slot": "Delete", "tolerance": 0.02 },
+
+  { "name": "with-icon", "props": { "variant": "primary", "icon": "check" }, "slot": "Save", "tolerance": 0.01 },
+  {
+    "name": "with-icon-trailing",
+    "props": { "variant": "outline", "iconTrailing": "chevron-down" },
+    "slot": "Options",
+    "tolerance": 0.01
+  },
+  {
+    "name": "square",
+    "props": { "variant": "ghost", "icon": "dots", "aria-label": "More" },
+    "slot": "",
+    "tolerance": 0.01
+  },
+
+  { "name": "link", "props": { "variant": "primary", "href": "/docs" }, "slot": "Docs", "tolerance": 0.01 },
+  {
+    "name": "link-disabled",
+    "props": { "variant": "primary", "href": "/docs", "disabled": true },
+    "slot": "Docs",
+    "tolerance": 0.01
+  }
+]
