@@ -23,7 +23,7 @@
     "Design System"
   ],
   "require": {
-    "php": "^8.3",
+    "php": "^8.5",
     "blade-ui-kit/blade-icons": "^1.10",
     "gehrisandro/tailwind-merge-php": "^1.2",
     "illuminate/console": "^13.0",
