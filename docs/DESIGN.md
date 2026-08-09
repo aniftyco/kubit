@@ -415,7 +415,8 @@ On the React side `className` also accepts Base UI's state callback, which Kubit
 
 ## Icons
 
-Tabler, MIT, wrapped behind Kubit's own icon component so the underlying provider stays an implementation detail.
+Tabler, MIT, wrapped behind Kubit's own icon component that standardizes the `data-kubit-icon` hook, the decorative
+default, and the `size-icon` token.
 
 ```blade
 <kubit:icon name="chevron-down" />
@@ -423,13 +424,17 @@ Tabler, MIT, wrapped behind Kubit's own icon component so the underlying provide
 ```
 
 ```tsx
-<Icon name="chevron-down" />
-<Icon name="user" variant="filled" />
+import { IconChevronDown, IconUserFilled } from '@tabler/icons-react';
+
+<Icon as={IconChevronDown} />
+<Icon as={IconUserFilled} />
 ```
 
-Names are kebab-case in both stacks. React's actual exports are PascalCase (`IconChevronDown`, `IconUserFilled`) and
-Blade's provider has its own prefix convention; Kubit maps both to one naming scheme so a name copied from the Tabler
-site works in either stack unchanged.
+The two stacks address an icon differently, by design. Blade names it as a kebab-case string and resolves the glyph
+server-side; a `variant="filled"` picks the filled cut. React takes the Tabler component itself through `as`, so the
+consumer imports the exact export they want (`IconUser` versus `IconUserFilled`) and there is no name to resolve and no
+`variant` — the choice of cut is which component you import. It is not a 1-to-1 API: a Blade `name` has no React
+equivalent, and a React `as` has no Blade equivalent.
 
 | Stack | Provider                           |
 | ----- | ---------------------------------- |

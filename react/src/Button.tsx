@@ -1,6 +1,7 @@
 import type * as React from 'react';
 import { Button as BaseButton, type ButtonProps as BaseButtonProps } from '@base-ui/react/button';
-import { Icon, type IconVariant } from './Icon.js';
+import { IconLoader2, type TablerIcon } from '@tabler/icons-react';
+import { Icon } from './Icon.js';
 import { clsx } from './clsx.js';
 
 export type ButtonVariant = 'primary' | 'outline' | 'ghost' | 'subtle' | 'danger';
@@ -10,12 +11,11 @@ export type ButtonSize = 'xs' | 'sm' | 'base';
 export interface ButtonProps extends Omit<BaseButtonProps, 'className'> {
   variant?: ButtonVariant;
   size?: ButtonSize;
-  /** Kebab-case icon name, rendered before the label. */
-  icon?: string;
-  /** Kebab-case icon name, rendered after the label. */
-  iconTrailing?: string;
+  /** Tabler icon component, rendered before the label. */
+  icon?: TablerIcon;
+  /** Tabler icon component, rendered after the label. */
+  iconTrailing?: TablerIcon;
   iconClass?: string;
-  iconVariant?: IconVariant;
   square?: boolean;
   loading?: boolean;
   href?: string;
@@ -82,7 +82,6 @@ export const Button = ({
   icon,
   iconTrailing,
   iconClass,
-  iconVariant = 'outline',
   square = false,
   loading = false,
   disabled = false,
@@ -112,7 +111,7 @@ export const Button = ({
     className
   );
 
-  const iconProps = { variant: iconVariant, className: clsx(sizing.icon, iconClass) };
+  const iconProps = { className: clsx(sizing.icon, iconClass) };
 
   const content = (
     <>
@@ -120,9 +119,9 @@ export const Button = ({
         data-kubit-button-content=""
         className={clsx('inline-flex items-center justify-center', sizing.gap, 'group-data-loading:invisible')}
       >
-        {icon !== undefined && <Icon name={icon} {...iconProps} />}
+        {icon !== undefined && <Icon as={icon} {...iconProps} />}
         {children}
-        {iconTrailing !== undefined && <Icon name={iconTrailing} {...iconProps} />}
+        {iconTrailing !== undefined && <Icon as={iconTrailing} {...iconProps} />}
       </span>
 
       {/*
@@ -140,7 +139,7 @@ export const Button = ({
           data-kubit-button-spinner=""
           className="absolute inset-0 hidden place-items-center group-data-loading:grid"
         >
-          <Icon name="loader-2" className={clsx(sizing.icon, 'animate-spin')} />
+          <Icon as={IconLoader2} className={clsx(sizing.icon, 'animate-spin')} />
         </span>
       )}
     </>

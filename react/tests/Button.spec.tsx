@@ -1,3 +1,4 @@
+import { IconCheck } from '@tabler/icons-react';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Button } from '../src/Button.js';
@@ -99,14 +100,15 @@ describe('Button', () => {
   });
 
   it('renders a leading icon', () => {
-    const { container } = render(<Button icon="check">Save</Button>);
+    const { container } = render(<Button icon={IconCheck}>Save</Button>);
 
     expect(container.querySelector('[data-kubit-icon]')).not.toBeNull();
+    expect(container.querySelector('[data-kubit-icon]')?.tagName).toBe('svg');
   });
 
   it('reaches the icon through iconClass', () => {
     const { container } = render(
-      <Button icon="check" iconClass="size-6">
+      <Button icon={IconCheck} iconClass="size-6">
         Save
       </Button>
     );
@@ -115,7 +117,7 @@ describe('Button', () => {
   });
 
   it('squares a button that has an icon and no label', () => {
-    render(<Button icon="check" aria-label="Save" />);
+    render(<Button icon={IconCheck} aria-label="Save" />);
 
     expect(button().className).toContain('size-control');
   });
